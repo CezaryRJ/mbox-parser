@@ -1,0 +1,3 @@
+data = C:\Users\Cezary\Documents\GitHub\mbox-parser\Test_data
+python = C:\Users\Cezary\Documents\GitHub\mbox-parser\Python
+results = C:\Users\Cezary\Documents\GitHub\mbox-parser\results

@@ -1,0 +1,3859 @@
+From owner-zeroconf@merit.edu  Thu Jan  6 02:30:26 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA05638
+	for <zeroconf-archive@odin.ietf.org>; Thu, 6 Jan 2000 02:30:25 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 423965DDC0; Thu,  6 Jan 2000 02:29:55 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id EE59B5DDC8; Thu,  6 Jan 2000 02:29:54 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 53CC55DDC0
+	for <zeroconf@merit.edu>; Thu,  6 Jan 2000 02:29:53 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id XAA26127;
+	Wed, 5 Jan 2000 23:29:49 -0800 (PST)
+Received: from vayne (muc-isdn-4 [129.157.164.104])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id IAA00761;
+	Thu, 6 Jan 2000 08:29:44 +0100 (MET)
+Date: Thu, 6 Jan 2000 08:37:27 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: service discovery input
+To: bamiller@us.ibm.com
+Cc: zeroconf@merit.edu, erik.guttman@germany.sun.com
+In-Reply-To: "Your message with ID" <85256849.004A1110.00@d54mta06.raleigh.ibm.com>
+Message-ID: <Roam.SIMC.2.0.6.947144247.12494.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Brent,
+
+I point out in my comments below where I think your definitions
+are perhaps to weighty.  Service discovery, as we are discussing
+it, needs to be disencumbered from discussions of how it is
+implemented (in software/hardware), and where it is implemented
+(in devives).  That is why I prefer the terminology of 'processes'
+to describe the 'discovering' and 'advertising' agents.
+
+Many of the terms you bring up were lacking in my list and I
+think they are great additions (registry update mechanism,
+registry cleanup, discovery mechanism, client lookup mechanism,
+client access to service, client use of services).  I prefer my
+own definitions for the following terms (client agent, service
+agent, service, registry) for reasons I give below.
+
+> >   a) What are the major components of service discovery?
+
+> 1. Client agent: The client agent is a software component that runs 
+> in a device and searches the network to find services needed by 
+> applications running in the device. Note that services themselves 
+> can be clients of other services.
+
+I prefer to characterize the client as a process than as software.
+The definition of a 'client' should require a definition of a 'device.'
+
+> 2. Service agent: For devices that provide services to other 
+> devices, the service agent is a software component that advertises
+> the services provided by the device. In the case where a service 
+> provider implementation does not require hardware, a service agent 
+> can be based entirely in software.
+
+It is not necessary to define a device to define a service, though
+a service may be contacted at an address, with a protocol.  The
+discussion of hardware and software doesn't add clarity to the 
+definition.
+
+> 3. Registry: In order to provide efficiency and scalability, some 
+> of these protocols provide for a (perhaps optional) registry where 
+> information about available services is maintained. Typically a
+> registry contains an entry for each service advertised by a
+> service provider. The registry can be centralized or decentralized 
+> (distributed).
+
+The registry doesn't only contain information about services, it has
+to contain all the information which the service agents advertise.
+This includes at least the location and type of the service, but
+it can include more - such as service attributes, authentication
+information, etc.
+
+I know of no distributed service registries.  It is possible that
+new registries can be elected (such as the browser election scheme
+used in MS networking) but this is still a centralized scheme.  It
+is precisely the centralization which adds scalability.
+
+> 5. Registry cleanup: This topic addresses how obsolete or 
+> incorrect information is purged from the registry.
+
+The reason for a registry clean up is that we don't want stale
+information hanging around.  Service discovery registries are
+different than directories in that there are timeliness guarantees
+we want to make about information in the service registries.
+
+> 6. Discovery mechanism: The discovery mechanism is that part of a
+> service discovery protocol that specifies how a client locates 
+> the service discovery infrastructure such as a registry.
+
+Maybe this should be called discovery protocol autoconfiguration.
+The idea is that there is some mechanism used by the service 
+discovery protocol so as to automatically allow scalable behavior
+in the presense of a service registry.
+
+> 7. Client lookup mechanism: The client lookup mechanism defines
+> how a client queries the registry (if there is one) to locate a
+> service it needs, and how it locates the service in the absence 
+> of a registry.
+
+The question is how does this differ from nclient lookup from service
+agents (and in protocols which define an optional registry it does 
+differ if only slightly - such as SLP and MDNS vs DNS).  These 
+differences are mainly in the transport of the query and the reply
+not the message contents per se.
+
+> 8. Client access to service: This topic addresses how a client, 
+> once it has located the service that it needs, negotiates access 
+> to the service, including "quality of service" issues and security 
+> issues.
+
+The key statement here is 'once it has located the service that it
+needs.'  A client which finds all databases on the network doesn't 
+necessarily have access to any of them, they don't necessarily 
+support the access protocols the client has nor do these databases
+necessarily contain the data the client is looking for.	 In short,
+unless the client finds the set of services which it needs, it will
+have to do a negociation phase with the service where the client
+determines - as part of initially attempting to access it - whether
+the service *is* what the client needs.  
+
+This is what I am attempting to get at in the notion of whether
+service discovery is conclusive.  'Client access to service' is
+made much simpler if the service discovery allows for rich querying
+semantics so that the client will only discover services which it
+in all likelihood does not need to do any feature negociation with.
+
+> 9. Client use of services: Once a client has located a service, 
+> and has successfully negotiated access to the service, it must
+> determine (and perhaps acquire) the protocols to actually interact
+> with the service (for instance: IPP, LPR, HTTP, FTP, Java RMI).
+
+Here I completely disagree - the client has to have the protocol
+required to communicate with the service a priori.  It may be, in
+the case of RMI or CORBA that the client will download an interface
+to a remote service which it acquires only after discovering the
+service.  But the client must in any case have code which can drive
+that interface (at the API level).  In that sense it is true that the
+client does not need to support the wire protocol for client server
+communication in advance, but it *does* need to support RMI or corba
+to enable this.
+
+In any case, how clients use services is out of the scope of the 
+ZEROCONF working group.
+
+> >   b) Definition of a service
+>
+> I believe that this should tend toward a very generic definition.  
+> Again I'll steal shamelessly from prior art.  The definition below 
+> is from the Bluetooth (TM) Service Discovery Protocol Specification:
+>
+> "A service is any entity that can provide information, perform an 
+> action, or control a resource on behalf of another entity. A service 
+> may be implemented as software, hardware, or a combination of 
+> hardware and software."
+
+We are only interested in networked services in the ZEROCONF working
+group.  This precludes 911 (provides information), pizza parlors (which
+provide services) and the electric utility (which controls resources).
+
+The services we are concerned with have an IP address and port number, 
+and a specific protocol which clients use to communicate with them.
+They may also have additional details which clients need to know before
+they are ready to communicate with them (configuration information, for
+example).
+
+> >   c) Is service discover[y] conclusive?
+> 
+> I'm not exactly positive what is meant here.  It should at least
+> be conclusive from the client's point of view that a service exists 
+> which matches the client's query or not.  The trick is in specifying 
+> what might go into that query.
+
+I'll take this up in another message.
+
+> >   e) What is the goal of service discovery?
+
+> Self-configuration.  Devices should be able to be installed in a network
+> and "just work".  Part of this includes those devices being able to specify
+> what services they offer to other participants in the network and to
+> discover what other services are available on the network, with "zero
+> configuration".
+
+I don't like the device focus.  Clients running in the network should
+just work.  Nothing should require any configuration, but if configuration
+is available, it can be used to make service discovery more scalable,
+secure and 'personalized' (only finding services which I care about,
+am allowed to use, etc.)
+
+> >   g) Bootstrapping protocol or not?
+> >   h) How does a service discovery protocol support both simple and
+> >     complex devices in a ZeroConfig network? ]
+
+> What exactly are we trying to get at here?
+
+I am also not sure what is being asked here.
+
+Erik
+
+
+
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan  6 10:44:28 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA14706
+	for <zeroconf-archive@odin.ietf.org>; Thu, 6 Jan 2000 10:44:20 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 474915DDA0; Thu,  6 Jan 2000 10:43:51 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 02EB85DDCC; Thu,  6 Jan 2000 10:43:50 -0500 (EST)
+Received: from e21.nc.us.ibm.com (e21.nc.us.ibm.com [32.97.136.227])
+	by segue.merit.edu (Postfix) with ESMTP id 0E0D05DDA0
+	for <zeroconf@merit.edu>; Thu,  6 Jan 2000 10:43:47 -0500 (EST)
+Received: from southrelay02.raleigh.ibm.com (southrelay02.raleigh.ibm.com [9.37.3.209])
+	by e21.nc.us.ibm.com (8.9.3/8.9.3) with ESMTP id KAA23730
+	for <zeroconf@merit.edu>; Thu, 6 Jan 2000 10:36:55 -0600
+From: bamiller@us.ibm.com
+Received: from d54mta06.raleigh.ibm.com (d54mta06.raleigh.ibm.com [9.67.228.38])
+	by southrelay02.raleigh.ibm.com (8.8.8m2/NCO v2.06) with SMTP id KAA46674
+	for <zeroconf%merit.edu@internet.us.ibm.com>; Thu, 6 Jan 2000 10:43:45 -0500
+Received: by d54mta06.raleigh.ibm.com(Lotus SMTP MTA v4.6.5  (863.2 5-20-1999))  id 8525685E.00566665 ; Thu, 6 Jan 2000 10:43:43 -0500
+X-Lotus-FromDomain: IBMUS
+To: zeroconf@merit.edu
+Message-ID: <8525685E.005665D7.00@d54mta06.raleigh.ibm.com>
+Date: Thu, 6 Jan 2000 10:39:55 -0500
+Subject: Re: service discovery input
+Mime-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+
+Erik,
+
+My responses included in-line below with "==>" tags.
+
+Regards,
+Brent
+B. A. Miller RTP, NC
+(919) 543-6959 TIE 441
+FAX (919) 254-5739
+Internet: bamiller@us.ibm.com
+
+
+---------------------- Forwarded by Brent Miller/Raleigh/IBM on 01/06/2000
+09:03 AM ---------------------------
+
+Erik Guttman <Erik.Guttman@germany.sun.com>@merit.edu on 01/06/2000
+02:37:27 AM
+
+Please respond to Erik Guttman <Erik.Guttman@germany.sun.com>
+
+Sent by:  owner-zeroconf@merit.edu
+
+
+To:   Brent Miller/Raleigh/IBM@IBMUS
+cc:   zeroconf@merit.edu, erik.guttman@germany.sun.com
+Subject:  Re: service discovery input
+
+
+
+
+Brent,
+
+I point out in my comments below where I think your definitions
+are perhaps to weighty.  Service discovery, as we are discussing
+it, needs to be disencumbered from discussions of how it is
+implemented (in software/hardware), and where it is implemented
+(in devives).  That is why I prefer the terminology of 'processes'
+to describe the 'discovering' and 'advertising' agents.
+
+==> In ZEROCONF context, your suggestion is appropriate and I
+agree with the use of "processes".
+
+Many of the terms you bring up were lacking in my list and I
+think they are great additions (registry update mechanism,
+registry cleanup, discovery mechanism, client lookup mechanism,
+client access to service, client use of services).  I prefer my
+own definitions for the following terms (client agent, service
+agent, service, registry) for reasons I give below.
+
+==> These terms/definitions resulted from dissecting the general
+problem and general solutions, so I'm glad you think they are
+relevant.  I think we're mostly but not entirely in agreement
+on the definitions for the terms, addressed individually below.
+
+> >   a) What are the major components of service discovery?
+
+> 1. Client agent: The client agent is a software component that runs
+> in a device and searches the network to find services needed by
+> applications running in the device. Note that services themselves
+> can be clients of other services.
+
+I prefer to characterize the client as a process than as software.
+The definition of a 'client' should require a definition of a 'device.'
+
+==> Agreed.
+
+> 2. Service agent: For devices that provide services to other
+> devices, the service agent is a software component that advertises
+> the services provided by the device. In the case where a service
+> provider implementation does not require hardware, a service agent
+> can be based entirely in software.
+
+It is not necessary to define a device to define a service, though
+a service may be contacted at an address, with a protocol.  The
+discussion of hardware and software doesn't add clarity to the
+definition.
+
+==> While a complete solution requires dealing with both devices
+and services, I agree that they should be addressed separately and
+thus again using the idea of a "process" here makes sense.
+
+> 3. Registry: In order to provide efficiency and scalability, some
+> of these protocols provide for a (perhaps optional) registry where
+> information about available services is maintained. Typically a
+> registry contains an entry for each service advertised by a
+> service provider. The registry can be centralized or decentralized
+> (distributed).
+
+The registry doesn't only contain information about services, it has
+to contain all the information which the service agents advertise.
+This includes at least the location and type of the service, but
+it can include more - such as service attributes, authentication
+information, etc.
+
+==> Well, these examples are exactly what I meant by "information
+about services".  The registry will indeed contain at least the
+service advertisement *information about the service*, and it may
+contain attributes or access control *information about the service*.
+I think we're saying the same thing here.  Perhaps the definition
+needs to be made more clear using wording such as you suggest.
+
+I know of no distributed service registries.  It is possible that
+new registries can be elected (such as the browser election scheme
+used in MS networking) but this is still a centralized scheme.  It
+is precisely the centralization which adds scalability.
+
+==> "Distributed" may be a poor term here.  The point which is
+attempting to be made is that a service provider may have its own
+"registry" of services and thus need not rely on a centralized,
+third-party registry.  Thus the client can contact the service
+provider directly to learn about services; the service provider
+consults its own "registry" to respond to the client (like in
+Bluetooth or in SLP without DAs), as opposed to the client
+contacting a registry to find out about a service and then
+contacting the service provider based upon information obtained
+from the registry.  But I agree that the idea behind a registry
+as is germane here is that it is centralized for scalability,
+although it might be "distributed" in a hierarchical decomposition
+a la DNS, but that is just talking about the degree and placement
+of centralization.  So having said all that, I'll accept a
+definition that says that a "registry" is "centralized", although
+service discovery can still be accomplished when the information
+about services is decentralized, meaning that the service
+providers maintain this information on their own rather than in
+a centralized registry, but I think the point is that we shouldn't
+call that collection of information a "registry".  Right?
+How's that for a run-on sentence?  ;-{)>
+
+> 5. Registry cleanup: This topic addresses how obsolete or
+> incorrect information is purged from the registry.
+
+The reason for a registry clean up is that we don't want stale
+information hanging around.  Service discovery registries are
+different than directories in that there are timeliness guarantees
+we want to make about information in the service registries.
+
+==> Agreed, except perhaps on the minor point of "guarantees".
+There is temporal information associated with a service that
+needs to be reflected in the registry and thus requires a
+cleanup process; this may or may not go so far as a timeliness
+guarantee.
+
+> 6. Discovery mechanism: The discovery mechanism is that part of a
+> service discovery protocol that specifies how a client locates
+> the service discovery infrastructure such as a registry.
+
+Maybe this should be called discovery protocol autoconfiguration.
+The idea is that there is some mechanism used by the service
+discovery protocol so as to automatically allow scalable behavior
+in the presense of a service registry.
+
+==> Agreed.
+
+> 7. Client lookup mechanism: The client lookup mechanism defines
+> how a client queries the registry (if there is one) to locate a
+> service it needs, and how it locates the service in the absence
+> of a registry.
+
+The question is how does this differ from nclient lookup from service
+agents (and in protocols which define an optional registry it does
+differ if only slightly - such as SLP and MDNS vs DNS).  These
+differences are mainly in the transport of the query and the reply
+not the message contents per se.
+
+==> Agreed that the difference is subtle, with the idea being that
+"discovery" lets me find out about the presence and location of
+a "database" (term used loosely) of information about services,
+and "lookup" specifies how I query that "database" to learn about
+those services.  And this dissection indeed is relevant primarily
+(exclusively?) when the concept of an optional registry exists.
+
+> 8. Client access to service: This topic addresses how a client,
+> once it has located the service that it needs, negotiates access
+> to the service, including "quality of service" issues and security
+> issues.
+
+The key statement here is 'once it has located the service that it
+needs.'  A client which finds all databases on the network doesn't
+necessarily have access to any of them, they don't necessarily
+support the access protocols the client has nor do these databases
+necessarily contain the data the client is looking for.       In short,
+unless the client finds the set of services which it needs, it will
+have to do a negociation phase with the service where the client
+determines - as part of initially attempting to access it - whether
+the service *is* what the client needs.
+
+This is what I am attempting to get at in the notion of whether
+service discovery is conclusive.  'Client access to service' is
+made much simpler if the service discovery allows for rich querying
+semantics so that the client will only discover services which it
+in all likelihood does not need to do any feature negociation with.
+
+==> I agree that it is completely reasonable and probably preferred
+to have rich querying that enables the client to discover just
+those services that are in fact "what it really needs", and in doing
+so it is reasonable to include some "access method" attributes or
+filters in the querying semantics (so that I can indeed find just
+the public, available, nearby, free color duplex Postscript printers
+and not just all of the printers that some registry knows about).
+However, I think it is still useful to keep the "access" component
+separate.  I still have to discover a service and get access to it;
+an optimization (and a good one) is to just discover the services
+that I can (or am likely to be able to) get access to.  Also
+consider a scenario where a service is accessible to a client that
+provides some sort of credentials or asset (like a key or a credit
+card number) -- in this case it may indeed make more sense to
+discover the service and then negotiate access to it.  I agree
+that things like features ought not to be negotiated, but rather
+filtered in the query response, but it still seems to me that there
+are some "orthogonal" characteristics of a service that still might
+be negotiated separately after discovery.
+
+> 9. Client use of services: Once a client has located a service,
+> and has successfully negotiated access to the service, it must
+> determine (and perhaps acquire) the protocols to actually interact
+> with the service (for instance: IPP, LPR, HTTP, FTP, Java RMI).
+
+Here I completely disagree - the client has to have the protocol
+required to communicate with the service a priori.  It may be, in
+the case of RMI or CORBA that the client will download an interface
+to a remote service which it acquires only after discovering the
+service.  But the client must in any case have code which can drive
+that interface (at the API level).  In that sense it is true that the
+client does not need to support the wire protocol for client server
+communication in advance, but it *does* need to support RMI or corba
+to enable this.
+
+In any case, how clients use services is out of the scope of the
+ZEROCONF working group.
+
+==> Well apparently we may be in complete disagreement, but as
+you correctly point out this is outside the scope of ZEROCONF and
+if we want to debate this further we should do so outside of
+the ZEROCONF forum [but I can't resist saying that we're probably
+not really in total disagreement, and you've (I think) hit upon
+the main idea behind this item, which is that the discovery
+protocol can be entirely independent of the service access
+protocol.  It should be possible for me to use *only* the discovery
+protocol to *find* a service and learn that in order to actually
+make use of that service I need to have the MagicGuttman protocol,
+which I may be able to obtain (and again, the discovery protocol
+might tell me how and where to obtain it) if I don't already have it.
+Agreed that I need to know how to drive the MagicGuttman protocol
+once I do obtain it, but I don't necessarily need that protocol
+a priori (nor even a priori knowledge that the service uses
+that protocol).   I see this as similar to item #8 above --
+it is perfectly reasonable to only find services that use
+protocols that I know about and have (or have access to), but
+I still think it is useful to keep the concept of "service use"
+separate from discovery in the general case, since I may in fact
+wish to use the discovery protocol to determine the service usage
+protocol, if the solution provides a way for me to acquire and
+drive that service usage protocol.  It all depends on how one
+approaches the problem.  And I do agree that the client needs
+*some* protocol a priori in order to make this case work; it
+just isn't *necessarily* the protocol used to interact with the
+service itself.  But then we've agreed that this is outside the
+ZEROCONF scope, so why am I rattling on so?  ;-{)>  ].
+
+> >   b) Definition of a service
+>
+> I believe that this should tend toward a very generic definition.
+> Again I'll steal shamelessly from prior art.  The definition below
+> is from the Bluetooth (TM) Service Discovery Protocol Specification:
+>
+> "A service is any entity that can provide information, perform an
+> action, or control a resource on behalf of another entity. A service
+> may be implemented as software, hardware, or a combination of
+> hardware and software."
+
+We are only interested in networked services in the ZEROCONF working
+group.  This precludes 911 (provides information), pizza parlors (which
+provide services) and the electric utility (which controls resources).
+
+==> Hmm, I guess it depends upon how one defines a "networked service".
+By your definition below, which I agree is appropriate for ZEROCONF,
+the examples above are indeed excluded.  But one might argue that
+911 and electrical utilities are indeed networked services (just
+different networks than IP networks).  But I'll agree that they're
+not services of interest for ZEROCONF.  But in the most general
+sense, I do believe that these are services, which could in fact
+be discovered under appropriate assumptions and conditions.  But
+I won't press this point in the ZEROCONF scope.
+
+The services we are concerned with have an IP address and port number,
+and a specific protocol which clients use to communicate with them.
+They may also have additional details which clients need to know before
+they are ready to communicate with them (configuration information, for
+example).
+
+==> See above.  Agreed that these are the services of interest for
+ZEROCONF.  Toward clarification, can we assume that the following are
+ZEROCONF services if they meet the above definition?
+- a shopping mall kiosk information service that I discover with my
+PDA when I walk into the mall
+- a network access point point whose service is that it provides
+me access to "the network" (and thus is the service that lets me
+discover the "networked services")
+
+> >   c) Is service discover[y] conclusive?
+>
+> I'm not exactly positive what is meant here.  It should at least
+> be conclusive from the client's point of view that a service exists
+> which matches the client's query or not.  The trick is in specifying
+> what might go into that query.
+
+I'll take this up in another message.
+
+==> Good.
+
+> >   e) What is the goal of service discovery?
+
+> Self-configuration.  Devices should be able to be installed in a network
+> and "just work".  Part of this includes those devices being able to
+specify
+> what services they offer to other participants in the network and to
+> discover what other services are available on the network, with "zero
+> configuration".
+
+I don't like the device focus.  Clients running in the network should
+just work.  Nothing should require any configuration, but if configuration
+is available, it can be used to make service discovery more scalable,
+secure and 'personalized' (only finding services which I care about,
+am allowed to use, etc.)
+
+==> O.K., I once again agree that keeping devices and services separate
+architecturally is the correct approach.  I'll reword to:
+  "Self-configuration.  Services should be able to be installed
+  in a network and "just work".  Part of this includes service
+  providers being able to specify what services they offer to
+  other participants in the network and clients being able to
+  discover what other services are available on the network,
+  with 'zero configuration'."
+
+> >   g) Bootstrapping protocol or not?
+> >   h) How does a service discovery protocol support both simple and
+> >     complex devices in a ZeroConfig network? ]
+
+> What exactly are we trying to get at here?
+
+I am also not sure what is being asked here.
+
+==> Myron?
+
+Erik
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan  6 14:34:58 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA20667
+	for <zeroconf-archive@odin.ietf.org>; Thu, 6 Jan 2000 14:34:54 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AD6AD5DD9C; Thu,  6 Jan 2000 14:34:32 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 68C395DDCC; Thu,  6 Jan 2000 14:34:32 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id B50775DD9C
+	for <zeroconf@merit.edu>; Thu,  6 Jan 2000 14:34:30 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id LAA24125;
+	Thu, 6 Jan 2000 11:34:27 -0800 (PST)
+Received: from vayne (muc-isdn-10 [129.157.164.110])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id UAA10804;
+	Thu, 6 Jan 2000 20:34:23 +0100 (MET)
+Date: Thu, 6 Jan 2000 20:42:06 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: service discovery scenarios
+To: zeroconf@merit.edu, myron.hattig@intel.com
+Cc: erik.guttman@Germany.Sun.COM
+Message-ID: <Roam.SIMC.2.0.6.947187726.25972.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Myron,
+
+I suggest the following text for section 3.4.  I am listing the 
+canonical service discovery scenarios. 
+
+3.4 Scenarios for service discovery
+
+3.4.1 Discover Printer
+
+3.4.1.1  Overview
+
+  Networked enabled printers allow various clients to submit print
+  jobs.  There are different printing protocols possible (raw tcp,
+  lpd, ipp, etc.)  Further, printers vary in a number of ways (their
+  location, status and capabilities).  Printer discovery is important
+  for both printing clients as well as 'printing managers' - that is,
+  software which manages all printers of a particular kind on the
+  network.
+
+3.4.1.2  Key Points
+
+  Printer discovery must allow a printing client to discover the
+  location of a printer and enough information about the print
+  job submission protocol to be able to submit jobs.  Further
+  printer discovery must discriminate between printers which are
+  useful and those which are not.  A printer which is located in
+  a remote facility (across a continent) is not useful, nor is a
+  printer which can't print in color, on transparencies, etc. if
+  that is what the client needs to do.  Printer discovery has to
+  be timely - so that when a printer comes on line, a print 
+  client or a print manager application can discover the printer
+  in a timely way.
+
+3.4.1.3  Protocol Requirements
+
+  Printer discovery implies the following requirements for service
+  discovery.
+
+    - The service discovery mechanism has to allow for discriminating
+      queries.  A client has to be able to discover a printer for which
+      it has a driver, for instance.
+
+    - Service discovery has to be able to discover the characteristics
+      of an advertised service.  A print client or a print manager has
+      to be able to find out the configuration and possibly even status
+      of the printer to be able to adequately provide information to the
+      print client or print manager which is searching for appropriate
+      print servers.  This information may be used for a user interface
+      or by a program so the format of the information has to be standardized.
+
+    - Service discovery has to be able to be done in a 'timely way.'  That
+      is, within a short number of seconds after activating a print server,
+      a user who is actively browsing for printer should be able to see the
+      device appear in a browser window, or a printer manager should be
+      able to begin managing the print server.
+
+3.4.2 Discover File Access Server
+
+3.4.2.1  Overview
+
+  File sharing is done using different protocols.  A file sharing client
+  is only interested in file sharing services which use the access protocol
+  it is capable of.   File sharing is typically done by human users - in
+  this case attributes of the file access server have to be discovered
+  so the human user can select which server to access.  File sharing is
+  done on a 'session basis' so timely rediscovery of selected file servers
+  is necessary.
+
+3.4.2.2  Key Points
+
+  File sharing is a key application of personal computing.  There are a 
+  variety of file access protocols available (NFS, Novell file access
+  protocol (?), AppleShare, NetBIOS/SMB, etc.) A client must be able to 
+  discover those file systems which exist on a network, which the client 
+  can get access to, that support the file access protocol the client is 
+  capable of using.  
+
+  Further, existing service discovery mechanisms for file 
+  access servers (from Novell, Apple and Microsoft proprietary protocols)
+  allow the user to discover something about the file system they would
+  access.  This include the name of the file system, a human readable
+  description of it as well as a 'group' or 'groups' that the file system
+  was shared to.  Since there may be many 'peers' in a network of personal
+  computing devices, it is critical that some grouping is possible, so
+  that users can locate file access servers that are meaningful to them
+  (located nearby, shared by colleagues close to them in the organization,
+  shared by those who will allow the user access to the files, file systems
+  whose content is of a general kind, etc.)  Further, grouping file access
+  servers is important to allow the service discovery activity to be 
+  scalable in a network containing many systems capable of (or actively)
+  providing file access service.  This scalability consideration is 
+  different than the previous point (where grouping services prevents
+  too much information to select from).  In this case, scalability 
+  implies that requests will only be received and processed by a subset
+  of the file access servers which advertise their services (or by a 
+  subset of the 'service discovery protocol infrastructure' to be more
+  general).  This will prevent service discovery from being a burden to
+  the network.  This is an extremely important point:  Experience has
+  shown that service discovery for services which are shared by many
+  personal computers in larger networks can have disastrous effects.
+  AppleTalk, Novell networks and Microsoft networks all suffer in 
+  performance for this reason.
+
+  Finally, file access is typically done on a 'session'
+  basis.  That is, when a user decides to access a file system, he or
+  she wants access to it over time.  If the file system is not available
+  for a time, the user wants to get access to it again when the file 
+  system is again available.  If the client system is moved or deactivated,
+  the user wants to be able to discover the same file system again when
+  the client device is again able to locate the previously discovered
+  and selected file access server.
+
+3.4.2.3  Protocol Requirements
+
+  File access server discovery implies the following requirements:
+
+  - Clients can discover the location of file access servers which 
+    support the file access protocol they support.
+
+  - Clients can discover only those file access servers which are
+    in a 'group' they are interested in.  This grouping has to be
+    possible along a variety of different conceptual lines (location,
+    organizational - like which department, or functional - like a
+    general description of the servers such as "reference library"
+    or "mailing list archives".)  This is possible in Novell, AppleTalk
+    and Microsoft networks.  It should be possible on IP networks in
+    general.
+
+  - The groupings listed above must be able to limit the effects
+    of the file access protocol on the network.  This allows for
+    scalable service discovery in a larger network.
+
+  - Clients can discover some information about file systems that 
+    they could choose to access (the name of the file system, a 
+    description of it and whether the user has access permission, 
+    at the very least).
+ 
+  - Clients should be able to rediscover the file system over time
+    so that the user can discover the same file access service 
+    even if that service goes down and comes back up, or if the 
+    client device moves or goes down, then is once again on a
+    network where the file access server is present.  
+
+3.4.3 Discover Manageable Device
+
+3.4.3.1  Overview
+
+  One important application of service discovery is the discovery of
+  manageable devices by a 'management' system.  Conversely, manageable
+  devices may need to discover their manager.  The relationship between
+  manager and managed system is different than is the case in most
+  service discovery applications since the manageable device is in
+  many respects a service with respect to the manager, but there is
+  usually only one manager and many manageable systems.
+
+3.4.3.2  Key Points
+
+  The management system (manager) needs to be able to discover devices
+  which support appropriate management services (management agents).
+  Currently this discovery is done in many networks by having the
+  manager scan all addresses in order to determine the location and
+  existence of all agents.  This does not scale well to larger address
+  spaces.
+
+  Managers need to discover agents in a timely way.  That is, when an
+  agent is activated, a manager needs to be able to discover it within 
+  a short number of seconds.
+
+  Managers often need to discover a set of agents which have a certain
+  configuration.  For instance, only those agents running on a certain
+  hardware platform, with a certain software version.  This allows the
+  manager to determine the population of agents which need an upgrade
+  immediately.  This is not to say that the service discovery mechanism
+  should replace the management protocol (whereby the manager can 
+  interrogate the agent and obtain or set specific management information).
+  The facility to find only specific agents allows the manager to 
+  discriminate among agents on the network so that it can interrogate
+  only that subset that are relevent.  This is important for scaling
+  management software to larger networks where there may be many many
+  agents.  This is even important on smaller networks where a specialized
+  manager is only able to manager a very specific subset of all devices.
+
+3.4.3.3  Protocol Requirements
+
+  The service discovery mechanisms for managers to find agents
+  (and thereby manageable devices) require the following:
+
+  - Managers have to be able to find all agents they can manage.
+
+  - Managers have to have the ability to discover agents shortly
+    after they are activated.
+
+  - Managers have to be able to discover only the subset of agents
+    that are relevant.  This means that managers have to be able to
+    discover agents on the basis of their hardware, software or other
+    device specification or status.  To some extent the service discovery
+    protocol has to return information about the agent to the manager,
+    but this enhances the manager-agent relationship.  It does not replace
+    the management protocol which can do specific management operations
+    (including very specific structured queries of an agent by a manager).
+ 
+3.4.4 Discover Service Discovery Infrastructure
+
+3.4.4.1  Overview
+
+  Service discovery protocols have two modes:  The first is used in a
+  zeroconf environment.  The protocol in this case may not scale very
+  well in a larger environment.  The second mode is to be used in a 
+  configured network.  In this case, the service discovery protocol
+  must scale well.  Clients discovering services and servers offering
+  services have to be able to discover 'service discovery infrastructure'
+  when it is present and transition to its use.  Further, configuration
+  must be able to be supplied to clients and servers so that they will
+  use the service discovery infrastructure scalably and appropriately.
+
+3.4.4.2  Key Points
+
+  Service discovery infrastructure has to be able to be discovered
+  quickly, and by all clients and servers which are using a service
+  discovery protocol.   This allows for a transition from an ad hoc
+  (multicast or broadcast based protocol) to one which is suitable 
+  for larger networks.  
+
+  This service discovery infrastructure provides a concentration of
+  service discovery information so that point to point messages can
+  be exchanged instead of all service discovery messages having to be
+  either multicasted (either solicitations or advertisements).
+
+  Clients and servers using a service discovery protocol in a zeroconf
+  environment have to be able to obtain configuration.  This configuration
+  will enable the clients and servers to use specific portions of the
+  service discovery infrastructure, or to use it in a particular way.
+  This allows, for instance, services to be advertised according to a
+  particular policy, as belonging to a particular department, in a 
+  particular location or network, etc.  Similarly, clients obtaining
+  configuration will only discover services which they are directed 
+  to, such as services in their department, hotel room, etc.
+
+3.4.4.3  Protocol Requirements
+
+  Requirements arising from discovery of service discovery infrastructure
+  include:
+
+  - Service discovery infrastructure provides a transition from zeroconf
+    service discovery protocol use to scalable and configured service
+    discovery protocol use.
+
+  - Service discovery infrastructure has to be discoverable by clients
+    and servers which use a service discovery protocol automatically,
+    and reasonably quickly.  The clients and servers have to use this
+    infrastructure if it becomes available to ensure scalable behavior.
+
+  - Configuration of clients and servers using a service discovery 
+    protocol has to be able to be done dynamicly.  This way clients
+    and servers will obtain the necessary configuration to operate
+    effectively in larger networks according to the service deployment
+    policy employed in the network the system is present in.
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan  6 14:36:15 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA20704
+	for <zeroconf-archive@odin.ietf.org>; Thu, 6 Jan 2000 14:36:12 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 75CD45DDCC; Thu,  6 Jan 2000 14:35:57 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 324605DDCF; Thu,  6 Jan 2000 14:35:57 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 729D25DDCC
+	for <zeroconf@merit.edu>; Thu,  6 Jan 2000 14:35:55 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id LAA24705
+	for <zeroconf@merit.edu>; Thu, 6 Jan 2000 11:35:52 -0800 (PST)
+Received: from vayne (muc-isdn-10 [129.157.164.110])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id UAA10842;
+	Thu, 6 Jan 2000 20:35:51 +0100 (MET)
+Date: Thu, 6 Jan 2000 20:43:34 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: whether service discovery is conclusive
+To: zeroconf@merit.edu
+Cc: erik.guttman@Germany.Sun.COM
+Message-ID: <Roam.SIMC.2.0.6.947187814.6609.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+(Apologies if this message is a duplicate).
+
+It is time to consider this closely.
+
+Either a service discovery mechanism finds services based on their
+'type' or it can use a more expressive querying mechanism.  A good
+comparison is between DNS SRV RRs which allow a service to be discovered
+by its type (which is like the name in /etc/services) and SLP which
+allows services to be discovered on the basis of this type *and* the
+attributes which the service advertises.  This way I can find all the
+printers *that* support postscript, *that* are in my building, *that*
+I am allowed to use, etc.
+
+Note that SLP (and LDAP, which SLP is compatible with) do not require
+everything which can be looked up to have attributes, nor do these
+protocols require that every query include attributes along with the
+name to look up.
+
+What 'directory' based approaches allow for, that naming or simple
+type-only based schemes do not, is selecting only the information which
+the user requires.  The user may well be software which cannot distinguish
+which of several services of the right type are actually better (ie. nearer,
+faster, offered by a friendly department, etc.)
+
+The most important aspect of conclusiveness is that it allows for far
+better scalability.  Clients will be able to start using the service
+right away instead of having to interrogate servers - and fewer services
+will match the clients requests, only those which the client can actually
+use.
+
+I include more discussion from a previous mail on service discovery, below.
+
+Erik
+
+>   c) Is service discover conclusive?
+>
+> Some clients do feature negociation with servers in order to reach
+> common settings for client-server communication.  It is possible that
+> during the course of feature negociation that a client will determine
+> that the server is not appropriate for the client to use.  
+>
+> This is distinct from service discovery.  In server discovery, a
+> client obtains the location of all servers which it can use.  If
+> a clients obtains the location of servers which it knows in advance
+> it can use, the service discovery is 'conclusive'.  This means the
+> client can begin to communicate with the server immediately - feature
+> negociation is not required, though in some cases it is useful.
+>
+> If a service discovery protocol does not allow a client to select a
+> service on the basis of its service characteristics, the client will
+> obtain a set of service locations as a result of discovery which it
+> may or may not be able to use.  Since service discovery is not
+> conclusive, the client must interrogate each server with a feature
+> negociation protocol.  These negociations may not in the end be
+> successful.  Further, since the service discovery protocol does not
+> support conclusive service discovery, *each* client-server protocol MUST
+> include feature negociation, complicating *all* of them.
+>
+> For this reason, a service discovery protocol SHOULD be allow a
+> client to issue requests for services which support service
+> characteristics it requires and thus enable conclusive service
+> discovery.
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan  6 14:54:37 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA21141
+	for <zeroconf-archive@odin.ietf.org>; Thu, 6 Jan 2000 14:54:36 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 043925DDCF; Thu,  6 Jan 2000 14:54:17 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id BA2B75DDD0; Thu,  6 Jan 2000 14:54:16 -0500 (EST)
+Received: from e23.nc.us.ibm.com (e23.nc.us.ibm.com [32.97.136.229])
+	by segue.merit.edu (Postfix) with ESMTP id 21F135DDCF
+	for <zeroconf@merit.edu>; Thu,  6 Jan 2000 14:54:15 -0500 (EST)
+Received: from southrelay02.raleigh.ibm.com (southrelay02.raleigh.ibm.com [9.37.3.209])
+	by e23.nc.us.ibm.com (8.9.3/8.9.3) with ESMTP id OAA20280
+	for <zeroconf@merit.edu>; Thu, 6 Jan 2000 14:40:04 -0600
+From: bamiller@us.ibm.com
+Received: from d54mta06.raleigh.ibm.com (d54mta06.raleigh.ibm.com [9.67.228.38])
+	by southrelay02.raleigh.ibm.com (8.8.8m2/NCO v2.06) with SMTP id OAA32458
+	for <zeroconf%merit.edu@internet.us.ibm.com>; Thu, 6 Jan 2000 14:54:09 -0500
+Received: by d54mta06.raleigh.ibm.com(Lotus SMTP MTA v4.6.5  (863.2 5-20-1999))  id 8525685E.006D5272 ; Thu, 6 Jan 2000 14:54:05 -0500
+X-Lotus-FromDomain: IBMUS
+To: zeroconf@merit.edu
+Message-ID: <8525685E.006D4F0B.00@d54mta06.raleigh.ibm.com>
+Date: Thu, 6 Jan 2000 14:47:25 -0500
+Subject: whether service discovery is conclusive
+Mime-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+
+I agree with Erik that conclusiveness is an appropriate objective (now that
+I understand better what is meant by that).  Clearly services ought to be
+able to be discovered based upon their characteristics (important for
+scalability, as Erik points out).
+
+
+Regards,
+Brent
+B. A. Miller RTP, NC
+(919) 543-6959 TIE 441
+FAX (919) 254-5739
+Internet: bamiller@us.ibm.com
+
+
+---------------------- Forwarded by Brent Miller/Raleigh/IBM on 01/06/2000
+02:45 PM ---------------------------
+
+Erik Guttman <Erik.Guttman@Germany.Sun.COM>@merit.edu on 01/06/2000
+02:43:34 PM
+
+Please respond to Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+
+Sent by:  owner-zeroconf@merit.edu
+
+
+To:   zeroconf@merit.edu
+cc:   erik.guttman@Germany.Sun.COM
+Subject:  whether service discovery is conclusive
+
+
+
+
+(Apologies if this message is a duplicate).
+
+It is time to consider this closely.
+
+Either a service discovery mechanism finds services based on their
+'type' or it can use a more expressive querying mechanism.  A good
+comparison is between DNS SRV RRs which allow a service to be discovered
+by its type (which is like the name in /etc/services) and SLP which
+allows services to be discovered on the basis of this type *and* the
+attributes which the service advertises.  This way I can find all the
+printers *that* support postscript, *that* are in my building, *that*
+I am allowed to use, etc.
+
+Note that SLP (and LDAP, which SLP is compatible with) do not require
+everything which can be looked up to have attributes, nor do these
+protocols require that every query include attributes along with the
+name to look up.
+
+What 'directory' based approaches allow for, that naming or simple
+type-only based schemes do not, is selecting only the information which
+the user requires.  The user may well be software which cannot distinguish
+which of several services of the right type are actually better (ie.
+nearer,
+faster, offered by a friendly department, etc.)
+
+The most important aspect of conclusiveness is that it allows for far
+better scalability.  Clients will be able to start using the service
+right away instead of having to interrogate servers - and fewer services
+will match the clients requests, only those which the client can actually
+use.
+
+I include more discussion from a previous mail on service discovery, below.
+
+Erik
+
+>   c) Is service discover conclusive?
+>
+> Some clients do feature negociation with servers in order to reach
+> common settings for client-server communication.  It is possible that
+> during the course of feature negociation that a client will determine
+> that the server is not appropriate for the client to use.
+>
+> This is distinct from service discovery.  In server discovery, a
+> client obtains the location of all servers which it can use.  If
+> a clients obtains the location of servers which it knows in advance
+> it can use, the service discovery is 'conclusive'.  This means the
+> client can begin to communicate with the server immediately - feature
+> negociation is not required, though in some cases it is useful.
+>
+> If a service discovery protocol does not allow a client to select a
+> service on the basis of its service characteristics, the client will
+> obtain a set of service locations as a result of discovery which it
+> may or may not be able to use.  Since service discovery is not
+> conclusive, the client must interrogate each server with a feature
+> negociation protocol.  These negociations may not in the end be
+> successful.  Further, since the service discovery protocol does not
+> support conclusive service discovery, *each* client-server protocol MUST
+> include feature negociation, complicating *all* of them.
+>
+> For this reason, a service discovery protocol SHOULD be allow a
+> client to issue requests for services which support service
+> characteristics it requires and thus enable conclusive service
+> discovery.
+
+
+
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  7 07:02:32 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA14548
+	for <zeroconf-archive@odin.ietf.org>; Fri, 7 Jan 2000 07:02:31 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id F39685DDB9; Fri,  7 Jan 2000 07:00:54 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 99B735DDD6; Fri,  7 Jan 2000 07:00:54 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id B7AFC5DDB9
+	for <zeroconf@merit.edu>; Fri,  7 Jan 2000 07:00:52 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id EAA03236;
+	Fri, 7 Jan 2000 04:00:49 -0800 (PST)
+Received: from vayne (muc-isdn-20 [129.157.164.120])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id NAA27617;
+	Fri, 7 Jan 2000 13:00:45 +0100 (MET)
+Date: Fri, 7 Jan 2000 13:08:28 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: security input for ZeroConf requirements
+To: zeroconf@merit.edu
+Cc: erik.guttman@Germany.Sun.COM, myron.hattig@intel.com
+Message-ID: <Roam.SIMC.2.0.6.947246908.508.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Myron,
+
+Please consider this as a contribution to section 4 of the ZeroConf
+Requirements draft.  
+
+A very important decision has to be made:  Are we going to require
+that security be configurable for zeroconf protocols?  It is clear
+that security is required for the 'big brother' configured protocols
+(ie. DHCP, DNS, MADCAP).  It is also clear that in a true ZeroConf
+setting (ie. NO configuration) security is not possible. What I am
+asking is if you are using ZeroConf protocols (ie. IP address
+autoconfiguration) should you allow for the possibility that you
+also have security configuration.  In that case IP address autoconf
+could be done in such a way that hosts without proper configuration
+would not be able to claim addresses.
+
+I sent a more detailed note on this topic to the mailing list.  Please
+review the requirements below as they include options 1 and 2.
+
+Note that for service discovery I did not include the option for 
+insecure operation.  Service discovery is not fundamentally different
+on zeroconf or configured networks - the (decentralized set of) servers
+themselves provide service location information whether they are in 
+unconfigured or configured networks.  Thus, secure operation is 
+equally important in either case.
+
+-----------------------------------------------------------------------
+
+The current section is set up as:
+
+4  Security Requirements
+4.1 IP Host Configuration
+4.2 Domain name to IP address resolution
+4.3 Multicast Address allocation
+4.4 Service Discovery
+
+-----------------------------------------------------------------------
+
+I suggest that this section be restructured as:
+
+4  Security Requirements
+
+   The principal goal of security requirements for ZeroConf
+   networking is to not make IP networking less secure than it is
+   without the use of ZeroConf protocols.  This is challenging since
+   ZeroConf provides the ability for any host to obtain host
+   configuration, to discover and to use network resources.  In the
+   case where ZeroConf access media is physically accessible (e.g.
+   wireless, powerline) or routed to additional network segments,
+   there is no longer any physical security.
+
+   The following sections are security considerations for the four
+   Areas which this document addresses. 
+
+4.1 ZeroConf Security Threat Analysis
+
+   The threats fall into three broad categories:
+
+   Hoarding: Hosts claim all available resources, whether they plan
+   to use them or not.  This is a form of denial of service attack.
+
+   Masquerading: Hosts can respond to requests that they should not
+   so they can masquerade as another host.
+
+   Antagonistic Server: A server could offer support for a critical
+   service but intentionally misconfigure hosts on the network.
+
+4.1.1 IP Host Configuration 
+
+   Potential threats include:
+   - A host could hoard IP addresses, denying others access to the
+     network.
+   - A host could pose as an antagonistic DHCP server and misconfigure 
+     other hosts on the network.
+
+4.1.2 Domain name to IP address resolution
+
+   Potential threats include:
+   - A host could masquerade, responding to names requests
+     illegitimately.
+   - A host could hoard names, responding to all 'claim' requests.
+   - A host could pose as an antagonistic DNS server and fail to
+     resolve names correctly, or intentionally resolve them
+     incorrectly.
+
+4.1.3 Multicast Address Allocation 
+
+   Potential threats include:
+   - A host could hoard multicast addresses, denying others the
+     ability to obtain them.
+
+4.1.4 Service Discovery
+
+   Potential threats include:
+   - Servers could masquerade by responding to service discovery
+     requests which they shouldn't respond to.
+   - A host could pose as an antagonistic service discovery
+     'infrastructure element.' Some service discovery protocols
+     offer a 'registry', 'directory', 'proxy' or other
+     infrastructure element for scalability.
+
+-----------------------------------------------------------------------
+New text should be added for the actual security requirements.
+
+4.2 Security Requirements
+
+   Protocols designed for host configuration, name resolution, service
+   discovery and multicast address allocation include security mechanisms.
+   These protocols have been designed for use in configured networks.
+   The same security mechanisms appropriate in a configured network is
+   not useful in a ZeroConf network.
+
+   ZeroConf requirements will not specify that all security threats
+   be addressed by ZeroConf protocols since it would be inappropriate 
+   to do so.
+
+   Security always requires configuration.  For that reason, no
+   secure operation will be possible on a network which has absolutely
+   no configuration.  
+
+   That is not the same as saying that ZeroConf requirements are silent 
+   with respect to security.  When configuration is added to a host using 
+   ZeroConf protocols, the host transitions to another mode of operation. 
+   In this case, the host which is appropriately configured may be able to 
+   counter threats posed to systems using ZeroConf protocols.
+
+   The ZeroConf requirements specify the transition from insecure to
+   secure operation.  A host fulfilling ZeroConf requirements will be
+   capable of secure operation in each protocol area, if it is supplied 
+   with appropriate security configuration (such as cryptographic keys.)
+
+4.2.1  IP Host Configuration
+
+   Hosts MUST be able to be configured to use DHCP authentication.
+
+   Option 1:
+
+      No provision is made for securing IP Host Configuration using
+      the ZeroConf protocol for IP Host Configuration.
+
+   Option 2:
+
+      Hosts MUST be able to be configured to use a ZeroConf protocol
+      for host configuration securely.  For example, a claim and defend
+      protocol used for host configuration would have to include security 
+      data with all messages.  A host in the ZeroConf network could verify
+      that another host's claim was legitimate or not. 
+
+4.2.2  Domain name to IP address resolution
+
+   Hosts MUST be able to be configured to use DNS Security.
+
+   Option 1:
+
+      No provision is made for securing the ZeroConf Domain Name 
+      to IP address resolution protocol.
+
+   Option 2:
+
+      Hosts MUST be able to be configured to use a ZeroConf protocol
+      for Domain name to IP address resolution securely.  For example, 
+      a 'reply' from the resolution protocol could be accompanied by
+      a 'signature' which could be verified before being accepted.
+      The security configuration would have to provide the server
+      portion of the protocol with the data needed to produce a 
+      'signature' which could only be produced if in possession of 
+      the configuration data.
+
+4.2.3  Multicast Address Allocation
+
+   Hosts MUST be able to be configured to use MADCAP security.
+
+   Option 1:
+
+      No provision is made for securing the ZeroConf protocol for
+      multicast address allocation.
+
+   Option 2:
+
+      Hosts MUST be able to be configured to use a ZeroConf protocol
+      for multicast address allocation securely.  For example, a claim 
+      and defend protocol used for multicast address allocation would 
+      have to include security data with all messages.  A host in the 
+      ZeroConf network could verify that another host's claim was 
+      legitimate or not. 
+
+4.2.4  Service Discovery
+
+   Both clients and servers MUST be able to be configured to use 
+   security mechanisms offered by the Service Discovery Protocol.  
+
+   These mechanisms allow a client to determine if both the service it 
+   discovers and the service discovery protocol infrastructure it uses
+   to discover services are 'legitimate.'
+
+   The service discovery protocol MUST provide mechanisms so that
+   a server can use security configuration to advertise service 
+   information in a way that clients can verify.  
+
+   The service discovery protocol MUST provide mechanisms so that
+   a client can use security configuration to verify service 
+   information it obtains.  The client is essentially verifying
+   that the server had possession of certain secrets.  The client
+   trusts that only 'legitimate' servers would possess these secrets.
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  7 07:03:40 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA14592
+	for <zeroconf-archive@odin.ietf.org>; Fri, 7 Jan 2000 07:03:40 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5A1205DDCF; Fri,  7 Jan 2000 07:01:26 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 96B905DDD2; Fri,  7 Jan 2000 07:01:24 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 74A115DDCF
+	for <zeroconf@merit.edu>; Fri,  7 Jan 2000 07:01:22 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id EAA03342
+	for <zeroconf@merit.edu>; Fri, 7 Jan 2000 04:01:19 -0800 (PST)
+Received: from vayne (muc-isdn-20 [129.157.164.120])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id NAA27623;
+	Fri, 7 Jan 2000 13:00:52 +0100 (MET)
+Date: Fri, 7 Jan 2000 12:52:36 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: zeroconf protocol security
+To: zeroconf@merit.edu
+Cc: erik.guttman@Germany.Sun.COM
+Message-ID: <Roam.SIMC.2.0.6.947245956.10578.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+We have a fundamental question to answer.  Do we want to assume that
+ZeroConf protocols will operate insecurely and leave security to their
+'big brother' protocols?  Or do we want to require that one *could*
+configure the ZeroConf protocols with security to allow them to be
+used (to some extent) securely.
+
+For example:
+
+IP host configuration will use a claim and defend protocol similar
+to (if not exactly) the protocol specified by 
+
+This has no security provision.  We could require that it could
+carry security information.  In this case we could not use ARP,
+since ARP is insecure.  To illustrate - 
+
+  . Each host must be able to be configured with a secret key, S.
+  . Probably a NONCE would have to be added to the message.
+  . Each claim is made with Keyed MD5 HMAC, using S.  The 16 byte
+    hash is included in the message.
+
+Hosts would simply ignore messages sent without the proper accompanying
+hash.  Benefits:
+
+  + A population of hosts which have been configured with the secret
+    key S would be able to resist a hoarding attack (where a host
+    claims to already own all IP addresses).
+
+Disadvantages:
+
+  - This complicates the claim and defend protocol.
+  - ARP would not be able to be used.
+  - The protection would not be very great - other hosts could still
+    use the IP addresses claimed by those who possess secret key S.
+
+Similar trade offs and discussion could be presented for multicast
+name to address resolution, name claim and defend (as mentioned in 
+section 3.2.1.2 of draft-ietf-zeroconf-reqts-01.txt) and multicast
+address allocation.
+
+What do you think?
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Jan  9 19:44:15 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA11358
+	for <zeroconf-archive@odin.ietf.org>; Sun, 9 Jan 2000 19:44:15 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E1EC75DDBC; Sun,  9 Jan 2000 19:44:01 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 94C085DDBD; Sun,  9 Jan 2000 19:44:01 -0500 (EST)
+Received: from ganymede.or.intel.com (ganymede.or.intel.com [134.134.248.3])
+	by segue.merit.edu (Postfix) with ESMTP id 77B685DDBC
+	for <zeroconf@merit.edu>; Sun,  9 Jan 2000 19:43:59 -0500 (EST)
+Received: from SMTP (orsmsxvs01-1.jf.intel.com [192.168.65.200])
+	by ganymede.or.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.18 2000/01/07 21:56:55 dmccart Exp $) with SMTP id QAA15822
+	for <zeroconf@merit.edu>; Sun, 9 Jan 2000 16:43:58 -0800 (PST)
+Received: from orsmsx28.jf.intel.com ([192.168.70.28]) by 192.168.70.200
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Mon, 10 Jan 2000 00:43:57 0000 (GMT)
+Received: by orsmsx28.jf.intel.com with Internet Mail Service (5.5.2448.0)
+	id <ZZZQRN6P>; Sun, 9 Jan 2000 16:43:56 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F26D5@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: whether service discovery is conclusive
+Date: Sun, 9 Jan 2000 16:43:55 -0800 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Brent, Erik,
+
+This was a great exchange!!!!  I'll let comments on the next version of the
+draft determine how close to the mark I've captured the consensus.
+
+BTW, I didn't know what several of the questions meant either. I listed the
+questions because others had previously asked them. ;-) Both of your answers
+were excellent! 
+
+Thanks,
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Jan  9 20:14:23 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA11482
+	for <zeroconf-archive@odin.ietf.org>; Sun, 9 Jan 2000 20:14:22 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A2BE85DDBD; Sun,  9 Jan 2000 20:14:12 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 650A25DDF2; Sun,  9 Jan 2000 20:14:12 -0500 (EST)
+Received: from thalia.fm.intel.com (thalia.fm.intel.com [132.233.247.11])
+	by segue.merit.edu (Postfix) with ESMTP id 0A6BB5DDBD
+	for <zeroconf@merit.edu>; Sun,  9 Jan 2000 20:14:10 -0500 (EST)
+Received: from SMTP (fmsmsxvs02-1.fm.intel.com [132.233.42.202])
+	by thalia.fm.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.18 2000/01/07 21:56:55 dmccart Exp $) with SMTP id BAA11873
+	for <zeroconf@merit.edu>; Mon, 10 Jan 2000 01:14:42 GMT
+Received: from fmsmsx29.FM.INTEL.COM ([132.233.48.29]) by 132.233.48.202
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Mon, 10 Jan 2000 01:14:08 0000 (GMT)
+Received: by fmsmsx29.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <ZZZSKC66>; Sun, 9 Jan 2000 17:14:07 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F26D6@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Sun, 9 Jan 2000 17:14:05 -0800 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Erik,
+
+Thanks, this will be a copy/paste with some edits.
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 14 10:42:27 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA18551
+	for <zeroconf-archive@odin.ietf.org>; Fri, 14 Jan 2000 10:42:24 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A5D095DE38; Fri, 14 Jan 2000 10:42:08 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 5CA9D5DE39; Fri, 14 Jan 2000 10:42:08 -0500 (EST)
+Received: from monitor.internaut.com (mg-206253202-42.ricochet.net [206.253.202.42])
+	by segue.merit.edu (Postfix) with ESMTP id 965525DE38
+	for <zeroconf@merit.edu>; Fri, 14 Jan 2000 10:41:59 -0500 (EST)
+Received: from vaiobean ([204.57.137.45])
+	by monitor.internaut.com (8.9.2/8.8.8) with SMTP id HAA48658;
+	Fri, 14 Jan 2000 07:32:21 -0800 (PST)
+Reply-To: <aboba@internaut.com>
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "'Erik Guttman'" <Erik.Guttman@Germany.Sun.COM>, <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Fri, 14 Jan 2000 07:41:44 -0800
+Message-ID: <022e01bf5ea5$deedbb80$2d8939cc@ntdev.microsoft.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook CWS, Build 9.0.2416 (9.0.2910.0)
+In-Reply-To: <Roam.SIMC.2.0.6.947245956.10578.erikg@sun-ffm.germany>
+Importance: Normal
+X-Mimeole: Produced By Microsoft MimeOLE V5.00.2919.6700
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+My take on this is that zeroconf networks should not create
+or require security mechanisms above and beyond those 
+already available in non-zeroconf environments. If
+simpler security mechanisms are needed then they should
+be created to apply to both zeroconf and non-zeroconf
+networks. For example, creating a secure ARP alternative 
+just for zeroconf seems inappropriate. Either this is
+generally useful (I doubt it) or not. 
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 14 11:08:58 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA19040
+	for <zeroconf-archive@odin.ietf.org>; Fri, 14 Jan 2000 11:08:55 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8A6065DE3C; Fri, 14 Jan 2000 11:08:40 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 2B1C55DE39; Fri, 14 Jan 2000 11:08:40 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 5190C5DE39
+	for <zeroconf@merit.edu>; Fri, 14 Jan 2000 11:08:17 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id IAA20043;
+	Fri, 14 Jan 2000 08:08:14 -0800 (PST)
+Received: from vayne (muc-isdn-13 [129.157.164.113])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id RAA25560;
+	Fri, 14 Jan 2000 17:08:11 +0100 (MET)
+Date: Fri, 14 Jan 2000 17:15:55 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: RE: zeroconf protocol security
+To: aboba@internaut.com
+Cc: "'Erik Guttman'" <Erik.Guttman@Germany.Sun.COM>, zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <022e01bf5ea5$deedbb80$2d8939cc@ntdev.microsoft.com>
+Message-ID: <Roam.SIMC.2.0.6.947866555.3544.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> My take on this is that zeroconf networks should not create
+> or require security mechanisms above and beyond those 
+> already available in non-zeroconf environments. If
+> simpler security mechanisms are needed then they should
+> be created to apply to both zeroconf and non-zeroconf
+> networks. For example, creating a secure ARP alternative 
+> just for zeroconf seems inappropriate. Either this is
+> generally useful (I doubt it) or not. 
+
+I assume this is in response to my posting to the list on Wednesday:
+
+> 4.2.1  IP Host Configuration
+>
+>    Hosts MUST be able to be configured to use DHCP authentication.
+>
+>    Option 1:
+>
+>       No provision is made for securing IP Host Configuration using
+>       the ZeroConf protocol for IP Host Configuration.
+>
+>    Option 2:
+>
+>       Hosts MUST be able to be configured to use a ZeroConf protocol
+>       for host configuration securely.  For example, a claim and defend
+>       protocol used for host configuration would have to include security 
+>       data with all messages.  A host in the ZeroConf network could verify
+>       that another host's claim was legitimate or not. 
+
+You are essentially saying you support Option 1.  I personally agree with 
+you.  I included this text to get people discussing this topic.
+
+Thanks for getting the ball rolling :^)
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 14 12:22:09 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA20362
+	for <zeroconf-archive@odin.ietf.org>; Fri, 14 Jan 2000 12:22:09 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3C8025DE3E; Fri, 14 Jan 2000 12:21:31 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 665265DD98; Fri, 14 Jan 2000 12:21:27 -0500 (EST)
+Received: from baucis.sc.intel.com (baucis.sc.intel.com [143.183.152.22])
+	by segue.merit.edu (Postfix) with ESMTP id 8320F5DE42
+	for <zeroconf@merit.edu>; Fri, 14 Jan 2000 12:21:17 -0500 (EST)
+Received: from SMTP (fmsmsxvs03-1.fm.intel.com [132.233.42.203])
+	by baucis.sc.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.18 2000/01/07 21:56:55 dmccart Exp $) with SMTP id JAA29375
+	for <zeroconf@merit.edu>; Fri, 14 Jan 2000 09:21:10 -0800 (PST)
+Received: from fmsmsx19.fm.intel.com ([132.233.48.19]) by 132.233.48.203
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Fri, 14 Jan 2000 17:21:09 0000 (GMT)
+Received: by fmsmsx19.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <ZZZ635A5>; Fri, 14 Jan 2000 09:21:08 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F2712@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: zeroconf protocol security
+Date: Fri, 14 Jan 2000 09:21:07 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I also prefer option 1.
+
+-myron
+
+> > 4.2.1  IP Host Configuration
+> >
+> >    Hosts MUST be able to be configured to use DHCP authentication.
+> >
+> >    Option 1:
+> >
+> >       No provision is made for securing IP Host Configuration using
+> >       the ZeroConf protocol for IP Host Configuration.
+> >
+> >    Option 2:
+> >
+> >       Hosts MUST be able to be configured to use a ZeroConf protocol
+> >       for host configuration securely.  For example, a 
+> claim and defend
+> >       protocol used for host configuration would have to 
+> include security 
+> >       data with all messages.  A host in the ZeroConf 
+> network could verify
+> >       that another host's claim was legitimate or not. 
+
+
+
+
+
+From owner-zeroconf@merit.edu  Sat Jan 15 13:22:08 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA13902
+	for <zeroconf-archive@odin.ietf.org>; Sat, 15 Jan 2000 13:22:08 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 876705DDFC; Sat, 15 Jan 2000 13:16:26 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id B56E65DE00; Sat, 15 Jan 2000 13:16:25 -0500 (EST)
+Received: from monitor.internaut.com (mg-206253202-42.ricochet.net [206.253.202.42])
+	by segue.merit.edu (Postfix) with ESMTP id DF2AB5DDFB
+	for <zeroconf@merit.edu>; Sat, 15 Jan 2000 13:16:06 -0500 (EST)
+Received: from vaiobean ([204.57.137.45])
+	by monitor.internaut.com (8.9.2/8.8.8) with SMTP id KAA55351;
+	Sat, 15 Jan 2000 10:07:08 -0800 (PST)
+Reply-To: <aboba@internaut.com>
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "'Hattig, Myron'" <myron.hattig@intel.com>, <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Sat, 15 Jan 2000 10:16:36 -0800
+Message-ID: <025101bf5f84$a9d19630$2d8939cc@ntdev.microsoft.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook CWS, Build 9.0.2416 (9.0.2910.0)
+In-Reply-To: <4148FEAAD879D311AC5700A0C969E8904F2712@orsmsx35.jf.intel.com>
+Importance: Normal
+X-Mimeole: Produced By Microsoft MimeOLE V5.00.2919.6700
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+> >    Hosts MUST be able to be configured to use DHCP authentication.
+
+I'm curious as to whether the intent of the above is to add DHCP
+authentication support as a Host Requirement, since you can't
+configure a host to use DHCP authentication unless the host supports
+the protocol in the first place. I might substitute something
+along the lines "if the host supports DHCP Authentication then
+it must be configurable to use it in a zeroconf environment."
+
+I'd also note that DHCP authentication comes in several flavors.
+In the Appendix of the draft there is a "Universal secret" proposal
+which allows all DHCP keys to be derived from a single master secret. 
+This isn't particularly secure (since everyone knows the master
+secret) but it is simple. Is this what folks had in mind? 
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Jan 16 13:37:36 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA10474
+	for <zeroconf-archive@odin.ietf.org>; Sun, 16 Jan 2000 13:37:35 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B4CA75DDF3; Sun, 16 Jan 2000 13:36:43 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 15F015DDFE; Sun, 16 Jan 2000 13:36:43 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 32EC65DDF3
+	for <zeroconf@merit.edu>; Sun, 16 Jan 2000 13:34:39 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id KAA20109;
+	Sun, 16 Jan 2000 10:34:37 -0800 (PST)
+Received: from vayne (muc-isdn-18 [129.157.164.118])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id TAA04911;
+	Sun, 16 Jan 2000 19:34:34 +0100 (MET)
+Date: Sun, 16 Jan 2000 19:42:18 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: RE: zeroconf protocol security
+To: aboba@internaut.com
+Cc: "'Hattig, Myron'" <myron.hattig@intel.com>, zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <025101bf5f84$a9d19630$2d8939cc@ntdev.microsoft.com>
+Message-ID: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> > >    Hosts MUST be able to be configured to use DHCP authentication.
+> 
+> I'm curious as to whether the intent of the above is to add DHCP
+> authentication support as a Host Requirement, since you can't
+> configure a host to use DHCP authentication unless the host supports
+> the protocol in the first place. I might substitute something
+> along the lines "if the host supports DHCP Authentication then
+> it must be configurable to use it in a zeroconf environment."
+> 
+> I'd also note that DHCP authentication comes in several flavors.
+> In the Appendix of the draft there is a "Universal secret" proposal
+> which allows all DHCP keys to be derived from a single master secret. 
+> This isn't particularly secure (since everyone knows the master
+> secret) but it is simple. Is this what folks had in mind? 
+> 
+
+I added this mainly to provoke discussion.  The basic question is do
+we specify mandatory support for security capabilities or not?  Would
+it be acceptable (to the IESG, IETF, etc.) if ZC didn't specify how to
+transition to secure operation from insecure zero configuration protocols
+for each protocol area?
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Jan 18 17:11:44 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA06538
+	for <zeroconf-archive@odin.ietf.org>; Tue, 18 Jan 2000 17:11:44 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 607A65DEAF; Tue, 18 Jan 2000 16:38:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7BA745DF83; Tue, 18 Jan 2000 16:33:49 -0500 (EST)
+Received: from monitor.internaut.com (mg-206253202-42.ricochet.net [206.253.202.42])
+	by segue.merit.edu (Postfix) with ESMTP id F3E295DECA
+	for <zeroconf@merit.edu>; Tue, 18 Jan 2000 15:42:01 -0500 (EST)
+Received: from vaiobean ([204.57.137.45])
+	by monitor.internaut.com (8.9.2/8.8.8) with SMTP id MAA59215;
+	Tue, 18 Jan 2000 12:31:05 -0800 (PST)
+Reply-To: <aboba@internaut.com>
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "'Erik Guttman'" <Erik.Guttman@Germany.Sun.COM>
+Cc: "'Hattig, Myron'" <myron.hattig@intel.com>, <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Tue, 18 Jan 2000 12:40:35 -0800
+Message-ID: <028d01bf61f4$4622e630$2d8939cc@ntdev.microsoft.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook CWS, Build 9.0.2416 (9.0.2910.0)
+In-Reply-To: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany>
+Importance: Normal
+X-Mimeole: Produced By Microsoft MimeOLE V5.00.2919.6700
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>Would it be acceptable (to the IESG, IETF, etc.) if ZC didn't specify how
+to
+>transition to secure operation from insecure zero configuration protocols
+>for each protocol area?
+
+It would be useful to be able to take a work laptop that was
+configured securely and bring it home  without having to
+reconfigure everything. I hope we can achieve that.
+
+I think this raises some interesting questions though. To make this
+transition, you need to have an idea of where you are. If the
+protocols involved don't allow this to be communicated, or if
+credentials can't be negotiated, then this kind of graceful
+transition between locations will be difficult to achieve.
+
+I don't want to pick on DHCP authentication, but I think it's
+a good example of the issues that you can run into. Ideally,
+I'd want to be able to bring my laptop to work and have it
+authenticate there, but when it comes how where my DHCP is
+*unauthenticated* I'd want it to work there too.
+
+Let's assume I bring the laptop home, where there is no
+DHCP authentication. My laptop doesn't know it's home and
+so it is set for authenticated DHCP. Unless it will
+accept unauthenticated DHCPOFFERs I am going to refuse
+all DHCPOFFERs and end up auto-configuring my IP address.
+Configuring the laptop to always accept unauthenticated
+offers might not make sense for my office environment, so
+unless I can know for *sure* that I am home, I'll have
+a problem.
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Jan 18 21:32:44 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA08723
+	for <zeroconf-archive@odin.ietf.org>; Tue, 18 Jan 2000 21:32:43 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 503125DD95; Tue, 18 Jan 2000 21:32:19 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 0FAEB5DD9C; Tue, 18 Jan 2000 21:32:19 -0500 (EST)
+Received: from mailman.cisco.com (mailman.cisco.com [171.68.225.9])
+	by segue.merit.edu (Postfix) with ESMTP id 20EBF5DD95
+	for <zeroconf@merit.edu>; Tue, 18 Jan 2000 21:32:17 -0500 (EST)
+Received: from bigger-dawgs ([171.70.114.134]) by mailman.cisco.com (8.8.8+Sun/CISCO.SERVER.1.2) with ESMTP id SAA17713; Tue, 18 Jan 2000 18:28:16 -0800 (PST)
+Message-Id: <4.2.2.20000118211629.00a2ea20@lint.cisco.com>
+X-Sender: pferguso@lint.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.2.2 
+Date: Tue, 18 Jan 2000 21:28:07 -0500
+To: <aboba@internaut.com>
+From: Paul Ferguson <ferguson@cisco.com>
+Subject: RE: zeroconf protocol security
+Cc: zeroconf@merit.edu
+In-Reply-To: <028d01bf61f4$4622e630$2d8939cc@ntdev.microsoft.com>
+References: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Bernard, et. al.,
+
+I came into this discussion late, my apologies, so
+I don't have a lot of historical reference on what has
+been discussed on the mailing list thus far.
+
+Having said that, I'm a little concerned on the "obsession"
+with authenticated autoconfig, at least in the short term.
+It would appear to me (personal opinion only) that trying to
+achieve "perfect" or "near-perfect" encrypted autoconfig as
+a first phase deployable protocol is a non-starter, and not
+reasonable for this working group as a deliverable to satisfy
+what is need in the short-term.
+
+And, having said that, I would be quite content to see an
+in-home, or end-user, device use simple DHCP as an autoconfig
+mechanism in the short-term (perhaps with some extensions), and
+worry about secure autoconfig cruft as a longer-term issue, perhaps
+on the order of a year, or two. There are standards & deployment
+issues outside the scope of the WG which deal with the issues (which
+we cannot directly control) which may not "bake out" completely
+for ZC to be a "secure" service from Day 1.
+
+As I said, I've missed all the discussion prior to today, and I'm
+happy to entertain any reasoning on why I'm completely off-base.
+
+Thanks,
+
+- paul
+
+
+
+At 12:40 PM 01/18/2000 -0800, Bernard Aboba wrote:
+
+>It would be useful to be able to take a work laptop that was
+>configured securely and bring it home  without having to
+>reconfigure everything. I hope we can achieve that.
+>
+>I think this raises some interesting questions though. To make this
+>transition, you need to have an idea of where you are. If the
+>protocols involved don't allow this to be communicated, or if
+>credentials can't be negotiated, then this kind of graceful
+>transition between locations will be difficult to achieve.
+>
+>I don't want to pick on DHCP authentication, but I think it's
+>a good example of the issues that you can run into. Ideally,
+>I'd want to be able to bring my laptop to work and have it
+>authenticate there, but when it comes how where my DHCP is
+>*unauthenticated* I'd want it to work there too.
+>
+>Let's assume I bring the laptop home, where there is no
+>DHCP authentication. My laptop doesn't know it's home and
+>so it is set for authenticated DHCP. Unless it will
+>accept unauthenticated DHCPOFFERs I am going to refuse
+>all DHCPOFFERs and end up auto-configuring my IP address.
+>Configuring the laptop to always accept unauthenticated
+>offers might not make sense for my office environment, so
+>unless I can know for *sure* that I am home, I'll have
+>a problem.
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan 20 04:28:37 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA24013
+	for <zeroconf-archive@odin.ietf.org>; Thu, 20 Jan 2000 04:28:36 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3AF605DDA5; Thu, 20 Jan 2000 04:28:18 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id E9A5B5DD91; Thu, 20 Jan 2000 04:28:17 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 039F85DDA5
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 04:28:16 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id BAA17399;
+	Thu, 20 Jan 2000 01:28:07 -0800 (PST)
+Received: from germany.sun.com (muc-isdn-19 [129.157.164.119])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with ESMTP id KAA10044;
+	Thu, 20 Jan 2000 10:28:03 +0100 (MET)
+Message-ID: <3886D6F4.F6E37204@germany.sun.com>
+Date: Thu, 20 Jan 2000 10:35:48 +0100
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik.Guttman@sun.com
+Organization: Sun Microsystems
+X-Mailer: Mozilla 4.7 [en] (X11; U; SunOS 5.5.1 sun4m)
+X-Accept-Language: de-DE, fr-FR, en
+MIME-Version: 1.0
+To: Paul Ferguson <ferguson@cisco.com>
+Cc: aboba@internaut.com, zeroconf@merit.edu
+Subject: Re: zeroconf protocol security
+References: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany> <4.2.2.20000118211629.00a2ea20@lint.cisco.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+
+Paul,
+
+The underlying concern is that we don't make IP *less* secure
+by adding ZeroConfig features.
+
+There are basicly two possibilities.  The WG could assert that:
+
+ * Host autoconfiguration should be done without security
+   as autoconfiguration is used precisely on networks with 
+   zero or very little administration
+
+ * Dynamic host configuration (ie. DHCP) will define its
+   own mechanisms and requirements for authentication -
+   it is beyond the scope of the ZEROCONF WG to define these
+   requirements
+
+Or:
+
+ * Host autoconfiguration protocols have to include configurability
+   for secure operation so that it is possible to restrict access
+   to network resources 
+
+ * DHCP security is a requirement for ZeroConf protocol hosts
+   since without it any host masquerading as a DHCP server 
+   could disrupt ZeroConf operation
+
+What do you all think?  Note that there is an analogous set of
+choices to be made for DNS, MADCAP and {SLP,SSDP,???}.
+
+Paul, I agree that if we do require authenticated autoconf from the 
+beginning we will raise the bar and complicate standardization &
+deplyability.
+
+Erik
+
+Paul Ferguson wrote:
+> 
+> Bernard, et. al.,
+> 
+> I came into this discussion late, my apologies, so
+> I don't have a lot of historical reference on what has
+> been discussed on the mailing list thus far.
+> 
+> Having said that, I'm a little concerned on the "obsession"
+> with authenticated autoconfig, at least in the short term.
+> It would appear to me (personal opinion only) that trying to
+> achieve "perfect" or "near-perfect" encrypted autoconfig as
+> a first phase deployable protocol is a non-starter, and not
+> reasonable for this working group as a deliverable to satisfy
+> what is need in the short-term.
+> 
+> And, having said that, I would be quite content to see an
+> in-home, or end-user, device use simple DHCP as an autoconfig
+> mechanism in the short-term (perhaps with some extensions), and
+> worry about secure autoconfig cruft as a longer-term issue, perhaps
+> on the order of a year, or two. There are standards & deployment
+> issues outside the scope of the WG which deal with the issues (which
+> we cannot directly control) which may not "bake out" completely
+> for ZC to be a "secure" service from Day 1.
+> 
+> As I said, I've missed all the discussion prior to today, and I'm
+> happy to entertain any reasoning on why I'm completely off-base.
+> 
+> Thanks,
+> 
+> - paul
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan 20 05:21:49 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA24253
+	for <zeroconf-archive@odin.ietf.org>; Thu, 20 Jan 2000 05:21:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 0DDDB5DD91; Thu, 20 Jan 2000 05:21:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C1C0B5DDA5; Thu, 20 Jan 2000 05:21:37 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 0B1815DD91
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 05:21:36 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id CAA01430;
+	Thu, 20 Jan 2000 02:21:32 -0800 (PST)
+Received: from germany.sun.com (muc-isdn-19 [129.157.164.119])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with ESMTP id LAA13529;
+	Thu, 20 Jan 2000 11:21:28 +0100 (MET)
+Message-ID: <3886E37A.6491D80@germany.sun.com>
+Date: Thu, 20 Jan 2000 11:29:14 +0100
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik.Guttman@sun.com
+Organization: Sun Microsystems
+X-Mailer: Mozilla 4.7 [en] (X11; U; SunOS 5.5.1 sun4m)
+X-Accept-Language: de-DE, fr-FR, en
+MIME-Version: 1.0
+To: aboba@internaut.com
+Cc: "'Hattig, Myron'" <myron.hattig@intel.com>, zeroconf@merit.edu,
+        erik.guttman@germany.sun.com
+Subject: Re: zeroconf protocol security
+References: <028d01bf61f4$4622e630$2d8939cc@ntdev.microsoft.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+
+Bernard Aboba wrote:
+> Let's assume I bring the laptop home, where there is no
+> DHCP authentication. My laptop doesn't know it's home and
+> so it is set for authenticated DHCP. Unless it will
+> accept unauthenticated DHCPOFFERs I am going to refuse
+> all DHCPOFFERs and end up auto-configuring my IP address.
+> Configuring the laptop to always accept unauthenticated
+> offers might not make sense for my office environment, so
+> unless I can know for *sure* that I am home, I'll have
+> a problem.
+
+Let's follow this through:  If I set up security parameters, I expect 
+my computer to use them - as the default.  I get configured as long as 
+I am at work, but when I come home - I don't.  
+
+If I *automatically* switch to zero-security operation, I will not be 
+secure at work any more.  
+
+IMO if you configure a system, you have to configure it again to get its
+behavior to change.  
+
+The human interface issue is like *I've put a padlock* on my system's
+fuse 
+box.  Its my choice to *take the padlock off* and open the system up for 
+anyone to rewire it.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan 20 06:02:07 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA24501
+	for <zeroconf-archive@odin.ietf.org>; Thu, 20 Jan 2000 06:02:06 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4606B5DD91; Thu, 20 Jan 2000 06:01:48 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 03FC75DDB3; Thu, 20 Jan 2000 06:01:47 -0500 (EST)
+Received: from mailman.cisco.com (mailman.cisco.com [171.68.225.9])
+	by segue.merit.edu (Postfix) with ESMTP id 1F3BF5DD91
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 06:01:46 -0500 (EST)
+Received: from bigger-dawgs ([171.70.114.134]) by mailman.cisco.com (8.8.8+Sun/CISCO.SERVER.1.2) with ESMTP id DAA15421; Thu, 20 Jan 2000 03:01:43 -0800 (PST)
+Message-Id: <4.2.2.20000120055610.00a30310@lint.cisco.com>
+X-Sender: pferguso@lint.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.2.2 
+Date: Thu, 20 Jan 2000 06:01:33 -0500
+To: Erik.Guttman@sun.com
+From: Paul Ferguson <ferguson@cisco.com>
+Subject: Re: zeroconf protocol security
+Cc: zeroconf@merit.edu
+In-Reply-To: <3886D6F4.F6E37204@germany.sun.com>
+References: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany>
+ <4.2.2.20000118211629.00a2ea20@lint.cisco.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 10:35 AM 01/20/2000 +0100, Erik Guttman wrote:
+
+>The underlying concern is that we don't make IP *less* secure
+>by adding ZeroConfig features.
+
+Agreed.
+
+But let's examine this for a second. What feature(s) of IP
+would be made less secure by making it possible for a device
+to plugged into a ZC-capable segment and autoconfigured? I'm
+not so sure this isn't a simple access-control issue.
+
+>There are basicly two possibilities.  The WG could assert that:
+>
+>  * Host autoconfiguration should be done without security
+>    as autoconfiguration is used precisely on networks with
+>    zero or very little administration
+>
+>  * Dynamic host configuration (ie. DHCP) will define its
+>    own mechanisms and requirements for authentication -
+>    it is beyond the scope of the ZEROCONF WG to define these
+>    requirements
+>
+>Or:
+>
+>  * Host autoconfiguration protocols have to include configurability
+>    for secure operation so that it is possible to restrict access
+>    to network resources
+>
+>  * DHCP security is a requirement for ZeroConf protocol hosts
+>    since without it any host masquerading as a DHCP server
+>    could disrupt ZeroConf operation
+
+Gut reaction: I'd personally opt for the former. The latter
+would tend to lead towards feeping creaturism.
+
+>What do you all think?  Note that there is an analogous set of
+>choices to be made for DNS, MADCAP and {SLP,SSDP,???}.
+>
+>Paul, I agree that if we do require authenticated autoconf from the
+>beginning we will raise the bar and complicate standardization &
+>deplyability.
+
+Ditto.
+
+- paul
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan 20 08:36:27 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA27896
+	for <zeroconf-archive@odin.ietf.org>; Thu, 20 Jan 2000 08:36:27 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AE2D05DDB3; Thu, 20 Jan 2000 08:36:09 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6CD165DD91; Thu, 20 Jan 2000 08:36:09 -0500 (EST)
+Received: from smtprch1.nortel.com (smtprch1.nortelnetworks.com [192.135.215.14])
+	by segue.merit.edu (Postfix) with ESMTP id E8FC55DDB3
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 08:36:07 -0500 (EST)
+Received: from zsc4c002.corpwest.baynetworks.com (actually h0295.s86b1.BayNetworks.COM) 
+          by smtprch1.nortel.com; Thu, 20 Jan 2000 07:34:57 -0600
+Received: from zbl6c008.corpeast.baynetworks.com ([132.245.205.58]) 
+          by zsc4c002.corpwest.baynetworks.com 
+          with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2448.0) 
+          id D1NMJ496; Thu, 20 Jan 2000 05:34:52 -0800
+Received: from nortelnetworks.com (extranet-139-102.corpeast.baynetworks.com [132.245.139.102]) 
+          by zbl6c008.corpeast.baynetworks.com 
+          with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2448.0) 
+          id D17VN48J; Thu, 20 Jan 2000 08:34:50 -0500
+Message-ID: <38870EE4.F8DBDF93@nortelnetworks.com>
+Date: Thu, 20 Jan 2000 08:34:28 -0500
+From: "Matt Squire" <msquire@nortelnetworks.com>
+Organization: Nortel Networks
+X-Mailer: Mozilla 4.7 [en] (Win95; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Erik.Guttman@sun.com
+Cc: zeroconf@merit.edu
+Subject: Re: zeroconf protocol security
+References: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany> <4.2.2.20000118211629.00a2ea20@lint.cisco.com> <3886D6F4.F6E37204@germany.sun.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+> 
+> There are basicly two possibilities.  The WG could assert that:
+> 
+>  * Host autoconfiguration should be done without security
+>    as autoconfiguration is used precisely on networks with
+>    zero or very little administration
+> 
+>  * Dynamic host configuration (ie. DHCP) will define its
+>    own mechanisms and requirements for authentication -
+>    it is beyond the scope of the ZEROCONF WG to define these
+>    requirements
+> 
+> Or:
+> 
+>  * Host autoconfiguration protocols have to include configurability
+>    for secure operation so that it is possible to restrict access
+>    to network resources
+> 
+>  * DHCP security is a requirement for ZeroConf protocol hosts
+>    since without it any host masquerading as a DHCP server
+>    could disrupt ZeroConf operation
+> 
+> What do you all think?  Note that there is an analogous set of
+> choices to be made for DNS, MADCAP and {SLP,SSDP,???}.
+> 
+
+Here's one vote for the first alternative.
+
+- Matt
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan 20 12:29:03 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA08457
+	for <zeroconf-archive@odin.ietf.org>; Thu, 20 Jan 2000 12:29:03 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 64DFB5DDD0; Thu, 20 Jan 2000 12:28:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 23F485DDD2; Thu, 20 Jan 2000 12:28:38 -0500 (EST)
+Received: from chmls05.mediaone.net (ne.mediaone.net [24.128.1.70])
+	by segue.merit.edu (Postfix) with ESMTP id F16F05DDD0
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 12:28:06 -0500 (EST)
+Received: from xantos (rcq.ne.mediaone.net [24.218.24.194])
+	by chmls05.mediaone.net (8.8.7/8.8.7) with SMTP id MAA04070
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 12:28:01 -0500 (EST)
+Message-Id: <4.1.20000120120911.01da5ae0@pop.tiac.net>
+X-Sender: rcq@206.15.168.67
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.1 
+Date: Thu, 20 Jan 2000 12:27:56 -0500
+To: zeroconf@merit.edu
+From: Bob Quinn <rcq@stardust.com>
+Subject: Re: zeroconf protocol security
+In-Reply-To: <4.2.2.20000120055610.00a30310@lint.cisco.com>
+References: <3886D6F4.F6E37204@germany.sun.com>
+ <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany>
+ <4.2.2.20000118211629.00a2ea20@lint.cisco.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I would echo Paul's sentiments (below).  I have trouble 
+imagining security without manual configuration, and since the 
+goal here is zero configuration that would seem to rule out a 
+security requirement (at least initially).  This seems reasonable 
+since physical connection to the network is the first line
+of defense and vulnerable connection-less media (e.g., wireless) 
+typically have their own (configurable) security at the MAC layer.
+
+With regards to Bernard's question, I think Erik's analogy to 
+a padlock is fitting.  Security, in this respect, is binary: 
+once turned-on it must require manual intervention to turn it off.  
+
+rgds,
+bq
+
+At 06:01 AM 01/20/2000 , Paul Ferguson wrote:
+>At 10:35 AM 01/20/2000 +0100, Erik Guttman wrote:
+>
+>>The underlying concern is that we don't make IP *less* secure
+>>by adding ZeroConfig features.
+>
+>Agreed.
+>
+>But let's examine this for a second. What feature(s) of IP
+>would be made less secure by making it possible for a device
+>to plugged into a ZC-capable segment and autoconfigured? I'm
+>not so sure this isn't a simple access-control issue.
+>
+>>There are basicly two possibilities.  The WG could assert that:
+>>
+>>  * Host autoconfiguration should be done without security
+>>    as autoconfiguration is used precisely on networks with
+>>    zero or very little administration
+>>
+>>  * Dynamic host configuration (ie. DHCP) will define its
+>>    own mechanisms and requirements for authentication -
+>>    it is beyond the scope of the ZEROCONF WG to define these
+>>    requirements
+>>
+>>Or:
+>>
+>>  * Host autoconfiguration protocols have to include configurability
+>>    for secure operation so that it is possible to restrict access
+>>    to network resources
+>>
+>>  * DHCP security is a requirement for ZeroConf protocol hosts
+>>    since without it any host masquerading as a DHCP server
+>>    could disrupt ZeroConf operation
+>
+>Gut reaction: I'd personally opt for the former. The latter
+>would tend to lead towards feeping creaturism.
+>
+>>What do you all think?  Note that there is an analogous set of
+>>choices to be made for DNS, MADCAP and {SLP,SSDP,???}.
+>>
+>>Paul, I agree that if we do require authenticated autoconf from the
+>>beginning we will raise the bar and complicate standardization &
+>>deplyability.
+>
+>Ditto.
+>
+>- paul
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan 20 13:13:16 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA10559
+	for <zeroconf-archive@odin.ietf.org>; Thu, 20 Jan 2000 13:13:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 782C75DDD2; Thu, 20 Jan 2000 13:03:57 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 3437F5DE06; Thu, 20 Jan 2000 13:03:57 -0500 (EST)
+Received: from eclipse.pacifier.com (eclipse.pacifier.com [199.2.117.78])
+	by segue.merit.edu (Postfix) with ESMTP id 896E65DDD2
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 13:03:50 -0500 (EST)
+Received: from mhattig (ip40.pdxa1.pacifier.com [206.163.5.40])
+	by eclipse.pacifier.com (8.9.3/8.9.3pop) with SMTP id KAA27530
+	for <zeroconf@merit.edu>; Thu, 20 Jan 2000 10:03:27 -0800 (PST)
+Message-ID: <008a01bf6370$c04b23a0$1502fea9@pacifer.com>
+From: "Myron Hattig" <mhattig@pacifier.com>
+To: <zeroconf@merit.edu>
+References: <Roam.SIMC.2.0.6.948048138.13575.erikg@sun-ffm.germany> <4.2.2.20000118211629.00a2ea20@lint.cisco.com> <3886D6F4.F6E37204@germany.sun.com> <38870EE4.F8DBDF93@nortelnetworks.com>
+Subject: Re: zeroconf protocol security
+Date: Thu, 20 Jan 2000 10:04:07 -0800
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.00.2615.200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2615.200
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+> Here's one vote for the first alternative.
+
+I agree, the first alternative is the best and I think this will be true for
+domain name resolution, multicast address allocation, and service discovery.
+The gateway will have to provide secure access to the zeroconf network. In
+addition, host-based security will utilize service specific security, virus
+detection, etc., but these are outside the scope of the WG.
+
+Going beyond the first alternative either violates our
+non-user-configuration requirement or security requirements of whatever
+protocol we are molding to be zeroconf. The example of bringing a laptop
+home from work where authenticated DHCP is used illustrates this.
+
+First note that if a laptop is using *non-authenticated* DHCP at work, then
+using autonet at home does not violate any work-related security
+expectations. Autonet *does* violate expectations of a host using
+authenticated DHCP because autonet could be invoked on the secure network to
+bypass the authentication server. A really paranoid authenticated DHCP
+service administrator would not allow the laptop user to connect the laptop
+to any network using autonet. A less paranoid administrator may provide a
+tool to allow the laptop user to turn authenticated DHCP on or off (thus
+turning autonet off or on).
+
+This example shows two things: 1) either security requirements get violated
+or our no-user-configuration requirement is violated; 2) this is a problem
+for someone designing the authenticated DHCP service - not us.
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 21 11:54:35 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA13614
+	for <zeroconf-archive@odin.ietf.org>; Fri, 21 Jan 2000 11:54:35 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8C8805DDC5; Fri, 21 Jan 2000 11:54:22 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 4BB6E5DDB8; Fri, 21 Jan 2000 11:54:22 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 65B3B5DDCB
+	for <zeroconf@merit.edu>; Fri, 21 Jan 2000 11:54:20 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id IAA27907;
+	Fri, 21 Jan 2000 08:54:14 -0800 (PST)
+Received: from vayne (muc-isdn-14 [129.157.164.114])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id RAA29107;
+	Fri, 21 Jan 2000 17:54:12 +0100 (MET)
+Date: Fri, 21 Jan 2000 18:01:56 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: Re: zeroconf protocol security
+To: Paul Ferguson <ferguson@cisco.com>
+Cc: Erik.Guttman@Sun.COM, zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <4.2.2.20000120055610.00a30310@lint.cisco.com>
+Message-ID: <Roam.SIMC.2.0.6.948474116.23316.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> At 10:35 AM 01/20/2000 +0100, Erik Guttman wrote:
+> 
+> >The underlying concern is that we don't make IP *less* secure
+> >by adding ZeroConfig features.
+> 
+> Agreed.
+> 
+> But let's examine this for a second. What feature(s) of IP
+> would be made less secure by making it possible for a device
+> to plugged into a ZC-capable segment and autoconfigured? I'm
+> not so sure this isn't a simple access-control issue.
+> 
+
+Say we have a wireless LAN and anyone within range may do address
+autoconf, etc. and join.  Say that this LAN connects your thermostat,
+garage door, etc.  I think that some access control to the services
+and indeed to the network is desirable.  
+
+The draft talks about 3 threats:  Hoarding, Masquerading and 
+Antagonistic Server.  These are above and beyond access control.
+Note that we are *not* talking about denial of service attacks
+which is a problem we are not going to solve in ZEROCONF.  
+
+The point is not that we should mandate security - we can't.
+Nor that zeroconf networks should be automatically secure - this 
+isn't possible unless they are configured.  The point is whether 
+we should mandate that a host compliant with ZC requirements has 
+a *way of being configured* so that it *could be secured* against 
+the threats above.
+
+Imagine I have buy a network enabled refrigerator.  I want it to be
+able to be secured.  I may have to read the manual and set a dip
+switch in the back or something.  But I don't want anyone but me to
+defrost it. This is fundamentally an *application layer* issue and
+out of scope of the ZEROCONF WG, right?
+
+The other question is whether I care if someone else can claim to be 
+the refrigerator, hoard all the addresses so the fridge can't configure 
+on my network, etc.  I'm not sure about this & hope folks in the WG
+can help me.  This would be in the scope of the ZEROCONF WG.
+
+Part of the problem with this discussion is that it is quite abstract.
+Hopefully we will see some discussion of specific mechanisms which 
+are easy to configure, computationally non-intensive, and provide the 
+basis protection against the threats we are discussing.
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 21 13:06:16 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA14860
+	for <zeroconf-archive@odin.ietf.org>; Fri, 21 Jan 2000 13:06:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 048965DD9A; Fri, 21 Jan 2000 13:06:03 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id AECD25DDDA; Fri, 21 Jan 2000 13:06:02 -0500 (EST)
+Received: from firewall.agranat.com (agranat.com [198.113.147.2])
+	by segue.merit.edu (Postfix) with ESMTP id 71EB95DD9A
+	for <zeroconf@merit.edu>; Fri, 21 Jan 2000 13:06:00 -0500 (EST)
+Received: from agranat.com (alice.agranat.com [192.104.71.130])
+	by firewall.agranat.com (8.9.0/8.9.0) with ESMTP id NAA04051
+	for <zeroconf@merit.edu>; Fri, 21 Jan 2000 13:05:56 -0500
+Received: from oyster (oyster.agranat.com [192.104.71.149])
+	by agranat.com (8.8.5/8.8.5) with SMTP id NAA21596
+	for <zeroconf@merit.edu>; Fri, 21 Jan 2000 13:05:55 -0500
+From: "Scott Lawrence" <lawrence@agranat.com>
+To: <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Fri, 21 Jan 2000 13:05:53 -0500
+Message-ID: <002001bf643a$280ec2c0$954768c0@oyster.agranat.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook 8.5, Build 4.71.2173.0
+In-Reply-To: <Roam.SIMC.2.0.6.948474116.23316.erikg@sun-ffm.germany>
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3110.3
+Importance: Normal
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+> From: Erik Guttman
+
+> Say we have a wireless LAN and anyone within range may do address
+> autoconf, etc. and join.  Say that this LAN connects your
+> thermostat,
+> garage door, etc.  I think that some access control to
+> the services
+> and indeed to the network is desirable.
+
+> The point is not that we should mandate security - we can't.
+> Nor that zeroconf networks should be automatically secure - this
+> isn't possible unless they are configured.  The point is whether
+> we should mandate that a host compliant with ZC requirements has
+> a *way of being configured* so that it *could be secured* against
+> the threats above.
+
+ZeroConf crosses a number of layer boundaries, and I don't think
+that answers are the same at all of them.  At the IP layer, where
+Hoarding and so on are the issues, I don't see an answer and so
+don't think that we can mandate that one be provided.  At the
+services layers the answers are different because the threats are
+different.  I think it reasonable to say that we must allow for
+mechanisms that keep my neighbors from even discovering that I have
+an image repository named 'wedding night', or what model TV I have,
+even if we share the same apartment building power-line LAN.
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 21 23:43:54 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA23491
+	for <zeroconf-archive@odin.ietf.org>; Fri, 21 Jan 2000 23:43:54 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 25BF75DDCD; Fri, 21 Jan 2000 23:43:43 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D58335DD91; Fri, 21 Jan 2000 23:43:42 -0500 (EST)
+Received: from uucp1.nwnexus.com (uucp1.nwnexus.com [206.63.63.110])
+	by segue.merit.edu (Postfix) with ESMTP id 74E7E5DDD2
+	for <zeroconf@merit.edu>; Fri, 21 Jan 2000 23:43:37 -0500 (EST)
+Received: from internaut.com (uucp@localhost)
+	by uucp1.nwnexus.com (8.8.8/8.8.8) with UUCP id UAA30845;
+	Fri, 21 Jan 2000 20:43:31 -0800 (PST)
+Received: from [204.57.137.45] by internaut.com (NX5.67e/NeXT-3.0)
+	id AA06979; Fri, 21 Jan 00 20:25:27 -0800
+Reply-To: <aboba@internaut.com>
+From: "Bernard Aboba" <aboba@internaut.com>
+To: <Erik.Guttman@sun.com>
+Cc: "'Hattig, Myron'" <myron.hattig@intel.com>, <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Fri, 21 Jan 2000 19:34:07 -0800
+Message-Id: <00e401bf6489$8a8a4d80$2d8939cc@ntdev.microsoft.com>
+Mime-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-Msmail-Priority: Normal
+X-Mailer: Microsoft Outlook CWS, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+X-Mimeole: Produced By Microsoft MimeOLE V5.00.2919.6700
+In-Reply-To: <3886E37A.6491D80@germany.sun.com>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>Let's follow this through:  If I set up security parameters, I expect
+>my computer to use them - as the default.  I get configured as long as
+>I am at work, but when I come home - I don't.
+
+This logic, if applied to its fullest extent, may require
+reconfiguration of a device when it is moved
+from location to location. That may not be practical for an
+appliance.
+
+>IMO if you configure a system, you have to configure it again to get its
+>behavior to change.
+
+Other zeroconf mechanisms, such as IP address autoconfig don't require
+manual re-configuration, they just work.
+
+>The human interface issue is like *I've put a padlock* on my system's
+>fuse box.  Its my choice to *take the padlock off* and open the system up
+for
+>anyone to rewire it.
+
+Many of the devices that will be operating in the home and enterprise will
+not have any UI or way of configuring them manually. Think about an IP
+telephone or an IP toaster. You want to plug it in and have it function
+correctly.
+
+In many cases, this implies the ability of the device to ascertain what
+regime it is in (zeroconf or non-zeroconf). However, in going through
+a few different cases, (such as IP addr auto-conf, multicast auto-conf,
+etc.)
+we've found that the definition of the regimes needs to be clearly thought
+through so that one can go back and forth between zeroconf and non-zeroconf
+scenarios without problems.
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 21 23:43:56 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA23501
+	for <zeroconf-archive@odin.ietf.org>; Fri, 21 Jan 2000 23:43:56 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 573335DD8E; Fri, 21 Jan 2000 23:43:36 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 0B34D5DD91; Fri, 21 Jan 2000 23:43:36 -0500 (EST)
+Received: from uucp1.nwnexus.com (uucp1.nwnexus.com [206.63.63.110])
+	by segue.merit.edu (Postfix) with ESMTP id EACD85DD8E
+	for <zeroconf@merit.edu>; Fri, 21 Jan 2000 23:43:33 -0500 (EST)
+Received: from internaut.com (uucp@localhost)
+	by uucp1.nwnexus.com (8.8.8/8.8.8) with UUCP id UAA02817;
+	Fri, 21 Jan 2000 20:43:31 -0800 (PST)
+Received: from [204.57.137.45] by internaut.com (NX5.67e/NeXT-3.0)
+	id AA06890; Fri, 21 Jan 00 20:13:24 -0800
+Reply-To: <aboba@internaut.com>
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "'Paul Ferguson'" <ferguson@cisco.com>
+Cc: <zeroconf@merit.edu>
+Subject: RE: zeroconf protocol security
+Date: Fri, 21 Jan 2000 19:22:04 -0800
+Message-Id: <00e301bf6487$db9c2830$2d8939cc@ntdev.microsoft.com>
+Mime-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-Msmail-Priority: Normal
+X-Mailer: Microsoft Outlook CWS, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+X-Mimeole: Produced By Microsoft MimeOLE V5.00.2919.6700
+In-Reply-To: <4.2.2.20000118211629.00a2ea20@lint.cisco.com>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>Having said that, I'm a little concerned on the "obsession"
+>with authenticated autoconfig, at least in the short term.
+
+Actually, my concern was not with authenticated autoconfig
+at all. I'm perfectly happy to have zeroconfig
+unauthenticated. 
+
+My "obsession" (ok, I admit it!) is in making sure that
+leaving zeroconf unauthenticated doesn't create problems
+with machines such as laptops that may need to operate 
+in both zeroconf and non-zeroconf environments. It would
+appear that in many cases the trickiest part about
+designing a zeroconf solution is not in figuring out how
+to make it work, but rather in figuring out when to
+apply it.  
+
+
+
+From owner-zeroconf@merit.edu  Sun Jan 23 02:25:05 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA29025
+	for <zeroconf-archive@odin.ietf.org>; Sun, 23 Jan 2000 02:25:04 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EA9515DDA0; Sun, 23 Jan 2000 02:07:47 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id AAD7A5DDA3; Sun, 23 Jan 2000 02:07:47 -0500 (EST)
+Received: from eclipse.pacifier.com (eclipse.pacifier.com [199.2.117.78])
+	by segue.merit.edu (Postfix) with ESMTP id D57E55DDA0
+	for <zeroconf@merit.edu>; Sun, 23 Jan 2000 02:07:45 -0500 (EST)
+Received: from mhattig (ip41.pdxa1.pacifier.com [206.163.5.41])
+	by eclipse.pacifier.com (8.9.3/8.9.3pop) with SMTP id XAA06439
+	for <zeroconf@merit.edu>; Sat, 22 Jan 2000 23:07:21 -0800 (PST)
+Message-ID: <000001bf6570$9925d840$1502fea9@pacifer.com>
+From: "Myron Hattig" <mhattig@pacifier.com>
+To: <zeroconf@merit.edu>
+References: <00e401bf6489$8a8a4d80$2d8939cc@ntdev.microsoft.com>
+Subject: Re: zeroconf protocol security
+Date: Sat, 22 Jan 2000 13:01:32 -0800
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.00.2615.200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2615.200
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Comments below ..
+
+> >Let's follow this through:  If I set up security parameters, I expect
+> >my computer to use them - as the default.  I get configured as long as
+> >I am at work, but when I come home - I don't.
+>
+> This logic, if applied to its fullest extent, may require
+> reconfiguration of a device when it is moved
+> from location to location. That may not be practical for an
+> appliance.
+
+I agree with both points - it may be required and may be impratical. Thus we
+have a conflict.
+
+> >IMO if you configure a system, you have to configure it again to get its
+> >behavior to change.
+>
+> Other zeroconf mechanisms, such as IP address autoconfig don't require
+> manual re-configuration, they just work.
+
+At least as long as you do not introduce the need for authentication of an
+IP addr.  ;-)
+
+> >The human interface issue is like *I've put a padlock* on my system's
+> >fuse box.  Its my choice to *take the padlock off* and open the system up
+> for
+> >anyone to rewire it.
+>
+> Many of the devices that will be operating in the home and enterprise will
+> not have any UI or way of configuring them manually. Think about an IP
+> telephone or an IP toaster. You want to plug it in and have it function
+> correctly.
+>
+> In many cases, this implies the ability of the device to ascertain what
+> regime it is in (zeroconf or non-zeroconf). However, in going through
+> a few different cases, (such as IP addr auto-conf, multicast auto-conf,
+> etc.)
+> we've found that the definition of the regimes needs to be clearly thought
+> through so that one can go back and forth between zeroconf and
+non-zeroconf
+> scenarios without problems.
+
+In the case of IP host config, a regime that has authenticated DHCP and
+authenticated autonet are additional regimes beyond just zeroconf and
+non-zeroconf ... I'd like to be proven wrong, but I don't think there will
+be an "authenticated autonet", thus we won't be able to do anything these
+regimes.
+
+Stepping through your examples more ...
+I think devices that need a dip switch or UI will provide it (e.g. IP
+telephone, palm pilot) and those that don't won't  (e.g. IP toaster,
+refrigorator, wireless remote).
+
+Basically, I don't see any value-add from zeroconf for these cases ...
+either authenticated DHCP is always required by the DHCP administator or the
+admin allows the user to toggle authenticated DHCP off and on (maybe done
+with other security measures such as encrypting sensitive data).
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 28 23:05:02 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA03837
+	for <zeroconf-archive@odin.ietf.org>; Fri, 28 Jan 2000 23:05:01 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 484765DD8E; Fri, 28 Jan 2000 23:04:51 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 008875DDBA; Fri, 28 Jan 2000 23:04:50 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 52D425DD8E
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 23:04:44 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id UAA08179
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:04:43 -0800 (PST)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (mailgate1.apple.com- SMTPRS 2.0.15) with ESMTP id <B0009659251@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Fri, 28 Jan 2000 20:04:38 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id UAA25979
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:04:36 -0800 (PST)
+Message-Id: <200001290404.UAA25979@scv1.apple.com>
+Subject: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 28 Jan 2000 20:04:37 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Myron, here are my comments about the latest draft.
+
+I think we're making good progress.
+
+It starts off pretty well, but it gets a bit verbose towards the end.
+There's lots of stuff in "mom and apple pie" style about the wondrous 
+things
+that a service discovery protocol has to do, which I think can be reduced.
+
+One general comment I have is that I think we need to stress ZEROCONF
+protocols rather than ZEROCONF networks.  Talking about ZEROCONF networks
+raises the question of what is and what is not a ZEROCONF network.  I 
+think
+we're finding that that can be pretty ambiguous.  I think that talking 
+about
+what is and what is not a ZEROCONF protocol is much easier to define.  It
+might be worth putting some explanation to that effect into the abstract 
+or
+the introduction which says that although a ZEROCONF network is a useful
+concept, the purpose of this document is not to classify any particular
+network as being either the ZEROCONF or non-ZEROCONF.  Instead, there is a
+spectrum of networks that may use some all all or none of the ZEROCONF
+protocols.  
+
+On page 4 you reference the IPv4 Auto-Configuration Internet draft.  I'm
+planning on taking over that draft and recasting it as IPv4 Link Local
+Addressing which is independent from DHCP.  At some stage we will have to
+update the reference.
+
+Page 5:
+
+   A non-Zeroconf protocol requires user configuration or relies on a
+   centralized server.
+
+I would say, "Requires user configuration or relies on configuration
+information received from a centralized server."
+
+   A host using a Zeroconf protocol must easily transition in three
+   ways:
+   1. from a Zeroconf protocol to a non-Zeroconf protocol,
+   2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+   3. from a Zeroconf protocol back to a Zeroconf protocol (possibly
+     with new values).
+
+I think of the wording of the third case doesn't make sense.  I think it
+makes more sense to say, "ZEROCONF protocols must be prepared to 
+reconfigure
+when the network environment changes.  This is a general rule for all
+ZEROCONF protocols."
+
+   For example, if a DHCP server comes on-line after
+   hosts are configured with [AutoNet], then hosts must re-configure
+   with DHCP.
+
+After I recast Autonet as IPv4 link local addressing, this will no longer
+make sense, because hosts may always have link local addresses all the 
+time.
+I think it should say, "If a DHCP server comes on-line, then hosts which 
+are
+waiting for DHCP configuration should detect the server's appearance and
+obtain an address."
+
+   For example, if a bridge is
+   installed between two networks where hosts were already configured
+   using [AutoNet], then hosts must re-configure with [AutoNet] to
+   ensure duplicate IP addresses do not exist.
+
+"...if a bridge is installed between two networks then hosts which are 
+using
+IPv4 link local addresses will have to detect addressing conflicts and
+reconfigure if necessary."
+
+Page 6:
+
+   For example if the DHCP server broadcasts an "DHCPAck" with a new
+   "I'm Here" option or "I'm Leaving" option as the proactive
+   mechanism, then [AutoNet] must still send a periodic DCHPDiscover
+   message.
+
+"...then DHCP clients must still send a periodic DCHPDiscover message."
+
+   Within a single network, the non-Zeroconf protocol-B (with its
+   server) may coexist with the Zeroconf protocol-C.
+
+I would suggest Zeroconf addressing protocol-A with non-Zeroconf name
+resolution protocol-D for the example.  I personally think it is less
+convincing that someone would set up a DNS server on the network but not 
+set
+up a DHCP server.  For example, the Apple AirPort base station implements 
+a
+DHCP server but not a DNS server.
+
+   Alternately, Zeroconf and non-Zeroconf protocols from a single
+   area SHOULD not coexist during normal operation. They may coexist
+   during a transition, but the coexistence period SHOULD be minimal.
+
+"In contrast, Zeroconf and non-Zeroconf protocols..."
+
+Page 7:
+
+   Web browsing to an URL utilizes domain name to IP resolution. This
+   resolution capability allows applications (and sometimes users) to
+   remain blissfully unaware of IP addresses.
+
+I don't know what "(and sometimes users)" adds to that sentence.  I think 
+it
+can be deleted.  
+
+Page 8:
+
+   Service - A service is set of processes that do a wide range of
+   network related things. Services range from printing to
+   transferring a file to providing on-line pizza order and delivery
+   service. A service may find some network management information,
+   perform some action, control some resource, or perform just about
+   any network-related function.
+
+A user may think of a service as a process that does something. I think 
+that
+for the purpose of this document we need to be a very precise.  For the
+purpose of this document a service is a process that speaks a particular
+protocol.  A user may think of a printing (in an abstract sense) as a
+service. From the point of view of a piece of software which is an LPR
+client, the LPR service is any process which speaks the LPR protocol.  
+Some
+other printing process which speaks some other printing protocol does not
+provide any service to the LPR client.  Also, some process which speaks 
+the
+LPR protocol but does not print may not be considered to a printing 
+service
+by a human user but nevertheless it is a service from the point of view of
+the LPR client.  This service is most definitely an LPR service.  Whether
+the service prints on white paper or prints on transparencies or send the
+document via fax or archives of the document onto a recordable CD is
+something that can be discovered via means such as SLP attributes.  It may
+be tempting to to try to define "service" in terms of human concepts but
+human concepts are notoriously vague, and vagueness is death in network
+protocols.
+
+   Service Characteristics - Characteristics differentiate services.
+   They may differential the same type of service in terms of
+
+"They may differentiate ..."
+
+   Service Discovery Protocol - A service discovery protocol enables
+   a client (or clients) to discover a server (or servers) of a
+   particular service. A service discovery protocol is an application
+   layer protocol that relies on, but does not interact with, network
+   and transport protocol layers.
+
+I don't know what you mean by "does not interact with" .  I think that it
+can be deleted.  
+
+Page 9:
+
+   Peer - A process that is both a client and service for a specific
+   service protocol.
+
+This mean "... both a client and server ...".  However I'm not sure that
+saying "both a client and server" fully explains a peer to peer protocol.
+ARP is a peer to peer protocol.  Would you say that a host using the ARP
+protocol is both an ARP client and an ARP server?
+
+   Server - A process that offers a service to clients through a
+   service discovery protocol.
+
+You should delete, "through a service discovery protocol." A particular 
+FTP
+server may not use a service discovery protocol but that doesn't mean that
+it's not offering FTP service.
+
+   Service Advertisement - A solicited response issued by a server or
+   registry. The advertisement provides the service identifier and
+   possibly service characteristics.
+
+I think that an advertisement is normally considered an unsolicited
+response.  If you think about the way that word is normally used in the
+English language, it means unsolicited information, not information that 
+you
+asked for.  I don't think that there is any difference between an
+advertisement and an announcement.
+
+Page 10: 
+
+   A service discovery protocol MUST allow a client to discover then
+   utilize a service.
+
+I think this statement is too strong.  I think it would be sufficient to
+say, " A service discovery protocol MUST allow a client to discover a
+service."  I can discover LPR service without necessarily having an LPR
+client on my computer.  I think it is requiring too much of a service
+discovery protocol to say that it MUST allow me to utilize a service that 
+I
+have discovered.  
+
+   A service discovery protocol SHOULD limit the use of Service
+   Announcement messages so as to not flood the network unnecessarily
+   and most importantly not cause 'broadcast storms'.
+
+I think if we can delete of the comment about broadcast storms.  
+Unnecessary
+network traffic is not the same as a broadcast storm.
+
+   A service discovery protocol MUST not cause scalability or
+   operational problems in larger non-Zeroconf networks if clients
+   and servers somehow transition to such networks.
+
+I think we can delete the word "somehow" in this sentence.
+
+   A Zeroconf network is a network that at some point in time has one
+   or more Zeroconf protocols. By this definition, almost all
+   networks are Zeroconf networks. This definition is intentionally
+   broad to avoid mandating a network to be Zeroconf or exclude
+   another network from using a Zeroconf protocol. The Internet and
+   corporate LANs are considered non-Zeroconf networks because,
+   today, these networks have little use for Zeroconf protocols.
+
+I wonder if this definition is too strong.  Perhaps we should say that a
+ZEROCONF network to is one where one or more of the hosts on that network
+are *currently* correctly running ZEROCONF protocols.
+
+Page 12: 
+
+   The Figure 2 Zeroconf network has a small number of hosts
+   connected through an Ethernet hub. This may be a small office
+   network or a gaming network.
+
+I think it might be interesting to to give a slightly different examples
+here.  Instead of having physical wires and a hub we could have a 
+collection
+of laptop computers with 802.11 wireless interfaces, communicating peer to
+peer without a base station.
+
+Page 13: 
+
+   In this topology, broadcast packets reach all hosts and routing
+   only occurs to communicate between Zeroconf and non-Zeroconf
+   networks. All hosts SHOULD rely on netmask and the default route
+   as a normal IP host does when determining to ARP or to forward
+   packets to the default route.
+
+I don't think I understand this example.  If this is truly a ZEROCONF
+network then how do the hosts discover their netmask and the default 
+gateway
+they are supposed to use?
+
+Page 15: 
+
+   Zeroconf protocols that communicate between a host and a router to
+   configure the host MAY be considered.
+
+This sentence seems to be self contradictory.  If a host communicates with
+some distinguished machine on the network to configure itself, how can 
+that
+possibly be called ZEROCONF? The protocol you are talking about is DHCP 
+and
+DHCP is a non-ZEROCONF protocol.
+
+Page 16:
+
+   All Zeroconf protocols MUST operate in single IP networks
+   (isolated and connected)
+
+I think this is unclear.  Perhaps it should say, "All ZEROCONF protocols
+must operate both in single isolated IP networks, and in single IP 
+networks
+that are connected to larger networks."
+
+   This scenario applies to single IP network topologies (isolated or
+   with a gateway). Only the IP address must be configured. The
+   netmask can be configured to a value or assumed to be
+   255.255.255.255. No default route is needed.
+
+I think you mean that the net mask should be 0.0.0.0. A net mask of
+255.255.255.255 means that *no* other hosts are reachable on that network.
+
+Page 17: 
+
+   - Network numbers of IP addresses MUST be unique within the entire
+     Zeroconf network.
+
+How about "... within the entire ZEROCONF internetwork."
+
+Page 18: 
+
+   There is an addition requirement to your "periodic conflict
+     detection" requirement. It is an active mechanism to restart
+     conflict detection. This is needed in case the period is too
+     large for a hosts needs.
+
+I don't agree that there is any requirement for periodic conflict 
+detection.
+Suppose I wander within range of your wireless network with a laptop
+computer that happens to have a conflicting IP address, and then I wander
+away again without sending any packets, is there any reason to do any 
+harm?
+Once my laptop computer tries to communicate we will discover the address
+conflict.  Until then there is no reason to do any harm.
+
+Page 19: 
+
+   This protocol should include the ability for a host to
+   choose a name, determine if the name is in use, and then choose a
+   different name if it is re-used.
+
+I think this should say, "... choose a different name if it is already in
+use.  " 
+
+   - A host that wishes to be addressable by name MUST select a
+     domain name.
+
+"... select a host name." I think we are talking about the name of a host
+here, not the name of a domain.
+
+   - At various times a host MUST actively determine if another host
+     is using its name.
+
+I do not believe that this is a requirement.  Active periodic checks are a
+waste of network bandwidth.  Some protocols may work this way, but this is
+not a requirement of all protocols.
+
+Page 20: 
+
+   Printer discovery must allow a printing client to discover the
+   location of a printer and enough information about the print job
+   submission protocol to be able to submit jobs.  Further printer
+   discovery must discriminate between printers which are useful and
+   those which are not.
+
+I do not agree that this is a requirement. If I want to use the printer
+which has plenty of spare ink cartridges sitting on the table beside it, 
+it
+is a mistake to *require* all discovery protocols to be able to find that
+for me.
+
+I think it is about here that the requirements document gets into
+unsubstantiated rhetoric. I think there is a lot more text in this section
+than there needs to be.
+
+   - The service discovery mechanism has to allow for discriminating
+     queries.  A client has to be able to discover a printer for
+     which it has a driver, for instance.
+
+I think that is part of discovering a service that speaks a particular
+protocol.
+
+   - Service discovery has to be able to discover the characteristics
+     of an advertised service.
+
+I do not agree. You may argue that it is useful, but it is not required.
+
+    3.4.2  Discover File Access Server
+
+Is this different from a "File Server"?
+
+Page 21: 
+
+   File sharing is done on a 'session basis'
+
+What about AFS, DFS, CODA? Are they done on a 'session basis'? What does
+this mean?
+
+   Further, existing service discovery mechanisms for file access
+   servers (from Novell, Apple and Microsoft proprietary protocols)
+   allow the user to discover something about the file system they
+   would access.  This include the name of the file system, a human
+   readable description of it as well as a 'group' or 'groups' that
+   the file system was shared to.
+
+Not true. AppleTalk NBP locates all servers offering "AFP" protocol. That 
+is
+all.
+
+   Since there may be many 'peers' in a network of personal computing
+   devices, it is critical that some grouping is possible, so that
+   users can locate file access servers that are meaningful to them
+   (located nearby, shared by colleagues close to them in the
+   organization, shared by those who will allow the user access to
+   the files, file systems whose content is of a general kind, etc.)
+
+I do not agree that this is "critical". Large AppleTalk networks have
+managed fine for fifteen years without it.
+
+   AppleTalk, Novell networks and Microsoft networks all suffer in
+   performance for this reason. Finally, file access is typically
+
+You will need to define "performance". AppleShare is currently one of the
+fastest file servers on the planet. It's performance clearly doesn't 
+suffer
+that much.
+
+Page 22: 
+
+3.4.2.3   Protocol Requirements
+
+I think a lot of this stuff can be deleted. For example:
+
+   - Clients can discover some information about file systems that
+     they could choose to access (the name of the file system, a
+     description of it and whether the user has access permission,
+     at the very least).
+
+I do not agree that verifying a user's cryptographic credentials and 
+access
+permissions is a necessary requirement for just discovering a list of
+servers. Does the service directory need to know every password for every
+user on every file server in order to determine whether they have access
+permission?
+
+   One important application of service discovery is the discovery of
+   manageable devices by a 'management' system.  Conversely,
+   manageable devices may need to discover their manager.  The
+   relationship between manager and managed system is different than
+   is the case in most service discovery applications since the
+   manageable device is in many respects a service with respect to
+   the manager, but there is usually only one manager and many
+   manageable systems.
+
+This is exactly the same as me discovering printers. I have only one 
+laptop
+computer but I am discovering many printers on the network.
+
+Page 23: 
+
+   The management system (manager) needs to be able to discover
+   devices which support appropriate management services (management
+   agents).
+
+I don't see how this is different to any other kind of service discovery. 
+If
+I want to use SNMP, then I have to discover all the entities on the 
+network
+that will speak SNMP to me (SNMP 'servers', if you wish). This is why I
+think it is useful to define a 'service' as something that speaks a given
+protocol, not something that performs some abstract action like printing.
+
+   - Managers have to be able to discover only the subset of agents
+     that are relevant.  This means that managers have to be able to
+     discover agents on the basis of their hardware, software or
+     there device specification or status.
+
+I think that if you require the service discovery protocol to be able to
+evaluate arbitrary queries like this, you've reinvented the management
+protocol itself.
+
+Page 24: 
+
+   Clients and servers using a service discovery protocol in a
+   zeroconf environment have to be able to obtain configuration.
+
+I think this could be worded better. Right now, it sounds
+self-contradictory.
+
+This is the end of my comments for now.
+
+Thanks again for all your work on this.
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 28 23:40:47 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA04380
+	for <zeroconf-archive@odin.ietf.org>; Fri, 28 Jan 2000 23:40:47 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 871F75DE04; Fri, 28 Jan 2000 23:40:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 3FC095DE05; Fri, 28 Jan 2000 23:40:38 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 5DA945DE04
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 23:40:36 -0500 (EST)
+Received: from mailgate2.apple.com ([17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id UAA09133
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:40:35 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0002737049@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Fri, 28 Jan 2000 20:40:27 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id UAA25174
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:40:26 -0800 (PST)
+Message-Id: <200001290440.UAA25174@scv2.apple.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 28 Jan 2000 20:40:26 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Thanks for this quick response Myron.
+
+I'll try to answer your questions.
+
+>First, AutoNet is used as an example. People understand autonet, thus they
+>understand the example. If we change AutoNet to something else they will be
+>thinking about the something else instead of the purpose of the example.
+
+Well, currently, 'AutoNet' is just a draft, and you can't reference a 
+draft in an RFC. AutoNet would have to be published as an RFC, and in its 
+current form, I don't think that would be appropriate without some 
+significant revisions. The revisions I think will be necessary are 
+breaking the artifical dependency between IPv4 link-local addresses (aka 
+'AutoNet') and DHCP, hence my comment about not implying too much of an 
+interdependency in this document.
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 28 23:42:51 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA04395
+	for <zeroconf-archive@odin.ietf.org>; Fri, 28 Jan 2000 23:42:50 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 213A95DE0E; Fri, 28 Jan 2000 23:42:41 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id CDBB45DE05; Fri, 28 Jan 2000 23:42:40 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id E1B1C5DE0E
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 23:42:38 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id UAA09319
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:42:38 -0800 (PST)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (mailgate1.apple.com- SMTPRS 2.0.15) with ESMTP id <B0009659470@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Fri, 28 Jan 2000 20:42:35 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id UAA28308
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:42:34 -0800 (PST)
+Message-Id: <200001290442.UAA28308@scv1.apple.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 28 Jan 2000 20:42:35 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>We're not trying to describe a peer-to-peer protocol. We are describing a
+>peer within serivce discovery. I almost left the definition out until
+>seeing it used in Erik's example, thus a definition was required. In the
+>context ofa service discovery protocol, I think the definition is accurate.
+>I'd like to hear more thoughts on this.
+
+I have an intuitive idea what "peer" means, but it is hard to explain, so 
+I got this from the dictionary:
+
+peer
+A person who has equal standing with another or others, as in rank, 
+class, or age.
+One of the same rank, quality, endowments, character, etc.; an equal; a 
+match; a mate.
+A companion; a fellow: "To stray away into these forests drear,/Alone, 
+without a peer" (John Keats).
+A unit of communications hardware or software that is on the same 
+protocol layer of a network as another.
+
+It describes being "at the same level", not anything to do with clients 
+and servers.
+
+>Again the context is service discovery not "network services". If a service
+>can't be found by a service discovery protocol, then it has no relevance
+>within the context of our discussion. I think the current definition is
+>okay.
+
+I thought we were defining terminology, as it is currently understood. As 
+it is currently understood, not all services on the net are discoverable 
+using a service discovery protocol. I expect that as we move forward, 
+more services will be discoverable, but not necessarily all.
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 28 23:43:39 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA04406
+	for <zeroconf-archive@odin.ietf.org>; Fri, 28 Jan 2000 23:43:38 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 239B95DE05; Fri, 28 Jan 2000 23:43:32 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D0FA25DE14; Fri, 28 Jan 2000 23:43:31 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 022725DE05
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 23:43:30 -0500 (EST)
+Received: from mailgate2.apple.com ([17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id UAA11935
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:43:29 -0800 (PST)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0002737065@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Fri, 28 Jan 2000 20:43:19 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv3.apple.com (8.9.3/8.9.3) with SMTP id UAA12668
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:43:18 -0800 (PST)
+Message-Id: <200001290443.UAA12668@scv3.apple.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 28 Jan 2000 20:43:19 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>> I think it might be interesting to to give a slightly different
+>> examples here.  Instead of having physical wires and a hub we
+>> could have a collection of laptop computers with 802.11 wireless
+>> interfaces, communicating peer to peer without a base station.
+>
+>What is the benefit of the different example? Just seems like more
+>work to me. ;-)
+
+I have recently come to realize that wireless is a *much* more compelling 
+example. If three people with laptops with Ethernet want to network them, 
+they need to have cables, and someone needs to have remembered to bring a 
+hub. If they are on the beach, then the hub needs to be battery powered, 
+which I have never seen :-) If three people with laptops with 802.11 
+wireless want to network them, they don't need anything else.
+
+Around my circle of friends, lots of them have bought Apple iBooks, and 
+not one of them has bought one without the $99 11Mb/s wireless card. They 
+are absolutely ubiquitous, and that changes the way you think about 
+things. In the old days, if you had a group of people with laptop 
+computers in a room, they could make a little Ethernet network (but they 
+usually didn't, unless they were there to play Bolo). Now, if you had a 
+group of people with laptop computers in a room, it is pretty hard *not* 
+to have a network. If we do our jobs right in this WG, they will be able 
+to do useful things with that network.
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan 28 23:48:28 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA04483
+	for <zeroconf-archive@odin.ietf.org>; Fri, 28 Jan 2000 23:48:28 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1E4855DE14; Fri, 28 Jan 2000 23:46:39 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C9CD25DE2F; Fri, 28 Jan 2000 23:46:38 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id A63FF5DE14
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 23:46:36 -0500 (EST)
+Received: from mailgate2.apple.com ([17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id UAA12293
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:46:36 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0002737094@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Fri, 28 Jan 2000 20:46:27 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id UAA25734
+	for <zeroconf@merit.edu>; Fri, 28 Jan 2000 20:46:26 -0800 (PST)
+Message-Id: <200001290446.UAA25734@scv2.apple.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 28 Jan 2000 20:46:27 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Is it that you don't understand the assumed requirements of using 
+>netmask and default route? OR 
+>Is it that there is no current ZC solution for the problem? 
+>Since I'm 99.99% sure that you understand the example and assumed
+>requirements ;-) 
+
+I'm prepared to agree that with IPv4 link-local addresses, we can assume 
+that every host knows the netmask is /16. However, how does the host 
+discover the IP address of the gateway machine, if not by using some 
+configuration protocol?
+
+>The source of the text comes from comments in our last meeting and
+>on the list from Matt Squire, Steve Deering, and others that hope to
+>extend these protocols into a multiple IP network solution some day.
+>My understanding of the group concensus is that no one wants to solve
+>this problem today, but we don't want to preclude a future solution.
+
+I think this gets back to the question of, "What is a ZEROCONF network?" 
+Maybe Figure 3 is a hybrid ZEROCONF/non-ZEROCONF network, using 
+non-ZEROCONF address/mask/gateway configuration (e.g. DHCP) in 
+conjunction with ZEROCONF name resolution?
+
+Or are you thinking that Figure 3 could be a pure ZEROCONF internetwork, 
+not using DHCP?
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Sat Jan 29 01:28:53 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id BAA06713
+	for <zeroconf-archive@odin.ietf.org>; Sat, 29 Jan 2000 01:28:53 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9C3FA5DE24; Sat, 29 Jan 2000 01:28:29 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7D2635DE1D; Sat, 29 Jan 2000 01:28:29 -0500 (EST)
+Received: from thalia.fm.intel.com (thalia.fm.intel.com [132.233.247.11])
+	by segue.merit.edu (Postfix) with ESMTP id D592C5DE16
+	for <zeroconf@merit.edu>; Sat, 29 Jan 2000 01:28:27 -0500 (EST)
+Received: from SMTP (fmsmsxvs01-1.fm.intel.com [132.233.42.201])
+	by thalia.fm.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id GAA20401
+	for <zeroconf@merit.edu>; Sat, 29 Jan 2000 06:28:58 GMT
+Received: from fmsmsx27.FM.INTEL.COM ([132.233.48.27]) by 132.233.48.201
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Sat, 29 Jan 2000 06:28:21 0000 (GMT)
+Received: by fmsmsx27.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <DVFC1XKP>; Fri, 28 Jan 2000 22:28:20 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F2780@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 28 Jan 2000 22:28:19 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Stuart,
+
+> >Is it that you don't understand the assumed requirements of using 
+> >netmask and default route? OR 
+> >Is it that there is no current ZC solution for the problem? 
+> >Since I'm 99.99% sure that you understand the example and assumed
+> >requirements ;-) 
+> 
+> I'm prepared to agree that with IPv4 link-local addresses, we 
+> can assume that every host knows the netmask is /16. 
+
+I agree, /16 MUST be true for link local addresses.
+
+> However, how does the host 
+> discover the IP address of the gateway machine, if not by using some 
+> configuration protocol?
+
+ICMP get default route works if supported by the router.
+
+Another method is to ping 224.0.0.2 - the source IP address in the 
+echo reply is always a router. ... I didn't believe this at first,
+but it is true for the routers on our corporate LAN. ;-) I'm curious
+to hear if most routers support this or not.
+
+ICMP get netmask returns the netmask. It can be supported by hosts
+or a router. 
+
+> >The source of the text comes from comments in our last meeting and
+> >on the list from Matt Squire, Steve Deering, and others that hope to
+> >extend these protocols into a multiple IP network solution some day.
+> >My understanding of the group consensus is that no one wants to solve
+> >this problem today, but we don't want to preclude a future solution.
+> 
+> I think this gets back to the question of, "What is a 
+> ZEROCONF network?" 
+> Maybe Figure 3 is a hybrid ZEROCONF/non-ZEROCONF network, using 
+> non-ZEROCONF address/mask/gateway configuration (e.g. DHCP) in 
+> conjunction with ZEROCONF name resolution?
+
+By the strict definition in the doc now, such a network would be
+a ZC network because it would have at least one ZC protocol.
+ 
+> Or are you thinking that Figure 3 could be a pure ZEROCONF 
+> internetwork, not using DHCP?
+
+Yes. Actually fig 3, 4, and 5. But of course fig 5 requires some 
+router to router communication that is absolutely outside the 
+scope of ZC WG. I think the host portion of the protocol can 
+remain the same for networks in all three figures. However, 
+DHCP is already widely deployed for such networks so what I'm 
+thinking of may not be a "real-world" solution.
+
+Back to the original point. I think the text your questioning 
+represents group consensus. I'm not claiming that it
+is consensus (that's your job ;-), but it appears to me that 
+it is consensus. 
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Sat Jan 29 12:35:09 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA21618
+	for <zeroconf-archive@odin.ietf.org>; Sat, 29 Jan 2000 12:35:08 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 536285DDB4; Sat, 29 Jan 2000 12:34:53 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id F121F5DDBA; Sat, 29 Jan 2000 12:34:52 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id CB8555DDB4
+	for <zeroconf@merit.edu>; Sat, 29 Jan 2000 12:34:50 -0500 (EST)
+Received: from engmail1.Eng.Sun.COM ([129.146.1.13])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id JAA23684;
+	Sat, 29 Jan 2000 09:34:48 -0800 (PST)
+Received: from nasnfs.eng.sun.com (nasnfs-201.Eng.Sun.COM [129.146.201.28])
+	by engmail1.Eng.Sun.COM (8.9.1b+Sun/8.9.1/ENSMAIL,v1.6) with ESMTP id JAA29028;
+	Sat, 29 Jan 2000 09:34:48 -0800 (PST)
+Received: from nasnfs.Eng.Sun.COM (eastapp2.East.Sun.COM [129.148.162.99])
+	by nasnfs.eng.sun.com (8.9.3+Sun/8.9.1) with ESMTP id JAA05502;
+	Sat, 29 Jan 2000 09:34:42 -0800 (PST)
+From: Gabriel Montenegro <Gabriel.Montenegro@Eng.Sun.COM>
+Message-Id: <200001291734.JAA05502@nasnfs.eng.sun.com>
+Date: Sat, 29 Jan 2000 09:46:05 -0800
+To: "Hattig, Myron" <myron.hattig@intel.com>, <zeroconf@merit.edu>
+Reply-To: <gab@sun.com>
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+>> However, how does the host 
+>> discover the IP address of the gateway machine, if not by using some 
+>> configuration protocol?
+>
+>ICMP get default route works if supported by the router.
+>
+>Another method is to ping 224.0.0.2 - the source IP address in the 
+>echo reply is always a router. ... I didn't believe this at first,
+>but it is true for the routers on our corporate LAN. ;-) I'm curious
+>to hear if most routers support this or not.
+>
+>ICMP get netmask returns the netmask. It can be supported by hosts
+>or a router. 
+
+ICMP echo for this, ICMP get netmask for that. seems to me you'll end
+up reinventing router discovery (rfc1256), which, by the way, is based
+on icmp. is there any reason not to use that? 
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Jan 30 14:30:14 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA10848
+	for <zeroconf-archive@odin.ietf.org>; Sun, 30 Jan 2000 14:30:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 844365DDA4; Sun, 30 Jan 2000 14:29:51 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 74A655DDA1; Sun, 30 Jan 2000 14:29:51 -0500 (EST)
+Received: from baucis.sc.intel.com (baucis.sc.intel.com [143.183.152.22])
+	by segue.merit.edu (Postfix) with ESMTP id 186E55DD91
+	for <zeroconf@merit.edu>; Sun, 30 Jan 2000 14:29:50 -0500 (EST)
+Received: from SMTP (fmsmsxvs03-1.fm.intel.com [132.233.42.203])
+	by baucis.sc.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id LAA21714
+	for <zeroconf@merit.edu>; Sun, 30 Jan 2000 11:29:44 -0800 (PST)
+Received: from fmsmsx19.fm.intel.com ([132.233.48.19]) by 132.233.48.203
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Sun, 30 Jan 2000 19:29:43 0000 (GMT)
+Received: by fmsmsx19.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <DV19MNA7>; Sun, 30 Jan 2000 11:29:42 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F2784@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Sun, 30 Jan 2000 11:29:34 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Gabriel,
+
+I don't want to derail the discussion about the requirements 
+draft since that is our near-term deliverable. Here is a response
+to your question, but if we wish to continue this conversation we
+should probably do so offline ...
+
+|From RFC 1256:
+5.3. Host Behavior
+   On any interface on which the host supports IP multicast, the host
+   will be a member of the all-systems IP multicast group (224.0.0.1).
+   This occurs automatically, as specified in [4]; no explicit action is
+   required on the part of the router discovery protocol implementation.
+   A host never sends a Router Advertisement message.
+   A host silently discards any Router Advertisement message that
+   arrives on an interface for which the host's configured
+   PerformRouterDiscovery flag is FALSE, and it never sends a Router
+   Solicitation on such an interface.
+   A host cannot process an advertisement until it has determined its
+   own IP address(es) and subnet mask(s) for the interface on which the
+   advertisement is received.  (On some links, a host may be able to use
+   some combination of BOOTP [3], RARP [5], or ICMP Address Mask
+   messages [7] to discover its own address and mask.)  While waiting to
+   learn the address and mask of an interface, a host may save any valid
+   advertisements received on that interface for later processing; this
+   allows router discovery and address/mask discovery to proceed in
+parallel.
+
+As the above text indicates, RFC 1256 defines a method to get the default 
+route but not the netmask. The other two methods to get the default route 
+(ping 224.0.0.2 or ICMP get default route) seem easier to me.
+
+-myron
+
+> -----Original Message-----
+> From: Gabriel Montenegro [mailto:Gabriel.Montenegro@Eng.Sun.COM]
+>
+> ICMP echo for this, ICMP get netmask for that. seems to me you'll end
+> up reinventing router discovery (rfc1256), which, by the way, is based
+> on icmp. is there any reason not to use that? 
+ 
+
+
+
+
