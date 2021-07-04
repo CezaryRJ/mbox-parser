@@ -76,7 +76,7 @@ public class mbox {
 			
 			if(tmp[0].equals("")) {
 				
-				if(is_mime(msg)) {
+				if(is_multipart(msg)) {
 					get_mime_data(msg,scanner);
 				}
 				
@@ -123,7 +123,7 @@ public class mbox {
 		String data = "";
 		
 		
-		if(is_mime(msg)) {
+		if(is_multipart(msg)) {
 			
 			while(scanner.hasNextLine()) {
 				
@@ -183,13 +183,15 @@ public class mbox {
 		
 	}
 	
-	boolean is_mime(message inn) {
+	boolean is_multipart(message inn) {
 		
 		if(inn.get_header("Content-Type") == null) {
 			return false;
 		}
 		
 		while(inn.get_header("Content-Type").split("/")[0].equals("multipart")) {
+			
+			inn.get_header("Content-Type").split(";	");
 			
 			return true;
 			
@@ -203,7 +205,6 @@ public class mbox {
 		while(scanner.hasNextLine()) {
 			tmp = scanner.nextLine();
 			if(tmp.startsWith("-")) {
-				msg.add_header("Mime-delimiter", tmp);
 				break;
 			}
 		}
@@ -211,6 +212,10 @@ public class mbox {
 		while(scanner.hasNextLine() && scanner.nextLine() != "") {
 			
 		}
+		
+		msg.get_header(name)
+		
+		msg.add_header("Mime-delimiter", tmp);
 		
 	}
 		
