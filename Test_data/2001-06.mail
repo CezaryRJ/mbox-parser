@@ -1,0 +1,451 @@
+From owner-zeroconf@merit.edu  Tue Jun  5 03:30:25 2001
+Received: from trapdoor.merit.edu (postfix@[198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id DAA12551
+	for <zeroconf-archive@odin.ietf.org>; Tue, 5 Jun 2001 03:30:24 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 39B3491372; Tue,  5 Jun 2001 03:09:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B56F1912BE; Tue,  5 Jun 2001 03:09:39 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0CE16912BE
+	for <zeroconf@trapdoor.merit.edu>; Tue,  5 Jun 2001 03:09:33 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id BC10E5DDB3; Tue,  5 Jun 2001 03:09:54 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 077015DDA6
+	for <zeroconf@merit.edu>; Tue,  5 Jun 2001 03:09:52 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id AAA01911;
+	Tue, 5 Jun 2001 00:09:31 -0700 (PDT)
+Received: from vayne (muc-isdn-17 [129.157.164.117])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id JAA14946;
+	Tue, 5 Jun 2001 09:09:29 +0200 (MET DST)
+Date: Tue, 5 Jun 2001 09:21:17 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: WG LAST CALL:  draft-ietf-zeroconf-reqts-08.txt
+To: zeroconf@merit.edu
+Cc: erik.guttman@sun.com, cheshire@apple.com
+In-Reply-To: "Your message with ID" <200106041100.HAA02957@ietf.org>
+Message-ID: <Roam.SIMC.2.0.6.991725677.25526.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+The internet draft "ZeroConf Requirements", draft-ietf-zeroconf-reqts-08.txt
+is now in WG LAST CALL.  Please send comments to the mailing list before
+June 19.  
+
+This is the second WG last call for this document.  Issues arising from the
+first WG last call have been addressed in this version.  Changes since then
+are largely rewording, clarifications and some changes to the multicast
+address allocation requirements and security considerations wording.  
+
+Regards,
+
+Erik Guttman
+ZEROCONF WG Cochair
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jun  8 02:45:44 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA05054
+	for <zeroconf-archive@odin.ietf.org>; Fri, 8 Jun 2001 02:45:44 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 32BDA9134F; Fri,  8 Jun 2001 01:50:21 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EBD7791350; Fri,  8 Jun 2001 01:50:20 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 12C959134F
+	for <zeroconf@trapdoor.merit.edu>; Fri,  8 Jun 2001 01:50:20 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id BF2B45DD91; Fri,  8 Jun 2001 01:50:46 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 3A9465DD8C
+	for <zeroconf@merit.edu>; Fri,  8 Jun 2001 01:50:46 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id WAA08346;
+	Thu, 7 Jun 2001 22:50:22 -0700 (PDT)
+Received: from vayne (muc-isdn-17 [129.157.164.117])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id HAA11834;
+	Fri, 8 Jun 2001 07:50:20 +0200 (MET DST)
+Date: Fri, 8 Jun 2001 08:00:59 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: new internet draft on ZMAAP
+To: zeroconf@merit.edu
+Cc: erik.guttman@sun.com, octavian.catrina@i-u.de
+Message-ID: <Roam.SIMC.2.0.6.991980059.8929.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+We need reviews of the following documents.  
+
+ftp://ftp.ietf.org/internet-drafts/draft-ietf-zeroconf-zmaap-01.txt
+ftp://ftp.ietf.org/internet-drafts/draft-ietf-zeroconf-zmaap-api-00.txt
+
+----
+
+Changes since draft-00 of ZMAAP are:
+
+1) Simplified presentation and protocol rules.
+2) Caching is different: hosts MAY cache other's AIUs but need not
+3) Attempts at compatibility with AAP has been dropped
+4) API issues are considered
+5) Session management implications added - including interaction
+   with SAP and SDP
+6) All allocations use relative, not absolute times
+
+One suggestion, which the authors pursued, then rejected, was the
+notion of having no lifetimes for allocations.  This would mean
+that addresses only would be considered allocated if there were
+one or more active defenders & simplify the protocol.  
+
+This worked in principal, but made caching of allocations 
+impossible.  In the case of link local IPv4 multicast addresses, 
+we will likely only be able to allocate a small number (there are 
+only about 200 free addresses of this kind total).  In this case, 
+caching is imperative:  You would have to be able to keep track 
+of which addresses were allocated so you could pick a 
+likely-to-be-non-conflicting one to claim.
+
+The API document is derived from the Abstract Multicast Allocation 
+API, RFC 2771.  The document describes new abstract APIs and how
+certain RFC 2771 APIs do not apply.  There are also two concrete
+APIs (for C and Java).
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 14 04:53:42 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA23754
+	for <zeroconf-archive@odin.ietf.org>; Thu, 14 Jun 2001 04:53:41 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8B14B912FD; Thu, 14 Jun 2001 04:53:51 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5671E9131B; Thu, 14 Jun 2001 04:53:51 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6F2FA912FD
+	for <zeroconf@trapdoor.merit.edu>; Thu, 14 Jun 2001 04:53:50 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id F04835DDC0; Thu, 14 Jun 2001 04:54:28 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 7216A5DDB0
+	for <zeroconf@merit.edu>; Thu, 14 Jun 2001 04:54:28 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id BAA21000;
+	Thu, 14 Jun 2001 01:53:57 -0700 (PDT)
+Received: from vayne (muc-isdn-8 [129.157.164.108])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id KAA26868;
+	Thu, 14 Jun 2001 10:53:55 +0200 (MET DST)
+Date: Thu, 14 Jun 2001 11:05:48 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: Re: IPv4 link-local address generation?
+To: mkin@etri.re.kr
+Cc: zeroconf@merit.edu, Erik.Guttman@sun.com, cheshire@apple.com
+In-Reply-To: "Your message with ID" <766FA1FC5C2AD511B3C800D0B7A8AC4A32D55E@cms3.etri.re.kr>
+Message-ID: <Roam.SIMC.2.0.6.992509548.29881.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Min,
+ 
+> Does anybody know something about a link-local address available all the
+> time,  independent of the address allocated by DHCP?
+> I read a draft related to Dynamic Configuration of IPv4 Link-local
+> addresses(draft-ietf-zeroconf-ipv4-linklocal-02.txt).
+
+That is the specification of this protocol over IPv4.  You should also
+read RFC 2462 which describes link-local autoconfiguration for IPv6.
+(You need to read RFC 2461 and 2373 too, to make sense of 2462).
+
+> This document describes that a ipv4 link-local addresses is used all the
+> time, independent of the address allocated by DHCP?
+
+That is the recommended behavior in draft-ietf-zeroconf-ipv4-linklocal-02.txt.
+
+> and if a host using ipv4 link-local address searchs a DHCP and allocates a
+> globally unique ipv4 address, does the host still use a link-local address?
+
+This is the desirable behavior.  Then local communication will continue
+uninterrupted whether a DHCP server appears on the network or not.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 20 02:55:07 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA28673
+	for <zeroconf-archive@odin.ietf.org>; Wed, 20 Jun 2001 02:55:06 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 20D2091230; Wed, 20 Jun 2001 02:55:16 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id D66C991231; Wed, 20 Jun 2001 02:55:15 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EC9AA91230
+	for <zeroconf@trapdoor.merit.edu>; Wed, 20 Jun 2001 02:55:14 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A1D315DDAA; Wed, 20 Jun 2001 02:56:04 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 23B905DD91
+	for <zeroconf@merit.edu>; Wed, 20 Jun 2001 02:56:04 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id AAA11696;
+	Wed, 20 Jun 2001 00:55:21 -0600 (MDT)
+Received: from germany.sun.com (muc-isdn-11 [129.157.164.111])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with ESMTP id IAA07452;
+	Wed, 20 Jun 2001 08:55:05 +0200 (MET DST)
+Message-ID: <3B304B94.8F04E123@germany.sun.com>
+Date: Wed, 20 Jun 2001 09:07:00 +0200
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik.Guttman@sun.com
+Organization: Sun Microsystems
+X-Mailer: Mozilla 4.7 [en] (X11; U; SunOS 5.5.1 sun4m)
+X-Accept-Language: en, de-DE, fr-FR
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Cc: Thomas Narten <narten@raleigh.ibm.com>, erik.nordmark@eng.sun.com,
+        erik.guttman@sun.com, cheshire@apple.com
+Subject: WG LAST CALL COMPLETED: draft-ietf-zeroconf-reqts-08.txt
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+The working group last call period for the internet draft 
+"ZeroConf Requirements", draft-ietf-zeroconf-reqts-08.txt,
+has completed.  
+
+Result:  There were no comments.  
+
+Summary: This latest revision contained only rewordings 
+         and rearrangement due to the previous WG last 
+         call (on draft -05, last September).  The WG
+         chairs wanted to provide the opportunity for
+         community comment on those changes.
+
+Next:    This document will be submitted to the IESG for
+         consideration to publish as an Informational RFC.
+
+Erik Guttman
+Cochair ZEROCONF WG
+
+
+From owner-zeroconf@merit.edu  Thu Jun 28 05:43:29 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id FAA09977
+	for <zeroconf-archive@odin.ietf.org>; Thu, 28 Jun 2001 05:43:29 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 25BED9137A; Thu, 28 Jun 2001 05:43:41 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E4EB99137B; Thu, 28 Jun 2001 05:43:40 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EDBCA9137A
+	for <zeroconf@trapdoor.merit.edu>; Thu, 28 Jun 2001 05:43:39 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 391235DDCC; Thu, 28 Jun 2001 05:44:45 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 9E2875DDCB
+	for <zeroconf@merit.edu>; Thu, 28 Jun 2001 05:44:44 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id DAA25787;
+	Thu, 28 Jun 2001 03:43:40 -0600 (MDT)
+Received: from vayne (remote-nl-23.Holland.Sun.COM [129.159.209.105])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id LAA24857;
+	Thu, 28 Jun 2001 11:43:39 +0200 (MET DST)
+Date: Thu, 28 Jun 2001 11:55:37 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: zmaap and session discovery
+To: zeroconf@merit.edu
+Cc: dthaler@microsoft.com, octavian.catrina@i-u.de, erik.guttman@sun.com,
+        Mark Handley <mjh@aciri.org>, Colin Perkins <csp@isi.edu>,
+        Edmund Whelan <e.whelan@cs.ucl.ac.uk>
+Message-ID: <Roam.SIMC.2.0.6.993722137.12415.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+draft-ietf-zeroconf-zmaap-01.txt provides the following capabilities:
+
+ZMAAP allows an application to allocate an address which will be
+defended.  In addition the application can 'share defense' of
+an address allocated elsewhere.
+
+In the case of a conflict (which can occur either because 
+some ZMAAP packets are lost or due to fusion of two previously
+isolated networks), one or more of the allocations will be
+abandoned, and new addresses will have to be allocated.
+
+*** How can members of a session rediscover it after a conflict
+*** at a newly allocated multicast address?
+
+draft-ietf-zeroconf-zmaap-01.txt suggests that hosts should discover 
+sessions by listen for SAP announcements, which will contain a 'zmaap 
+lease-id' SDP attribute.  This will enable rendezvous initially and 
+at subsequent multicast group allocations.  
+
+*** The problem with this approach is that SAP advertisements 
+*** occur very seldom.  SAP is not suited for short-lived (ad hoc) 
+*** local-area session discovery.  RFC 2974 puts it this way:
+ 
+   SAP is intended to announce the existence of long-lived wide-area
+   multicast sessions.  It is not an especially timely protocol:
+   sessions are announced by periodic multicast with a repeat rate on
+   the order of tens of minutes, and no enhanced reliability over UDP.
+   This leads to a long startup delay before a complete set of
+   announcements is heard by a listener.  This delay is clearly
+   undesirable for interactive browsing of announced sessions.
+
+An alternative for session discovery is needed, which allows
+prompt rendezvous after a conflict and rapid browsing of 
+available sessions.  Alternatives I can think of are:
+
+(1) Add a SDR attribute list to address-in-use (AIU) messages.
+    AIUs are retransmitted before the 'lease-lifetime' expires.  
+    This lifetime can be from 1 second - ~18 hours.  If lifetimes
+    of ~1 minute were used, session discovery would be pretty
+    prompt:  Session caches could be used for browsing.  
+ 
+    This approach uses a lot of bandwidth and increases processing
+    and storage requirements of mini-MAASs.  Further, ZMAAP becomes
+    a session discovery *AND* address allocation protocol.
+
+(2) Add a new ZMAAP session request and session reply message.
+    These would contain a list of SDR attributes.  A reply
+    would be sent if it matched the attributes in the session
+    request.
+
+    This approach doesn't use much network or system resources,
+    but it complicates ZMAAP.  Further, ZMAAP becomes a 
+    session discovery *AND* address allocation protocol.  Finally,
+    there already exists an IETF standard discovery protocol, SLP.
+
+(3) SLP could be used to discover multicast sessions.
+
+    This adds a requirement on SLP to support ZMAAP.  SLP has not
+    previously be used for multicast session discovery.  
+
+(4) In the limited context of the scopes supported by ZMAAP
+    SAP could be defined so that it sends more frequent advertisements
+    (on the order of 10s of seconds instead of 10s of minutes).
+
+    SAP is an Experimental protocol - meaning we could not base a
+    standards track protocol (ZMAAP) on it. 
+
+What do you think of these alternatives?  
+
+I am inclined to (4).  Given the limited discussion of ZMAAP, 
+perhaps it should be issued as an Experimental RFC.  In this
+case relying on SAP would not be an issue.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 28 13:31:00 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id NAA18852
+	for <zeroconf-archive@odin.ietf.org>; Thu, 28 Jun 2001 13:30:59 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E116691380; Thu, 28 Jun 2001 13:30:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B417891381; Thu, 28 Jun 2001 13:30:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D157F91380
+	for <zeroconf@trapdoor.merit.edu>; Thu, 28 Jun 2001 13:30:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C426F5DDE4; Thu, 28 Jun 2001 13:31:37 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 73AA95DD99
+	for <zeroconf@merit.edu>; Thu, 28 Jun 2001 13:31:37 -0400 (EDT)
+Received: from apple.con (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id KAA05229
+	for <zeroconf@merit.edu>; Thu, 28 Jun 2001 10:30:50 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by apple.con
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T546afbe782118064e138c@apple.con> for <zeroconf@merit.edu>;
+ Thu, 28 Jun 2001 10:29:06 +0100
+Received: from [206.111.147.149] (vpn-gh-579.apple.com [17.254.138.66])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id KAA04871
+	for <zeroconf@merit.edu>; Thu, 28 Jun 2001 10:30:49 -0700 (PDT)
+Message-Id: <200106281730.KAA04871@scv1.apple.com>
+Subject: Draft-ietf-zeroconf-ipv4-linklocal-03.txt to PS
+Date: Thu, 28 Jun 2001 10:30:47 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Draft-ietf-zeroconf-ipv4-linklocal-03.txt is now in the Internet-Drafts 
+directory. Draft-03 incorporates all the changes agreed during last-call, 
+and the following mail has been sent to the IESG Secretariat:
+
+--------------------------------------------------------------------------
+
+Subject:     Draft-ietf-zeroconf-ipv4-linklocal-03.txt to PS
+Date:        Tue, 26 Jun 2001 11:37:00 -0700
+To:          IESG Secretariat <iesg-secretary@ietf.org>
+
+This is a formal request that draft-ietf-zeroconf-ipv4-linklocal-03.txt 
+be advanced to Proposed Standard.
+
+Draft-ietf-zeroconf-ipv4-linklocal-02.txt has gone through working group 
+last call.
+
+Draft-ietf-zeroconf-ipv4-linklocal-03.txt contains revisions reflecting 
+the (minor) changes requested.
+
+Please proceed to issue IETF last call and advance this document.
+
+--------------------------------------------------------------------------
+
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+

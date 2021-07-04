@@ -2,6 +2,7 @@ package framework;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class mbox {
@@ -46,13 +47,19 @@ public class mbox {
 				  
 				  read_content(new_msg,scanner);
 				  
-				  msg.add(new_msg);
+				  if (new_msg.headers.size() > 1){
+					  msg.add(new_msg);
+				  }
+				  
+				 
 				  
 				  //new_msg.print_headers();
 				  
 				  //System.exit(0);
 				  
 			}
+			
+			
 		
 	}
 		
@@ -68,6 +75,11 @@ public class mbox {
 			tmp = scanner.nextLine().split(": ",2);
 			
 			if(tmp[0].equals("")) {
+				
+				if(is_mime(msg)) {
+					get_mime_data(msg,scanner);
+				}
+				
 				break;
 			}
 			
@@ -110,26 +122,95 @@ public class mbox {
 		
 		String data = "";
 		
-		while(scanner.hasNextLine()) {
-			
 		
-			line1 = line2;
+		if(is_mime(msg)) {
 			
-			line2 = scanner.nextLine();
-			
-			data += "\n" + line2;
-			
-			if(line2.length() > 3 && line1.equals("") && line2.substring(0,4).equals("From")) {
-			
-				break;
+			while(scanner.hasNextLine()) {
+				
+				
+				line1 = line2;
+				
+				line2 = scanner.nextLine();
+				
+				String delim = msg.get_header("Mime-delimiter") + "--";
+				
+				//System.exit(0);
+				if(line2.length() > 4 && line1.equals("") && line2.substring(0,5).equals("From ")) {
+				
+					break;
+				}
+				
+				if(line2.endsWith(delim)) {
+				
+					msg.add_header("Content", data.trim());
+					return;
+				}
+				
+				
+				data += "\n" + line2;
+				msg.add_header("Content", data.trim());
+				//System.out.println(data);
+				
 			}
+		//	System.out.println(data);
+			//System.exit(0);
+			msg.add_header("Content", data.trim());
+		}else {
+			while(scanner.hasNextLine()) {
+				
+				
+				line1 = line2;
+				
+				line2 = scanner.nextLine();
+				
+				//System.exit(0);
+				if(line2.length() > 4 && line1.equals("") && line2.substring(0,5).equals("From ")) {
+				
+					break;
+				}
+				
+				data += "\n" + line2;
+				
+				//System.out.println(data);
+				
+			}
+		//	System.out.println(data);
+			//System.exit(0);
+			msg.add_header("Content", data.trim());
+		}
+		
+		
+		
+	}
+	
+	boolean is_mime(message inn) {
+		
+		if(inn.get_header("Content-Type") == null) {
+			return false;
+		}
+		
+		while(inn.get_header("Content-Type").split("/")[0].equals("multipart")) {
 			
-			
-			//System.out.println(data);
+			return true;
 			
 		}
 		
-		msg.add_header("Content", data);
+		return false;
+	}
+	
+	void get_mime_data(message msg, Scanner scanner) {
+		String tmp;
+		while(scanner.hasNextLine()) {
+			tmp = scanner.nextLine();
+			if(tmp.startsWith("-")) {
+				msg.add_header("Mime-delimiter", tmp);
+				break;
+			}
+		}
+		
+		while(scanner.hasNextLine() && scanner.nextLine() != "") {
+			
+		}
 		
 	}
 		

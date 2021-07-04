@@ -1,0 +1,318 @@
+From owner-zeroconf@merit.edu  Wed Oct  3 18:20:39 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id SAA01487
+	for <zeroconf-archive@odin.ietf.org>; Wed, 3 Oct 2001 18:20:39 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A704A9120A; Wed,  3 Oct 2001 18:21:38 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7F1229122B; Wed,  3 Oct 2001 18:21:38 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 80F4D9120A
+	for <zeroconf@trapdoor.merit.edu>; Wed,  3 Oct 2001 18:21:37 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 290775DDD5; Wed,  3 Oct 2001 18:21:37 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from neon-gw.transmeta.com (neon-gw-l3.transmeta.com [63.209.4.196])
+	by segue.merit.edu (Postfix) with ESMTP id 7CD395DDD4
+	for <zeroconf@merit.edu>; Wed,  3 Oct 2001 18:21:36 -0400 (EDT)
+Received: (from root@localhost)
+	by neon-gw.transmeta.com (8.9.3/8.9.3) id PAA20858
+	for <zeroconf@merit.edu>; Wed, 3 Oct 2001 15:20:24 -0700
+Received: from mailhost.transmeta.com(10.1.1.15) by neon-gw.transmeta.com via smap (V2.1)
+	id xma020846; Wed, 3 Oct 01 15:20:12 -0700
+Received: from daedalus.transmeta.com (daedalus.transmeta.com [10.10.27.58])
+	by deepthought.transmeta.com (8.9.3/8.9.3) with ESMTP id PAA25880;
+	Wed, 3 Oct 2001 15:20:16 -0700 (PDT)
+Received: from daedalus.transmeta.com (seb@localhost.localdomain [127.0.0.1]) by daedalus.transmeta.com (8.9.3/8.7.3) with ESMTP id PAA09866; Wed, 3 Oct 2001 15:20:16 -0700
+Message-Id: <200110032220.PAA09866@daedalus.transmeta.com>
+To: zeroconf@merit.edu, seb@transmeta.com
+Subject: IPv4 link-local IP configuration implementations for Unix?
+Date: Wed, 03 Oct 2001 15:20:16 -0700
+From: Sebastian Kuzminsky <seb@transmeta.com>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Is there currently any Unix implementation of the algorithms described
+in the draft 'Dynamic Configuration of IPv4 Link-Local Addresses',
+either stand-alone or as a fallback mechanism for a DHCP client?
+
+
+
+
+Sebastian
+
+
+
+From owner-zeroconf@merit.edu  Wed Oct  3 18:55:55 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id SAA02455
+	for <zeroconf-archive@odin.ietf.org>; Wed, 3 Oct 2001 18:55:55 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id F071A9122A; Wed,  3 Oct 2001 18:56:45 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B221C9122B; Wed,  3 Oct 2001 18:56:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id C64349122A
+	for <zeroconf@trapdoor.merit.edu>; Wed,  3 Oct 2001 18:56:43 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 6F2EE5DDD6; Wed,  3 Oct 2001 18:56:43 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id 7DB255DDA2
+	for <zeroconf@merit.edu>; Wed,  3 Oct 2001 18:56:42 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.9.3/8.9.3) with ESMTP id PAA41673;
+	Wed, 3 Oct 2001 15:46:44 -0700 (PDT)
+	(envelope-from aboba@internaut.com)
+Date: Wed, 3 Oct 2001 15:46:44 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: Sebastian Kuzminsky <seb@transmeta.com>
+Cc: zeroconf@merit.edu
+Subject: Re: IPv4 link-local IP configuration implementations for Unix?
+In-Reply-To: <200110032220.PAA09866@daedalus.transmeta.com>
+Message-ID: <Pine.BSF.4.21.0110031545060.41648-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+If I recall correctly, one of the Linux DHCP clients (ISC?) had
+implemented IPv4 linklocal addressing, though not according to the
+the zeroconf draft. However, the standard DHCP client shipped with
+distributions such as SuSE does not appear to implement this. 
+
+On Wed, 3 Oct 2001, Sebastian Kuzminsky wrote:
+
+> Is there currently any Unix implementation of the algorithms described
+> in the draft 'Dynamic Configuration of IPv4 Link-Local Addresses',
+> either stand-alone or as a fallback mechanism for a DHCP client?
+> 
+> 
+> 
+> 
+> Sebastian
+> 
+> 
+
+
+
+From owner-zeroconf@merit.edu  Wed Oct  3 19:07:04 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA02888
+	for <zeroconf-archive@odin.ietf.org>; Wed, 3 Oct 2001 19:07:03 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 39B609122B; Wed,  3 Oct 2001 19:08:02 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 09B729130D; Wed,  3 Oct 2001 19:08:01 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 097DE9122B
+	for <zeroconf@trapdoor.merit.edu>; Wed,  3 Oct 2001 19:08:00 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id AAB7E5DDD4; Wed,  3 Oct 2001 19:08:00 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 5512F5DDA2
+	for <zeroconf@merit.edu>; Wed,  3 Oct 2001 19:08:00 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.11.3/8.11.3) with ESMTP id f93N6q125553
+	for <zeroconf@merit.edu>; Wed, 3 Oct 2001 16:06:52 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T565fb9d7be118064e163c@mailgate1.apple.com>;
+ Wed, 3 Oct 2001 16:06:42 -0700
+Received: from graejo.apple.com (graejo.apple.com [17.202.40.111])
+	by scv3.apple.com (8.9.3/8.9.3) with ESMTP id QAA07579;
+	Wed, 3 Oct 2001 16:06:47 -0700 (PDT)
+Date: Wed, 3 Oct 2001 16:06:56 -0700
+Subject: Re: IPv4 link-local IP configuration implementations for Unix?
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Mime-Version: 1.0 (Apple Message framework v472)
+Cc: Sebastian Kuzminsky <seb@transmeta.com>, zeroconf@merit.edu
+To: Bernard Aboba <aboba@internaut.com>
+From: Josh Graessley <jgraessley@apple.com>
+In-Reply-To: <Pine.BSF.4.21.0110031545060.41648-100000@internaut.com>
+Message-Id: <579FA04E-B853-11D5-BF5E-0030656C8A1C@apple.com>
+Content-Transfer-Encoding: 7bit
+X-Mailer: Apple Mail (2.472)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Mac OS X and Darwin support IPv4 link-local addresses. I believe 
+there were some modifications made to the kernel's arp code, but 
+most of the support is built in to configd.
+
+-josh
+
+On Wednesday, October 3, 2001, at 03:46  PM, Bernard Aboba wrote:
+
+> If I recall correctly, one of the Linux DHCP clients (ISC?) had
+> implemented IPv4 linklocal addressing, though not according to the
+> the zeroconf draft. However, the standard DHCP client shipped with
+> distributions such as SuSE does not appear to implement this.
+>
+> On Wed, 3 Oct 2001, Sebastian Kuzminsky wrote:
+>
+>> Is there currently any Unix implementation of the algorithms described
+>> in the draft 'Dynamic Configuration of IPv4 Link-Local Addresses',
+>> either stand-alone or as a fallback mechanism for a DHCP client?
+>>
+>>
+>>
+>>
+>> Sebastian
+>>
+>>
+>
+
+
+
+From owner-zeroconf@merit.edu  Mon Oct 22 06:39:51 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA10108
+	for <zeroconf-archive@odin.ietf.org>; Mon, 22 Oct 2001 06:39:50 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id CB31091231; Mon, 22 Oct 2001 06:39:42 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9F3EB91232; Mon, 22 Oct 2001 06:39:42 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B76FE91231
+	for <zeroconf@trapdoor.merit.edu>; Mon, 22 Oct 2001 06:39:41 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9ABF55DDBC; Mon, 22 Oct 2001 06:39:41 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id F025A5DD98
+	for <zeroconf@merit.edu>; Mon, 22 Oct 2001 06:39:40 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id DAA00696;
+	Mon, 22 Oct 2001 03:39:21 -0700 (PDT)
+Received: from vayne (remote-nl-21.Holland.Sun.COM [129.159.209.103])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id MAA01955;
+	Mon, 22 Oct 2001 12:39:19 +0200 (MET DST)
+Date: Mon, 22 Oct 2001 12:52:00 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: zmaap discussion
+To: zeroconf@merit.edu
+Cc: erik.guttman@sun.com, octavian.catrina@i-u.de
+Message-ID: <Roam.SIMC.2.0.6.1003747920.31839.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+---
+
+Please note there is an available ZMAAP prototype of 
+draft-ietf-zeroconf-zmaap-01.txt specification, under a Sun Public
+License:  http://www.neato.org/~femur/iu/jzmaap_01.zip
+
+---
+
+I wrote a new version of ZMAAP with the following agreed upon changes:
+
+ - added a wait to defend timer to prevent defense AIU implosions
+ - added a wait to retry allocation timer to prevent thrashing
+ - removed text on WEP
+ - added a magic number preamble to the ZMAAP header
+ - clarified when an allocation conflict occurs (overlapping ranges, 
+   same lease id constitutes a conflict)
+
+I submitted this as draft-ietf-zeroconf-zmaap-02.txt, which should
+appear shortly.
+
+---
+
+I still have some remaining concerns.
+
+ - The current document still does periodic announcement of allocations
+   in order to detect collisions.  AIUs are multicast before the current 
+   AIU allocation expires.  This will either be slow (few messages burden
+   the network but not very effective at detecting conflicts quickly)
+   or fast (would result in many messages being sent for multicast groups
+   even if they are not in use)
+
+ - The connection to session discovery is weak.  As specified in ZMAAP,
+   SAP is used to passively discover sessions.  This is very slow (repeat 
+   rates on the order of 10s of minutes), which is suitable for wide are
+   session information distribution but not interactive discovery and
+   rendezvous of different applications on one session.
+
+ - Ideally ZMAAP would discover collisions by the basic use of the
+   multicast groups in question.  This is how v4 link local address
+   autoconf and mDNS discover collisions.  No traffic, no name resolution?
+   Then no conflict.  The very act of replying to an ARP or a MDNS request
+   allows conflict detection.  
+
+I believe we could add a very simple mechanism to ZMAAP to make it
+a session discovery protocol, responding to the issues above.
+
+  1) Instead of using the socket API to send and receive multicast 
+     datagrams to groups associated with addresses allocated with
+     ZMAAP - applications may use the ZMAAP API send and receive
+     wrapper APIs.  The advantage to the application of doing this
+     is that the ZMAAP API will take care to inform other mini-MAASs
+     that a session is still live.  
+
+     For active sessions - send an unsolicited AIU every n seconds.  
+
+     Advantage - AIU announcements only occur for active sessions.
+
+  2) Replace the Lease ID (4 byte unsigned integer) with a SDP string
+     session description.  At the least, this contains a 'session id'
+     string.  At the most, a limited amount of additional session 
+     description (say up to 256 bytes, so that at least 4 lease 
+     descriptors will fit in a single AIU).
+
+     Advantage:  
+       - The session id is descriptive enough to allow rendezvous at 
+         specific sessions, even vendor predefined sessions.
+       - Passively received AIUs will contain session ids:  A mini-
+         MAAS will be able to detect that a single session is 
+         associated with multiple addresses.  The 'lowest' address
+         wins:  the mini-MAAS informs the application of this via
+         the API --- OR --- it could maintain the session to address
+         binding transparently to the application, if all sends/
+         receives go through the ZMAAP API.
+
+     Disadvantages:  
+       - SDP session descriptions are big.  
+         That's OK, just include fewer lease descriptors per AIU.  
+       - SDP session descriptions could contain sensitive info.
+         Either just limit the use of SDP to the session id, that is,
+         don't include anything which is private data like video titles. 
+         Or employ IPsec with predistributed keys as suggested in the
+         security considerations of draft-ietf-zeroconf-zmaap-02.txt
+
+  3) Include a new message in ZMAAP 'SDISC' includes only a ZMAAP
+     header followed by a SDP string.  This solicits AIU replies
+     where the SDP attribute(s) match.  Use the same algorithm to
+     reply as for defense (that is, a start a timer and only reply
+     if the timer expires before anyone else has replied).  An
+     empty string matches all sessions.
+
+     Advantage
+       - Allows rapid, interactive discovery of existing sessions
+       - Can be used to check if a session exists before creating 
+         one.  This presents a race condition, but 1 and 2 above
+         would resolve any duplicate session allocations rapidly.
+
+     
+What do you all think?
+
+Erik
+
+
+

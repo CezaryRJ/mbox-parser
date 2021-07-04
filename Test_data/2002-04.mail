@@ -1,0 +1,636 @@
+From owner-zeroconf@merit.edu  Tue Apr  9 02:19:14 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA27262
+	for <zeroconf-archive@odin.ietf.org>; Tue, 9 Apr 2002 02:19:14 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id EC08B91316; Tue,  9 Apr 2002 02:18:58 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 075AE91318; Tue,  9 Apr 2002 02:18:56 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CF33F91316
+	for <zeroconf@trapdoor.merit.edu>; Tue,  9 Apr 2002 02:18:13 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A64305DEAA; Tue,  9 Apr 2002 02:18:13 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from vanya.bolo.net (vanya.bolo.net [206.111.147.147])
+	by segue.merit.edu (Postfix) with SMTP id 464E75DEA4
+	for <zeroconf@merit.edu>; Tue,  9 Apr 2002 02:18:13 -0400 (EDT)
+Received: from [206.111.147.149] by vanya.bolo.net (AppleShare IP Mail Server 6.3.1) id 28244 via TCP with SMTP; Mon, 08 Apr 2002 23:17:59 -0700
+Message-id: <1020408231759.4091f30.ce6f9393.ASIP6.3.1.28244@vanya.bolo.net>
+Subject: Re: Draft status?
+Date: Mon, 8 Apr 2002 23:18:08 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Nevo Hed" <Nevo@aviancommunications.com>, <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>I skimmed recent posts and could not understand for sure whats
+>the current link-local draft state ... the current draft seems
+>to be the 04 version and expiration date of January ...
+>
+>I saw the 'summary of issues...' post from November ... 
+>
+>Is there any idea if and when link-local will become an RFC?
+>
+>Thanks
+>   -Nevo
+
+I'm glad you asked :-)
+
+As a result of IETF Last-Call on Draft-04, a number of issues were 
+raised. The "Summary of Issues" email thread in November proposed 
+resolutions to all those issues.
+
+Also, in the DHC Working Group at the Salt-Lake City IETF meeting, one of 
+our Area Directors made a very valid observation -- that waiting 8-10 
+seconds before using an IP address may be unacceptable for many new 
+devices that wish to use Zeroconf. If the Working Group is in agreement, 
+I think we can address this concern with the addition of the following 
+text:
+
+>2.3 Shorter Timeouts on Appropriate Network Technologies
+>
+>   The time values specified above are intended for use on technologies
+>   such as Ethernet, where switches that implement Spanning Tree
+>   [802.1d] often silently discard all packets for several seconds. The
+>   time values specified above result in a delay of 8-10 seconds before
+>   a chosen IP address may be used. For a desktop machine using DHCP,
+>   this may not be a great problem, but for other types of device,
+>   particularly portable hand-held wireless devices, a ten-second delay
+>   before networking services becomes available may not be acceptable.
+>   For this reason, shorter time values may be used on network
+>   technologies that allow the device to determine when the link has
+>   become active and can be reasonably trusted to deliver packets
+>   reliably. On these network technologies the recommended time values
+>   are: The host should first wait for a random time interval selected
+>   uniformly in the range 0-200 milliseconds, and then send four probe
+>   packets, waiting 200 milliseconds after each probe, making a total
+>   delay of 800-1000 milliseconds before a chosen IP address may be
+>   used.
+>
+>   Should future versions of the IEEE Spanning Tree Protocol be enhanced
+>   to inform clients when the link is ready to begin forwarding packets,
+>   then the shorter time values may be used on these networks too.
+
+I urge anyone with an opinion for or against this text to send mail to 
+the list. If we can get consensus on this last remaining timeout 
+question, then as soon as I hear from our Area Directors and from Keith 
+Moore that they approve of the resolutions to the earlier issues, I can 
+submit draft-05 and request that the RFC Editor publish it as a Standards 
+Track RFC.
+
+For those eager to see a preview of what draft-05 should look like, the 
+current working copy is available at:
+
+<http://files.zeroconf.org/draft-ietf-zeroconf-ipv4-linklocal-04bis.txt>
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  9 02:56:30 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA27836
+	for <zeroconf-archive@odin.ietf.org>; Tue, 9 Apr 2002 02:56:30 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 037DC91203; Tue,  9 Apr 2002 02:56:21 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C7BD2912A8; Tue,  9 Apr 2002 02:56:20 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B125C91203
+	for <zeroconf@trapdoor.merit.edu>; Tue,  9 Apr 2002 02:56:19 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8FBD45DECE; Tue,  9 Apr 2002 02:56:19 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mta03ps.bigpond.com (mta03ps.bigpond.com [144.135.25.135])
+	by segue.merit.edu (Postfix) with ESMTP id 4AA905DECD
+	for <zeroconf@merit.edu>; Tue,  9 Apr 2002 02:56:18 -0400 (EDT)
+Received: from localhost.localdomain ([144.135.25.81]) by
+          mta03ps.bigpond.com (Netscape Messaging Server 4.15) with SMTP
+          id GUAGLJ00.4B7; Tue, 9 Apr 2002 16:56:07 +1000 
+Received: from CPE-203-51-25-239.nsw.bigpond.net.au ([203.51.25.239]) by psmam05.mailsvc.email.bigpond.com(MailRouter V3.0j 101/280377); 09 Apr 2002 16:56:07
+Content-Type: text/plain;
+  charset="iso-8859-1"
+From: Brad Hards <bhards@bigpond.net.au>
+To: Stuart Cheshire <cheshire@apple.com>, <zeroconf@merit.edu>
+Subject: Re: Draft status?
+Date: Tue, 9 Apr 2002 16:56:23 +1000
+X-Mailer: KMail [version 1.4]
+References: <1020408231759.4091f30.ce6f9393.ASIP6.3.1.28244@vanya.bolo.net>
+In-Reply-To: <1020408231759.4091f30.ce6f9393.ASIP6.3.1.28244@vanya.bolo.net>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Message-Id: <200204091656.24368.bhards@bigpond.net.au>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+
+On Tue, 9 Apr 2002 16:18, Stuart Cheshire wrote:
+<snip>
+> I'm glad you asked :-)
+Interestingly, this informative response doesn't actually answer the question 
+:)
+
+> Also, in the DHC Working Group at the Salt-Lake City IETF meeting, one of
+> our Area Directors made a very valid observation -- that waiting 8-10
+> seconds before using an IP address may be unacceptable for many new
+> devices that wish to use Zeroconf. If the Working Group is in agreement,
+Seems reasonable.
+
+> I think we can address this concern with the addition of the following
+>
+> text:
+> >2.3 Shorter Timeouts on Appropriate Network Technologies
+> >
+> >   The time values specified above are intended for use on technologies
+> >   such as Ethernet, where switches that implement Spanning Tree
+> >   [802.1d] often silently discard all packets for several seconds. The
+> >   time values specified above result in a delay of 8-10 seconds before
+> >   a chosen IP address may be used. For a desktop machine using DHCP,
+I'm not sure what the DHCP reference is supposed to be for. Can you clarify
+
+> >   this may not be a great problem, but for other types of device,
+> >   particularly portable hand-held wireless devices, a ten-second delay
+> >   before networking services becomes available may not be acceptable.
+> >   For this reason, shorter time values may be used on network
+> >   technologies that allow the device to determine when the link has
+Is this intended to mean media sense (aka the "link good" light) ?
+
+> >   become active and can be reasonably trusted to deliver packets
+> >   reliably. On these network technologies the recommended time values
+> >   are: The host should first wait for a random time interval selected
+s/should/SHALL?
+and perhaps something along the lines of "waiting not less than 200 
+milliseconds" for the interval between ARPs.
+I am thinking of devices where we can start this process early in the boot 
+cycle, and then do other initialisation things (which might take more than 
+200ms), which is something productive to do instead of just sleeping for 
+200ms.
+
+> >   uniformly in the range 0-200 milliseconds, and then send four probe
+> >   packets, waiting 200 milliseconds after each probe, making a total
+> >   delay of 800-1000 milliseconds before a chosen IP address may be
+> >   used.
+Is the initial delay intended to avoid a whole stack of machines starting up 
+together crashing down on the poor networking media at once?
+
+> >   Should future versions of the IEEE Spanning Tree Protocol be enhanced
+> >   to inform clients when the link is ready to begin forwarding packets,
+> >   then the shorter time values may be used on these networks too.
+>
+> I urge anyone with an opinion for or against this text to send mail to
+> the list. If we can get consensus on this last remaining timeout
+> question, then as soon as I hear from our Area Directors and from Keith
+> Moore that they approve of the resolutions to the earlier issues, I can
+> submit draft-05 and request that the RFC Editor publish it as a Standards
+> Track RFC.
+>
+> For those eager to see a preview of what draft-05 should look like, the
+> current working copy is available at:
+>
+> <http://files.zeroconf.org/draft-ietf-zeroconf-ipv4-linklocal-04bis.txt>
+I'm on it...
+
+Brad
+
+BTW: Thanks to whoever sprang for, and set up, those nice new(?) websites.
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  9 04:44:06 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA29627
+	for <zeroconf-archive@odin.ietf.org>; Tue, 9 Apr 2002 04:44:06 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B400C91206; Tue,  9 Apr 2002 04:43:43 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 86289912A9; Tue,  9 Apr 2002 04:43:43 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6973E91206
+	for <zeroconf@trapdoor.merit.edu>; Tue,  9 Apr 2002 04:43:42 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 485EF5DFE1; Tue,  9 Apr 2002 04:43:42 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from gw-nl5.philips.com (gw-nl5.philips.com [212.153.235.99])
+	by segue.merit.edu (Postfix) with ESMTP id 7DC475DFC1
+	for <zeroconf@merit.edu>; Tue,  9 Apr 2002 04:43:41 -0400 (EDT)
+Received: from smtpscan-nl3.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl5.philips.com with ESMTP id KAA08292;
+          Tue, 9 Apr 2002 10:43:33 +0200 (MEST)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtpscan-nl3.philips.com(130.139.36.23) by gw-nl5.philips.com via mwrap (4.0a)
+	id xma008252; Tue, 9 Apr 02 10:43:34 +0200
+Received: from smtprelay-nl1.philips.com (localhost [127.0.0.1]) 
+	by smtpscan-nl3.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id KAA09385; Tue, 9 Apr 2002 10:43:25 +0200 (MET DST)
+Received: from ehv501soh.diamond.philips.com (e3soh01.diamond.philips.com [130.139.54.213]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id KAB19904; Tue, 9 Apr 2002 10:43:19 +0200 (MET DST)
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Resend policy
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+Message-ID: <OF00AA6E4D.ACCD2D43-ONC1256B96.002BCAF1@diamond.philips.com>
+Date: Tue, 9 Apr 2002 10:07:50 +0200
+X-MIMETrack: Serialize by Router on ehv501soh/H/SERVER/PHILIPS(Release 5.0.9a |January 7, 2002) at
+ 09/04/2002 10:44:15,
+	Serialize complete at 09/04/2002 10:44:15
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_alternative 002CEEF2C1256B96_="
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multipart message in MIME format.
+--=_alternative 002CEEF2C1256B96_=
+Content-Type: text/plain; charset="us-ascii"
+
+Stuart,
+
+We also have major problems with the Timeout value of 8 seconds.
+Not so much the 8 seconds at the start, but the 8 seconds after sensing a 
+clash is considered
+prohibitively long. (It means disruption of ongoing service during 8 
+seconds)
+
+I propose not to fix the de resend intervals but keep them open.
+A best resend strategy depends on the environment (for example on wired 
+IEEE 1394 another strategy can be 
+used than on IEEE 802.11(b) while Bluetooth communication is going on with 
+a packet loss
+probability of 30%.). I understand that a number of resends is specified 
+and that a recommendation is done
+for ethernet but that every link-local implementation can decide itself on 
+the best intervals as function of
+communication technology and transmission statistics. (a minimum interval 
+may be specified
+to avoid overloads).
+
+Greetings
+
+
+
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WDC 1-015                  Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:      +31 40 2745033       The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+
+
+
+Stuart Cheshire <cheshire@apple.com>
+Sent by: owner-zeroconf@merit.edu
+09-04-2002 08:18
+
+ 
+        To:     "Nevo Hed" <Nevo@aviancommunications.com>
+<zeroconf@merit.edu>
+        cc:     (bcc: Peter van der Stok/EHV/RESEARCH/PHILIPS)
+        Subject:        Re: Draft status?
+        Classification: 
+
+
+
+>I skimmed recent posts and could not understand for sure whats
+>the current link-local draft state ... the current draft seems
+>to be the 04 version and expiration date of January ...
+>
+>I saw the 'summary of issues...' post from November ... 
+>
+>Is there any idea if and when link-local will become an RFC?
+>
+>Thanks
+>   -Nevo
+
+I'm glad you asked :-)
+
+As a result of IETF Last-Call on Draft-04, a number of issues were 
+raised. The "Summary of Issues" email thread in November proposed 
+resolutions to all those issues.
+
+Also, in the DHC Working Group at the Salt-Lake City IETF meeting, one of 
+our Area Directors made a very valid observation -- that waiting 8-10 
+seconds before using an IP address may be unacceptable for many new 
+devices that wish to use Zeroconf. If the Working Group is in agreement, 
+I think we can address this concern with the addition of the following 
+text:
+
+>2.3 Shorter Timeouts on Appropriate Network Technologies
+>
+>   The time values specified above are intended for use on technologies
+>   such as Ethernet, where switches that implement Spanning Tree
+>   [802.1d] often silently discard all packets for several seconds. The
+>   time values specified above result in a delay of 8-10 seconds before
+>   a chosen IP address may be used. For a desktop machine using DHCP,
+>   this may not be a great problem, but for other types of device,
+>   particularly portable hand-held wireless devices, a ten-second delay
+>   before networking services becomes available may not be acceptable.
+>   For this reason, shorter time values may be used on network
+>   technologies that allow the device to determine when the link has
+>   become active and can be reasonably trusted to deliver packets
+>   reliably. On these network technologies the recommended time values
+>   are: The host should first wait for a random time interval selected
+>   uniformly in the range 0-200 milliseconds, and then send four probe
+>   packets, waiting 200 milliseconds after each probe, making a total
+>   delay of 800-1000 milliseconds before a chosen IP address may be
+>   used.
+>
+>   Should future versions of the IEEE Spanning Tree Protocol be enhanced
+>   to inform clients when the link is ready to begin forwarding packets,
+>   then the shorter time values may be used on these networks too.
+
+I urge anyone with an opinion for or against this text to send mail to 
+the list. If we can get consensus on this last remaining timeout 
+question, then as soon as I hear from our Area Directors and from Keith 
+Moore that they approve of the resolutions to the earlier issues, I can 
+submit draft-05 and request that the RFC Editor publish it as a Standards 
+Track RFC.
+
+For those eager to see a preview of what draft-05 should look like, the 
+current working copy is available at:
+
+<http://files.zeroconf.org/draft-ietf-zeroconf-ipv4-linklocal-04bis.txt>
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+
+--=_alternative 002CEEF2C1256B96_=
+Content-Type: text/html; charset="us-ascii"
+
+
+<br><font size=2 face="sans-serif">Stuart,</font>
+<br>
+<br><font size=2 face="sans-serif">We also have major problems with the Timeout value of 8 seconds.</font>
+<br><font size=2 face="sans-serif">Not so much the 8 seconds at the start, but the 8 seconds after sensing a clash is considered</font>
+<br><font size=2 face="sans-serif">prohibitively long. (It means disruption of ongoing service during 8 seconds)</font>
+<br>
+<br><font size=2 face="sans-serif">I propose not to fix the de resend intervals but keep them open.</font>
+<br><font size=2 face="sans-serif">A best resend strategy depends on the environment (for example on wired IEEE 1394 another strategy can be </font>
+<br><font size=2 face="sans-serif">used than on IEEE 802.11(b) while Bluetooth communication is going on with a packet loss</font>
+<br><font size=2 face="sans-serif">probability of 30%.). I understand that a number of resends is specified and that a recommendation is done</font>
+<br><font size=2 face="sans-serif">for ethernet but that every link-local implementation can decide itself on the best intervals as function of</font>
+<br><font size=2 face="sans-serif">communication technology and transmission statistics. (a minimum interval may be specified</font>
+<br><font size=2 face="sans-serif">to avoid overloads).</font>
+<br>
+<br><font size=2 face="sans-serif">Greetings</font>
+<br>
+<br>
+<br><font size=2 face="sans-serif"><br>
+<br>
+Peter van der Stok &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Philips Research Laboratories Eindhoven<br>
+Bldg: WDC 1-015 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Prof. Holstlaan 4<br>
+Phone: +31 40 2742649 &nbsp; &nbsp; &nbsp; 5656 AA Eindhoven<br>
+Fax: &nbsp; &nbsp; &nbsp;+31 40 2745033 &nbsp; &nbsp; &nbsp; The Netherlands<br>
+Mailto: Peter.van.der.Stok@ philips.com</font>
+<br>
+<br>
+<br>
+<table width=100%>
+<tr valign=top>
+<td>
+<td><font size=1 face="sans-serif"><b>Stuart Cheshire &lt;cheshire@apple.com&gt;</b></font>
+<br><font size=1 face="sans-serif">Sent by: owner-zeroconf@merit.edu</font>
+<p><font size=1 face="sans-serif">09-04-2002 08:18</font>
+<br>
+<td><font size=1 face="Arial">&nbsp; &nbsp; &nbsp; &nbsp; </font>
+<br><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; To: &nbsp; &nbsp; &nbsp; &nbsp;&quot;Nevo Hed&quot; &lt;Nevo@aviancommunications.com&gt;<br>
+&lt;zeroconf@merit.edu&gt;</font>
+<br><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; cc: &nbsp; &nbsp; &nbsp; &nbsp;(bcc: Peter van der Stok/EHV/RESEARCH/PHILIPS)</font>
+<br><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Subject: &nbsp; &nbsp; &nbsp; &nbsp;Re: Draft status?</font>
+<p><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Classification: &nbsp; &nbsp; &nbsp; &nbsp;</font>
+<br></table>
+<br>
+<br>
+<br><font size=2 face="Courier New">&gt;I skimmed recent posts and could not understand for sure whats<br>
+&gt;the current link-local draft state ... the current draft seems<br>
+&gt;to be the 04 version and expiration date of January ...<br>
+&gt;<br>
+&gt;I saw the 'summary of issues...' post from November ... <br>
+&gt;<br>
+&gt;Is there any idea if and when link-local will become an RFC?<br>
+&gt;<br>
+&gt;Thanks<br>
+&gt; &nbsp; -Nevo<br>
+<br>
+I'm glad you asked :-)<br>
+<br>
+As a result of IETF Last-Call on Draft-04, a number of issues were <br>
+raised. The &quot;Summary of Issues&quot; email thread in November proposed <br>
+resolutions to all those issues.<br>
+<br>
+Also, in the DHC Working Group at the Salt-Lake City IETF meeting, one of <br>
+our Area Directors made a very valid observation -- that waiting 8-10 <br>
+seconds before using an IP address may be unacceptable for many new <br>
+devices that wish to use Zeroconf. If the Working Group is in agreement, <br>
+I think we can address this concern with the addition of the following <br>
+text:<br>
+<br>
+&gt;2.3 Shorter Timeouts on Appropriate Network Technologies<br>
+&gt;<br>
+&gt; &nbsp; The time values specified above are intended for use on technologies<br>
+&gt; &nbsp; such as Ethernet, where switches that implement Spanning Tree<br>
+&gt; &nbsp; [802.1d] often silently discard all packets for several seconds. The<br>
+&gt; &nbsp; time values specified above result in a delay of 8-10 seconds before<br>
+&gt; &nbsp; a chosen IP address may be used. For a desktop machine using DHCP,<br>
+&gt; &nbsp; this may not be a great problem, but for other types of device,<br>
+&gt; &nbsp; particularly portable hand-held wireless devices, a ten-second delay<br>
+&gt; &nbsp; before networking services becomes available may not be acceptable.<br>
+&gt; &nbsp; For this reason, shorter time values may be used on network<br>
+&gt; &nbsp; technologies that allow the device to determine when the link has<br>
+&gt; &nbsp; become active and can be reasonably trusted to deliver packets<br>
+&gt; &nbsp; reliably. On these network technologies the recommended time values<br>
+&gt; &nbsp; are: The host should first wait for a random time interval selected<br>
+&gt; &nbsp; uniformly in the range 0-200 milliseconds, and then send four probe<br>
+&gt; &nbsp; packets, waiting 200 milliseconds after each probe, making a total<br>
+&gt; &nbsp; delay of 800-1000 milliseconds before a chosen IP address may be<br>
+&gt; &nbsp; used.<br>
+&gt;<br>
+&gt; &nbsp; Should future versions of the IEEE Spanning Tree Protocol be enhanced<br>
+&gt; &nbsp; to inform clients when the link is ready to begin forwarding packets,<br>
+&gt; &nbsp; then the shorter time values may be used on these networks too.<br>
+<br>
+I urge anyone with an opinion for or against this text to send mail to <br>
+the list. If we can get consensus on this last remaining timeout <br>
+question, then as soon as I hear from our Area Directors and from Keith <br>
+Moore that they approve of the resolutions to the earlier issues, I can <br>
+submit draft-05 and request that the RFC Editor publish it as a Standards <br>
+Track RFC.<br>
+<br>
+For those eager to see a preview of what draft-05 should look like, the <br>
+current working copy is available at:<br>
+<br>
+&lt;http://files.zeroconf.org/draft-ietf-zeroconf-ipv4-linklocal-04bis.txt&gt;<br>
+<br>
+Stuart Cheshire &lt;cheshire@apple.com&gt;<br>
+ * Wizard Without Portfolio, Apple Computer<br>
+ * Chairman, IETF ZEROCONF<br>
+ * www.stuartcheshire.org<br>
+<br>
+<br>
+<br>
+</font>
+<br>
+<br>
+--=_alternative 002CEEF2C1256B96_=--
+
+
+From owner-zeroconf@merit.edu  Tue Apr  9 11:03:42 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA07963
+	for <zeroconf-archive@lists.ietf.org>; Tue, 9 Apr 2002 11:03:42 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id EE6C391264; Tue,  9 Apr 2002 11:03:26 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C26F39129E; Tue,  9 Apr 2002 11:03:25 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id DEB9191264
+	for <zeroconf@trapdoor.merit.edu>; Tue,  9 Apr 2002 11:03:24 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id BB3495DE93; Tue,  9 Apr 2002 11:03:24 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id 31BD05DE8F
+	for <zeroconf@merit.edu>; Tue,  9 Apr 2002 11:03:24 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id g39EJJD20912;
+	Tue, 9 Apr 2002 07:19:19 -0700
+Date: Tue, 9 Apr 2002 07:19:19 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: Nevo Hed <Nevo@aviancommunications.com>, zeroconf@merit.edu
+Subject: Re: Draft status?
+In-Reply-To: <1020408231759.4091f30.ce6f9393.ASIP6.3.1.28244@vanya.bolo.net>
+Message-ID: <Pine.LNX.4.21.0204090601080.16153-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Should future versions of the IEEE Spanning Tree Protocol be enhanced
+> to inform clients when the link is ready to begin forwarding packets,
+> then the shorter time values may be used on these networks too.
+
+Such a "future version" of IEEE Spanning Tree Protocol already
+exists. It's called 802.1w "Rapid Spanning Tree". If you need more
+information, you can correspond with Tony Jeffree. 
+
+> I urge anyone with an opinion for or against this text to send mail to 
+> the list. 
+
+It's worth remembering that adhoc networking scenarios 
+often do not involve switches (e.g. adhoc 802.11 wireless
+networks). Adhoc wireless networks do meet the definition of "allowing the
+device to determine when the link has become active". 
+
+However, where authentication is required, an initial delay may be
+inserted; since authentication may operate separately from ARP, there may
+be no way for the ARP module to know what the appropriate time intervals
+are in a given situation, just given information about the nature of the
+link. 
+
+As a result, it is difficult for one or even two
+recommendations to fit all circumstances. I'd note that RFC 2462 takes
+the approach of defining the variables involved, such as the number of
+transmits (DupAddrDetectTransmits), the retransmission timer interval
+(ReTransTimer), and the jitter interval
+MAX_RTR_SOLICITATION_DELAY (default of 1 second). 
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr 10 00:59:00 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id AAA02803
+	for <zeroconf-archive@lists.ietf.org>; Wed, 10 Apr 2002 00:59:00 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id C775F91224; Wed, 10 Apr 2002 00:58:51 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 99854912DC; Wed, 10 Apr 2002 00:58:51 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B3B7591224
+	for <zeroconf@trapdoor.merit.edu>; Wed, 10 Apr 2002 00:58:50 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8E48C5DDBB; Wed, 10 Apr 2002 00:58:50 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from vanya.bolo.net (vanya.bolo.net [206.111.147.147])
+	by segue.merit.edu (Postfix) with SMTP id 38CD75DDB3
+	for <zeroconf@merit.edu>; Wed, 10 Apr 2002 00:58:50 -0400 (EDT)
+Received: from [206.111.147.149] by vanya.bolo.net (AppleShare IP Mail Server 6.3.1) id 28376 via TCP with SMTP; Tue, 09 Apr 2002 21:58:39 -0700
+Message-id: <1020409215839.4540c7d.ce6f9393.ASIP6.3.1.28376@vanya.bolo.net>
+Subject: Re: Draft status?
+Date: Tue, 9 Apr 2002 21:58:49 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Brad Hards" <bhards@bigpond.net.au>, <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Thanks for you comments Brad.
+
+>Interestingly, this informative response doesn't actually answer the 
+>question :)
+
+The answer to this question lies in the hands of the IESG. However, it is 
+our sincere expectation that this draft will be sent to the RFC editor 
+within a week or two.
+
+>I'm not sure what the DHCP reference is supposed to be for.
+
+Good point. That paragraph came from "draft-cheshire-ipv4-acd-01.txt", 
+and I forgot to remove the DHCP reference. Draft-04bis now says, "For a 
+desktop machine on Ethernet..."
+
+>Is this intended to mean media sense (aka the "link good" light) ?
+
+No, sadly, the "link good" light is misleading. Even when the link light 
+is on, the Ethernet switch at the other end may still be silently 
+throwing away all your packets. It's quite annoying.
+
+>Is the initial delay intended to avoid a whole stack of machines 
+>starting up together crashing down on the poor networking media at once?
+
+Yes. The document mentions this in "2.2 Claiming a Link-Local Address":
+
+   This initial random delay helps ensure that a
+   large number of hosts powered on at the same time do not all send
+   their initial probe packets simultaneously.
+
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+

@@ -13,17 +13,20 @@ public class message {
 		
 	}
 	
-	String get_header(String name) {
+	public String get_header(String name) {
 		return headers.get(name);
 	}
 	
 	
-	void print_headers() {
+	public void print_headers() {
 		
 		for (String name: headers.keySet()) {
-		    String key = name.toString();
-		    String value = headers.get(name).toString();
-		    System.out.println(key + " " + value);
+			if(name != "Content") {
+				 String key = name.toString();
+			    String value = headers.get(name).toString();
+			    System.out.println(key + " " + value);
+			}
+		   
 		}
 		
 	}

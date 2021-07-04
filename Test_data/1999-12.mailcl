@@ -1,0 +1,128 @@
+From Majordomo-Owner@merit.edu  Tue Dec 21 14:55:51 1999
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA27288
+	for <zeroconf-archive@odin.ietf.org>; Tue, 21 Dec 1999 14:55:51 -0500 (EST)
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 78DC45DDC8; Tue, 21 Dec 1999 14:55:47 -0500 (EST)
+To: zeroconf-archive@ietf.org
+From: Majordomo@merit.edu
+Subject: Confirmation for subscribe zeroconf
+Reply-To: Majordomo@merit.edu
+Message-Id: <19991221195547.78DC45DDC8@segue.merit.edu>
+Date: Tue, 21 Dec 1999 14:55:47 -0500 (EST)
+Sender: Majordomo-Owner@merit.edu
+
+--
+
+Someone (possibly you) has requested that your email address be added
+to or deleted from the mailing list "zeroconf@segue.merit.edu".
+
+If you really want this action to be taken, please send the following
+commands (exactly as shown) back to "Majordomo@segue.merit.edu":
+
+	auth ca66449e subscribe zeroconf zeroconf-archive@lists.ietf.org
+
+If you do not want this action to be taken, simply ignore this message
+and the request will be disregarded.
+
+If your mailer will not allow you to send the entire command as a single
+line, you may split it using backslashes, like so:
+
+        auth ca66449e subscribe zeroconf \
+        zeroconf-archive@lists.ietf.org
+
+If you have any questions about the policy of the list owner, please
+contact "zeroconf-approval@segue.merit.edu".
+
+Thanks!
+
+Majordomo@segue.merit.edu
+
+
+From owner-zeroconf@merit.edu  Thu Dec 23 00:06:13 1999
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id AAA05421
+	for <zeroconf-archive@odin.ietf.org>; Thu, 23 Dec 1999 00:06:12 -0500 (EST)
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 60C925DDDF; Thu, 23 Dec 1999 00:06:06 -0500 (EST)
+To: zeroconf-archive@ietf.org
+From: Majordomo@merit.edu
+Subject: Welcome to zeroconf
+Reply-To: Majordomo@merit.edu
+Message-Id: <19991223050606.60C925DDDF@segue.merit.edu>
+Date: Thu, 23 Dec 1999 00:06:06 -0500 (EST)
+Sender: owner-zeroconf@merit.edu
+
+--
+
+Welcome to the zeroconf mailing list!
+
+Please save this message for future reference.  Thank you.
+
+If you ever want to remove yourself from this mailing list,
+you can send mail to <Majordomo@segue.merit.edu> with the following
+command in the body of your email message:
+
+    unsubscribe zeroconf
+
+or from another account, besides zeroconf-archive@lists.ietf.org:
+
+    unsubscribe zeroconf zeroconf-archive@lists.ietf.org
+
+If you ever need to get in contact with the owner of the list,
+(if you have trouble unsubscribing, or have questions about the
+list itself) send email to <owner-zeroconf@segue.merit.edu> .
+This is the general rule for most mailing lists when you need
+to contact a human.
+
+ Here's the general information for the list you've subscribed to,
+ in case you don't already have it:
+
+
+
+From owner-zeroconf@merit.edu  Mon Dec 27 12:50:22 1999
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA06402
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Dec 1999 12:50:21 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EF1A35DD98; Mon, 27 Dec 1999 12:50:03 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A26195DD9D; Mon, 27 Dec 1999 12:50:03 -0500 (EST)
+Received: from baucis.sc.intel.com (baucis.sc.intel.com [143.183.152.22])
+	by segue.merit.edu (Postfix) with ESMTP id 852055DD98
+	for <zeroconf@merit.edu>; Mon, 27 Dec 1999 12:50:01 -0500 (EST)
+Received: from SMTP (fmsmsxvs03-1.fm.intel.com [132.233.42.203])
+	by baucis.sc.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.11 1999/11/10 17:27:15 spurcell Exp $) with SMTP id JAA06189
+	for <zeroconf@merit.edu>; Mon, 27 Dec 1999 09:49:54 -0800 (PST)
+Received: from fmsmsx19.fm.intel.com ([132.233.48.19]) by 132.233.48.203
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Mon, 27 Dec 1999 17:49:54 0000 (GMT)
+Received: by fmsmsx19.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <Y3H0B5FG>; Mon, 27 Dec 1999 09:49:53 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F26AD@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: bridge install scenario
+Date: Mon, 27 Dec 1999 09:49:47 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Stuart,
+
+> In the case where a collision is detected later,
+
+How does it detect the collision later?
+
+Does it send periodic gratuitous ARPs? Periodic ARP probes? Some special
+Apple talk packet that tells it to start probing?
+
+-myron
+
+
+
+

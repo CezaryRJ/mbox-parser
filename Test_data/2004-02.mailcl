@@ -1,0 +1,236 @@
+From owner-zeroconf@merit.edu  Tue Feb  3 06:48:01 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA05306
+	for <zeroconf-archive@lists.ietf.org>; Tue, 3 Feb 2004 06:48:01 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id CD44791264; Tue,  3 Feb 2004 06:47:18 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9F0429126A; Tue,  3 Feb 2004 06:47:18 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 88CF091264
+	for <zeroconf@trapdoor.merit.edu>; Tue,  3 Feb 2004 06:47:17 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 6E2155DDF8; Tue,  3 Feb 2004 06:47:17 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id F03105DE00
+	for <zeroconf@merit.edu>; Tue,  3 Feb 2004 06:47:16 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id i13BlE0J001174;
+	Tue, 3 Feb 2004 03:47:15 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-220.EMEA.Sun.COM [129.156.96.220])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i13Bl8m10341;
+	Tue, 3 Feb 2004 12:47:09 +0100 (MET)
+Message-ID: <401F89DE.6010506@sun.com>
+Date: Tue, 03 Feb 2004 12:45:34 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Cc: Thomas Narten <narten@us.ibm.com>,
+        Margaret Wasserman <margaret@thingmagic.com>
+Subject: WG action: ACCEPT [LL36] Combine and rework section 1.7 and 2.11
+ to be clearer
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+This change has been accepted.  For a preview of the internet draft
+to appear as soon as the i-d editor process the document:
+
+http://www.drizzle.org/~aboba/ZEROCONF/draft-ietf-zeroconf-ipv4-linklocal-12.txt
+
+Changes
+
+(1) Remove section 1.7 Multiple Addresses per Interface
+
+    Having addresses of multiple different scopes assigned to an
+    interface, with no adequate way to determine in what circumstances
+    each address should be used, leads to complexity for applications and
+    confusion for users.  A host with an address on a link can
+    communicate with all other devices on that link, whether those
+    devices use Link-Local addresses, or routable addresses.
+
+    For this reason, a host that obtains, or is configured with, a
+    routable address on an interface, SHOULD NOT attempt to configure a
+    Link-Local IPv4 address on the same interface.
+
+    Where a Link-Local IPv4 address has been configured on an interface,
+    and a routable address is later configured on the same interface, the
+    host MUST always use the routable address when initiating new
+    communications, and MUST cease advertising the availability of the
+    Link-Local IPv4 address through whatever mechanisms that address had
+    been made known to others.
+
+    A host SHOULD continue to use the Link-Local IPv4 address for
+    communications underway when the routable address was configured, and
+    MAY continue to accept new communications addressed to the Link-Local
+    IPv4 address.
+
+(2) Remove section 2.11 Transition from Link-Local to Routable Address
+
+    As discussed in Section 1.7, use of a routable address is preferred
+    to assignment of a Link-Local IPv4 address. A Link-Local IPv4 address
+    can be configured due to transient failures, such as incomplete link-
+    layer authentication, spanning tree convergence issues, or because a
+    DHCP server failed to respond to an initial query, or is inoperative
+    for some time.
+
+    Where a Link-Local IPv4 address is assigned due to a transient
+    failure, experience has shown that five minutes (see Appendix A.2)
+    may be too long an interval to wait prior to attempting to configure
+    with DHCP.  This document does not specify a strategy for quickly
+    recovering a routable address in situations where a Link-Local IPv4
+    address is assigned due to a transient failure. In situations where
+    many hosts are present on a single subnet, frequent attempts to
+    contact the DHCP server could result in a heavy traffic load. Further
+    discussion of this issue is provided in [DNAv4].
+
+(3) Add a section after "Communication with Routable  Addresses"
+
+1.x.  When to configure a Link-Local IPv4 address
+
+    Having addresses of multiple different scopes assigned to an
+    interface, with no adequate way to determine in what circumstances
+    each address should be used, leads to complexity for applications and
+    confusion for users.  A host with an address on a link can
+    communicate with all other devices on that link, whether those
+    devices use Link-Local addresses, or routable addresses.  For these
+    reasons, a host SHOULD NOT have both a valid routable address and a
+    Link-Local IPv4 address configure on the same interface.
+
+    A routable address is any address that is:
+
+    * a unicast address
+    * not a loopback address
+    * not contained within the 169.254/16 prefix reserved for Link-Local
+       IPv4 addresses
+
+    A "valid routable address" is a routable address that passes the
+    reachability test described in section 2 of "Detection of Network
+    Attachment (DNA) in IPv4" [DNAv4].
+
+    The assignment and use of a Link-Local IPv4 address on an interface
+    is based solely on the state of the interface, and is independent of
+    any other protocols such as DHCP.  A host MUST NOT alter its behavior
+    and use of other protocols such as DHCP because the host has assigned
+    a Link-Local IPv4 address to an interface.
+
+    When an interface has a valid routable address configured on an
+    interface, the host SHOULD NOT also assign a Link-Local IPv4 address
+    to that interface.
+
+    If a host finds that an interface that was previous configured with a
+    Link-Local IPv4 address is now configured with a valid routable
+    address, the host MUST always use the routable address when
+    initiating new communications, and MUST cease advertising the
+    availability of the Link-Local IPv4 address through whatever
+    mechanisms that address had been made known to others.  The host
+    SHOULD continue to use the Link-Local IPv4 address for communications
+    underway when the routable address was configured, and MAY continue
+    to accept new communications addressed to the Link-Local IPv4
+    address.  Ways in which a valid routable address might be configured
+    for the interface include:
+
+    * Manual configuration
+    * Address assignment through DHCP
+    * Roaming of the host to a network on which a routable address
+       assigned to the interface is valid
+
+    If a host finds that an interface that was previously configured with
+    a valid routable address no longer has a valid routable address, the
+    host MAY identify a usable Link-Local IPv4 address (as described in
+    section 2) and assign that address to the interface.  Ways in which a
+    valid routable address might no longer be assigned to an interface
+    include:
+
+    * Removal of the address from the interface through manual
+       configuration
+    * Expiration of the lease on the address assigned through DHCP
+    * Roaming of the host to a new network on which the address is no
+       longer valid.
+
+    Further discussion of the issues in detection of transient failures
+    and the use of DHCP in response to network attachment failure is
+    provided in "Detection of Network Attachment (DNA) in IPv4". [DNAv4]
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb  3 06:53:55 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA05431
+	for <zeroconf-archive@lists.ietf.org>; Tue, 3 Feb 2004 06:53:55 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id AA44A9126A; Tue,  3 Feb 2004 06:53:49 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 821AA9126B; Tue,  3 Feb 2004 06:53:49 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A0AEB9126A
+	for <zeroconf@trapdoor.merit.edu>; Tue,  3 Feb 2004 06:53:48 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8D9375DE8D; Tue,  3 Feb 2004 06:53:48 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id DCB4F5DE84
+	for <zeroconf@merit.edu>; Tue,  3 Feb 2004 06:53:47 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id i13Brj0J003467;
+	Tue, 3 Feb 2004 03:53:45 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-220.EMEA.Sun.COM [129.156.96.220])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i13Brgm10854;
+	Tue, 3 Feb 2004 12:53:42 +0100 (MET)
+Message-ID: <401F8B67.4020707@sun.com>
+Date: Tue, 03 Feb 2004 12:52:07 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf <zeroconf@merit.edu>
+Cc: Thomas Narten <narten@us.ibm.com>,
+        Margaret Wasserman <margaret@thingmagic.com>
+Subject: IPv4 LL specification submitted to the IESG
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+I have asked the IESG to review draft-ietf-zeroconf-ipv4-linklocal-12.txt
+and take it to IETF last call.  I believe it is ready to be advanced to
+proposed standard.
+
+Best regards,
+
+Erik
+
+
+
+From lancekabada@yahoo.com  Mon Feb  9 21:50:52 2004
+Received: from localhst2697.com ([195.166.237.40])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id VAA12078
+	for <zeroconf-archive@lists.ietf.org>; Mon, 9 Feb 2004 21:50:49 -0500 (EST)
+Message-Id: <200402100250.VAA12078@ietf.org>
+From: "Mr Lance Kabade." <lancekabada@yahoo.com>
+Reply-To: lancekabad@yahoo.com
+To: zeroconf-archive@ietf.org
+Date: Tue, 10 Feb 2004 03:51:46 +0100
+Subject: Mr Lance Kabade.
+X-Mailer: Microsoft Outlook Express 5.00.2919.6900 DM
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: quoted-printable
+
+Dear Friend=2C Top of the day to you my friend=3F It may astonish you to be informally contacted for a pending transaction of this magnitude more especially since you do not know me personally=2E The purpose of my introduction is to bring to bear my present position and the very need for true and solicited help with regards the transaction at hand=2E I am Lance Kabade the personal assistant to Charles Taylor=2C the former President of Liberia=2E He has recently stepped down from power and is presently in assylum in Nigeria=2E Well dear friend we need your assistance in transferring some of the money derived from gold excesses into your account=2C because the government is making plans to seize all his asets=2EI have been mandated to deal with anyone who offer assistance to have this funds transferred to his account oversea=2E View these websites=3A =3C=3Chttp=3A=2F=2Fwww=2Ecnn=2Ecom=2F2003=2FWORLD=2Fafrica=2F08=2F11=2Ftaylor=2Ewarcrimes=2Findex=2Ehtml=3E=3E =3C=3Chttp=3A=2F=2Fwww=2Ecnn=2Ecom=2F2003=2FWORLD=2Fafrica=2F08=2F11=2Fliberia=2E1300=2Findex=2Ehtml=3E=3E The amount is USD$48 million=2C in a Security firm Abroad=2E All that is needed is for me to instruct the company to transfer the funds to your account=2C I will need to discuss benefit with you as soon as you make contact=2E To indicate your interest=2Cplease kindly provide me your direct phone and fax numbers and all relevant information for me to contact you and to let you know the roles you will play in making this transaction successful=2E All the necessarry informations on how the funds will be collected will be given to you as we make progress=2E if this proposal satisfies you=2C please contact me on phone=3A + 871 762 91970 and fax=3A + 871 762 91971 immediately with your full names=2C telephone and fax numbers to enable me give you the details=2E Thanks for your anticipated cooperation=2E Best Regards=2E Lance Kabade=2E 
+
+
+
+

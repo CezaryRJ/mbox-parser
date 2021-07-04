@@ -1,0 +1,688 @@
+
+From mracey@altex.com  Sat Aug  1 12:46:52 2009
+Return-Path: <mracey@altex.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id EB7733A681E for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  1 Aug 2009 12:46:52 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -14.776
+X-Spam-Level: 
+X-Spam-Status: No, score=-14.776 tagged_above=-999 required=5 tests=[BAYES_50=0.001, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, HELO_DYNAMIC_IPADDR2=4.395, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_RCVD_IP=1.931, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 8i4NtyrRzMWv for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  1 Aug 2009 12:46:48 -0700 (PDT)
+Received: from 27-10.105-92.cust.bluewin.ch (27-10.105-92.cust.bluewin.ch [92.105.10.27]) by core3.amsl.com (Postfix) with SMTP id 142A83A68F3 for <zeroconf-archive@lists.ietf.org>; Sat,  1 Aug 2009 12:46:44 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090801194646.142A83A68F3@core3.amsl.com>
+Date: Sat,  1 Aug 2009 12:46:44 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://owtewqk.cn/" target="_blank">
+<img src="http://owtewqk.cn/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From marikocsk@aiu.ac.jp  Sun Aug  2 05:50:21 2009
+Return-Path: <marikocsk@aiu.ac.jp>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id EC09028C0E7 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  2 Aug 2009 05:50:21 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -19.971
+X-Spam-Level: 
+X-Spam-Status: No, score=-19.971 tagged_above=-999 required=5 tests=[BAYES_95=3, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id wz6zBt5cK3Vz for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  2 Aug 2009 05:50:16 -0700 (PDT)
+Received: from adam.com (unknown [123.16.119.39]) by core3.amsl.com (Postfix) with SMTP id 2078528C0E8 for <zeroconf-archive@lists.ietf.org>; Sun,  2 Aug 2009 05:50:14 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: new mail
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090802125015.2078528C0E8@core3.amsl.com>
+Date: Sun,  2 Aug 2009 05:50:14 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://owtewqk.cn/" target="_blank">
+<img src="http://owtewqk.cn/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From zerocomercialcjrd17@yahoo.com  Sun Aug  2 10:34:40 2009
+Return-Path: <zerocomercialcjrd17@yahoo.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 5D8953A6C57 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  2 Aug 2009 10:34:40 -0700 (PDT)
+X-Quarantine-ID: <y9vF4IPiTR67>
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Amavis-Alert: BAD HEADER, Non-encoded 8-bit data (char A9 hex): From: \251 VIAGRA \256 Offic[...]
+X-Spam-Flag: NO
+X-Spam-Score: -20.605
+X-Spam-Level: 
+X-Spam-Status: No, score=-20.605 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FAKE_HELO_MAIL_COM=1.317, FAKE_HELO_MAIL_COM_DOM=3.199, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, HELO_MISMATCH_COM=0.553, HOST_MISMATCH_NET=0.311, HTML_IMAGE_ONLY_20=1.546, HTML_IMAGE_RATIO_02=0.383, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MANGLED_OFF=2.3, MIME_8BIT_HEADER=0.3, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_FROM_DRUGS=1.666, SARE_UNI=0.591, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id y9vF4IPiTR67 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  2 Aug 2009 10:34:34 -0700 (PDT)
+Received: from mx54.mail.com (177-39-179-94.pool.ukrtel.net [94.179.39.177]) by core3.amsl.com (Postfix) with SMTP id EAAA93A6C4E for <zeroconf-archive@lists.ietf.org>; Sun,  2 Aug 2009 10:33:37 -0700 (PDT)
+From: © VIAGRA ® Official Site <zeroconf-archive@lists.ietf.org>
+To: zeroconf-archive@lists.ietf.org
+Subject: Dear zeroconf-archive@lists.ietf.org 77% 0FF on Pfizer !
+MIME-Version: 1.0
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20090802173337.EAAA93A6C4E@core3.amsl.com>
+Date: Sun,  2 Aug 2009 10:33:37 -0700 (PDT)
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+      <title>
+		News
+      </title>
+   </head>
+   <body>
+
+      <table border="0" cellpadding="0" cellspacing="0" style="width: 896px">
+
+
+<tr><td align="center" style="font: normal 11px Verdana, sans-serif; color: #333;"><a href="http://www.lakukuz.cn" style="text-decoration: none; color: #0099ff;">Click here</a> to view as a web page. </td></tr>
+
+         <tr><td align="center">
+        	 <br />
+			 <a href="http://www.lakukuz.cn">
+			 <img alt="View image in browser now" width="618" height="326" src="http://www.lakukuz.cn/1.gif" style="border-width: 0px" /></a></td></tr>
+
+
+<tr><td valign="top" style="border-right: 1px solid #e5e4e4; padding-right: 10px">
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 884px">
+
+<tr><td align="center" style="font: normal 9px Verdana, sans-serif; color: #999; padding-top: 20px">
+
+<a href="http://www.lakukuz.cn" style="font: 9px Verdana, sans-serif; text-decoration: none; color: #0099ff">Unsubscribe</a> | 
+<a href="http://www.lakukuz.cn" style="font: 9px Verdana, sans-serif; text-decoration: none; color: #0099ff">Change e-mail address</a> | 
+<a href="http://www.lakukuz.cn" style="font: 9px Verdana, sans-serif; text-decoration: none; color: #0099ff">Privacy Policy</a> | 
+<a href="http://www.lakukuz.cn" style="font: 9px Verdana, sans-serif; text-decoration: none; color: #0099ff">About Us</a><br /><br />
+Copyright © 2009 Pekpz Inc. All rights reserved.<br />
+					  </td></tr>
+
+        </table>
+
+</td>
+</tr>
+      </table>
+</body>
+</html>
+
+
+
+From oblion@alston.com  Mon Aug  3 00:20:37 2009
+Return-Path: <oblion@alston.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id EB36A3A6D6C for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon,  3 Aug 2009 00:20:37 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -8.279
+X-Spam-Level: 
+X-Spam-Status: No, score=-8.279 tagged_above=-999 required=5 tests=[BAYES_80=2, FH_HELO_ALMOST_IP=5.417, FH_HOST_ALMOST_IP=1.889, HELO_DYNAMIC_SPLIT_IP=3.493, HOST_EQ_STATIC=1.172, HOST_EQ_STATICIP=1.511, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id t6FdcocNDDaH for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon,  3 Aug 2009 00:20:31 -0700 (PDT)
+Received: from 119.Red-217-126-69.staticIP.rima-tde.net (119.Red-217-126-69.staticIP.rima-tde.net [217.126.69.119]) by core3.amsl.com (Postfix) with SMTP id 139FB3A6C1D for <zeroconf-archive@lists.ietf.org>; Mon,  3 Aug 2009 00:20:29 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: no-reply
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090803072030.139FB3A6C1D@core3.amsl.com>
+Date: Mon,  3 Aug 2009 00:20:29 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://sjhuibi.cn/" target="_blank">
+<img src="http://sjhuibi.cn/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From lh@aaculturalfestival.com  Mon Aug  3 12:32:34 2009
+Return-Path: <lh@aaculturalfestival.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 922743A6985 for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon,  3 Aug 2009 12:32:34 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -20.424
+X-Spam-Level: 
+X-Spam-Status: No, score=-20.424 tagged_above=-999 required=5 tests=[BAYES_80=2, FH_RELAY_NODNS=1.451, HELO_EQ_AU=0.377, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id mC1WT7hCuORJ for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon,  3 Aug 2009 12:32:28 -0700 (PDT)
+Received: from airlitegroup.com.au (unknown [189.114.80.17]) by core3.amsl.com (Postfix) with SMTP id 615F53A6C03 for <zeroconf-archive@lists.ietf.org>; Mon,  3 Aug 2009 12:32:25 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090803193226.615F53A6C03@core3.amsl.com>
+Date: Mon,  3 Aug 2009 12:32:25 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://equalbought.com/" target="_blank">
+<img src="http://equalbought.com/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From networkvetoingmasses@abalive.com  Mon Aug  3 19:51:49 2009
+Return-Path: <networkvetoingmasses@abalive.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 5C6A63A68F1 for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon,  3 Aug 2009 19:51:49 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -14.664
+X-Spam-Level: 
+X-Spam-Status: No, score=-14.664 tagged_above=-999 required=5 tests=[BAYES_60=1, DNS_FROM_RFC_BOGUSMX=1.482, FH_RELAY_NODNS=1.451, HELO_EQ_RU=0.595, HELO_MISMATCH_RU=3.1, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id XWukIg+z2FqW for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon,  3 Aug 2009 19:51:43 -0700 (PDT)
+Received: from ahlama.spb.ru (unknown [189.104.48.88]) by core3.amsl.com (Postfix) with SMTP id 84FF03A6F01 for <zeroconf-archive@lists.ietf.org>; Mon,  3 Aug 2009 19:51:42 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090804025142.84FF03A6F01@core3.amsl.com>
+Date: Mon,  3 Aug 2009 19:51:42 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><a href="http://ziphim.com/" target="_blank">
+<img src="http://ziphim.com/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From kattendd@alpsteel.com  Tue Aug  4 01:05:32 2009
+Return-Path: <kattendd@alpsteel.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 25AE53A6FAD for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue,  4 Aug 2009 01:05:32 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -24.442
+X-Spam-Level: 
+X-Spam-Status: No, score=-24.442 tagged_above=-999 required=5 tests=[BAYES_95=3, FH_RELAY_NODNS=1.451, HELO_MISMATCH_ORG=0.611, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id MBcnIFDYvS5K for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue,  4 Aug 2009 01:05:26 -0700 (PDT)
+Received: from acgov.org (unknown [125.160.158.210]) by core3.amsl.com (Postfix) with SMTP id BC3D83A6FA3 for <zeroconf-archive@lists.ietf.org>; Tue,  4 Aug 2009 01:05:23 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090804080524.BC3D83A6FA3@core3.amsl.com>
+Date: Tue,  4 Aug 2009 01:05:23 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://ladyhave.com/" target="_blank">
+<img src="http://ladyhave.com/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jessie7@adam.com.au  Sat Aug  8 14:12:51 2009
+Return-Path: <jessie7@adam.com.au>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 226A13A6950 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  8 Aug 2009 14:12:51 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -45.364
+X-Spam-Level: 
+X-Spam-Status: No, score=-45.364 tagged_above=-999 required=5 tests=[BAYES_60=1, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id sWWYls+D4tRs for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  8 Aug 2009 14:12:49 -0700 (PDT)
+Received: from a54321.com (unknown [92.8.106.104]) by core3.amsl.com (Postfix) with SMTP id A6E463A6A78 for <zeroconf-archive@lists.ietf.org>; Sat,  8 Aug 2009 14:12:47 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: no-reply
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090808211248.A6E463A6A78@core3.amsl.com>
+Date: Sat,  8 Aug 2009 14:12:47 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://raiseatom.com/" target="_blank">
+<img src="http://raiseatom.com/dsgslnv6.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From mh@afo.net  Sat Aug  8 17:48:20 2009
+Return-Path: <mh@afo.net>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 7313D3A6BA1 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  8 Aug 2009 17:48:20 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -27.96
+X-Spam-Level: 
+X-Spam-Status: No, score=-27.96 tagged_above=-999 required=5 tests=[BAYES_80=2, FH_RELAY_NODNS=1.451, HELO_EQ_SK=1.35, HELO_MISMATCH_SK=0.9, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 0W9zExIt9oWX for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  8 Aug 2009 17:48:18 -0700 (PDT)
+Received: from al-ko.sk (unknown [122.165.32.164]) by core3.amsl.com (Postfix) with SMTP id 4C3F93A6AE1 for <zeroconf-archive@lists.ietf.org>; Sat,  8 Aug 2009 17:48:16 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090809004817.4C3F93A6AE1@core3.amsl.com>
+Date: Sat,  8 Aug 2009 17:48:16 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><a href="http://dimplemeek.com/" target="_blank">
+<img src="http://laughtheir.com/sdgdg.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a></BODY></HTML>
+
+From nister@alexlee.com  Sun Aug  9 02:42:34 2009
+Return-Path: <nister@alexlee.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id EC1B73A6926 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  9 Aug 2009 02:42:34 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -29.831
+X-Spam-Level: 
+X-Spam-Status: No, score=-29.831 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id ZE+F2wwHsX71 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  9 Aug 2009 02:42:34 -0700 (PDT)
+Received: from ab1cs.com (unknown [125.162.49.91]) by core3.amsl.com (Postfix) with SMTP id 98FCB3A6B3A for <zeroconf-archive@lists.ietf.org>; Sun,  9 Aug 2009 02:42:31 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: hi
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090809094231.98FCB3A6B3A@core3.amsl.com>
+Date: Sun,  9 Aug 2009 02:42:31 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><a href="http://motionmay.com/" target="_blank">
+<img src="http://boatagree.com/sdgdg.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a></BODY></HTML>
+
+From manisha@absi-usa.com  Thu Aug 13 13:35:51 2009
+Return-Path: <manisha@absi-usa.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 47D413A6899 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 13 Aug 2009 13:35:51 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -32.984
+X-Spam-Level: 
+X-Spam-Status: No, score=-32.984 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_12=2.46, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 5BvyvbYJHzOq for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 13 Aug 2009 13:35:50 -0700 (PDT)
+Received: from alcoa.com (unknown [187.4.70.70]) by core3.amsl.com (Postfix) with SMTP id 2569728C0FE for <zeroconf-archive@lists.ietf.org>; Thu, 13 Aug 2009 13:35:47 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject:  It's a great thing you can do for yourself!
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090813203548.2569728C0FE@core3.amsl.com>
+Date: Thu, 13 Aug 2009 13:35:47 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><table width=450><tr><td><a href="http://forestever.com/"><br><b>
+<font face="arial" size="2">No.1 health care store for all your prescription requirements! Pay a visit to us now!</font></b><br><br>
+<a href="http://forestever.com/"><img src="http://forestever.com/436dfhddxb.gif" border=0 alt="UnBlock Now!"></a>
+</td></tr></table>
+<br><br><font face="arial" size="-3" color="#959595">When a nations currency is under attack, finance officials have several<br>161 It Takes Courage To Be a Pig<br>a number of European currencies-not just the pound but the Italian<br>Implied in the hope was the notion that the European states would</font></BODY></HTML>
+
+From mcgowan@algorithmics.com  Thu Aug 20 06:18:52 2009
+Return-Path: <mcgowan@algorithmics.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 5EF1E3A67B5 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 20 Aug 2009 06:18:52 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -4.627
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.627 tagged_above=-999 required=5 tests=[BAYES_50=0.001, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id iLYmxZINXqoQ for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 20 Aug 2009 06:18:52 -0700 (PDT)
+Received: from 20151203155.user.veloxzone.com.br (20151203155.user.veloxzone.com.br [201.51.203.155]) by core3.amsl.com (Postfix) with SMTP id 39F9C3A68E9 for <zeroconf-archive@lists.ietf.org>; Thu, 20 Aug 2009 06:18:50 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Return Mail
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090820131851.39F9C3A68E9@core3.amsl.com>
+Date: Thu, 20 Aug 2009 06:18:50 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><a href="http://giftedchief.com/" target="_blank">
+<img src="http://giftedchief.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From nor@andisco.com  Thu Aug 20 22:50:47 2009
+Return-Path: <nor@andisco.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id C492A3A6971 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 20 Aug 2009 22:50:47 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -8.574
+X-Spam-Level: 
+X-Spam-Status: No, score=-8.574 tagged_above=-999 required=5 tests=[BAYES_80=2, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id iMmAo3agUkwQ for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 20 Aug 2009 22:50:45 -0700 (PDT)
+Received: from aguaytia.com (unknown [196.44.148.250]) by core3.amsl.com (Postfix) with SMTP id 5A2193A6858 for <zeroconf-archive@lists.ietf.org>; Thu, 20 Aug 2009 22:50:42 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090821055043.5A2193A6858@core3.amsl.com>
+Date: Thu, 20 Aug 2009 22:50:42 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><a href="http://homeaglow.com/" target="_blank">
+<img src="http://homeaglow.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jurgen.blankenburg@afs.org  Mon Aug 24 02:12:47 2009
+Return-Path: <jurgen.blankenburg@afs.org>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 9033228C185 for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Aug 2009 02:12:47 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -8.986
+X-Spam-Level: 
+X-Spam-Status: No, score=-8.986 tagged_above=-999 required=5 tests=[BAYES_80=2, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HOST_EQ_STATIC=1.172, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_RCVD_IP=1.931, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id oQtFZ2tlbflA for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Aug 2009 02:12:45 -0700 (PDT)
+Received: from 78-58-177-108.static.zebra.lt (78-58-177-108.static.zebra.lt [78.58.177.108]) by core3.amsl.com (Postfix) with SMTP id 60D7F28C18A for <zeroconf-archive@lists.ietf.org>; Mon, 24 Aug 2009 02:12:43 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Return mail
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090824091244.60D7F28C18A@core3.amsl.com>
+Date: Mon, 24 Aug 2009 02:12:43 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><a href="http://boughtfull.com/" target="_blank">
+<img src="http://boughtfull.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From kbuciog@aguascalientes.gob.mx  Mon Aug 24 15:32:07 2009
+Return-Path: <kbuciog@aguascalientes.gob.mx>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id D0D1428C26D for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Aug 2009 15:32:07 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -14.627
+X-Spam-Level: 
+X-Spam-Status: No, score=-14.627 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, SC_TOP200_85=3, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id xkHRw9NERYI0 for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Aug 2009 15:32:01 -0700 (PDT)
+Received: from agc.gov.sg (unknown [85.21.179.47]) by core3.amsl.com (Postfix) with SMTP id BB92E3A6D9E for <zeroconf-archive@lists.ietf.org>; Mon, 24 Aug 2009 15:31:57 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Return Mail
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090824223159.BB92E3A6D9E@core3.amsl.com>
+Date: Mon, 24 Aug 2009 15:31:57 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://boughtfull.com/" target="_blank">
+<img src="http://boughtfull.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jgvlazjrgeuww@agriquem.com  Tue Aug 25 01:58:52 2009
+Return-Path: <jgvlazjrgeuww@agriquem.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id AF7AB3A6F3F for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Aug 2009 01:58:52 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -26.232
+X-Spam-Level: 
+X-Spam-Status: No, score=-26.232 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_EQ_DK=1.009, HELO_MISMATCH_DK=1.7, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id cfjtuPpv-uXq for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Aug 2009 01:58:46 -0700 (PDT)
+Received: from 1klik.dk (unknown [189.7.141.217]) by core3.amsl.com (Postfix) with SMTP id DBFB43A6F35 for <zeroconf-archive@lists.ietf.org>; Tue, 25 Aug 2009 01:58:44 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: new mail
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090825085844.DBFB43A6F35@core3.amsl.com>
+Date: Tue, 25 Aug 2009 01:58:44 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://famousfall.com/" target="_blank">
+<img src="http://famousfall.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jfxbafwpr@agora.pl  Tue Aug 25 07:12:52 2009
+Return-Path: <jfxbafwpr@agora.pl>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 515EF28C39C for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Aug 2009 07:12:52 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 1.101
+X-Spam-Level: *
+X-Spam-Status: No, score=1.101 tagged_above=-999 required=5 tests=[BAYES_60=1, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR2=4.395, HELO_DYNAMIC_SPLIT_IP=3.493, HELO_EQ_BR=0.955, HELO_EQ_DSL=1.129, HELO_EQ_DYNAMIC=1.144, HELO_EQ_IP_ADDR=1.119, HOST_EQ_BR=1.295, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RCVD_NUMERIC_HELO=2.067, RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_RCVD_IP=1.931, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 0JfMVKq7zEYI for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Aug 2009 07:12:50 -0700 (PDT)
+Received: from 201.86.240.124.dynamic.adsl.gvt.net.br (201.86.240.124.dynamic.adsl.gvt.net.br [201.86.240.124]) by core3.amsl.com (Postfix) with SMTP id 617183A6856 for <zeroconf-archive@lists.ietf.org>; Tue, 25 Aug 2009 07:12:48 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090825141249.617183A6856@core3.amsl.com>
+Date: Tue, 25 Aug 2009 07:12:48 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://meekclaim.com/" target="_blank">
+<img src="http://meekclaim.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From m.hayamaebyu@amada.co.jp  Tue Aug 25 13:26:02 2009
+Return-Path: <m.hayamaebyu@amada.co.jp>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id E6AAF3A6FD0 for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Aug 2009 13:26:02 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -32.357
+X-Spam-Level: 
+X-Spam-Status: No, score=-32.357 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_NJABL_PROXY=1.643, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id FuAgKsEdP6pr for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Aug 2009 13:26:01 -0700 (PDT)
+Received: from airbus.com (unknown [200.96.7.230]) by core3.amsl.com (Postfix) with SMTP id 1B5EA3A6C6F for <zeroconf-archive@lists.ietf.org>; Tue, 25 Aug 2009 13:25:58 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090825202600.1B5EA3A6C6F@core3.amsl.com>
+Date: Tue, 25 Aug 2009 13:25:58 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://famousfall.com/" target="_blank">
+<img src="http://famousfall.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jennifer@3cems.com  Wed Aug 26 08:42:09 2009
+Return-Path: <jennifer@3cems.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id ED3183A6D27 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Aug 2009 08:42:09 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -34.917
+X-Spam-Level: 
+X-Spam-Status: No, score=-34.917 tagged_above=-999 required=5 tests=[BAYES_80=2, FH_RELAY_NODNS=1.451, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id H-bh84a3Z2XN for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Aug 2009 08:42:08 -0700 (PDT)
+Received: from amalva.lt (unknown [189.27.47.133]) by core3.amsl.com (Postfix) with SMTP id E17D23A6CE1 for <zeroconf-archive@lists.ietf.org>; Wed, 26 Aug 2009 08:42:05 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090826154206.E17D23A6CE1@core3.amsl.com>
+Date: Wed, 26 Aug 2009 08:42:05 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://camepotent.com/" target="_blank">
+<img src="http://camepotent.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From liane@alssnowmobile.com  Wed Aug 26 14:58:36 2009
+Return-Path: <liane@alssnowmobile.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 3074A3A6B02 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Aug 2009 14:58:36 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -19.218
+X-Spam-Level: 
+X-Spam-Status: No, score=-19.218 tagged_above=-999 required=5 tests=[BAYES_95=3, FH_RELAY_NODNS=1.451, HELO_MISMATCH_NET=0.611, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id Nv-e4VL3mTnG for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Aug 2009 14:58:34 -0700 (PDT)
+Received: from 3wlogic.net (unknown [200.101.78.153]) by core3.amsl.com (Postfix) with SMTP id 139E03A70D5 for <zeroconf-archive@lists.ietf.org>; Wed, 26 Aug 2009 14:58:25 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090826215826.139E03A70D5@core3.amsl.com>
+Date: Wed, 26 Aug 2009 14:58:25 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><a href="http://zealpalate.com/" target="_blank">
+<img src="http://zealpalate.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From ltdavendasq@aluminox.com.br  Wed Aug 26 21:16:28 2009
+Return-Path: <ltdavendasq@aluminox.com.br>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id B98E528C10C for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Aug 2009 21:16:28 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.899
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.899 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_EQ_FR=0.35, HELO_IS_SMALL6=0.556, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id W0+11sp-XZH2 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Aug 2009 21:16:27 -0700 (PDT)
+Received: from 3-g.fr (unknown [217.64.28.151]) by core3.amsl.com (Postfix) with SMTP id 060113A6D5C for <zeroconf-archive@lists.ietf.org>; Wed, 26 Aug 2009 21:16:24 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090827041626.060113A6D5C@core3.amsl.com>
+Date: Wed, 26 Aug 2009 21:16:24 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://camepotent.com/" target="_blank">
+<img src="http://camepotent.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jgx@abbotsford.k12.wi.us  Thu Aug 27 13:41:42 2009
+Return-Path: <jgx@abbotsford.k12.wi.us>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id F3BB428C233 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 27 Aug 2009 13:41:41 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -17.06
+X-Spam-Level: 
+X-Spam-Status: No, score=-17.06 tagged_above=-999 required=5 tests=[BAYES_80=2, HELO_EQ_JP=1.244, HELO_EQ_NE_JP=1.244, HOST_EQ_JP=1.265, HOST_EQ_NE_JP=2.599, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RELAY_IS_222=2.179, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id Zc0GIWvAZnul for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 27 Aug 2009 13:41:40 -0700 (PDT)
+Received: from p2003-ipbf406osakakita.osaka.ocn.ne.jp (p2003-ipbf406osakakita.osaka.ocn.ne.jp [222.144.245.3]) by core3.amsl.com (Postfix) with SMTP id 873A728C164 for <zeroconf-archive@lists.ietf.org>; Thu, 27 Aug 2009 13:41:39 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090827204139.873A728C164@core3.amsl.com>
+Date: Thu, 27 Aug 2009 13:41:39 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://camepotent.com/" target="_blank">
+<img src="http://camepotent.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>
+
+From jerry.goetzo@alcoa.com  Mon Aug 31 11:58:45 2009
+Return-Path: <jerry.goetzo@alcoa.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id B11B928C4AB for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 31 Aug 2009 11:58:45 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.747
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.747 tagged_above=-999 required=5 tests=[BAYES_99=3.5, HELO_EQ_JP=1.244, HELO_EQ_NE_JP=1.244, HOST_EQ_JP=1.265, HOST_EQ_NE_JP=2.599, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id MqPVkKnyo+5B for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 31 Aug 2009 11:58:39 -0700 (PDT)
+Received: from p4128-ipad204fukuokachu.fukuoka.ocn.ne.jp (p4128-ipad204fukuokachu.fukuoka.ocn.ne.jp [118.4.127.128]) by core3.amsl.com (Postfix) with SMTP id 3E42C28C321 for <zeroconf-archive@lists.ietf.org>; Mon, 31 Aug 2009 11:58:37 -0700 (PDT)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090831185838.3E42C28C321@core3.amsl.com>
+Date: Mon, 31 Aug 2009 11:58:37 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><a href="http://bettershort.com/" target="_blank">
+<img src="http://bettershort.com/dyuwqlk.jpg" border="0" alt="Show picture and go to site now!"></a></BODY></HTML>

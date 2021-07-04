@@ -1,0 +1,2116 @@
+From owner-zeroconf@merit.edu  Fri Oct  4 15:10:43 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA17454
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 15:10:42 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B62EF91388; Fri,  4 Oct 2002 15:12:33 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8717291389; Fri,  4 Oct 2002 15:12:33 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 4959F91388
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 15:12:32 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0F2325DDBB; Fri,  4 Oct 2002 15:12:32 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from e4.ny.us.ibm.com (e4.ny.us.ibm.com [32.97.182.104])
+	by segue.merit.edu (Postfix) with ESMTP id AB70B5DD9F
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 15:12:31 -0400 (EDT)
+Received: from northrelay03.pok.ibm.com (northrelay03.pok.ibm.com [9.56.224.151])
+	by e4.ny.us.ibm.com (8.12.2/8.12.2) with ESMTP id g94JCUc9079948
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 15:12:30 -0400
+Received: from rotala.raleigh.ibm.com (rotala.raleigh.ibm.com [9.27.12.14])
+	by northrelay03.pok.ibm.com (8.12.3/NCO/VER6.4) with ESMTP id g94JCR5K043106
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 15:12:28 -0400
+Received: from rotala.raleigh.ibm.com (narten@localhost)
+	by rotala.raleigh.ibm.com (8.11.6/8.11.6) with ESMTP id g94JB5l15100
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 15:11:05 -0400
+Message-Id: <200210041911.g94JB5l15100@rotala.raleigh.ibm.com>
+To: zeroconf@merit.edu
+Subject: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt
+Date: Fri, 04 Oct 2002 15:11:05 -0400
+From: Thomas Narten <narten@us.ibm.com>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+The IESG discussed this document recently, and has the following
+comments.
+
+DISCUSS:
+========
+Harald:
+
+Three objections, based on a quick scan:
+
+1)
+
+The document gives no (zero) examples of applications that can 
+successfully and safely be used with link-local addresses. I think a 
+list of applications would serve two purposes:
+
+- document the motivation for this feature
+- serve as target for people arguing that this application has 
+serious failure modes when used with link-local addresses
+
+2)
+
+The following section:
+
+ > 2.10 Higher-Layer Protocol Considerations
+ >
+ > Similar considerations apply at layers above IP.
+ >
+ > For example, designers of Web pages (including automatically
+ > generated web pages) SHOULD NOT contain links with embedded
+ > link-local addresses if those pages are viewable from hosts outside
+ > the local link where the addresses are valid.
+ >
+ > As link-local addresses may change at any time and have limited
+ > scope, storing link-layer addresses in the DNS is not well
+ > understood and it is NOT RECOMMENDED.
+
+is not sufficiently draconian.
+
+It should probably say something like:
+
+The following set of protocols:
+
+- FTP
+- DNS
+- NFS
+- IPSEC using IPv4 as an identifier
+- BGP
+- OSPF
+- RTP/RTCP
+ <<<the list is far longer, I think>>>
+
+will fail if applications use a link-local address instead of a 
+globally unique address when sending the address of its interface in 
+a protocol packet.
+
+3)
+
+Security consideration, section 2.8:
+
+ > The non-forwarding rule is important because it is expected that
+ > many link-local-only devices will be extremely simple devices of
+ > the kind that currently use X10 [X10], USB [USB] or FireWire [1394].
+ >
+ > The designers of these devices currently assume that they will
+ > communicate only with other local devices, and this allows them to
+ > produce cost-effective devices by implementing a degree of security
+ > appropriate for that expected environment. Any network gateway device
+ > that blindly forwards the contents of link-local IP packets off the
+ > local link (or onto the local link) exposes simple link-local-only
+ > devices to a much greater degree of risk than their designers may
+ > have planned for.
+
+In the world of wireless LANs, this seems to be an extremely stupid 
+idea.  (not that it was a smart move before.....for kicks, try plugging 
+an X10 controller into your neighbour's outdoor electrical socket and 
+start playing....)
+I would suggest to add a NOTE:
+
+NOTE: The existence of local links without physical security, such as 
+LANs with attached wireless base stations, means that expecting all 
+local links to be secure enough that normal precautions can be dispensed 
+with is an extremely dangerous practice, which will expose users to 
+considerable risks.
+
+Steve:
+How do current hosts behave with respect to this: 
+
+	All ARP packets (*replies* as well as requests) that contain a 
+      link-local 'sender IP address' MUST be sent using link-level 
+ 	broadcast instead of link-level unicast. This aids timely 
+	detection of duplicate addresses. An example illustrating how this 
+	helps is given in Section 4.   
+
+(I understand the necessity, but is it done? I suspect not. This 
+suggests that there be a warning that link-local addresses SHOULD NOT 
+be manually configured.)  
+
+I have vague recollections of an RFC that permits hosts to ignore 
+spontaneous ARP replies, i.e., those not in response to a query, in an 
+effort to block connection hijacking. I think that some hosts actually 
+do this. That would interfere with the claim-and-defend mechanism, and 
+with renumbering, I believe.
+
+What use is link-local security in a world of wireless bridges?
+
+The Security Considerations section should note that address-based IKE 
+certificates [RFC2409, I think] MUST NOT be issued for link-local 
+addresses.
+
+How does Windows XP behave?
+
+Alex:
+ Seems to me that a "routing considerations" section is required.
+   Some things that should be described:
+
+     - should a route be installed in the routing table based
+         on the link-local address on an interface?
+
+     - should/can the 169.254/16 prefix be announced by dynamic
+         routing protocols?
+
+     - if received from a routing protocol, should the prefix
+         be installed in the RT?
+
+     - what the behavior should be if the prefix somehow
+         made it to the RT (static route, old routing proto)?
+
+Erik:
+The abstract and first paragraph in the introduction can easily
+be read as these addresses being a full-fledged replacement of
+DHCP assigned addresses.
+Having the text explicitly say that such addresses can not be used
+for communication outside a single link would make sense.
+
+In the applicability section it would make sense to add explicit 
+warnings about issues for applications. One issue is the addresses 
+are of limited scope which might cause problems for multi-party 
+applications that pass IP addresses between parties.
+The other issue is that these addresses might have much shorter and 
+unpredictable lifetime, which would have an impact on applications 
+using them on the link. (This is true especially given the 
+suggestions in section 2.5 to pick a new address when a conflict is 
+detected after the address has been used for a while.)
+
+The text in section 2.5 says that in some cases the host MUST cease 
+using the address. Since it is easy for an on-link attacker to spoof 
+the ARP packets it can cause the host to break all its connections by 
+switching to a new address. The document should at least warn against 
+this in section 2.5, and presumably also discuss it in the security 
+considerations section.
+
+ And here is a "bonus" I didn't mention on the call:
+       The time values specified above are intended for use on 
+	 technologies such as Ethernet, where switches that implement 
+	 Spanning Tree [802.1d] often silently discard all packets for 
+	 several seconds. The time values specified above result in a 
+	 delay of 8-10 seconds before a chosen IP address may be used. 
+	 For a desktop machine on Ethernet,
+
+ FWIW when 802.1d is enabled on the port I plug in my laptop at the 
+ office, the delay before the switch starts forwarding packets is 45 
+ seconds. (I think the 802.1d spec indicates a default time of around 
+ 30 seconds.) So 10 seconds don't seem to do much good.
+
+       If the destination address is the 255.255.255.255 broadcast 
+	 address or a multicast address, then the host may use either 
+	 its link-local source address or a routable address, as 
+	 appropriate.
+
+ OK for a link-local multicast destination. But for other multicast 
+ destinations I assume it SHOULD use any routable address instead of 
+ the link-local.
+
+ section 3.2:
+       Some operating systems have networking APIs that allow 
+	 applications to specify network interfaces by name, index value, 
+	 or other local identifier, and to identify interfaces this way 
+	 both for incoming and outgoing packets/connections. For operating 
+	 systems that have this capability (and have application software 
+	 that makes use of it) it is sufficient to configure all interfaces 
+	 with a single common IPv4 link-local address, and defend that 	
+	 address on all interfaces.
+
+ Add warning that uses the same address on all interfaces makes the host
+ more suceptible to attacks and other reasons for duplicate addresses 
+ being detected late, resulting in a shorter lifetime for the link-local 
+ addresses. Using a separate address per interface limits the "damage" 
+ in such a case to a single link.
+
+ section 3.3
+       In addition, this kind of host should probe for, and defend, all 
+	 of its link-local addresses on all of its active interfaces that 
+	 are using link-local addresses.
+
+       When bringing up a new interface, the host SHOULD first probe 
+	 for all of its existing link-local addresses on that new interface. 
+	 If any of the addresses are found to be already in use by some 
+	 other host on that new link, then the interfaces in question MUST 
+	 be reconfigured to select new unique link-local addresses. The 
+	 host should then select a link-local address for the new interface, 
+	 and probe on all	of its active interfaces to verify that this new 
+	 address is unique on all the links that the host has connections to.
+
+ The above breaks if multiple interfaces on the host are connected
+ to the same link. It also isn't clear to me why this is needed; 
+ presumably the interfaces can be managed indepdently as long as the host 
+ ensures that it doesn't assign the same link-local address to more than 
+ one interface.
+
+Thomas:
+
+   If the destination address is in the 169.254/16 prefix (including the
+   169.254.255.255 broadcast address), the host SHOULD use its link-
+   local source address, if it has one. If the host does not have a
+   link-local source address, then it MAY choose to ARP for the
+   destination address and then send its packet, with a routable source
+   IP address and a link-local destination IP address, directly to its
+   destination on the same physical link. The host MUST NOT send the
+   packet to any router for forwarding.
+
+The above wording suggests that if host has no LL address, but it does
+have a global address, it is not required to use that global address
+to talk to a device that only has a LL address. This seems
+broken. I.e, it will result in communication failure that is hard to
+diagnose. Two nodes, both with legitimate addresses that should work,
+for some strange reason won't talk to each other. Seems to me like the
+MAY should really be a MUST. You can't NOT use the global address, if
+it's the only address you have. Or, if there are legitimate reasons
+why an implementation might not want to use its global address in this
+case (knowing that communication will fail as a result) please include
+some background explaining why this might be a reasonable approach.
+
+
+COMMENT
+-------
+Scott: notes:
+                references not split
+                this can get fixed when Harald's discuss is delt with 
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 15:58:32 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA19359
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 15:58:31 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A28F89138B; Fri,  4 Oct 2002 16:00:11 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 37DF89138C; Fri,  4 Oct 2002 16:00:11 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 12F589138B
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 16:00:09 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 96A125DF00; Fri,  4 Oct 2002 16:00:08 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from pacific-carrier-annex.mit.edu (PACIFIC-CARRIER-ANNEX.MIT.EDU [18.7.21.83])
+	by segue.merit.edu (Postfix) with ESMTP id 8628A5DDEE
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 16:00:07 -0400 (EDT)
+Received: from grand-central-station.mit.edu (GRAND-CENTRAL-STATION.MIT.EDU [18.7.21.82])
+	by pacific-carrier-annex.mit.edu (8.9.2/8.9.2) with ESMTP id QAA12819
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 16:00:06 -0400 (EDT)
+Received: from melbourne-city-street.mit.edu (MELBOURNE-CITY-STREET.MIT.EDU [18.7.21.86])
+	by grand-central-station.mit.edu (8.9.2/8.9.2) with ESMTP id QAA13110
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 16:00:06 -0400 (EDT)
+Received: from [18.174.0.40] (HUSTLER.MIT.EDU [18.174.0.40])
+	by melbourne-city-street.mit.edu (8.9.2/8.9.2) with ESMTP id QAA13773
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 16:00:05 -0400 (EDT)
+User-Agent: Microsoft-Entourage/10.1.0.2006
+Date: Fri, 04 Oct 2002 16:00:01 -0400
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt
+From: "John C. Welch" <jwelch@MIT.EDU>
+To: Zeroconf <zeroconf@merit.edu>
+Message-ID: <B9C36B81.6225D%jwelch@mit.edu>
+In-Reply-To: <200210041911.g94JB5l15100@rotala.raleigh.ibm.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On 10/04/2002 15:11, "Thomas Narten" <narten@us.ibm.com> wrote:
+
+Minor comments
+
+> Three objections, based on a quick scan:
+> 
+> 1)
+> 
+> The document gives no (zero) examples of applications that can
+> successfully and safely be used with link-local addresses. I think a
+> list of applications would serve two purposes:
+> 
+> - document the motivation for this feature
+> - serve as target for people arguing that this application has
+> serious failure modes when used with link-local addresses
+
+Off the top of my head...any sort of File Transfer applications, any
+application that needs access to resources on another machine. Word  and
+Acrobat come to mind because when you are dealing with large documents that
+require multiple people editing, there are always times when you may need to
+pass it around one last time before printing, presenting, etc. Being able to
+just set up a network quickly to do this makes this much easier, (Okay, so I
+carry a hub and cables with me, but... I'm a geek...some people aren't ;-)
+especially considering that most current OS's have some form of HTTP sharing
+built into them. 
+
+> 
+> 2)
+> 
+> The following section:
+> 
+>> 2.10 Higher-Layer Protocol Considerations
+>> 
+>> Similar considerations apply at layers above IP.
+>> 
+>> For example, designers of Web pages (including automatically
+>> generated web pages) SHOULD NOT contain links with embedded
+>> link-local addresses if those pages are viewable from hosts outside
+>> the local link where the addresses are valid.
+>> 
+>> As link-local addresses may change at any time and have limited
+>> scope, storing link-layer addresses in the DNS is not well
+>> understood and it is NOT RECOMMENDED.
+> 
+> is not sufficiently draconian.
+> 
+> It should probably say something like:
+> 
+> The following set of protocols:
+> 
+> - FTP
+> - DNS
+> - NFS
+> - IPSEC using IPv4 as an identifier
+> - BGP
+> - OSPF
+> - RTP/RTCP
+> <<<the list is far longer, I think>>>
+> 
+> will fail if applications use a link-local address instead of a
+> globally unique address when sending the address of its interface in
+> a protocol packet.
+
+I think that file transfer protocols need to function in an LL environment.
+Indeed, getting files to Bob's or Marsha's laptop on the quick without
+needing to set up a 'formal' network is one of the useful things about LL,
+and Zeroconf as a whole. Media protocols such as RTSP should function in an
+LL environment as well. IPSec has less of a case, I can't see how you would
+make that work. I agree that any routing protocol should utterly ignore LL
+packets. DNS isn't so clear cut, but for other reasons outside of the
+immediate LL scope.
+
+> 
+> 3)
+> 
+
+> How does Windows XP behave?
+> 
+> Alex:
+> Seems to me that a "routing considerations" section is required.
+>  Some things that should be described:
+> 
+>    - should a route be installed in the routing table based
+>        on the link-local address on an interface?
+> 
+>    - should/can the 169.254/16 prefix be announced by dynamic
+>        routing protocols?
+> 
+>    - if received from a routing protocol, should the prefix
+>        be installed in the RT?
+> 
+>    - what the behavior should be if the prefix somehow
+>        made it to the RT (static route, old routing proto)?
+
+I would recommend that 169.254/16 simply be non-routable. Keep it simple,
+and if there are people who would claim to 'need' this, then there are other
+ways to simplify IP configuration in a routed environment. Most modern OS's
+allow for multiple IP addresses on a single link, so there is no obvious
+need to route LL packets, from my POV at least.
+
+> 
+> Erik:
+> The abstract and first paragraph in the introduction can easily
+> be read as these addresses being a full-fledged replacement of
+> DHCP assigned addresses.
+> Having the text explicitly say that such addresses can not be used
+> for communication outside a single link would make sense.
+
+Agreed.
+
+john
+
+-- 
+John C. Welch
+IT Manager
+MIT Police
+(617) 253 - 3093 work
+(508) 579 - 7380 cell
+(617) 253 - 8822 fax
+bynkii2          AIM
+
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 16:17:15 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA20242
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 16:17:14 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 022399138C; Fri,  4 Oct 2002 16:19:05 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B2F9A9138D; Fri,  4 Oct 2002 16:19:04 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A16F09138C
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 16:19:03 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 232C85DEA1; Fri,  4 Oct 2002 16:19:03 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from garlic.amaranth.net (garlic.amaranth.net [208.254.46.17])
+	by segue.merit.edu (Postfix) with ESMTP id A8DF45DE64
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 16:19:02 -0400 (EDT)
+Received: from Willow.senie.com (amaranth.ne.client2.attbi.com [24.91.81.100])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.6/8.11.6) with ESMTP id g94KJ0u25910
+	(using TLSv1/SSLv3 with cipher DES-CBC3-SHA (168 bits) verified NO)
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 16:19:01 -0400
+Message-Id: <5.1.1.6.2.20021004160958.01f84b00@mail.amaranth.net>
+X-Sender: dts@mail.amaranth.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.1.1
+Date: Fri, 04 Oct 2002 16:18:57 -0400
+To: Zeroconf <zeroconf@merit.edu>
+From: Daniel Senie <dts@senie.com>
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt
+In-Reply-To: <B9C36B81.6225D%jwelch@mit.edu>
+References: <200210041911.g94JB5l15100@rotala.raleigh.ibm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 04:00 PM 10/4/2002, John C. Welch wrote:
+>On 10/04/2002 15:11, "Thomas Narten" <narten@us.ibm.com> wrote:
+>
+>Minor comments
+>
+> > Three objections, based on a quick scan:
+> >
+> > 1)
+> >
+> > The document gives no (zero) examples of applications that can
+> > successfully and safely be used with link-local addresses. I think a
+> > list of applications would serve two purposes:
+> >
+> > - document the motivation for this feature
+> > - serve as target for people arguing that this application has
+> > serious failure modes when used with link-local addresses
+>
+>Off the top of my head...any sort of File Transfer applications, any
+>application that needs access to resources on another machine. Word  and
+>Acrobat come to mind because when you are dealing with large documents that
+>require multiple people editing, there are always times when you may need to
+>pass it around one last time before printing, presenting, etc. Being able to
+>just set up a network quickly to do this makes this much easier, (Okay, so I
+>carry a hub and cables with me, but... I'm a geek...some people aren't ;-)
+>especially considering that most current OS's have some form of HTTP sharing
+>built into them.
+
+File sharing in an ad-hoc network is the #1 reason I use LL. Doesn't matter 
+if the media is Ethernet, wireless, Infrared, Firewire, or whatever. (I 
+think my laptop supports LL over all of those). The ability to beam data 
+between laptops when working away from infrastructure is key.
+
+
+> >
+> > 2)
+> >
+> > The following section:
+> >
+> >> 2.10 Higher-Layer Protocol Considerations
+> >>
+> >> Similar considerations apply at layers above IP.
+> >>
+> >> For example, designers of Web pages (including automatically
+> >> generated web pages) SHOULD NOT contain links with embedded
+> >> link-local addresses if those pages are viewable from hosts outside
+> >> the local link where the addresses are valid.
+> >>
+> >> As link-local addresses may change at any time and have limited
+> >> scope, storing link-layer addresses in the DNS is not well
+> >> understood and it is NOT RECOMMENDED.
+> >
+> > is not sufficiently draconian.
+> >
+> > It should probably say something like:
+> >
+> > The following set of protocols:
+> >
+> > - FTP
+> > - DNS
+> > - NFS
+> > - IPSEC using IPv4 as an identifier
+> > - BGP
+> > - OSPF
+> > - RTP/RTCP
+> > <<<the list is far longer, I think>>>
+> >
+> > will fail if applications use a link-local address instead of a
+> > globally unique address when sending the address of its interface in
+> > a protocol packet.
+>
+>I think that file transfer protocols need to function in an LL environment.
+
+File transfer protocols such as FTP will work just fine in an LL 
+environment, provided the client and server machines are both on the LL, 
+and both use LL addressing. Any case where one machine uses LL and the 
+other uses public address space gets into the same issues as are raised 
+with these protocols and NAT. Since LL as specified is NOT supposed to 
+traverse routers (despite the efforts of some folk) there is really little 
+trouble with these protocols with LL.
+
+>Indeed, getting files to Bob's or Marsha's laptop on the quick without
+>needing to set up a 'formal' network is one of the useful things about LL,
+>and Zeroconf as a whole. Media protocols such as RTSP should function in an
+>LL environment as well. IPSec has less of a case, I can't see how you would
+>make that work.
+
+IPSec appears to be a silly case in conjunction with LL. We're talking in 
+general about "zero configuration" networks. IPSec (at least in the 
+implementations presently available) are about as far from zero 
+configuration as you can get.
+
+>  I agree that any routing protocol should utterly ignore LL
+>packets. DNS isn't so clear cut, but for other reasons outside of the
+>immediate LL scope.
+
+OSPF clearly should not be dealing with LL, since LL packets aren't 
+supposed to be routed, and are guaranteed NOT to be universally unique. Any 
+attempt by a router to work with LL necessarily involves NAT, at which 
+point we need to question whether we're talking about a router (RFC 1812) 
+or a NAT gateway box.
+
+
+> >
+> > 3)
+> >
+>
+> > How does Windows XP behave?
+> >
+> > Alex:
+> > Seems to me that a "routing considerations" section is required.
+> >  Some things that should be described:
+> >
+> >    - should a route be installed in the routing table based
+> >        on the link-local address on an interface?
+> >
+> >    - should/can the 169.254/16 prefix be announced by dynamic
+> >        routing protocols?
+> >
+> >    - if received from a routing protocol, should the prefix
+> >        be installed in the RT?
+> >
+> >    - what the behavior should be if the prefix somehow
+> >        made it to the RT (static route, old routing proto)?
+>
+>I would recommend that 169.254/16 simply be non-routable. Keep it simple,
+>and if there are people who would claim to 'need' this, then there are other
+>ways to simplify IP configuration in a routed environment. Most modern OS's
+>allow for multiple IP addresses on a single link, so there is no obvious
+>need to route LL packets, from my POV at least.
+
+Routing considerations should read: LL packets are NOT routed. Perhaps it 
+should be even stronger (or an additional document written) that says: RFC 
+1812 is hereby ammended to declare that packets with source or destination 
+addresses in the 169.254/16 address block are to be quietly dropped by the 
+input handling mechanism of routers.
+
+
+> >
+> > Erik:
+> > The abstract and first paragraph in the introduction can easily
+> > be read as these addresses being a full-fledged replacement of
+> > DHCP assigned addresses.
+> > Having the text explicitly say that such addresses can not be used
+> > for communication outside a single link would make sense.
+>
+>Agreed.
+
+Strong agreement.
+
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 16:54:49 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA21536
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 16:54:48 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4A5B491391; Fri,  4 Oct 2002 16:55:14 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B5D0091390; Fri,  4 Oct 2002 16:55:13 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id C5D689138D
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 16:55:07 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B136B5DE11; Fri,  4 Oct 2002 16:55:07 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from astro.cs.utk.edu (astro.cs.utk.edu [160.36.58.43])
+	by segue.merit.edu (Postfix) with ESMTP id 7B5CF5DDC4
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 16:55:07 -0400 (EDT)
+Received: from astro.cs.utk.edu (localhost [127.0.0.1])
+        by astro.cs.utk.edu (cf 8.9.3) with ESMTP id g94Kt5012551;
+        Fri, 4 Oct 2002 16:55:05 -0400 (EDT)
+Message-Id: <200210042055.g94Kt5012551@astro.cs.utk.edu>
+X-URI: http://www.cs.utk.edu/~moore/
+From: Keith Moore <moore@cs.utk.edu>
+To: Daniel Senie <dts@senie.com>
+Cc: Zeroconf <zeroconf@merit.edu>
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt 
+In-reply-to: (Your message of "Fri, 04 Oct 2002 16:18:57 EDT.") 
+             <5.1.1.6.2.20021004160958.01f84b00@mail.amaranth.net> 
+Date: Fri, 04 Oct 2002 16:55:05 -0400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> File sharing in an ad-hoc network is the #1 reason I use LL. Doesn't matter 
+> if the media is Ethernet, wireless, Infrared, Firewire, or whatever. (I 
+> think my laptop supports LL over all of those). The ability to beam data 
+> between laptops when working away from infrastructure is key.
+
+file sharing won't work over LL for long periods of time.  none of the
+file sharing protocols of which I'm aware (NFS, CIFS, FTP, etc.) have
+the capability to deal with address changes in the middle of a mount
+or session.
+
+it might work for brief periods when you're "working away from the
+infrastructure" but LL is being touted as something that also works 
+just fine within the infrastructure.
+
+> File transfer protocols such as FTP will work just fine in an LL 
+> environment, provided the client and server machines are both on the LL, 
+> and both use LL addressing. 
+
+and your sessions are short (I've run ftp sessions lasting for several days), 
+and clients know when to use an LL address in referrals (say a PORT command)
+and when to not use them,
+and you're not doing 3-party transfers.  
+there may be one or two other caveats...
+
+> Any case where one machine uses LL and the 
+> other uses public address space gets into the same issues as are raised 
+> with these protocols and NAT. 
+
+NAT has its own (half) solution to some of these problems, and at any 
+rate the existence of a problem with NAT is not a justification for
+introducing a problem in LL.  I'll also note that NAT is not standardized,
+and wouldn't meet the criteria for standardization by a long shot.
+
+> Since LL as specified is NOT supposed to 
+> traverse routers (despite the efforts of some folk) there is really little 
+> trouble with these protocols with LL.
+
+no, it doesn't follow.  since LL doesn't traverse routers then the
+applications have to know when to use it and when not to use it - 
+and that's a huge burden to place on the installed base.
+
+> IPSec appears to be a silly case in conjunction with LL. We're talking in 
+> general about "zero configuration" networks. IPSec (at least in the 
+> implementations presently available) are about as far from zero 
+> configuration as you can get.
+
+"zeroconf" is a misnomer.   none of this technology is going to scale to 
+a production network of any size without per-host configuration.
+
+Keith
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 17:20:21 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA22727
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 17:20:21 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A3F779138D; Fri,  4 Oct 2002 17:22:10 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6EC9C9138E; Fri,  4 Oct 2002 17:22:10 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6BAE09138D
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 17:22:09 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 58E425DF06; Fri,  4 Oct 2002 17:22:09 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mailhost.chi1.ameritech.net (mailhost1-chcgil.chcgil.ameritech.net [206.141.192.67])
+	by segue.merit.edu (Postfix) with ESMTP id 3CF8B5DF00
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 17:22:09 -0400 (EDT)
+Received: from repligate ([67.37.228.235]) by mailhost.chi1.ameritech.net
+          (InterMail vM.4.01.02.17 201-229-119) with SMTP
+          id <20021004212209.DOLT14448.mailhost.chi1.ameritech.net@repligate>
+          for <zeroconf@merit.edu>; Fri, 4 Oct 2002 16:22:09 -0500
+Message-ID: <016a01c26bec$27ba2640$0100a8c0@repligate>
+From: "Jim Fleming" <JimFleming@ameritech.net>
+To: <zeroconf@merit.edu>
+References: <200210042055.g94Kt5012551@astro.cs.utk.edu>
+Subject: "...NAT is not standardized..."
+Date: Fri, 4 Oct 2002 16:22:33 -0500
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+----- Original Message ----- 
+From: "Keith Moore" <moore@cs.utk.edu>
+NAT is not standardized,
+> and wouldn't meet the criteria for standardization by a long shot.
+> 
+
+That is one of the strengths of the IPv8 migration plan, which includes NAT.
+Standards can kill innovation. NAT works and has eaten IPv6's lunch.
+Some call that evil. Others call it a NetWork, because it works. Standards
+do not create networks. Rough consensus and working code does. The
+"zeroconf" developers may be best-served by avoiding any attempt to
+standardize them out of existence.
+
+
+Jim Fleming
+2002:[IPv4]:000X:03DB:...IPv8 is closer than you think...IPv16 is even closer...
+http://www.ietf.com
+http://www.iana.org/assignments/ipv4-address-space
+http://www.ntia.doc.gov/ntiahome/domainname/130dftmail/unir.txt
+http://ipv8.dyndns.tv
+http://ipv8.dyns.cx
+http://ipv8.no-ip.com
+http://ipv8.no-ip.biz
+http://ipv8.no-ip.info
+http://ipv8.myip.us
+http://ipv8.dyn.ee
+http://ipv8.community.net.au
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 17:32:09 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA23036
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 17:32:09 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 20C439138E; Fri,  4 Oct 2002 17:33:45 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EDBDE9138F; Fri,  4 Oct 2002 17:33:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 447439138E
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 17:32:00 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 23B075DF0B; Fri,  4 Oct 2002 17:32:00 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from fort-point-station.mit.edu (FORT-POINT-STATION.MIT.EDU [18.7.7.76])
+	by segue.merit.edu (Postfix) with ESMTP id B48555DF00
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 17:31:59 -0400 (EDT)
+Received: from grand-central-station.mit.edu (GRAND-CENTRAL-STATION.MIT.EDU [18.7.21.82])
+	by fort-point-station.mit.edu (8.9.2/8.9.2) with ESMTP id RAA05820
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 17:31:59 -0400 (EDT)
+Received: from melbourne-city-street.mit.edu (MELBOURNE-CITY-STREET.MIT.EDU [18.7.21.86])
+	by grand-central-station.mit.edu (8.9.2/8.9.2) with ESMTP id RAA27629
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 17:31:59 -0400 (EDT)
+Received: from [18.174.0.40] (HUSTLER.MIT.EDU [18.174.0.40])
+	by melbourne-city-street.mit.edu (8.9.2/8.9.2) with ESMTP id RAA15167
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 17:31:58 -0400 (EDT)
+User-Agent: Microsoft-Entourage/10.1.0.2006
+Date: Fri, 04 Oct 2002 17:31:57 -0400
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt 
+From: "John C. Welch" <jwelch@MIT.EDU>
+To: Zeroconf <zeroconf@merit.edu>
+Message-ID: <B9C3810D.622B3%jwelch@mit.edu>
+In-Reply-To: <200210042055.g94Kt5012551@astro.cs.utk.edu>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On 10/04/2002 16:55, "Keith Moore" <moore@cs.utk.edu> wrote:
+
+>> File sharing in an ad-hoc network is the #1 reason I use LL. Doesn't matter
+>> if the media is Ethernet, wireless, Infrared, Firewire, or whatever. (I
+>> think my laptop supports LL over all of those). The ability to beam data
+>> between laptops when working away from infrastructure is key.
+> 
+> file sharing won't work over LL for long periods of time.  none of the
+> file sharing protocols of which I'm aware (NFS, CIFS, FTP, etc.) have
+> the capability to deal with address changes in the middle of a mount
+> or session.
+
+But long term mounts aren't a major use for a LL setup. As well, people have
+been mounting things in a LL-style setup anyway in the AppleTalk world for
+years now, and they adapt just fine to the concept that once you unplug this
+cable, AppleTalk go bye-bye, and your mounts go away. The OS has to deal
+with that part of things gracefully, and most do.
+
+As well, even in a static IP config, or a DHCP config, if you unplug from
+the network, the mounts drop, even if you go wireless right away. You simply
+re-establish the connection. That particular issue is neither new, nor
+unique to LL.
+
+> 
+> it might work for brief periods when you're "working away from the
+> infrastructure" but LL is being touted as something that also works
+> just fine within the infrastructure.
+
+It does both...you're in a meeting in an area without network hookups or
+wireless coverage, you need to transfer files. LL provides you with the
+addressing for AFP/IP, FTP, CIFS to work. File transferred, meeting rocks
+on. Later, you connect back into the corporate network, and do more work.
+The OS's networking implementation handles all of this for you. *That* is
+where the work should be done, not at the Application or User levels.
+
+> 
+>> File transfer protocols such as FTP will work just fine in an LL
+>> environment, provided the client and server machines are both on the LL,
+>> and both use LL addressing.
+> 
+> and your sessions are short (I've run ftp sessions lasting for several days),
+> and clients know when to use an LL address in referrals (say a PORT command)
+> and when to not use them,
+> and you're not doing 3-party transfers.
+> there may be one or two other caveats...
+
+If you are running week long FTP, then you are probably not on an ad hoc
+network without a router anyway. LL also won't work if you need to set up an
+Enterprise-wide VOIP system as well, but that's not the point. No solution
+fits every single conceivable situation perfectly. For what LL *does* do
+well, it's very good at. I wouldn't set up a /8 network with an FC SAN just
+to move a PDF of a presentation to my co-presenter either.
+
+> 
+>> Since LL as specified is NOT supposed to
+>> traverse routers (despite the efforts of some folk) there is really little
+>> trouble with these protocols with LL.
+> 
+> no, it doesn't follow.  since LL doesn't traverse routers then the
+> applications have to know when to use it and when not to use it -
+> and that's a huge burden to place on the installed base.
+
+Why would an FTP app *care*? As long as it can see the destination machine,
+Bob's your uncle. The FTP app has no business deciding if an address is
+valid or not. The lower layers can either create a TCP connection on the
+proper ports, or they cannot. If they can, you can then transfer data...if
+they can't, then you can't, and the FTP app gives you an error.
+
+If a someone is trying to access www.mit.edu, and they are in an LL-only
+situation, then the connection attempt will time out. That's how it works
+anyway. Let's not overcomplicate this process.
+
+If you are in a situation, as I am this moment, where I am using
+LL/Rendezvous/Zeroconf for my iChat session with a co-worker down the hall,
+and transferring a file from www.apple.com, then the OS, and the network
+stack handle that translation. IE only needs to be able to get the right
+response to it's attempt to connect. It doesn't need to care which interface
+does what, and, in a multi-homed environment, it had better well *not* be
+trying to tickle a specific interface, or when I unplug my Ethernet cable
+and start using wireless, it's going to be unable to connect to a web site.
+If an application fails because it only works with en0, it's going to fail
+anyway, and that's a bug, not a feature.
+
+> 
+>> IPSec appears to be a silly case in conjunction with LL. We're talking in
+>> general about "zero configuration" networks. IPSec (at least in the
+>> implementations presently available) are about as far from zero
+>> configuration as you can get.
+> 
+> "zeroconf" is a misnomer.   none of this technology is going to scale to
+> a production network of any size without per-host configuration.
+
+<sigh>...nothing is <truly> zeroconf...you have to setup the OS, you have to
+apply power to the device, printers need paper, you have to plug in a cable,
+you have to physically be in range of a wireless device, you need to be able
+to operate the input system for your computer. Can we *please* not pick nits
+about the applicability of the name "Zeroconf"? Technically, Ethernet uses
+neither the concept of "the ether", the substance Ether, nor is a net used
+in any way...but we've managed to look past those minor issues at the big
+picture.
+
+john
+
+-- 
+John C. Welch
+IT Manager
+MIT Police
+(617) 253 - 3093 work
+(508) 579 - 7380 cell
+(617) 253 - 8822 fax
+bynkii2          AIM
+
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 19:24:19 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA25716
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 19:24:18 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 9B8F591396; Fri,  4 Oct 2002 19:26:09 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6668E91398; Fri,  4 Oct 2002 19:26:09 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 550CB91396
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 19:26:08 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 3D3D15DF0D; Fri,  4 Oct 2002 19:26:08 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from gnat.inet.org (gnat.inet.org [63.108.254.91])
+	by segue.merit.edu (Postfix) with ESMTP id B67115DE09
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 19:26:07 -0400 (EDT)
+Received: from extremenetworks.com (unknown [10.30.20.242])
+	by gnat.inet.org (Postfix) with ESMTP
+	id 170AA67104; Fri,  4 Oct 2002 15:40:51 -0400 (EDT)
+Date: Fri, 4 Oct 2002 19:25:57 -0400
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt 
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Mime-Version: 1.0 (Apple Message framework v546)
+Cc: Zeroconf <zeroconf@merit.edu>
+To: Keith Moore <moore@cs.utk.edu>
+From: RJ Atkinson <rja@extremenetworks.com>
+In-Reply-To: <200210042055.g94Kt5012551@astro.cs.utk.edu>
+Message-Id: <A2E24C00-D7F0-11D6-8D0A-00039357A82A@extremenetworks.com>
+Content-Transfer-Encoding: 7bit
+X-Mailer: Apple Mail (2.546)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+On Friday, Oct 4, 2002, at 16:55 America/Montreal, Keith Moore wrote:
+> file sharing won't work over LL for long periods of time.
+
+This is nonsense.  I have an existence proof that the claim above
+is bogus in my LAN here in Herndon -- using link-local and NFSv3/TCP.
+
+>  none of the
+> file sharing protocols of which I'm aware (NFS, CIFS, FTP, etc.) have
+> the capability to deal with address changes in the middle of a mount
+> or session.
+
+And the beauty of a LL NFS mount is that the address won't need to 
+change
+in the middle of a session unless one swaps NIC cards (in which case
+the session is interrupted for reasons other than IP addressing).
+
+> it might work for brief periods when you're "working away from the
+> infrastructure" but LL is being touted as something that also works
+> just fine within the infrastructure.
+
+It works fine concurrently with me using (10.x.y.z & NAT) to access
+web content and process email.
+
+>> File transfer protocols such as FTP will work just fine in an LL
+>> environment, provided the client and server machines are both on the 
+>> LL,
+>> and both use LL addressing.
+>
+> and your sessions are short (I've run ftp sessions lasting for several 
+> days),
+> and clients know when to use an LL address in referrals (say a PORT 
+> command)
+> and when to not use them,
+
+Seems to work fine for me since my LL addresses only change when I swap
+NIC cards (at most once per year, usually never).
+
+> and you're not doing 3-party transfers.
+
+3-party transfers are inherently insecure and ought never be used or
+implemented regardless of LL.
+
+>> Since LL as specified is NOT supposed to
+>> traverse routers (despite the efforts of some folk) there is really 
+>> little
+>> trouble with these protocols with LL.
+>
+> no, it doesn't follow.  since LL doesn't traverse routers then the
+> applications have to know when to use it and when not to use it -
+> and that's a huge burden to place on the installed base.
+
+I'm not actually seeing problems with most protocols using LL, so I am 
+having
+a hard time believing the bold unqualified claims that Keith keeps 
+making.
+I can believe there are some corner cases, but Keith would be more 
+persuasive
+if he made more careful precise claims rather than the bold handwaving 
+sorts
+of claims.
+
+>> IPSec appears to be a silly case in conjunction with LL. We're 
+>> talking in
+>> general about "zero configuration" networks. IPSec (at least in the
+>> implementations presently available) are about as far from zero
+>> configuration as you can get.
+>
+> "zeroconf" is a misnomer.   none of this technology is going to scale 
+> to
+> a production network of any size without per-host configuration.
+
+Since the primary goal is to support small-scale (AppleTalk-like) 
+networks that
+don't even have a router, I'm not sure that it is relevant to talk 
+about scaling
+to a very large network.  The stuff we have seems to scale no worse 
+than IEEE
+802 bridging, so is probably fine.
+
+Ran
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 20:10:08 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA26514
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 20:10:07 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 6F49A91398; Fri,  4 Oct 2002 20:11:58 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 3BD9F91399; Fri,  4 Oct 2002 20:11:58 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D79D091398
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 20:11:56 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C00025DE19; Fri,  4 Oct 2002 20:11:56 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from astro.cs.utk.edu (astro.cs.utk.edu [160.36.58.43])
+	by segue.merit.edu (Postfix) with ESMTP id 53DA45DD9F
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 20:11:56 -0400 (EDT)
+Received: from astro.cs.utk.edu (localhost [127.0.0.1])
+        by astro.cs.utk.edu (cf 8.9.3) with ESMTP id g950Bq013539;
+        Fri, 4 Oct 2002 20:11:52 -0400 (EDT)
+Message-Id: <200210050011.g950Bq013539@astro.cs.utk.edu>
+X-URI: http://www.cs.utk.edu/~moore/
+From: Keith Moore <moore@cs.utk.edu>
+To: RJ Atkinson <rja@extremenetworks.com>
+Cc: Keith Moore <moore@cs.utk.edu>, Zeroconf <zeroconf@merit.edu>
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt 
+In-reply-to: (Your message of "Fri, 04 Oct 2002 19:25:57 EDT.") 
+             <A2E24C00-D7F0-11D6-8D0A-00039357A82A@extremenetworks.com> 
+Date: Fri, 04 Oct 2002 20:11:52 -0400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> On Friday, Oct 4, 2002, at 16:55 America/Montreal, Keith Moore wrote:
+> > file sharing won't work over LL for long periods of time.
+> 
+> This is nonsense.  I have an existence proof that the claim above
+> is bogus in my LAN here in Herndon -- using link-local and NFSv3/TCP.
+
+okay, let me clarify - file sharing won't work for a long time over LL 
+on a network with: conditions that require changing addresses
+(e.g. lots of nomadic hosts being attached), or with components that 
+do referrals (e.g. NFS mounts) and need to talk to a mixture of hosts 
+some of which are accessible via LL and some of which are not.
+
+one of the problems with talking about LL is that nearly all apps
+will work over LL some of the time and almost all apps will break
+more often with LL than they will break with routable addresses.
+so you can always find cases where X works, even if X also breaks
+under slightly different conditions.
+
+> >  none of the
+> > file sharing protocols of which I'm aware (NFS, CIFS, FTP, etc.) have
+> > the capability to deal with address changes in the middle of a mount
+> > or session.
+> 
+> And the beauty of a LL NFS mount is that the address won't need to 
+> change in the middle of a session unless one swaps NIC cards (in which case
+> the session is interrupted for reasons other than IP addressing).
+
+the address can also change if another host claims that v4LL address.
+
+> > it might work for brief periods when you're "working away from the
+> > infrastructure" but LL is being touted as something that also works
+> > just fine within the infrastructure.
+> 
+> It works fine concurrently with me using (10.x.y.z & NAT) to access
+> web content and process email.
+
+yes, but you don't have much 'infrastructure' to break.
+
+> > and you're not doing 3-party transfers.
+> 
+> 3-party transfers are inherently insecure and ought never be used or
+> implemented regardless of LL.
+
+don't confuse the way FTP does it with 3-party transfers in general.
+
+> >> Since LL as specified is NOT supposed to
+> >> traverse routers (despite the efforts of some folk) there is really 
+> >> little
+> >> trouble with these protocols with LL.
+> >
+> > no, it doesn't follow.  since LL doesn't traverse routers then the
+> > applications have to know when to use it and when not to use it -
+> > and that's a huge burden to place on the installed base.
+> 
+> I'm not actually seeing problems with most protocols using LL, so I am 
+> having  a hard time believing the bold unqualified claims that Keith keeps 
+> making.
+
+that's because you are trying to extrapolate from a small number of
+corner cases and claiming they're representative of the whole.
+
+> I can believe there are some corner cases, but Keith would be more 
+> persuasive
+> if he made more careful precise claims rather than the bold handwaving 
+> sorts
+> of claims.
+
+it's far bolder handwaving to claim 'if it doesn't break for me, it
+won't break for anybody'.  especially if you dismiss any actual 
+evidence that you're presented with.
+
+
+> > "zeroconf" is a misnomer.   none of this technology is going to scale 
+> > to  a production network of any size without per-host configuration.
+> 
+> Since the primary goal is to support small-scale (AppleTalk-like) 
+> networks that
+> don't even have a router, I'm not sure that it is relevant to talk 
+> about scaling
+> to a very large network.  The stuff we have seems to scale no worse 
+> than IEEE
+> 802 bridging, so is probably fine.
+
+if LL were only going to be used on small scale networks I'd agree with you.
+
+but it's relevant to talk about the effect on LL on such networks since
+LL is being imposed on ALL networks (with no way to disable it) -
+with anywhere from  2 to thousands of hosts, with or without routers,
+with or without DHCP, with or without firewalls, with or without
+servers, with or without distributed apps.
+
+the idea that 'we've designed this car for crashworthiness on a test
+track at 5 miles/hour, now we are okay putting passengers in it 
+on actual highways for use at 80 miles/hour' just doesn't make sense.
+
+Keith
+
+
+From owner-zeroconf@merit.edu  Fri Oct  4 20:33:45 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA26877
+	for <zeroconf-archive@lists.ietf.org>; Fri, 4 Oct 2002 20:33:45 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4F34591399; Fri,  4 Oct 2002 20:35:36 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 1804E9139A; Fri,  4 Oct 2002 20:35:36 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id DA57791399
+	for <zeroconf@trapdoor.merit.edu>; Fri,  4 Oct 2002 20:35:34 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id BDD4A5DF10; Fri,  4 Oct 2002 20:35:34 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from fort-point-station.mit.edu (FORT-POINT-STATION.MIT.EDU [18.7.7.76])
+	by segue.merit.edu (Postfix) with ESMTP id 5B5B75DD9F
+	for <zeroconf@merit.edu>; Fri,  4 Oct 2002 20:35:34 -0400 (EDT)
+Received: from central-city-carrier-station.mit.edu (CENTRAL-CITY-CARRIER-STATION.MIT.EDU [18.7.7.72])
+	by fort-point-station.mit.edu (8.9.2/8.9.2) with ESMTP id UAA23990
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 20:35:33 -0400 (EDT)
+Received: from melbourne-city-street.mit.edu (MELBOURNE-CITY-STREET.MIT.EDU [18.7.21.86])
+	by central-city-carrier-station.mit.edu (8.9.2/8.9.2) with ESMTP id UAA15120
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 20:35:33 -0400 (EDT)
+Received: from [18.174.0.40] (HUSTLER.MIT.EDU [18.174.0.40])
+	by melbourne-city-street.mit.edu (8.9.2/8.9.2) with ESMTP id UAA10506
+	for <zeroconf@merit.edu>; Fri, 4 Oct 2002 20:35:33 -0400 (EDT)
+User-Agent: Microsoft-Entourage/10.1.0.2006
+Date: Fri, 04 Oct 2002 20:35:32 -0400
+Subject: Re: IESG comments on draft-ietf-zeroconf-ipv4-linklocal-07.txt 
+From: "John C. Welch" <jwelch@MIT.EDU>
+To: Zeroconf <zeroconf@merit.edu>
+Message-ID: <B9C3AC14.62318%jwelch@mit.edu>
+In-Reply-To: <200210050011.g950Bq013539@astro.cs.utk.edu>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On 10/04/2002 20:11, "Keith Moore" <moore@cs.utk.edu> wrote:
+
+>> On Friday, Oct 4, 2002, at 16:55 America/Montreal, Keith Moore wrote:
+>>> file sharing won't work over LL for long periods of time.
+>> 
+>> This is nonsense.  I have an existence proof that the claim above
+>> is bogus in my LAN here in Herndon -- using link-local and NFSv3/TCP.
+> 
+> okay, let me clarify - file sharing won't work for a long time over LL
+> on a network with: conditions that require changing addresses
+> (e.g. lots of nomadic hosts being attached), or with components that
+> do referrals (e.g. NFS mounts) and need to talk to a mixture of hosts
+> some of which are accessible via LL and some of which are not.
+
+And if you have statically addressed hosts that are (dis)connecting from the
+network a lot, what magic will keep their file sharing connection
+functional? If one end of the connection is *gone*, the connection
+*dies*...I don't care *how* you have it configured. The only exception to
+this are connections created with this in mind, i.e. Citrix Metaframe.
+However, if the app/protocol is designed to compensate for this, *then* it
+won't matter if you disconnect, link local or not.
+
+> 
+> one of the problems with talking about LL is that nearly all apps
+> will work over LL some of the time and almost all apps will break
+> more often with LL than they will break with routable addresses.
+> so you can always find cases where X works, even if X also breaks
+> under slightly different conditions.
+
+I can find that for anything. But what you are saying is that it won't work
+in LL in the same kind of case it would break under any other sort of link,
+ergo, your argument here is moot.
+
+> 
+>>>  none of the
+>>> file sharing protocols of which I'm aware (NFS, CIFS, FTP, etc.) have
+>>> the capability to deal with address changes in the middle of a mount
+>>> or session.
+>> 
+>> And the beauty of a LL NFS mount is that the address won't need to
+>> change in the middle of a session unless one swaps NIC cards (in which case
+>> the session is interrupted for reasons other than IP addressing).
+> 
+> the address can also change if another host claims that v4LL address.
+
+It can't claim it while a given host already has that address. It can only
+do so when the first host is gone. However, the MAC address will change, and
+since the MAC address is how Layers 1 & 2 decide to pass the packet up to
+the higher layers, the new holder of the address won't get the packets,
+unless you are also spoofing the MAC address as well.
+
+By the same token, another host can grab a certain DHCP address, hell, they
+can be *reassigned* while the host is still on...people still use DHCP, so
+it's obviously not the big problem you say it is.
+
+> 
+>>> it might work for brief periods when you're "working away from the
+>>> infrastructure" but LL is being touted as something that also works
+>>> just fine within the infrastructure.
+>> 
+>> It works fine concurrently with me using (10.x.y.z & NAT) to access
+>> web content and process email.
+> 
+> yes, but you don't have much 'infrastructure' to break.
+
+I do, and it works fine for me as well...unless you define MIT as not having
+much infrastructure.
+
+>>>> Since LL as specified is NOT supposed to
+>>>> traverse routers (despite the efforts of some folk) there is really
+>>>> little
+>>>> trouble with these protocols with LL.
+>>> 
+>>> no, it doesn't follow.  since LL doesn't traverse routers then the
+>>> applications have to know when to use it and when not to use it -
+>>> and that's a huge burden to place on the installed base.
+>> 
+>> I'm not actually seeing problems with most protocols using LL, so I am
+>> having  a hard time believing the bold unqualified claims that Keith keeps
+>> making.
+> 
+> that's because you are trying to extrapolate from a small number of
+> corner cases and claiming they're representative of the whole.
+
+You're doing the same thing, only to opposite ends. Ergo, both sides are
+either equally valid, or equally invalid.
+
+> 
+>> I can believe there are some corner cases, but Keith would be more
+>> persuasive
+>> if he made more careful precise claims rather than the bold handwaving
+>> sorts
+>> of claims.
+> 
+> it's far bolder handwaving to claim 'if it doesn't break for me, it
+> won't break for anybody'.  especially if you dismiss any actual
+> evidence that you're presented with.
+
+Show us where it breaks.
+
+> 
+> 
+>>> "zeroconf" is a misnomer.   none of this technology is going to scale
+>>> to  a production network of any size without per-host configuration.
+>> 
+>> Since the primary goal is to support small-scale (AppleTalk-like)
+>> networks that
+>> don't even have a router, I'm not sure that it is relevant to talk
+>> about scaling
+>> to a very large network.  The stuff we have seems to scale no worse
+>> than IEEE
+>> 802 bridging, so is probably fine.
+> 
+> if LL were only going to be used on small scale networks I'd agree with you.
+> 
+> but it's relevant to talk about the effect on LL on such networks since
+> LL is being imposed on ALL networks (with no way to disable it) -
+> with anywhere from  2 to thousands of hosts, with or without routers,
+> with or without DHCP, with or without firewalls, with or without
+> servers, with or without distributed apps.
+
+Well, I can't say for windows, but this type of LL is easy to disable on Mac
+OS X. But the point is, it's being used, and *now*, and so far, your dire
+predictions aren't coming true. In fact, the only consistent problems I've
+seen involve Active Directory.
+
+> 
+> the idea that 'we've designed this car for crashworthiness on a test
+> track at 5 miles/hour, now we are okay putting passengers in it
+> on actual highways for use at 80 miles/hour' just doesn't make sense.
+
+Neither does saying that 'we've designed it to survive a crash at 35 miles
+per hour, but you might drive it off an overpass, and die in that crash, so
+we won't release the car, because of this bizarre possibility.'
+
+john
+
+-- 
+John C. Welch
+IT Manager
+MIT Police
+(617) 253 - 3093 work
+(508) 579 - 7380 cell
+(617) 253 - 8822 fax
+bynkii2          AIM
+
+
+
+From owner-zeroconf@merit.edu  Tue Oct  8 21:35:54 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA06517
+	for <zeroconf-archive@lists.ietf.org>; Tue, 8 Oct 2002 21:35:54 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2D5D8912C4; Tue,  8 Oct 2002 21:35:36 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DE852912C8; Tue,  8 Oct 2002 21:35:35 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id AF6AC912C4
+	for <zeroconf@trapdoor.merit.edu>; Tue,  8 Oct 2002 21:35:32 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9F7465E07E; Tue,  8 Oct 2002 21:35:32 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from motgate.mot.com (motgate.mot.com [129.188.136.100])
+	by segue.merit.edu (Postfix) with ESMTP id 271D55DDD5
+	for <zeroconf@merit.edu>; Tue,  8 Oct 2002 21:35:32 -0400 (EDT)
+Received: [from pobox4.mot.com (pobox4.mot.com [10.64.251.243]) by motgate.mot.com (motgate 2.1) with ESMTP id SAA08407 for <zeroconf@merit.edu>; Tue, 8 Oct 2002 18:35:31 -0700 (MST)]
+Received: [from homer.arc.corp.mot.com (homer.arc.corp.mot.com [10.238.80.38]) by pobox4.mot.com (MOT-pobox4 2.0) with ESMTP id SAA10353 for <zeroconf@merit.edu>; Tue, 8 Oct 2002 18:35:28 -0700 (MST)]
+Received: from motorola.com (aidanw.arc.corp.mot.com [10.238.80.63])
+	by homer.arc.corp.mot.com (8.12.2/8.12.2) with ESMTP id g991ZQ7C008465
+	for <zeroconf@merit.edu>; Wed, 9 Oct 2002 11:35:26 +1000 (EST)
+Message-ID: <3DA387DD.3090507@motorola.com>
+Date: Wed, 09 Oct 2002 11:35:25 +1000
+From: Aidan Williams <aidan.williams@motorola.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.0.0) Gecko/20020530
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: draft-ietf-zeroconf-reqts-12.txt
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+I didn't see an email on the ietf announce list, but a new
+version of the requirements draft has been available for a
+little while now:
+   http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-12.txt
+
+This document contains all the changes that have been discussed
+on the list in recent times.
+
+-- 
+
+regards
+	aidan
+____
+:wq!
+
+Sydney Network Research Lab             aidan.williams@motorola.com
+Motorola Australian Research Centre          phone: +61 2 9666 0649
+Locked Bag 5028, Botany NSW 1455              phax: +61 2 9666 0501
+Australia                            http://marc.labs.mot.com/snrl/
+
+
+
+From owner-zeroconf@merit.edu  Tue Oct  8 21:52:49 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA06781
+	for <zeroconf-archive@lists.ietf.org>; Tue, 8 Oct 2002 21:52:49 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 79ACD912C1; Tue,  8 Oct 2002 21:54:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 49106912C4; Tue,  8 Oct 2002 21:54:40 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0C9C1912C1
+	for <zeroconf@trapdoor.merit.edu>; Tue,  8 Oct 2002 21:54:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E47105E091; Tue,  8 Oct 2002 21:54:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mailhost.chi1.ameritech.net (mailhost1-chcgil.chcgil.ameritech.net [206.141.192.67])
+	by segue.merit.edu (Postfix) with ESMTP id 0EDEC5DDD5
+	for <zeroconf@merit.edu>; Tue,  8 Oct 2002 21:54:34 -0400 (EDT)
+Received: from repligate ([67.37.179.228]) by mailhost.chi1.ameritech.net
+          (InterMail vM.4.01.02.17 201-229-119) with SMTP
+          id <20021009015433.RKVG14448.mailhost.chi1.ameritech.net@repligate>;
+          Tue, 8 Oct 2002 20:54:33 -0500
+Message-ID: <004a01c26f36$d9d92900$0100a8c0@repligate>
+From: "Jim Fleming" <JimFleming@ameritech.net>
+To: "Aidan Williams" <aidan.williams@motorola.com>, <zeroconf@merit.edu>
+References: <3DA387DD.3090507@motorola.com>
+Subject: Re: draft-ietf-zeroconf-reqts-12.txt
+Date: Tue, 8 Oct 2002 20:54:48 -0500
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+----- Original Message ----- 
+From: "Aidan Williams" <aidan.williams@motorola.com>
+To: <zeroconf@merit.edu>
+Sent: Tuesday, October 08, 2002 8:35 PM
+Subject: draft-ietf-zeroconf-reqts-12.txt
+
+
+> I didn't see an email on the ietf announce list, but a new
+> version of the requirements draft has been available for a
+> little while now:
+>    http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-12.txt
+> 
+> This document contains all the changes that have been discussed
+> on the list in recent times.
+> 
+> -- 
+
+Your often repeated use of the term "IP address" may be more precisely articulated
+with the term, "32-bit IP address", and to be completely precise, it should also note
+that you are assuming TOS=0x00,0x*0, or 0x0*, which is a 4-bit extension to the
+32-bit IP address, for a total of 36-bits, when people do TOS Routing. As noted
+below, people are making the assumption that when they say IP address, that it is
+32-bits. That is not the case with all of the software (especially Linux software) which
+can consider all 160-bits in the IPv4++ Header for Routing purposes.
+http://www.netfilter.org
+
+=====
+http://www.merit.edu/mail.archives/nanog/msg04234.html
+From: Paul Vixie
+note that c-root's network operator has offered to filter RFC1918 on
+input from other AS's, but it's actually useful to keep on measuring it.)
+http://www.merit.edu/mail.archives/nanog/msg04258.html
+From: Sean Donelan 
+http://www.ipservices.att.com/backbone/techspecs.cfm
+  AT&T has also implemented security features directly into the backbone.
+   IP Source Address Assurance is implemented at every customer
+   point-of-entry to guard against hackers. AT&T examines the source
+   address of every inbound packet coming from customer connections to
+   ensure it matches the IP address we expect to see on that packet. This
+   means that the AT&T IP Backbone is RFC2267-compliant.
+====================================================
+
+With 128-bit DNS, one has to look at MORE than the 32-bit address fields.
+The so-called RFC 1918 address spaces only apply in the TOS=0,0x*0, and 0x0* cases.
+With 2,048 address spaces that can have a 10.*.*.* address block, some of them
+may make sense. While AT&T may choose to filter/block all such traffic, customers should
+know that and consider using other networks, that pass all 160-bits end-to-end,
+or make sure they are routing around blockades via wireless and other mediums.
+
+128-bit DNS AAAA Record Flag Day Formats
+2002:[IPv4]:[SDLL.OFFF.FFFF.TTTT]:[64-bit IPv8 or IPv16 Persistent Address]
+[YMDD]:[IPv4]:[SDLL.OFFF.FFFF.TTTT]:[64-bit IPv8 or IPv16 Persistent Address]
+1-bit to set the Reserved/Spare ("SNOOPY") bit in Fragment Offset [S]
+1-bit to set the Don't Fragment (DF) bit [D]
+2-bits to select 1 of 4 common TTL values (255, 128, 32, 8) [LL]
+1-bit for Options Control [O]
+7-bits to set the Identification Field(dst) [FFFFFFF]
+4-bits to set the TOS(dst) Field [TTTT]
+Default SDLL.OFFF.FFFF.TTTT = 0000.0000.0000.0000
+FFF.FFFF.TTTT = GGG.SSSS.SSSS
+http://www.ntia.doc.gov/ntiahome/domainname/130dftmail/unir.txt
+
+As for the traffic coming to the "toy", legacy, 32-bit DNS root servers. It is not
+surprising that they are apparently not up to date on the latest technology. Also,
+it is interesting that bogus traffic is apparently used to claim they are overloaded.
+That arguement is of course used to claim that only a limited number of TLD slots
+are available. While everyone knows the arguments are pure FUD, it is good to
+see it confirmed that any basis for the claim is based on bogus traffic which would
+not normally reach up-to-date equipment. Fortunately, less and less people use the
+aging legacy root servers, they can locate the TLD clusters directly and route to them.
+
+
+Jim Fleming
+2002:[IPv4]:000X:03DB:...IPv8 is closer than you think...IPv16 is even closer...
+http://www.ietf.com
+http://www.iana.org/assignments/ipv4-address-space
+http://www.ntia.doc.gov/ntiahome/domainname/130dftmail/unir.txt
+http://ipv8.dyndns.tv
+http://ipv8.dyns.cx
+http://ipv8.no-ip.com
+http://ipv8.no-ip.biz
+http://ipv8.no-ip.info
+http://ipv8.myip.us
+http://ipv8.dyn.ee
+http://ipv8.community.net.au
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Oct  9 09:20:57 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA15122
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Oct 2002 09:20:57 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id BB84F912D9; Wed,  9 Oct 2002 09:22:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 84E07912DA; Wed,  9 Oct 2002 09:22:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0D7A8912D9
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Oct 2002 09:22:48 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E91D35DEAF; Wed,  9 Oct 2002 09:22:47 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from parsmtp1.rd.francetelecom.com (parsmtp1.rd.francetelecom.com [194.167.105.13])
+	by segue.merit.edu (Postfix) with ESMTP id 5A2825DD99
+	for <zeroconf@merit.edu>; Wed,  9 Oct 2002 09:22:47 -0400 (EDT)
+Received: from lanmhs50.rd.francetelecom.fr ([10.193.21.52]) by parsmtp1.rd.francetelecom.com with Microsoft SMTPSVC(5.0.2195.4905);
+	 Wed, 9 Oct 2002 15:22:46 +0200
+content-class: urn:content-classes:message
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01C26F96.F47E48BB"
+X-MIMEOLE: Produced By Microsoft Exchange V6.0.5762.3
+Subject: RE: I-D ACTION:draft-noisette-v6ops-unmannet-isp-reqts-00.txt
+Date: Wed, 9 Oct 2002 15:22:45 +0200
+Message-ID: <C691E039D3895C44AB8DFD006B950FB411A653@lanmhs50.rd.francetelecom.fr>
+Thread-Topic: RE: I-D ACTION:draft-noisette-v6ops-unmannet-isp-reqts-00.txt
+Thread-Index: AcJvlvYrSVGX5ewvTSWIdrVQDr+jWw==
+From: "NOISETTE Yoann FTRD/DMI/CAE" <yoann.noisette@rd.francetelecom.com>
+To: <ipng@sunroof.eng.sun.com>, <v6ops@ops.ietf.org>, <zeroconf@merit.edu>,
+        <zerouter@internet.motlabs.com>
+X-OriginalArrivalTime: 09 Oct 2002 13:22:46.0545 (UTC) FILETIME=[F4F7C010:01C26F96]
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multi-part message in MIME format.
+
+------_=_NextPart_001_01C26F96.F47E48BB
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+Hi,
+
+I've recently published an ID (see below), which aims at identifying the =
+requirements to deploy IPv6 unmanaged networks, from an ISP point of =
+view. This work encompasses topics that are (could be) addressed in the =
+ipv6, zeroconf WG and also in the current zerouter discussions. =
+Moreover, though v6ops appears in the title, I'm now convinced (after =
+the interim meeting resolutions) that this work doesn't fit in the mould =
+of this WG.=20
+Nevertheless, this ID intends to identify the requirements which could =
+lead to the definition of new protocols, mechanisms or BCP in the =
+aforementioned context. As it is a first shot that needs to be =
+completed/commented, any feedback will be very welcome, if it is =
+considered of interest for any of the WG or mailing list quoted above.
+
+Yoann=20
+
+-----Message d'origine-----
+De : Internet-Drafts@ietf.org [mailto:Internet-Drafts@ietf.org]
+Envoy=E9 : lundi 30 septembre 2002 13:45
+Cc : ipng@sunroof.eng.sun.com; zeroconf@merit.edu
+Objet : I-D ACTION:draft-noisette-v6ops-unmannet-isp-reqts-00.txt
+
+
+A New Internet-Draft is available from the on-line Internet-Drafts =
+directories.
+
+
+	Title		: ISP requirements for IPv6 unmanaged networks
+	Author(s)	: Y. Noisette
+	Filename	: draft-noisette-v6ops-unmannet-isp-reqts-00.txt
+	Pages		: 0
+	Date		: 2002-9-27
+=09
+This document proposes to identify the elementary network functions =
+required to automatically deploy an IPv6 home network, i.e. with the =
+minimum (and ideally not a single) intervention from any administrator =
+or any user. The next generation Internet Protocol, IPv6, is expected to =
+being deployed in environments such as homes and SOHOs. However, most of =
+the people making use of the Internet at home don't have enough =
+knowledge to set up on their own the network and services. Therefore, =
+this document exposes the requirements necessary to ease such a =
+deployment, from an ISP point of view.
+
+A URL for this Internet-Draft is:
+http://www.ietf.org/internet-drafts/draft-noisette-v6ops-unmannet-isp-req=
+ts-00.txt
+
+To remove yourself from the IETF Announcement list, send a message to=20
+ietf-announce-request with the word unsubscribe in the body of the =
+message.
+
+Internet-Drafts are also available by anonymous FTP. Login with the =
+username
+"anonymous" and a password of your e-mail address. After logging in,
+type "cd internet-drafts" and then
+	"get draft-noisette-v6ops-unmannet-isp-reqts-00.txt".
+
+A list of Internet-Drafts directories can be found in
+http://www.ietf.org/shadow.html=20
+or ftp://ftp.ietf.org/ietf/1shadow-sites.txt
+
+
+Internet-Drafts can also be obtained by e-mail.
+
+Send a message to:
+	mailserv@ietf.org.
+In the body type:
+	"FILE /internet-drafts/draft-noisette-v6ops-unmannet-isp-reqts-00.txt".
+=09
+NOTE:	The mail server at ietf.org can return the document in
+	MIME-encoded form by using the "mpack" utility.  To use this
+	feature, insert the command "ENCODING mime" before the "FILE"
+	command.  To decode the response(s), you will need "munpack" or
+	a MIME-compliant mail reader.  Different MIME-compliant mail readers
+	exhibit different behavior, especially when dealing with
+	"multipart" MIME messages (i.e. documents which have been split
+	up into multiple messages), so check your local documentation on
+	how to manipulate these messages.
+	=09
+	=09
+Below is the data which will enable a MIME compliant mail reader
+implementation to automatically retrieve the ASCII version of the
+Internet-Draft.
+
+NOISETTE Yoann
+ &francetelecom R&D
+			DMI/SIR/IPI
+		42, rue des Coutures - BP 6243
+		14066 CAEN Cedex 4 - FRANCE
+
+* : +33 (0)2.31.75.90.48    * : +33 (0)2.31.73.56.26
+* mailto:yoann.noisette@francetelecom.com
+
+
+
+------_=_NextPart_001_01C26F96.F47E48BB
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Diso-8859-1">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+6.0.5770.59">
+<TITLE>RE: I-D =
+ACTION:draft-noisette-v6ops-unmannet-isp-reqts-00.txt</TITLE>
+</HEAD>
+<BODY>
+<!-- Converted from text/rtf format -->
+<BR>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Hi,</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">I've recently published an ID (see =
+below), which aims at identifying the requirements to deploy IPv6 =
+unmanaged networks, from an ISP point of view. This work encompasses =
+topics that are (could be) addressed in the ipv6, zeroconf WG and also =
+in the current zerouter discussions. Moreover, though v6ops appears in =
+the title, I'm now convinced (after the interim meeting resolutions) =
+that this work doesn't fit in the mould of this WG. </FONT></P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Nevertheless, this ID intends to =
+identify the requirements which could lead to the definition of new =
+protocols, mechanisms or BCP in the aforementioned context. As it is a =
+first shot that needs to be completed/commented, any feedback will be =
+very welcome, if it is considered of interest for any of the WG or =
+mailing list quoted above.</FONT></P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Yoann </FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">-----Message =
+d'origine-----</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">De : Internet-Drafts@ietf.org =
+[<A =
+HREF=3D"mailto:Internet-Drafts@ietf.org">mailto:Internet-Drafts@ietf.org<=
+/A>]</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">Envoy=E9 : lundi 30 septembre =
+2002 13:45</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">Cc : ipng@sunroof.eng.sun.com; =
+zeroconf@merit.edu</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">Objet : I-D =
+ACTION:draft-noisette-v6ops-unmannet-isp-reqts-00.txt</FONT>
+</P>
+<BR>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">A New Internet-Draft is available =
+from the on-line Internet-Drafts directories.</FONT>
+</P>
+<BR>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">Title&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ISP requirements for IPv6 =
+unmanaged networks</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">Author(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Y. =
+Noisette</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">Filename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+: draft-noisette-v6ops-unmannet-isp-reqts-00.txt</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">Pages&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">Date&nbsp;&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 2002-9-27</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">This document proposes to =
+identify the elementary network functions required to automatically =
+deploy an IPv6 home network, i.e. with the minimum (and ideally not a =
+single) intervention from any administrator or any user. The next =
+generation Internet Protocol, IPv6, is expected to being deployed in =
+environments such as homes and SOHOs. However, most of the people making =
+use of the Internet at home don't have enough knowledge to set up on =
+their own the network and services. Therefore, this document exposes the =
+requirements necessary to ease such a deployment, from an ISP point of =
+view.</FONT></P>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">A URL for this Internet-Draft =
+is:</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New"><A =
+HREF=3D"http://www.ietf.org/internet-drafts/draft-noisette-v6ops-unmannet=
+-isp-reqts-00.txt">http://www.ietf.org/internet-drafts/draft-noisette-v6o=
+ps-unmannet-isp-reqts-00.txt</A></FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">To remove yourself from the IETF =
+Announcement list, send a message to </FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">ietf-announce-request with the =
+word unsubscribe in the body of the message.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">Internet-Drafts are also =
+available by anonymous FTP. Login with the username</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">&quot;anonymous&quot; and a =
+password of your e-mail address. After logging in,</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">type &quot;cd =
+internet-drafts&quot; and then</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">&quot;get =
+draft-noisette-v6ops-unmannet-isp-reqts-00.txt&quot;.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">A list of Internet-Drafts =
+directories can be found in</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New"><A =
+HREF=3D"http://www.ietf.org/shadow.html">http://www.ietf.org/shadow.html<=
+/A> </FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">or <A =
+HREF=3D"ftp://ftp.ietf.org/ietf/1shadow-sites.txt">ftp://ftp.ietf.org/iet=
+f/1shadow-sites.txt</A></FONT>
+</P>
+<BR>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">Internet-Drafts can also be =
+obtained by e-mail.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Courier New">Send a message to:</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">mailserv@ietf.org.</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">In the body type:</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">&quot;FILE =
+/internet-drafts/draft-noisette-v6ops-unmannet-isp-reqts-00.txt&quot;.</F=
+ONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">NOTE:&nbsp;&nbsp; The mail =
+server at ietf.org can return the document in</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">MIME-encoded form by using the &quot;mpack&quot; =
+utility.&nbsp; To use this</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">feature, insert the command &quot;ENCODING =
+mime&quot; before the &quot;FILE&quot;</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">command.&nbsp; To decode the response(s), you will =
+need &quot;munpack&quot; or</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">a MIME-compliant mail reader.&nbsp; Different =
+MIME-compliant mail readers</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">exhibit different behavior, especially when dealing =
+with</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">&quot;multipart&quot; MIME messages (i.e. documents =
+which have been split</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">up into multiple messages), so check your local =
+documentation on</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=3D2 =
+FACE=3D"Courier New">how to manipulate these messages.</FONT>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">Below is the data which will =
+enable a MIME compliant mail reader</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">implementation to automatically =
+retrieve the ASCII version of the</FONT>
+
+<BR><FONT SIZE=3D2 FACE=3D"Courier New">Internet-Draft.</FONT>
+</P>
+
+<P><SPAN LANG=3D"fr"><B><FONT COLOR=3D"#000080" FACE=3D"Comic Sans =
+MS">NOISETTE Yoann</FONT></B></SPAN>
+
+<BR><SPAN LANG=3D"fr"><I><FONT COLOR=3D"#000080" SIZE=3D2 FACE=3D"Comic =
+Sans MS"></FONT></I><I><B></B><B></B><B>&nbsp;<FONT COLOR=3D"#FF0000" =
+SIZE=3D6 FACE=3D"Times New Roman">&amp;</FONT></B></I><B><FONT =
+COLOR=3D"#000080" FACE=3D"Comic Sans MS">francetele</FONT><FONT =
+COLOR=3D"#FF0000" FACE=3D"Comic Sans MS">com R&amp;D</FONT></B></SPAN>
+<UL><UL>
+<P><SPAN LANG=3D"fr"><I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT =
+COLOR=3D"#000080" SIZE=3D2 FACE=3D"Comic Sans =
+MS">DMI/SIR/IPI</FONT></I></SPAN>
+
+<BR><SPAN LANG=3D"fr"><I><FONT COLOR=3D"#000080" SIZE=3D2 FACE=3D"Comic =
+Sans MS">42, rue des Coutures - BP 6243</FONT></I></SPAN>
+
+<BR><SPAN LANG=3D"fr"><I><FONT COLOR=3D"#000080" SIZE=3D2 FACE=3D"Comic =
+Sans MS">14066 CAEN Cedex 4 - =
+FRANCE</FONT></I><I><B></B></I><B></B><B></B></SPAN>
+</P>
+</UL></UL>
+<P><SPAN LANG=3D"fr"><FONT COLOR=3D"#000080" SIZE=3D2 =
+FACE=3D"Wingdings">(</FONT><FONT COLOR=3D"#000080" SIZE=3D2 =
+FACE=3D"Times New Roman"> : +33 (0)2.31.75.</FONT><FONT =
+COLOR=3D"#FF0000" SIZE=3D2 FACE=3D"Times New Roman">90.48</FONT><FONT =
+COLOR=3D"#000080" SIZE=3D2 FACE=3D"Times New =
+Roman">&nbsp;&nbsp;&nbsp;</FONT> <FONT COLOR=3D"#000080" SIZE=3D2 =
+FACE=3D"Wingdings">2</FONT><FONT COLOR=3D"#000080" SIZE=3D2 =
+FACE=3D"Times New Roman"> : +33 (0)2.31.73.56.26</FONT></SPAN>
+
+<BR><SPAN LANG=3D"en-us"><B><FONT COLOR=3D"#000080" SIZE=3D2 =
+FACE=3D"Wingdings">*<FONT FACE=3D"Courier =
+New"></FONT></FONT></B></SPAN><B><SPAN LANG=3D"fr"></SPAN><SPAN =
+LANG=3D"fr"> <FONT COLOR=3D"#000080" SIZE=3D2 FACE=3D"Times New =
+Roman"><A =
+HREF=3D"mailto:yoann.noisette@francetelecom.com">mailto:yoann.noisette@fr=
+ancetelecom.com</A></FONT></SPAN></B><SPAN LANG=3D"fr"></SPAN>
+</P>
+<BR>
+
+</BODY>
+</HTML>
+------_=_NextPart_001_01C26F96.F47E48BB--
+
+
+From owner-zeroconf@merit.edu  Thu Oct 10 11:54:31 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA10226
+	for <zeroconf-archive@lists.ietf.org>; Thu, 10 Oct 2002 11:54:31 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 150FD912F3; Thu, 10 Oct 2002 11:54:50 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id D89C5912F8; Thu, 10 Oct 2002 11:54:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EC5F0912F3
+	for <zeroconf@trapdoor.merit.edu>; Thu, 10 Oct 2002 11:54:46 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D84EE5E337; Thu, 10 Oct 2002 11:54:46 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from e35.co.us.ibm.com (e35.co.us.ibm.com [32.97.110.133])
+	by segue.merit.edu (Postfix) with ESMTP id 3543E5E335
+	for <zeroconf@merit.edu>; Thu, 10 Oct 2002 11:54:46 -0400 (EDT)
+Received: from westrelay03.boulder.ibm.com (westrelay03.boulder.ibm.com [9.17.194.24])
+	by e35.co.us.ibm.com (8.12.2/8.12.2) with ESMTP id g9AFshGl040860;
+	Thu, 10 Oct 2002 11:54:43 -0400
+Received: from rotala.raleigh.ibm.com (rotala.raleigh.ibm.com [9.27.12.14])
+	by westrelay03.boulder.ibm.com (8.12.3/NCO/VER6.4) with ESMTP id g9AFsgDn024256;
+	Thu, 10 Oct 2002 09:54:42 -0600
+Received: from rotala.raleigh.ibm.com (narten@localhost)
+	by rotala.raleigh.ibm.com (8.11.6/8.11.6) with ESMTP id g9AFqUa02983;
+	Thu, 10 Oct 2002 11:52:30 -0400
+Message-Id: <200210101552.g9AFqUa02983@rotala.raleigh.ibm.com>
+To: Aidan Williams <aidan.williams@motorola.com>
+Cc: zeroconf@merit.edu
+Subject: Re: draft-ietf-zeroconf-reqts-12.txt 
+In-Reply-To: Message from Aidan Williams <aidan.williams@motorola.com> 
+   of "Wed, 09 Oct 2002 11:35:25 +1000." <3DA387DD.3090507@motorola.com> 
+Date: Thu, 10 Oct 2002 11:52:30 -0400
+From: Thomas Narten <narten@us.ibm.com>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Aidan Williams <aidan.williams@motorola.com> writes:
+
+> I didn't see an email on the ietf announce list, but a new
+> version of the requirements draft has been available for a
+> little while now:
+>    http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-12.txt
+
+> This document contains all the changes that have been discussed
+> on the list in recent times.
+
+Thanks Aidan. I'm putting this docuemnt on the IESG agenda for
+discussion during next week's IESG telechat.
+
+In looking at the new text, I'm not sure that Section 3.2.2 is quite
+right.
+
+Specifically, it's not so clear to me that "close coupling" and "API
+compatible" are that different from each other. Seems like they are
+really the same, except maybe that the latter is even more general
+(i.e, many name services vs. just zeroconf and DNS).
+
+For example, the document says:
+
+   Again, there is increased risk of spoofed responses if the multicast
+   zeroconf name resolution protocol is used to resolve
+   "www.someco.com".  One possible way of minimising the security risk
+   is to ensure that locally scoped names are distinguishable from DNS
+   names, perhaps via a known reserved DNS suffix or by virtue of not
+   containing a dot.  A multicast zeroconf resolution protocol could
+   then avoid making requests for names which look like global DNS
+   names.  Alternatively, we could require that zeroconf name lookups
+   only be performed when the equivalent DNS lookup has failed.
+
+
+single labels (without dots) are part of the normal API. So I don't
+see how dot-less names could somehow be safely considered non-DNS.
+
+Thomas
+
+
+From owner-zeroconf@merit.edu  Tue Oct 22 11:24:41 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA21814
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Oct 2002 11:24:41 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E322091253; Tue, 22 Oct 2002 11:26:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A8B2F91251; Tue, 22 Oct 2002 11:26:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 7BC2A9125D
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Oct 2002 11:26:40 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 62FAC5DF9B; Tue, 22 Oct 2002 11:26:40 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail1a.webmessenger.it (mail1.webmessenger.it [193.70.193.50])
+	by segue.merit.edu (Postfix) with ESMTP id 1C6ED5DDF0
+	for <zeroconf@merit.edu>; Tue, 22 Oct 2002 11:26:40 -0400 (EDT)
+Received: from matteo (80.116.39.62) by mail1a.webmessenger.it (6.5.028) (authenticated as elena@studiopelati.it)
+        id 3DA7166D000A1F8A for zeroconf@merit.edu; Tue, 22 Oct 2002 17:26:39 +0200
+Message-ID: <00d801c279df$92bec940$0101a8c0@matteo>
+From: "Matteo Pelati" <matteo@dolce.it>
+To: <zeroconf@merit.edu>
+Subject: gateway questions
+Date: Tue, 22 Oct 2002 17:27:45 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+My name is Matteo Pelati and I'm working at the Computer Science dept. at
+the University of Milan, Italy.
+
+I'm new to Zeroconf and I have a couple of questions about it.
+
+- I didn't quite understand if the Zeroconf draft defines how
+a default gateway should be discovered on the network. In the
+draft there is a mention about how Windows disovers the default
+gateway but it's unclear to me if Zeroconf should define it or not.
+If yes where can I find a specification ?
+
+- My second qestion is about two Zeroconf networks connected using
+a router. This would mean subnetting the default Zeroconf class. Is
+this option considered by Zeroconf. Is there any proposal about how
+each host should discover its netmask ?
+
+Thanks
+Regards
+Matteo
+
+
+
+

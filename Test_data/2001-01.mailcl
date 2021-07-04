@@ -1,0 +1,470 @@
+From owner-zeroconf@merit.edu  Thu Jan  4 23:05:07 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id XAA22517
+	for <zeroconf-archive@odin.ietf.org>; Thu, 4 Jan 2001 23:05:07 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 86B235DDA5; Thu,  4 Jan 2001 23:04:43 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6A1045DDA7; Thu,  4 Jan 2001 23:04:43 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 157775DDA5
+	for <zeroconf@merit.edu>; Thu,  4 Jan 2001 23:04:42 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id UAA15377
+	for <zeroconf@merit.edu>; Thu, 4 Jan 2001 20:04:41 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.2) with ESMTP id <B118064e150e7d1f91a@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Thu, 4 Jan 2001 20:04:41 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id UAA24973
+	for <zeroconf@merit.edu>; Thu, 4 Jan 2001 20:04:41 -0800 (PST)
+Message-Id: <200101050404.UAA24973@scv2.apple.com>
+Subject: Zeroconf Requirements: Reverse name lookup
+Date: Thu, 4 Jan 2001 20:04:42 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+The point was raised at the San Diego meeting that, although it may seem 
+obvious to many that forward name lookups and reverse name lookups go 
+hand-in-hand, the draft does not *explicitly* require the capability to 
+do reverse name lookups. This omission could be a problem, because if a 
+zeroconf name resolution protocol were implemented which did not support 
+reverse name lookups, it would be compliant with the requirements 
+document yet fail to usefully meet the needs of many current IP 
+applications.
+
+It was generally agreed that this omission was not a deliberate design 
+decision by the working group, but merely an oversight which should be 
+corrected along with the other typographic corrections being made for 
+draft-07 which resulted out of the discussions during the last-call 
+period.
+
+Please post any dissenting opinions to the list by Friday 12th January. 
+If no dissenting opinions are received, then the draft will be revised to 
+indicate that the capability to do both forward and reverse name lookups 
+is required.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jan  4 23:09:28 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id XAA22540
+	for <zeroconf-archive@odin.ietf.org>; Thu, 4 Jan 2001 23:09:27 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 556705DDA7; Thu,  4 Jan 2001 23:09:16 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 4230C5DDB6; Thu,  4 Jan 2001 23:09:16 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 2AA1E5DDA7
+	for <zeroconf@merit.edu>; Thu,  4 Jan 2001 23:09:15 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id UAA07290
+	for <zeroconf@merit.edu>; Thu, 4 Jan 2001 20:09:14 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.2) with ESMTP id <B118064e150e7d6220b@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Thu, 4 Jan 2001 20:09:13 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id UAA25372
+	for <zeroconf@merit.edu>; Thu, 4 Jan 2001 20:09:13 -0800 (PST)
+Message-Id: <200101050409.UAA25372@scv2.apple.com>
+Subject: ZEROCONF Minutes
+Date: Thu, 4 Jan 2001 20:09:15 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+The following minutes have been sent to <minutes@ietf.org>
+
+------------------------------------------------------------
+
+Minutes for ZEROCONF Meeting
+3:30pm - 5:30pm, Monday, 11th December 2000
+49th IETF Meeting, San Diego, California, 10th - 15th December 2000
+
+Agenda:
+
+ 5  - intro/agenda buffing
+      Stuart & Erik
+
+30  - IPv4 Link Local Addresses draft-01
+      see:  draft-ietf-zeroconf-ipv4-linklocal-01.txt
+      Stuart
+
+10  - brief discussion of end result of reqts draft
+      see:  draft-ietf-zeroconf-reqts-06.txt
+      Erik
+
+30  - mc address allocation protocol discussion
+      see:  draft-thaler-zeroconf-multicast-02.txt
+      Steve Hanna
+
+10  - report on DNSEXT work on mdns
+      see:  draft-ietf-dnsext-mdns-00.txt
+      Bernard Aboba
+
+15  - ZC security draft
+      see:  draft-williams-zeroconf-security-00.txt
+      Aidan Williams & Steve Hanna
+
+15  - Plug for future BOF on Networked Appliances
+      Simon Tsang and Stan Moyer
+      see:  draft-tsang-appliances-reqs-01.txt
+      see:  draft-moyer-sip-appliances-framework-00.txt
+
+ 5  - going forward - work schedule and goals
+      Erik & Stuart
+
+------------------------------------------------------------
+
+Changes to the agenda were solicited; no changes were requested.
+
+------------------------------------------------------------
+
+Stuart Cheshire, IPv4 Link Local Addresses
+
+Question: Should there be two drafts, one standards-track, and one 
+informational describing existing implementations? It was agreed that it 
+is better to have one single draft, with an appendix describing the 
+current limited implementations (with warnings that producing other 
+similarly limited implementations is not recommended).
+
+Question: Should DHCP servers be allowed to allocate in the 169.254 
+link-local range? It was agreed that since there are existing site-local 
+address ranges already available (e.g Net 10), there is no reason to use 
+169.254 for this, so the draft should state that DHCP servers SHOULD NOT 
+allocate in the 169.254 link-local range.
+
+Question: Should NAT gateways be allowed to rewrite 169.254 link-local 
+packets and forward them off-link? It was agreed that since there are 
+existing site-local address ranges already available which can be 
+allocated via DHCP, a NAT gateway product MUST NOT rewrite 169.254 
+link-local packets. It is useful if devices using 169.254 link-local 
+addresses can assume that those packets will not leave the local link, so 
+NAT gateways MUST NOT forward these packets off-link.
+
+An issue is that legacy stuff (Mac OS 8.5+, Windows 98, ME, 2000) won't 
+be able to communicate with local address only devices.
+
+Bernard Aboba stressed that we should focus on devices which are either 
+global only, local only or both, as opposed to devices which transition 
+automatically.
+
+Bernard was concerned that we might find it hard to specify devices which 
+have only linklocal addresses if we have only one draft.  (Later in 
+discussion, he was persuaded otherwise).
+
+Lingering issues:  Some routers do not currently handle 169.254 correctly.
+
+Of some 20 readers, half thought this document is about ready to 
+progress, and no one thought it wasn't.  
+
+After adding an appendix to describe legacy linklocal implementations and 
+their problems, the consensus was to move this document to WG last call.
+
+------------------------------------------------------------
+
+Erik Guttman, Requirements Draft
+
+Erik presented the state of the requirements draft.
+The draft has gone though last call; some changes were agreed during that 
+period. Draft-ietf-zeroconf-reqts-06.txt reflects most of those changes, 
+but due to time pressure, a few changes were missed and a few typos were 
+introduced. For example, it was agreed during the last-call period that a 
+default route is NOT a requirement for communication between two hosts on 
+the same link, but draft-06 does not reflect this change. This will be 
+rectified in draft-07.
+
+A point was raised that, although it may seem obvious to many that 
+forward name lookups and reverse name lookups go hand-in-hand, the draft 
+does not *explicitly* require the capability to do reverse name lookups. 
+This omission could be a problem, because if a zeroconf name resolution 
+protocol were implemented which did not support reverse name lookups, it 
+would be compliant with the requirements document yet fail to usefully 
+meet the needs of many current IP applications.
+
+It was generally agreed that this omission was not a deliberate design 
+decision by the working group, but merely an oversight which should be 
+corrected along with the other typographic corrections being made for 
+draft-07. This will be proposed on the mailing list, and if no arguments 
+are made against it, this correction will be incorporated into draft-07.
+
+The WG agreed that the draft, after completion of the changes described 
+above, is complete and ready to be sent to the RFC editor.
+
+------------------------------------------------------------
+
+Steve Hanna, Zeroconf multicast address allocation
+
+* There are many Multicast Address scopes:  
+  * Global scope - This is not useful unless connected to the internet.
+    Since there are a limited number of global addresses, it is useful
+    to break things up into administrative units.
+  * Big - Transcends administrative domains.
+  * Small - Does not.
+  * Node-local - Used only in IPv6, presently.  It is local to a host.
+  * Single-source - For this type of address there can only be a single
+    source, you specify the source as well as the group address.
+
+* Dynamic allocation architecture for IPv4
+
+Addresses are a scarce resource, do allocation efficiently.
+
+The architecture is hierarchical, intradomain, interdomain and 
+client-server interdomain.
+
+* AAP
+
+If one uses only AIU and ACLM messages this would be enough for
+peer to peer allocation within a (small) administrative domain.
+
+Note that this is a subset of malloc.
+
+It might make sense to do peer to peer allocation only when 
+MADCAP was unavailable.  It may also be possible to assign
+a specific range of addresses which would only be used for
+Zeroconf multicast address allocation which could be used
+at any time - analogous to the way link local addresses can
+be retained even if an interface is configured with a global
+address using DHCP.  This is an open question.
+
+There are still some issues to work out, e.g. AAP currently requires a 
+150-second wait before allocating addresses.
+
+It was observed that a client machine needs to implement BOTH MADCAP and 
+AAP clients (but both are quite simple).
+
+Erik presented implementation experience of Zeroconf multicast address 
+allocation. He has discovered some poor timer choices that can make the 
+protocol vulnerable to a single packet loss. Also, AAP clients are 
+supposed to keep track of all addresses currently in use and defend on 
+their behalf. Should we make this optional in the zeroconf context?
+
+The WG is ready to proceed with an AAP profile for multicast address 
+autoconfiguration, as per Dave Thaler's draft -- with modifications 
+suggested by Erik G.  Dave and Erik volunteered as document editors.
+
+------------------------------------------------------------
+
+Bernard Aboba invited anyone interested in mDNS to attend the DNSEXT 
+working group meeting.
+
+------------------------------------------------------------
+
+Aidan Williams, Security for Zeroconf Networks
+
+The presentation followed draft-williams-zeroconf-security-00.txt
+
+* L2 solutions
+
+These are non-uniform, so a variety of configuration mechanisms would 
+have to be supported at a bridge, gateway, or multihomed device.
+
+In discussion it was pointed out that 802.x L2 security seems to be 
+supported on an ever larger set of link technology. Perhaps if there is 
+great convergence on this it will make more sense to pursue this option. 
+But for the present there is firewire, ppp & other link layer technology, 
+with different security mechanisms.
+
+Dave Thaler recommended keeping our minds open about L2 solutions -- e.g. 
+they also solve the insecure ARP problem for us too.
+
+Bernard Aboba pointed out that the IEEE is converging on a common 
+encryption technology for all IEEE-standard 802.x protocols.
+
+* IPSec or individual protocol security
+
+IPSec could be used as a single layer to provide all security properties 
+required by individual ZC protocols, it was argued. Securing them one by 
+one is more complicated since each protocol requires different parameters 
+and cryptographic code.
+
+* Secret sharing
+
+The document does not discuss this. Upcoming work from Steve Hanna will 
+address key distribution mechanisms to make securing a network require as 
+little configuration as possible.
+
+A pre-shared secret can authenticated IKE Phase I, but... IKE cannot 
+negotiate SAs for multicast or broadcast.
+
+Zeroconf security should include confidentiality -- you may not want your 
+neighbours to be able to compile an inventory of your equipment.
+
+* Issues:
+
+ARP is insecure, but IPv6 neighbour discovery can be secured
+DNS signs records, but does not encrypt
+AAP can use IPSEC -- but not IKE
+IKE is complicated, especially for very simple devices. It may be better 
+to just derive a key from a single shared secret.
+
+Steve Hanna suggested pre-programming a random number into each device, 
+and attaching a label or bar code which can be scanned to read the key. 
+Steve Hanna disclosed that Sun has patents in this area, which Sun 
+intends to license on the usual Reasonable Nondiscriminatory Terms.
+
+* The upshot
+
+More discussion and specifics are welcome here. We can't take this on as 
+a charter item yet. Once we have completed more charter items and there 
+is a specific proposal, we can revisit the question of taking this work 
+item on. 
+
+------------------------------------------------------------
+
+Stan Moyer, Plug for future BOF on Network Appliances over the WAN
+
+* This discussion took place as a plug for a BOF by Stan Moyer, who is 
+interested in this topic. This is not a work item for ZEROCONF, but there 
+may areas of common interest.
+
+There was little or no discussion of this presentation - it represents 
+Stan's views.
+
+* see http://agreenhouse.com which has a prototype of what this might be 
+like.
+
+* there are drafts this presentation was based on - see the slides.
+
+* What is an appliance?
+
+Any host?
+
+* Direct or indirect communication is possible
+
+Indirect communication is through some protocol translation gateway.
+
+* Operations
+
+commands, queries, asynchronous operations, media streaming, discovery
+
+* How do you address devices when devices may or may not be in a private 
+address space?
+
+Naming and discovery have to cross administrative boundaries
+
+How do you communicate with devices on non-IP networks?
+
+* This does not conflict with ZEROCONF
+
+Network appliance work would assume configured networks
+
+* Where we are
+
+There is a mailing list with >100 participants. Stan wants to organize a 
+BOF at IETF 50.
+
+------------------------------------------------------------
+
+Erik & Stuart, going forward
+
+* Finish requirements draft and submit
+* Move IPv4 Link Local Addresses to last-call
+* Dave and Erik will work on AAP profile for zeroconf
+
+------------------------------------------------------------
+
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Jan  9 22:30:50 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id WAA26224
+	for <zeroconf-archive@odin.ietf.org>; Tue, 9 Jan 2001 22:30:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 671015DE61; Tue,  9 Jan 2001 22:30:36 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 2029E5DE9A; Tue,  9 Jan 2001 22:30:16 -0500 (EST)
+Received: from sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id 9CA275DED3
+	for <zeroconf@merit.edu>; Tue,  9 Jan 2001 22:26:54 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by sharplabs.com (8.9.3+Sun/8.9.2) with ESMTP id TAA23844;
+	Tue, 9 Jan 2001 19:24:20 -0800 (PST)
+Received: by webmail.sharplabs.com with Internet Mail Service (5.5.2448.0)
+	id <CTZVFFB3>; Tue, 9 Jan 2001 19:26:50 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA5375ECFF7@MAILSRVNT02>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'Stuart Cheshire'" <cheshire@apple.com>, zeroconf@merit.edu
+Subject: RE: Zeroconf Requirements: Reverse name lookup
+Date: Tue, 9 Jan 2001 19:26:06 -0800 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi Stuart,
+
+I agree that both forward and reverse lookups should be required
+in the ZC Requirements.
+
+Cheers,
+- Ira McDonald, consulting architect at Sharp and Xerox
+  High North Inc
+
+-----Original Message-----
+From: Stuart Cheshire [mailto:cheshire@apple.com]
+Sent: Thursday, January 04, 2001 8:05 PM
+To: zeroconf@merit.edu
+Subject: Zeroconf Requirements: Reverse name lookup
+
+
+The point was raised at the San Diego meeting that, although it may seem 
+obvious to many that forward name lookups and reverse name lookups go 
+hand-in-hand, the draft does not *explicitly* require the capability to 
+do reverse name lookups. This omission could be a problem, because if a 
+zeroconf name resolution protocol were implemented which did not support 
+reverse name lookups, it would be compliant with the requirements 
+document yet fail to usefully meet the needs of many current IP 
+applications.
+
+It was generally agreed that this omission was not a deliberate design 
+decision by the working group, but merely an oversight which should be 
+corrected along with the other typographic corrections being made for 
+draft-07 which resulted out of the discussions during the last-call 
+period.
+
+Please post any dissenting opinions to the list by Friday 12th January. 
+If no dissenting opinions are received, then the draft will be revised to 
+indicate that the capability to do both forward and reverse name lookups 
+is required.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+

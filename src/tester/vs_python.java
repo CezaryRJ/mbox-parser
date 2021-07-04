@@ -2,11 +2,14 @@ package tester;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 import java.io.File;
 
 import framework.mbox;
+import framework.message;
 
 public class vs_python extends test{
 
@@ -17,9 +20,7 @@ public class vs_python extends test{
 
 	@Override
 	public boolean run_test() throws IOException, InterruptedException {
-		
-		
-		
+
 		Iterator<String> it = data.iterator();
 		
 		String tmp;
@@ -37,18 +38,53 @@ public class vs_python extends test{
 			
 			p.waitFor();
 			  
-			Scanner scan = new Scanner(new File(settings.get("results") + "\\p"));
+			ArrayList<String> p_report = read_file(settings.get("results") + "\\p");
 			
-			int p_num = Integer.parseInt(scan.nextLine());
 			
-			if (s.msg.size() != p_num) {
-				System.out.println("Java = " + s.msg.size());
-				System.out.println("Python = " + p_num);
-				//System.out.println("python " + python_prog_location + " " + tmp);
-				System.out.println(tmp);
-				//System.exit(p_num);
-				//return false;
+			Iterator<message> java = s.msg.iterator();
+			
+			Iterator<String> python = p_report.iterator();
+			
+			
+			//System.out.println(s.msg.get(0).get_header("Content"));
+			
+			//System.exit(0);
+			int index = 0;
+			int error_count = 0;
+			while(java.hasNext()) {
+				
+				message tmp1 = java.next();
+				
+				int ja = tmp1.get_header("Content").length();
+				
+				int py = Integer.parseInt(python.next());
+				
+				//System.out.println("\n" + tmp1.get_header("Content"));
+				
+				
+				if(ja != py) {
+					error_count += 1;
+					
+					if(error_count == 2) {
+					
+					System.out.println(index + "  " + ja + "  " + py);
+					
+					System.out.println(tmp1.get_header("Content"));
+					
+					System.out.println("\n\n\n\n\n\n------headers");
+					
+					tmp1.print_headers();
+					
+			
+						System.exit(py);
+					}
+					
+				//	System.exit(py);
+				}
+				
+				index += 1;
 			}
+			
 			
 		}
 		

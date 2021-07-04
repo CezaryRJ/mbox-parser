@@ -1,0 +1,956 @@
+From owner-zeroconf@merit.edu  Sat Mar 26 19:06:20 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA15527
+	for <zeroconf-archive@lists.ietf.org>; Sat, 26 Mar 2005 19:06:19 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 89CF791255; Sat, 26 Mar 2005 19:06:17 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 1A70891256; Sat, 26 Mar 2005 19:06:17 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BBB4191255
+	for <zeroconf@trapdoor.merit.edu>; Sat, 26 Mar 2005 19:06:15 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A40DE5829F; Sat, 26 Mar 2005 19:06:15 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 8979D58297
+	for <zeroconf@segue.merit.edu>; Sat, 26 Mar 2005 19:06:15 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 8CF1E1870; Sat, 26 Mar 2005 19:06:15 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from outbound.mailhop.org (outbound.mailhop.org [63.208.196.171])
+	by testbed9.merit.edu (Postfix) with ESMTP id 72E76180C
+	for <zeroconf@merit.edu>; Sat, 26 Mar 2005 19:06:15 -0500 (EST)
+Received: from c-67-182-139-247.client.comcast.net ([67.182.139.247] helo=internaut.com)
+	by outbound.mailhop.org with esmtpa (Exim 4.44)
+	id 1DFLIE-0006ZO-H7
+	for zeroconf@merit.edu; Sat, 26 Mar 2005 19:06:14 -0500
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id j2R06DK25298
+	for <zeroconf@merit.edu>; Sat, 26 Mar 2005 16:06:13 -0800
+Date: Sat, 26 Mar 2005 16:06:12 -0800 (PST)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Issue: PTR RR queries for 254.169.in-addr.arpa
+Message-ID: <Pine.LNX.4.56.0503261605300.24494@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Mail-Handler: MailHop Outbound by DynDNS.org
+X-Originating-IP: 67.182.139.247
+X-Report-Abuse-To: abuse@dyndns.org (see http://www.mailhop.org/outbound/abuse.html for abuse reporting information)
+X-MHO-User: aboba
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Yet another issue has come up with respect to RFC 3927, which is still in
+48 hours.
+
+Thomas Narten has brought up a concern relating to the handling of
+DNS PTR RR queries for 254.169.in-addr.arpa.  The text of his email
+is enclosed at the end of this message.
+
+Here is the text I have proposed to add in order to address this issue:
+
+"Reverse (address-to-name) queries for IPv4 Link-Local
+addresses MUST NOT be sent to name servers for the global DNS.
+The recommended way to avoid sending such queries to nameservers for
+the global DNS is for recursive name server implementations to act as
+if they were authoritative for an empty 254.169.in-addr.arpa zone and
+return RCODE 3 for any such query.  Implementations that choose this
+strategy should allow it to be overridden, but returning an RCODE 3
+response for such queries should be the default, both because this
+will reduce the query load problem and also because, if the site
+administrator has not set up the reverse tree corresponding to
+IPv4 Link-Local addresses in use, returning RCODE 3 is in
+fact the correct answer."
+
+This is the text that Stuart has proposed:
+
+"  Mapping from IPv4 addresses to host names is conventionally done
+   by issuing DNS queries for names of the form,
+   "x.x.x.x.in-addr.arpa." When used for link-local addresses, which
+   have significance only on the local link, it is inappropriate to
+   send such DNS queries beyond the local link.
+
+   DNS clients MUST NOT send unicast DNS queries for any name that
+   falls within the "254.169.in-addr.arpa." domain.
+
+   DNS caching servers receiving queries from non-compliant clients
+   for names within the "254.169.in-addr.arpa." domain MUST silently
+   ignore them. A caching server MUST NOT attempt to complete such
+   queries on behalf of the client, and MUST NOT send any DNS
+   response back to the client."
+
+We would like participants in the former ZEROCONF WG to weigh in on
+this issue.  Opinions?
+
+--------------------------------------------------------------------------------
+Date: Wed, 09 Mar 2005 11:34:10 -0600
+From: Thomas Narten <narten@us.ibm.com>
+To: Bernard Aboba <bernarda@windows.microsoft.com>
+Cc: RFC Editor <rfc-editor@rfc-editor.org>, Bernard Aboba
+<aboba@internaut.com>, Stuart Cheshire <cheshire@apple.com>,
+     Margaret Wasserman <margaret@thingmagic.com>, Erik Guttman
+<erik.guttman@sun.com>
+Subject: Re: ADs - Re: authors 48 hours: RFC 3927
+<draft-ietf-zeroconf-ipv4-linklocal-17.txt> NOW AVAILABLE
+
+RFC Editor;
+
+(other parties may  want to sit down before reading further)
+
+Are we all seated? :-)
+
+Can we stop the presses on this document?
+
+One other issue has come up that I think we should address. The issue
+is analogous to the one being discussed on the IPv6 list under the
+subject heading:
+
+Subject: Proposed Changes to ULA DNS section
+
+(see below)
+
+I propose we craft similar text, circulate _very_ briefly on zeroconf,
+and then move on.
+
+Sorry, this document seems to continually take 1/2 more step towards
+the finish line, but we can't quite get there, and this is actually a
+very important issue...
+
+Thomas
+
+From: Margaret Wasserman <margaret@thingmagic.com>
+To: ipv6@ietf.org
+Date: Tue, 8 Mar 2005 11:18:41 -0500
+
+Hi All,
+
+During IESG review, Mark Andrews raised a significant operational
+concern regarding the DNS section of the ULA document
+(draft-ietf-ipv6-unique-local-addr-09.txt), and I am currently
+delaying approval of the document until the issue can be resolved.
+
+The concern, which is shared by other DNS experts, is that widespread
+use of these addresses could cause a significant, and pointless, load
+on servers in the ip6.arpa zone -- a problem that could be avoided by
+different recommendations in the DNS section of this document.  The
+DNS directorate met on Sunday evening and came up with the attached
+wording (to replace the current DNS section in the ULA draft) that
+will address this concern.
+
+We will discuss this issue briefly at the IPv6 meeting this
+afternoon, but I wanted to make sure that you all have a copy of the
+text for consideration before the meeting (since it can't reasonably
+fit on a single slide).
+
+I'd also like to know if there are any objections to making this
+change to the ULA document.
+
+Margaret
+
+---
+
+OLD:
+
+4.4 DNS Issues
+
+    At the present time AAAA and PTR records for locally assigned local
+    IPv6 addresses are not recommended to be installed in the global DNS.
+    The operational issues relating to this are beyond the scope of this
+    document.
+
+    For background on this recommendation, the concern about adding AAAA
+    and PTR records to the global DNS for locally assigned Local IPv6
+    addresses stems from the lack of complete assurance that the prefixes
+    are unique.  There is a small possibility that the same PTR record
+    might be registered by two different organizations.  Due to this
+    concern, adding AAAA records is thought to be unwise because matching
+    PTR records can not be registered
+
+NEW:
+
+4.4 DNS Issues
+
+At the present time AAAA and PTR records for locally assigned local
+IPv6 addresses are not recommended to be installed in the global DNS.
+
+For background on this recommendation, one of the concerns about
+adding AAAA and PTR records to the global DNS for locally assigned
+Local IPv6 addresses stems from the lack of complete assurance
+that the prefixes are unique.  There is a small possibility that
+the same IPv6 Local addresses will be used by two different organizations
+both claiming to be authoritative with different contents.  Due to this
+concern, adding AAAA records for these addresses to the global
+DNS is thought to be unwise.
+
+Reverse (address-to-name) queries for IPv6 Local  addresses must
+not be sent to name servers for the global DNS, due to the load that such
+queries would create for the authoritative name servers for the
+ip6.arpa zone.  This form of query load is not specific to Local IPv6
+addresses; any current form of local addressing creates additional
+load of this kind, due to reverse queries leaking out of the site.
+However,
+since allowing such queries to escape from the site serves
+no useful purpose, there is no good reason to make the existing
+load problems worse.
+
+The recommended way to avoid sending such queries to nameservers
+for the global DNS is for recursive name server implementations to
+act as if they were authoritative for an empty c.f.ip6.arpa zone
+and return RCODE 3 for any such query.  Implementations that
+choose this strategy should allow it to be overridden, but
+returning an RCODE 3 response for such queries should be the
+default, both because this will reduce the query load problem and
+also because, if the site administrator has not bothered to set up
+the reverse tree corresponding to the IPv6 Local addresses in use,
+returning RCODE 3 is in fact the correct answer.
+
+--------------------------------------------------------------------
+IETF IPv6 working group mailing list
+ipv6@ietf.org
+Administrative Requests: https://www1.ietf.org/mailman/listinfo/ipv6
+--------------------------------------------------------------------
+
+
+From owner-zeroconf@merit.edu  Sat Mar 26 20:32:48 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA21238
+	for <zeroconf-archive@lists.ietf.org>; Sat, 26 Mar 2005 20:32:47 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 37DFC91347; Sat, 26 Mar 2005 20:32:39 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EEC949134C; Sat, 26 Mar 2005 20:32:38 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B0CA891347
+	for <zeroconf@trapdoor.merit.edu>; Sat, 26 Mar 2005 20:32:37 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 90F4E58297; Sat, 26 Mar 2005 20:32:37 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 7423B58293
+	for <zeroconf@segue.merit.edu>; Sat, 26 Mar 2005 20:32:37 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 78FC6187D; Sat, 26 Mar 2005 20:32:37 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from parsley.amaranth.net (parsley.amaranth.net [204.10.1.23])
+	by testbed9.merit.edu (Postfix) with ESMTP id 574A51870
+	for <zeroconf@merit.edu>; Sat, 26 Mar 2005 20:32:37 -0500 (EST)
+Received: from ancho.senie.com (c-24-34-19-2.hsd1.ma.comcast.net [24.34.19.2])
+	(authenticated bits=0)
+	by parsley.amaranth.net (8.12.11/8.12.11) with ESMTP id j2R1WKeQ007174
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+	Sat, 26 Mar 2005 20:32:24 -0500
+Message-Id: <6.2.1.2.2.20050326202245.0594a2b8@mail.amaranth.net>
+X-Mailer: QUALCOMM Windows Eudora Version 6.2.1.2
+Date: Sat, 26 Mar 2005 20:29:09 -0500
+To: Bernard Aboba <aboba@internaut.com>, zeroconf@merit.edu
+From: Daniel Senie <dts@senie.com>
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa
+In-Reply-To: <Pine.LNX.4.56.0503261605300.24494@internaut.com>
+References: <Pine.LNX.4.56.0503261605300.24494@internaut.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+X-Virus-Scanned: ClamAV 0.83/791/Sat Mar 26 17:26:49 2005 on parsley.amaranth.net
+X-Virus-Status: Clean
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 07:06 PM 3/26/2005, Bernard Aboba wrote:
+>Yet another issue has come up with respect to RFC 3927, which is still in
+>48 hours.
+>
+>Thomas Narten has brought up a concern relating to the handling of
+>DNS PTR RR queries for 254.169.in-addr.arpa.  The text of his email
+>is enclosed at the end of this message.
+>
+>Here is the text I have proposed to add in order to address this issue:
+>
+>"Reverse (address-to-name) queries for IPv4 Link-Local
+>addresses MUST NOT be sent to name servers for the global DNS.
+>The recommended way to avoid sending such queries to nameservers for
+>the global DNS is for recursive name server implementations to act as
+>if they were authoritative for an empty 254.169.in-addr.arpa zone and
+>return RCODE 3 for any such query.  Implementations that choose this
+>strategy should allow it to be overridden, but returning an RCODE 3
+>response for such queries should be the default, both because this
+>will reduce the query load problem and also because, if the site
+>administrator has not set up the reverse tree corresponding to
+>IPv4 Link-Local addresses in use, returning RCODE 3 is in
+>fact the correct answer."
+>
+>This is the text that Stuart has proposed:
+>
+>"  Mapping from IPv4 addresses to host names is conventionally done
+>    by issuing DNS queries for names of the form,
+>    "x.x.x.x.in-addr.arpa." When used for link-local addresses, which
+>    have significance only on the local link, it is inappropriate to
+>    send such DNS queries beyond the local link.
+>
+>    DNS clients MUST NOT send unicast DNS queries for any name that
+>    falls within the "254.169.in-addr.arpa." domain.
+>
+>    DNS caching servers receiving queries from non-compliant clients
+>    for names within the "254.169.in-addr.arpa." domain MUST silently
+>    ignore them. A caching server MUST NOT attempt to complete such
+>    queries on behalf of the client, and MUST NOT send any DNS
+>    response back to the client."
+>
+>We would like participants in the former ZEROCONF WG to weigh in on
+>this issue.  Opinions?
+
+Thomas is suggesting the proper response by a server is to either RCODE 3 
+them unless the administrator of the server has specifically configured 
+information or automation that will produce a useful response.
+
+Stuart's language that the server MUST NOT send any response whatsoever 
+back to the client is at odds with this. In general I am concerned about a 
+client knowing enough about a DNS server to be able to ask it a question, 
+and that server simply ignoring it. At the least, this results in timeouts, 
+something I think we'd prefer to avoid.
+
+On first reading of the two sets of text, without the benefit of hearing 
+supporting arguments, I think Bernard's text covers the issue sufficiently.
+
+>--------------------------------------------------------------------------------
+>Date: Wed, 09 Mar 2005 11:34:10 -0600
+>From: Thomas Narten <narten@us.ibm.com>
+>To: Bernard Aboba <bernarda@windows.microsoft.com>
+>Cc: RFC Editor <rfc-editor@rfc-editor.org>, Bernard Aboba
+><aboba@internaut.com>, Stuart Cheshire <cheshire@apple.com>,
+>      Margaret Wasserman <margaret@thingmagic.com>, Erik Guttman
+><erik.guttman@sun.com>
+>Subject: Re: ADs - Re: authors 48 hours: RFC 3927
+><draft-ietf-zeroconf-ipv4-linklocal-17.txt> NOW AVAILABLE
+>
+>RFC Editor;
+>
+>(other parties may  want to sit down before reading further)
+>
+>Are we all seated? :-)
+>
+>Can we stop the presses on this document?
+>
+>One other issue has come up that I think we should address. The issue
+>is analogous to the one being discussed on the IPv6 list under the
+>subject heading:
+>
+>Subject: Proposed Changes to ULA DNS section
+>
+>(see below)
+>
+>I propose we craft similar text, circulate _very_ briefly on zeroconf,
+>and then move on.
+>
+>Sorry, this document seems to continually take 1/2 more step towards
+>the finish line, but we can't quite get there, and this is actually a
+>very important issue...
+>
+>Thomas
+>
+>From: Margaret Wasserman <margaret@thingmagic.com>
+>To: ipv6@ietf.org
+>Date: Tue, 8 Mar 2005 11:18:41 -0500
+>
+>Hi All,
+>
+>During IESG review, Mark Andrews raised a significant operational
+>concern regarding the DNS section of the ULA document
+>(draft-ietf-ipv6-unique-local-addr-09.txt), and I am currently
+>delaying approval of the document until the issue can be resolved.
+>
+>The concern, which is shared by other DNS experts, is that widespread
+>use of these addresses could cause a significant, and pointless, load
+>on servers in the ip6.arpa zone -- a problem that could be avoided by
+>different recommendations in the DNS section of this document.  The
+>DNS directorate met on Sunday evening and came up with the attached
+>wording (to replace the current DNS section in the ULA draft) that
+>will address this concern.
+>
+>We will discuss this issue briefly at the IPv6 meeting this
+>afternoon, but I wanted to make sure that you all have a copy of the
+>text for consideration before the meeting (since it can't reasonably
+>fit on a single slide).
+>
+>I'd also like to know if there are any objections to making this
+>change to the ULA document.
+>
+>Margaret
+>
+>---
+>
+>OLD:
+>
+>4.4 DNS Issues
+>
+>     At the present time AAAA and PTR records for locally assigned local
+>     IPv6 addresses are not recommended to be installed in the global DNS.
+>     The operational issues relating to this are beyond the scope of this
+>     document.
+>
+>     For background on this recommendation, the concern about adding AAAA
+>     and PTR records to the global DNS for locally assigned Local IPv6
+>     addresses stems from the lack of complete assurance that the prefixes
+>     are unique.  There is a small possibility that the same PTR record
+>     might be registered by two different organizations.  Due to this
+>     concern, adding AAAA records is thought to be unwise because matching
+>     PTR records can not be registered
+>
+>NEW:
+>
+>4.4 DNS Issues
+>
+>At the present time AAAA and PTR records for locally assigned local
+>IPv6 addresses are not recommended to be installed in the global DNS.
+>
+>For background on this recommendation, one of the concerns about
+>adding AAAA and PTR records to the global DNS for locally assigned
+>Local IPv6 addresses stems from the lack of complete assurance
+>that the prefixes are unique.  There is a small possibility that
+>the same IPv6 Local addresses will be used by two different organizations
+>both claiming to be authoritative with different contents.  Due to this
+>concern, adding AAAA records for these addresses to the global
+>DNS is thought to be unwise.
+>
+>Reverse (address-to-name) queries for IPv6 Local  addresses must
+>not be sent to name servers for the global DNS, due to the load that such
+>queries would create for the authoritative name servers for the
+>ip6.arpa zone.  This form of query load is not specific to Local IPv6
+>addresses; any current form of local addressing creates additional
+>load of this kind, due to reverse queries leaking out of the site.
+>However,
+>since allowing such queries to escape from the site serves
+>no useful purpose, there is no good reason to make the existing
+>load problems worse.
+>
+>The recommended way to avoid sending such queries to nameservers
+>for the global DNS is for recursive name server implementations to
+>act as if they were authoritative for an empty c.f.ip6.arpa zone
+>and return RCODE 3 for any such query.  Implementations that
+>choose this strategy should allow it to be overridden, but
+>returning an RCODE 3 response for such queries should be the
+>default, both because this will reduce the query load problem and
+>also because, if the site administrator has not bothered to set up
+>the reverse tree corresponding to the IPv6 Local addresses in use,
+>returning RCODE 3 is in fact the correct answer.
+>
+>--------------------------------------------------------------------
+>IETF IPv6 working group mailing list
+>ipv6@ietf.org
+>Administrative Requests: https://www1.ietf.org/mailman/listinfo/ipv6
+>--------------------------------------------------------------------
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 28 23:05:24 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA16759
+	for <zeroconf-archive@lists.ietf.org>; Mon, 28 Mar 2005 23:05:23 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id E7287912AF; Mon, 28 Mar 2005 23:05:15 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B4CD7912B0; Mon, 28 Mar 2005 23:05:15 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 4E0B3912AF
+	for <zeroconf@trapdoor.merit.edu>; Mon, 28 Mar 2005 23:05:13 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3B32058294; Mon, 28 Mar 2005 23:05:13 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id E936958283
+	for <zeroconf@segue.merit.edu>; Mon, 28 Mar 2005 23:05:12 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id EE7C21863; Mon, 28 Mar 2005 23:05:12 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out4.apple.com (mail-out4.apple.com [17.254.13.23])
+	by testbed9.merit.edu (Postfix) with ESMTP id C218A184D
+	for <zeroconf@merit.edu>; Mon, 28 Mar 2005 23:05:12 -0500 (EST)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out4.apple.com (8.12.11/8.12.11) with ESMTP id j2T45BD9021386
+	for <zeroconf@merit.edu>; Mon, 28 Mar 2005 20:05:11 -0800 (PST)
+Received: from relay1.apple.com (relay1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.17) with ESMTP id <T6ff72d4e87118064e142c@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Mon, 28 Mar 2005 20:05:11 -0800
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by relay1.apple.com (8.12.11/8.12.11) with SMTP id j2T45BUK025185
+	for <zeroconf@merit.edu>; Mon, 28 Mar 2005 20:05:11 -0800 (PST)
+Message-Id: <200503290405.j2T45BUK025185@relay1.apple.com>
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa
+Date: Mon, 28 Mar 2005 20:05:09 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Thomas is suggesting the proper response by a server is to
+> either RCODE 3 them unless the administrator of the server has
+> specifically configured information or automation that will
+> produce a useful response.
+> 
+> Stuart's language that the server MUST NOT send any response
+> whatsoever back to the client is at odds with this. In general
+> I am concerned about a client knowing enough about a DNS
+> server to be able to ask it a question, and that server simply
+> ignoring it. At the least, this results in timeouts, something
+> I think we'd prefer to avoid.
+
+That last statement is the key point.
+
+It depends on whether we're looking at this short-term, or long-term.
+
+The long-term goal is that compliant clients should NEVER issue unicast 
+DNS queries for names within the "254.169.in-addr.arpa." domain (i.e. 
+reverse lookups for IPv4 link-local addresses). Clearly today there are 
+some clients that violate this.
+
+Another important goal in the meantime is to reduce or eliminate the 
+burden imposed on top-level name servers by those non-compliant clients, 
+while at the same time encouraging those product developers to update 
+their code to stop sending the bogus queries in the first place.
+
+Having recursive DNS servers stonewall those queries meets our goal of 
+reducing the burden imposed on top-level name servers. I think we all 
+agree on that. The question is whether those recursive DNS servers should 
+silently ignore the bogus queries, or answer them.
+
+My prediction is that if we have recursive DNS servers return valid DNS 
+response packets in answer to those invalid DNS queries, then we 
+legitimize the bad behaviour. Many device vendors will see this state of 
+affairs as "good enough". It is, they will say, the DNS server's 
+responsibility to return NXDOMAIN, not their responsibility to suppress 
+the query in the first place. There will be plenty of finger pointing, 
+and no action. Many device vendors will not fix their code, and many 
+recursive DNS servers (think cheap home NAT gateways) will not be fixed 
+either. The problem will persist. If, on the other hand, the recursive 
+DNS servers silently ignore the queries, then the bad clients will suffer 
+timeouts, as you say, and device vendors will have an incentive to do 
+something about it. They won't be able to point to RFC 3927 and insist 
+that it's the DNS server's RESPONSIBILITY to give them a valid response 
+to that query. The only solution endorsed by RFC 3927 will be for them to 
+fix their code, which helps us achieve the long-term goal of stopping the 
+bogus queries at the source.
+
+Of course, you or anyone else is free to configure your own DNS server to 
+respond to "254.169.in-addr.arpa." queries however you choose. The point 
+that I care about is that RFC 3927 should not sanction this as the 
+long-term solution, so that end-system vendors conclude that they don't 
+need to do anything. If we encourage end-system vendors to do nothing, 
+we'll still have this problem ten years from now.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 29 01:54:37 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id BAA00952
+	for <zeroconf-archive@lists.ietf.org>; Tue, 29 Mar 2005 01:54:37 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id CAEF691229; Tue, 29 Mar 2005 01:54:32 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 98982912B0; Tue, 29 Mar 2005 01:54:32 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9ACD191229
+	for <zeroconf@trapdoor.merit.edu>; Tue, 29 Mar 2005 01:54:31 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 792DD5828D; Tue, 29 Mar 2005 01:54:31 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 629985828A
+	for <zeroconf@segue.merit.edu>; Tue, 29 Mar 2005 01:54:31 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 61BF31886; Tue, 29 Mar 2005 01:54:31 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from av-tac-sj.cisco.com (firestar.cisco.com [171.68.227.75])
+	by testbed9.merit.edu (Postfix) with ESMTP id 2C11A187A
+	for <zeroconf@merit.edu>; Tue, 29 Mar 2005 01:54:30 -0500 (EST)
+X-TACSUNS: Virus Scanned
+Received: from fire.cisco.com (localhost [127.0.0.1])
+	by av-tac-sj.cisco.com (8.11.7p1+Sun/8.11.7) with ESMTP id j2T6sRK05914;
+	Mon, 28 Mar 2005 22:54:27 -0800 (PST)
+Received: from premakerpc ([10.21.104.152])
+	by fire.cisco.com (8.11.7p1+Sun/8.11.7) with ESMTP id j2T6sQt25781;
+	Mon, 28 Mar 2005 22:54:26 -0800 (PST)
+Received: from 127.0.0.1 (AVG SMTP 7.0.308 [266.8.4]); Mon, 28 Mar 2005 22:54:27 -0800
+Message-ID: <05aa01c5342c$262ac630$647ba8c0@premakerpc>
+From: "Phillip Remaker" <remaker@cisco.com>
+To: "Bernard Aboba" <aboba@internaut.com>, <zeroconf@merit.edu>,
+        "Daniel Senie" <dts@senie.com>
+References: <Pine.LNX.4.56.0503261605300.24494@internaut.com> <6.2.1.2.2.20050326202245.0594a2b8@mail.amaranth.net>
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa
+Date: Mon, 28 Mar 2005 22:54:27 -0800
+MIME-Version: 1.0
+Content-Type: text/plain;
+	format=flowed;
+	charset="iso-8859-1";
+	reply-type=response
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+I would be inclined to support Stuart's view.  Non-compliant zeroconf 
+implementations that inapprorpiately unicast bogus rDNS lookups should be 
+punished by a DNS server stonewalling them.  The timeouts are a feature, not 
+a problem.  Local admins can address noncompliant hosts as they see fit, but 
+I would not think that a best practice that improperly burdens top level DNS 
+servers is a good idea, especially given the overwhelmingly slow response of 
+vendors of typial ZeroConf devices.  Think offshore ODMs with little 
+incentive to ever patch code, and home users with even less incentive to 
+apply the patch if an issue is asymptomatic to them.
+
+Look no futher than the Netgear NTP fiasco to see how an ignorant coding 
+problem on a cheap appliance device can have disastrous consequences. 
+<Google> NTP Netgear </Google>
+
+Others will argue that the specification should be designed to accomodate 
+brokenness.  I think Stuart's approach is much better:  Punish the poor 
+implementations in order to incent proper behavior. 
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 29 02:01:33 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA03130
+	for <zeroconf-archive@lists.ietf.org>; Tue, 29 Mar 2005 02:01:32 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 70D81912B0; Tue, 29 Mar 2005 02:01:21 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 44544912B1; Tue, 29 Mar 2005 02:01:21 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 2E728912B0
+	for <zeroconf@trapdoor.merit.edu>; Tue, 29 Mar 2005 02:01:20 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1AC915828A; Tue, 29 Mar 2005 02:01:20 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 03CB058283
+	for <zeroconf@segue.merit.edu>; Tue, 29 Mar 2005 02:01:20 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 08F0F1886; Tue, 29 Mar 2005 02:01:20 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from fivedots.coe.psu.ac.th (fivedots.coe.psu.ac.th [202.12.73.64])
+	by testbed9.merit.edu (Postfix) with ESMTP id B0D56187A
+	for <zeroconf@merit.edu>; Tue, 29 Mar 2005 02:01:17 -0500 (EST)
+Received: from delta.coe.psu.ac.th ([172.30.0.98] helo=delta.noi.kre.to)
+	by fivedots.coe.psu.ac.th with esmtp (Exim 3.36 #1 (Debian))
+	id 1DGAiw-00037D-00; Tue, 29 Mar 2005 14:01:14 +0700
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.noi.kre.to (8.12.11/8.11.6) with ESMTP id j2T715A5027390;
+	Tue, 29 Mar 2005 14:01:06 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa 
+In-Reply-To: <200503290405.j2T45BUK025185@relay1.apple.com> 
+References: <200503290405.j2T45BUK025185@relay1.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Tue, 29 Mar 2005 14:01:05 +0700
+Message-ID: <14554.1112079665@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Mon, 28 Mar 2005 20:05:09 -0800
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200503290405.j2T45BUK025185@relay1.apple.com>
+
+  | My prediction is that if we have recursive DNS servers return valid DNS 
+  | response packets in answer to those invalid DNS queries, then we 
+  | legitimize the bad behaviour.
+
+I wouldn't go quite that far, but I appreciate your argument, and think
+your suggestion is probably the best solution.
+
+For ...
+
+  | Having recursive DNS servers stonewall those queries meets our goal of 
+  | reducing the burden imposed on top-level name servers.
+
+we should probably notice that what kills the upper level servers is
+requests for data that doesn't exist.   When the server can answer,
+rational caching is generally fairly effective, whereas negative
+caching isn't (even when implemented, the TTL is generally severely
+limited).
+
+So, to keep the query rate on the in-addr.arpa servers rational, they
+should simply delegate this domain somewhere, with a lengthy TTL.
+It could delegate it to nowhere, one solution might be
+
+	254.169.in-addr.arpa.    2592000 IN NS ns.254.169.in-addr.arpa.
+	ns.254.169.in-addr.arpa. 2592000 IN A  169.254.103.76 ; glue
+
+which would get the queries off the in-addr.arpa servers for a month,
+then result in timeouts from anything actually doing lookups - help
+get people to fix implementations or configurations to avoid the lookups
+in the first place.
+
+This is effective, even before any servers get to implement whatever
+restrictions are eventually agreed.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 29 02:16:37 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA18172
+	for <zeroconf-archive@lists.ietf.org>; Tue, 29 Mar 2005 02:16:37 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4942C9123E; Tue, 29 Mar 2005 02:16:15 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 15D61912B1; Tue, 29 Mar 2005 02:16:14 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 507159123E
+	for <zeroconf@trapdoor.merit.edu>; Tue, 29 Mar 2005 02:16:13 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3E1DC58294; Tue, 29 Mar 2005 02:16:13 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 261B55828D
+	for <zeroconf@segue.merit.edu>; Tue, 29 Mar 2005 02:16:13 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 2BEE31886; Tue, 29 Mar 2005 02:16:13 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from miews.nicta.com.au (unknown [129.94.138.156])
+	by testbed9.merit.edu (Postfix) with ESMTP id E5860187A
+	for <zeroconf@merit.edu>; Tue, 29 Mar 2005 02:16:12 -0500 (EST)
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+	by miews.nicta.com.au (Postfix) with ESMTP
+	id AF27414258A; Tue, 29 Mar 2005 17:16:10 +1000 (EST)
+Message-ID: <424900BA.1050609@nicta.com.au>
+Date: Tue, 29 Mar 2005 17:16:10 +1000
+From: Aidan Williams <aidan@nicta.com.au>
+User-Agent: Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.7.5) Gecko/20041217
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa
+References: <200503290405.j2T45BUK025185@relay1.apple.com> <14554.1112079665@munnari.OZ.AU>
+In-Reply-To: <14554.1112079665@munnari.OZ.AU>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Robert Elz wrote:
+> So, to keep the query rate on the in-addr.arpa servers rational, they
+> should simply delegate this domain somewhere, with a lengthy TTL.
+> It could delegate it to nowhere, one solution might be
+> 
+> 	254.169.in-addr.arpa.    2592000 IN NS ns.254.169.in-addr.arpa.
+> 	ns.254.169.in-addr.arpa. 2592000 IN A  169.254.103.76 ; glue
+> 
+> which would get the queries off the in-addr.arpa servers for a month,
+> then result in timeouts from anything actually doing lookups - help
+> get people to fix implementations or configurations to avoid the lookups
+> in the first place.
+> 
+> This is effective, even before any servers get to implement whatever
+> restrictions are eventually agreed.
+> 
+> kre
+
+That's a nice idea -- I think it will be more effective
+than the previous suggestions.
+
+Whilst I appreciate the sentiment of the previous
+suggestions I don't think they will be very effective
+for the following reasons:
+
+   1. Most home existing home networks will NAT the
+      DNS traffic to their local ISP recursive resolver
+      OR use a local recursive resolver on the RG.
+
+   2. I don't think there is a burning reason why an
+      RG vendor would need to read the IPv4-LL spec
+      to build a working gateway and so they would
+      not know to silently discard bogus IPv4-LL
+      queries or respond negatively.
+
+
+How do we make an in-addr.arpa delegation happen?
+A dnsop draft?
+
+- aidan
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 29 13:29:22 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA09721
+	for <zeroconf-archive@lists.ietf.org>; Tue, 29 Mar 2005 13:29:22 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id A5F3C912C9; Tue, 29 Mar 2005 13:29:19 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6F097912CC; Tue, 29 Mar 2005 13:29:19 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 79E17912C9
+	for <zeroconf@trapdoor.merit.edu>; Tue, 29 Mar 2005 13:29:18 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5AA5A58289; Tue, 29 Mar 2005 13:29:18 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 4430A58284
+	for <zeroconf@segue.merit.edu>; Tue, 29 Mar 2005 13:29:18 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 4AA9C1860; Tue, 29 Mar 2005 13:29:18 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from cyteen.hactrn.net (cyteen.hactrn.net [66.92.66.68])
+	by testbed9.merit.edu (Postfix) with ESMTP id 1D53B1800
+	for <zeroconf@merit.edu>; Tue, 29 Mar 2005 13:29:17 -0500 (EST)
+Received: from thrintun.hactrn.net (thrintun.hactrn.net [IPv6:2002:425c:4242:0:250:daff:fe82:1c39])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "thrintun.hactrn.net", Issuer "Grunchweather Associates" (verified OK))
+	by cyteen.hactrn.net (Postfix) with ESMTP id D1D44188
+	for <zeroconf@merit.edu>; Tue, 29 Mar 2005 13:29:16 -0500 (EST)
+Received: from thrintun.hactrn.net (localhost [IPv6:::1])
+	by thrintun.hactrn.net (Postfix) with ESMTP id 38A0941EA
+	for <zeroconf@merit.edu>; Tue, 29 Mar 2005 13:29:16 -0500 (EST)
+Date: Tue, 29 Mar 2005 13:29:16 -0500
+From: Rob Austein <sra+zeroconf@hactrn.net>
+To: zeroconf@merit.edu
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa
+In-Reply-To: <200503290405.j2T45BUK025185@relay1.apple.com>
+References: <200503290405.j2T45BUK025185@relay1.apple.com>
+MIME-Version: 1.0 (generated by SEMI 1.14.5 - "Awara-Onsen")
+Content-Type: text/plain; charset=US-ASCII
+Message-Id: <20050329182916.38A0941EA@thrintun.hactrn.net>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+[There's another message from me to this list on this subject waiting
+ in a moderation queue somewhere, oh well.]
+
+There's one thing missing from Stuart's picture here: in cases where
+the load from these queries on a recursive name server is significant,
+it's less expensive (in terms of resources consumed) for the recursive
+name server to answer with RCODE 3 than for the name server just to
+drop the queries.  An RCODE 3 error will cause the client to shut up,
+while dropping the query will cause the client to retransmit.
+
+I think there's a compromise position here:
+
+- Clients MUST NOT expect recursive name servers to answer these
+  queries.
+
+- Recursive name servers MUST NOT allow these queries to escape the
+  local scope.
+
+- Recursive name servers MAY reply with RCODE 3 for their own reasons.
+
+
+From owner-zeroconf@merit.edu  Wed Mar 30 10:14:07 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA07135
+	for <zeroconf-archive@lists.ietf.org>; Wed, 30 Mar 2005 10:14:07 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 6B4AB912DB; Wed, 30 Mar 2005 10:14:03 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 44985912DD; Wed, 30 Mar 2005 10:14:03 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5BA25912DB
+	for <zeroconf@trapdoor.merit.edu>; Wed, 30 Mar 2005 10:14:02 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 49E9D58298; Wed, 30 Mar 2005 10:14:02 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 3273A5828F
+	for <zeroconf@segue.merit.edu>; Wed, 30 Mar 2005 10:14:02 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 38B3A1892; Wed, 30 Mar 2005 10:14:02 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from parsley.amaranth.net (parsley.amaranth.net [204.10.1.23])
+	by testbed9.merit.edu (Postfix) with ESMTP id 1FD7E188D
+	for <zeroconf@merit.edu>; Wed, 30 Mar 2005 10:14:01 -0500 (EST)
+Received: from ancho.senie.com (c-24-34-19-2.hsd1.ma.comcast.net [24.34.19.2])
+	(authenticated bits=0)
+	by parsley.amaranth.net (8.12.11/8.12.11) with ESMTP id j2UFDuQi020570
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+	Wed, 30 Mar 2005 10:13:58 -0500
+Message-Id: <6.2.1.2.2.20050329203224.0539ddf8@mail.amaranth.net>
+X-Mailer: QUALCOMM Windows Eudora Version 6.2.1.2
+Date: Wed, 30 Mar 2005 09:47:59 -0500
+To: Rob Austein <sra+zeroconf@hactrn.net>, zeroconf@merit.edu
+From: Daniel Senie <dts@senie.com>
+Subject: Re: Issue: PTR RR queries for 254.169.in-addr.arpa
+In-Reply-To: <20050329182916.38A0941EA@thrintun.hactrn.net>
+References: <200503290405.j2T45BUK025185@relay1.apple.com>
+ <20050329182916.38A0941EA@thrintun.hactrn.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+X-Virus-Scanned: ClamAV version 0.83, clamav-milter version 0.83 on parsley.amaranth.net
+X-Virus-Status: Clean
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 01:29 PM 3/29/2005, Rob Austein wrote:
+>[There's another message from me to this list on this subject waiting
+>  in a moderation queue somewhere, oh well.]
+>
+>There's one thing missing from Stuart's picture here: in cases where
+>the load from these queries on a recursive name server is significant,
+>it's less expensive (in terms of resources consumed) for the recursive
+>name server to answer with RCODE 3 than for the name server just to
+>drop the queries.  An RCODE 3 error will cause the client to shut up,
+>while dropping the query will cause the client to retransmit.
+
+This was part of what I had in mind with my response. I think it important 
+to keep in mind the DNS servers may wind up answering the 169.254/16 INADDR 
+questions for more than just zeroconf clients. In fact it is likely we will 
+continue to see some traffic for these addresses from various sources for a 
+good while to come. Telling a requestor to shut up and go away is the best 
+recourse here for keeping excess traffic off the 'net.
+
+
+>I think there's a compromise position here:
+>
+>- Clients MUST NOT expect recursive name servers to answer these
+>   queries.
+>
+>- Recursive name servers MUST NOT allow these queries to escape the
+>   local scope.
+>
+>- Recursive name servers MAY reply with RCODE 3 for their own reasons.
+
+I think the name servers SHOULD reply with an RCODE 3.
+
+Silently dropping packets also increases the difficulty of determining 
+network problems. Better to see the request AND response on a packet trace, 
+and know what happened.
+
+I'd also recommend a new, separate document, possibly in DNSOP, to put 
+forth the requirements about handling 169.254. Of course these requirements 
+will be as well implemented and deployed as those in RFC1918, but it's 
+worth documenting them nonetheless.
+
+
+

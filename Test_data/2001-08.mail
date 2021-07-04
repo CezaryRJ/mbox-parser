@@ -1,0 +1,1271 @@
+From owner-zeroconf@merit.edu  Wed Aug  1 09:59:12 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA03725
+	for <zeroconf-archive@odin.ietf.org>; Wed, 1 Aug 2001 09:59:11 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 01A54912A1; Wed,  1 Aug 2001 09:48:28 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id BD47E9129F; Wed,  1 Aug 2001 09:48:27 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D3CC49129E
+	for <zeroconf@trapdoor.merit.edu>; Wed,  1 Aug 2001 09:48:26 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B71F05DDB5; Wed,  1 Aug 2001 09:48:26 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 62AFF5DDAD
+	for <zeroconf@merit.edu>; Wed,  1 Aug 2001 09:48:26 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA19662;
+	Wed, 1 Aug 2001 06:48:23 -0700 (PDT)
+Received: from vayne (muc-isdn-17 [129.157.164.117])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id PAA25638;
+	Wed, 1 Aug 2001 15:48:21 +0200 (MET DST)
+Date: Wed, 1 Aug 2001 16:00:26 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Sun.COM>
+Subject: Re: summary of discussion on draft-ietf-zeroconf-reqts-08.txt 
+To: Thomas Narten <narten@raleigh.ibm.com>
+Cc: Erik Guttman <Erik.Guttman@Sun.COM>, zeroconf@merit.edu,
+        cheshire@apple.com, Erik Nordmark <Erik.Nordmark@eng.sun.com>
+In-Reply-To: "Your message with ID" <200107271225.f6RCPTP05112@hygro.adsl.duke.edu>
+Message-ID: <Roam.SIMC.2.0.6.996674426.12261.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Thomas,
+
+I make another attempt to wrap this up - responding only to those
+points where aggreement hasn't yet been reached.
+
+> > > How about a more descriptive title than "zeroconf requirements"
+> 
+> > Suggestion: Zeroconf IP Host Requirements
+> 
+> >             This makes it clear that we are discussing hosts not
+> >             routers.
+> 
+> This is better, but can we do even better?.  My overall concern is
+> that many (most?) folks (i.e, those not in the WG) won't have any idea
+> what the term "zeroconf" means. So if that term could be expanded out
+> somehow...
+
+How about "Requirements for Hosts with Zero Configuration Networking Support"
+ 
+Its a bit wordy, but it makes it clear that these are not 'host requirements,'
+and that the requirements are only for certain hosts (not every host, routers,
+etc.)
+
+Action: Open
+
+> > ---------------------------------------------------------------------
+> > 08.02 MAC addr as config info
+> 
+> > "Thomas Narten" <narten@raleigh.ibm.com> wrote:
+> > > >    A zeroconf protocol is able to operate correctly in the absence
+> > > >    of configured information from either a user or infrastructure
+> > > >    services such as conventional DHCP [RFC 2131] or DNS [RFC 1034,
+> > > >    RFC 1035] servers. Zeroconf protocols may use configured
+> > > >    information, when it is available, but do not rely on it being
+> > > >    present. One possible exception is the use of MAC addresses
+> > > >    (i.e. layer two addresses) as parameters in zeroconf protocols.
+> > >
+> > > I do not consider a MAC address to be configured information. It is
+> > > built-in as far as the end user is concerned.
+> 
+> > While this is strictly true, in some cases it is configurable.
+> > (Solaris for instance allows this, as do many PC NIC drivers.)
+> 
+> Yes, but in those cases the need for configuration is necessary for
+> some other reason. I.e, home users won't be dealing with this. And it
+> is an option to configure this, not a requirement in most cases.
+> 
+> > A second consideration was whether ANY parameters could be used
+> > in zeroconf protocols, built-in or otherwise.  We wanted to
+> > emphasize that MAC addresses were OK for use.
+> 
+> The last sentence saying "mac addresses are an exception" I find
+> misleading. They are not configured (in the sense an end user will
+> configure them), yet the sentence reads as if their use is an
+> exception to the rule that configured information can be used when
+> present, but must not be relied upon.
+> 
+> How about changing the last sentence to:
+> 
+> The use of MAC addresses (i.e. layer two addresses) as parameters in
+> zeroconf protocols is generally acceptable because they are globally
+> unique and readily available on most devices of interest.
+> 
+> But this is a minor wording issue in the overall scheme of things.
+
+Let's adopt your text.
+ 
+Action: Open.
+   
+> > ---------------------------------------------------------------------
+> > 08.09 scoping
+> 
+> > "Thomas Narten" <narten@raleigh.ibm.com> wrote:
+> > > >    - MUST have unique IP subnets within an internetwork
+> > > >      (only for the internetwork scenario).
+> > > 
+> > > Do you need to scope this more? I.e., can't an "internetwork" consist
+> > > of the entire Internet (per the earlier definition?)
+> 
+> > Aidan William <aidan.williams@motorola.com> replied:
+> > > Perhaps "internetwork" should be a "zeroconf internetwork" in this
+> > > section, where a "zeroconf internetwork" is the bunch of subnets
+> > > connected to exactly one router.
+> 
+> > Erik Guttman <erik.guttman@sun.com> wrote:
+> > > The text above is sufficiently general that it leaves room for multiple
+> > > router zeroconf interface autoconfiguration to be standardized in the 
+> > > future.  
+> > > 
+> > > We did not preclude multiple routers from our charter because we thought 
+> > > it was a bad idea.  Rather, we did not think we could standardize 
+> > > multi-router zeroconf protocols in a timely manner.  The requirements 
+> > > document does not need to echo our charter humility, restricting future 
+> > > (perhaps immanent) standardization efforts. 
+> 
+> > Suggestion: clarify that this is currently only specified on a 
+> >             single link or a network with routers whose configuration
+> >             is out of scope for this spec.
+> 
+> The original wording as can be read to imply IP subnets MUST be
+> numbered uniquely within an internetwork. If "internetwork" includes
+> the entire Internet (my read of the definition is that this is true),
+> then this requirement would appear to be unachievable. 
+
+So how about:
+
+   - MUST have unique IP subnets within an internetwork
+     (This is only for the case when there is one or more router attached
+     in the network where autoconfigured hosts.  How routers obtain
+     their configuration is beyond of the scope of this document.)
+     
+Action: Open.
+
+> > ---------------------------------------------------------------------
+> > 08.14 unclear requirement
+> 
+> > "Thomas Narten" <narten@raleigh.ibm.com> wrote:
+> > > > 2.3.1  Scope Enumeration
+> > > > 
+> > > >    Applications that leave the choice of scope up to the user require
+> > > >    the ability to enumerate what scopes the host is operating within.
+> > > >    In addition, services that are assigned relative addresses require
+> > > >    the ability to enumerate what scopes the host is within; only then
+> > > >    will a host be able to apply the relative address to a scope.
+> > > > 
+> > > >    Requirements:
+> > > >    - MUST list which of the scopes (local, link-local, or site-local)
+> > > >      are available for hosts.
+> > > >    - MUST list per-scope address ranges that may be allocated.
+> > > 
+> > > I'm not clear what the requirement above is. That is, *who* is
+> > > responsbile for the MUST? The application? How is the application
+> > > supposed to determine this? Is the point that this information must
+> > > somehow be determinable? (General comment: This may all be an artifact
+> > > from the fact that the Requirements bullets are not using full
+> > > sentences.)
+> 
+> > Erik Guttman <erik.guttman@sun.com> wrote: 
+> > > I agree the writing is not clear here.
+> 
+> > "Aidan Williams" <aidan.williams@motorola.com> replied:
+> > > Yes, I think the point is that there should be a way for the
+> > > application to find this information out.  Incidentally, this doesn't
+> > > seem to just be a zeroconf requirement, but is probably true of any
+> > > networking with non-trivial multicast applications.
+> 
+> > Erik Guttman <erik.guttman@sun.com> wrote: 
+> > > Yes:  This requirement is derived from MALLOC WG's requirements.
+> > > The requirement here pertains to a zeroconf multicast address allocation
+> > > protocol.  This protocol has to expose its capabilities to applications.
+> > > 
+> > > ZMAAP only works in a subset of the scopes listed above (link-local,
+> > > unicast-prefix based and subnet-local).  The ZMAAP API exposes this
+> > > list to applications.  A future version of ZMAAP capable of interoperation
+> > > with MADCAP servers could support local, site-local or other scopes
+> > > as well.
+> 
+> > Suggestion:
+> >   MUST -> Application support software used to autoconfigure
+> >      multicast addresses MUST
+> 
+> Not sure  what the proposal here is.
+
+Change the text:
+
+    Requirements:
+    - MUST list which of the scopes (local, link-local, or site-local)
+      are available for hosts.
+    - MUST list per-scope address ranges that may be allocated.
+
+to:
+
+    Requirements: 
+    Application support software used to autoconfigure multicast addresses
+    - MUST list which of the scopes (local, link-local, or site-local)
+      are available for hosts.
+    - MUST list per-scope address ranges that may be allocated.
+
+
+Action: Open
+> 
+> > ---------------------------------------------------------------------
+> > 08.17 explain security requirements text better, for IPv4
+> 
+> > "Thomas Narten" <narten@raleigh.ibm.com> wrote:
+> > > 
+> > > >    The IPv4 interface configuration protocol MAY omit security
+> > > >    mechanisms if and only if that protocol is not used for IPv6 and
+> > > >    cannot be extended to support IPv6.  It is strongly recommended that
+> > > >    it include security mechanisms, because many protocols are extended
+> > > >    later in ways not anticipated by the original developer(s).
+> > > 
+> > > Explain
+> 
+> > This tangled formation came from (a) simple text from me saying
+> > since ARP is insecure, IPv4 autoconf MAY be too, (b) Ran noting that
+> > IPv6 may be implemented over IPv4 so more care would be needed in
+> > the formulation and (c) Stuart's polishing the text for clarity
+> > while trying to preserve as much as possible so as to not force
+> > a new last call (which happened anyway).
+> 
+> > What it means is:
+> 
+> > IPv4 autoconf MAY be insecure to configure IPv4 interface parameters
+> > (as ARP is insecure).
+> 
+> > If the IPv4 autoconf mechanism is used to support IPv6, it had better
+> > be secured (at some level - say the IPv6 in IPv4 packets may include
+> > IPsec AH for the ND messages).
+> 
+> > Ran wanted to make sure that even though we may omit security (we
+> > do in IPv4 LL autoconf) there's some text indicating its a Bad Thing.
+> 
+> > Suggestion: Leave it alone.
+> 
+> The current text doesn't (to me) communicate the message you explained.
+
+How about my text instead?  Or does someone have some better text?
+
+Action: Open.
+
+
+
+From owner-zeroconf@merit.edu  Thu Aug  2 22:10:18 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id WAA09734
+	for <zeroconf-archive@odin.ietf.org>; Thu, 2 Aug 2001 22:10:17 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B646791320; Thu,  2 Aug 2001 22:11:01 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7358A91323; Thu,  2 Aug 2001 22:11:01 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CFB2E91320
+	for <zeroconf@trapdoor.merit.edu>; Thu,  2 Aug 2001 22:10:59 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id AEF8A5DE01; Thu,  2 Aug 2001 22:10:59 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from postoffice.sarnoff.com (postoffice.sarnoff.com [130.33.10.147])
+	by segue.merit.edu (Postfix) with ESMTP id 62B1C5DE04
+	for <zeroconf@merit.edu>; Thu,  2 Aug 2001 22:10:59 -0400 (EDT)
+Received: from postoffice.sarnoff.com ([127.0.0.1]) by
+          postoffice.sarnoff.com (Netscape Messaging Server 4.15) with
+          SMTP id GHGYOP00.VD2; Thu, 2 Aug 2001 21:55:37 -0400 
+Received: from nova.sarnoff.com ([130.33.8.27]) by
+          postoffice.sarnoff.com (Netscape Messaging Server 4.15) with
+          ESMTP id GH5MB700.J7T for <jdegood@postoffice.sarnoff.com>; Fri,
+          27 Jul 2001 18:54:43 -0400 
+Received: from ietf.org (odin.ietf.org [132.151.1.176])
+	by nova.sarnoff.com (8.9.2/8.9.2) with ESMTP id HAA11951
+	for <jdegood@SARNOFF.COM>; Thu, 26 Jul 2001 07:27:59 -0400 (EDT)
+Received: by ietf.org (8.9.1a/8.9.1a) id HAA06359
+	for ietf-outbound.05@ietf.org; Thu, 26 Jul 2001 07:10:01 -0400 (EDT)
+Received: from jazz.viagenie.qc.ca (jazz.viagenie.qc.ca [206.123.31.2])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id VAA01226;
+	Wed, 25 Jul 2001 21:45:24 -0400 (EDT)
+Received: from CLASSIC.viagenie.qc.ca (modemcable245.48-201-24.que.mc.videotron.ca [24.201.48.245])
+	by jazz.viagenie.qc.ca (Viagenie/8.11.0) with ESMTP id f6Q279106318;
+	Wed, 25 Jul 2001 22:07:09 -0400 (EDT)
+X-Accept-Language: fr,en,es
+Message-Id: <5.1.0.14.1.20010725214152.0277dd28@mail.viagenie.qc.ca>
+X-Sender: blanchet@mail.viagenie.qc.ca
+X-Mailer: QUALCOMM Windows Eudora Version 5.1
+Date: Wed, 25 Jul 2001 21:47:40 -0400
+To: iesg@ietf.org, ietf@ietf.org
+From: Marc Blanchet <Marc.Blanchet@viagenie.qc.ca>
+Subject: Re: Last Call: Dynamic Configuration of IPv4 link-local
+  addresses to Proposed Standard
+Cc: zeroconf@merit.edu, rfc@stuartcheshire.org, bernarda@microsoft.com
+In-Reply-To: <200107251937.PAA27955@ietf.org>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"; format=flowed
+X-Loop: ietf@ietf.org
+X-MIME-Autoconverted: from 8bit to quoted-printable by nova.sarnoff.com id HAA11951
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id WAA09734
+
+I was looking a month ago for a reference on arp-self (i.e. the DAD in 
+IPv6) that many ipv4 implementations do. The author of this draft (Stuart) 
+kindly responded to me that the draft includes info on this.
+
+Since self-arp is ipv4 generic and not necessarily associated with 
+zeroconf, as noted in the draft, I would recommend to:
+- extract all data related to arp-self (essentially section 2.2 and 
+beginning section 2) from this draft and make another draft.
+- from ipv4-linklocal, reference the new draft for self-arp
+- push the 2 as RFC.
+
+this will enable an implementor to reference the arp-self document without 
+necessarily supporting the ipv4-linklocal draft.
+
+A suggestion.
+
+Marc.
+
+At/À 15:37 2001-07-25 -0400, The IESG you wrote/vous écriviez:
+
+>The IESG has received a request from the Zero Configuration Networking
+>Working Group to consider Dynamic Configuration of IPv4 link-local
+>addresses <draft-ietf-zeroconf-ipv4-linklocal-04.txt> as a Proposed
+>Standard.
+>
+>The IESG plans to make a decision in the next few weeks, and solicits
+>final comments on this action.  Please send any comments to the
+>iesg@ietf.org or ietf@ietf.org mailing lists by August 25, 2001.
+>
+>Files can be obtained via
+>http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-04.txt
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Aug 13 11:32:52 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA22189
+	for <zeroconf-archive@odin.ietf.org>; Mon, 13 Aug 2001 11:32:52 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7A3999123B; Mon, 13 Aug 2001 11:33:54 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 482169123D; Mon, 13 Aug 2001 11:33:54 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6C8B49123B
+	for <zeroconf@trapdoor.merit.edu>; Mon, 13 Aug 2001 11:33:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4AAA85DDF0; Mon, 13 Aug 2001 11:33:53 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id 8A5E55DDEB
+	for <zeroconf@merit.edu>; Mon, 13 Aug 2001 11:33:52 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.9.3/8.9.3) with ESMTP id IAA03006
+	for <zeroconf@merit.edu>; Mon, 13 Aug 2001 08:27:17 -0700 (PDT)
+	(envelope-from aboba@internaut.com)
+Date: Mon, 13 Aug 2001 08:27:17 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: draft-ietf-zeroconf-ipv4-linklocal-04.txt incompatibility issues
+Message-ID: <Pine.BSF.4.21.0108130807470.2940-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+In section 2 of draft-ietf-zeroconf-ipv4-linklocal-04.txt it states:
+
+"Windows and Mac OS hosts that already implement IPv4 address
+auto-configuration are compatible with the rules presented in this
+section."
+
+This statement would appear to indicate that systems
+implementing this draft will be able to interoperate with existing
+(non-standard) implementations. 
+
+This is not the case. 
+
+Systems implementing draft-ietf-zeroconf-ipv4-linklocal-04.txt will *not*
+interoperate with existing implementations, creating "islands" of
+linklocal interoperability. IMHO, this is a bad thing.  
+
+The problem is that TTL=255 must be set on packets sent from the linklocal
+address. Packets with lower TTLs will be silently discarded on reception.
+During WG last call, we discussed alternatives to this, such as 
+restriction on addressing modes. I believe that these alternatives are
+preferrable to requiring TTL=255 for all linklocal traffic.
+
+Windows 98, 98SE, ME, Windows 2000 and XP systems set TTL=128
+by default on outgoing packets sent to 169.254/16. 
+
+
+
+From owner-zeroconf@merit.edu  Tue Aug 14 05:52:24 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA25176
+	for <zeroconf-archive@odin.ietf.org>; Tue, 14 Aug 2001 05:52:24 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8D1EF91286; Tue, 14 Aug 2001 05:53:25 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5AAFF91289; Tue, 14 Aug 2001 05:53:25 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6508D91286
+	for <zeroconf@trapdoor.merit.edu>; Tue, 14 Aug 2001 05:53:24 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 368F15DDA7; Tue, 14 Aug 2001 05:53:24 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id AA8735DD8F
+	for <zeroconf@merit.edu>; Tue, 14 Aug 2001 05:53:23 -0400 (EDT)
+Received: from bebop.France.Sun.COM ([129.157.179.15])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id DAA19863;
+	Tue, 14 Aug 2001 03:53:19 -0600 (MDT)
+Received: from lillen (lillen [129.157.212.23])
+	by bebop.France.Sun.COM (8.10.2+Sun/8.9.3/ENSMAIL,v2.1p1) with SMTP id f7E9rH220753;
+	Tue, 14 Aug 2001 11:53:17 +0200 (MET DST)
+Date: Tue, 14 Aug 2001 11:50:34 +0200 (CEST)
+From: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Reply-To: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Subject: Comments on draft-ietf-zeroconf-ipv4-linklocal-04.txt
+To: Stuart Cheshire <cheshire@apple.com>, Erik Guttman <Erik.Guttman@sun.com>
+Cc: zeroconf@merit.edu, Erik.Nordmark@eng.sun.com
+Message-ID: <Roam.SIMC.2.0.6.997782634.13040.nordmark@bebop.france>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Here are some comments.
+
+The text in section 1.2 which attempts to define link seems to exclude
+all link layers that modify some part of the link-layer packet.
+This clearly excludes MPLS and might exclude source routing token ring
+as two examples.
+Why not just refer to or copy the definitions of "link" and the terms
+it depend on from RFC 2460?
+And presumably the definitions belong in section 1.1 and not 1.2.
+
+I don't understand what the text in section 2.1 about 
+   This means that even without using any other
+   persistent storage, a host will usually select the same link-local
+   address each time it is booted [...]
+relates to the fact the you refer to RFC 1750 which says "It recommends 
+the use of truly random hardware techniques ..."
+
+If you have truly random hardware techniques then you would *not* get the
+same random number on each boot. So what is the relationship really with
+RFC 1750?
+
+Section 2.1 claims that 169.254/16 is assigned by the IANA for this
+purpose. I didn't think it had a reference to the draft so I went to
+look. Turns out it isn't explicitly listed in
+http://www.iana.org/assignments/ipv4-address-space
+
+We need to make sure we have the correct instructions for the IANA
+which might include transferring the ownership of the address block
+to refer to this spec.
+
+The algorithm in section 2.3 seems to force an unneeded IP address
+change if a single packet is lost.
+A is trying to use address X, which is already in use by B.
+A sends arp request. B sees it and responds with a gratuitus reponse.
+This response is lost.
+A sends the arp request again after 2 seconds. (It is supposed to do this 4 
+times). B sees it. Now the rules say that it MUST cease to use the address.
+This doesn't seem very robust.
+
+Have both Apple and Microsoft implemented exactly this?
+
+
+   If the destination address is the 255.255.255.255 broadcast address
+   or a multicast address, then the host may use either its link-local
+   source address or a routable address, as appropriate.
+Huh? Sending to a global multicast address with a link-local source
+is a good idea?
+How about allowing either for broadcast or multicasts to 224.0.0.0/24
+but mandating global source for other multicasts.
+
+Section 2.5 a few paragraphs that seem to endorse the construction of
+boxes that depend solely on the IP addresses being used for some notion
+of weak security. As we all know bridges to wireless media breaks
+any such assumptions. I don't think the IETF should be endorsing such
+weak security in standards track documents.
+How about making 2.5 state the protocol mechanisms and the
+in the security considerations section state that 
+1) the protocol prevents packets using link-local addresses from being injected
+   outside the link through the use of a ttl 255 check, and 2) users of
+link-local addresses should be aware of the existence of
+   bridges e.g. to wireless media that make the use of ttl 255 a very
+   weak security mechanism.
+
+The way I view it section 3.2 talks about constraints when the APIs allow
+applications to specify and retrive interface information, and
+section 3.3 talks about issues when such APIs are not available.
+But the section titles doesn't match this so I'm confused about the intent.
+
+Section 3.2 recommends using a single link-local address across multiple
+interfaces but it doesn't explain why this is better or simpler than
+using different ones.
+I think it can be worse in some cases. If a conflict appears on one interface
+forcing the host to pick a new link-local on that interface it would be
+nice if that didn't effect connections using link-local addresses on
+all interfaces.
+
+Section 3.3 seems to skip the issue about how to connect or send the first
+UDP to a link-local address in the absense of API support to identify 
+interfaces.
+Using the source IP address to identify the interface works after the initial
+exchange e.g. after a tcp connection has been established.
+But making it work for UDP responders when the socket is bound to INADDR_ANY
+seems hard.
+
+   In addition, this kind of host should probe for, and defend, all of
+   its link-local addresses on all of its active interfaces that are
+   using link-local addresses.
+I don't see why this is strictly needed.
+The host needs to ensure that its IP are unique across the interfaces but
+it should be able to handle having a local address X on interface #1 while
+address X is also assigned to a remote node on interface #2.
+The assumptions for this section (which I don't understand as I stated
+above) seems to say that the interface can always be implicitly derived
+from the local address for the socket, in which case this isn't
+a problem.
+
+And defending its addresses on all interfaces has the disadvantage of
+increasing the risk of having to pick a new address.
+ 
+The example in 3.3.1 doesn't seem to match what is said at the top
+of section 3.3: "[...] enable use of the source address as an unambiguous 
+interface identifier".
+This means that in 3.3.1 P identifies the interface and the only Q on
+that interface is assigned to B.
+If A wants to talk to itself it can use a source of 127.0.0.1 (indentifying
+the loopback interface) and the same as a destination, or a source of P and
+dest P, etc.
+Allowing a source of P and a destination Q for loopback traffic seems counter
+to using the strong end system model.
+
+
+But I still don't understand the description in section 3.3 is supposed to
+handle what is common in the BSD API: a TCP socket is created and then 
+connected to the destination address. In this case there is nothing which
+can be used to infer the interface. Is that intended to be outside the
+scope of section 3.3?
+
+The second paragraph in section 3.4 seems to conflict with the current model
+in section 3.1 - if you want to support multiple interfaces being bridged
+togther in the same link then the interfaces better have distinct link local
+addresses. Otherwise you don't know which interface packets will arrive on
+which means that the communication bound to an interface per the strong ES
+model will fail half the time (when the packets arrive on a different interface
+than were connection is sending packets).
+
+
+  Erik
+
+
+
+From owner-zeroconf@merit.edu  Tue Aug 14 11:49:43 2001
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA07814
+	for <zeroconf-archive@odin.ietf.org>; Tue, 14 Aug 2001 11:49:43 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id BACB7912A0; Tue, 14 Aug 2001 11:48:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 860BD912A6; Tue, 14 Aug 2001 11:48:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9283C912A0
+	for <zeroconf@trapdoor.merit.edu>; Tue, 14 Aug 2001 11:48:45 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B25255DDF0; Tue, 14 Aug 2001 11:48:45 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id C7EA15DDD7
+	for <zeroconf@merit.edu>; Tue, 14 Aug 2001 11:48:44 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.9.3/8.9.3) with ESMTP id IAA04659;
+	Tue, 14 Aug 2001 08:41:59 -0700 (PDT)
+	(envelope-from aboba@internaut.com)
+Date: Tue, 14 Aug 2001 08:41:59 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Cc: Stuart Cheshire <cheshire@apple.com>, Erik Guttman <Erik.Guttman@sun.com>,
+        zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-ipv4-linklocal-04.txt
+In-Reply-To: <Roam.SIMC.2.0.6.997782634.13040.nordmark@bebop.france>
+Message-ID: <Pine.BSF.4.21.0108140823070.4613-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Section 2.5 a few paragraphs that seem to endorse the construction of
+> boxes that depend solely on the IP addresses being used for some notion
+> of weak security. As we all know bridges to wireless media breaks
+> any such assumptions. I don't think the IETF should be endorsing such
+> weak security in standards track documents.
+
+It is worth thinking about the nature of the protection that is
+afforded. Today, the Internet enables hackers all over the world to gain
+access to a much larger range of victims than would otherwise be possible. 
+
+It is alleged that a St. Peterburg hacker has gained access to 33 million
+credit cards. How could such a thing be possible without the Internet? It
+would take a long time to gain that many credit card numbers foraging
+through dumpsters. 
+
+So one of the major problems that we have with security today is that the
+range of potential attackers is greatly increased by the Internet --
+making criminals orders of magnitude more productive. It also renders
+conventional criminal investigation techniques ineffective. 
+
+Q: "Where were you the night of Friday the 13th?"
+A: "Sitting at my desk in front of the computer in St. Peterberg, Russia."
+
+In contrast, if I leave the door to my house open, I can only be robbed by
+people who happen to be in the vicinity at the time. To rob my house, the
+criminal has to be in that physical location, and will leave evidence of
+his/her presence (fingerprinters, DNA, etc.). It can be argued that moving
+from the "Internet crime" paradigm to the "local criminal" paradigm
+reduces the risk of theft by orders of magnitude -- bringing us back to
+the "antique" model of criminality that existed prior to the Internet. 
+
+So, from this perspective, the security afforded by linklocal addresses is
+actually quite strong, provided that hosts and routers properly support
+them (the subject of another discussion). If potential attackers can be
+limited to those that are on my segment, you  have accomplished a
+lot -- you can now only be attacked by people in the immediate
+(network) vacinity. Conventional models of criminal activity apply; social
+controls operate (neighborhood associations); family structures may be
+invoked (if your machine is attacked by a child). Jeff Schiller pointed
+this out during the original Zeroconf WG discussion. 
+
+By this notion, bridges do not really "weaken" the protection -- the
+mechanism is not a firewall, and this should be made clear. 
+It's only value is restricting the source to someone within some
+reasonable proximity of the destination. Even with 802.11 networks, home
+phone & powerline networks, etc. we are talking about fairly small
+proximity.
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Aug 14 17:25:38 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA15430
+	for <zeroconf-archive@odin.ietf.org>; Tue, 14 Aug 2001 17:25:36 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 3E5779120F; Tue, 14 Aug 2001 17:26:38 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0E49D912B2; Tue, 14 Aug 2001 17:26:37 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 288959120F
+	for <zeroconf@trapdoor.merit.edu>; Tue, 14 Aug 2001 17:26:37 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 065D25DDF5; Tue, 14 Aug 2001 17:26:37 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id A5F155DDA7
+	for <zeroconf@merit.edu>; Tue, 14 Aug 2001 17:26:36 -0400 (EDT)
+Received: from sunlabs.East.Sun.COM ([129.148.75.250])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id PAA25246
+	for <zeroconf@merit.edu>; Tue, 14 Aug 2001 15:26:32 -0600 (MDT)
+Received: from sun.com (dhcp75-167 [129.148.75.167])
+	by sunlabs.East.Sun.COM (8.9.3+Sun/8.9.3/ENSMAIL,v2.1p1) with ESMTP id RAA27679
+	for <zeroconf@merit.edu>; Tue, 14 Aug 2001 17:26:34 -0400 (EDT)
+Message-ID: <3B799768.E5FADEF0@sun.com>
+Date: Tue, 14 Aug 2001 17:26:00 -0400
+From: Steve Hanna <steve.hanna@sun.com>
+Organization: Sun Microsystems, Inc.
+X-Mailer: Mozilla 4.75 [en] (WinNT; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: ZMAAP Comments
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+All,
+
+Here are some comments on draft-ietf-zeroconf-zmaap-01.txt.
+
+Thanks,
+
+Steve Hanna
+
+-----
+
+Comments of some substance:
+
+1) One concern about the "shared defense" feature, which
+I mentioned to Erik last week. If a lot of mini-MAAS's decide
+to perform secondary defense for a particular allocation, they
+may mount an involuntary Denial of Service attack by responding
+to a single ACLM with one AIU from each defender. I suggest
+having secondary defenders set a timer to a randomized
+value with an exponential distribution weighted toward
+the long side and only send an AIU if they don't see any
+other AIUs before their timer expires (like SAP).
+
+2) When the multicast address space is full or almost full,
+a new mini-MAAS may require many ACLMs to find a free
+address (or determine that there aren't any). We might want
+to suggest a minimum interval to wait before making a new
+allocation attempt (100 ms?). We should also recommend some
+limit on this retry mechanism: a maximum number of retries,
+probably.
+
+3) It would be nice to have a range of multicast addresses
+allocated by ZMAAP that would be restricted to never leave
+the zeroconf network. Why not ask the IANA to reserve such
+a range?
+
+4) I suggest adding a magic number (0x83627365, or some such)
+to the start of each ZMAAP packet, so that it's easy to detect
+and ignore non-ZMAAP packets.
+
+At the zeroconf working group meeting at IETF 51, I suggested
+this and was told "that's what the UDP port is for." In a
+sense, that person is right. But users are often allowed to
+casually override the UDP port used by a particular program
+(as with URLs like http://sun.com:8080). The magic number
+would provide a more robust mechanism to detect bad
+traffic.
+
+In my opinion, all multicast protocols should employ a magic
+number to detect multicast address allocation conflicts. In
+fact, multicast protocols that support multiple sessions
+on separate multicast addresses (which will usually have
+different receiver sets) should include a short session
+identifier in all (or most) packets so that they can detect
+multicast address conflicts.
+
+I don't feel strongly about this, however.
+
+5) Section 4.4.4 says that if a received AIU includes
+a range that overlaps with an entry in the allocation
+record but the lease descriptors don't match, an allocation
+conflict exists and the entry must be removed from
+the allocation record. But what if the only difference is
+the lease lifetime? That should be OK, especially if the
+entry in question is a "shared defense" allocation.
+
+For a shared defense allocation, you should probably just
+update the time to match what you saw in the AIU. That may
+be troubling if this results in a shorter lifetime than you
+wish you had, but it allows the original allocator (or
+anyone else, since we don't have any authentication) to
+change the lifetime to extend or shorten it. Also, clocks
+aren't synchronized and network transmission delays are
+non-zero, so lifetimes expressed as remaining seconds
+(as is done in ZMAAP) will almost never match.
+
+6) In light of the latest attacks on WEP, the last
+few sentences of the Security Considerations section are
+no longer true. WEP does not provide "privacy equivalent
+to a wired network". By monitoring 802.11 transmissions
+for a short period of time, anyone can discover the key
+in use, effectively nullifying any benefits of WEP.
+
+I suggest that we replace the last three sentences of
+the Security Considerations section with this:
+
+  The "Wired Equivalent Privacy" (WEP) protocol [9] was
+  intended to provide privacy equivalent to a wired
+  network, but it has been shown in several recent papers
+  [19] [20] to have fatal flaws. Therefore, the use of
+  ZMAAP over wireless networks is NOT RECOMMENDED at
+  this time.
+
+[19] Fluhrer, S., Mantin, I., and A. Shamir, "Weaknesses
+     in the key scheduling algorithm of RC4", Eighth
+     Annual Workshop on Selected Areas in Cryptography
+     (August 2001).
+
+[20] Stubblefield, A., Ioannidis, J., and A. Rubin,
+     "Using the Fluhrer, Mantin, and Shamir Attack to
+     Break WEP", http://www.cs.rice.edu/~astubble/wep.
+
+If we don't make this change, I expect that the IESG will
+make it (or something similar) for us. If we aren't
+comfortable saying that ZMAAP shouldn't be used over
+wireless networks (I know I am), we should probably design
+some security to be used with it.
+
+Editorial Comments
+
+1) The fourth paragraph of section 4.1 talks about how an
+application can ask a local mini-MAAS to defend an address
+that was originally allocated by another mini-MAAS
+("shared defense"). There is a parenthetical remark about
+an API being useful here. This is a complicated topic.
+I suggest that you omit the comment about the API and
+instead refer the reader to a more extensive discussion of
+shared defense later in the spec.
+
+2) I suggest that you split the discussion of shared defense
+out of section 4.4.2 into a section of its own and expand
+the discussion of shared defense to describe more completely
+how this can be done. You should point to a session
+advertisement protocol (or service location protocol or
+directory protocol) and describe how this protocol can
+be used to convey the Lease Identifier and Lifetime (as
+well as the address range), perhaps by referring to Appendix B.
+This will narrow section 4.4.2 to the more common case of
+defending one's own allocation.
+
+I also suggest moving the description of how to handle an
+ACLM with the same Lease Identifier as one of your own
+allocations to the end of section 4.4.2. This is not the
+most common case.
+
+3) The last sentence of the third paragraph of section 4.1 is
+missing a subject and generally needs a bit of work. How
+about this: "If, on the other hand, the mini-MAAS receives
+no AIU response when the allotted time expires, it assumes
+it has succeeded in allocating the range of addresses."
+
+4) The first sentence of section 4.2 does not seem very useful.
+The preceding section provided a much better description of
+who sends AIUs and when. I suggest that it be removed.
+
+5) I suggest splitting the fourth paragraph of section 4.2 in
+two. Append the first two sentences to the previous paragraph.
+They are simply a continuation of the description of the
+destination address of ZMAAP packets. Let the third sentence
+stand on its own. It's a separate matter, a requirement on
+mini-MAAS's. But fix the typo in that third sentence: "is"
+should be "it".
+
+6) Section 4.2 includes a list of scopes for which ZMAAP
+may be used. Item (3), IPv6 Dynamic Subnet-Local is not
+described in RFC 2373, as indicated by the reference.
+
+7) In section 4.3, the description of the Lease Lifetime is
+missing the word "for" between "seconds" and "which".
+
+8) In section 4.4, you might want to define a term to mean
+the complete set of allocations known by a mini-MAAS for
+a given scope (instead of going out of your way to *not*
+define a term for it). I suggest the term "extended
+allocation record". For a MAAS that does not retain a
+record of allocations other than its own, this will be
+identical to the allocation record.
+
+Then you can use that handy-dandy term you've defined in
+the second paragraph of section 4.4.1, where the mini-MAAS
+should consult its "extended allocation record" when
+selecting free addresses.
+
+Also, you might want to mention that the "allocation
+record" includes "shared defense" allocations, as well.
+
+9) The last paragraph of section 4.4.3 should spell out
+all the steps involved in verifying a lease identifier:
+send ACLM messages; if you get back an AIU with the expected
+lease information, fine; otherwise (no AIU or none that
+matches), verification fails.
+
+10) Section 4.4.5 says that you can prolong a lease by
+sending an AIU, but it doesn't say quite how. I assume
+(as noted in "comment of some substance" 5 above) that
+this is done by increasing the lifetime and leaving all
+the other parameters (Lease Identifier and addresses)
+the same. You should say this explicitly.
+
+Note that this can also be used to shorten the lifetime
+of an address. The text seems to indicate this is a bad
+thing. In most cases, it's not needed. But I wouldn't
+say it's bad. If you have a long lease on an address from
+a tight address space and you don't need it any more,
+I think it would be best to send an AIU with a short
+lifetime.
+
+11) Several values defined in section 5 don't seem to be
+used anywhere: REPEAT-INTERVAL and DETECT-INTERVAL. Did
+you mean to refer to them elsewhere? If not, you should
+remove them. The world is complicated enough already.
+
+
+From owner-zeroconf@merit.edu  Thu Aug 16 05:56:12 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA27035
+	for <zeroconf-archive@odin.ietf.org>; Thu, 16 Aug 2001 05:56:11 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 43048912CF; Thu, 16 Aug 2001 05:57:14 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 10796912D0; Thu, 16 Aug 2001 05:57:13 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 230BF912CF
+	for <zeroconf@trapdoor.merit.edu>; Thu, 16 Aug 2001 05:57:13 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id DF9DE5DDFB; Thu, 16 Aug 2001 05:57:12 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 5F48E5DDC7
+	for <zeroconf@merit.edu>; Thu, 16 Aug 2001 05:57:12 -0400 (EDT)
+Received: from bebop.France.Sun.COM ([129.157.179.15])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id DAA15308;
+	Thu, 16 Aug 2001 03:57:07 -0600 (MDT)
+Received: from lillen (lillen [129.157.212.23])
+	by bebop.France.Sun.COM (8.10.2+Sun/8.9.3/ENSMAIL,v2.1p1) with SMTP id f7G9v3210098;
+	Thu, 16 Aug 2001 11:57:03 +0200 (MET DST)
+Date: Thu, 16 Aug 2001 11:54:15 +0200 (CEST)
+From: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Reply-To: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Subject: Re: Comments on draft-ietf-zeroconf-ipv4-linklocal-04.txt
+To: Bernard Aboba <aboba@internaut.com>
+Cc: Erik Nordmark <Erik.Nordmark@eng.sun.com>,
+        Stuart Cheshire <cheshire@apple.com>,
+        Erik Guttman <Erik.Guttman@sun.com>, zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <Pine.BSF.4.21.0108140823070.4613-100000@internaut.com>
+Message-ID: <Roam.SIMC.2.0.6.997955655.20654.nordmark@bebop.france>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+> By this notion, bridges do not really "weaken" the protection -- the
+> mechanism is not a firewall, and this should be made clear. 
+> It's only value is restricting the source to someone within some
+> reasonable proximity of the destination. Even with 802.11 networks, home
+> phone & powerline networks, etc. we are talking about fairly small
+> proximity.
+
+I think we are in agreement on the larger issues.
+I just want the document to be clear in pointing out that
+the restriction of communication to link-local addresses doesn't
+solve all security issues. 
+
+The current document could be read to recommend using link-local
+addresses as the sole security solution for some boxes. I think
+the proper thing to do is to point out the issues - what link-local
+addresses protect against and what the residual threats are.
+The standard place to have such discussion is in the security considerations
+section.
+
+
+   Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Aug 30 09:51:34 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA17000
+	for <zeroconf-archive@odin.ietf.org>; Thu, 30 Aug 2001 09:51:34 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 1A9CF9129C; Thu, 30 Aug 2001 09:52:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DA592912BE; Thu, 30 Aug 2001 09:52:43 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id F2E229129C
+	for <zeroconf@trapdoor.merit.edu>; Thu, 30 Aug 2001 09:52:42 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C60A45DDA8; Thu, 30 Aug 2001 09:52:42 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 792805DD93
+	for <zeroconf@merit.edu>; Thu, 30 Aug 2001 09:52:42 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id HAA05732
+	for <zeroconf@merit.edu>; Thu, 30 Aug 2001 07:52:37 -0600 (MDT)
+Received: from vayne (muc-isdn-5 [129.157.164.105])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id PAA09841;
+	Thu, 30 Aug 2001 15:52:39 +0200 (MET DST)
+Date: Thu, 30 Aug 2001 15:48:59 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: changes for zmaap-02
+To: zeroconf@merit.edu
+Cc: erik.guttman@sun.com, octavian.catrina@sun.com
+Message-ID: <Roam.SIMC.2.0.6.999179339.9473.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+I plan to make the following changes to ZMAAP based on feedback
+at IETF 51 and from Steve Hanna.  
+
+I will respond to editorial issues directly, and not include
+them in the 'revision list.'
+
+In responses, please include the revision # to ease tracking.
+
+--------------------------------------------------------------------
+
+rev-zmaap01-01  Shared defense will lead to implosions
+
+  Issue:
+
+  If a lot of mini-MAAS's decide
+  to perform secondary defense for a particular allocation, they
+  may mount an involuntary Denial of Service attack by responding
+  to a single ACLM with one AIU from each defender. I suggest
+  having secondary defenders set a timer to a randomized
+  value with an exponential distribution weighted toward
+  the long side and only send an AIU if they don't see any
+  other AIUs before their timer expires (like SAP).             
+
+  Suggestion: 
+
+  Add timer, listening and only if no other defender AIU sent,
+  send shared defense AIU message.
+
+rev-zmaap01-02  Full address space could cause thrashing
+
+  Issue:
+
+  When the multicast address space is full or almost full,
+  a new mini-MAAS may require many ACLMs to find a free
+  address (or determine that there aren't any). We might want
+  to suggest a minimum interval to wait before making a new
+  allocation attempt (100 ms?). We should also recommend some
+  limit on this retry mechanism: a maximum number of retries,
+  probably.
+
+  Suggestion:
+
+  Add retry wait text and max # retries (say no more than 
+  50% of the address space?)
+
+rev-zmaap01-03  Reserve IPv4 LINKLOCAL address range for ZMAAP
+
+  Issue:
+
+  We need a range for ZMAAP.  
+
+  Suggestion:
+
+  Request it from IANA.
+  
+rev-zmaap02-04  Reserve IPv4 ZEROCONF multicast scope 
+
+  Issue:
+
+  This is a multicast range coextensive with the zeroconf network
+  extending across all routers internal to it.
+
+  Suggestion:
+
+  Request such a range from IANA.  Will we need a specification
+  for this multicast address space to justify it?  Does anyone
+  believe that this scope is a good idea?  (I do).  What would
+  the corresponding IPv6 scope be?
+
+rev-zmaap01-05  Magic # in ZMAAP header to prevent conflicts
+
+  Issue: 
+
+  Since multicast protocols SHOULD detect and gracefully deal 
+  with protocol conflicts of use on their port #s, we could add 
+  a magic number preamble to the header.
+
+  Suggestion:
+
+  Add 2 bytes of magic # as a preamble to the header.
+
+rev-zmaap01-06  Clarify matching Lease Descriptors
+
+  Issue:
+
+  Do leases conflict if they have an overlapping instead
+  of identical range and the same Id?
+
+  Do leases conflict if they have the same address range
+  and ID but different lifetimes?
+
+  What should be done in these cases?
+
+  Suggestion:
+
+  Nonmatching ranges indicate a conflict even if the ID matches.
+
+  Matching ranges and IDs are not a conflict.  Use the latest
+  lifetime seen, as Steve Hanna suggests.
+
+rev-zmaap01-07  WEP language in security considerations section
+
+  Issue:
+  In light of the latest attacks on WEP, the last
+  few sentences of the Security Considerations section are
+  no longer true. WEP does not provide "privacy equivalent 
+  to a wired network". By monitoring 802.11 transmissions
+  for a short period of time, anyone can discover the key
+  in use, effectively nullifying any benefits of WEP.
+
+  Suggestion:
+
+  I suggest that we replace the last three sentences of
+  the Security Considerations section with this:
+
+    The "Wired Equivalent Privacy" (WEP) protocol [9] was
+    intended to provide privacy equivalent to a wired
+    network, but it has been shown in several recent papers
+    [19] [20] to have fatal flaws. Therefore, the use of
+    ZMAAP over wireless networks is NOT RECOMMENDED at
+    this time.
+
+  [19] Fluhrer, S., Mantin, I., and A. Shamir, "Weaknesses
+       in the key scheduling algorithm of RC4", Eighth
+       Annual Workshop on Selected Areas in Cryptography
+       (August 2001).
+
+  [20] Stubblefield, A., Ioannidis, J., and A. Rubin,
+       "Using the Fluhrer, Mantin, and Shamir Attack to
+       Break WEP", http://www.cs.rice.edu/~astubble/wep.
+
+  If we don't make this change, I expect that the IESG will
+  make it (or something similar) for us. If we aren't
+  comfortable saying that ZMAAP shouldn't be used over
+  wireless networks (I know I am), we should probably design
+  some security to be used with it.
+
+rev-zmaap02-08  Do not add periodic advertisements
+
+  Issue:  
+
+  In order to detect conflicts in a timely way, either
+  polling or periodic adverts are needed.
+
+  But, conflicts are not fatal (multicast apps have to be
+  robust to them on the same port, and if on different ports
+  this will only result in non-optimal filtering of multicast
+  packets - at IP layer rather than by hardware).  Periodic
+  signalling is expensive and to be avoided.
+
+  Suggestion:
+
+  Add in an API for applications to tell the ZMAAP implementation
+  when they have discovered a conflict.
+
+  Tolerate conflicts - that is, the NOTIFY apis will be on a best
+  effort basis, and likely not work at all.
+
+rev-zmaap01-09  Add session discovery & announcement to ZMAAP
+
+  Issue:
+
+  Apps need to know whether to join an existing session or to
+  allocate a new one.  This could be a race condition.
+
+  After a conflict, apps need to know which session to move to
+  as the above race condition will likely result.
+
+  Suggestion:
+
+  Session Description Protocol, RFC 2327, defines 
+    s=<session name>
+    o=<creator/owner and session identifier>
+
+  Use this very abbreviated portion of SDP *in place of lease
+  ids* as specified by ZMAAP currently.
+
+  In AIU messages this will announce the allocation 
+  associated with a session.
+
+  In ACLM messages this will ensure that session allocations
+  will not conflict.
+
+  Session discovery?
+
+  Add a new message SQUERY.  It includes the SDP info listed
+  above.
+
+  Add a new message SREPLY.  It includes the lease descriptor
+  and the complete SDP associated with the session.  Mini-MAASs
+  MUST passively receive interpret SREPLY to detect conflicts.
+
+  The reason for 2 additional messages is that its better not
+  to overload ACLM for session querying and it is desirable
+  to get the entire SDP in a reply, which is inappropriate for
+  the AIU reply, which may include many lease descriptors - 
+  in the case of a range of addresses in an ACLM which conflicts
+  with more than one allocation.
+
+--------------------------------------------------------------------
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Aug 30 14:43:30 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA24980
+	for <zeroconf-archive@odin.ietf.org>; Thu, 30 Aug 2001 14:43:30 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id DF38091223; Thu, 30 Aug 2001 14:44:39 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A925891325; Thu, 30 Aug 2001 14:44:39 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CB72291223
+	for <zeroconf@trapdoor.merit.edu>; Thu, 30 Aug 2001 14:44:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A001B5DDAE; Thu, 30 Aug 2001 14:44:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 21C2C5DDA5
+	for <zeroconf@merit.edu>; Thu, 30 Aug 2001 14:44:38 -0400 (EDT)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id MAA12969
+	for <zeroconf@merit.edu>; Thu, 30 Aug 2001 12:44:32 -0600 (MDT)
+Received: from vayne (muc-isdn-18 [129.157.164.118])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id UAA14235;
+	Thu, 30 Aug 2001 20:44:33 +0200 (MET DST)
+Date: Thu, 30 Aug 2001 20:56:56 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+Subject: Re: changes for draft-ietf-zeroconf-reqts-09.txt
+To: Erik.Guttman@sun.com
+Cc: zeroconf@merit.edu, erik.guttman@sun.com
+In-Reply-To: "Your message with ID" <3B8E77B6.5E9F42D3@germany.sun.com>
+Message-ID: <Roam.SIMC.2.0.6.999197816.15532.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Woops!
+
+My email includes 8 replicates of my message.
+I'm not sure how I managed that!  
+
+Suffice it to say, there aren't a 74k message worth 
+of changes. Rather something like a 9k email's 
+contents.
+
+Erik
+
+
+

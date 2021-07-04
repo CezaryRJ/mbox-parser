@@ -1,0 +1,2508 @@
+From owner-zeroconf@merit.edu  Tue Oct  3 17:47:53 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id RAA23958
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Oct 2000 17:47:52 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B77045DDFD; Tue,  3 Oct 2000 17:45:51 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A5C425DDFC; Tue,  3 Oct 2000 17:45:51 -0400 (EDT)
+Received: from himalia.eastgw.xerox.com (himalia.xerox.com [208.140.33.21])
+	by segue.merit.edu (Postfix) with ESMTP id 5347D5DD97
+	for <zeroconf@merit.edu>; Tue,  3 Oct 2000 17:45:50 -0400 (EDT)
+Received: from pmdf1.cinops.xerox.com (pmdf1.cinops.xerox.com [13.250.20.175])
+	by himalia.eastgw.xerox.com (8.9.3/8.9.3) with ESMTP id RAA18582
+	for <zeroconf@merit.edu>; Tue, 3 Oct 2000 17:45:33 -0400 (EDT)
+Received: from CONVERSION-DAEMON by mail.xerox.com (PMDF V5.1-12 #U3277)
+ id <01JUWQJKTZC0975XDV@mail.xerox.com> for zeroconf@merit.edu; Tue,
+ 3 Oct 2000 17:45:38 EST
+Received: from usaxeroxbh1.USA.XEROX.COM by mail.xerox.com
+ (PMDF V5.1-12 #U3277) with ESMTP id <01JUWQJKN4AE96DC9Z@mail.xerox.com> for
+ zeroconf@merit.edu; Tue, 03 Oct 2000 17:45:38 -0500 (EST)
+Received: by usaxeroxbh1.usa.xerox.com with Internet Mail Service (5.5.2650.21)
+ id <THCXBMZ9>; Tue, 03 Oct 2000 17:45:37 -0400
+Content-return: allowed
+Date: Tue, 03 Oct 2000 17:45:34 -0400
+From: "Nicolae, Dan" <Dan.Nicolae@usa.xerox.com>
+Subject: RE: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+To: "'Erik Guttman'" <Erik.Guttman@germany.sun.com>, zeroconf@merit.edu
+Cc: cheshire@apple.com, myron.hattig@intel.com
+Message-id: <3654E69400ADD211A3A400805FA7CE24022A63D9@USA0111MS2>
+MIME-version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-type: text/plain; charset=iso-8859-1
+Content-transfer-encoding: 7BIT
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7BIT
+
+A few comments/questions on 05:
+
+I. 
+   "... The requirement is the 
+   protocol MUST be routable. For example, a protocol MUST use IP 
+   multicast and not use IP broadcast. 
+    
+   Requirement: 
+   - If a protocol is to operate in multiple IP subnet topologies, 
+     the protocol MUST be routable."
+
+Is this requirement really needed? What's its value besides disqualifying
+broadcast-based protocols (as the example states)?
+Can we talk about protocols operating above the network layer as being
+routable or not? IP is routable so anything that runs over IP is routable.
+The fact that packets sent to certain IP addresses MAY be discarded by a
+router does not make a protocol less routable.
+
+I don't want to get tangled in a terminology issue, but the requirement
+sounds a bit confusing to me. I would favor removing the whole section 1.5.
+
+II.
+   "Topology changes may create any of the following problems: 
+   conflict among netmasks, conflict among default routes, duplicate 
+   IP addresses within an IP subnet, or duplicate IP subnets within 
+   an internet. Note that default routes and duplicate IP subnets are 
+   not issues for single IP subnet networks."
+
+Could we remove "conflict among netmasks"? Isn't this the same as a subnet
+address conflict?
+Also, I do not understand what "conflict among default routes" means.
+
+III.
+
+   "Requirement: 
+   - MUST allow a host to determine if it has a unique name.  
+   - MUST be able to determine if subsequently chosen names are 
+     unique, if the first name is not. 
+   - If a domain name and host name exist as separate configuration 
+     parameters, additional checks for uniqueness SHOULD be 
+     performed on the combined host name and domain name."
+
+I think that the first requirement covers the next two as well.
+
+IV.
+
+   "Printers vary in their characteristics such as location, status, 
+   dots per inch, drivers, etc. Discovering these characteristics 
+   SHOULD be part of the service discovery protocol. Alternatively, 
+   the client and server MAY negotiate the use of these 
+   characteristics after the service is found."
+
+- Not the characteristics are discovered, but services with those
+characteristics
+- The SHOULD and MAY seem contradictory. Is attribute-based discovery purely
+optional or not?
+- Once a service is found no negotiation is needed. Further selection based
+on specific attributes is not part of discovery (or is it?).
+
+My opinion:
+   Printers vary in their characteristics such as location, status, 
+   dots per inch, drivers, etc. 
+   Discovering based on these particular characteristics 
+   SHOULD (or MAY?) be part of the service discovery protocol.  
+
+V.
+   "Discovery SHOULD be possible by either the client actively 
+   soliciting the service or by the service advertising then the 
+   client passively listening for the advertisements. At least one 
+   method MUST be available. Once a client finds the printer, it can 
+   utilize different printing protocols such as raw tcp, lpd, and 
+   ipp."  
+
+I believe the SHOULD needs a "both" instead of "either". That would make it
+consistent with the (correct)requirement at the end of section 2.4.1:
+   - MUST allow discovery by client actively soliciting the service 
+     or by the client passively listening for advertisements. Both 
+     methods SHOULD be available. 
+
+Also, what is the purpose of "once a client finds the printer, it can
+utilize different printing protocols such as raw tcp, lpd, and ipp"? It
+seems irrelevant to the topic.
+
+VI.
+
+   "- SHOULD discover via characteristics or negotiate 
+     characteristics."
+
+I would say to remove "or negotiate characteristics" (see IV).
+
+VII.
+
+   "In the case of a printer service, a printer may be temporarily 
+   taken off-line for repair or everyday maintenance. This requires 
+   clients to be able to rediscover a service." 
+    
+   "- MUST allow clients to rediscover a service."
+
+I do not understand the difference between "discover" and "rediscover". Is
+this requirement needed?
+
+VIII.
+Not a big deal, but I prefer "Printer Discovery Proxy" instead of "Printer
+Manager".
+
+IX.
+The whole section 2.4.2 seems a bit unclear to me.
+We start by talking about a print manager that is a discovery proxy and end
+up with requirements about registries. What is the connection between the
+two? Who is the proxy, the print manager or the registry?
+Could we give some clarifying examples here?
+
+/dn
+    
+
+
+
+> -----Original Message-----
+> From: Erik Guttman [mailto:Erik.Guttman@germany.sun.com]
+> Sent: Monday, September 25, 2000 3:33 AM
+> To: zeroconf@merit.edu
+> Cc: erik.guttman@germany.sun.com; cheshire@apple.com;
+> myron.hattig@intel.com
+> Subject: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+> 
+> 
+> This is a notice of a Working Group Last Call on the document
+> 
+>   http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+> 
+> Please send your comments in the next two weeks.  At that time 
+> (October 9) we will evaluate the working group consensus on the 
+> document, if necessary revise the document, then submit it to the 
+> IESG for publication as an Informational RFC.
+> 
+> Erik
+> 
+> 
+> 
+> 
+> 
+
+
+
+From owner-zeroconf@merit.edu  Tue Oct  3 20:30:11 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id UAA25112
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Oct 2000 20:30:10 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 25DB95DDF6; Tue,  3 Oct 2000 19:33:29 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 148D85DDF2; Tue,  3 Oct 2000 19:33:29 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 42DA35DDF1
+	for <zeroconf@merit.edu>; Tue,  3 Oct 2000 19:33:27 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id QAA08587
+	for <zeroconf@merit.edu>; Tue, 3 Oct 2000 16:33:26 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.5) with ESMTP id <T118064e11874f08212392@mailgate1.apple.com>;
+ Tue, 3 Oct 2000 16:33:25 -0700
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id QAA27365;
+	Tue, 3 Oct 2000 16:33:25 -0700 (PDT)
+Message-Id: <200010032333.QAA27365@scv2.apple.com>
+Subject: Re: Configuring devices without consoles
+Date: Tue, 3 Oct 2000 16:33:25 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Charles Larson" <clarson@miinet.com>, <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>We build industrial instrumentation which has an ethernet port.  The 
+>device may or may not have a console.  In the commercial world, I suppose 
+>this would apply to a network printer.  I want to be able to configure 
+>that device, possibly with a static IP address, possibly for DHCP without 
+>needing a console.  In other words I want to configure it over the 
+>ethernet.  The trouble is that if it is unconfigured or configured 
+>incorrectly, I cant talk to it.
+
+This is a significant part of the zeroconf goals. Bootstrapping may seem 
+to be an unimportant trivial area to a lot of people, but when you have a 
+misconfigured device in your hands that you can't communicate with, it 
+can be an incredibly frustrating time-consuming problem.
+
+The Apple AirPort base station is very similar to the kinds of devices 
+you describe. It has no console, and no serial port to attach a terminal. 
+Our plan is that it will *always* have a link-local IPv4 address, and 
+will always advertise itself using the chosen service discovery protocol, 
+so that no matter how badly you mess up its static configuration, you can 
+always discover it and talk to it locally to correct the configuration 
+mistakes.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Oct  4 08:18:16 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA16957
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Oct 2000 08:18:15 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 2F7E95DF69; Wed,  4 Oct 2000 08:16:14 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 739B65DF6A; Wed,  4 Oct 2000 08:15:47 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 4778F5DF00
+	for <zeroconf@merit.edu>; Wed,  4 Oct 2000 06:50:39 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id DAA21378;
+	Wed, 4 Oct 2000 03:50:34 -0700 (PDT)
+Received: from vayne (muc-isdn-12 [129.157.164.112])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id MAA16002;
+	Wed, 4 Oct 2000 12:50:31 +0200 (MET DST)
+Date: Wed, 4 Oct 2000 13:00:15 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: RE: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+To: "Nicolae, Dan" <Dan.Nicolae@usa.xerox.com>
+Cc: "'Erik Guttman'" <Erik.Guttman@germany.sun.com>, zeroconf@merit.edu,
+        cheshire@apple.com, myron.hattig@intel.com
+In-Reply-To: "Your message with ID" <3654E69400ADD211A3A400805FA7CE24022A63D9@USA0111MS2>
+Message-ID: <Roam.SIMC.2.0.6.970657215.31496.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+On the whole I agree with your comments.  I just wanted to reply to/
+expand on a couple points you made.
+
+>    Requirement: 
+>    - If a protocol is to operate in multiple IP subnet topologies, 
+>      the protocol MUST be routable."
+> 
+> Is this requirement really needed? What's its value besides disqualifying
+> broadcast-based protocols (as the example states)?
+
+There are two categories of protocol this requirement was meant to address:
+Broadcast-based protocols and 'link-local' protocols.  What we're really
+trying to say is that these protocols are inappropriate if we want more
+than link-local operation.  Maybe the text isn't clear here.
+
+> IV.
+> 
+>    "Printers vary in their characteristics such as location, status, 
+>    dots per inch, drivers, etc. Discovering these characteristics 
+>    SHOULD be part of the service discovery protocol. Alternatively, 
+>    the client and server MAY negotiate the use of these 
+>    characteristics after the service is found."
+> 
+> - Not the characteristics are discovered, but services with those
+> characteristics
+
+Agreed.  But this could be done either on the server-side (by processing
+a client's service request) or on the client-side by retreiving the service
+attributes and deciding the client's suitability there.  The former strategy
+is used by SLP, the latter, for example, by Microsoft's SSDP.  SLP does not
+require transmission of service information that the client doesn't want, 
+where SSDP does.
+
+> - The SHOULD and MAY seem contradictory. Is attribute-based discovery purely
+> optional or not?
+
+The SHOULD refers to attribute based discovery.  The MAY to feature 
+negociation after discovery is over, between the client and server.
+If you have 'ideal' service discovery, you don't need feature negociation
+since the client will discover the server which has all the features it
+needs and the protocol configuration to use so that the server will know
+just how to communicate with the client.  In some cases service discovery
+won't be ideal though.  The client may discover the appropriate server but
+still need to inform the server of client features so that a proper inter-
+action can result.
+
+> Also, what is the purpose of "once a client finds the printer, it can
+> utilize different printing protocols such as raw tcp, lpd, and ipp"? It
+> seems irrelevant to the topic.
+
+The only important thing is that after service discovery is over the
+client can use the server.  That means that the client needs to know
+what protocol to use.
+ 
+Erik
+ 
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Oct  5 07:33:56 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id HAA26176
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Oct 2000 07:33:56 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 6433B5DD99; Thu,  5 Oct 2000 07:33:43 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 51A7E5DDFB; Thu,  5 Oct 2000 07:33:43 -0400 (EDT)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id C518A5DD99
+	for <zeroconf@merit.edu>; Thu,  5 Oct 2000 07:33:41 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id EAA27791
+	for <zeroconf@merit.edu>; Thu, 5 Oct 2000 04:33:41 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.1.2) with ESMTP id <B118164e14f0fdae537@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Thu, 5 Oct 2000 04:33:40 -0700
+Received: from [206.111.147.152] (vpn-pp-6.apple.com [17.254.144.5])
+	by scv3.apple.com (8.9.3/8.9.3) with ESMTP id EAA00240
+	for <zeroconf@merit.edu>; Thu, 5 Oct 2000 04:33:39 -0700 (PDT)
+User-Agent: Microsoft-Outlook-Express-Macintosh-Edition/5.02.2022
+Date: Thu, 05 Oct 2000 04:33:47 -0700
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-ID: <B601B52B.16CF%cheshire@apple.com>
+In-Reply-To: <Roam.SIMC.2.0.6.969867181.4546.erikg@sun-ffm.germany>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+on 25/9/00 12:33 am, Erik Guttman wrote:
+
+> This is a notice of a Working Group Last Call on the document
+> 
+> http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+> 
+> Please send your comments in the next two weeks.  At that time
+> (October 9) we will evaluate the working group consensus on the
+> document, if necessary revise the document, then submit it to the
+> IESG for publication as an Informational RFC.
+
+I like draft-05 a lot, and I think we are very close to being finished. Here
+are my comments. There are a fair number, but they are all fairly easy to
+fix:
+
+Throughout the document we talk about one of our four areas being "host
+configuration".
+
+We should be specific and say what we mean: "IP interface configuration."
+Our WG charter has been updated to say interface configuration, and I think
+the document should say the same. The "IP Host Configuration" section (2.1)
+even begins by saying, "In this document, configuration of an IP interface
+on a host is IP host configuration." If we even have to explain that when we
+say "host configuration" we mean "configuration of an IP interface", lets
+just say what we mean. We should replace all appearances of "host
+configuration" with "interface configuration".
+
+Page 3:
+
+The Scalability section has gone through much mutation, and gets better
+every time. I have one more refinement. Right now it says:
+
+   As a network grows, the administrators of that network should
+   consider migrating away from zeroconf protocols before
+   scalability becomes an issue. That being said, a zeroconf
+   protocol SHOULD be scalable.
+
+I would suggest the text below. We are not saying that administrators should
+consider migrating away from zeroconf protocols because we tell them to. We
+are saying that administrators will *want* to migrate away from zeroconf
+protocols because configured protocols may serve their needs better in
+large-scale networks.
+
+   As a network grows, the administrators of that network will
+   eventually want to take an active role in making local policy
+   decisions to manage the network's resources. At this point,
+   conventional configured protocols may be more appropriate
+   than their zeroconf counterparts. Zeroconf protocols SHOULD
+   be scalable as far as is reasonable, but they do not need to
+   attempt to compete with or replace existing configured
+   protocols that already work well in large-scale networks.
+
+Page 4:
+
+   Spurious topology changes or other events such adding ...
+
+Delete the work "Spurious". "Spurious" means "Lacking authenticity or
+validity in essence or origin; not genuine; false." I don't think we mean
+that. I suggest the following replacement text:
+
+   Topology changes or other events such adding and removing
+   hosts may cause state changes and conflicts within a
+   protocol. Zeroconf protocols in all four areas must be able
+   to respond to state changes and resolve conflicts caused by
+   topology changes or other events.
+    
+   Requirement: 
+   - MUST respond to state changes and resolve conflicts in a
+   timely manner.
+
+I found the following text confusing:
+
+   This section lists scenarios that lead to zeroconf protocol
+   requirements. A subsection exists for each of the four protocol
+   areas.
+
+I thought it was saying that this section presents a list of scenarios, and
+for each scenario there are subsections covering the four protocol areas.
+That is not what it is trying to say. I suggest the following replacement
+text:
+
+   This section contains a subsection for each of the four
+   protocol areas. Within each subsection, terms and assumptions
+   are followed by specific representative scenarios that lead
+   to zeroconf protocol requirements in that area. Each
+   subsection ends with an IPv6 considerations section.
+
+In section 2.1:
+
+   Terms: 
+     IP subnet - A single logical IP network that may span multiple
+     link layer networks.
+
+I suggest the following addition:
+
+   Terms: 
+     IP subnet - A single logical IP network that may span multiple
+     link layer networks. All IP hosts on a subnet are directly
+     reachable from all other hosts on that subnet using layer 2
+     (e.g. Ethernet) packets, without needing to communicate
+     via any layer 3 forwarding device (e.g. an IP router).
+
+Page 5:
+
+   IP host configuration scenarios are ICMP echo request/reply
+
+Can we think of a more compelling example than ping? When 'ping' is the best
+example we can think of, it begs the question of why we're even bothering
+with this work. If we use the example of establishing a TCP connection
+between two machines, then I think it is obvious to everyone why this is a
+useful thing to achieve. Alternatively, the example of just "sending an IP
+packet between two machines" is clearly useful and real, because every other
+useful IP application is layered on top of that basic functionality. Very
+little (except troubleshooting broken networks) is layered on top of 'ping'.
+
+   it may include a
+   default route
+
+   - MUST have a default route (only for the internet scenario).
+
+   conflict among default routes
+
+We still have this notion that every host "MUST have a default route".
+A default route implies that *every* IP address is reachable by you, and if
+you don't know how to reach a given destination directly, then the gateway
+in your default route entry knows how to reach it for you. This is simply
+not true in an isolated (inter)network. We can either remain silent on the
+subject of default routes, or we can say that hosts on an isolated network
+MUST NOT have them, but saying that hosts on an isolated network MUST
+pretend that the entire Internet is reachable when it is not, is just wrong.
+
+In case anyone thinks that an IP host can't use a gateway unless it has a
+default route, that is not true. For example, consider two networks 10.1/16
+and 10.2/16, connected by router R, with addresses 10.1.0.1 and 10.2.0.1.
+Host A on network 10.1/16 has the following routing table entries:
+
+[cheshire@rose cheshire]$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref   Use Iface
+10.1.0.0        *               255.255.0.0     U     0      0        0 eth0
+10.2.0.0        10.1.0.1        255.255.0.0     UG    0      0        0 eth0
+
+See? No default route. This simply says that 10.1/16 hosts are reachable on
+eth0, and 10.2/16 hosts are reachable via 10.1.0.1 on eth0, and all other
+destinations should return an immediate "NET UNREACHABLE" (which is correct,
+because all other nets *are* unreachable). Adding a default route to this
+list would be claiming that we believe that *all* other addresses are
+reachable via that route. I don't see why we would require a host to put
+false information into its routing table.
+
+The Windows user interface may have given end-users the idea that a default
+route is somehow fundamental, but it's not.
+
+Our document should be defining accurate requirements, not perpetuating
+misunderstandings, even if they are widely-held misunderstandings.
+
+   thus if a network is using IPv6, a
+   zeroconf IP host configuration solution already exists.
+
+I would say, "If a host is using IPv6..." It's not my Ethernet that uses v6,
+it's my computers.
+
+     host name - One or more strings separated by dots that identify
+     a host. 
+
+The "strings separated by dots" is a DNS concept. A "host name" is just "the
+name of a host". We don't even have to specify the allowed character set in
+this document, except that it be compatible with current host application
+software that allows users to enter host names. I suggest the following
+replacement text:
+
+     host name - The textual name used to identify a host
+
+Page 6:
+
+     domain name - One or more strings separated by dots that
+     identify a DNS domain.
+
+This seems like an appropriate place to reference RFCs for a precise
+definition. I suggest the following replacement text:
+
+     domain name - Zero or more textual labels, separated by dots,
+     that identify a DNS domain [RFC 1034] [RFC 1035].
+
+Also on page 6:
+
+   Assumptions: 
+   - Support for multiple hosts with the same name is not a
+     requirement. 
+
+I don't think this document needs to specify non-requirements. If supporting
+a host name that resolves to more than one IP address is useful, and
+practical to implement, then I don't think this document should hint,
+however obliquely, that this is somehow not worthwhile. Lets delete this
+text.
+
+More on page 6:
+
+   Users browsing the Web typically enter the name of a Web server.
+
+I think the more accurate statement is that users generally enter a URL.
+A URL usually contains the host name of the Web server as part of the URL,
+along with the name of the object being referenced and possibly other
+information.
+
+   The Web server may be within the same domain
+   along with the resolver or may be part of some other domain.
+
+We can delete this. The DNS is a hierarchical system of names, not a
+hierarchical system of computers. A client computer is not "in" a domain,
+and nor is the server. The server's DNS *name* has a place within the DNS
+hierarchy, but a single server can easily have multiple names that are at
+completely different unrelated places in the DNS hierarchy, and the client
+needn't have a name at all. Even if the client does have a name (or fifty)
+that is still not relevant. The DNS request sent out from the client does
+not involve the client's name(s) anywhere; nor does opening a TCP connection
+to the server and sending an HTTP "GET" request.
+
+I suggest the following replacement text:
+
+   URLs typically contain the name of the server host. When a
+   user enters a URL into a Web browser, the name must be
+   resolved to an IP address."
+
+Also:
+
+   Requirement: 
+   - MUST resolve a host name to an IP address whether the name of
+     the resolver and host name are in the same DNS domain or in
+     different DNS domains.
+
+I suggest the following replacement text:
+
+   Requirement: 
+   - MUST resolve a host name to an IP address.
+
+More on page 6:
+
+   This scenario only deals with
+   learning of other host names on the network.
+
+To me, "learning of other host names on the network," sounds like it is
+talking about a browser that shows you a list (e.g. the Macintosh Chooser,
+or any other service discovery protocol). I don't think we're talking about
+browsing here.
+
+   Thus allowing the user or configuration
+   protocol to attempt to use a different and hopefully unique name
+
+I don't think we need to say "hopefully unique". We don't have to hope that
+it is unique if we have a mechanism to verify whether it is unique. I
+suggest the following replacement text:
+
+   How the host gets its name (or Domain Name [RFC 1034]) is
+   part of some other configuration protocol or user
+   configuration, but is not part of this zeroconf scenario. The
+   requirement here is that in cases where uniqueness of names
+   is desired, a host should be able to verify whether a name is
+   already in use. In the case where the name is already in use,
+   the host should request that the user (or the software
+   performing the configuration) select a different host name,
+   and then repeat the process of verifying its uniqueness. This
+   process repeats as often as necessary until an acceptable name
+   is found.
+
+Also replace the following text:
+
+   - MUST allow a host to determine if it has a unique name.
+   - MUST be able to determine if subsequently chosen names are
+     unique, if the first name is not.
+
+with:
+
+   - MUST allow a host to determine if a name is in use by
+   another host, so that in cases where it is desired to have
+   unique names, the host may select a new name (and repeat
+   the process until an acceptable name is found)
+
+It is redundant to also say that you also have to be able to do the same for
+subsequent names, as it would be to say that you also have to be able to do
+it for the third name as well (and on Tuesdays, and if it is raining... :-)
+
+   - If a domain name and host name exist as separate configuration
+     parameters, additional checks for uniqueness SHOULD be
+     performed on the combined host name and domain name.
+
+We can delete this. This is notion that your "host name" is only the first
+label of the DNS name and the rest of the labels are your "domain name"
+sounds like another piece of Windows UI trivia, which is not pertinent to
+protocol design.
+
+"rose.bolo.net." is a domain name. (It's a small domain with only one
+record, an A record).
+"bolo.net." is a domain name. (It is a larger domain.)
+"net." is a domain name.
+"." is a domain name.
+
+My host name is "rose.bolo.net.":
+
+[cheshire@rose cheshire]$ hostname
+rose.bolo.net
+
+It happens to be a name that exists in the hierarchy of the Domain Name
+System, hence it is a "domain" name as well as a host name.
+
+If someone made a UI with a series of boxes separated by dots, where you
+enter your DNS name by typing one label into each box, then it would be that
+person's problem to interpret that data correctly. We don't have to talk
+about that.
+
+Also, this is DNS-centric information, and this requirements document does
+not require that we use DNS for host names. Even though implementers may
+well chose to adopt something like multicast DNS, that is not a requirement.
+
+Page 7:
+
+   IP Multicast is used for multi-receiver bulk-delivery
+   applications, such as audio, video, or news to conserver
+   bandwidth.  
+
+This should say, "conserve bandwidth." It also misses the logical addressing
+function of IP Multicast. I suggest the following replacement text:
+
+   IP Multicast is used to conserve bandwidth in multi-receiver
+   bulk-delivery applications, such as audio, video, or news.
+   IP Multicast is also used to perform a logical addressing
+   function. For example, when a host needs to communicate with
+   local routers, it can send packets to the all-routers
+   multicast address without having to know in advance the
+   IP address(es) of the router(s) .
+
+Also on page 7:
+
+   [RFC 2365] defined scopes are:
+     node-local (unspecified)
+     ...
+
+This seems a little incongruous to me. I suggest the following replacement
+text:
+
+   Multicast scopes (some of which are defined in [RFC 2365]) are:
+     node-local (unspecified)
+     ...
+
+Also on page 7:
+
+   Source-Specific Multicast [SSM] addresses are 232.0.0.0 to
+   232.255.255.255.
+    
+Do we want to reference an unpublished ID in an RFC submission?
+
+Also on page 7:
+
+   Assumptions: 
+   - A boundary router, as described in [RFC 2365], is present ...
+
+Really? Zeroconf *assumes* that there is network infrastructure? I suggest
+the following replacement text:
+
+   - If the user chooses to install any router on the network,
+   then that user is responsible for deciding whether it needs
+   to be configured as a boundary router, as described in [RFC
+   2365]."
+
+
+Page 8:
+
+   IP multicast address allocation (only local, link-local and site-
+   local scopes only) requires coordination among hosts
+
+Delete one "only".
+
+Also on page 8:
+
+   To allocate an address, the host specifies a
+   given scope, the number of addresses it desires, and the lifetime
+   for which it desires.
+
+   Requirements: 
+   - MUST select a multicast address with a given scope and lease
+     time. 
+   - MUST defend an allocated address within a scope.
+
+These should be deleted. We're specifying mechanism here, and we should not.
+The requirement is that a host, or group of hosts using a multicast-based
+protocol, should be able to obtain a multicast address which is available
+for them to use, and (except for forced reconfigurations due to network
+topological changes) that address should remain available for them to use
+for as long as any participant in that group (sender or receiver) needs to
+use it. Furthermore, the participants of that group may change over time,
+including the case where none of the original participants remain, without
+losing the address.
+
+Also on page 8:
+
+   some other host may deallocate the address.
+    
+   Requirements: 
+   - The last host to use the IP multicast address MUST deallocate
+     the address. 
+
+The word, "deallocate," sounds too much like an active verb to me, as if we
+are specifying that the protocol must take some explicit action to inform
+other hosts that the address is now relinquished. I don't think this is
+necessary. In a pure claim-and-defend protocol, you don't have to take any
+particular protocol action when you no longer needs something -- you simply
+stop defending it.
+
+The requirement is that the address must remain available (excepting
+topology changes) for as long as any participant needs it.
+
+I'm deliberately using the word "participant" instead of "member" because
+"member" means "receiver" to multicast people.
+
+Page 9:
+
+     service - A service is a set of processes that utilize a
+     particular protocol. Services range from printing to
+     transferring a file to providing on-line pizza order and
+     delivery.  
+
+Transferring a file is usually done with TCP, and TCP is not a service that
+you discover on the network. It would be better to say, "storing a file on a
+file server," since it is the storage that is the service being provided,
+not the transfer. I suggest the following replacement text:
+
+     service - A service is a set of processes that utilize a
+     particular protocol. Services range from printing to
+     storing a file on a file server to providing on-line pizza
+     order and delivery.
+
+Also on page 9:
+
+     service discovery protocol - A service discovery protocol
+     enables a client (or clients) to discover a server (or servers)
+     of a particular service. A service discovery protocol is an
+     application layer protocol that relies on network and transport
+     protocol layers.
+
+Saying, "servers of a service" sounds odd to me. How about, "servers which
+implement a particular service." I suggest the following replacement text:
+
+     service discovery protocol - A service discovery protocol
+     enables a client (or clients) to discover a server (or
+     servers) which implement a particular service. A service
+     discovery protocol is an application layer protocol that
+     relies on network and transport protocol layers.
+
+Page 10:
+
+     service type - A service type allows clients, servers,
+     advertisers, discoverers, and registries to uniquely identify a
+     type of service...
+
+To paraphrase, "A service type [identifies] a type of service." I don't
+think this defines it very well. I suggest the following replacement text:
+
+     service type - A service type is used by advertisers and
+     discoverers to identify the service that the advertiser
+     offers and the service that the discoverer seeks. The
+     service type typically identifies a human-level concept,
+     such as "printing". It may or may not imply a particular
+     network protocol or protocols used to communicate between
+     the client and the server that implements the service.
+
+Also on page 10:
+
+   Networked enabled printers allow various networked clients to
+   submit print jobs.  A service discovery protocol MUST allow a
+   printing clients to discover the printer service.
+
+Should say:
+
+   Network-enabled printers allow various networked clients to
+   submit print jobs.  A service discovery protocol MUST allow
+   printing clients to discover the printer service.
+
+Also on page 10:
+
+   Printers vary in their characteristics such as location, status,
+   dots per inch, drivers, etc.
+
+Delete "drivers". "Driver software" is a characteristic of the client, not
+the printer. At the IETF meetings we all can print on the common shared
+printers, and the people using Macs and Windows and Linux, etc. all use
+different driver software, but those differences are a function of the
+client software, not a function of the printer. The important characteristic
+of the printer is what network protocol it speaks. I suggest the following
+replacement text:
+
+   Printers vary in their characteristics such as location, status,
+   dots per inch, network printing protocols, etc.
+
+Page 10/11:
+
+   In the case of a printer service, a printer may be temporarily
+   taken off-line for repair or everyday maintenance. This requires
+   clients to be able to rediscover a service.
+
+   - MUST allow clients to rediscover a service.
+
+We can delete these. How is "rediscovering" a service different to
+"discovering it"? We could say similar things for every section, e.g., "A
+device must be able to configure an IP address. In the case of a device that
+is turned off and then turned on again, it must be able to reconfigure an IP
+address. If it is turned on yet once more, then it must be able to
+rereconfigure an IP address..." And so on.
+
+Page 11:
+
+   - MUST allow discovery by client actively soliciting the service
+     or by the client passively listening for advertisements. Both
+     methods SHOULD be available.
+
+Delete "Both methods SHOULD be available." Periodic advertisements are
+widely believed to have problems. We do not need to say that a protocol
+SHOULD do something widely believed to be bad.
+
+Page 11:
+
+2.4.2  Printer Manager
+     
+   A printer manager acts as a proxy to various printers...
+
+I think we should the whole Printer Manager section.
+
+If you have a PC running some Printer Manager software, with a printer
+connected to its parallel port, then that's a "printer manager". Now if you
+take the whole thing, and miniaturize the electronics a bit, and put it in a
+single box so you can't see the parallel port ribbon cable any more, it's
+called a "network-enabled printer." What's the difference?
+
+If the point is that it is possible to write network proxies, then I think
+that is a big quagmire we want to avoid in this document. An FTP server
+could in truth be just a proxy that is speaking AFP to AppleShare servers on
+the back end. A DNS server could in truth be just a proxy that is speaking
+to an X.500 directory service. All this is true, but I don't think we need
+to cover it in the zeroconf protocol requirements document.
+
+Page 12:
+
+   The security threats considered are sniffing (data hijacking) and
+   denial of service attacks. These attacks MUST be considered for
+   each protocol area.
+
+Delete "(data hijacking)". I think "hijacking" means "To seize control of (a
+moving vehicle) by use of force, especially in order to reach an alternate
+destination." Hijacking a TCP connection means stealing control of it from
+the legitimate user. Neither of those are merely passive observation or
+eavesdropping.
+
+   Experience may show that encryption is not necessary as long
+   as ... encryption and firewalls are used.
+
+I think what we're trying to say is this:
+
+   The security threats considered are eavesdropping and denial-
+   of-service attacks. Zeroconf protocols do not attempt to
+   protect higher layer protocols from eavesdropping. Higher
+   layer protocols that require protection against eavesdropping should use
+   encryption.
+
+Page 12:
+
+3.1 IPv6 Considerations
+    
+   IPv6 has built in security, thus if a network is using IPv6, a
+   security solution already exists.
+
+I think we should delete this. IPv6 has IPSEC. IPv4 has IPSEC. IPv6 does not
+have some magic pixie dust that makes all security worries go away.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Oct  5 10:09:21 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id KAA29488
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Oct 2000 10:09:21 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 365DE5DDFF; Thu,  5 Oct 2000 10:09:11 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 2598C5DDFE; Thu,  5 Oct 2000 10:09:11 -0400 (EDT)
+Received: from sol.extremenetworks.com (sol.extremenetworks.com [216.52.8.2])
+	by segue.merit.edu (Postfix) with ESMTP id ECC815DDFB
+	for <zeroconf@merit.edu>; Thu,  5 Oct 2000 10:09:09 -0400 (EDT)
+Received: from mosquito.extremenetworks.com ([10.0.8.105]) by sol.extremenetworks.com with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2650.21)
+	id T89516KG; Thu, 5 Oct 2000 07:07:42 -0700
+Message-Id: <4.3.2.7.2.20001005095127.00aacc10@sc-sol-04.extremenetworks.com>
+X-Sender: rja@sc-sol-04.extremenetworks.com (Unverified)
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Thu, 05 Oct 2000 10:03:07 -0400
+To: Stuart Cheshire <cheshire@apple.com>
+From: RJ Atkinson <rja@extremenetworks.com>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+Cc: <zeroconf@merit.edu>
+In-Reply-To: <B601B52B.16CF%cheshire@apple.com>
+References: <Roam.SIMC.2.0.6.969867181.4546.erikg@sun-ffm.germany>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 07:33 05/10/00, Stuart Cheshire wrote:
+
+>Page 12:
+>
+>   The security threats considered are sniffing (data hijacking) and
+>   denial of service attacks. These attacks MUST be considered for
+>   each protocol area.
+>
+>Delete "(data hijacking)". I think "hijacking" means "To seize 
+>control of (a moving vehicle) by use of force, especially in order 
+>to reach an alternate destination." Hijacking a TCP connection 
+>means stealing control of it from  the legitimate user. Neither 
+>of those are merely passive observation or
+>eavesdropping.
+
+        It is true that sniffing != data hijacking.  However, the 
+Security Threats ought to also consider active attacks such as 
+TCP session hijacking.   Restricting the consideration to
+passive attacks is not sound, given that active attacks are
+common, both in the Global Internet and in corporate intranets.
+
+>   Experience may show that encryption is not necessary as long
+>   as ... encryption and firewalls are used.
+
+
+
+>I think what we're trying to say is this:
+>
+>   The security threats considered are eavesdropping and denial-
+>   of-service attacks. Zeroconf protocols do not attempt to
+>   protect higher layer protocols from eavesdropping. Higher
+>   layer protocols that require protection against eavesdropping 
+>   should use encryption.
+
+        Encryption is a mechanism, not a property.  We should talk
+about desired/needed properties rather than mechanisms.
+
+I'd proposed this text:
+
+        Security threats to be considered include both active 
+        attacks (e.g. denial of service) and passive attacks
+        (e.g. eavesdropping).  Zeroconf protocols do not attempt
+        to protect other protocols from attack.  Protocols that
+        require confidentiality and/or integrity should include 
+        integrated confidentiality and/or integrity mechanisms 
+        or should specify the use of existing standards-track
+        security mechanisms (e.g. TLS, ESP, AH) appropriate to
+        the threat.
+
+>Page 12:
+>
+>3.1 IPv6 Considerations
+>    
+>   IPv6 has built in security, thus if a network is using IPv6, a
+>   security solution already exists.
+>
+>I think we should delete this. IPv6 has IPSEC. IPv4 has IPSEC. 
+>IPv6 does not have some magic pixie dust that makes all 
+>security worries go away.
+
+        Yes.  Thank you very kindly. ESP and AH are the same for
+both IPv6 and IPv4.  The only difference is that (in theory) ESP
+and AH are "must implement" for IPv6.  Neither ESP nor AH should
+be mistaken for magic security pixie dust.
+
+Possible replacement text:
+        With IPv6, implementation of ESP and AH is mandatory.
+        Hence, ESP and AH are particularly interesting candidate
+        security mechanisms in a pure IPv6 environment.  However,
+        other security mechanisms (e.g. TLS) should also be
+        considered.  It is important that the security mechanisms
+        selected provided the security properties appropriate to
+        the threat being countered.  Different threats will usually
+        require different security properties for effective
+        protection.
+
+Ran
+rja@inet.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Oct  5 11:21:27 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA00941
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Oct 2000 11:21:26 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8034F5DDF9; Thu,  5 Oct 2000 11:21:19 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 711075DDB0; Thu,  5 Oct 2000 11:21:19 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 1BC6D5DD9B
+	for <zeroconf@merit.edu>; Thu,  5 Oct 2000 11:21:18 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id IAA00959;
+	Thu, 5 Oct 2000 08:21:14 -0700 (PDT)
+Received: from vayne (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id RAA11697;
+	Thu, 5 Oct 2000 17:21:12 +0200 (MET DST)
+Date: Thu, 5 Oct 2000 17:30:55 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <B601B52B.16CF%cheshire@apple.com>
+Message-ID: <Roam.SIMC.2.0.6.970759855.29985.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+	Page 11:
+	
+	2.4.2  Printer Manager
+	     
+	   A printer manager acts as a proxy to various printers...
+	
+	I think we should the whole Printer Manager section.
+	
+You mean you think we should omit the whole section, right?
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Oct  5 11:22:45 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA00987
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Oct 2000 11:22:40 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 3537A5DDFB; Thu,  5 Oct 2000 11:22:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 234495DDB0; Thu,  5 Oct 2000 11:22:32 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id F353F5DDA7
+	for <zeroconf@merit.edu>; Thu,  5 Oct 2000 11:22:30 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id IAA01384
+	for <zeroconf@merit.edu>; Thu, 5 Oct 2000 08:22:26 -0700 (PDT)
+Received: from vayne (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id RAA11744;
+	Thu, 5 Oct 2000 17:22:21 +0200 (MET DST)
+Date: Thu, 5 Oct 2000 17:32:04 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com
+Message-ID: <Roam.SIMC.2.0.6.970759924.25751.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+These are all minor changes which I believe have been discussed on 
+the list already but remain to be reworked in draft 05.  I recommend
+these changes be made as part of the WG last call.
+
+Erik
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   A zeroconf protocol is able to operate correctly in the absence of 
+   either user configuration or external configuration from 
+   infrastructure services such as conventional DHCP [RFC 2131] or 
+   DNS [RFC 1034, RFC 1035] servers. Zeroconf protocols may use 
+   configuration, when it is available, but do not rely on it being 
+   present.  
+
+It is clear on the mailing list and from comments I got directly
+that there is a working group consensus that mac address 
+configuration should be acceptable in zeroconfiguration protocols, 
+if it is available.
+
+That is because many autoconf protocols use it and because there
+are few cases where it is not available.  
+
+The upshot is that if there is a protocol which requires the use
+of L2 addresses it can't be disallowed and that if one doesn't
+require the use of mac addresses it isn't 'better' because of this
+alone.
+
+I suggest the following modified text:
+
+   A zeroconf protocol is able to operate correctly in the absence of 
+   either user configuration or external configuration from 
+   infrastructure services such as conventional DHCP [RFC 2131] or 
+   DNS [RFC 1034, RFC 1035] servers. Zeroconf protocols may use 
+   configuration, when it is available, but do not rely on it being 
+   present. The one exception identified is the use of MAC addresses.
+   Layer two addresses MAY be used as parameters in zeroconfiguration
+   protocols.
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   The first host that needs the IP multicast address allocates the 
+   address, but some other host may deallocate the address. This is 
+   because the first host may leave the multicast group before all 
+   the other host leave the group. This requires the last host using 
+   the IP multicast address to deallocate the IP multicast address. 
+    
+   Requirements: 
+   - The first host to use the IP multicast address MUST allocate the 
+     address. 
+   - The last host to use the IP multicast address MUST deallocate 
+     the address. 
+
+If a claim & defend protocol is used, there is no explicit 
+'deallocation' as the above text would seem to imply.  An
+allocation is no longer defended and this implies it is no
+longer allocated.  How about modifying the above text for
+clarity to:
+
+   The first host that needs the IP multicast address allocates the 
+   address, but some other host may deallocate the address. This is 
+   because the first host may leave the multicast group before all 
+   the other host leave the group. This requires the last host using 
+   the IP multicast address to deallocate the IP multicast address
+   (or to simply cease 'allocating' it if the protocol does not 
+   support a distinct deallocation operation).
+    
+   Requirements: 
+   - The first host to use the IP multicast address MUST allocate the 
+     address. 
+   - The last host to use the IP multicast address MUST deallocate 
+     the address (or cease to allocate the address if the protocol
+     does not support a distinct deallocation operation).
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   Discovery SHOULD be possible by either the client actively 
+   soliciting the service or by the service advertising then the 
+   client passively listening for the advertisements. At least one  
+   method MUST be available. Once a client finds the printer, it can 
+   utilize different printing protocols such as raw tcp, lpd, and 
+   ipp.  
+
+The important thing is that a client can discover a printer.  This
+is a requirement document.  Whether discovery protocols use active
+or passive discovery is not appropriate to discuss here.  I believe
+the text should be:
+
+   Service discovery MUST be possible so that the client can obtain
+   service advertisements from printers on the network.  This could,
+   for example, be supported by a service discovery protocol which
+   allows the client to solicit service advertisements, or by a protocol
+   where the service sends unsolicited service advertisements.
+
+   Once a client finds a printer, it can utilize a printing protocol 
+   (such as raw tcp, lpd or ipp) to submit jobs and communicate with 
+   the printer.
+   
+----------------------------------------------------------------------
+
+Regarding:
+
+   In the case of a printer service, a printer may be temporarily 
+   taken off-line for repair or everyday maintenance. This requires 
+   clients to be able to rediscover a service. 
+
+There is nothing in principal different between discovering a printer
+and rediscovering it.  I believe the only thing that this text brings
+out is that the availability of the printer on the network implies its
+discoverability.  I think the following text should be entered in place:
+
+   Printers which are on-line SHOULD be able to be discovered using
+   the service discovery protocol.  Printers which are not on-line
+   SHOULD NOT be discoverable using the service discovery protocol.
+
+----------------------------------------------------------------------
+
+Regarding:
+    
+   Requirements: 
+   - MUST allow discovery by client actively soliciting the service 
+     or by the client passively listening for advertisements. Both 
+     methods SHOULD be available. 
+
+This statement is inconsistent with the text above which states
+that 
+
+   Discovery SHOULD be possible by either the client actively 
+   soliciting the service or by the service advertising then the 
+   client passively listening for the advertisements. At least one  
+   method MUST be available.
+
+This text states that one or the other mechanism MUST be supported.
+The requirement text sais that both SHOULD be supported.
+
+As I argued above, the requirements document should not take a 
+position on which of active or passive discovery is used.  The
+requirement is that service discovery is possible in a timely way.
+For that reason, I think the requirement above should be changed
+to:
+ 
+  Requirements:
+  - Discovery of services actually available on the network MUST 
+    be possible by the client. 
+
+----------------------------------------------------------------------
+Regarding:
+
+   Topology changes may create any of the following problems: 
+   conflict among netmasks, conflict among default routes, duplicate 
+   IP addresses within an IP subnet, or duplicate IP subnets within 
+   an internet. Note that default routes and duplicate IP subnets are 
+   not issues for single IP subnet networks.  
+
+I agree with others who have been confused by the notion of conflict
+among netmasks.  What is this supposed to mean?  I think this text
+should be struck from the draft.
+
+How should conflict among default routes be a problem?  How should it
+arise?  We've been over this before several times and I think this
+text needs to be struck from the draft.
+
+How can duplicate IP subnets in an internet arise from installing
+a bridge?  I think this text should be struck from the draft.
+
+So the text in 2.1.2 should read:
+
+   Topology changes may give rise to duplicate IP addresses within an
+   IP subnet.
+
+----------------------------------------------------------------------
+
+Text should be added in 2.3.2 to read:
+
+   It is possible that an address assignment which was unique could
+   cease to be unique after a topology change.
+
+This implies an additional requirement to section 2.3.2:
+
+   Requirements:
+   - MUST detect and resolve conflicts in multicast address assignement 
+     in a timely manner.
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   Spurious topology changes or other events such adding and removing 
+   hosts may cause conflicts and state changes within a protocol. 
+   Zeroconf protocols must be able to resolve conflicts and state 
+   changes caused by topology changes or other events. The scenario 
+   in the 2.1.2 Bridge Installed section is the only scenario that 
+   illustrates the need for this requirement, thus the below require 
+   is duplicated in section 2.1.2. However, this requirement applies 
+   to all protocol areas. 
+    
+   Requirement: 
+   - MUST resolve conflicts and state changes in a timely manner.  
+
+I believe that this document should describe three scenarios where
+topology changes may result in conflicts:
+
+  1. Address allocation
+  2. Name assignment
+  3. Multicast Address Allocation
+
+These should be listed here (and unless there are good arguments to
+the contrary, this should be all that is listed here).  Address Allocation
+conflicts are discussed in section 2.1.2.  Name assignment conflicts
+are discussed in 2.2.2.  Multicast Address allocation conflicts are
+NOT discussed in 2.3.2, but they should be.  I suggested additional
+text for 2.3.2 above.
+
+I suggest the reworked text be:
+
+   Spurious topology changes or other events such adding and removing 
+   hosts may cause conflicts and state changes within a protocol. 
+   Zeroconf protocols must be able to resolve conflicts and state 
+   changes caused by topology changes or other events. Sections 2.1.2,
+   2.2.2 and 2.3.2 discuss the implications of this requirement.
+    
+   Requirement: 
+   - MUST resolve conflicts and state changes in a timely manner.  
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Oct  5 11:41:17 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA01478
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Oct 2000 11:41:15 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4D1BB5DD9B; Thu,  5 Oct 2000 11:41:04 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 3B3C45DD9C; Thu,  5 Oct 2000 11:41:04 -0400 (EDT)
+Received: from avail-exc.availnetworks.com (unknown [166.90.255.226])
+	by segue.merit.edu (Postfix) with ESMTP id B5B545DD9B
+	for <zeroconf@merit.edu>; Thu,  5 Oct 2000 11:41:02 -0400 (EDT)
+Received: by avail-exc.availnetworks.com with Internet Mail Service (5.5.2650.10)
+	id <TYCQG7WB>; Thu, 5 Oct 2000 11:42:53 -0400
+Message-ID: <90B308416283D311978B0090272BF7F536E996@avail-exc.availnetworks.com>
+From: Glenn Kime <gkime@availnetworks.com>
+To: zeroconf@merit.edu
+Subject: RE: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+Date: Thu, 5 Oct 2000 11:42:52 -0400 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.10)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01C02EE2.EC076720"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01C02EE2.EC076720
+Content-Type: text/plain;
+	charset="iso-8859-1"
+
+Erik,
+
+Wouldn't a "shared secret" be a 2nd item, along with the MAC address, that
+is expected to be entered via some other method than zeroconf?
+
+There was good discussion in the DSL Forum meeting on this subject yesterday
+supporting the idea.  This way, you can incorporate security into zeroconf.
+
+Thanks,
+
+Glenn
+Avail Networks
+
+
+
+-----Original Message-----
+From: Erik Guttman [mailto:Erik.Guttman@germany.sun.com]
+Sent: Thursday, October 05, 2000 11:32 AM
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+
+
+
+These are all minor changes which I believe have been discussed on 
+the list already but remain to be reworked in draft 05.  I recommend
+these changes be made as part of the WG last call.
+
+Erik
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   A zeroconf protocol is able to operate correctly in the absence of 
+   either user configuration or external configuration from 
+   infrastructure services such as conventional DHCP [RFC 2131] or 
+   DNS [RFC 1034, RFC 1035] servers. Zeroconf protocols may use 
+   configuration, when it is available, but do not rely on it being 
+   present.  
+
+It is clear on the mailing list and from comments I got directly
+that there is a working group consensus that mac address 
+configuration should be acceptable in zeroconfiguration protocols, 
+if it is available.
+
+That is because many autoconf protocols use it and because there
+are few cases where it is not available.  
+
+The upshot is that if there is a protocol which requires the use
+of L2 addresses it can't be disallowed and that if one doesn't
+require the use of mac addresses it isn't 'better' because of this
+alone.
+
+I suggest the following modified text:
+
+   A zeroconf protocol is able to operate correctly in the absence of 
+   either user configuration or external configuration from 
+   infrastructure services such as conventional DHCP [RFC 2131] or 
+   DNS [RFC 1034, RFC 1035] servers. Zeroconf protocols may use 
+   configuration, when it is available, but do not rely on it being 
+   present. The one exception identified is the use of MAC addresses.
+   Layer two addresses MAY be used as parameters in zeroconfiguration
+   protocols.
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   The first host that needs the IP multicast address allocates the 
+   address, but some other host may deallocate the address. This is 
+   because the first host may leave the multicast group before all 
+   the other host leave the group. This requires the last host using 
+   the IP multicast address to deallocate the IP multicast address. 
+    
+   Requirements: 
+   - The first host to use the IP multicast address MUST allocate the 
+     address. 
+   - The last host to use the IP multicast address MUST deallocate 
+     the address. 
+
+If a claim & defend protocol is used, there is no explicit 
+'deallocation' as the above text would seem to imply.  An
+allocation is no longer defended and this implies it is no
+longer allocated.  How about modifying the above text for
+clarity to:
+
+   The first host that needs the IP multicast address allocates the 
+   address, but some other host may deallocate the address. This is 
+   because the first host may leave the multicast group before all 
+   the other host leave the group. This requires the last host using 
+   the IP multicast address to deallocate the IP multicast address
+   (or to simply cease 'allocating' it if the protocol does not 
+   support a distinct deallocation operation).
+    
+   Requirements: 
+   - The first host to use the IP multicast address MUST allocate the 
+     address. 
+   - The last host to use the IP multicast address MUST deallocate 
+     the address (or cease to allocate the address if the protocol
+     does not support a distinct deallocation operation).
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   Discovery SHOULD be possible by either the client actively 
+   soliciting the service or by the service advertising then the 
+   client passively listening for the advertisements. At least one  
+   method MUST be available. Once a client finds the printer, it can 
+   utilize different printing protocols such as raw tcp, lpd, and 
+   ipp.  
+
+The important thing is that a client can discover a printer.  This
+is a requirement document.  Whether discovery protocols use active
+or passive discovery is not appropriate to discuss here.  I believe
+the text should be:
+
+   Service discovery MUST be possible so that the client can obtain
+   service advertisements from printers on the network.  This could,
+   for example, be supported by a service discovery protocol which
+   allows the client to solicit service advertisements, or by a protocol
+   where the service sends unsolicited service advertisements.
+
+   Once a client finds a printer, it can utilize a printing protocol 
+   (such as raw tcp, lpd or ipp) to submit jobs and communicate with 
+   the printer.
+   
+----------------------------------------------------------------------
+
+Regarding:
+
+   In the case of a printer service, a printer may be temporarily 
+   taken off-line for repair or everyday maintenance. This requires 
+   clients to be able to rediscover a service. 
+
+There is nothing in principal different between discovering a printer
+and rediscovering it.  I believe the only thing that this text brings
+out is that the availability of the printer on the network implies its
+discoverability.  I think the following text should be entered in place:
+
+   Printers which are on-line SHOULD be able to be discovered using
+   the service discovery protocol.  Printers which are not on-line
+   SHOULD NOT be discoverable using the service discovery protocol.
+
+----------------------------------------------------------------------
+
+Regarding:
+    
+   Requirements: 
+   - MUST allow discovery by client actively soliciting the service 
+     or by the client passively listening for advertisements. Both 
+     methods SHOULD be available. 
+
+This statement is inconsistent with the text above which states
+that 
+
+   Discovery SHOULD be possible by either the client actively 
+   soliciting the service or by the service advertising then the 
+   client passively listening for the advertisements. At least one  
+   method MUST be available.
+
+This text states that one or the other mechanism MUST be supported.
+The requirement text sais that both SHOULD be supported.
+
+As I argued above, the requirements document should not take a 
+position on which of active or passive discovery is used.  The
+requirement is that service discovery is possible in a timely way.
+For that reason, I think the requirement above should be changed
+to:
+ 
+  Requirements:
+  - Discovery of services actually available on the network MUST 
+    be possible by the client. 
+
+----------------------------------------------------------------------
+Regarding:
+
+   Topology changes may create any of the following problems: 
+   conflict among netmasks, conflict among default routes, duplicate 
+   IP addresses within an IP subnet, or duplicate IP subnets within 
+   an internet. Note that default routes and duplicate IP subnets are 
+   not issues for single IP subnet networks.  
+
+I agree with others who have been confused by the notion of conflict
+among netmasks.  What is this supposed to mean?  I think this text
+should be struck from the draft.
+
+How should conflict among default routes be a problem?  How should it
+arise?  We've been over this before several times and I think this
+text needs to be struck from the draft.
+
+How can duplicate IP subnets in an internet arise from installing
+a bridge?  I think this text should be struck from the draft.
+
+So the text in 2.1.2 should read:
+
+   Topology changes may give rise to duplicate IP addresses within an
+   IP subnet.
+
+----------------------------------------------------------------------
+
+Text should be added in 2.3.2 to read:
+
+   It is possible that an address assignment which was unique could
+   cease to be unique after a topology change.
+
+This implies an additional requirement to section 2.3.2:
+
+   Requirements:
+   - MUST detect and resolve conflicts in multicast address assignement 
+     in a timely manner.
+
+----------------------------------------------------------------------
+
+Regarding:
+
+   Spurious topology changes or other events such adding and removing 
+   hosts may cause conflicts and state changes within a protocol. 
+   Zeroconf protocols must be able to resolve conflicts and state 
+   changes caused by topology changes or other events. The scenario 
+   in the 2.1.2 Bridge Installed section is the only scenario that 
+   illustrates the need for this requirement, thus the below require 
+   is duplicated in section 2.1.2. However, this requirement applies 
+   to all protocol areas. 
+    
+   Requirement: 
+   - MUST resolve conflicts and state changes in a timely manner.  
+
+I believe that this document should describe three scenarios where
+topology changes may result in conflicts:
+
+  1. Address allocation
+  2. Name assignment
+  3. Multicast Address Allocation
+
+These should be listed here (and unless there are good arguments to
+the contrary, this should be all that is listed here).  Address Allocation
+conflicts are discussed in section 2.1.2.  Name assignment conflicts
+are discussed in 2.2.2.  Multicast Address allocation conflicts are
+NOT discussed in 2.3.2, but they should be.  I suggested additional
+text for 2.3.2 above.
+
+I suggest the reworked text be:
+
+   Spurious topology changes or other events such adding and removing 
+   hosts may cause conflicts and state changes within a protocol. 
+   Zeroconf protocols must be able to resolve conflicts and state 
+   changes caused by topology changes or other events. Sections 2.1.2,
+   2.2.2 and 2.3.2 discuss the implications of this requirement.
+    
+   Requirement: 
+   - MUST resolve conflicts and state changes in a timely manner.  
+
+
+
+------_=_NextPart_001_01C02EE2.EC076720
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Diso-8859-1">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2448.0">
+<TITLE>RE: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT SIZE=3D2>Erik,</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Wouldn't a &quot;shared secret&quot; be a 2nd item, =
+along with the MAC address, that is expected to be entered via some =
+other method than zeroconf?</FONT></P>
+
+<P><FONT SIZE=3D2>There was good discussion in the DSL Forum meeting on =
+this subject yesterday supporting the idea.&nbsp; This way, you can =
+incorporate security into zeroconf.</FONT></P>
+
+<P><FONT SIZE=3D2>Thanks,</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Glenn</FONT>
+<BR><FONT SIZE=3D2>Avail Networks</FONT>
+</P>
+<BR>
+<BR>
+
+<P><FONT SIZE=3D2>-----Original Message-----</FONT>
+<BR><FONT SIZE=3D2>From: Erik Guttman [<A =
+HREF=3D"mailto:Erik.Guttman@germany.sun.com">mailto:Erik.Guttman@germany=
+.sun.com</A>]</FONT>
+<BR><FONT SIZE=3D2>Sent: Thursday, October 05, 2000 11:32 AM</FONT>
+<BR><FONT SIZE=3D2>To: zeroconf@merit.edu</FONT>
+<BR><FONT SIZE=3D2>Cc: erik.guttman@germany.sun.com</FONT>
+<BR><FONT SIZE=3D2>Subject: Re: WG LAST CALL: =
+draft-ietf-zeroconf-reqts-05.txt</FONT>
+</P>
+<BR>
+<BR>
+
+<P><FONT SIZE=3D2>These are all minor changes which I believe have been =
+discussed on </FONT>
+<BR><FONT SIZE=3D2>the list already but remain to be reworked in draft =
+05.&nbsp; I recommend</FONT>
+<BR><FONT SIZE=3D2>these changes be made as part of the WG last =
+call.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Erik</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Regarding:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; A zeroconf protocol is able to operate =
+correctly in the absence of </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; either user configuration or external =
+configuration from </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; infrastructure services such as =
+conventional DHCP [RFC 2131] or </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; DNS [RFC 1034, RFC 1035] servers. =
+Zeroconf protocols may use </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; configuration, when it is available, =
+but do not rely on it being </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; present.&nbsp; </FONT>
+</P>
+
+<P><FONT SIZE=3D2>It is clear on the mailing list and from comments I =
+got directly</FONT>
+<BR><FONT SIZE=3D2>that there is a working group consensus that mac =
+address </FONT>
+<BR><FONT SIZE=3D2>configuration should be acceptable in =
+zeroconfiguration protocols, </FONT>
+<BR><FONT SIZE=3D2>if it is available.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>That is because many autoconf protocols use it and =
+because there</FONT>
+<BR><FONT SIZE=3D2>are few cases where it is not available.&nbsp; =
+</FONT>
+</P>
+
+<P><FONT SIZE=3D2>The upshot is that if there is a protocol which =
+requires the use</FONT>
+<BR><FONT SIZE=3D2>of L2 addresses it can't be disallowed and that if =
+one doesn't</FONT>
+<BR><FONT SIZE=3D2>require the use of mac addresses it isn't 'better' =
+because of this</FONT>
+<BR><FONT SIZE=3D2>alone.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>I suggest the following modified text:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; A zeroconf protocol is able to operate =
+correctly in the absence of </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; either user configuration or external =
+configuration from </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; infrastructure services such as =
+conventional DHCP [RFC 2131] or </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; DNS [RFC 1034, RFC 1035] servers. =
+Zeroconf protocols may use </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; configuration, when it is available, =
+but do not rely on it being </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; present. The one exception identified =
+is the use of MAC addresses.</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Layer two addresses MAY be used as =
+parameters in zeroconfiguration</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; protocols.</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Regarding:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; The first host that needs the IP =
+multicast address allocates the </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; address, but some other host may =
+deallocate the address. This is </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; because the first host may leave the =
+multicast group before all </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; the other host leave the group. This =
+requires the last host using </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; the IP multicast address to deallocate =
+the IP multicast address. </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Requirements: </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - The first host to use the IP =
+multicast address MUST allocate the </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; address. </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - The last host to use the IP multicast =
+address MUST deallocate </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; the address. </FONT>
+</P>
+
+<P><FONT SIZE=3D2>If a claim &amp; defend protocol is used, there is no =
+explicit </FONT>
+<BR><FONT SIZE=3D2>'deallocation' as the above text would seem to =
+imply.&nbsp; An</FONT>
+<BR><FONT SIZE=3D2>allocation is no longer defended and this implies it =
+is no</FONT>
+<BR><FONT SIZE=3D2>longer allocated.&nbsp; How about modifying the =
+above text for</FONT>
+<BR><FONT SIZE=3D2>clarity to:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; The first host that needs the IP =
+multicast address allocates the </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; address, but some other host may =
+deallocate the address. This is </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; because the first host may leave the =
+multicast group before all </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; the other host leave the group. This =
+requires the last host using </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; the IP multicast address to deallocate =
+the IP multicast address</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; (or to simply cease 'allocating' it if =
+the protocol does not </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; support a distinct deallocation =
+operation).</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Requirements: </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - The first host to use the IP =
+multicast address MUST allocate the </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; address. </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - The last host to use the IP multicast =
+address MUST deallocate </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; the address (or cease to =
+allocate the address if the protocol</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; does not support a distinct =
+deallocation operation).</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Regarding:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Discovery SHOULD be possible by either =
+the client actively </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; soliciting the service or by the =
+service advertising then the </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; client passively listening for the =
+advertisements. At least one&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; method MUST be available. Once a client =
+finds the printer, it can </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; utilize different printing protocols =
+such as raw tcp, lpd, and </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; ipp.&nbsp; </FONT>
+</P>
+
+<P><FONT SIZE=3D2>The important thing is that a client can discover a =
+printer.&nbsp; This</FONT>
+<BR><FONT SIZE=3D2>is a requirement document.&nbsp; Whether discovery =
+protocols use active</FONT>
+<BR><FONT SIZE=3D2>or passive discovery is not appropriate to discuss =
+here.&nbsp; I believe</FONT>
+<BR><FONT SIZE=3D2>the text should be:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Service discovery MUST be possible so =
+that the client can obtain</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; service advertisements from printers on =
+the network.&nbsp; This could,</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; for example, be supported by a service =
+discovery protocol which</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; allows the client to solicit service =
+advertisements, or by a protocol</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; where the service sends unsolicited =
+service advertisements.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Once a client finds a printer, it can =
+utilize a printing protocol </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; (such as raw tcp, lpd or ipp) to submit =
+jobs and communicate with </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; the printer.</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; </FONT>
+<BR><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Regarding:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; In the case of a printer service, a =
+printer may be temporarily </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; taken off-line for repair or everyday =
+maintenance. This requires </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; clients to be able to rediscover a =
+service. </FONT>
+</P>
+
+<P><FONT SIZE=3D2>There is nothing in principal different between =
+discovering a printer</FONT>
+<BR><FONT SIZE=3D2>and rediscovering it.&nbsp; I believe the only thing =
+that this text brings</FONT>
+<BR><FONT SIZE=3D2>out is that the availability of the printer on the =
+network implies its</FONT>
+<BR><FONT SIZE=3D2>discoverability.&nbsp; I think the following text =
+should be entered in place:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Printers which are on-line SHOULD be =
+able to be discovered using</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; the service discovery protocol.&nbsp; =
+Printers which are not on-line</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; SHOULD NOT be discoverable using the =
+service discovery protocol.</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Regarding:</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Requirements: </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - MUST allow discovery by client =
+actively soliciting the service </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; or by the client passively =
+listening for advertisements. Both </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; methods SHOULD be =
+available. </FONT>
+</P>
+
+<P><FONT SIZE=3D2>This statement is inconsistent with the text above =
+which states</FONT>
+<BR><FONT SIZE=3D2>that </FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Discovery SHOULD be possible by either =
+the client actively </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; soliciting the service or by the =
+service advertising then the </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; client passively listening for the =
+advertisements. At least one&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; method MUST be available.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>This text states that one or the other mechanism MUST =
+be supported.</FONT>
+<BR><FONT SIZE=3D2>The requirement text sais that both SHOULD be =
+supported.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>As I argued above, the requirements document should =
+not take a </FONT>
+<BR><FONT SIZE=3D2>position on which of active or passive discovery is =
+used.&nbsp; The</FONT>
+<BR><FONT SIZE=3D2>requirement is that service discovery is possible in =
+a timely way.</FONT>
+<BR><FONT SIZE=3D2>For that reason, I think the requirement above =
+should be changed</FONT>
+<BR><FONT SIZE=3D2>to:</FONT>
+<BR><FONT SIZE=3D2>&nbsp;</FONT>
+<BR><FONT SIZE=3D2>&nbsp; Requirements:</FONT>
+<BR><FONT SIZE=3D2>&nbsp; - Discovery of services actually available on =
+the network MUST </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp; be possible by the client. =
+</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+<BR><FONT SIZE=3D2>Regarding:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Topology changes may create any of the =
+following problems: </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; conflict among netmasks, conflict among =
+default routes, duplicate </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; IP addresses within an IP subnet, or =
+duplicate IP subnets within </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; an internet. Note that default routes =
+and duplicate IP subnets are </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; not issues for single IP subnet =
+networks.&nbsp; </FONT>
+</P>
+
+<P><FONT SIZE=3D2>I agree with others who have been confused by the =
+notion of conflict</FONT>
+<BR><FONT SIZE=3D2>among netmasks.&nbsp; What is this supposed to =
+mean?&nbsp; I think this text</FONT>
+<BR><FONT SIZE=3D2>should be struck from the draft.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>How should conflict among default routes be a =
+problem?&nbsp; How should it</FONT>
+<BR><FONT SIZE=3D2>arise?&nbsp; We've been over this before several =
+times and I think this</FONT>
+<BR><FONT SIZE=3D2>text needs to be struck from the draft.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>How can duplicate IP subnets in an internet arise =
+from installing</FONT>
+<BR><FONT SIZE=3D2>a bridge?&nbsp; I think this text should be struck =
+from the draft.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>So the text in 2.1.2 should read:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Topology changes may give rise to =
+duplicate IP addresses within an</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; IP subnet.</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Text should be added in 2.3.2 to read:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; It is possible that an address =
+assignment which was unique could</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; cease to be unique after a topology =
+change.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>This implies an additional requirement to section =
+2.3.2:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Requirements:</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - MUST detect and resolve conflicts in =
+multicast address assignement </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp;&nbsp; in a timely manner.</FONT>
+</P>
+
+<P><FONT =
+SIZE=3D2>---------------------------------------------------------------=
+-------</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Regarding:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Spurious topology changes or other =
+events such adding and removing </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; hosts may cause conflicts and state =
+changes within a protocol. </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Zeroconf protocols must be able to =
+resolve conflicts and state </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; changes caused by topology changes or =
+other events. The scenario </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; in the 2.1.2 Bridge Installed section =
+is the only scenario that </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; illustrates the need for this =
+requirement, thus the below require </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; is duplicated in section 2.1.2. =
+However, this requirement applies </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; to all protocol areas. </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Requirement: </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - MUST resolve conflicts and state =
+changes in a timely manner.&nbsp; </FONT>
+</P>
+
+<P><FONT SIZE=3D2>I believe that this document should describe three =
+scenarios where</FONT>
+<BR><FONT SIZE=3D2>topology changes may result in conflicts:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp; 1. Address allocation</FONT>
+<BR><FONT SIZE=3D2>&nbsp; 2. Name assignment</FONT>
+<BR><FONT SIZE=3D2>&nbsp; 3. Multicast Address Allocation</FONT>
+</P>
+
+<P><FONT SIZE=3D2>These should be listed here (and unless there are =
+good arguments to</FONT>
+<BR><FONT SIZE=3D2>the contrary, this should be all that is listed =
+here).&nbsp; Address Allocation</FONT>
+<BR><FONT SIZE=3D2>conflicts are discussed in section 2.1.2.&nbsp; Name =
+assignment conflicts</FONT>
+<BR><FONT SIZE=3D2>are discussed in 2.2.2.&nbsp; Multicast Address =
+allocation conflicts are</FONT>
+<BR><FONT SIZE=3D2>NOT discussed in 2.3.2, but they should be.&nbsp; I =
+suggested additional</FONT>
+<BR><FONT SIZE=3D2>text for 2.3.2 above.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>I suggest the reworked text be:</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&nbsp;&nbsp; Spurious topology changes or other =
+events such adding and removing </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; hosts may cause conflicts and state =
+changes within a protocol. </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Zeroconf protocols must be able to =
+resolve conflicts and state </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; changes caused by topology changes or =
+other events. Sections 2.1.2,</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; 2.2.2 and 2.3.2 discuss the =
+implications of this requirement.</FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp;&nbsp; </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; Requirement: </FONT>
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; - MUST resolve conflicts and state =
+changes in a timely manner.&nbsp; </FONT>
+</P>
+<BR>
+
+</BODY>
+</HTML>
+------_=_NextPart_001_01C02EE2.EC076720--
+
+
+
+From owner-zeroconf@merit.edu  Sun Oct  8 16:48:44 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id QAA11279
+	for <zeroconf-archive@odin.ietf.org>; Sun, 8 Oct 2000 16:48:44 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 7F76D5DDCE; Sun,  8 Oct 2000 16:47:26 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6BE245DDDB; Sun,  8 Oct 2000 16:47:26 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 069015DDCE
+	for <zeroconf@merit.edu>; Sun,  8 Oct 2000 16:47:25 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id NAA00200
+	for <zeroconf@merit.edu>; Sun, 8 Oct 2000 13:47:23 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.5) with ESMTP id <T118064e11874f2148ec05@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Sun, 8 Oct 2000 13:47:23 -0700
+Received: from [206.111.147.153] (vpn-pp-27.apple.com [17.254.144.26])
+	by scv1.apple.com (8.9.3/8.9.3) with ESMTP id NAA29550
+	for <zeroconf@merit.edu>; Sun, 8 Oct 2000 13:47:22 -0700 (PDT)
+User-Agent: Microsoft Outlook Express Macintosh Edition - 5.01 (1630)
+Date: Sun, 08 Oct 2000 13:48:37 -0700
+Subject: draft-ietf-zeroconf-ipv4-linklocal-00.txt
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-ID: <B6062BB4.567B%cheshire@apple.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+on 10/5/00 1:24 PM, Jared August wrote:
+
+> Hello,
+> 
+> I've been asked to research AutoIP...
+
+In fact that is exactly what I've been working on this week. Erik Guttman
+has been reminding me for some time to get a new draft submitted now that it
+is an official work item on the Zeroconf charter.
+
+I finished incorporating the last round of suggestions this morning, and
+submitted the draft with its new official draft-ietf-zeroconf filename
+today.
+
+For eager people who can't wait for it to appear in the Internet Drafts
+directory, you can get it right away at:
+<http://web.zeroconf.org/draft-ietf-zeroconf-ipv4-linklocal-00.txt>
+
+I'm hoping that we can get agreement on this and wrap it up rapidly.
+Both Mac OS and Microsoft Windows have implemented 169.254/16 link-local
+addresses for several years now, and every day we continue to debate the
+finer points of this document is taking time away from the far more
+important matter of getting IPv6 deployed.
+
+Please send any comments to the list or to me directly and we can hopefully
+finish this off and put it behind us.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Oct  9 18:11:38 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA10494
+	for <zeroconf-archive@odin.ietf.org>; Mon, 9 Oct 2000 18:11:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 38BD35DE05; Mon,  9 Oct 2000 18:11:20 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1D3B25DE06; Mon,  9 Oct 2000 18:11:20 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 8A2415DE05
+	for <zeroconf@merit.edu>; Mon,  9 Oct 2000 18:11:18 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id PAA19700
+	for <zeroconf@merit.edu>; Mon, 9 Oct 2000 15:11:17 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.5) with ESMTP id <T118064e11874f26bc1886@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Mon, 9 Oct 2000 15:11:17 -0700
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id PAA11198
+	for <zeroconf@merit.edu>; Mon, 9 Oct 2000 15:11:17 -0700 (PDT)
+Message-Id: <200010092211.PAA11198@scv2.apple.com>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+Date: Mon, 9 Oct 2000 15:11:17 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+Cc: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>You mean you think we should omit the whole section, right?
+
+Oops. Typo.
+
+Yes, I meant, "I think we should omit the whole Printer Manager section."
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Oct  9 18:55:52 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA10854
+	for <zeroconf-archive@odin.ietf.org>; Mon, 9 Oct 2000 18:55:52 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 37FB35DDEA; Mon,  9 Oct 2000 18:55:42 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 24CBD5DDF0; Mon,  9 Oct 2000 18:55:42 -0400 (EDT)
+Received: from sol.extremenetworks.com (sol.extremenetworks.com [216.52.8.2])
+	by segue.merit.edu (Postfix) with ESMTP id F2EC45DDEA
+	for <zeroconf@merit.edu>; Mon,  9 Oct 2000 18:55:40 -0400 (EDT)
+Received: from mosquito.extremenetworks.com ([10.0.8.94]) by sol.extremenetworks.com with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2650.21)
+	id T895HK9M; Mon, 9 Oct 2000 15:54:09 -0700
+Message-Id: <4.3.2.7.2.20001009184522.00aa7100@sc-sol-04.extremenetworks.com>
+X-Sender: rja@sc-sol-04.extremenetworks.com (Unverified)
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Mon, 09 Oct 2000 18:49:32 -0400
+To: zeroconf@merit.edu
+From: RJ Atkinson <rja@extremenetworks.com>
+Subject: Fwd: draft-ietf-zeroconf-ipv4-linklocal-00.txt
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+
+>In fact that is exactly what I've been working on this week. Erik Guttman has been reminding me for some time to get a new draft 
+>submitted now that it is an official work item on the Zeroconf charter.
+
+Thanks.
+
+>I finished incorporating the last round of suggestions this morning, and
+>submitted the draft with its new official draft-ietf-zeroconf filename
+>today.
+>
+>For eager people who can't wait for it to appear in the Internet Drafts
+>directory, you can get it right away at:
+><http://web.zeroconf.org/draft-ietf-zeroconf-ipv4-linklocal-00.txt>
+>
+>I'm hoping that we can get agreement on this and wrap it up rapidly.
+>Both Mac OS and Microsoft Windows have implemented 169.254/16 link-local
+>addresses for several years now, and every day we continue to debate the
+>finer points of this document is taking time away from the far more
+>important matter of getting IPv6 deployed.
+
+This is deployed, is useful, and works fine.  In fact, it nearly
+meets the requirements for Draft Standard given its interoperability
+and deployment.  Customers want this and are already using it.
+
+Can we please ship this ASAP and get it out as an RFC ?  
+
+Perhaps the WG chair could start a formal WG Last Call 
+as soon as the revised I-D appears in the official I-D archives 
+(seems likely to happen on Tuesday or Wednesday this week) ?
+
+In the meantime, if anyone has issues, it would be productive
+to identify the issue crisply (along with proposed new text please,
+griping without proposing a specific change isn't that 
+productive, IMHO) in email to the ZeroConf WG list.
+
+Thanks,
+
+Ran
+rja@extremenetworks.com
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Oct 16 19:04:06 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id TAA17341
+	for <zeroconf-archive@odin.ietf.org>; Mon, 16 Oct 2000 19:04:06 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E600B5DDBA; Mon, 16 Oct 2000 19:03:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D5B235DD9B; Mon, 16 Oct 2000 19:03:40 -0400 (EDT)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 461695DD9B
+	for <zeroconf@merit.edu>; Mon, 16 Oct 2000 19:03:39 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id QAA15617
+	for <zeroconf@merit.edu>; Mon, 16 Oct 2000 16:03:38 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.1.2) with ESMTP id <B118164e14f4af888d9@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 16 Oct 2000 16:03:38 -0700
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv3.apple.com (8.9.3/8.9.3) with SMTP id QAA05565
+	for <zeroconf@merit.edu>; Mon, 16 Oct 2000 16:03:33 -0700 (PDT)
+Message-Id: <200010162303.QAA05565@scv3.apple.com>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+Date: Mon, 16 Oct 2000 16:03:43 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Last week the last-call period ended for 
+draft-ietf-zeroconf-reqts-05.txt, and it is now time to summarize the 
+comments received during those two weeks:
+
+1. We should consider how the security section could be improved, taking 
+into account the guidelines in draft-rescorla-sec-cons-01.txt:
+
+>   Authors MUST describe
+>
+>     1. which attacks are out of scope (and why!)
+>     2. which attacks are in-scope
+>     2.1  and the protocol is susceptable to
+>     2.2  and the protocol protects against
+>   ...
+
+Also, proposed new sections of text:
+
+>        Security threats to be considered include both active 
+>        attacks (e.g. denial of service) and passive attacks
+>        (e.g. eavesdropping).  Zeroconf protocols do not attempt
+>        to protect other protocols from attack.  Protocols that
+>        require confidentiality and/or integrity should include 
+>        integrated confidentiality and/or integrity mechanisms 
+>        or should specify the use of existing standards-track
+>        security mechanisms (e.g. TLS, ESP, AH) appropriate to
+>        the threat.
+
+>        With IPv6, implementation of ESP and AH is mandatory.
+>        Hence, ESP and AH are particularly interesting candidate
+>        security mechanisms in a pure IPv6 environment.  However,
+>        other security mechanisms (e.g. TLS) should also be
+>        considered.  It is important that the security mechanisms
+>        selected provided the security properties appropriate to
+>        the threat being countered.  Different threats will usually
+>        require different security properties for effective
+>        protection.
+
+2. New definition of the term process:
+     process - A process is the execution of an algorithm implemented
+     in software, hardware, or a combination of software and hardware. 
+
+3. Change "configuration" to "configured information" in:
+   Zeroconf protocols may use configured information, when it is
+   available, but do not rely on it being present.
+
+4. Remove "spurious" from "spurious topology change"
+
+5. Define what we mean by "bridge"
+
+6. Remove or clarify section 1.5 (Routable Protocol Requirement).
+
+7. Remove text about "conflict among netmasks", "conflict among default 
+routes", etc.
+
+8. Remove redundant text:
+>   - MUST be able to determine if subsequently chosen names are 
+>     unique, if the first name is not. 
+>   - If a domain name and host name exist as separate configuration 
+>     parameters, additional checks for uniqueness SHOULD be 
+>     performed on the combined host name and domain name."
+
+9. Simplify text about, "Discovering based on these particular 
+characteristics SHOULD/MAY be part of the service discovery protocol."
+
+10. Clarify whether we require a service discovery protocol to use 
+periodic advertisements in addition to client-initiated discovery.
+
+11. Remove "or negotiate characteristics."
+
+12. Remove superfluous distinction between "discovery" and "rediscovery"
+
+13. What is the "Printer Manager" example for?
+
+14. Erik Guttman (Thu, 05 Oct 2000 17:32:04 +0200) and myself (Thu, 05 
+Oct 2000 04:33:47 -0700) both sent fairly long lists of comments which I 
+will not duplicate here.
+
+After this, we're almost finished.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Oct 16 19:33:45 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id TAA17541
+	for <zeroconf-archive@odin.ietf.org>; Mon, 16 Oct 2000 19:33:44 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1782E5DE28; Mon, 16 Oct 2000 19:33:18 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 066115DE26; Mon, 16 Oct 2000 19:33:17 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id B8F545DDCE
+	for <zeroconf@merit.edu>; Mon, 16 Oct 2000 19:33:16 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id QAA27018
+	for <zeroconf@merit.edu>; Mon, 16 Oct 2000 16:33:12 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.5) with ESMTP id <T118064e11804f4b139a24@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Mon, 16 Oct 2000 16:33:12 -0700
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id QAA21359
+	for <zeroconf@merit.edu>; Mon, 16 Oct 2000 16:33:11 -0700 (PDT)
+Message-Id: <200010162333.QAA21359@scv1.apple.com>
+Subject: Re: comments on zeroconf requirements
+Date: Mon, 16 Oct 2000 16:33:22 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>- what is a timely manner
+
+I think it is wise to deliberately leave "timely" unspecified, because it 
+really does depend on the context. For situations where humans are 
+waiting for results, a few seconds is generally "timely", but we should 
+not rule out other situations where different constraints apply.
+
+>It may well help to define a view that each participant has on the network.
+>Each participant knows a set of IP addresses with a host name and a 
+>physical address.
+>One can then define consistency constraints on these views, like
+
+I understand why these invariants are attractive, but it is hard to 
+define them such that they relate to useful network properties. For 
+example, the invariant "if A knows B then B knows A" sounds logical, 
+until you consider a time server sending out periodic time updates via IP 
+Multicast. Listeners know about the time server but the time server does 
+not need to know about the listeners, nor should it, in the case where 
+there may be countless listeners and just one time server, because that 
+would be a pointless burden on the time server.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+

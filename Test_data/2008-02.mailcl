@@ -1,0 +1,197 @@
+From skillett@hansens.com  Fri Feb  1 05:23:13 2008
+Return-Path: <skillett@hansens.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id B325328D559
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri,  1 Feb 2008 05:22:18 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: YES
+X-Spam-Score: 49.433
+X-Spam-Level: *************************************************
+X-Spam-Status: Yes, score=49.433 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, NORMAL_HTTP_TO_IP=0.001,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_ILLEGAL_IP=1.908, RCVD_IN_PBL=0.905,
+	SARE_SUB_PROVEN=0.618, STOX_REPLY_TYPE=0.001, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_WS_SURBL=10]
+X-Spam-Report:
+ *  3.5 BAYES_99 BODY: Bayesian spam probability is 99 to 100%
+ *      [score: 1.0000]
+ *  0.6 SARE_SUB_PROVEN subject has likely spammer phrase or word
+ *  0.0 STOX_REPLY_TYPE STOX_REPLY_TYPE
+ *  1.9 RCVD_ILLEGAL_IP Received: contains illegal IP address
+ *  0.0 NORMAL_HTTP_TO_IP URI: Uses a dotted-decimal IP address in URL
+ *  1.5 RAZOR2_CF_RANGE_E8_51_100 Razor2 gives engine 8 confidence level
+ *      above 50%
+ *      [cf: 100]
+ *  0.5 RAZOR2_CHECK Listed in Razor2 (http://razor.sf.net/)
+ *  0.5 RAZOR2_CF_RANGE_51_100 Razor2 gives confidence level above 50%
+ *      [cf: 100]
+ *   20 URIBL_BLACK Contains an URL listed in the URIBL blacklist
+ *      [URIs: 89.137.238.194]
+ *   10 URIBL_WS_SURBL Contains an URL listed in the WS SURBL blocklist
+ *      [URIs: 89.137.238.194]
+ *   10 URIBL_JP_SURBL Contains an URL listed in the JP SURBL blocklist
+ *      [URIs: 89.137.238.194]
+ *  0.9 RCVD_IN_PBL RBL: Received via a relay in Spamhaus PBL
+ *      [200.88.35.119 listed in zen.spamhaus.org]
+Received: from core3.amsl.com ([127.0.0.1])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id ZQgaN5-o1CCr
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Fri,  1 Feb 2008 05:22:18 -0800 (PST)
+Received: from 119santiagord05.codetel.net.do (119santiagord05.codetel.net.do [200.88.35.119])
+	by core3.amsl.com (Postfix) with SMTP id C844C28C45A
+	for <zeroconf-archive@lists.ietf.org>; Fri,  1 Feb 2008 05:04:33 -0800 (PST)
+Received: from [223.80.92.104] (helo=hbf)
+	by 119santiagord05.codetel.net.do with smtp (Exim 4.62 (FreeBSD))
+	id 1JLPdT-0005j4-9q; Fri, 1 Feb 2008 09:08:16 -0400
+Message-ID: <001701c864d3$332f3cf0$685c50df@hbf>
+From: <skillett@hansens.com>
+To: <zeroconf-archive@lists.ietf.org>
+Subject: ***SPAM*** 49.433 (5) Proven effect on your boner!
+Date: Fri, 1 Feb 2008 09:06:03 -0400
+MIME-Version: 1.0
+Content-Type: text/plain;
+	format=flowed;
+	charset="iso-8859-1";
+	reply-type=original
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+
+Our physicians recommend http://89.137.238.194/npnx/
+
+From devlze@northernlabs.com  Fri Feb  1 12:29:32 2008
+Return-Path: <devlze@northernlabs.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 30EF53A694A
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri,  1 Feb 2008 12:29:32 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: YES
+X-Spam-Score: 51.533
+X-Spam-Level: ***************************************************
+X-Spam-Status: Yes, score=51.533 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999,
+	HELO_DYNAMIC_IPADDR=2.426, NORMAL_HTTP_TO_IP=0.001,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033,
+	RDNS_DYNAMIC=0.1, STOX_REPLY_TYPE=0.001, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, XMAILER_MIMEOLE_OL_22B61=3.651]
+X-Spam-Report:
+ *  3.5 BAYES_99 BODY: Bayesian spam probability is 99 to 100%
+ *      [score: 1.0000]
+ *  0.8 FH_HOST_EQ_D_D_D_D Host starts with d-d-d-d
+ *  2.4 HELO_DYNAMIC_IPADDR Relay HELO'd using suspicious hostname (IP addr
+ *      1)
+ *  1.6 FH_HELO_EQ_D_D_D_D Helo is d-d-d-d
+ *  0.0 STOX_REPLY_TYPE STOX_REPLY_TYPE
+ *  0.0 NORMAL_HTTP_TO_IP URI: Uses a dotted-decimal IP address in URL
+ *  1.5 RAZOR2_CF_RANGE_E8_51_100 Razor2 gives engine 8 confidence level
+ *      above 50%
+ *      [cf: 100]
+ *  0.5 RAZOR2_CHECK Listed in Razor2 (http://razor.sf.net/)
+ *  0.5 RAZOR2_CF_RANGE_51_100 Razor2 gives confidence level above 50%
+ *      [cf: 100]
+ *   20 URIBL_BLACK Contains an URL listed in the URIBL blacklist
+ *      [URIs: 24.14.118.59]
+ *   10 URIBL_JP_SURBL Contains an URL listed in the JP SURBL blocklist
+ *      [URIs: 24.14.118.59]
+ *  3.0 RCVD_IN_XBL RBL: Received via a relay in Spamhaus XBL
+ *      [70.168.205.81 listed in zen.spamhaus.org]
+ *  2.0 RCVD_IN_BL_SPAMCOP_NET RBL: Received via a relay in bl.spamcop.net
+ *      [Blocked - see <http://www.spamcop.net/bl.shtml?70.168.205.81>]
+ *  2.0 FM_DDDD_TIMES_2 Dual helo + host eq d_d_d_d
+ *  3.7 XMAILER_MIMEOLE_OL_22B61 XMAILER_MIMEOLE_OL_22B61
+ *  0.1 RDNS_DYNAMIC Delivered to trusted network by host with
+ *      dynamic-looking rDNS
+Received: from core3.amsl.com ([127.0.0.1])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id x0C6D9zyTfkJ
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Fri,  1 Feb 2008 12:29:31 -0800 (PST)
+Received: from wsip-70-168-205-81.ri.ri.cox.net (wsip-70-168-205-81.ri.ri.cox.net [70.168.205.81])
+	by core3.amsl.com (Postfix) with SMTP id CE63F3A6994
+	for <zeroconf-archive@lists.ietf.org>; Fri,  1 Feb 2008 12:29:12 -0800 (PST)
+Received: from tadcs ([148.67.124.157])
+	by wsip-70-168-205-81.ri.ri.cox.net (8.13.1/8.13.1) with SMTP id m11KVLut036232;
+	Fri, 1 Feb 2008 15:31:21 -0500
+Message-ID: <002001c86511$533571c0$9d7c4394@tadcs>
+From: <devlze@northernlabs.com>
+To: <zeroconf-archive@lists.ietf.org>
+Subject: ***SPAM*** 51.533 (5) A Kiss So Gentle
+Date: Fri, 1 Feb 2008 15:30:46 -0500
+MIME-Version: 1.0
+Content-Type: text/plain;
+	format=flowed;
+	charset="iso-8859-1";
+	reply-type=original
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1158
+
+Miracle of Love http://24.14.118.59/
+
+
+
+
+From kusakabe.hitomi@chicagoans.com  Tue Feb  5 10:54:30 2008
+Return-Path: <kusakabe.hitomi@chicagoans.com>
+X-Original-To: zeroconf-archive@lists.ietf.org
+Delivered-To: ietfarch-zeroconf-archive@mail.ietf.org
+Received: by mail.ietf.org (Postfix, from userid 51)
+	id 4D9653A6BE7; Tue,  5 Feb 2008 10:38:02 -0800 (PST)
+Received: from n176-u133.cabletel.bg (unknown [89.253.176.133])
+	by mail.ietf.org (Postfix) with SMTP id D53BB3A8F88
+	for <zeroconf-archive@lists.ietf.org>; Tue,  5 Feb 2008 00:44:49 -0800 (PST)
+Received: (qmail 29485 invoked from network); Tue, 5 Feb 2008 10:46:01 +0200
+Received: from unknown (HELO swrha) (105.178.63.221)
+	by n176-u133.cabletel.bg with SMTP; Tue, 5 Feb 2008 10:46:01 +0200
+Message-ID: <47A82249.7020301@chicagoans.com>
+Date: Tue, 5 Feb 2008 10:46:01 +0200
+From: <kusakabe.hitomi@chicagoans.com>
+User-Agent: Thunderbird 2.0.0.6 (Windows/20070728)
+MIME-Version: 1.0
+To: zeroconf-archive@lists.ietf.org
+Subject: A Toast My Love
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+When I'm With You http://76.202.14.103/
+
+
+
+From mtspld@ma.mni.ne.jp  Tue Feb  5 10:56:11 2008
+Return-Path: <mtspld@ma.mni.ne.jp>
+X-Original-To: zeroconf-archive@lists.ietf.org
+Delivered-To: ietfarch-zeroconf-archive@mail.ietf.org
+Received: by mail.ietf.org (Postfix, from userid 51)
+	id BEEAF3A6DA1; Tue,  5 Feb 2008 10:37:56 -0800 (PST)
+Received: from h122.217.29.71.ip.alltel.net (h122.217.29.71.ip.alltel.net [71.29.217.122])
+	by mail.ietf.org (Postfix) with SMTP id 805DC3AA03F
+	for <zeroconf-archive@lists.ietf.org>; Tue,  5 Feb 2008 04:32:16 -0800 (PST)
+Received: (qmail 11992 invoked from network); Tue, 5 Feb 2008 07:32:28 -0500
+Received: from unknown (HELO jzz) (37.203.44.166)
+	by h122.217.29.71.ip.alltel.net with SMTP; Tue, 5 Feb 2008 07:32:28 -0500
+Message-ID: <47A8575C.6070203@ma.mni.ne.jp>
+Date: Tue, 5 Feb 2008 07:32:28 -0500
+From: <mtspld@ma.mni.ne.jp>
+User-Agent: Thunderbird 1.5.0.13 (Windows/20070809)
+MIME-Version: 1.0
+To: zeroconf-archive@lists.ietf.org
+Subject: She will want to have these nights 4ever!
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Your incredible new huge love-stick! http://lryox.measureremember.com
+
+
+

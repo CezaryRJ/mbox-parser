@@ -1,0 +1,2766 @@
+From owner-zeroconf@merit.edu  Tue Feb  1 17:55:38 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA08761
+	for <zeroconf-archive@odin.ietf.org>; Tue, 1 Feb 2000 17:55:37 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 0056D5DDCC; Tue,  1 Feb 2000 17:55:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id E3FBF5DDC3; Tue,  1 Feb 2000 17:55:22 -0500 (EST)
+Received: from slafw.enet.sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id 5B98A5DDA8
+	for <zeroconf@merit.edu>; Tue,  1 Feb 2000 17:55:21 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by slafw.enet.sharplabs.com (8.9.1/8.9.2) with ESMTP id OAA26796
+	for <zeroconf@merit.edu>; Tue, 1 Feb 2000 14:46:24 -0800 (PST)
+Received: by admsrvnt02 with Internet Mail Service (5.5.2448.0)
+	id <1CDZ6NZL>; Tue, 1 Feb 2000 14:53:07 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA53730FF28@MAILSRVNT02>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Cc: "McDonald, Ira" <imcdonald@sharplabs.com>
+Subject: FW: IPP> Service Location for printers - SLP template review
+Date: Tue, 1 Feb 2000 14:44:05 -0800 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi folks,
+
+I just subscribed to IETF ZeroConf WG and found a problem:
+
+I just visited your email archives and noticed that my
+original note (below) was never forwarded on the ZeroConf
+list - don't know why - I never got a non-delivery notice.
+
+The original note below is partially 'old news'.  Since
+then, the IETF IPP WG has finished their final review of
+the SLP 'printer:' template and I've sent the final edits
+to the Internet-Drafts editor (yesterday).
+
+I've appended my release note yesterday to the foot of this
+message.  Comments are always welcome, but the IETF IPP WG
+reached concensus that it was time to register the 1.0 version
+of SLP 'printer:' and move on.
+
+Cheers,
+- Ira McDonald (consulting architect at Sharp Labs America
+  High North Inc
+
+-----Original Message-----
+From: McDonald, Ira [mailto:imcdonald@sharplabs.com]
+Sent: Wednesday, January 19, 2000 3:24 PM
+To: 'zeroconf@merit.edu'
+Cc: 'ipp@pwg.org'; McDonald, Ira
+Subject: IPP> Service Location for printers - SLP template review
+
+
+Hi Zeroconf folks,                    Wednesday (19 January 2000)
+
+I've just been reading with pleasure the newest (10 January 2000)
+Zeroconf Requirements, draft-ietf-zeroconf-reqts-02.txt.  The 
+references to SLPv2 (RFC 2608) and printer discovery scenarios
+led me to forward for your comments the following:
+
+    draft-ietf-svrloc-printer-scheme-04.txt
+    - Definition of 'printer:' URLs for use with SLP 
+      (21 October 1999)
+
+The abstract 'printer:' service template will be registered with IANA
+in the very near future.  I did the October 1999 updates to align
+the template with the final texts of the IPP/1.1 (Internet Printing
+Protocol v1.1) from June 1999 which are 'standards track' (IPP/1.0
+is Experimental, largely because it overloaded 'http:' URLs rather
+than using a dedicated 'ipp:' URL).
+
+The IETF IPP WG is now doing a final review of the SLP 'printer:'
+template.  Harry Lewis (IBM) and I are currently collaborating to
+translate the SLP 'printer:' template to an equivalent LDAP schema,
+also for IANA registration, following the procedures in:
+
+    draft-ietf-svrloc-template-conversion-05.txt
+    - Conversion of LDAP Schemas to and from SLP Templates
+      (22 October 1999)
+
+Comments on the choice of template attributes from you folks would
+be very welcome.  Please send comments to 'ipp@pwg.org'.
+
+Note that, in accordance with IETF SLP WG philosophy, we have *not*
+included state/status attributes (because they are too volatile and
+would therefore cause re-registration storms in SLP).
+
+Comments received by mail by next Wednesday morning, will be reviewed
+at the regular IETF IPP WG Telecon:
+
+Time:     26 January 2000 10:00-12:00 US PST (1:00-3:00 US EST)
+Phone:    888-749-8496
+Passcode: 86037#
+
+Cheers,
+- Ira McDonald (consulting architect at Sharp Labs America)
+  (co-editor of SLP 'printer:' template)
+  High North Inc
+----------------------------------------------------------
+[Release note for SLP 'printer:' v1.0 from 31 January 2000]
+
+Copies: Erik Guttman <Erik.Guttman@germany.sun.com>
+        Carl-Uno Manros <cmanros@cp10.es.xerox.com>
+        SVRLOC WG <srvloc@srvloc.org>
+        IPP WG <ipp@pwg.org>
+
+Hi folks,                                       Monday (31 January 2000)
+
+I've just sent the final version of 'Definition of the Printer Abstract
+Service Type' to the Internet-Drafts editor and posted a shadow copy on
+the PWG server at:
+
+ftp://ftp.pwg.org/pub/pwg/ipp/new_SLP/draft-ietf-svrloc-printer-scheme-05.tx
+t
+
+
+Erik - please register this 'printer:' template with IANA - thanks.
+Carl-Uno Manros (chair IETF IPP WG) wants this 'printer:' template
+registered with IANA as soon as possible.
+
+All changes from the previous (October 1999) draft are based on IETF IPP
+WG reviews Wednesday (12 January 2000) and Wednesday (26 January 2000).
+
+Harry Lewis (IBM) and I are working on an LDAP schema translation of
+this template (following James Kempf's SLP to LDAP conversion spec).
+
+Cheers,
+- Ira McDonald (consulting architect at Sharp Labs America)
+  High North Inc
+  imcdonald@sharplabs.com
+
+------------------------------------------------------------------------
+Changes from previous version (October 1999)
+
+1)  Changed title to 'Definition of Printer Abstract Service Type'
+    (per request of Ron Bergman, Hitachi)
+
+2)  Changed 'template-version' attribute to '1.0'
+    (for IANA-registered version of template)
+
+3)  Corrected typo in 'hostname' element of 'template-url-syntax'
+    (per request of Ron Bergman, Hitachi)
+
+4)  Corrected typo in 'printer-uri-supported' attribute example
+    (per request of Tom Hastings, Xerox)
+
+5)  Revised 'printer-uri-supported', 'uri-authentication-supported', and
+    'uri-security-supported' descriptions of use '>' in ordered lists
+    (for clarity - no change in usage)
+
+6)  Revised 'printer-location' attribute description to state that
+    meaningful support is STRONGLY RECOMMENDED
+    (per request of Tom Hastings, Xerox)
+
+7)  Revised 'printer-location' attribute example
+    (for clarity - no change in usage)
+
+8)  Added new section 5.1 'Rationale for Required Attributes'
+    (per IETF IPP WG review)
+
+9)  Added new section 6.1 'Rationale for Optional Attributes'
+    (per IETF IPP WG review)
+
+10) Corrected contact info in section 13 'Authors Addresses'
+    (for Ira McDonald's current email address)
+
+------------------------------------------------------------------------
+Copies: "Internet Drafts Editor" <internet-drafts@ietf.org>
+        "Pete St. Pierre" <Pete.StPierre@eng.sun.com>
+        "Ira McDonald" <imcdonald@sharplabs.com>
+
+I-D Editor,                                     Monday (31 January 2000)
+
+SVRLOC:
+
+Please place this document in the Internet-Drafts repository named:
+
+    <draft-ietf-svrloc-printer-scheme-05.txt> (January 2000)
+
+It replaces the previous:
+
+    <draft-ietf-svrloc-printer-scheme-04.txt> (October 1999)
+
+This draft has been updated based on the IETF IPP WG's final review of
+the previous (October 1999) draft.  This draft is a conforming superset
+of Appendix E 'Generic Directory Schema' in the IPP/1.1 Model,
+<draft-ietf-ipp-model-v11-04.txt> (work-in-progress, June 1999).
+
+Thanks very much,
+- Ira McDonald (SVRLOC WG and IPP WG member)
+  High North Inc
+  imcdonald@sharplabs.com
+
+------------------------------------------------------------------------
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb  1 23:26:56 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA15694
+	for <zeroconf-archive@odin.ietf.org>; Tue, 1 Feb 2000 23:26:56 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 25FC75DD94; Tue,  1 Feb 2000 23:26:44 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1273C5DDA8; Tue,  1 Feb 2000 23:26:44 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 937A85DD94
+	for <zeroconf@merit.edu>; Tue,  1 Feb 2000 23:26:42 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id UAA23952
+	for <zeroconf@merit.edu>; Tue, 1 Feb 2000 20:26:41 -0800 (PST)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (mailgate1.apple.com- SMTPRS 2.0.15) with ESMTP id <B0009706319@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Tue, 01 Feb 2000 20:26:34 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id UAA18274
+	for <zeroconf@merit.edu>; Tue, 1 Feb 2000 20:26:33 -0800 (PST)
+Message-Id: <200002020426.UAA18274@scv1.apple.com>
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Tue, 1 Feb 2000 20:26:33 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>By the strict definition in the doc now, such a network would be
+>a ZC network because it would have at least one ZC protocol.
+
+That is precisely the point I am raising. Right now, the draft says:
+
+>A Zeroconf network is a network that at some point in time has
+>one or more Zeroconf protocols.
+
+I'm starting to wonder how useful this definition is. Under this 
+definition you can call a network a "Zeroconf network" even if it is 
+currently using no ZC protocols at all, just as long as at it ran at 
+least one of the Zeroconf protocols, however briefly, sometime in the 
+past.
+
+I wonder how much sense that will make to people outside the Working 
+Group. I'm sure that's not what they have in mind when they think of 
+setting up a Zeroconf network. Perhaps we should talk about a "pure 
+Zeroconf network" as one running Zeroconf protocols in all of the four 
+areas we are discussing (Figures 1 and 2), and a "hybrid Zeroconf 
+network" as one currently running at least one Zeroconf protocol (Figures 
+3 and 4).
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb  1 23:27:55 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA15707
+	for <zeroconf-archive@odin.ietf.org>; Tue, 1 Feb 2000 23:27:52 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 518425DDCC; Tue,  1 Feb 2000 23:27:44 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 40D6F5DDC5; Tue,  1 Feb 2000 23:27:44 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id CC9CE5DDA8
+	for <zeroconf@merit.edu>; Tue,  1 Feb 2000 23:27:42 -0500 (EST)
+Received: from mailgate2.apple.com ([17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id UAA24100
+	for <zeroconf@merit.edu>; Tue, 1 Feb 2000 20:27:42 -0800 (PST)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0002790178@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Tue, 01 Feb 2000 20:27:32 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv3.apple.com (8.9.3/8.9.3) with SMTP id UAA23067
+	for <zeroconf@merit.edu>; Tue, 1 Feb 2000 20:27:31 -0800 (PST)
+Message-Id: <200002020427.UAA23067@scv3.apple.com>
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Tue, 1 Feb 2000 20:27:31 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>ICMP echo for this, ICMP get netmask for that. seems to me you'll end
+>up reinventing router discovery (rfc1256), which, by the way, is based
+>on icmp. is there any reason not to use that? 
+
+I think this is a *VERY* good question, which needs discussion.
+
+I must admit that I had assumed that ZEROCONF would use two complementary 
+but disjoint mechanisms: Something like net 169.254 claim-and-defend for 
+purely link-local (non-routable) addresses, and DHCP server-assigned 
+addresses for all larger scope (routable) addresses.
+
+However, Myron points out a viable alternative, which is to say that the 
+ZEROCONF WG does NOT endorse DHCP as the recommended configuration 
+mechanism for routed networks, but instead recommends a different 
+mechanism whereby a host discovers the network numbmer and then uses 
+claim-and-defend to grab addresses at will on that (sub)network.
+
+Or, we could say that ZEROCONF hosts are required to implement all three 
+configuration mechanisms.
+
+Comments?
+
+Stuart Cheshire <cheshire@apple.com>
+ * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+ * Wizard Without Portfolio, Apple Computer
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb 22 17:44:11 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA26141
+	for <zeroconf-archive@odin.ietf.org>; Tue, 22 Feb 2000 17:44:09 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E672A5DE5B; Tue, 22 Feb 2000 17:43:41 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D0CE75DE59; Tue, 22 Feb 2000 17:43:41 -0500 (EST)
+Received: from ganymede.or.intel.com (ganymede.or.intel.com [134.134.248.3])
+	by segue.merit.edu (Postfix) with ESMTP id 352465DE57
+	for <zeroconf@merit.edu>; Tue, 22 Feb 2000 17:43:37 -0500 (EST)
+Received: from SMTP (orsmsxvs02-1.jf.intel.com [192.168.65.201])
+	by ganymede.or.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id OAA05429;
+	Tue, 22 Feb 2000 14:43:16 -0800 (PST)
+Received: from orsmsx29.jf.intel.com ([192.168.70.29]) by 192.168.70.201
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Tue, 22 Feb 2000 22:43:16 0000 (GMT)
+Received: by orsmsx29.jf.intel.com with Internet Mail Service (5.5.2448.0)
+	id <FFKTAJJH>; Tue, 22 Feb 2000 14:43:13 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F27F7@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: "'Stuart Cheshire'" <cheshire@apple.com>, zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Tue, 22 Feb 2000 14:43:04 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="ISO-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Stuart,
+
+This response isn't as quick ;-) but none the less here it is ...
+
+
+> Thanks for this quick response Myron.
+> 
+> I'll try to answer your questions.
+> 
+> >First, AutoNet is used as an example. People understand 
+> autonet, thus they
+> >understand the example. If we change AutoNet to something 
+> else they will be
+> >thinking about the something else instead of the purpose of 
+> the example.
+> 
+> Well, currently, 'AutoNet' is just a draft, and you can't reference a 
+> draft in an RFC. AutoNet would have to be published as an 
+> RFC, and in its 
+> current form, I don't think that would be appropriate without some 
+> significant revisions. The revisions I think will be necessary are 
+> breaking the artifical dependency between IPv4 link-local 
+> addresses (aka 
+> 'AutoNet') and DHCP, hence my comment about not implying too 
+> much of an 
+> interdependency in this document.
+
+We should have the requirements draft done in within a month. Do you think
+you can produce an "autonet" RFC in a month???
+
+I think the rules are that it is okay to reference an I-D as long as it is
+clearly labeled as "a work in progress".  
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb 22 17:48:30 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA26302
+	for <zeroconf-archive@odin.ietf.org>; Tue, 22 Feb 2000 17:48:28 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id BF39D5DE60; Tue, 22 Feb 2000 17:47:25 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9367D5DE6C; Tue, 22 Feb 2000 17:47:25 -0500 (EST)
+Received: from baucis.sc.intel.com (baucis.sc.intel.com [143.183.152.22])
+	by segue.merit.edu (Postfix) with ESMTP id 78F8B5DE60
+	for <zeroconf@merit.edu>; Tue, 22 Feb 2000 17:47:22 -0500 (EST)
+Received: from SMTP (fmsmsxvs03-1.fm.intel.com [132.233.42.203])
+	by baucis.sc.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id OAA21594
+	for <zeroconf@merit.edu>; Tue, 22 Feb 2000 14:47:17 -0800 (PST)
+Received: from fmsmsx19.fm.intel.com ([132.233.48.19]) by 132.233.48.203
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Tue, 22 Feb 2000 22:47:16 0000 (GMT)
+Received: by fmsmsx19.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <FFKB8LVM>; Tue, 22 Feb 2000 14:47:15 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F27F8@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: FW: Comments on draft-ietf-zeroconf-reqts-02
+Date: Tue, 22 Feb 2000 14:47:09 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Where discussion has ceased, the changes have been made. I'm in the process
+of catching up on the other discussion points. Please follow through with
+additional mail if you have additional opinions.
+
+-myron
+
+-----Original Message-----
+From: Hattig, Myron 
+Sent: Friday, January 28, 2000 1:15 PM
+To: 'Stuart Cheshire'
+Cc: 'Thomas Narten'; 'Erik Guttman'; 'Erik Nordmark'
+Subject: FW: Comments on draft-ietf-zeroconf-reqts-02
+
+
+Stuart,
+
+Thanks for taking the time to read the draft so carefully and to make such
+detailed comments!! Personally, I prefer the comments get posted to the list
+to avoid surprising anyone and to start building consensus sooner instead of
+later. 
+
+Please send future emails to myron.hattig@intel.com.
+
+> One general comment I have is that I think we need to stress ZEROCONF
+> protocols rather than ZEROCONF networks.  Talking about ZEROCONF networks
+> raises the question of what is and what is not a ZEROCONF network.  I
+think
+> we're finding that that can be pretty ambiguous.  I think that talking
+about
+> what is and what is not a ZEROCONF protocol is much easier to define.  It
+> might be worth putting some explanation to that effect into the abstract
+or
+> the introduction which says that although a ZEROCONF network is a useful
+> concept, the purpose of this document is not to classify any particular
+> network as being either the ZEROCONF or non-ZEROCONF.  Instead, there is a
+> spectrum of networks that may use some all all or none of the ZEROCONF
+> protocols.
+
+I think section 2 says this, but the abstract/intro may need some work. 
+
+> On page 4 you reference the IPv4 Auto-Configuration Internet draft.  I'm
+> planning on taking over that draft and recasting it as IPv4 Link Local
+> Addressing which is independent from DHCP.  At some stage we will have to
+> update the reference.
+
+Just to let you know I'm working a AutoNet related draft also. It allows
+auto-addressing across multiple IP subnets. I'm calling it AutoNet++. We
+have already implemented it on Linux. ;-)  Regardless of either of our
+drafts, I'm hesitant to change the reqmts draft for a couple of reasons.
+
+First, AutoNet is used as an example. People understand autonet, thus they
+understand the example. If we change AutoNet to something else they will be
+thinking about the something else instead of the purpose of the example.
+
+Second, I don't want to appear to favor one solution over another. I've gone
+to great pains to make this obvious to the reader and WG members. If I start
+changing examples to use "new" protocols, I may appear to be favoring that
+protocol. Right now the doc only uses examples published before summer 1999.
+
+> Page 5:
+>
+>    A non-Zeroconf protocol requires user configuration or relies on a
+>    centralized server.
+>
+> I would say, "Requires user configuration or relies on configuration
+> information received from a centralized server."
+
+Agree. Will change.
+
+>    A host using a Zeroconf protocol must easily transition in three
+>    ways:
+>    1. from a Zeroconf protocol to a non-Zeroconf protocol,
+>    2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+>    3. from a Zeroconf protocol back to a Zeroconf protocol (possibly
+>      with new values).
+>
+> I think of the wording of the third case doesn't make sense.  I think it
+> makes more sense to say, "ZEROCONF protocols must be prepared to
+reconfigure
+> when the network environment changes.  This is a general rule for all
+> ZEROCONF protocols."
+
+Your suggestion is true for all three case. In fact it is a common 
+pre-requisite to any them. Also, the "host" must be prepared, not
+the "protocol". How about this:
+
+Hosts using ZEROCONF protocols must be prepared to reconfigure when the
+network environment changes.  This is a general rule for all ZEROCONF
+protocols. This requires a host using a Zeroconf protocol to transition in
+three ways:
+1. from a Zeroconf protocol to a non-Zeroconf protocol,
+2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+3. a Zeroconf protocol must be able to re-initialize with possibly with new
+   values.
+
+>    For example, if a DHCP server comes on-line after
+>    hosts are configured with [AutoNet], then hosts must re-configure
+>    with DHCP.
+>
+> After I recast Autonet as IPv4 link local addressing, this will no longer
+> make sense, because hosts may always have link local addresses all the
+time.
+> I think it should say, "If a DHCP server comes on-line, then hosts which
+are
+> waiting for DHCP configuration should detect the server's appearance and
+> obtain an address."
+
+Again, this is an example to illustrate a point. I'm not promoting any
+particular protocol. If the example is changed to something the reader is
+not familiar with, they will focus on the new protocol and miss the point of
+the example. I think the text should remain unchanged.
+
+>    For example, if a bridge is
+>    installed between two networks where hosts were already configured
+>    using [AutoNet], then hosts must re-configure with [AutoNet] to
+>    ensure duplicate IP addresses do not exist.
+>
+> "...if a bridge is installed between two networks then hosts which are
+using
+> IPv4 link local addresses will have to detect addressing conflicts and
+> reconfigure if necessary."
+
+Your wording is better so I'll use it, but I'll leave [Autonet].
+
+> Page 6:
+>
+>    For example if the DHCP server broadcasts an "DHCPAck" with a new
+>    "I'm Here" option or "I'm Leaving" option as the proactive
+>    mechanism, then [AutoNet] must still send a periodic DCHPDiscover
+>    message.
+>
+> "...then DHCP clients must still send a periodic DCHPDiscover message."
+
+Good catch!
+
+>    Within a single network, the non-Zeroconf protocol-B (with its
+>    server) may coexist with the Zeroconf protocol-C.
+>
+> I would suggest Zeroconf addressing protocol-A with non-Zeroconf name
+> resolution protocol-D for the example.  I personally think it is less
+> convincing that someone would set up a DNS server on the network but not
+set
+> up a DHCP server.  For example, the Apple AirPort base station implements
+a
+> DHCP server but not a DNS server.
+
+I didn't think it mattered whether the point is made with a realistic or
+non-realistic example. Since it may cause a distraction to the reader, I'll
+change it.
+
+>    Alternately, Zeroconf and non-Zeroconf protocols from a single
+>    area SHOULD not coexist during normal operation. They may coexist
+>    during a transition, but the coexistence period SHOULD be minimal.
+>
+> "In contrast, Zeroconf and non-Zeroconf protocols..."
+
+Yours is better wording, I'll change it.
+
+> Page 7:
+>
+>    Web browsing to an URL utilizes domain name to IP resolution. This
+>    resolution capability allows applications (and sometimes users) to
+>    remain blissfully unaware of IP addresses.
+>
+> I don't know what "(and sometimes users)" adds to that sentence.  I think
+it
+> can be deleted.
+
+I'll add an FTP exmple that shows a person entering a name instead of IP
+address then change "(and sometimes users)" to "and users". This will
+clarify the point I was trying to make.
+
+> Page 8:
+>
+>    Service - A service is set of processes that do a wide range of
+>    network related things. Services range from printing to
+>    transferring a file to providing on-line pizza order and delivery
+>    service. A service may find some network management information,
+>    perform some action, control some resource, or perform just about
+>    any network-related function.
+>
+> A user may think of a service as a process that does something. I think
+that
+> for the purpose of this document we need to be a very precise.  For the
+> purpose of this document a service is a process that speaks a particular
+> protocol.  A user may think of a printing (in an abstract sense) as a
+> service. From the point of view of a piece of software which is an LPR
+> client, the LPR service is any process which speaks the LPR protocol.
+Some
+> other printing process which speaks some other printing protocol does not
+> provide any service to the LPR client.  Also, some process which speaks
+the
+> LPR protocol but does not print may not be considered to a printing
+service
+> by a human user but nevertheless it is a service from the point of view of
+> the LPR client.  This service is most definitely an LPR service.  Whether
+> the service prints on white paper or prints on transparencies or send the
+> document via fax or archives of the document onto a recordable CD is
+> something that can be discovered via means such as SLP attributes.  It may
+> be tempting to to try to define "service" in terms of human concepts but
+> human concepts are notoriously vague, and vagueness is death in network
+> protocols.
+
+Good point. I'll change it to "A service is set of processes that speaks a
+particular  protocol."
+
+>    Service Characteristics - Characteristics differentiate services.
+>    They may differential the same type of service in terms of
+>
+> "They may differentiate ..."
+
+I'll fix the typo.
+
+>    Service Discovery Protocol - A service discovery protocol enables
+>    a client (or clients) to discover a server (or servers) of a
+>    particular service. A service discovery protocol is an application
+>    layer protocol that relies on, but does not interact with, network
+>    and transport protocol layers.
+>
+> I don't know what you mean by "does not interact with" .  I think that it
+> can be deleted.
+
+Agree. It will be deleted.
+
+> Page 9:
+>
+>    Peer - A process that is both a client and service for a specific
+>    service protocol.
+>
+> This mean "... both a client and server ...".  However I'm not sure that
+> saying "both a client and server" fully explains a peer to peer protocol.
+> ARP is a peer to peer protocol.  Would you say that a host using the ARP
+> protocol is both an ARP client and an ARP server?
+
+We're not trying to describe a peer-to-peer protocol. We are describing a
+peer within serivce discovery. I almost left the definition out until seeing
+it used in Erik's example, thus a definition was required. In the context of
+a
+service discovery protocol, I think the definition is accurate. I'd like to
+hear more thoughts on this.
+
+>    Server - A process that offers a service to clients through a
+>    service discovery protocol.
+>
+> You should delete, "through a service discovery protocol." A particular
+FTP
+> server may not use a service discovery protocol but that doesn't mean that
+> it's not offering FTP service.
+
+Again the context is service discovery not "network services". If a service
+can't be found by a service discovery protocol, then it has no relevance
+within the context of our discussion. I think the current definition is
+okay.
+
+>    Service Advertisement - A solicited response issued by a server or
+>    registry. The advertisement provides the service identifier and
+>    possibly service characteristics.
+>
+> I think that an advertisement is normally considered an unsolicited
+> response.  If you think about the way that word is normally used in the
+> English language, it means unsolicited information, not information that
+you
+> asked for.  I don't think that there is any difference between an
+> advertisement and an announcement.
+
+This is a typo. Should have been "unsolicited".
+
+> Page 10:
+>
+>    A service discovery protocol MUST allow a client to discover then
+>    utilize a service.
+>
+> I think this statement is too strong.  I think it would be sufficient to
+> say, " A service discovery protocol MUST allow a client to discover a
+> service."  I can discover LPR service without necessarily having an LPR
+> client on my computer.  I think it is requiring too much of a service
+> discovery protocol to say that it MUST allow me to utilize a service that
+I
+> have discovered.
+
+Okay, I'll change it.
+
+>    A service discovery protocol SHOULD limit the use of Service
+>    Announcement messages so as to not flood the network unnecessarily
+>    and most importantly not cause 'broadcast storms'.
+>
+> I think if we can delete of the comment about broadcast storms.
+Unnecessary
+> network traffic is not the same as a broadcast storm.
+
+True. It will be changed to your suggestion.
+
+>    A service discovery protocol MUST not cause scalability or
+>    operational problems in larger non-Zeroconf networks if clients
+>    and servers somehow transition to such networks.
+>
+> I think we can delete the word "somehow" in this sentence.
+
+Delete will be done.
+
+>    A Zeroconf network is a network that at some point in time has one
+>    or more Zeroconf protocols. By this definition, almost all
+>    networks are Zeroconf networks. This definition is intentionally
+>    broad to avoid mandating a network to be Zeroconf or exclude
+>    another network from using a Zeroconf protocol. The Internet and
+>    corporate LANs are considered non-Zeroconf networks because,
+>    today, these networks have little use for Zeroconf protocols.
+>
+> I wonder if this definition is too strong.  Perhaps we should say that a
+> ZEROCONF network to is one where one or more of the hosts on that network
+> are *currently* correctly running ZEROCONF protocols.
+
+I'll think about this more ...
+
+> Page 12:
+>
+>    The Figure 2 Zeroconf network has a small number of hosts
+>    connected through an Ethernet hub. This may be a small office
+>    network or a gaming network.
+>
+> I think it might be interesting to to give a slightly different examples
+> here.  Instead of having physical wires and a hub we could have a
+collection
+> of laptop computers with 802.11 wireless interfaces, communicating peer to
+> peer without a base station.
+
+What is the benefit of the different example? Just seems like more work to
+me. ;-)
+
+> Page 13:
+>
+>    In this topology, broadcast packets reach all hosts and routing
+>    only occurs to communicate between Zeroconf and non-Zeroconf
+>    networks. All hosts SHOULD rely on netmask and the default route
+>    as a normal IP host does when determining to ARP or to forward
+>    packets to the default route.
+>
+> I don't think I understand this example.  If this is truly a ZEROCONF
+> network then how do the hosts discover their netmask and the default
+gateway
+> they are supposed to use?
+
+Is it that you don't understand the assumed requirements of using 
+netmask and default route? OR 
+Is it that there is no current ZC solution for the problem? 
+Since I'm 99.99% sure that you understand the example and assumed
+requirements ;-) 
+
+> Page 15:
+>
+>    Zeroconf protocols that communicate between a host and a router to
+>    configure the host MAY be considered.
+>
+> This sentence seems to be self contradictory.  If a host communicates with
+> some distinguished machine on the network to configure itself, how can
+that
+> possibly be called ZEROCONF? The protocol you are talking about is DHCP
+and
+> DHCP is a non-ZEROCONF protocol.
+
+The source of the text comes from comments in our last meeting and on the
+list from Matt Squire, Steve Deering, and others that hope to extend these
+protocols into a multiple IP network solution some day. My understanding of
+the group concensus is that no one wants to solve this problem today, but we
+don't want to preclude a future solution. 
+
+How about this:
+Zeroconf protocols may include communication between a host and a router,
+but only if the router appears as just another host. In otherwords, the
+protocol MUST NOT require the host to act differently in any way when a
+router is present.
+
+> Page 16:
+>
+>    All Zeroconf protocols MUST operate in single IP networks
+>    (isolated and connected)
+>
+> I think this is unclear.  Perhaps it should say, "All ZEROCONF protocols
+> must operate both in single isolated IP networks, and in single IP
+networks
+> that are connected to larger networks."
+
+Okay, I'll change it.
+
+Stuart, I'll respond to the other comments individually. (The scenarios 
+section still needs a lot of work.) I'll either change the document, 
+ask you directly, or take the issue to the list. 
+
+Erik, have your heard back from the DNS/Mcast folks about ideas for
+scenarios?
+
+-myron
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb 22 17:54:01 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA26532
+	for <zeroconf-archive@odin.ietf.org>; Tue, 22 Feb 2000 17:53:58 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8C9465DE51; Tue, 22 Feb 2000 17:53:49 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7930F5DE08; Tue, 22 Feb 2000 17:53:49 -0500 (EST)
+Received: from thalia.fm.intel.com (thalia.fm.intel.com [132.233.247.11])
+	by segue.merit.edu (Postfix) with ESMTP id B95FF5DDA6
+	for <zeroconf@merit.edu>; Tue, 22 Feb 2000 17:53:44 -0500 (EST)
+Received: from SMTP (fmsmsxvs02-1.fm.intel.com [132.233.42.202])
+	by thalia.fm.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id WAA14178
+	for <zeroconf@merit.edu>; Tue, 22 Feb 2000 22:54:22 GMT
+Received: from fmsmsx18.intel.com ([132.233.48.18]) by 132.233.48.202
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Tue, 22 Feb 2000 22:53:42 0000 (GMT)
+Received: by fmsmsx18.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <FFJ0K5N6>; Tue, 22 Feb 2000 14:53:41 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F27FA@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: FW: Comments on draft-ietf-zeroconf-reqts-02
+Date: Tue, 22 Feb 2000 14:53:32 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Stuart,
+
+> >We're not trying to describe a peer-to-peer protocol. We are 
+> describing a
+> >peer within serivce discovery. I almost left the definition out until
+> >seeing it used in Erik's example, thus a definition was 
+> required. In the
+> >context ofa service discovery protocol, I think the 
+> definition is accurate.
+> >I'd like to hear more thoughts on this.
+
+I removed the definition of peer and will modify later sections so it does
+not have to be defined.
+
+> >Again the context is service discovery not "network 
+> services". If a service
+> >can't be found by a service discovery protocol, then it has 
+> no relevance
+> >within the context of our discussion. I think the current 
+> definition is
+> >okay.
+> 
+> I thought we were defining terminology, as it is currently 
+> understood. As 
+> it is currently understood, not all services on the net are 
+> discoverable 
+> using a service discovery protocol. I expect that as we move forward, 
+> more services will be discoverable, but not necessarily all.
+
+I find myself wanting to repeat the same response I gave last time. Maybe
+someone else can provide some insight. For now I'll leave it.
+
+-myron
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Feb 22 18:33:37 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id SAA27575
+	for <zeroconf-archive@odin.ietf.org>; Tue, 22 Feb 2000 18:33:36 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 961B55DE08; Tue, 22 Feb 2000 18:30:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 840675DE55; Tue, 22 Feb 2000 18:30:35 -0500 (EST)
+Received: from ganymede.or.intel.com (ganymede.or.intel.com [134.134.248.3])
+	by segue.merit.edu (Postfix) with ESMTP id 91E995DDA6
+	for <zeroconf@merit.edu>; Tue, 22 Feb 2000 18:30:33 -0500 (EST)
+Received: from SMTP (orsmsxvs02-1.jf.intel.com [192.168.65.201])
+	by ganymede.or.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id PAA16423;
+	Tue, 22 Feb 2000 15:30:32 -0800 (PST)
+Received: from orsmsx29.jf.intel.com ([192.168.70.29]) by 192.168.70.201
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Tue, 22 Feb 2000 23:30:31 0000 (GMT)
+Received: by orsmsx29.jf.intel.com with Internet Mail Service (5.5.2448.0)
+	id <FFKTAMD6>; Tue, 22 Feb 2000 15:30:26 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F27FD@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: "'Stuart Cheshire'" <cheshire@apple.com>, zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Tue, 22 Feb 2000 15:30:20 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="ISO-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Stuart,
+
+Here is the intro to 2.3 Zeroconf Networks
+-------
+A Zeroconf network is a network that at some point in time has one or more
+Zeroconf protocols. By this definition, almost all networks are Zeroconf
+networks. This definition is intentionally broad to avoid mandating a
+network to be Zeroconf or exclude another network from using a Zeroconf
+protocol. The Internet and corporate LANs are considered non-Zeroconf
+networks because, today, these networks have little use for Zeroconf
+protocols. 
+
+This section describes the existing Internet network model, the Zeroconf
+topologies, and a summary of the key points. 
+-------
+To me this addresses the concerns you express. More thoughts???
+
+-myron
+
+> -----Original Message-----
+> From: Stuart Cheshire [mailto:cheshire@apple.com]
+> Sent: Tuesday, February 01, 2000 8:27 PM
+> To: zeroconf@merit.edu
+> Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> 
+> >By the strict definition in the doc now, such a network would be
+> >a ZC network because it would have at least one ZC protocol.
+> 
+> That is precisely the point I am raising. Right now, the draft says:
+> 
+> >A Zeroconf network is a network that at some point in time has
+> >one or more Zeroconf protocols.
+> 
+> I'm starting to wonder how useful this definition is. Under this 
+> definition you can call a network a "Zeroconf network" even if it is 
+> currently using no ZC protocols at all, just as long as at it ran at 
+> least one of the Zeroconf protocols, however briefly, sometime in the 
+> past.
+> 
+> I wonder how much sense that will make to people outside the Working 
+> Group. I'm sure that's not what they have in mind when they think of 
+> setting up a Zeroconf network. Perhaps we should talk about a "pure 
+> Zeroconf network" as one running Zeroconf protocols in all of 
+> the four 
+> areas we are discussing (Figures 1 and 2), and a "hybrid Zeroconf 
+> network" as one currently running at least one Zeroconf 
+> protocol (Figures 
+> 3 and 4).
+> 
+> Stuart Cheshire <cheshire@apple.com>
+>  * <A HREF="http://ResComp.Stanford.EDU/~cheshire/">Web Page</A>
+>  * Wizard Without Portfolio, Apple Computer
+> 
+> 
+> 
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Feb 24 17:29:05 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA11939
+	for <zeroconf-archive@odin.ietf.org>; Thu, 24 Feb 2000 17:29:05 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 00ED05DDC1; Thu, 24 Feb 2000 17:28:56 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id E08B35DDC5; Thu, 24 Feb 2000 17:28:56 -0500 (EST)
+Received: from polaris-xch.sisa.samsung.com (unknown [209.111.66.250])
+	by segue.merit.edu (Postfix) with ESMTP id 59FE45DDC1
+	for <zeroconf@merit.edu>; Thu, 24 Feb 2000 17:28:54 -0500 (EST)
+Received: by polaris-xch.ssi.samsung.com with Internet Mail Service (5.5.2232.9)
+	id <FGN1SAHD>; Thu, 24 Feb 2000 14:28:56 -0800
+Message-ID: <7DFF75861D2FD311955700A0C9E5FF57F69346@polaris-xch.ssi.samsung.com>
+From: Richard Humpleman - SISA <richardh@sisa.samsung.com>
+To: "Hattig, Myron" <myron.hattig@intel.com>
+Cc: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: Comments on draft-ietf-zeroconf-reqts-02
+Date: Thu, 24 Feb 2000 14:28:53 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2232.9)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>>    A host using a Zeroconf protocol must easily transition in three
+>>    ways:
+>>    1. from a Zeroconf protocol to a non-Zeroconf protocol,
+>>    2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+>>    3. from a Zeroconf protocol back to a Zeroconf protocol (possibly
+>>      with new values).
+>>
+>> I think of the wording of the third case doesn't make sense.  I think it
+>> makes more sense to say, "ZEROCONF protocols must be prepared to
+reconfigure
+>> when the network environment changes.  This is a general rule for all
+>> ZEROCONF protocols."
+>
+>Your suggestion is true for all three case. In fact it is a common 
+>pre-requisite to any them. Also, the "host" must be prepared, not
+>the "protocol". How about this:
+>
+>Hosts using ZEROCONF protocols must be prepared to reconfigure when the
+>network environment changes.  This is a general rule for all ZEROCONF
+>protocols. This requires a host using a Zeroconf protocol to transition in
+>three ways:
+>1. from a Zeroconf protocol to a non-Zeroconf protocol,
+>2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+>3. a Zeroconf protocol must be able to re-initialize with possibly with new
+>   values.
+>
+
+Hello Myron,
+
+Is the intention of the writing here that there is no stand-alone Zeroconf
+host ie all Zeroconf hosts must support the office-LAN-config? For example
+an internet alarm clock or toaster that will never be taken to the office
+must still include DHCP client?
+
+Is a Zeroconf host = (Zeroconf + Office-LAN-config) host?
+
+If so maybe we shouldn't call it Zeroconf (call it Multiconf instead?) or
+take out the requirement for the office protocols?
+
+Thanks,
+Richard Humpleman,
+Samsung.
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Feb 24 17:49:48 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA12225
+	for <zeroconf-archive@odin.ietf.org>; Thu, 24 Feb 2000 17:49:46 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 7FDCB5DDB9; Thu, 24 Feb 2000 17:49:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6BA9F5DD9A; Thu, 24 Feb 2000 17:49:34 -0500 (EST)
+Received: from senie.com (anise.senie.com [199.125.85.28])
+	by segue.merit.edu (Postfix) with ESMTP id EC2765DDB9
+	for <zeroconf@merit.edu>; Thu, 24 Feb 2000 17:49:32 -0500 (EST)
+Received: from senie.com (anise.senie.com [199.125.85.28])
+	by senie.com (8.8.7/8.8.7) with ESMTP id RAA27437;
+	Thu, 24 Feb 2000 17:49:16 -0500
+Message-ID: <38B5B56C.81E68A77@senie.com>
+Date: Thu, 24 Feb 2000 17:49:16 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.7 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Richard Humpleman - SISA <richardh@sisa.samsung.com>
+Cc: "Hattig, Myron" <myron.hattig@intel.com>,
+        "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+References: <7DFF75861D2FD311955700A0C9E5FF57F69346@polaris-xch.ssi.samsung.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Richard Humpleman - SISA wrote:
+> 
+> >>    A host using a Zeroconf protocol must easily transition in three
+> >>    ways:
+> >>    1. from a Zeroconf protocol to a non-Zeroconf protocol,
+> >>    2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+> >>    3. from a Zeroconf protocol back to a Zeroconf protocol (possibly
+> >>      with new values).
+> >>
+> >> I think of the wording of the third case doesn't make sense.  I think it
+> >> makes more sense to say, "ZEROCONF protocols must be prepared to
+> reconfigure
+> >> when the network environment changes.  This is a general rule for all
+> >> ZEROCONF protocols."
+> >
+> >Your suggestion is true for all three case. In fact it is a common
+> >pre-requisite to any them. Also, the "host" must be prepared, not
+> >the "protocol". How about this:
+> >
+> >Hosts using ZEROCONF protocols must be prepared to reconfigure when the
+> >network environment changes.  This is a general rule for all ZEROCONF
+> >protocols. This requires a host using a Zeroconf protocol to transition in
+> >three ways:
+> >1. from a Zeroconf protocol to a non-Zeroconf protocol,
+> >2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+> >3. a Zeroconf protocol must be able to re-initialize with possibly with new
+> >   values.
+> >
+> 
+> Hello Myron,
+> 
+> Is the intention of the writing here that there is no stand-alone Zeroconf
+> host ie all Zeroconf hosts must support the office-LAN-config? For example
+> an internet alarm clock or toaster that will never be taken to the office
+> must still include DHCP client?
+
+I would argue that YES, you have to be able to handle being DHCP client.
+At least some users, EVEN HOME USERS, will have networks large enough
+and complex enough to be running DHCP and want to be able to still talk
+to their alarm clock and toaster.
+
+> 
+> Is a Zeroconf host = (Zeroconf + Office-LAN-config) host?
+
+The issue here is whether the case where DHCP or other config is in use
+is necessarily an "Office." I disagree (as stated above) with that
+assessment.
+
+If you build a device which cannot handle transitioning to a configured
+case, then how do you have that device function on a LAN with devices
+that DO transition? The user workstations are not necessarily capable of
+communicating using multiple IP addresses, one zeroconf, one assigned.
+If we went to IPv6 this would be less of an issue, since there is
+provision in IPv6 for multiple IP addresses on a node and site-local
+addresses.
+
+While SOME systems using IPv4 will handle multiple addresses, many will
+not. I don't think it's a reasonable requirement that Zeroconf systems
+be able to handle multiple IP addresses (and figure out which one to
+use) to accomodate devices which don't handle the transition case.
+
+> 
+> If so maybe we shouldn't call it Zeroconf (call it Multiconf instead?) or
+> take out the requirement for the office protocols?
+
+I guess I thought the goal was to allow devices to function when no
+master config server or human configuration is performed. That devices
+still need to be able to function in the case where someone does
+configure addresses or a config server is present is, I hope, assumed.
+
+Just my two cents on the issue...
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.            http://www.amaranthnetworks.com
+
+
+
+From owner-zeroconf@merit.edu  Fri Feb 25 02:48:43 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA03242
+	for <zeroconf-archive@odin.ietf.org>; Fri, 25 Feb 2000 02:48:43 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2333F5DD9A; Fri, 25 Feb 2000 02:46:57 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 06E515DDA8; Fri, 25 Feb 2000 02:46:57 -0500 (EST)
+Received: from eclipse.pacifier.com (eclipse.pacifier.com [199.2.117.78])
+	by segue.merit.edu (Postfix) with ESMTP id 2B72F5DD9A
+	for <zeroconf@merit.edu>; Fri, 25 Feb 2000 02:46:55 -0500 (EST)
+Received: from mhattig (ip183.pdx2.pacifier.com [216.65.144.183])
+	by eclipse.pacifier.com (8.9.3/8.9.3pop) with SMTP id XAA01670
+	for <zeroconf@merit.edu>; Thu, 24 Feb 2000 23:46:22 -0800 (PST)
+Message-ID: <003601bf7f64$9b41c860$1502fea9@pacifer.com>
+From: "Myron Hattig" <mhattig@pacifier.com>
+To: <zeroconf@merit.edu>
+References: <7DFF75861D2FD311955700A0C9E5FF57F69346@polaris-xch.ssi.samsung.com> <38B5B56C.81E68A77@senie.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+Date: Thu, 24 Feb 2000 23:47:44 -0800
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.00.2615.200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2615.200
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Hi Richard,
+
+Daniel's response represents my understanding of the common thinking. I also
+agree with these thoughts because many home networks will have DHCP servers.
+I hope to advance a solution that does not require a DHCP server in a home
+network, but IMHO it would be impractical to have an IP host config ZC
+protocol that does not operate in the presence of a DHCP server. Also, I
+think it would be equally impractical to build a product that did not
+operate in the presence of a DHCP server.
+
+-myron
+
+----- Original Message -----
+From: Daniel Senie <dts@senie.com>
+To: Richard Humpleman - SISA <richardh@sisa.samsung.com>
+Cc: Hattig, Myron <myron.hattig@intel.com>; <zeroconf@merit.edu>
+Sent: Thursday, February 24, 2000 2:49 PM
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+
+
+> Richard Humpleman - SISA wrote:
+> >
+> > >>    A host using a Zeroconf protocol must easily transition in three
+> > >>    ways:
+> > >>    1. from a Zeroconf protocol to a non-Zeroconf protocol,
+> > >>    2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+> > >>    3. from a Zeroconf protocol back to a Zeroconf protocol (possibly
+> > >>      with new values).
+> > >>
+> > >> I think of the wording of the third case doesn't make sense.  I think
+it
+> > >> makes more sense to say, "ZEROCONF protocols must be prepared to
+> > reconfigure
+> > >> when the network environment changes.  This is a general rule for all
+> > >> ZEROCONF protocols."
+> > >
+> > >Your suggestion is true for all three case. In fact it is a common
+> > >pre-requisite to any them. Also, the "host" must be prepared, not
+> > >the "protocol". How about this:
+> > >
+> > >Hosts using ZEROCONF protocols must be prepared to reconfigure when the
+> > >network environment changes.  This is a general rule for all ZEROCONF
+> > >protocols. This requires a host using a Zeroconf protocol to transition
+in
+> > >three ways:
+> > >1. from a Zeroconf protocol to a non-Zeroconf protocol,
+> > >2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+> > >3. a Zeroconf protocol must be able to re-initialize with possibly with
+new
+> > >   values.
+> > >
+> >
+> > Hello Myron,
+> >
+> > Is the intention of the writing here that there is no stand-alone
+Zeroconf
+> > host ie all Zeroconf hosts must support the office-LAN-config? For
+example
+> > an internet alarm clock or toaster that will never be taken to the
+office
+> > must still include DHCP client?
+>
+> I would argue that YES, you have to be able to handle being DHCP client.
+> At least some users, EVEN HOME USERS, will have networks large enough
+> and complex enough to be running DHCP and want to be able to still talk
+> to their alarm clock and toaster.
+>
+> >
+> > Is a Zeroconf host = (Zeroconf + Office-LAN-config) host?
+>
+> The issue here is whether the case where DHCP or other config is in use
+> is necessarily an "Office." I disagree (as stated above) with that
+> assessment.
+>
+> If you build a device which cannot handle transitioning to a configured
+> case, then how do you have that device function on a LAN with devices
+> that DO transition? The user workstations are not necessarily capable of
+> communicating using multiple IP addresses, one zeroconf, one assigned.
+> If we went to IPv6 this would be less of an issue, since there is
+> provision in IPv6 for multiple IP addresses on a node and site-local
+> addresses.
+>
+> While SOME systems using IPv4 will handle multiple addresses, many will
+> not. I don't think it's a reasonable requirement that Zeroconf systems
+> be able to handle multiple IP addresses (and figure out which one to
+> use) to accomodate devices which don't handle the transition case.
+>
+> >
+> > If so maybe we shouldn't call it Zeroconf (call it Multiconf instead?)
+or
+> > take out the requirement for the office protocols?
+>
+> I guess I thought the goal was to allow devices to function when no
+> master config server or human configuration is performed. That devices
+> still need to be able to function in the case where someone does
+> configure addresses or a config server is present is, I hope, assumed.
+>
+> Just my two cents on the issue...
+>
+> --
+> -----------------------------------------------------------------
+> Daniel Senie                                        dts@senie.com
+> Amaranth Networks Inc.            http://www.amaranthnetworks.com
+>
+>
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Feb 25 11:52:09 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA14390
+	for <zeroconf-archive@odin.ietf.org>; Fri, 25 Feb 2000 11:52:06 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EBDEA5DDB7; Fri, 25 Feb 2000 11:51:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D4F905DDB5; Fri, 25 Feb 2000 11:51:52 -0500 (EST)
+Received: from thalia.fm.intel.com (thalia.fm.intel.com [132.233.247.11])
+	by segue.merit.edu (Postfix) with ESMTP id C8A825DDB7
+	for <zeroconf@merit.edu>; Fri, 25 Feb 2000 11:51:48 -0500 (EST)
+Received: from SMTP (fmsmsxvs02-1.fm.intel.com [132.233.42.202])
+	by thalia.fm.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id QAA02608
+	for <zeroconf@merit.edu>; Fri, 25 Feb 2000 16:52:26 GMT
+Received: from fmsmsx18.intel.com ([132.233.48.18]) by 132.233.48.202
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Fri, 25 Feb 2000 16:51:46 0000 (GMT)
+Received: by fmsmsx18.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <FSQ3JGJN>; Fri, 25 Feb 2000 08:51:44 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F2818@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 25 Feb 2000 08:51:43 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+To say this:
+
+> Also, I think it would be equally impractical to build 
+> a product that did not operate in the presence of a DHCP server.
+
+anothe way ...
+
+Also, I think it would be equally impractical to build 
+a product that did not take advantage of the presence of a DHCP server.
+
+-myron
+
+ 
+> Hi Richard,
+> 
+> Daniel's response represents my understanding of the common 
+> thinking. I also
+> agree with these thoughts because many home networks will 
+> have DHCP servers.
+> I hope to advance a solution that does not require a DHCP 
+> server in a home
+> network, but IMHO it would be impractical to have an IP host config ZC
+> protocol that does not operate in the presence of a DHCP 
+> server. Also, I
+> think it would be equally impractical to build a product that did not
+> operate in the presence of a DHCP server.
+> 
+> -myron
+> 
+> ----- Original Message -----
+> From: Daniel Senie <dts@senie.com>
+> To: Richard Humpleman - SISA <richardh@sisa.samsung.com>
+> Cc: Hattig, Myron <myron.hattig@intel.com>; <zeroconf@merit.edu>
+> Sent: Thursday, February 24, 2000 2:49 PM
+> Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> 
+> > Richard Humpleman - SISA wrote:
+> > >
+> > > >>    A host using a Zeroconf protocol must easily 
+> transition in three
+> > > >>    ways:
+> > > >>    1. from a Zeroconf protocol to a non-Zeroconf protocol,
+> > > >>    2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+> > > >>    3. from a Zeroconf protocol back to a Zeroconf 
+> protocol (possibly
+> > > >>      with new values).
+> > > >>
+> > > >> I think of the wording of the third case doesn't make 
+> sense.  I think
+> it
+> > > >> makes more sense to say, "ZEROCONF protocols must be 
+> prepared to
+> > > reconfigure
+> > > >> when the network environment changes.  This is a 
+> general rule for all
+> > > >> ZEROCONF protocols."
+> > > >
+> > > >Your suggestion is true for all three case. In fact it 
+> is a common
+> > > >pre-requisite to any them. Also, the "host" must be prepared, not
+> > > >the "protocol". How about this:
+> > > >
+> > > >Hosts using ZEROCONF protocols must be prepared to 
+> reconfigure when the
+> > > >network environment changes.  This is a general rule for 
+> all ZEROCONF
+> > > >protocols. This requires a host using a Zeroconf 
+> protocol to transition
+> in
+> > > >three ways:
+> > > >1. from a Zeroconf protocol to a non-Zeroconf protocol,
+> > > >2. from a non-Zeroconf protocol to a Zeroconf protocol, and
+> > > >3. a Zeroconf protocol must be able to re-initialize 
+> with possibly with
+> new
+> > > >   values.
+> > > >
+> > >
+> > > Hello Myron,
+> > >
+> > > Is the intention of the writing here that there is no stand-alone
+> Zeroconf
+> > > host ie all Zeroconf hosts must support the office-LAN-config? For
+> example
+> > > an internet alarm clock or toaster that will never be taken to the
+> office
+> > > must still include DHCP client?
+> >
+> > I would argue that YES, you have to be able to handle being 
+> DHCP client.
+> > At least some users, EVEN HOME USERS, will have networks 
+> large enough
+> > and complex enough to be running DHCP and want to be able 
+> to still talk
+> > to their alarm clock and toaster.
+> >
+> > >
+> > > Is a Zeroconf host = (Zeroconf + Office-LAN-config) host?
+> >
+> > The issue here is whether the case where DHCP or other 
+> config is in use
+> > is necessarily an "Office." I disagree (as stated above) with that
+> > assessment.
+> >
+> > If you build a device which cannot handle transitioning to 
+> a configured
+> > case, then how do you have that device function on a LAN 
+> with devices
+> > that DO transition? The user workstations are not 
+> necessarily capable of
+> > communicating using multiple IP addresses, one zeroconf, 
+> one assigned.
+> > If we went to IPv6 this would be less of an issue, since there is
+> > provision in IPv6 for multiple IP addresses on a node and site-local
+> > addresses.
+> >
+> > While SOME systems using IPv4 will handle multiple 
+> addresses, many will
+> > not. I don't think it's a reasonable requirement that 
+> Zeroconf systems
+> > be able to handle multiple IP addresses (and figure out which one to
+> > use) to accomodate devices which don't handle the transition case.
+> >
+> > >
+> > > If so maybe we shouldn't call it Zeroconf (call it 
+> Multiconf instead?)
+> or
+> > > take out the requirement for the office protocols?
+> >
+> > I guess I thought the goal was to allow devices to function when no
+> > master config server or human configuration is performed. 
+> That devices
+> > still need to be able to function in the case where someone does
+> > configure addresses or a config server is present is, I 
+> hope, assumed.
+> >
+> > Just my two cents on the issue...
+> >
+> > --
+> > -----------------------------------------------------------------
+> > Daniel Senie                                        dts@senie.com
+> > Amaranth Networks Inc.            http://www.amaranthnetworks.com
+> >
+> >
+> 
+> 
+> 
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Feb 25 12:22:24 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA15173
+	for <zeroconf-archive@odin.ietf.org>; Fri, 25 Feb 2000 12:22:24 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 318B25DDB7; Fri, 25 Feb 2000 12:22:04 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 01C975DDBC; Fri, 25 Feb 2000 12:22:03 -0500 (EST)
+Received: from mailman.cisco.com (mailman.cisco.com [171.68.225.9])
+	by segue.merit.edu (Postfix) with ESMTP id 362825DDB7
+	for <zeroconf@merit.edu>; Fri, 25 Feb 2000 12:21:52 -0500 (EST)
+Received: from bigger-dawgs ([171.68.157.154]) by mailman.cisco.com (8.8.8+Sun/CISCO.SERVER.1.2) with ESMTP id JAA23231; Fri, 25 Feb 2000 09:21:15 -0800 (PST)
+Message-Id: <4.2.2.20000225122052.00a78c70@lint.cisco.com>
+X-Sender: pferguso@lint.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.2.2 
+Date: Fri, 25 Feb 2000 12:21:10 -0500
+To: "Myron Hattig" <mhattig@pacifier.com>
+From: Paul Ferguson <ferguson@cisco.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+Cc: <zeroconf@merit.edu>
+In-Reply-To: <003601bf7f64$9b41c860$1502fea9@pacifer.com>
+References: <7DFF75861D2FD311955700A0C9E5FF57F69346@polaris-xch.ssi.samsung.com>
+ <38B5B56C.81E68A77@senie.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 11:47 PM 02/24/2000 -0800, Myron Hattig wrote:
+
+>Daniel's response represents my understanding of the common thinking. I also
+>agree with these thoughts because many home networks will have DHCP servers.
+>I hope to advance a solution that does not require a DHCP server in a home
+>network, but IMHO it would be impractical to have an IP host config ZC
+>protocol that does not operate in the presence of a DHCP server. Also, I
+>think it would be equally impractical to build a product that did not
+>operate in the presence of a DHCP server.
+
+I concur.
+
+- paul
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Feb 25 13:23:03 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA16721
+	for <zeroconf-archive@odin.ietf.org>; Fri, 25 Feb 2000 13:23:03 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2A4005DDD4; Fri, 25 Feb 2000 13:22:55 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1A40B5DDD3; Fri, 25 Feb 2000 13:22:55 -0500 (EST)
+Received: from rkrishnan.bbn.com (RKRISHNAN.BBN.COM [128.89.35.252])
+	by segue.merit.edu (Postfix) with ESMTP id B66EF5DDD2
+	for <zeroconf@merit.edu>; Fri, 25 Feb 2000 13:22:53 -0500 (EST)
+Received: (from krash@localhost)
+	by rkrishnan.bbn.com (8.8.7/8.8.7) id NAA00883;
+	Fri, 25 Feb 2000 13:22:16 -0500
+From: Rajesh Krishnan <krash@bbn.com>
+Message-Id: <200002251822.NAA00883@rkrishnan.bbn.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+To: myron.hattig@intel.com (Hattig, Myron)
+Date: Fri, 25 Feb 2000 13:22:16 -0500 (EST)
+Cc: zeroconf@merit.edu
+In-Reply-To: <4148FEAAD879D311AC5700A0C969E8904F2818@orsmsx35.jf.intel.com> from "Hattig, Myron" at Feb 25, 2000 08:51:43 AM
+Reply-To: krash@bbn.com
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+> To say this:
+> 
+> > Also, I think it would be equally impractical to build 
+> > a product that did not operate in the presence of a DHCP server.
+> 
+> anothe way ...
+> 
+> Also, I think it would be equally impractical to build 
+> a product that did not take advantage of the presence of a DHCP server.
+> 
+> -myron
+
+It is easy to accidentally introduce a mis-configured DHCP server (perhaps 
+appliances with wireless interfaces) into a DHCP network. Should all hosts 
+in the ZeroConf network necesarily acquiesce to DHCP in this case? 
+
+Debugging such situations may be beyond the resources of those needing
+ZeroConf and will tie network operation to the need to understand how 
+to configure the network. Some checks may be useful in the interest of
+robustness.
+
+One option is to consider adding extensions to a DHCP server in order 
+to automatically reconfigure the DHCP server when an operational ZeroConf 
+network is detected (I am not presuming to know how to do this.) This will 
+be a step towards eventual full site auto-configuration.
+
+-Rajesh
+
+
+
+From owner-zeroconf@merit.edu  Fri Feb 25 15:04:17 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA19566
+	for <zeroconf-archive@odin.ietf.org>; Fri, 25 Feb 2000 15:04:16 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B09FB5DEFC; Fri, 25 Feb 2000 15:02:21 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 38D425DEFB; Fri, 25 Feb 2000 15:02:21 -0500 (EST)
+Received: from polaris-xch.sisa.samsung.com (unknown [209.111.66.250])
+	by segue.merit.edu (Postfix) with ESMTP id 3C8205DEF5
+	for <zeroconf@merit.edu>; Fri, 25 Feb 2000 15:02:17 -0500 (EST)
+Received: by polaris-xch.ssi.samsung.com with Internet Mail Service (5.5.2232.9)
+	id <FGN1SCY7>; Fri, 25 Feb 2000 12:02:12 -0800
+Message-ID: <7DFF75861D2FD311955700A0C9E5FF57FA1E3B@polaris-xch.ssi.samsung.com>
+From: Richard Humpleman - SISA <richardh@sisa.samsung.com>
+To: "Hattig, Myron" <myron.hattig@intel.com>
+Cc: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Fri, 25 Feb 2000 12:02:09 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2232.9)
+Content-Type: text/plain;
+	charset="iso-2022-kr"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>>> but IMHO it would be impractical to have an IP host config ZC protocol 
+>>> that does not operate in the presence of a DHCP server
+
+ZC can probably operate still, though not inter-operate with DHCP, but does
+that matter?
+
+DHCP doesn't require that every device on the network use DHCP for IP
+address choice. According to the DHCP spec ARP should be used by a DHCP
+Client to verify a given IP address. So devices using a DHCP derived
+address should have a unique address even in the presence of devices whose
+address is arrived at by other means eg ZC-only.
+
+If there is no actual won't-work-unless requirement that ZeroConf be linked
+up to DHCP-Config then I question whether there are sufficient grounds for
+making the link in the ZC spec.
+
+Thanks,
+Richard.
+
+>>> -----Original Message-----
+>>> From: Paul Ferguson [mailto:ferguson@cisco.com]
+>>> Sent: Friday, February 25, 2000 9:21 AM
+>>> To: Myron Hattig
+>>> Cc: zeroconf@merit.edu
+>>> Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+>>> 
+>>> 
+>>> At 11:47 PM 02/24/2000 -0800, Myron Hattig wrote:
+>>> 
+>>> >Daniel's response represents my understanding of the 
+>>> common thinking. I also
+>>> >agree with these thoughts because many home networks will 
+>>> have DHCP servers.
+>>> >I hope to advance a solution that does not require a DHCP 
+>>> server in a home
+>>> >network, but IMHO it would be impractical to have an IP 
+>>> host config ZC
+>>> >protocol that does not operate in the presence of a DHCP 
+>>> server. Also, I
+>>> >think it would be equally impractical to build a product 
+>>> that did not
+>>> >operate in the presence of a DHCP server.
+>>> 
+>>> I concur.
+>>> 
+>>> - paul
+>>> 
+>>> 
+
+
+
+From owner-zeroconf@merit.edu  Sun Feb 27 16:26:12 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA11869
+	for <zeroconf-archive@odin.ietf.org>; Sun, 27 Feb 2000 16:26:12 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5AF4A5DDA1; Sun, 27 Feb 2000 16:25:58 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 400645DDE3; Sun, 27 Feb 2000 16:25:58 -0500 (EST)
+Received: from slafw.enet.sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id B8AA95DDA1
+	for <zeroconf@merit.edu>; Sun, 27 Feb 2000 16:25:56 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by slafw.enet.sharplabs.com (8.9.1/8.9.2) with ESMTP id NAA01588;
+	Sun, 27 Feb 2000 13:15:55 -0800 (PST)
+Received: by admsrvnt02 with Internet Mail Service (5.5.2448.0)
+	id <FML5SQZK>; Sun, 27 Feb 2000 13:22:56 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA53730FF76@MAILSRVNT02>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'Paul Ferguson'" <ferguson@cisco.com>,
+        Myron Hattig <mhattig@pacifier.com>
+Cc: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Sun, 27 Feb 2000 13:13:31 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi,
+
+I also concur.  And strongly urge that we not plan to make
+ZC-capable devices support multiple IP addresses (e.g.,
+link-local and also DHCP-derived) on the same interface.
+
+Cheers,
+- Ira McDonald (consulting architect at Sharp Labs America)
+  High North Inc
+
+-----Original Message-----
+From: Paul Ferguson [mailto:ferguson@cisco.com]
+Sent: Friday, February 25, 2000 9:21 AM
+To: Myron Hattig
+Cc: zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+
+
+At 11:47 PM 02/24/2000 -0800, Myron Hattig wrote:
+
+>Daniel's response represents my understanding of the common thinking. I
+also
+>agree with these thoughts because many home networks will have DHCP
+servers.
+>I hope to advance a solution that does not require a DHCP server in a home
+>network, but IMHO it would be impractical to have an IP host config ZC
+>protocol that does not operate in the presence of a DHCP server. Also, I
+>think it would be equally impractical to build a product that did not
+>operate in the presence of a DHCP server.
+
+I concur.
+
+- paul
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Feb 27 16:33:36 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA11992
+	for <zeroconf-archive@odin.ietf.org>; Sun, 27 Feb 2000 16:33:36 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 27BA35DDF2; Sun, 27 Feb 2000 16:32:32 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1771F5DDEF; Sun, 27 Feb 2000 16:32:32 -0500 (EST)
+Received: from ns.metrolink.com (ns.metrolink.com [192.153.117.226])
+	by segue.merit.edu (Postfix) with SMTP id 9AB215DDE3
+	for <zeroconf@merit.edu>; Sun, 27 Feb 2000 16:32:30 -0500 (EST)
+Received: from metrolink.com by ns.metrolink.com (SMI-8.6/SMI-SVR4)
+	id QAA18422; Sun, 27 Feb 2000 16:32:14 -0500
+Message-ID: <38B997BF.2920322F@metrolink.com>
+Date: Sun, 27 Feb 2000 16:31:43 -0500
+From: "Garry M. Paxinos" <pax@metrolink.com>
+X-Mailer: Mozilla 4.7 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: "McDonald, Ira" <imcdonald@sharplabs.com>
+Cc: "'Paul Ferguson'" <ferguson@cisco.com>,
+        Myron Hattig <mhattig@pacifier.com>, zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+References: <1115A7CFAC25D311BC4000508B2CA53730FF76@MAILSRVNT02>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+
+"McDonald, Ira" wrote:
+> 
+> Hi,
+> 
+> I also concur.  And strongly urge that we not plan to make
+> ZC-capable devices support multiple IP addresses (e.g.,
+> link-local and also DHCP-derived) on the same interface.
+
+FWIW, I agree completely:
+
+   it's important that ZC-capable devices can operate in a 
+   "normal" IP environment.
+
+   and adding multiple IP address support to ZC-cabable 
+   devices overly complicates several issues.
+
+Take care,
+Pax.
+
+-- 
+Metro Link Incorporated. 4711 N. Powerline Rd. Fort Lauderdale Fl, 33309
+Voice: +1.954.938.0283x414 Fax: +1.954.938.1982 Email: pax@metrolink.com
+       ACM SIGGRAPH Treasurer    http://www.siggraph.org/~pax/
+
+  "The real voyage of discovery consists not in seeking new landscapes
+                  but in having new eyes." -Proust
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 00:51:18 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id AAA18264
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 00:51:17 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 25E915DDB0; Mon, 28 Feb 2000 00:51:10 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 08B6F5DD92; Mon, 28 Feb 2000 00:51:10 -0500 (EST)
+Received: from dthaler.microsoft.com (unknown [131.107.152.20])
+	by segue.merit.edu (Postfix) with ESMTP id 87A075DD8F
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 00:51:08 -0500 (EST)
+Received: (from dthaler@localhost)
+	by dthaler.microsoft.com (8.8.7/8.8.7) id XAA12172;
+	Sun, 27 Feb 2000 23:21:46 -0800 (PST)
+	(envelope-from dthaler)
+From: Dave Thaler <dthaler@dthaler.microsoft.com>
+Message-Id: <200002280721.XAA12172@dthaler.microsoft.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+In-Reply-To: <38B997BF.2920322F@metrolink.com> from "Garry M. Paxinos" at "Feb 27, 2000  4:31:43 pm"
+To: pax@metrolink.com (Garry M. Paxinos)
+Date: Sun, 27 Feb 2000 23:21:46 -0800 (PST)
+Cc: imcdonald@sharplabs.com, ferguson@cisco.com, mhattig@pacifier.com,
+        zeroconf@merit.edu
+X-Mailer: ELM [version 2.4ME+ PL43 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+> "McDonald, Ira" wrote:
+> > I also concur.  And strongly urge that we not plan to make
+> > ZC-capable devices support multiple IP addresses (e.g.,
+> > link-local and also DHCP-derived) on the same interface.
+> 
+> FWIW, I agree completely:
+> 
+>    it's important that ZC-capable devices can operate in a 
+>    "normal" IP environment.
+> 
+>    and adding multiple IP address support to ZC-cabable 
+>    devices overly complicates several issues.
+> 
+> Take care,
+> Pax.
+
+Aren't multiple IP addresses a "normal" IPv6 environment?
+
+-Dave
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 01:21:11 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id BAA19623
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 01:21:11 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1A1655DD8F; Mon, 28 Feb 2000 01:21:04 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 002155DD92; Mon, 28 Feb 2000 01:21:03 -0500 (EST)
+Received: from igw1.ericsson.com.au (igw1.ericsson.com.au [203.61.155.3])
+	by segue.merit.edu (Postfix) with ESMTP id D30795DD8F
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 01:21:00 -0500 (EST)
+Received: from brsi02.epa.ericsson.se ([146.11.15.8])
+	by igw1.ericsson.com.au (8.9.1b+Sun/8.9.1) with ESMTP id RAA12289
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 17:20:51 +1100 (EST)
+Received: from eaubrnt019.epa.ericsson.se (eaubrnt019 [146.11.9.165])
+	by brsi02.epa.ericsson.se (8.9.1/8.9.1) with ESMTP id RAA08955
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 17:21:26 +1100 (EST)
+Received: by eaubrnt019.epa.ericsson.se with Internet Mail Service (5.5.2448.0)
+	id <FQZZQRPS>; Mon, 28 Feb 2000 17:20:50 +1100
+Message-ID: <4B6BC00CD15FD2119E5F0008C7A419A50185D70E@eaubrnt018.epa.ericsson.se>
+From: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+To: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: FW: Comments on draft-ietf-zeroconf-reqts-02
+Date: Mon, 28 Feb 2000 17:20:40 +1100
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01BF81B3.F4B9BFAA"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01BF81B3.F4B9BFAA
+Content-Type: text/plain
+
+> I agree, no one seems to be considering IPv6 in any of these discussions.
+> This is despite the fact that Home networking  would be a perfect market
+> for it, considering that it basically solves half the problems in the
+> charter of this WG.
+> 
+> Hesham
+> 
+> -----Original Message-----
+> From:	Dave Thaler [SMTP:dthaler@dthaler.microsoft.com]
+> Sent:	Monday, 28 February 2000 6:22
+> To:	pax@metrolink.com
+> Cc:	imcdonald@sharplabs.com; ferguson@cisco.com; mhattig@pacifier.com;
+> zeroconf@merit.edu
+> Subject:	Re: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> > "McDonald, Ira" wrote:
+> > > I also concur.  And strongly urge that we not plan to make
+> > > ZC-capable devices support multiple IP addresses (e.g.,
+> > > link-local and also DHCP-derived) on the same interface.
+> > 
+> > FWIW, I agree completely:
+> > 
+> >    it's important that ZC-capable devices can operate in a 
+> >    "normal" IP environment.
+> > 
+> >    and adding multiple IP address support to ZC-cabable 
+> >    devices overly complicates several issues.
+> > 
+> > Take care,
+> > Pax.
+> 
+> Aren't multiple IP addresses a "normal" IPv6 environment?
+> 
+> -Dave
+
+------_=_NextPart_001_01BF81B3.F4B9BFAA
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3DUS-ASCII">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2644.0">
+<TITLE>FW: Comments on draft-ietf-zeroconf-reqts-02</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">I agree, no one =
+seems to be considering IPv6 in any of these discussions. This is =
+despite the fact that Home networking&nbsp; would be a perfect market =
+for it, considering that it basically solves half the problems in the =
+charter of this WG.</FONT></P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hesham</FONT>
+</P>
+<UL>
+<P><FONT SIZE=3D1 FACE=3D"Arial">-----Original Message-----</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">From:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Dave Thaler =
+[SMTP:dthaler@dthaler.microsoft.com]</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">Sent:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Monday, 28 February 2000 6:22</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">To:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">pax@metrolink.com</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Cc:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">imcdonald@sharplabs.com; ferguson@cisco.com; =
+mhattig@pacifier.com; zeroconf@merit.edu</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>=
+</B> <FONT SIZE=3D1 FACE=3D"Arial">Re: Comments on =
+draft-ietf-zeroconf-reqts-02</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">&gt; &quot;McDonald, Ira&quot; =
+wrote:</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; &gt; I also concur.&nbsp; And =
+strongly urge that we not plan to make</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; &gt; ZC-capable devices support =
+multiple IP addresses (e.g.,</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; &gt; link-local and also =
+DHCP-derived) on the same interface.</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; FWIW, I agree completely:</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;&nbsp;&nbsp;&nbsp; it's important =
+that ZC-capable devices can operate in a </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;&nbsp;&nbsp;&nbsp; =
+&quot;normal&quot; IP environment.</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;&nbsp;&nbsp;&nbsp; and adding =
+multiple IP address support to ZC-cabable </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;&nbsp;&nbsp;&nbsp; devices overly =
+complicates several issues.</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; Take care,</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; Pax.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Aren't multiple IP addresses a =
+&quot;normal&quot; IPv6 environment?</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">-Dave</FONT>
+</P>
+</UL>
+</BODY>
+</HTML>
+------_=_NextPart_001_01BF81B3.F4B9BFAA--
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 06:18:58 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA02731
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 06:18:58 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4D14A5DD8F; Mon, 28 Feb 2000 06:18:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 32AB35DDAA; Mon, 28 Feb 2000 06:18:52 -0500 (EST)
+Received: from lint.cisco.com (lint.cisco.com [171.68.224.209])
+	by segue.merit.edu (Postfix) with ESMTP id AB79B5DD8F
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 06:18:50 -0500 (EST)
+Received: from bigger-dawgs (pferguso-isdn.cisco.com [171.70.114.134]) by lint.cisco.com (8.8.6 (PHNE_14041)/CISCO.SERVER.1.2) with ESMTP id DAA07475; Mon, 28 Feb 2000 03:18:46 -0800 (PST)
+Message-Id: <4.2.2.20000228061646.00a63910@lint.cisco.com>
+X-Sender: pferguso@lint.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.2.2 
+Date: Mon, 28 Feb 2000 06:18:38 -0500
+To: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+From: Paul Ferguson <ferguson@cisco.com>
+Subject: Re: FW: Comments on draft-ietf-zeroconf-reqts-02
+Cc: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+In-Reply-To: <4B6BC00CD15FD2119E5F0008C7A419A50185D70E@eaubrnt018.epa.er
+ icsson.se>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I'm sorry, but focusing on IPv6 for ZC networking seriously pidgeonholes
+the constructive work which could be done in this WG. Serious consideration
+should be given to getting this ZC stuff to work with currently deployed
+IPv4 networks, as well as DHCP, whereas both will probably be around for
+a long time.
+
+- paul
+
+
+At 05:20 PM 02/28/2000 +1100, Hesham Soliman (EPA) wrote:
+
+>I agree, no one seems to be considering IPv6 in any of these discussions. 
+>This is despite the fact that Home networking  would be a perfect market 
+>for it, considering that it basically solves half the problems in the 
+>charter of this WG.
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 06:26:10 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA03007
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 06:26:10 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 92E745DDE6; Mon, 28 Feb 2000 06:26:02 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 816D75DDE7; Mon, 28 Feb 2000 06:26:02 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 2C2445DDE6
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 06:26:01 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id DAA11347;
+	Mon, 28 Feb 2000 03:25:58 -0800 (PST)
+Received: from vayne (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id MAA02187;
+	Mon, 28 Feb 2000 12:25:55 +0100 (MET)
+Date: Mon, 28 Feb 2000 12:33:56 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: Re: FW: Comments on draft-ietf-zeroconf-reqts-02
+To: Paul Ferguson <ferguson@cisco.com>
+Cc: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>,
+        "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+In-Reply-To: "Your message with ID" <4.2.2.20000228061646.00a63910@lint.cisco.com>
+Message-ID: <Roam.SIMC.2.0.6.951737636.26041.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At Mon, 28 Feb 2000 06:18:38 -0500 "Paul Ferguson" <ferguson@cisco.com> wrote:
+> I'm sorry, but focusing on IPv6 for ZC networking seriously pidgeonholes
+> the constructive work which could be done in this WG. Serious consideration
+> should be given to getting this ZC stuff to work with currently deployed
+> IPv4 networks, as well as DHCP, whereas both will probably be around for
+> a long time.
+>
+> At 05:20 PM 02/28/2000 +1100, Hesham Soliman (EPA) wrote:
+> >I agree, no one seems to be considering IPv6 in any of these discussions. 
+> >This is despite the fact that Home networking  would be a perfect market 
+> >for it, considering that it basically solves half the problems in the 
+> >charter of this WG.
+
+The charter says we discuss and address both IPv4 and IPv6.
+
+Erik
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 06:40:50 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA03277
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 06:40:50 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 10F015DDE7; Mon, 28 Feb 2000 06:40:42 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id F20AA5DDEA; Mon, 28 Feb 2000 06:40:41 -0500 (EST)
+Received: from lint.cisco.com (lint.cisco.com [171.68.224.209])
+	by segue.merit.edu (Postfix) with ESMTP id 8ACC35DDE7
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 06:40:40 -0500 (EST)
+Received: from bigger-dawgs (pferguso-isdn.cisco.com [171.70.114.134]) by lint.cisco.com (8.8.6 (PHNE_14041)/CISCO.SERVER.1.2) with ESMTP id DAA12701; Mon, 28 Feb 2000 03:40:37 -0800 (PST)
+Message-Id: <4.2.2.20000228063432.00a659d0@lint.cisco.com>
+X-Sender: pferguso@lint.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.2.2 
+Date: Mon, 28 Feb 2000 06:40:29 -0500
+To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+From: Paul Ferguson <ferguson@cisco.com>
+Subject: Re: FW: Comments on draft-ietf-zeroconf-reqts-02
+Cc: zeroconf@merit.edu
+In-Reply-To: <Roam.SIMC.2.0.6.951737636.26041.erikg@sun-ffm.germany>
+References: <"Your message with ID" <4.2.2.20000228061646.00a63910@lint.cisco.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 12:33 PM 02/28/2000 +0100, Erik Guttman wrote:
+
+>The charter says we discuss and address both IPv4 and IPv6.
+
+Discussing is one thing, crafting ZC to be more "IPv6 friendly"
+is another. You're missing my point, I think.
+
+The chater simply says, "This working group will address both
+IPv4 and IPv6."
+
+I don't understand why the charter cannot be modified such that
+IPv4 and IPv6 can both be discussed, but are not tied together
+in such a way so that we get bogged down in IPv6 cruft. In fact,
+there should be no reason why we cannot do both, but address
+both v4 and v6 as separate issues? They are indeed different.
+
+Other working groups have (and rightly so in my opinion) focused
+on IPv4 functionality first, and IPv6 functionality "later".
+
+Or is this a "one size fits all" approach? I think this needs to
+be clarified so that we can move ahead.
+
+- paul
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 07:10:29 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA04205
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 07:10:29 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E79815DDEF; Mon, 28 Feb 2000 07:10:20 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D6D675DDEB; Mon, 28 Feb 2000 07:10:20 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 750815DDE6
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 07:10:19 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id EAA23164;
+	Mon, 28 Feb 2000 04:10:17 -0800 (PST)
+Received: from vayne (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id NAA03987;
+	Mon, 28 Feb 2000 13:10:11 +0100 (MET)
+Date: Mon, 28 Feb 2000 13:18:13 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+Subject: ZC and IPv6 (was Re: FW: Comments on draft-ietf-zeroconf-reqts-02)
+To: Paul Ferguson <ferguson@cisco.com>
+Cc: Erik Guttman <Erik.Guttman@Germany.Sun.COM>, zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <4.2.2.20000228063432.00a659d0@lint.cisco.com>
+Message-ID: <Roam.SIMC.2.0.6.951740293.13445.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> At 12:33 PM 02/28/2000 +0100, Erik Guttman wrote:
+> 
+> >The charter says we discuss and address both IPv4 and IPv6.
+> 
+> Discussing is one thing, crafting ZC to be more "IPv6 friendly"
+> is another. You're missing my point, I think.
+> 
+> The chater simply says, "This working group will address both
+> IPv4 and IPv6."
+> 
+> I don't understand why the charter cannot be modified such that
+> IPv4 and IPv6 can both be discussed, but are not tied together
+> in such a way so that we get bogged down in IPv6 cruft. In fact,
+> there should be no reason why we cannot do both, but address
+> both v4 and v6 as separate issues? They are indeed different.
+> 
+> Other working groups have (and rightly so in my opinion) focused
+> on IPv4 functionality first, and IPv6 functionality "later".
+> 
+> Or is this a "one size fits all" approach? I think this needs to
+> be clarified so that we can move ahead.
+> 
+> - paul
+> 
+
+There is very little discussion in the requirements which is IPv6
+specific at this point.  This is largely because we haven't worked
+hard on IPv6 issues.
+
+I don't think we've been bogged down yet.  There are surely issues to
+consider there (multicast scoping, router discovery, neighbor discovery,
+etc. are all different and may have implications).  
+
+Are you suggesting that we partition the requirements (and subsequent
+'profile') work into two tracks?  This would mean minor document 
+reorganizationand also a call for more document editing work. If we 
+completed "IPv4 requirements" and "IPv4 profile" docs, not being done 
+with the IPv6 work would prevent us from publishing.
+
+The question is who wants to work on the IPv6 side at this time?  If
+you are one of them, please give the current document a full review and 
+send comments on what needs to be done from an IPv6 perspective.
+
+Erik
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 07:20:06 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA04484
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 07:20:06 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 6A1645DDEA; Mon, 28 Feb 2000 07:19:57 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 54EE45DDE7; Mon, 28 Feb 2000 07:19:57 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id F320B5DDE6
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 07:19:55 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id EAA25895;
+	Mon, 28 Feb 2000 04:19:52 -0800 (PST)
+Received: from vayne (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id NAA04464;
+	Mon, 28 Feb 2000 13:19:49 +0100 (MET)
+Date: Mon, 28 Feb 2000 13:27:51 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+To: "McDonald, Ira" <imcdonald@sharplabs.com>,
+        "Garry M. Paxinos" <pax@metrolink.com>
+Cc: erik.guttman@germany.sun.com, zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <38B997BF.2920322F@metrolink.com>
+Message-ID: <Roam.SIMC.2.0.6.951740871.14421.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+> "McDonald, Ira" wrote:
+> > I also concur.  And strongly urge that we not plan to make
+> > ZC-capable devices support multiple IP addresses (e.g.,
+> > link-local and also DHCP-derived) on the same interface.
+> 
+
+"Garry M. Paxinos" <pax@metrolink.com> wrote:
+> FWIW, I agree completely:
+> 
+>    it's important that ZC-capable devices can operate in a 
+>    "normal" IP environment.
+> 
+>    and adding multiple IP address support to ZC-cabable 
+>    devices overly complicates several issues.
+> 
+
+Ira, Garry,
+
+I understand that current hosts do not support >1 address per
+interface.  But they don't support ZC features either.  
+
+I believe it may be worth while supporting both a ZC (local)
+address and a configured (global) address to ease transition
+in and out of ZC mode.  If you have a ZC network which is fully
+numbered and works fine (say your house), you don't want to have
+to renumber and see stuff stop working (even temporarily) when
+your dial-up networking comes up, your cable modem gets plugged
+in again, etc.
+
+The argument actually applies to all ZC protocols (host conf,
+addressing, service discovery, mc addr conf).  As long as these
+configurations are only used locally, they may not conflict with
+the global configuration.  This is more complicated, agreed.  But
+let's consider it.
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 07:34:05 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA05038
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 07:34:05 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2DEDA5DDEB; Mon, 28 Feb 2000 07:33:59 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1240B5DDE7; Mon, 28 Feb 2000 07:33:59 -0500 (EST)
+Received: from lint.cisco.com (lint.cisco.com [171.68.224.209])
+	by segue.merit.edu (Postfix) with ESMTP id 9F3E55DD8F
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 07:33:57 -0500 (EST)
+Received: from bigger-dawgs (pferguso-isdn.cisco.com [171.70.114.134]) by lint.cisco.com (8.8.6 (PHNE_14041)/CISCO.SERVER.1.2) with ESMTP id EAA01701; Mon, 28 Feb 2000 04:33:54 -0800 (PST)
+Message-Id: <4.2.2.20000228073210.00a7fa80@lint.cisco.com>
+X-Sender: pferguso@lint.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.2.2 
+Date: Mon, 28 Feb 2000 07:33:46 -0500
+To: Erik Guttman <Erik.Guttman@Germany.Sun.COM>
+From: Paul Ferguson <ferguson@cisco.com>
+Subject: Re: ZC and IPv6 (was Re: FW: Comments on
+  draft-ietf-zeroconf-reqts-02)
+Cc: zeroconf@merit.edu
+In-Reply-To: <Roam.SIMC.2.0.6.951740293.13445.erikg@sun-ffm.germany>
+References: <"Your message with ID" <4.2.2.20000228063432.00a659d0@lint.cisco.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 01:18 PM 02/28/2000 +0100, Erik Guttman wrote:
+
+>Are you suggesting that we partition the requirements (and subsequent
+>'profile') work into two tracks?
+
+Well, not necessarily, although I'm unsure on how to lessen the
+interdependences between v4 and v6 in the WG.
+
+>   This would mean minor document
+>reorganizationand also a call for more document editing work. If we
+>completed "IPv4 requirements" and "IPv4 profile" docs, not being done
+>with the IPv6 work would prevent us from publishing.
+>
+>The question is who wants to work on the IPv6 side at this time?  If
+>you are one of them, please give the current document a full review and
+>send comments on what needs to be done from an IPv6 perspective.
+
+Actually, I'm more concerned about IPv4 functionality.
+
+- paul
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 08:57:04 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA08442
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 08:57:04 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1826B5DD8F; Mon, 28 Feb 2000 08:56:56 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 0495F5DD92; Mon, 28 Feb 2000 08:56:55 -0500 (EST)
+Received: from ns.metrolink.com (ns.metrolink.com [192.153.117.226])
+	by segue.merit.edu (Postfix) with SMTP id A41785DD8F
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 08:56:54 -0500 (EST)
+Received: from metrolink.com by ns.metrolink.com (SMI-8.6/SMI-SVR4)
+	id IAA18707; Mon, 28 Feb 2000 08:56:03 -0500
+Message-ID: <38BA7E4F.532F351E@metrolink.com>
+Date: Mon, 28 Feb 2000 08:55:27 -0500
+From: "Garry M. Paxinos" <pax@metrolink.com>
+X-Mailer: Mozilla 4.7 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Cc: "McDonald, Ira" <imcdonald@sharplabs.com>, zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+References: <Roam.SIMC.2.0.6.951740871.14421.erikg@sun-ffm.germany>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+> I believe it may be worth while supporting both a ZC (local)
+> address and a configured (global) address to ease transition
+> in and out of ZC mode.  If you have a ZC network which is fully
+> numbered and works fine (say your house), you don't want to have
+> to renumber and see stuff stop working (even temporarily) when
+> your dial-up networking comes up, your cable modem gets plugged
+> in again, etc.
+> 
+> The argument actually applies to all ZC protocols (host conf,
+> addressing, service discovery, mc addr conf).  As long as these
+> configurations are only used locally, they may not conflict with
+> the global configuration.  This is more complicated, agreed.  But
+> let's consider it.
+
+Point well taken.  The idea of in-home services stopping for a
+(hopefully short) period of time is a major detractor.
+
+My viewpoint comes from implementing multiple IP addresses
+in a very small environment.  But from a perceived reliability
+standpoint it would be well worth the extra 'cost'.
+
+So, I'll adjust my previous statement to indicate that we believe
+that DHCP is still needed in a ZC environment, but multiple IP
+aliases would be ok as long as there is no overlap.
+
+Thanks,
+Pax.
+
+-- 
+Metro Link Incorporated. 4711 N. Powerline Rd. Fort Lauderdale Fl, 33309
+Voice: +1.954.938.0283x414 Fax: +1.954.938.1982 Email: pax@metrolink.com
+       ACM SIGGRAPH Treasurer    http://www.siggraph.org/~pax/
+
+  "The real voyage of discovery consists not in seeking new landscapes
+                  but in having new eyes." -Proust
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 09:33:32 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA09854
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 09:33:32 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 147FD5DDF4; Mon, 28 Feb 2000 09:32:16 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 020005DDF7; Mon, 28 Feb 2000 09:32:15 -0500 (EST)
+Received: from postoffice.cisco.com (postoffice.cisco.com [171.69.198.240])
+	by segue.merit.edu (Postfix) with ESMTP id AA61E5DDF4
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 09:32:14 -0500 (EST)
+Received: from [203.255.145.214] (ssh.cisco.com [171.69.10.34]) by postoffice.cisco.com (8.8.7-Cisco.2-SunOS.5.5.1.sun4/8.6.5) with ESMTP id GAA26603; Mon, 28 Feb 2000 06:32:08 -0800 (PST)
+Mime-Version: 1.0
+X-Sender: deering@127.0.0.1
+Message-Id: <v04220800b4e0362f52f6@[203.255.145.214]>
+In-Reply-To: <4.2.2.20000228063432.00a659d0@lint.cisco.com>
+References: <"Your message with ID"
+ <4.2.2.20000228061646.00a63910@lint.cisco.com>
+ <4.2.2.20000228063432.00a659d0@lint.cisco.com>
+Date: Mon, 28 Feb 2000 06:33:31 -0800
+To: Paul Ferguson <ferguson@cisco.com>
+From: Steve Deering <deering@cisco.com>
+Subject: Re: FW: Comments on draft-ietf-zeroconf-reqts-02
+Cc: zeroconf@merit.edu
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 6:40 AM -0500 2/28/00, Paul Ferguson wrote:
+>I don't understand why the charter cannot be modified such that
+>IPv4 and IPv6 can both be discussed, but are not tied together
+>in such a way so that we get bogged down in IPv6 cruft.
+
+Methinks it is the IPv4 cruft that constitutes most of the bog here.
+
+Steve
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 15:19:15 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA19182
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 15:19:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 037205DE3D; Mon, 28 Feb 2000 15:18:44 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D72AA5DE3C; Mon, 28 Feb 2000 15:18:43 -0500 (EST)
+Received: from slafw.enet.sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id 7B8745DE3B
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 15:18:41 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by slafw.enet.sharplabs.com (8.9.1/8.9.2) with ESMTP id MAA09509;
+	Mon, 28 Feb 2000 12:08:46 -0800 (PST)
+Received: by admsrvnt02 with Internet Mail Service (5.5.2448.0)
+	id <FML5STC9>; Mon, 28 Feb 2000 12:15:46 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA53730FF7A@MAILSRVNT02>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'Erik Guttman'" <Erik.Guttman@germany.sun.com>,
+        "McDonald, Ira" <imcdonald@sharplabs.com>,
+        "Garry M. Paxinos" <pax@metrolink.com>
+Cc: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Mon, 28 Feb 2000 12:06:21 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi Erik,
+
+I think it's fine to consider that *some* ZC-capable devices
+will be able to support multiple IPv4 addresses (let's keep
+the IPv6 discussion separate - the IAB and IESG are still
+far from concensus on methods/protocols for IPv4/IPv6
+coexistence, in my reading of the I-Ds).
+
+But implementors at both of my current clients (Sharp and
+Xerox) are very concerned about making low-priced network
+printers *have* to support multiple IPv4 addresses on the
+same physical interface, because the protocol stacks they
+have bought from third-parties uniformly do NOT support
+that capability (and deployed printer client software
+doesn't recognize the possibility).
+
+Separate profiles for ZC protocols for IPv4 and IPv6 are
+a good idea, in my opinion.  And while the IPv6 profiles
+may need to be completed before the ZC WG has finished
+its task, the IPv4 profiles can and should be finished
+first, in my opinion.
+
+Cheers,
+- Ira McDonald (consulting architect at Sharp Labs America)
+  High North Inc
+
+-----Original Message-----
+From: Erik Guttman [mailto:Erik.Guttman@germany.sun.com]
+Sent: Monday, February 28, 2000 4:28 AM
+To: McDonald, Ira; Garry M. Paxinos
+Cc: erik.guttman@germany.sun.com; zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+
+
+
+> "McDonald, Ira" wrote:
+> > I also concur.  And strongly urge that we not plan to make
+> > ZC-capable devices support multiple IP addresses (e.g.,
+> > link-local and also DHCP-derived) on the same interface.
+> 
+
+"Garry M. Paxinos" <pax@metrolink.com> wrote:
+> FWIW, I agree completely:
+> 
+>    it's important that ZC-capable devices can operate in a 
+>    "normal" IP environment.
+> 
+>    and adding multiple IP address support to ZC-cabable 
+>    devices overly complicates several issues.
+> 
+
+Ira, Garry,
+
+I understand that current hosts do not support >1 address per
+interface.  But they don't support ZC features either.  
+
+I believe it may be worth while supporting both a ZC (local)
+address and a configured (global) address to ease transition
+in and out of ZC mode.  If you have a ZC network which is fully
+numbered and works fine (say your house), you don't want to have
+to renumber and see stuff stop working (even temporarily) when
+your dial-up networking comes up, your cable modem gets plugged
+in again, etc.
+
+The argument actually applies to all ZC protocols (host conf,
+addressing, service discovery, mc addr conf).  As long as these
+configurations are only used locally, they may not conflict with
+the global configuration.  This is more complicated, agreed.  But
+let's consider it.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Mon Feb 28 20:21:49 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA25130
+	for <zeroconf-archive@odin.ietf.org>; Mon, 28 Feb 2000 20:21:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 717EB5DDF2; Mon, 28 Feb 2000 20:21:36 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6042D5DDF1; Mon, 28 Feb 2000 20:21:36 -0500 (EST)
+Received: from igw1.ericsson.com.au (igw1.ericsson.com.au [203.61.155.3])
+	by segue.merit.edu (Postfix) with ESMTP id 0EB905DDEB
+	for <zeroconf@merit.edu>; Mon, 28 Feb 2000 20:21:33 -0500 (EST)
+Received: from brsi02.epa.ericsson.se ([146.11.15.8])
+	by igw1.ericsson.com.au (8.9.1b+Sun/8.9.1) with ESMTP id MAA23592;
+	Tue, 29 Feb 2000 12:21:29 +1100 (EST)
+Received: from eaubrnt019.epa.ericsson.se (eaubrnt019 [146.11.9.165])
+	by brsi02.epa.ericsson.se (8.9.1/8.9.1) with ESMTP id MAA01331;
+	Tue, 29 Feb 2000 12:22:03 +1100 (EST)
+Received: by eaubrnt019.epa.ericsson.se with Internet Mail Service (5.5.2448.0)
+	id <F6MS42S2>; Tue, 29 Feb 2000 12:21:26 +1100
+Message-ID: <4B6BC00CD15FD2119E5F0008C7A419A50185D716@eaubrnt018.epa.ericsson.se>
+From: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+To: "'Erik Guttman'" <Erik.Guttman@Germany.Sun.COM>,
+        Paul Ferguson <ferguson@cisco.com>
+Cc: zeroconf@merit.edu
+Subject: RE: ZC and IPv6 (was Re: FW: Comments on draft-ietf-zeroconf-reqt
+	s-02)
+Date: Tue, 29 Feb 2000 12:21:25 +1100
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01BF8253.4C1C160E"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01BF8253.4C1C160E
+Content-Type: text/plain
+
+Hi Erik,
+
+
+> There is very little discussion in the requirements which is IPv6
+> specific at this point.  This is largely because we haven't worked
+> hard on IPv6 issues.
+> 
+> I don't think we've been bogged down yet.  There are surely issues to
+> consider there (multicast scoping, router discovery, neighbor discovery,
+> etc. are all different and may have implications).  
+> 
+	=>Yes, and sometimes the issues we consider will result in less work
+for us too.
+
+> Are you suggesting that we partition the requirements (and subsequent
+> 'profile') work into two tracks?  This would mean minor document 
+> reorganizationand also a call for more document editing work. If we 
+> completed "IPv4 requirements" and "IPv4 profile" docs, not being done 
+> with the IPv6 work would prevent us from publishing.
+> 
+	=> I'm not sure about that, the WG has identified certain problems
+that need to be solved, regardless of what technology is being used. As long
+as it is IP of course. If the reqts are only for V4 then we should make that
+clear and say it. I believe it should be for both. Or at least in one
+document because there will be some things in common.
+
+> The question is who wants to work on the IPv6 side at this time?  If
+> you are one of them, please give the current document a full review and 
+> send comments on what needs to be done from an IPv6 perspective.
+> 
+	=> I'm more than happy to do that alone or with anyone else that is
+working with V6. I'm not sure if I can do that before Adelaide but will see.
+
+> Erik
+> 
+> 
+> 
+
+------_=_NextPart_001_01BF8253.4C1C160E
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3DUS-ASCII">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2644.0">
+<TITLE>RE: ZC and IPv6 (was Re: FW: Comments on =
+draft-ietf-zeroconf-reqts-02)</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hi Erik,</FONT>
+</P>
+<BR>
+<UL>
+<P><FONT SIZE=3D2 FACE=3D"Arial">There is very little discussion in the =
+requirements which is IPv6</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">specific at this point.&nbsp; This is =
+largely because we haven't worked</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">hard on IPv6 issues.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">I don't think we've been bogged down =
+yet.&nbsp; There are surely issues to</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">consider there (multicast scoping, =
+router discovery, neighbor discovery,</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">etc. are all different and may have =
+implications).&nbsp;</FONT>=20
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">=3D&gt;Yes, and =
+sometimes the issues we consider will result in less work for us =
+too.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Are you suggesting that we partition =
+the requirements (and subsequent</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">'profile') work into two =
+tracks?&nbsp; This would mean minor document </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">reorganizationand also a call for =
+more document editing work. If we </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">completed &quot;IPv4 =
+requirements&quot; and &quot;IPv4 profile&quot; docs, not being done =
+</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">with the IPv6 work would prevent us =
+from publishing.</FONT>
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">=3D&gt; I'm not sure =
+about that, the WG has identified certain problems that need to be =
+solved, regardless of what technology is being used. As long as it is =
+IP of course. If the reqts are only for V4 then we should make that =
+clear and say it. I believe it should be for both. Or at least in one =
+document because there will be some things in common.</FONT></P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">The question is who wants to work on =
+the IPv6 side at this time?&nbsp; If</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">you are one of them, please give the =
+current document a full review and </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">send comments on what needs to be =
+done from an IPv6 perspective.</FONT>
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">=3D&gt; I'm more =
+than happy to do that alone or with anyone else that is working with =
+V6. I'm not sure if I can do that before Adelaide but will =
+see.</FONT></P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Erik</FONT>
+</P>
+<BR>
+<BR>
+</UL>
+</BODY>
+</HTML>
+------_=_NextPart_001_01BF8253.4C1C160E--
+
+
+

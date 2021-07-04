@@ -1,0 +1,3505 @@
+From owner-zeroconf@merit.edu  Mon Sep  1 04:37:05 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA02106
+	for <zeroconf-archive@lists.ietf.org>; Mon, 1 Sep 2003 04:37:04 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E06D39124A; Mon,  1 Sep 2003 04:35:47 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5A6779124B; Mon,  1 Sep 2003 04:35:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1C3A99124A
+	for <zeroconf@trapdoor.merit.edu>; Mon,  1 Sep 2003 04:35:41 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id EE6265DDAA; Mon,  1 Sep 2003 04:35:40 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 22EE25DDB6
+	for <zeroconf@merit.edu>; Mon,  1 Sep 2003 04:35:35 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h818ZIB20176;
+	Mon, 1 Sep 2003 15:35:22 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h818Ys419729;
+	Mon, 1 Sep 2003 15:34:55 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL11 Security consideration for the threat where an attacker forces address reconfiguration 
+In-Reply-To: <200308312144.h7VLiI0F006525@scv3.apple.com> 
+References: <200308312144.h7VLiI0F006525@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Mon, 01 Sep 2003 15:34:54 +0700
+Message-ID: <9300.1062405294@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Sun, 31 Aug 2003 14:44:38 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200308312144.h7VLiI0F006525@scv3.apple.com>
+
+Why are we still discussing this dead issue?
+
+  | Why would you, Robert Elz, *want* to use IPv4LL?
+
+The same reason as anyone.
+
+If I'm on a link where there are no assigned addresses, that's where
+IPv4LL is supposed to apply, isn't it?   Certainly, I could invent myself
+an address from any arbitrary address block, and configure it, and then
+talk to others (who may be using LL, or might not be), but why should
+anyone be forced to do that?   Even if they do know how?
+
+Further, why should novices, using systems built by people who have
+a fair idea how they're to be used (ie: there's a difference between a
+system that's a portable web browser, which cares nothing about its
+own IP address, and a genuine remote terminal, or even a portable server,
+which usually does) have the stability of their connections made more
+vulnerable than they need to be?
+
+I see no need for one rule that must be applied by everyone - nothing
+depends upon it, it is a quality of implementation issue (where neither
+choice is better for all users).   But even with that, I don't object to
+the draft as it now stands, which is pretty close to mandating your position,
+just with the security considerations making it clear what the issues are
+for an implementor who blindly follows the spec without thought.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep  2 15:33:19 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA00208
+	for <zeroconf-archive@lists.ietf.org>; Tue, 2 Sep 2003 15:33:18 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 3A34C91267; Tue,  2 Sep 2003 15:33:08 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7F7BF91278; Tue,  2 Sep 2003 15:32:53 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1C89491267
+	for <zeroconf@trapdoor.merit.edu>; Tue,  2 Sep 2003 15:32:49 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E893B5DDB5; Tue,  2 Sep 2003 15:32:48 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 964685DDB0
+	for <zeroconf@merit.edu>; Tue,  2 Sep 2003 15:32:48 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.9/8.12.9) with ESMTP id h82JWdOq003348;
+	Tue, 2 Sep 2003 12:32:40 -0700 (PDT)
+Received: from Sun.COM (sr1-umpk-21.Eng.Sun.COM [129.146.17.37])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h82JWaR22975;
+	Tue, 2 Sep 2003 21:32:38 +0200 (MEST)
+Message-ID: <3F54F054.5020805@Sun.COM>
+Date: Tue, 02 Sep 2003 12:32:36 -0700
+From: erik guttman <erik.guttman@Sun.COM>
+Reply-To: Erik.Guttman@Sun.COM
+Organization: Sun Microsystems
+User-Agent: Mozilla/5.0 (X11; U; SunOS sun4u; en-US; rv:1.1) Gecko/20020827
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Bernard Aboba <aboba@internaut.com>
+Cc: zeroconf@merit.edu
+Subject: LL18: Host with LL address MUST ARP for all addresses
+References: <Pine.LNX.4.53.0308311551430.23636@internaut.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Description of Issue Host with LL address MUST ARP for addresses
+Submitter Name  Bernard Aboba
+Submitter Email Address  aboba@internaut.com
+Date first submitted  1 Sep 03
+Reference
+http://www.merit.edu/mail.archives/zeroconf/2003-04/msg00029.html
+http://www.merit.edu/mail.archives/zeroconf/2003-06/msg00007.html
+
+Comment Type  Technical
+Priority  S (must change)
+Section  2.6
+Rationale/Explanation of issue:
+
+Lengthy description of problem:
+Bernard Aboba wrote:
+> On April 11, 2003 Issue LL18 was rejected because the issue never had text
+> submitted for it.  In the following post, it was noted that "At such time
+> as an issue comes to mind - we will take the submission and open it for
+> discussion." See:
+> 
+> http://www.merit.edu/mail.archives/zeroconf/2003-04/msg00029.html
+> 
+> On June 4, 2003 Stuart Cheshire posted a message suggesting that LL18 be
+> revisited:
+> 
+> http://www.merit.edu/mail.archives/zeroconf/2003-06/msg00007.html
+> 
+> However, since no formal request was made, LL18 was not reopened at that
+> time, and as a result, no WG consensus was reached as to whether to allow
+> the proposed change.
+> 
+> At this point, I'd like to make a formal request that LL18 be reopened.
+
+  Requested Change:
+
+> The proposed change is as follows:
+> 
+> In Section 2.6 Change:
+> 
+> "If the destination address is a unicast address outside the 169.254/16
+> prefix, then the host SHOULD use an appropriate routable IPv4 source
+> address, if it has one. If the host does not have a routable source
+> address, then it MAY choose to ARP for the destination address and then
+> send its packet, with a Link-Local IPv4 source address and a routable
+> destination IPv4 address, directly to its destination on the same
+> physical link. The host MUST NOT send the packet to any router for
+> forwarding."
+> 
+> To:
+> 
+> "If the destination address is a unicast address outside the
+> 169.254/16 prefix, then the host SHOULD use an appropriate routable
+> source address, if it has one. If the host has no appropriate
+> routable source address, then it MUST ARP for the destination address
+> and then send its packet, with a link-local source IP address and a
+> routable destination IP address, directly to the destination on the
+> same physical link. The host MUST NOT send the packet to any router for
+> forwarding.
+> 
+> In the case of a device with only a link-local
+> address, this requirement can be paraphrased as "ARP for everything".
+> In many network stacks, achieving this "ARP for everything" behaviour
+> may be as simple as having no primary IP router configured, having
+> the primary IP router address configured to 0.0.0.0, or having the
+> primary IP router address set to be the same as the host's own
+> link-local IP address."
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep  2 15:36:57 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA00523
+	for <zeroconf-archive@lists.ietf.org>; Tue, 2 Sep 2003 15:36:57 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 669A391268; Tue,  2 Sep 2003 15:36:21 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 357AC91278; Tue,  2 Sep 2003 15:36:17 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id AAC689126E
+	for <zeroconf@trapdoor.merit.edu>; Tue,  2 Sep 2003 15:35:19 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8CF005DDC3; Tue,  2 Sep 2003 15:35:19 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 16DE75DDBD
+	for <zeroconf@merit.edu>; Tue,  2 Sep 2003 15:35:19 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.9/8.12.9) with ESMTP id h82JZGOq005602
+	for <zeroconf@merit.edu>; Tue, 2 Sep 2003 12:35:17 -0700 (PDT)
+Received: from Sun.COM (sr1-umpk-21.Eng.Sun.COM [129.146.17.37])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h82JZER23080
+	for <zeroconf@merit.edu>; Tue, 2 Sep 2003 21:35:15 +0200 (MEST)
+Message-ID: <3F54F0F2.1080201@Sun.COM>
+Date: Tue, 02 Sep 2003 12:35:14 -0700
+From: erik guttman <erik.guttman@Sun.COM>
+Reply-To: Erik.Guttman@Sun.COM
+Organization: Sun Microsystems
+User-Agent: Mozilla/5.0 (X11; U; SunOS sun4u; en-US; rv:1.1) Gecko/20020827
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG action: 1 week to discuss LL18: Host with LL address MUST ARP
+ for all addresses
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Please send feedback to the mailing list on the suggested change to Section
+2.6 as described in the reopened issue LL18.  Discussion is encouraged
+until Sep 10, when a consensus call will be made regarding the issue.
+
+Thanks and best regards,
+
+Erik Guttman
+ZEROCONF WG chair
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep  2 15:46:29 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA01748
+	for <zeroconf-archive@lists.ietf.org>; Tue, 2 Sep 2003 15:46:29 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 794BF91277; Tue,  2 Sep 2003 15:46:02 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 51B4091276; Tue,  2 Sep 2003 15:45:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 492399126E
+	for <zeroconf@trapdoor.merit.edu>; Tue,  2 Sep 2003 15:45:34 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1D73F5DDBD; Tue,  2 Sep 2003 15:45:34 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 914635DD8C
+	for <zeroconf@merit.edu>; Tue,  2 Sep 2003 15:45:33 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h82JjV9D024672
+	for <zeroconf@merit.edu>; Tue, 2 Sep 2003 12:45:32 -0700 (PDT)
+Received: from Sun.COM (sr1-umpk-21.Eng.Sun.COM [129.146.17.37])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h82JjSR23494;
+	Tue, 2 Sep 2003 21:45:29 +0200 (MEST)
+Message-ID: <3F54F357.3010803@Sun.COM>
+Date: Tue, 02 Sep 2003 12:45:27 -0700
+From: erik guttman <erik.guttman@Sun.COM>
+Reply-To: Erik.Guttman@Sun.COM
+Organization: Sun Microsystems
+User-Agent: Mozilla/5.0 (X11; U; SunOS sun4u; en-US; rv:1.1) Gecko/20020827
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Cc: Erik.Guttman@Sun.COM
+Subject: WG Consensus Action: Accept LL33: rework section 2.2 for reattachment
+References: <3F4E86A0.4090009@Sun.COM>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Action: Accept
+Change: Section 2.2.  Claiming a Link-Local Address
+
+FROM:
+When a network interface transitions from an inactive to an active
+state, the host does not have knowledge of what Link-Local IPv4
+addresses may currently be in use on that link, since the network
+interface may have been inactive when a conflicting address was claimed.
+
+TO:
+
+When a network interface transitions from an inactive to an active
+state, the host does not have knowledge of what Link-Local IPv4
+addresses may currently be in use on that link, since the point of
+attachment may have changed or the network interface may have been
+inactive when a conflicting address was claimed.
+
+===========
+
+FROM:
+
+When an interface transitions from inactive to active, the host not
+only doesn't have knowledge of LLv4 addresses in use -- it typically
+doesn't even know for sure whether it has connected to an alternative
+point of attachment.  It is therefore appropriate to determine what
+network the host is connected to (such as via probing for a
+default gateway or attempting to obtain a routable address)
+rather than merely probing for an IPv4LL conflict, potentially
+on a different network than the one on which it was originally allocated.
+
+TO:
+
+When a network interface transitions from an inactive to an active
+state, the host does not have knowledge of what Link-Local IPv4
+addresses may currently be in use on that link, since the point of
+attachment may have changed or the network interface may have been
+inactive when a conflicting address was claimed.
+
+=============
+
+FROM:
+
+"Were it immediately to begin using a Link-Local IPv4 address which is
+already in use by another host, this would be disruptive to that other
+host."
+
+TO:
+
+"Were the host to immediately begin using a Link-Local IPv4
+address which is already in use by another host, this would be
+disruptive to that other host.  Since it is possible that the
+host has changed its point of attachment, a routable address may be
+obtainable on the new network, and therefore it cannot be assumed that a
+Link-Local IPv4 address is to be preferred."
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep  2 15:56:14 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA02601
+	for <zeroconf-archive@lists.ietf.org>; Tue, 2 Sep 2003 15:56:14 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id CE3EF9127B; Tue,  2 Sep 2003 15:53:57 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9378991282; Tue,  2 Sep 2003 15:53:57 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0603B9127B
+	for <zeroconf@trapdoor.merit.edu>; Tue,  2 Sep 2003 15:52:19 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E87195DDD0; Tue,  2 Sep 2003 15:52:18 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 5DA2A5DDD3
+	for <zeroconf@merit.edu>; Tue,  2 Sep 2003 15:52:18 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.9/8.12.9) with ESMTP id h82Jkxqe023969;
+	Tue, 2 Sep 2003 13:47:01 -0600 (MDT)
+Received: from Sun.COM (sr1-umpk-21.Eng.Sun.COM [129.146.17.37])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h82JkuR23527;
+	Tue, 2 Sep 2003 21:46:57 +0200 (MEST)
+Message-ID: <3F54F3B0.7050201@Sun.COM>
+Date: Tue, 02 Sep 2003 12:46:56 -0700
+From: erik guttman <erik.guttman@Sun.COM>
+Reply-To: Erik.Guttman@Sun.COM
+Organization: Sun Microsystems
+User-Agent: Mozilla/5.0 (X11; U; SunOS sun4u; en-US; rv:1.1) Gecko/20020827
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu
+Subject: Re: LL11 Security consideration for the threat where an attacker
+ forces address reconfiguration
+References: <200308312144.h7VLiI0F006525@scv3.apple.com> <9300.1062405294@munnari.OZ.AU>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Robert Elz wrote:
+> Why are we still discussing this dead issue?
+
+While discussion of this point may be interesting, Section 8
+of draft-ietf-zeroconf-ipv4-linklocal-08.txt reflects working
+group consensus.  This issue is closed.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep  2 17:13:55 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA08095
+	for <zeroconf-archive@lists.ietf.org>; Tue, 2 Sep 2003 17:13:55 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 44F6E91279; Tue,  2 Sep 2003 17:13:50 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id F27B19127E; Tue,  2 Sep 2003 17:13:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0076291279
+	for <zeroconf@trapdoor.merit.edu>; Tue,  2 Sep 2003 17:13:48 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E36585DDE2; Tue,  2 Sep 2003 17:13:48 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id CE1765DDE1
+	for <zeroconf@merit.edu>; Tue,  2 Sep 2003 17:13:47 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h82LEF3e005423;
+	Wed, 3 Sep 2003 00:14:15 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h82LEEC5005422;
+	Wed, 3 Sep 2003 00:14:14 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: WG action: 1 week to discuss LL18: Host with LL address MUST
+	ARP for all addresses
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Erik.Guttman@Sun.COM
+Cc: zeroconf@merit.edu
+In-Reply-To: <3F54F0F2.1080201@Sun.COM>
+References: <3F54F0F2.1080201@Sun.COM>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1062537254.2015.9.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Wed, 03 Sep 2003 00:14:14 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Tue, 2003-09-02 at 22:35, erik guttman wrote:
+> Please send feedback to the mailing list on the suggested change to Section
+> 2.6 as described in the reopened issue LL18.  Discussion is encouraged
+> until Sep 10, when a consensus call will be made regarding the issue.
+
+[Repeat comment]
+
+In...
+
+   "If the host has no appropriate
+   routable source address, then it MUST ARP for the destination address
+   and then send its packet, with a link-local source IP address and a
+   routable destination IP address, directly to the destination on the
+   same physical link."
+
+s/MUST/SHOULD/
+
+I don't think we can mandate a node not to drop the packet. In addition,
+ARPing for everything does not work with multihoming. There needs to be
+an escape hatch to allow multihomed stacks to implement something
+appropriate. MUST is too strong.
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Wed Sep  3 14:38:45 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA28711
+	for <zeroconf-archive@lists.ietf.org>; Wed, 3 Sep 2003 14:38:44 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A3476912A3; Wed,  3 Sep 2003 14:38:29 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6BD5F912FC; Wed,  3 Sep 2003 14:38:13 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BB23E912A5
+	for <zeroconf@trapdoor.merit.edu>; Wed,  3 Sep 2003 14:35:29 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A99345DDD7; Wed,  3 Sep 2003 14:35:29 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server21.ukservers.net (server21.ukservers.net [217.10.138.198])
+	by segue.merit.edu (Postfix) with ESMTP id 172E75DDC2
+	for <zeroconf@merit.edu>; Wed,  3 Sep 2003 14:35:29 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server21.ukservers.net (Postfix) with ESMTP
+	id 8DA6139C07E; Wed,  3 Sep 2003 19:35:25 +0100 (BST)
+Message-ID: <000b01c3724a$2350a560$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Mika Liljeberg" <mika.liljeberg@welho.com>, <Erik.Guttman@Sun.COM>
+Cc: <zeroconf@merit.edu>
+References: <3F54F0F2.1080201@Sun.COM> <1062537254.2015.9.camel@hades>
+Subject: Re: WG action: 1 week to discuss LL18: Host with LL address MUSTARP for all addresses
+Date: Wed, 3 Sep 2003 19:35:23 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="Windows-1252"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+I support Bernard's proposal with Mika's change of MUST to SHOULD. I don't
+see that this change allows damaging behaviour because the next sentence
+clearly precludes sending to a router.
+
+Philip
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep  4 00:07:07 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id AAA02733
+	for <zeroconf-archive@lists.ietf.org>; Thu, 4 Sep 2003 00:07:07 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D2C8D912AE; Thu,  4 Sep 2003 00:06:58 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 634F2912B5; Thu,  4 Sep 2003 00:06:58 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B7B1191262
+	for <zeroconf@trapdoor.merit.edu>; Thu,  4 Sep 2003 00:01:52 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 91BEC5DDF4; Thu,  4 Sep 2003 00:01:52 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from delta.cs.mu.OZ.AU (unknown [203.146.39.147])
+	by segue.merit.edu (Postfix) with ESMTP id 3F0D45DDC6
+	for <zeroconf@merit.edu>; Thu,  4 Sep 2003 00:01:50 -0400 (EDT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h843xrV20584;
+	Thu, 4 Sep 2003 10:59:55 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: "Philip Nye" <philip@engarts.com>
+Cc: "Mika Liljeberg" <mika.liljeberg@welho.com>, Erik.Guttman@Sun.COM,
+        zeroconf@merit.edu
+Subject: Re: WG action: 1 week to discuss LL18: Host with LL address MUSTARP for all addresses 
+In-Reply-To: <000b01c3724a$2350a560$131010ac@aldebaran> 
+References: <000b01c3724a$2350a560$131010ac@aldebaran>  <3F54F0F2.1080201@Sun.COM> <1062537254.2015.9.camel@hades> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 04 Sep 2003 10:59:53 +0700
+Message-ID: <29137.1062647993@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Wed, 3 Sep 2003 19:35:23 +0100
+    From:        "Philip Nye" <philip@engarts.com>
+    Message-ID:  <000b01c3724a$2350a560$131010ac@aldebaran>
+
+  | I support Bernard's proposal with Mika's change of MUST to SHOULD. I don't
+  | see that this change allows damaging behaviour because the next sentence
+  | clearly precludes sending to a router.
+
+Yes, though that of course is meaningless in this context - if something
+answers an ARP, you can't tell whether it is a router or not.   The only
+possible applicability of that prohibition would be from sending to
+something that you have configured as a router, or have learned as a
+router using some kind of router discovery mechanism.
+
+If a router chooses to proxy-arp reply for an off link address, there's
+nothing that a local node can do but send the packet to the address
+received, nor is there any reason to expect or even desire it to do
+otherwise.
+
+kre
+
+
+
+
+From owner-zeroconf@merit.edu  Sat Sep  6 10:45:46 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA18392
+	for <zeroconf-archive@lists.ietf.org>; Sat, 6 Sep 2003 10:45:46 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 35FCA912B8; Sat,  6 Sep 2003 10:44:08 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id D122B91241; Sat,  6 Sep 2003 10:44:07 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 7E229912B8
+	for <zeroconf@trapdoor.merit.edu>; Sat,  6 Sep 2003 10:44:01 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 59B965DE10; Sat,  6 Sep 2003 10:44:01 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id CB0D05DE03
+	for <zeroconf@merit.edu>; Sat,  6 Sep 2003 10:44:00 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h86EC1R32566
+	for <zeroconf@merit.edu>; Sat, 6 Sep 2003 07:12:01 -0700
+Date: Sat, 6 Sep 2003 07:12:01 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Re: WG action: 1 week to discuss LL18: Host
+Message-ID: <Pine.LNX.4.53.0309060705220.32228@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I'd suggest that perhaps the multi-homing issue should be explicitly
+addressed in the paragraph.  For example:
+
+"If the host has no appropriate routable source address, but is not
+multi-homed, then it SHOULD ARP for the destination address and then send
+its packet, with a link-local source IP address and a routable destination
+IP address, directly to the destination on the same physical link."
+
+
+From owner-zeroconf@merit.edu  Sat Sep  6 11:08:37 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA19426
+	for <zeroconf-archive@lists.ietf.org>; Sat, 6 Sep 2003 11:08:37 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 1F3AC91241; Sat,  6 Sep 2003 11:08:33 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E10D591242; Sat,  6 Sep 2003 11:08:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id E536791241
+	for <zeroconf@trapdoor.merit.edu>; Sat,  6 Sep 2003 11:08:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D322B5DE07; Sat,  6 Sep 2003 11:08:31 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 4A8925DDF7
+	for <zeroconf@merit.edu>; Sat,  6 Sep 2003 11:08:30 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h86F8DS20443;
+	Sat, 6 Sep 2003 22:08:14 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h86F84f13865;
+	Sat, 6 Sep 2003 22:08:05 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Bernard Aboba <aboba@internaut.com>
+Cc: zeroconf@merit.edu
+Subject: Re: WG action: 1 week to discuss LL18: Host 
+In-Reply-To: <Pine.LNX.4.53.0309060705220.32228@internaut.com> 
+References: <Pine.LNX.4.53.0309060705220.32228@internaut.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Sat, 06 Sep 2003 22:08:04 +0700
+Message-ID: <20112.1062860884@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Sat, 6 Sep 2003 07:12:01 -0700 (PDT)
+    From:        Bernard Aboba <aboba@internaut.com>
+    Message-ID:  <Pine.LNX.4.53.0309060705220.32228@internaut.com>
+
+  | I'd suggest that perhaps the multi-homing issue should be explicitly
+  | addressed in the paragraph.  For example:
+
+I think I agree with that, but I don't think I'd do it this way...
+
+  | "If the host has no appropriate routable source address, but is not
+  | multi-homed, then it SHOULD ARP for the destination address and then send
+  | its packet, with a link-local source IP address and a routable destination
+  | IP address, directly to the destination on the same physical link."
+
+Rather, I think I'd say something like
+
+	A multi-homed host needs to select an outgoing interface.
+	Details of that process are beyond the scope of this specification.
+	After selecting an interface, the multi-homed host should send
+	packets involving link-local addresses as specified in this
+	document, as if the selected interface were the host's only interface.
+
+Otherwise, there's no mention at all of what multi-homed hosts should do
+(not even that the doc isn't giving any advice) - they're simply being
+excluded.
+
+How a multi-homed host picks which interface to use is (for now) someone
+else's problem - but having selected interface N, if it has just LL
+addresses to use, then it should (SHOULD/MUST as determined) be doing the
+same ARP for any random unknown destination as it would were it a singly
+homed host.
+
+Note that the above says absolutely nothing about how the interface should
+be selected, nor what information the host can use to make that selection,
+nor in which order anything is done - it doesn't even preclude sending an
+ARP out every interface and picking one from which a reply is received.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Sat Sep  6 11:57:10 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA21643
+	for <zeroconf-archive@lists.ietf.org>; Sat, 6 Sep 2003 11:57:09 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id C54E991242; Sat,  6 Sep 2003 11:57:05 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9704791244; Sat,  6 Sep 2003 11:57:05 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 82DA491242
+	for <zeroconf@trapdoor.merit.edu>; Sat,  6 Sep 2003 11:57:04 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 6C9E45DE09; Sat,  6 Sep 2003 11:57:04 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 38CA55DE07
+	for <zeroconf@merit.edu>; Sat,  6 Sep 2003 11:57:03 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h86Fx13e026251;
+	Sat, 6 Sep 2003 18:59:02 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h86FwxKD026250;
+	Sat, 6 Sep 2003 18:58:59 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: WG action: 1 week to discuss LL18: Host
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Bernard Aboba <aboba@internaut.com>, zeroconf@merit.edu
+In-Reply-To: <20112.1062860884@munnari.OZ.AU>
+References: <Pine.LNX.4.53.0309060705220.32228@internaut.com>
+	 <20112.1062860884@munnari.OZ.AU>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1062863939.25949.6.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Sat, 06 Sep 2003 18:58:59 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Sat, 2003-09-06 at 18:08, Robert Elz wrote:
+> Rather, I think I'd say something like
+> 
+> 	A multi-homed host needs to select an outgoing interface.
+> 	Details of that process are beyond the scope of this specification.
+> 	After selecting an interface, the multi-homed host should send
+> 	packets involving link-local addresses as specified in this
+> 	document, as if the selected interface were the host's only interface.
+
+I agree. In fact, I would like to see something along these lines as
+close to the top as possible. The fact that the specification doesn't
+properly consider multihoming should be made clear from the beginning.
+That should save implementors some considerable anxiety.
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Sat Sep  6 15:48:09 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA01917
+	for <zeroconf-archive@lists.ietf.org>; Sat, 6 Sep 2003 15:48:09 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8DD169124A; Sat,  6 Sep 2003 15:48:04 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 05D2F91248; Sat,  6 Sep 2003 15:48:02 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0925691249
+	for <zeroconf@trapdoor.merit.edu>; Sat,  6 Sep 2003 15:47:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id DDF1C5DDF5; Sat,  6 Sep 2003 15:47:53 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server21.ukservers.net (server21.ukservers.net [217.10.138.198])
+	by segue.merit.edu (Postfix) with ESMTP id 606F05DDC7
+	for <zeroconf@merit.edu>; Sat,  6 Sep 2003 15:47:53 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server21.ukservers.net (Postfix) with ESMTP
+	id 9B90139C034; Sat,  6 Sep 2003 20:47:49 +0100 (BST)
+Message-ID: <001d01c374af$bfc56770$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Mika Liljeberg" <mika.liljeberg@welho.com>,
+        "Robert Elz" <kre@munnari.OZ.AU>
+Cc: "Bernard Aboba" <aboba@internaut.com>, <zeroconf@merit.edu>
+References: <Pine.LNX.4.53.0309060705220.32228@internaut.com> <20112.1062860884@munnari.OZ.AU> <1062863939.25949.6.camel@hades>
+Subject: Re: WG action: 1 week to discuss LL18: Host
+Date: Sat, 6 Sep 2003 20:47:47 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="Windows-1252"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+> From: "Mika Liljeberg" <mika.liljeberg@welho.com>
+> I agree. In fact, I would like to see something along these lines as
+> close to the top as possible. The fact that the specification doesn't
+> properly consider multihoming should be made clear from the beginning.
+> That should save implementors some considerable anxiety.
+
+Here is an attempt to remove some of the ambiguity and be more explicit
+about the multi-homing issues.
+
+Replace all of section 2.6.2 with:
+
+>>>
+2.6.2.  Forwarding Rules
+
+If a host is multihomed, then it must first determine which interface to use
+to send any packet, whether or not the destination is a Link-local address.
+This specification does not define how this decision is made.  Rather, the
+issues are explained and advice is given on how to address known problems
+(see Section 3).
+
+Whichever interface is used, if the destination address is in the 169.254/16
+prefix (including the 169.254.255.255 broadcast address), then the sender
+MUST ARP for the destination address and then send its packet directly to
+the destination on the same physical link.  This MUST be done whether the
+interface is configured with a Link-local or a routable IPv4 address.
+
+In many network stacks, achieving this functionality may be as simple as
+adding a routing table entry indicating that 169.254/16 is directly
+reachable on the local link.
+
+The host MUST NOT send a packet with a Link-Local IPv4 destination
+address to any router for forwarding.
+
+If the destination address is a unicast address outside the 169.254/16
+prefix, then the host SHOULD use an appropriate routable IPv4 source
+address, if it can. If for any reason the host chooses to send the packet
+with a Link-Local source address (e.g. no routable address is available on
+the selected interface), then it MUST ARP for the destination address and
+then send its packet, with a Link-Local IPv4 source address and a routable
+destination IPv4 address, directly to its destination on the same physical
+link. The host MUST NOT send the packet to any router for forwarding.
+>>>
+
+
+Note that the option of dropping the packet is covered by the host not
+"choosing to send the packet..." and therefore the MUST is appropriate.
+
+Philip
+
+
+
+From owner-zeroconf@merit.edu  Sat Sep  6 23:27:37 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA01130
+	for <zeroconf-archive@lists.ietf.org>; Sat, 6 Sep 2003 23:27:37 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2977991246; Sat,  6 Sep 2003 23:27:33 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EB4329124F; Sat,  6 Sep 2003 23:27:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CAED591246
+	for <zeroconf@trapdoor.merit.edu>; Sat,  6 Sep 2003 23:27:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B63BE5DE1B; Sat,  6 Sep 2003 23:27:31 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id ECBFA5DE13
+	for <zeroconf@merit.edu>; Sat,  6 Sep 2003 23:27:30 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h872tSC10857
+	for <zeroconf@merit.edu>; Sat, 6 Sep 2003 19:55:29 -0700
+Date: Sat, 6 Sep 2003 19:55:28 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Re: WG action: 1 week to discuss LL18: Host
+In-Reply-To: <Pine.LNX.4.53.0309060705220.32228@internaut.com>
+Message-ID: <Pine.LNX.4.53.0309061950460.10597@internaut.com>
+References: <Pine.LNX.4.53.0309060705220.32228@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+The first paragraph of Philip's suggested 2.6.2 overlaps with the last
+paragraph of 2.6.1.  This suggests combining them.  How about this?
+
+2.6.1 Source Address Usage
+
+Since each interface on a host may have a Link-Local IPv4 address in
+addition to zero or more other addresses configured by other means
+(e.g. manually or via a DHCP server), a host may have to make a
+choice about what source address to use when it sends a packet or
+initiates a TCP connection.
+
+The host SHOULD use a routable address in preference to a Link-Local
+IPv4 address except for communication to peers for which the host has an
+existing TCP connection at the time in which the host obtained a
+routable address configuration.  For more details, see Section 1.7.
+
+If a host is multihomed, it must first determine which interface
+to use to send any packet, whether or not the destination is a
+Link-Local address.   For a multi-homed host, the decision as to which
+source address to use is also more difficult.  This specification does not
+define how these decisions are made.  Rather the issues are explained and
+advice is given on how to address known problems (see Section 3).
+
+2.6.2 Forwarding Rules
+
+Whichever interface is used, if the destination address is in the
+169.254/16 prefix (including the 169.254.255.255 broadcast address), then
+the sender MUST ARP for the destination address and then send its packet
+directly to the destination on the same physical link.  This MUST be done
+whether the interface is configured with a Link-local or a routable IPv4
+address.
+
+In many network stacks, achieving this functionality may be as simple as
+adding a routing table entry indicating that 169.254/16 is directly
+reachable on the local link.
+
+The host MUST NOT send a packet with a Link-Local IPv4 destination
+address to any router for forwarding.
+
+If the destination address is a unicast address outside the 169.254/16
+prefix, then the host SHOULD use an appropriate routable IPv4 source
+address, if it can.  If for any reason the host chooses to send the packet
+with a Link-Local source address (e.g. no routable address is available on
+the selected interface), then it MUST ARP for the destination address and
+then send its packet, with a Link-Local IPv4 source address and a routable
+destination IPv4 address, directly to its destination on the same physical
+link.  The host MUST NOT send the packet to any router for forwarding.
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 05:18:58 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA16187
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 05:18:57 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D03D491234; Thu, 11 Sep 2003 05:18:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A428C91235; Thu, 11 Sep 2003 05:18:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A625791234
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 05:18:43 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 92BD35DD9D; Thu, 11 Sep 2003 05:18:43 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 4621B5DD93
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 05:18:43 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h8B9IasF024850
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 02:18:36 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-116.EMEA.Sun.COM [129.159.0.116])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8B9IWR01508
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 11:18:32 +0200 (MEST)
+Message-ID: <3F603CDA.6070906@sun.com>
+Date: Thu, 11 Sep 2003 11:14:02 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: new issue: LL34 Better transition to routable from v4LL using DHCP
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Description of Issue: Better transition to routable from v4LL using DHCP
+Submitter Name  Bernard Aboba
+Submitter Email Address  aboba@internaut.com
+Date first submitted  11 Sep 03
+Reference
+Comment Type  Technical
+Priority  S (must change)
+Section  2.11 (new section)
+Rationale/Explanation of issue:
+
+(a)  We need to ensure an orderly method for recovering a routable
+      address given LLv4 addressing.  Much of the time an LLv4 address
+      is allocated inappropriately,  and so it's important to be able
+      to obtain a routable address via DHCP if one is available.  The
+      current LLv4 spec doesn't address this, and the current default
+      retry interval of 5 minutes is way too long.
+
+(b) Interactions of DHCP with LLv4. The LLv4 specification seems to
+     imply that an LLv4 address should be allocated when a DHCPREQUEST
+     or DHCPDISCOVER does not obtain an answer.  Existing implementations
+     show that this behavior is problematic since the lack of response is
+     most likely a temporary phenomena or the result of a bug of some
+     kind rather than the lack of a DHCP server on the link.
+
+     5 minutes is too long. I'd suggest 1 minute or even less (I've
+     seen a Linux implementation which retries every 30 seconds with
+     jitter and that works a lot better).
+
+
+Lengthy description of problem:
+
+Requested change:
+
+Create a new section:
+2.11  Repeatedly Attempt to Obtain A Routable Address
+
+   As per Section 1.7, use a routable address is preferred to use of
+   a link-local address.  In many cases, a link-local address is
+   configured because a DHCP server failed to respond to an initial
+   query, or is inoperative for some time.  Experience has shown that
+   five minutes (see Appendix A.2 for example) was too long an
+   interval to wait and try to configure with DHCP.
+
+   A host which has been configured with an IPv4 link-local address
+   SHOULD periodically attempt to obtain an IPv4 address via DHCP.
+   The recommended policy is to attempt to configure using DHCP after
+   waiting for RECONF_INTERVAL, plus a random number of seconds,
+   uniformly distributed, between zero to RECONF_JITTER seconds.
+
+Modify:
+9.  Constants
+
+Add:
+
+    RECONF_INTERVAL      25 seconds
+    RECONF_JITTER        10 seconds
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 05:33:53 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA16389
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 05:33:53 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B73CF91235; Thu, 11 Sep 2003 05:33:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8F27C91236; Thu, 11 Sep 2003 05:33:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B3B8491235
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 05:33:48 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9DDAC5DDB1; Thu, 11 Sep 2003 05:33:48 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 20DC05DDAB
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 05:33:48 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.9/8.12.9) with ESMTP id h8B9Xk17019085
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 02:33:46 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-116.EMEA.Sun.COM [129.159.0.116])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8B9XhR01959
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 11:33:44 +0200 (MEST)
+Message-ID: <3F604071.2010202@sun.com>
+Date: Thu, 11 Sep 2003 11:29:21 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf <zeroconf@merit.edu>
+Subject: WG action: 1 week to discuss [LL34] Better transition to routable
+ from v4LL using DHCP
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Please send comments to the zeroconf@merit.edu mailing list regarding
+this issue.  Discussion will conclude on 18 Sep 03 and a decision will
+be made regarding WG consensus shortly after.
+
+Thanks,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 06:00:58 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA16795
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 06:00:58 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 51B0791236; Thu, 11 Sep 2003 06:00:50 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id F133B91237; Thu, 11 Sep 2003 06:00:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 00A4091236
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 06:00:47 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id DA2CB5DD9B; Thu, 11 Sep 2003 06:00:47 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 8E5595DD97
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 06:00:47 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h8BA0jsF011634
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 03:00:46 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-116.EMEA.Sun.COM [129.159.0.116])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8BA0gR02652
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 12:00:43 +0200 (MEST)
+Message-ID: <3F6046C4.8060303@sun.com>
+Date: Thu, 11 Sep 2003 11:56:20 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf <zeroconf@merit.edu>
+Subject: WG Action - ACCEPT LL18: Host with LL address MUST ARP for all addresses
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Action: Accept LL18
+
+I am attempting to collate everyone's suggestions.
+
+[1] LL18 says
+  Requested Change:
+
+The proposed change is as follows:
+
+In Section 2.6 Change:
+
+"If the destination address is a unicast address outside the 169.254/16
+prefix, then the host SHOULD use an appropriate routable IPv4 source
+address, if it has one. If the host does not have a routable source
+address, then it MAY choose to ARP for the destination address and then
+send its packet, with a Link-Local IPv4 source address and a routable
+destination IPv4 address, directly to its destination on the same
+physical link. The host MUST NOT send the packet to any router for
+forwarding."
+
+To:
+
+"If the destination address is a unicast address outside the
+169.254/16 prefix, then the host SHOULD use an appropriate routable
+source address, if it has one. If the host has no appropriate
+routable source address, then it MUST ARP for the destination address
+and then send its packet, with a link-local source IP address and a
+routable destination IP address, directly to the destination on the
+same physical link. The host MUST NOT send the packet to any router for
+forwarding.
+
+In the case of a device with only a link-local
+address, this requirement can be paraphrased as "ARP for everything".
+In many network stacks, achieving this "ARP for everything" behaviour
+may be as simple as having no primary IP router configured, having
+the primary IP router address configured to 0.0.0.0, or having the
+primary IP router address set to be the same as the host's own
+link-local IP address."
+
+[2] Mika suggested, with broad support
+
+Change:
+MUST ARP
+To:
+SHOULD ARP
+
+[3] Bernard suggested
+
+I'd suggest that perhaps the multi-homing issue should be explicitly
+addressed in the paragraph.  For example:
+
+"If the host has no appropriate routable source address, but is not
+multi-homed, then it SHOULD ARP for the destination address and then 
+send its packet, with a link-local source IP address and a routable 
+destination IP address, directly to the destination on the same physical 
+link."
+
+[4] Robert Elz (with support from all other posters) revised this to
+
+A multi-homed host needs to select an outgoing interface.
+Details of that process are beyond the scope of this specification.
+After selecting an interface, the multi-homed host should send
+packets involving link-local addresses as specified in this
+document, as if the selected interface were the host's only interface.
+
+[5] Philip Nye suggested replacing 2.6.2 with text close to the
+     below - which Bernard cleaned up to avoid repetition.
+
+=======================================================================
+Is everyone happy with the following?
+
+Replace 2.6.1 and 2.6.2 text with
+
+2.6.1 Source Address Usage
+
+Since each interface on a host may have a Link-Local IPv4 address in
+addition to zero or more other addresses configured by other means
+(e.g. manually or via a DHCP server), a host may have to make a
+choice about what source address to use when it sends a packet or
+initiates a TCP connection.
+
+The host SHOULD use a routable address in preference to a Link-Local
+IPv4 address except for communication to peers for which the host has
+an existing TCP connection at the time in which the host obtained a
+routable address configuration.  For more details, see Section 1.7.
+
+A multi-homed host needs to select an outgoing interface whether or
+not the destination is a link-local address.  Details of that process
+are beyond the scope of this specification.  After selecting an
+interface, the multi-homed host should send packets involving link-local
+addresses as specified in this document, as if the selected interface
+were the host's only interface.  See Section 3 for further discussion of
+multi-homed hosts.
+
+2.6.2 Forwarding Rules
+
+Whichever interface is used, if the destination address is in the
+169.254/16 prefix (including the 169.254.255.255 broadcast address),
+then the sender MUST ARP for the destination address and then send
+its packet directly to the destination on the same physical link.
+This MUST be done whether the interface is configured with a
+Link-local or a routable IPv4 address.
+
+In many network stacks, achieving this functionality may be as simple
+as adding a routing table entry indicating that 169.254/16 is directly
+reachable on the local link.
+
+The host MUST NOT send a packet with a Link-Local IPv4 destination
+address to any router for forwarding.
+
+If the destination address is a unicast address outside the 169.254/16
+prefix, then the host SHOULD use an appropriate routable IPv4 source
+address, if it can.  If for any reason the host chooses to send the
+packet with a Link-Local source address (e.g. no routable address is
+available on the selected interface), then it SHOULD ARP for the
+destination address and then send its packet, with a Link-Local IPv4
+source address and a routable destination IPv4 address, directly to its
+destination on the same physical link.  The host MUST NOT send the
+packet to any router for forwarding.
+
+In the case of a device with only a link-local address, this requirement
+can be paraphrased as "ARP for everything".
+
+In many network stacks, achieving this "ARP for everything" behaviour 
+may be as simple as having no primary IP router configured, having
+the primary IP router address configured to 0.0.0.0, or having the
+primary IP router address set to be the same as the host's own
+link-local IP address.
+---------------------------------------------------------------------------
+Thanks,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 08:36:22 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA20113
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 08:36:22 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 387249120F; Thu, 11 Sep 2003 08:36:17 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0E65391238; Thu, 11 Sep 2003 08:36:16 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 167B29120F
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 08:36:16 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E5BF75DDC2; Thu, 11 Sep 2003 08:36:15 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 2DEEB5DD8F
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 08:36:06 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h8BCZlM11436;
+	Thu, 11 Sep 2003 19:35:52 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8BCZg222442;
+	Thu, 11 Sep 2003 19:35:43 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Erik Guttman <erik.guttman@sun.com>
+Cc: zeroconf@merit.edu
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using DHCP 
+In-Reply-To: <3F603CDA.6070906@sun.com> 
+References: <3F603CDA.6070906@sun.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 11 Sep 2003 19:35:42 +0700
+Message-ID: <11194.1063283742@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I think you need to run that change past the dhcp WG to see
+what opinions there are, as this is really a requirement being
+added to dhcp clients (changing the dhcp client timers) and
+not really anything specific to LL addressing.
+
+I certainly agree that the long waits that dhcp clients usually
+fall into after their initial few attempts to contact a dhcp
+server can be most annoying, and that retrying more often would
+be nicer from the end user's viewpoint.
+
+On the other hand, I'm not sure that I'd be happy to have a LAN
+with perhaps hundreds of hosts (maybe thousands) all sending
+continuous streams of broadcast packets looking for a DHCP server.
+(A thousand hosts, with a 25 second (avg) delay is 40 broadcast
+packets a second, which is starting to get too high - make that
+5000 hosts, which is not unreasonable in some switched environments,
+and you're at 200 broadcast packets a second - which is beyond
+inconvenient and into extremely annoying).
+
+It may be that the correct strategy here is for hosts that have
+failed to contact the DHCP server, to remain on a "slow retry"
+regime, but always set the "broadcast reply" bit in dhcp requests.
+
+Then, upon noticing a DHCP reply, hosts could (after a short random
+delay to avoid a packet deluge) try again to get an address (no requirement
+to request a broadcast reply, if not needed, after seeing one) - the
+observed reply would indicate that the DHCP server has returned to life.
+
+If there are just a few hosts that aren't getting replies, perhaps
+because the DHCP server is ignoring them deliberately, having them
+set the broadcast reply request bit (unnecessarily) will be harmless,
+there won't be replies.
+
+If the DHCP server has really gone absent, and there are lots of people
+looking for replies, this would allow the hosts to avoid sending much
+traffic until there is evidence that there's a reasonable chance of
+achieving a result.
+
+Ideally, the slow down rate would depend upon the number of clients
+around to make requests (what is really wanted is one client at random
+making a request every few seconds, and all the others staying quiet until
+they observe a reply) but with DHCP, knowing how many other clients there
+are would mean listening to request packets, that clients don't usually
+want to do (and on some OS's is hard, without precluding the client from
+also being a server on a different LAN).   So, probably there just needs
+to be a reasonable compromise rate set.
+
+But this is all DHCP, not LL addressing, and needs the DHCP experts
+to give advice on - it is possible that they have considered, and
+rejected, this kind of approach in the past.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 10:07:05 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA23538
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 10:07:05 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 991ED9123B; Thu, 11 Sep 2003 10:06:47 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 64E4F9123C; Thu, 11 Sep 2003 10:06:47 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 66E709123B
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 10:06:46 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 5782D5DDB1; Thu, 11 Sep 2003 10:06:46 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id A13265DD9B
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 10:06:45 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h8BDYJM02818
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 06:34:19 -0700
+Date: Thu, 11 Sep 2003 06:34:18 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using
+ DHCP
+Message-ID: <Pine.LNX.4.53.0309110629490.2102@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> I think you need to run that change past the dhcp WG
+
+Indeed there is a recently accepted DHC WG work item on "Detection of
+Network Attachment"
+(http://www.ietf.org/internet-drafts/draft-ietf-dhc-dna-ipv4-00.txt) that
+could handle this issue if we decide to punt on it in the IPv4LL draft.
+
+Punting may well make sense -- but if so, I'd ask that some text be added
+saying that this is not being defined in the draft, but that the existing
+behavior is not recommended, and perhaps adding a non-normative reference
+to the DNAv4 document.
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 10:10:14 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA23984
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 10:10:14 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 45FB29123C; Thu, 11 Sep 2003 10:10:05 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 19E609123D; Thu, 11 Sep 2003 10:10:05 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D938E9123C
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 10:10:03 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C25B35DDBD; Thu, 11 Sep 2003 10:10:03 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id 1E88D5DD9B
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 10:10:03 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h8BDbb403006
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 06:37:37 -0700
+Date: Thu, 11 Sep 2003 06:37:36 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Suggested LL18 text
+Message-ID: <Pine.LNX.4.53.0309110636070.2102@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+The quoted text for 2.6.1 and 2.6.2 does not match that which was
+submitted to the list.  Here's the original posted suggestion:
+
+
+2.6.1 Source Address Usage
+
+Since each interface on a host may have a Link-Local IPv4 address in
+addition to zero or more other addresses configured by other means
+(e.g. manually or via a DHCP server), a host may have to make a
+choice about what source address to use when it sends a packet or
+initiates a TCP connection.
+
+The host SHOULD use a routable address in preference to a Link-Local
+IPv4 address except for communication to peers for which the host has an
+existing TCP connection at the time in which the host obtained a
+routable address configuration.  For more details, see Section 1.7.
+
+If a host is multihomed, it must first determine which interface
+to use to send any packet, whether or not the destination is a
+Link-Local address.   For a multi-homed host, the decision as to which
+source address to use is also more difficult.  This specification does not
+define how these decisions are made.  Rather the issues are explained and
+advice is given on how to address known problems (see Section 3).
+
+2.6.2 Forwarding Rules
+
+Whichever interface is used, if the destination address is in the
+169.254/16 prefix (including the 169.254.255.255 broadcast address), then
+the sender MUST ARP for the destination address and then send its packet
+directly to the destination on the same physical link.  This MUST be done
+whether the interface is configured with a Link-local or a routable IPv4
+address.
+
+In many network stacks, achieving this functionality may be as simple as
+adding a routing table entry indicating that 169.254/16 is directly
+reachable on the local link.
+
+The host MUST NOT send a packet with a Link-Local IPv4 destination
+address to any router for forwarding.
+
+If the destination address is a unicast address outside the 169.254/16
+prefix, then the host SHOULD use an appropriate routable IPv4 source
+address, if it can.  If for any reason the host chooses to send the packet
+with a Link-Local source address (e.g. no routable address is available on
+the selected interface), then it MUST ARP for the destination address and
+then send its packet, with a Link-Local IPv4 source address and a routable
+destination IPv4 address, directly to its destination on the same physical
+link.  The host MUST NOT send the packet to any router for forwarding.
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 10:27:36 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA25079
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 10:27:36 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id CE9B39123D; Thu, 11 Sep 2003 10:27:30 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9C77E9123E; Thu, 11 Sep 2003 10:27:30 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9A5FA9123D
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 10:27:29 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 836C95DDDF; Thu, 11 Sep 2003 10:27:29 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id E612B5DD9B
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 10:27:28 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h8BDt2Y04001
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 06:55:02 -0700
+Date: Thu, 11 Sep 2003 06:55:02 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Differences between LL18 proposed resolutions
+Message-ID: <Pine.LNX.4.53.0309110645270.3476@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Looking at the two proposed resolutions of LL18, here are the differences:
+
+1. Mention of source address selection has been removed from 2.6.1 (the
+sentence "For a multi-homed host, the decision as to which source address
+to use is also more difficult").  It does seem somewhat relevant to
+discuss this in 2.6.1 or 2.6.2.
+
+2. The suggested "MUST ARP for the destination address" has been changed
+to "SHOULD ARP".  My understanding was that MUST ARP was selected since
+source address/interface selection and the desire to send the packet (as
+opposed to dropping it) was presumed. I'd therefore suggest that MUST ARP
+be put back.
+
+3. Additional text on "ARP for everything" has been added. This text
+appears to conflict with the desired multi-homing behavior, so I would
+suggest that we rephrase it to say "In the case of a device with a single
+interface and only a link-local address".  Also at the end of the
+paragraph, we might add "For suggested behavior in multi-homed hosts, see
+Section 3."
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 13:34:17 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA02394
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 13:34:17 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id ECB5091244; Thu, 11 Sep 2003 13:34:12 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B84449124C; Thu, 11 Sep 2003 13:34:12 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B054791244
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 13:34:11 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9774C5DDB7; Thu, 11 Sep 2003 13:34:11 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 393625DDB1
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 13:34:10 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h8BHYTYg006158;
+	Thu, 11 Sep 2003 20:34:30 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h8BHYSEq006157;
+	Thu, 11 Sep 2003 20:34:28 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using
+	DHCP
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu
+In-Reply-To: <11194.1063283742@munnari.OZ.AU>
+References: <3F603CDA.6070906@sun.com>   <11194.1063283742@munnari.OZ.AU>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1063301667.777.22.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Thu, 11 Sep 2003 20:34:27 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Thu, 2003-09-11 at 15:35, Robert Elz wrote:
+> On the other hand, I'm not sure that I'd be happy to have a LAN
+> with perhaps hundreds of hosts (maybe thousands) all sending
+> continuous streams of broadcast packets looking for a DHCP server.
+> (A thousand hosts, with a 25 second (avg) delay is 40 broadcast
+> packets a second, which is starting to get too high - make that
+> 5000 hosts, which is not unreasonable in some switched environments,
+> and you're at 200 broadcast packets a second - which is beyond
+> inconvenient and into extremely annoying).
+
+Frequent polling is also a very bad idea from the standpoint of power
+efficiency. Not all devices are tethered to a power outlet.
+
+This is really a DHCP issue but it would seem preferable to have DHCP
+servers announce their presence (and readines to assign addresses) with
+a periodic broadcast, rather than have all the clients broadcasting in
+an effort to locate a server.
+
+A new DHCPADVERTISE message could easily be specified in a way that is
+fully compatible with current DHCP usage.
+
+Alternatively, I suppose servers could just periodically broadcast an
+unsolicited DHCPOFFER, but I haven't really thought this through. There
+may be reasons why this would not be a good idea.
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 15:17:00 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA08564
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 15:17:00 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2862691258; Thu, 11 Sep 2003 15:16:54 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E00E391259; Thu, 11 Sep 2003 15:16:53 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id E22D091258
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 15:16:52 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id CE7AB5DD9B; Thu, 11 Sep 2003 15:16:52 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 237945DD9A
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 15:16:52 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h8BJGHVG002413;
+	Thu, 11 Sep 2003 12:16:18 -0700 (PDT)
+Received: from sun.com (vpn-129-156-96-112.EMEA.Sun.COM [129.156.96.112])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8BJGER00191;
+	Thu, 11 Sep 2003 21:16:14 +0200 (MEST)
+Message-ID: <3F60C8F7.50707@sun.com>
+Date: Thu, 11 Sep 2003 21:11:51 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Mika Liljeberg <mika.liljeberg@welho.com>
+Cc: Robert Elz <kre@munnari.OZ.AU>, zeroconf@merit.edu, dhcwg@ietf.org
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using
+ DHCP
+References: <3F603CDA.6070906@sun.com>   <11194.1063283742@munnari.OZ.AU> <1063301667.777.22.camel@hades>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Mika,
+
+I agree.  However, all we can do is suggest this as useful to the
+DHC WG.  I am cc:ing the dhcwg on my reply.  I don't mean to start
+a long sequence of cross posts, but in this particular area it may
+be a good idea.
+
+Thanks,
+
+Erik
+
+Mika Liljeberg wrote:
+> On Thu, 2003-09-11 at 15:35, Robert Elz wrote:
+> 
+>>On the other hand, I'm not sure that I'd be happy to have a LAN
+>>with perhaps hundreds of hosts (maybe thousands) all sending
+>>continuous streams of broadcast packets looking for a DHCP server.
+>>(A thousand hosts, with a 25 second (avg) delay is 40 broadcast
+>>packets a second, which is starting to get too high - make that
+>>5000 hosts, which is not unreasonable in some switched environments,
+>>and you're at 200 broadcast packets a second - which is beyond
+>>inconvenient and into extremely annoying).
+> 
+> 
+> Frequent polling is also a very bad idea from the standpoint of power
+> efficiency. Not all devices are tethered to a power outlet.
+> 
+> This is really a DHCP issue but it would seem preferable to have DHCP
+> servers announce their presence (and readines to assign addresses) with
+> a periodic broadcast, rather than have all the clients broadcasting in
+> an effort to locate a server.
+> 
+> A new DHCPADVERTISE message could easily be specified in a way that is
+> fully compatible with current DHCP usage.
+> 
+> Alternatively, I suppose servers could just periodically broadcast an
+> unsolicited DHCPOFFER, but I haven't really thought this through. There
+> may be reasons why this would not be a good idea.
+> 
+> 	MikaL
+> 
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 11 16:45:00 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA13050
+	for <zeroconf-archive@lists.ietf.org>; Thu, 11 Sep 2003 16:44:58 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D40FD9124A; Thu, 11 Sep 2003 16:44:46 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A3C4191259; Thu, 11 Sep 2003 16:44:46 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B41DF9124A
+	for <zeroconf@trapdoor.merit.edu>; Thu, 11 Sep 2003 16:44:45 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9CD3A5DE9B; Thu, 11 Sep 2003 16:44:45 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server21.ukservers.net (server21.ukservers.net [217.10.138.198])
+	by segue.merit.edu (Postfix) with ESMTP id 3C5855DE46
+	for <zeroconf@merit.edu>; Thu, 11 Sep 2003 16:44:45 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server21.ukservers.net (Postfix) with ESMTP
+	id D806F39C039; Thu, 11 Sep 2003 21:44:41 +0100 (BST)
+Message-ID: <001a01c378a5$87217680$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Bernard Aboba" <aboba@internaut.com>, <zeroconf@merit.edu>
+References: <Pine.LNX.4.53.0309110645270.3476@internaut.com>
+Subject: Re: Differences between LL18 proposed resolutions
+Date: Thu, 11 Sep 2003 21:44:42 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+> From: "Bernard Aboba" <aboba@internaut.com>
+>
+> 1. Mention of source address selection has been removed from 2.6.1 (the
+> sentence "For a multi-homed host, the decision as to which source address
+> to use is also more difficult").  It does seem somewhat relevant to
+> discuss this in 2.6.1 or 2.6.2.
+
+I agree that Eric's text changes the sense slightly but think that he is
+right and the text adequate. Eric's text implies that the selection of
+interface is a complex issue, but once selected the host SHOULD use a
+routable source address if one is available on that interface - subject to
+the same caveats as for a single interface (existing connections, incoming
+requests etc.)
+
+> 2. The suggested "MUST ARP for the destination address" has been changed
+> to "SHOULD ARP".  My understanding was that MUST ARP was selected since
+> source address/interface selection and the desire to send the packet (as
+> opposed to dropping it) was presumed. I'd therefore suggest that MUST ARP
+> be put back.
+
+I agree with Bernard here - if the packet is to be sent at all, then there
+is no alternative but to ARP so "MUST" is appropriate. The alternatives of
+dropping the packet or sending via a different interface is covered by the
+revised text anyway.
+
+
+Philip
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 12 10:07:29 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA24571
+	for <zeroconf-archive@lists.ietf.org>; Fri, 12 Sep 2003 10:07:29 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B9ECE91250; Fri, 12 Sep 2003 10:07:24 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 859AB91298; Fri, 12 Sep 2003 10:07:24 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D155B91250
+	for <zeroconf@trapdoor.merit.edu>; Fri, 12 Sep 2003 10:07:22 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B9BF05DDBE; Fri, 12 Sep 2003 10:07:22 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 649B75DD9B
+	for <zeroconf@merit.edu>; Fri, 12 Sep 2003 10:06:52 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h8CE6OM03617;
+	Fri, 12 Sep 2003 21:06:25 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8CE66I21330;
+	Fri, 12 Sep 2003 21:06:08 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Mika Liljeberg <mika.liljeberg@welho.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using DHCP 
+In-Reply-To: <1063301667.777.22.camel@hades> 
+References: <1063301667.777.22.camel@hades>  <3F603CDA.6070906@sun.com> <11194.1063283742@munnari.OZ.AU> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 12 Sep 2003 21:06:06 +0700
+Message-ID: <15474.1063375566@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Thu, 11 Sep 2003 20:34:27 +0300
+    From:        Mika Liljeberg <mika.liljeberg@welho.com>
+    Message-ID:  <1063301667.777.22.camel@hades>
+
+  | Frequent polling is also a very bad idea from the standpoint of power
+  | efficiency. Not all devices are tethered to a power outlet.
+
+Yes.
+
+  | This is really a DHCP issue but it would seem preferable to have DHCP
+  | servers announce their presence (and readines to assign addresses) with
+  | a periodic broadcast, rather than have all the clients broadcasting in
+  | an effort to locate a server.
+
+This is real hard to achieve - the clients can be almost anywhere, they're
+not all on the same LAN as the DHCP server.   For this to be practical, the
+DHCP server would need to know where all its possible relay agents were
+located, and enlist their help in sending that kind of message.   That's
+not something that a typical dhcp server knows now.
+
+  | Alternatively, I suppose servers could just periodically broadcast an
+  | unsolicited DHCPOFFER,
+
+Same problem.
+
+That's why watching for responses to someone else's queries can possibly
+be a help.   Where it falls down is when there is no-one else to make
+queries, that is, there's just one node.   If there was a way for a node
+to know how many other clients existed (on the same LAN at least) then
+nodes could backoff to a fixed query/second rate (for the LAN), but as
+things are currently, there's no good way I know of to perform that count.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 12 12:58:39 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA04378
+	for <zeroconf-archive@lists.ietf.org>; Fri, 12 Sep 2003 12:58:39 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7BF8C9129E; Fri, 12 Sep 2003 12:58:38 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 4D8BA912A0; Fri, 12 Sep 2003 12:58:38 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 43A8A9129E
+	for <zeroconf@trapdoor.merit.edu>; Fri, 12 Sep 2003 12:58:36 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 13E715DDF9; Fri, 12 Sep 2003 12:58:36 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 39EEA5DDD7
+	for <zeroconf@merit.edu>; Fri, 12 Sep 2003 12:58:35 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h8CGwkAV002543;
+	Fri, 12 Sep 2003 19:58:46 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h8CGwjal002542;
+	Fri, 12 Sep 2003 19:58:45 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using
+	DHCP
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu
+In-Reply-To: <15474.1063375566@munnari.OZ.AU>
+References: <1063301667.777.22.camel@hades>  <3F603CDA.6070906@sun.com>
+	 <11194.1063283742@munnari.OZ.AU>   <15474.1063375566@munnari.OZ.AU>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1063385924.750.4.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Fri, 12 Sep 2003 19:58:44 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Fri, 2003-09-12 at 17:06, Robert Elz wrote:
+>   | This is really a DHCP issue but it would seem preferable to have DHCP
+>   | servers announce their presence (and readines to assign addresses) with
+>   | a periodic broadcast, rather than have all the clients broadcasting in
+>   | an effort to locate a server.
+> 
+> This is real hard to achieve - the clients can be almost anywhere, they're
+> not all on the same LAN as the DHCP server.   For this to be practical, the
+> DHCP server would need to know where all its possible relay agents were
+> located, and enlist their help in sending that kind of message.   That's
+> not something that a typical dhcp server knows now.
+
+Hmm. The relay agents know where the DHCP server is. Why not have the
+relays poll the server and broadcast a DHCPADVERTISE on their local
+link. It still better than having the clients poll the server through
+the relays. Am I missing something?
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 12 13:59:00 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA07158
+	for <zeroconf-archive@lists.ietf.org>; Fri, 12 Sep 2003 13:58:59 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 561B291252; Fri, 12 Sep 2003 13:58:56 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 2FE8C912A1; Fri, 12 Sep 2003 13:58:56 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 3E45891252
+	for <zeroconf@trapdoor.merit.edu>; Fri, 12 Sep 2003 13:58:55 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1678C5DE0E; Fri, 12 Sep 2003 13:58:55 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from sj-iport-1.cisco.com (sj-iport-1-in.cisco.com [171.71.176.70])
+	by segue.merit.edu (Postfix) with ESMTP id 9B4EF5DDE7
+	for <zeroconf@merit.edu>; Fri, 12 Sep 2003 13:58:53 -0400 (EDT)
+Received: from flask.cisco.com (IDENT:mirapoint@flask.cisco.com [161.44.122.62])
+	by sj-core-1.cisco.com (8.12.9/8.12.6) with ESMTP id h8CHwjbu007153;
+	Fri, 12 Sep 2003 10:58:51 -0700 (PDT)
+Received: from jschnizl-w2k.cisco.com (rtp-vpn1-94.cisco.com [10.82.224.94])
+	by flask.cisco.com (Mirapoint Messaging Server MOS 3.3.6-GR)
+	with ESMTP id ACI64449;
+	Fri, 12 Sep 2003 13:58:44 -0400 (EDT)
+Message-Id: <4.3.2.7.2.20030912135557.0246b190@wells.cisco.com>
+X-Sender: jschnizl@wells.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Fri, 12 Sep 2003 13:58:42 -0400
+To: Mika Liljeberg <mika.liljeberg@welho.com>
+From: John Schnizlein <jschnizl@cisco.com>
+Subject: Re: new issue: LL34 Better transition to routable from v4LL
+  using DHCP
+Cc: zeroconf@merit.edu
+In-Reply-To: <1063385924.750.4.camel@hades>
+References: <15474.1063375566@munnari.OZ.AU>
+ <1063301667.777.22.camel@hades>
+ <3F603CDA.6070906@sun.com>
+ <11194.1063283742@munnari.OZ.AU>
+ <15474.1063375566@munnari.OZ.AU>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 12:58 PM 9/12/2003, Mika Liljeberg wrote:
+
+>Hmm. The relay agents know where the DHCP server is. Why not have the
+>relays poll the server and broadcast a DHCPADVERTISE on their local
+>link. It still better than having the clients poll the server through
+>the relays. Am I missing something?
+
+The ZeroConf list is a strange place to be re-designing DHCP.
+You might want to study the current design of discover, offer,
+request and acknowledge before proposing dhcp-advertise on 
+the DHC mailing list.
+
+John
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Sep 14 02:08:57 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA17716
+	for <zeroconf-archive@lists.ietf.org>; Sun, 14 Sep 2003 02:08:56 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E164B91266; Sun, 14 Sep 2003 02:08:54 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AB02791267; Sun, 14 Sep 2003 02:08:54 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A70D091266
+	for <zeroconf@trapdoor.merit.edu>; Sun, 14 Sep 2003 02:08:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8F6745DE09; Sun, 14 Sep 2003 02:08:53 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id CACC45DDDC
+	for <zeroconf@merit.edu>; Sun, 14 Sep 2003 02:08:52 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h8E5aBZ27722
+	for <zeroconf@merit.edu>; Sat, 13 Sep 2003 22:36:11 -0700
+Date: Sat, 13 Sep 2003 22:36:11 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Re: new issue: LL34 Better transition to routable from v4LL using
+ DHCP
+Message-ID: <Pine.LNX.4.53.0309132221240.26893@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>The Zeroconf list is a strange place to be re-designing DHCP.
+
+I'd propose that we punt this issue to the DHC WG and use the following
+text for Section 2.11:
+
+2.11  Transition from Link-Local IPv4 to Routable Address
+
+As discussed in Section 1.7, use of a routable address is preferred to
+assignment of a Link-Local IPv4 address.  A Link-Local IPv4 address can be
+configured due to transient failures, such as incomplete link-layer authentication,
+spanning tree convergence issues, or because a DHCP server failed
+to respond to an initial query, or is inoperative for some time.
+
+Where a Link-Local IPv4 address is assigned due to a transient failure,
+experience has shown that five minutes (see Appendix A.2) may be
+too long an interval to wait prior to attempting to configure with DHCP.
+This document does not specify a strategy for quickly recovering a
+routable address in situations where a Link-Local IPv4 address is assigned
+due to a transient failure.  In situations where many hosts are present on
+a single subnet, frequent attempts to contact the DHCP server could result
+in a heavy traffic load.  Further discussion of this issue is provided in
+[DNAv4].
+
+[DNAv4]
+Aboba, B., "Detection of Network Attachment (DNA) in IPv4",
+draft-ietf-dhc-dna-ipv4-01.txt, Internet draft (work in progress),
+September 2003.
+
+
+From owner-zeroconf@merit.edu  Fri Sep 19 10:16:17 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA00741
+	for <zeroconf-archive@lists.ietf.org>; Fri, 19 Sep 2003 10:16:13 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E676D91448; Thu, 18 Sep 2003 17:40:35 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A3F789143B; Thu, 18 Sep 2003 17:40:34 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 3BDE791446
+	for <zeroconf@trapdoor.merit.edu>; Thu, 18 Sep 2003 17:38:35 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 272985DE01; Thu, 18 Sep 2003 17:38:35 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 164625DDA2
+	for <zeroconf@merit.edu>; Thu, 18 Sep 2003 17:38:34 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h8ILcEn9023073;
+	Fri, 19 Sep 2003 00:38:14 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h8ILcASX023064;
+	Fri, 19 Sep 2003 00:38:10 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: [dhcwg] [Fwd: new issue: LL34 Better transition to routable
+	from v4LL using DHCP]
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Ted Lemon <mellon@fugue.com>
+Cc: Ted Lemon <Ted.Lemon@nominum.com>, Erik Guttman <erik.guttman@sun.com>,
+        dhcwg@ietf.org, zeroconf@merit.edu
+In-Reply-To: <200309181256.20887.mellon@fugue.com>
+References: <3F60C8B5.900@sun.com> <200309181237.12449.mellon@nominum.com>
+	 <200309181256.20887.mellon@fugue.com>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1063921090.18069.15.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Fri, 19 Sep 2003 00:38:10 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Thu, 2003-09-18 at 20:56, Ted Lemon wrote:
+> On Thursday 18 September 2003 12:37, Ted Lemon wrote:
+> > So I think the right answer to this question is to simply decouple the
+> > IPv4LL and DHCP state machines.
+> 
+> To be clear, I meant here "decouple the DHCP state machine from the IPv4ll 
+> state machine," but not "decouple the IPv4LL state machine from the DHCP 
+> state machine" - obviously this isn't possible if we do what I've proposed.
+
+I don't think this is a particularly useful distinction.
+
+>From the implementor's point of view the coupling either exists or it
+doesn't. If it does exist an explicit interface is required between the
+DHCP code and the v4LL code. How that interface is realized is an
+implementation issue.
+
+It would be better to have no coupling at all.
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 19 11:30:54 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA00375
+	for <zeroconf-archive@lists.ietf.org>; Fri, 19 Sep 2003 11:30:54 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A59C791209; Fri, 19 Sep 2003 05:46:07 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6A04091212; Fri, 19 Sep 2003 05:46:07 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CD3F291209
+	for <zeroconf@trapdoor.merit.edu>; Fri, 19 Sep 2003 05:46:05 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9FFFB5DDC0; Fri, 19 Sep 2003 05:46:05 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 08C355DDA2
+	for <zeroconf@merit.edu>; Fri, 19 Sep 2003 05:45:53 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h8J9jhT27217;
+	Fri, 19 Sep 2003 16:45:43 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8J9im209586;
+	Fri, 19 Sep 2003 16:44:52 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Ted Lemon <mellon@fugue.com>
+Cc: dhcwg@ietf.org, zeroconf@merit.edu
+Subject: Re: [dhcwg] [Fwd: new issue: LL34 Better transition to routable from v4LL using DHCP] 
+In-Reply-To: <200309182338.16364.mellon@fugue.com> 
+References: <200309182338.16364.mellon@fugue.com>  <200309181237.12449.mellon@nominum.com> <3F60C8B5.900@sun.com> <4632.1063943577@munnari.OZ.AU> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 19 Sep 2003 16:44:48 +0700
+Message-ID: <19901.1063964688@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Thu, 18 Sep 2003 23:38:16 -0500
+    From:        Ted Lemon <mellon@fugue.com>
+    Message-ID:  <200309182338.16364.mellon@fugue.com>
+
+  | The correct fix is to make sure that the DHCP client does not in
+  | fact modify its behaviour to make IPv4ll work, but rather to modify
+  | IPv4ll so that it doesn't interfere with the operation of the DHCP client.
+
+I have no problem with that, that's what I'd do.   The problem that we have
+is that everyone wants everything to fall into the perfect state instantly.
+Any time that we're in an unexpected state is "broken", even if there's
+nothing the implementation could really have done about that.
+
+That is, my approach to this, which I don't think conflicts with the
+drafts at all, would be to start the DHCP client (let it go do its thing
+just like it does now, ignoring LL addressing), wait a second and a half
+(puerly because of that 1 second boring meaningless non-answered ping delay
+verifying that the address is not assigned) and then see if I have an address.
+If not, configure an LL address as documented, and use that.  Then keep
+monitoring the interface.  If a routable address appears from somewhere
+(most likely from DHCP, but anywhere will do) mark the LL address (if the
+LL process has reached this stage yet) as deprecated - and yes, this means
+borrowing some (more) IPv6 innovation and terminology for v4 (which is
+really needed anyway to make dhcp work correctly - currently on the stack
+I use, if dhcp gives me a v4 address, then the lease expires, dhcp will then
+take away the address again - just as it should - but I can trivially avoid
+that just by killing my dhcp process, the IP stack has no concept at all
+of a lifetime for v4 addresses, if the dhcp process doesn't remove the
+address, it is permanent, it should have a valid time, just as v6 addresses do).
+
+The issue I was detecting in the issue (LL34) though is that once we're in
+that state, we don't want to remain in it, if a routable address should be
+available - LL34 is trying to tell DHCP to keep trying hard to get a
+routable address.
+
+  | Lest you conclude that I am off my rocker, a way to check this would be to 
+  | look for the place in RFC2131 where it says that the DHCP client should
+  | wait for five minutes after failing (that is, having retried and timed out)
+  | to  contact a DHCP server, before reinitiating an attempt to contact one.
+
+No, I know that's not there - that's why I used the words "operational 
+requirements" in the previous message - LL34 wants to force implementations
+to retry quickly.   2131 doesn't say "wait 5 minutes" but it also doesn't
+say "don't wait 5 minutes", or "try again every 5 seconds" - something like
+the latter is what LL34 seems to be asking of DHCP (though it actually
+says 1 minute, not 5 seconds, but hints that 30 secs would be even better).
+
+That's why I see this issue as an attempt to change DHCP from the zeroconf WG.
+The LL processing happens just the same, other than wrt absolute times,
+whatever the DHCP server does, but people want it to happen quickly, not
+slowly...
+
+This is exacerbated with LL addresses existing (the problem is made worse),
+so now there's a greater incentive to fix it.
+
+Before LL, networking was simply broken, if no DHCP address could be
+obtained.   That's a simple state - easy to explain - easy for the user
+to handle ("popop box says no dhcp server responded, no address, no
+networking - someone fix the dhcp server please!").   With LL addresses
+getting no routable address is "expected", it isn't an error - the stack
+just configures an LL address and says "I'm ready, use me" - and the user
+believes all is OK - except nothing works.    In this situation we really
+want things to revert to the "fixed" state as quickly as possible, lest
+frustration result "where did I get this stupid useless address instead
+of the one I should have - the network is broken".
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 19 11:49:09 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA00780
+	for <zeroconf-archive@lists.ietf.org>; Fri, 19 Sep 2003 10:16:56 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 5843191207; Thu, 18 Sep 2003 23:58:08 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 2827991209; Thu, 18 Sep 2003 23:58:08 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 2A1C291207
+	for <zeroconf@trapdoor.merit.edu>; Thu, 18 Sep 2003 23:58:07 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id EC0B85DE46; Thu, 18 Sep 2003 23:58:06 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id B9C435DDAB
+	for <zeroconf@merit.edu>; Thu, 18 Sep 2003 23:56:27 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h8J3uBT09715;
+	Fri, 19 Sep 2003 10:56:16 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8J3qvb20547;
+	Fri, 19 Sep 2003 10:54:19 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Ted Lemon <mellon@nominum.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, dhcwg@ietf.org, zeroconf@merit.edu
+Subject: Re: [dhcwg] [Fwd: new issue: LL34 Better transition to routable from v4LL using DHCP] 
+In-Reply-To: <200309181237.12449.mellon@nominum.com> 
+References: <200309181237.12449.mellon@nominum.com>  <3F60C8B5.900@sun.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 19 Sep 2003 10:52:57 +0700
+Message-ID: <4632.1063943577@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Thu, 18 Sep 2003 12:37:12 -0500
+    From:        Ted Lemon <mellon@nominum.com>
+    Message-ID:  <200309181237.12449.mellon@nominum.com>
+
+  | So I think the right answer to this question is to simply decouple
+  | the IPv4LL and DHCP state machines.
+
+This is really irrelevant to the issue raised.   What was really being
+requested, once all the wrapping is removed, was that this WG make a
+change to the DHCP protocol (or perhaps more precisely, to the operational
+requirements for DHCP) - that is to force DHCP clients to try harder to
+get routable addresses (lower the delay as much as possible if there is
+no immediate answer).
+
+The relationship with LL addresses is purely coincidental to this.
+
+That's why this really belongs in the DHCP working group (where apparently,
+and I guess you already know, something has been proposed already), and
+not here at all.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 19 16:50:33 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA21594
+	for <zeroconf-archive@lists.ietf.org>; Fri, 19 Sep 2003 16:50:33 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 45B039127A; Fri, 19 Sep 2003 16:50:22 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CDC8591281; Fri, 19 Sep 2003 16:50:19 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5D7699127A
+	for <zeroconf@trapdoor.merit.edu>; Fri, 19 Sep 2003 16:48:29 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 462CC5DE03; Fri, 19 Sep 2003 16:48:29 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from sj-iport-3.cisco.com (sj-iport-3-in.cisco.com [171.71.176.72])
+	by segue.merit.edu (Postfix) with ESMTP id BDADA5DD8D
+	for <zeroconf@merit.edu>; Fri, 19 Sep 2003 16:48:27 -0400 (EDT)
+Received: from cisco.com (171.68.223.138)
+  by sj-iport-3.cisco.com with ESMTP; 19 Sep 2003 13:49:20 -0700
+Received: from flask.cisco.com (IDENT:mirapoint@flask.cisco.com [161.44.122.62])
+	by sj-core-4.cisco.com (8.12.6/8.12.6) with ESMTP id h8JKmKxW022073;
+	Fri, 19 Sep 2003 13:48:20 -0700 (PDT)
+Received: from mjs-xp.cisco.com ([161.44.65.124])
+	by flask.cisco.com (Mirapoint Messaging Server MOS 3.3.6-GR)
+	with ESMTP id ACN87429;
+	Fri, 19 Sep 2003 16:48:19 -0400 (EDT)
+Message-Id: <4.3.2.7.2.20030919161712.01df3e98@goblet.cisco.com>
+X-Sender: mjs@goblet.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Fri, 19 Sep 2003 16:48:51 -0400
+To: Bernard Aboba <aboba@internaut.com>
+From: Mark Stapp <mjs@cisco.com>
+Subject: Re: new issue: LL34 Better transition to routable from v4LL
+  using DHCP
+Cc: zeroconf@merit.edu
+In-Reply-To: <Pine.LNX.4.53.0309132221240.26893@internaut.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I haven't seen anyone respond to Bernard's proposal yet, and I think it 
+deserves support. It's best to explicitly exclude this issue and to avoid 
+trying to recommend tweaks to stable DHCP deployments in anticipation of 
+wide v4LL use. As Bernard observes, there are many possible conditions that 
+can lead to a temporary lapse in DHCP service. Adding another variable to 
+the mix as a result of LL is unlikely to help in most existing networks.
+
+I'd like the LL draft to avoid making requirements of DHCP, and I'd like to 
+see Bernard's suggested text included.
+
+-- Mark
+
+At 10:36 PM 9/13/2003 -0700, Bernard Aboba wrote:
+> >The Zeroconf list is a strange place to be re-designing DHCP.
+>
+>I'd propose that we punt this issue to the DHC WG and use the following
+>text for Section 2.11:
+>
+>2.11  Transition from Link-Local IPv4 to Routable Address
+>
+>As discussed in Section 1.7, use of a routable address is preferred to
+>assignment of a Link-Local IPv4 address.  A Link-Local IPv4 address can be
+>configured due to transient failures, such as incomplete link-layer 
+>authentication,
+>spanning tree convergence issues, or because a DHCP server failed
+>to respond to an initial query, or is inoperative for some time.
+>
+>Where a Link-Local IPv4 address is assigned due to a transient failure,
+>experience has shown that five minutes (see Appendix A.2) may be
+>too long an interval to wait prior to attempting to configure with DHCP.
+>This document does not specify a strategy for quickly recovering a
+>routable address in situations where a Link-Local IPv4 address is assigned
+>due to a transient failure.  In situations where many hosts are present on
+>a single subnet, frequent attempts to contact the DHCP server could result
+>in a heavy traffic load.  Further discussion of this issue is provided in
+>[DNAv4].
+>
+>[DNAv4]
+>Aboba, B., "Detection of Network Attachment (DNA) in IPv4",
+>draft-ietf-dhc-dna-ipv4-01.txt, Internet draft (work in progress),
+>September 2003.
+
+
+
+From owner-zeroconf@merit.edu  Sat Sep 20 03:36:07 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA26825
+	for <zeroconf-archive@lists.ietf.org>; Sat, 20 Sep 2003 03:36:07 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8D7909120C; Sat, 20 Sep 2003 03:36:04 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5D54A912A0; Sat, 20 Sep 2003 03:36:04 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 48FA69120C
+	for <zeroconf@trapdoor.merit.edu>; Sat, 20 Sep 2003 03:36:03 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 36DDD5DE0E; Sat, 20 Sep 2003 03:36:03 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id 295705DDAC
+	for <zeroconf@merit.edu>; Sat, 20 Sep 2003 03:36:02 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h8K72k613266
+	for <zeroconf@merit.edu>; Sat, 20 Sep 2003 00:02:47 -0700
+Date: Sat, 20 Sep 2003 00:02:46 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Strawman-10 document
+Message-ID: <Pine.LNX.4.53.0309200000560.12927@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I've tried to put together the suggested resolutions for LL34 and LL18
+into a strawman -10 document available here:
+
+http://www.drizzle.com/~aboba/ZEROCONF/draft-ietf-zeroconf-ipv4-linklocal-10.txt
+
+What do people think? Is this a reasonable resolution to the two
+outstanding issues?  Is something missing?
+
+
+From owner-zeroconf@merit.edu  Sat Sep 20 06:40:51 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA00211
+	for <zeroconf-archive@lists.ietf.org>; Sat, 20 Sep 2003 06:40:50 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 3AB1B912A9; Sat, 20 Sep 2003 06:40:12 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 062ED912AB; Sat, 20 Sep 2003 06:40:11 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D814A912A9
+	for <zeroconf@trapdoor.merit.edu>; Sat, 20 Sep 2003 06:40:10 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B78EC5DE0D; Sat, 20 Sep 2003 06:40:10 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id E3B0C5DDF2
+	for <zeroconf@merit.edu>; Sat, 20 Sep 2003 06:40:08 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h8KAdsT02163;
+	Sat, 20 Sep 2003 17:39:55 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8KAdZP14652;
+	Sat, 20 Sep 2003 17:39:36 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Ted Lemon <mellon@nominum.com>
+Cc: dhcwg@ietf.org, zeroconf@merit.edu
+Subject: Re: [dhcwg] [Fwd: new issue: LL34 Better transition to routable from v4LL using DHCP] 
+In-Reply-To: <200309191401.02029.mellon@nominum.com> 
+References: <200309191401.02029.mellon@nominum.com>  <200309182338.16364.mellon@fugue.com> <4632.1063943577@munnari.OZ.AU> <19901.1063964688@munnari.OZ.AU> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Sat, 20 Sep 2003 17:39:35 +0700
+Message-ID: <14282.1064054375@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Fri, 19 Sep 2003 14:01:01 -0500
+    From:        Ted Lemon <mellon@nominum.com>
+    Message-ID:  <200309191401.02029.mellon@nominum.com>
+
+  | I don't think this is necessary.   Section 4.1 of RFC2131 is already pretty 
+  | explicit about what the DHCP client is supposed to do
+
+Necessary or not wasn't my point (and I'm not disagreeing with you), just
+that if anything were to be done in this area, changes in the LL spec by
+the zeroconf WG are not the right way to do it...
+
+  | Right, and if we just don't let the IPv4ll state machine reach out and
+  | touch the DHCP state machine, this is precisely what will happen.   That
+  | is, the DHCP client should never care about IPv4ll.
+
+Agreed.
+
+  | It is helpful, however, for the IPv4ll agent to notice that the DHCP client 
+  | has timed out in contacting the DHCP server.
+
+Maybe, I am less sure about that one.
+
+  | In this case, the DHCP client 
+  | will still configure its interface if it has a valid lease.
+
+Yes, and in most circumstances where that happens, that address will
+work just as well as a LL address (the DHCP client is supposed to
+verify that the lease still makes some kind of sense - it needs to do
+that to choose between the several valid leases it might have from
+past assignments (I've had clients allocated multi-year leases from some
+weird servers, and sometimes had several of those simultaneously).  If
+the DHCP client checks that the address seems functional before assigning
+it, then the LL address would only be useful in the rarest cases.
+
+  | However, the IPv4ll agent at this point should probably also configure
+  | an IPv4ll address, since the address the DHCP client is using is by no
+  | means guaranteed to be correct.
+
+That's true - but no-one knows.   The DHCP client doesn't (if it knew it
+was incorrect, it would not configure it, to know it is correct it needs
+a DHCP server response, which we are assuming does not happen), the LL
+assignment machinery has no idea, it just sees a non-LL address (and perhaps
+the DHCP timeout), but more than that, none of the applications that are
+to use the address know either.   They're going to be faced with the
+situation of having a choice of 2 local addresses to use, and no idea which
+one is going to work better.   In most cases, the (old) DHCP address will
+work fine, and probably reach more destinations than the LL address, so
+in most cases that is what the applications are going to want to use, I
+suspect.   Given that, doing the extra work to assign an LL address in this
+scenario seems pointless.
+
+  | So simply watching the interface isn't going to get you the best 
+  | results for IPv4ll,
+
+If getting the best results for IPv4LL was an objective, I'd probably
+agree.   But it isn't.   Rather, IPv4LL is an attempt to get the best
+results for the system (or more likely, the system's user).   That is,
+it doesn't matter in the slightest if IPv4LL fails miserably, as long
+as the end result is correct, and communications get established,
+at least in the vast majority of cases.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 23 06:11:36 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA04187
+	for <zeroconf-archive@lists.ietf.org>; Tue, 23 Sep 2003 06:11:36 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id EC28291306; Tue, 23 Sep 2003 06:11:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id BB64C91307; Tue, 23 Sep 2003 06:11:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A597591306
+	for <zeroconf@trapdoor.merit.edu>; Tue, 23 Sep 2003 06:11:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8AE0B5DDAE; Tue, 23 Sep 2003 06:11:31 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-2.sun.com (brmea-mail-2.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 9E29C5DDA5
+	for <zeroconf@merit.edu>; Tue, 23 Sep 2003 06:11:30 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id h8NABRxK010925
+	for <zeroconf@merit.edu>; Tue, 23 Sep 2003 04:11:28 -0600 (MDT)
+Received: from sun.com (vpn-129-159-0-194.EMEA.Sun.COM [129.159.0.194])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8NABOw03961
+	for <zeroconf@merit.edu>; Tue, 23 Sep 2003 12:11:25 +0200 (MEST)
+Message-ID: <3F701C51.7050803@sun.com>
+Date: Tue, 23 Sep 2003 12:11:29 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.4) Gecko/20030624
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG consensus action: ACCEPT LL18 Host with LL address MUST ARP for
+ all addresses
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Action: Accept new text, as modified by discussion
+
+The new text should read:
+
+2.6.1.  Source Address Usage
+
+    Since each interface on a host may have a Link-Local IPv4 address in
+    addition to zero or more other addresses configured by other means
+    (e.g. manually or via a DHCP server), a host may have to make a
+    choice about what source address to use when it sends a packet or
+    initiates a TCP connection.
+
+    The host SHOULD use a routable address in preference to a Link-Local
+    IPv4 address except for communication to peers for which the host has
+    an existing TCP connection at the time in which the host obtained a
+    routable address configuration. For more details, see Section 1.7.
+
+    A multi-homed host needs to select an outgoing interface whether or
+    not the destination is a Link-Local IPv4 address. Details of that
+    process are beyond the scope of this specification. After selecting
+    an interface, the multi-homed host should send packets involving
+    Link-Local IPv4 addresses as specified in this document, as if the
+    selected interface were the host's only interface. See Section 3 for
+    further discussion of multi-homed hosts.
+
+2.6.2.  Forwarding Rules
+
+    Whichever interface is used, if the destination address is in the
+    169.254/16 prefix (including the 169.254.255.255 broadcast address),
+    then the sender MUST ARP for the destination address and then send
+    its packet directly to the destination on the same physical link.
+    This MUST be done whether the interface is configured with a Link-
+    Local or a routable IPv4 address.
+
+    In many network stacks, achieving this functionality may be as simple
+    as adding a routing table entry indicating that 169.254/16 is
+    directly reachable on the local link.
+
+    The host MUST NOT send a packet with a Link-Local IPv4 destination
+    address to any router for forwarding.
+
+    If the destination address is a unicast address outside the
+    169.254/16 prefix, then the host SHOULD use an appropriate routable
+    IPv4 source address, if it can. If for any reason the host chooses to
+    send the packet with a Link-Local IPv4 source address (e.g. no
+    routable address is available on the selected interface), then it
+    MUST ARP for the destination address and then send its packet, with a
+    Link-Local IPv4 source address and a routable destination IPv4
+    address, directly to its destination on the same physical link. The
+    host MUST NOT send the packet to any router for forwarding.
+
+    In the case of a device with a single interface and only a Link-Local
+    IPv4 address, this requirement can be paraphrased as "ARP for
+    everything".
+
+    In many network stacks, achieving this "ARP for everything" behaviour
+    may be as simple as having no primary IP router configured, having
+    the primary IP router address configured to 0.0.0.0, or having the
+    primary IP router address set to be the same as the host's own Link-
+    Local IPv4 address.  For suggested behavior in multi-homed hosts, see
+    Section 3.
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 23 06:16:23 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA04588
+	for <zeroconf-archive@lists.ietf.org>; Tue, 23 Sep 2003 06:16:23 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7FBD491307; Tue, 23 Sep 2003 06:15:27 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0CB9291308; Tue, 23 Sep 2003 06:15:26 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5B59691307
+	for <zeroconf@trapdoor.merit.edu>; Tue, 23 Sep 2003 06:15:25 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 23B875DDEC; Tue, 23 Sep 2003 06:15:25 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id CE8885DD95
+	for <zeroconf@merit.edu>; Tue, 23 Sep 2003 06:15:21 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id h8NAEnis025159;
+	Tue, 23 Sep 2003 03:14:49 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-194.EMEA.Sun.COM [129.159.0.194])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8NAEkw04044;
+	Tue, 23 Sep 2003 12:14:46 +0200 (MEST)
+Message-ID: <3F701D1B.8040704@sun.com>
+Date: Tue, 23 Sep 2003 12:14:51 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.4) Gecko/20030624
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu, dhcwg@ietf.org
+Subject: WG consensus action: ACCEPT LL34 better transition to routable from
+ v4LL using DHCP
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Action: Accept the issue, with the text as modified during discussion
+
+New text:
+
+2.11  Transition from Link-Local IPv4 to Routable Address
+
+As discussed in Section 1.7, use of a routable address is preferred to
+assignment of a Link-Local IPv4 address.  A Link-Local IPv4 address can
+be configured due to transient failures, such as incomplete link-layer
+authentication, spanning tree convergence issues, or because a DHCP
+server failed to respond to an initial query, or is inoperative for some 
+time.
+
+Where a Link-Local IPv4 address is assigned due to a transient failure,
+experience has shown that five minutes (see Appendix A.2) may be
+too long an interval to wait prior to attempting to configure with DHCP.
+This document does not specify a strategy for quickly recovering a
+routable address in situations where a Link-Local IPv4 address is
+assigned due to a transient failure.  In situations where many hosts are
+present on a single subnet, frequent attempts to contact the DHCP server
+could result in a heavy traffic load.  Further discussion of this issue
+is provided in [DNAv4].
+
+[DNAv4]
+Aboba, B., "Detection of Network Attachment (DNA) in IPv4",
+draft-ietf-dhc-dna-ipv4-01.txt, Internet draft (work in progress),
+September 2003.
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 23 06:20:03 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA04784
+	for <zeroconf-archive@lists.ietf.org>; Tue, 23 Sep 2003 06:20:03 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E1D8B91308; Tue, 23 Sep 2003 06:20:00 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AF0D591309; Tue, 23 Sep 2003 06:20:00 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id C5F1491308
+	for <zeroconf@trapdoor.merit.edu>; Tue, 23 Sep 2003 06:19:59 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A5B395DE6F; Tue, 23 Sep 2003 06:19:59 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 256275DDAE
+	for <zeroconf@merit.edu>; Tue, 23 Sep 2003 06:19:59 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id h8NAJQVo001093;
+	Tue, 23 Sep 2003 03:19:26 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-194.EMEA.Sun.COM [129.159.0.194])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8NAJNw04225;
+	Tue, 23 Sep 2003 12:19:24 +0200 (MEST)
+Message-ID: <3F701E30.6010101@sun.com>
+Date: Tue, 23 Sep 2003 12:19:28 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.4) Gecko/20030624
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu, dhcwg@ietf.org
+Subject: Re: new issue: LL34 Better transition to routable from v4LL  using
+ DHCP
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+The text supplied by Bernard has the property that it does not
+specify any new behavior for DHCP.  The new text makes it clear
+that an implementation of IPv4LL must attempt to obtain configuration
+via DHCP according to the DHCP specification, even if it has failed
+to in the past.  I think this satisfies Ted's concern:
+
+Ted Lemon wrote:
+ > The correct fix is to make sure that the DHCP client does not in fact
+ > modify its behaviour to make IPv4ll work, but rather to modify IPv4ll
+ > so that it doesn't interfere with the operation of the DHCP client.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Sat Sep 27 10:21:10 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA02297
+	for <zeroconf-archive@lists.ietf.org>; Sat, 27 Sep 2003 10:21:09 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0CDE29127D; Sat, 27 Sep 2003 10:21:10 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CCA849127E; Sat, 27 Sep 2003 10:21:09 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B87679127D
+	for <zeroconf@trapdoor.merit.edu>; Sat, 27 Sep 2003 10:21:08 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A58BC5DF64; Sat, 27 Sep 2003 10:21:08 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.STTNWAHO.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id C71BE5DE5E
+	for <zeroconf@merit.edu>; Sat, 27 Sep 2003 10:21:07 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id h8RDlD607561
+	for <zeroconf@merit.edu>; Sat, 27 Sep 2003 06:47:13 -0700
+Date: Sat, 27 Sep 2003 06:47:13 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: IPv4LL Issue: Miscellaneous -09 NITs
+Message-ID: <Pine.LNX.4.56.0309270645060.7365@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Submitter: Thomas Narten
+Submitter email address: narten@us.ibm.com
+Date first submitted: September 25, 2003
+Reference:
+Document: IPv4LL-09
+Comment type: E/T
+Priority: S
+Section: Various
+Rationale/Explanation of issue:
+
+Throughout the document, change the unprintable character <B4>
+to "'"
+
+In the abstract, change:
+
+"Communication using Link-Local IPv4 addresses is not suitable
+for communication with devices not directly connected to the
+same physical (or logical) link."
+
+To:
+
+"Link-Local IPv4 addresses are not suitable for communication with
+devices not directly connected to the same physical (or logical)
+link, and are only used where stable, routable addresses are not
+available (such as on ad hoc or isolated networks).  This document
+does not recommend that Link-Local IPv4 addresses and routable
+addresses be configured simultaneously on the same interface."
+
+In Section 1.2, change:
+
+"Wherever this document uses the term "host" when describing use of
+Link-Local IPv4 addresses, the text applies equally to routers using
+Link-Local IPv4 addresses on any or all interfaces."
+
+To:
+
+"Wherever this document uses the term "host" when describing use of
+Link-Local IPv4 addresses, the text applies equally to routers when
+they are the source of or intended destination of packets containing
+Link-Local IPv4 source or destination addresses."
+
+Add the following sentence to Section 1.4:
+
+"This document does not recommend that Link-Local IPv4 addresses and
+routable addresses be configured simultaneously on the same
+interface."
+
+In Section 2.2 change:
+
+"If, by PROBE_MAX seconds after the transmission of the last ARP probe
+no conflicting ARP Reply has been received, then the
+host has successfully claimed the desired Link-Local IPv4 address."
+
+To:
+
+"If, by PROBE_MAX seconds after the transmission of the last ARP probe
+no conflicting ARP Reply or ARP probe has been received, then the
+host has successfully claimed the desired Link-Local IPv4 address."
+
+Change IANA considerations from:
+
+"The following terms are used here with the meanings defined in BCP
+26: "name space", "assigned value", "registration".
+
+The following policies are used here with the meanings defined in BCP
+26: "Private Use", "First Come First Served", "Expert Review",
+"Specification Required", "IESG Approval", "IETF Consensus",
+"Standards Action".
+
+The IANA has allocated the prefix 169.254/16 for the use described in
+this document. The first and last 256 addresses in this range
+(169.254.0.x and 169.254.255.x) are allocated by Standards Action. No
+other IANA services are required by this document."
+
+To:
+
+"The IANA has allocated the prefix 169.254/16 for the use described in
+this document. The first and last 256 addresses in this range
+(169.254.0.x and 169.254.255.x) are allocated by Standards Action, as
+defined in BCP 26. No other IANA services are required by this
+document."
+
+In Section 10:
+
+Remove [RFC1122] and [RFC2181] from the references since
+they are not referred to.
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 13:11:54 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA02620
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 13:11:53 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 87B9991259; Tue, 30 Sep 2003 13:11:52 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5978391266; Tue, 30 Sep 2003 13:11:52 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 30FAC91259
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 13:11:51 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1F2D95DDE7; Tue, 30 Sep 2003 13:11:51 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 8A43E5DDBC
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 13:11:50 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.10/8.12.9) with ESMTP id h8UHBlkv024584;
+	Tue, 30 Sep 2003 11:11:47 -0600 (MDT)
+Received: from sun.com (vpn-129-156-96-200.EMEA.Sun.COM [129.156.96.200])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id h8UHBgk17147;
+	Tue, 30 Sep 2003 19:11:43 +0200 (MEST)
+Message-ID: <3F79B93E.6030601@sun.com>
+Date: Tue, 30 Sep 2003 19:11:26 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.4) Gecko/20030624
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Ted Lemon <mellon@nominum.com>
+Cc: dhcwg@ietf.org, zeroconf@merit.edu
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to
+ routable from v4LL using DHCP
+References: <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com>
+In-Reply-To: <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Ted Lemon wrote:
+
+> 
+> On Tuesday, September 23, 2003, at 05:14 AM, Erik Guttman wrote:
+> 
+>> The text supplied by Bernard has the property that it does not
+>> specify any new behavior for DHCP.  The new text makes it clear
+>> that an implementation of IPv4LL must attempt to obtain configuration
+>> via DHCP according to the DHCP specification, even if it has failed
+>> to in the past.  I think this satisfies Ted's concern:
+>>
+>> Ted Lemon wrote:
+>> > The correct fix is to make sure that the DHCP client does not in fact
+>> > modify its behaviour to make IPv4ll work, but rather to modify IPv4ll
+>> > so that it doesn't interfere with the operation of the DHCP client.
+> 
+> 
+> The new text that Bernard has supplied, at least as specified in your 
+> proposed resolution for LL34, does not seem to address the problem at 
+> all.   The problem is that right now the IPv4ll protocol specification 
+> creates a situation in which there is an incentive to break the DHCP 
+> client in order to get correct IPv4ll behavior. 
+
+I do not follow you.  Please see my assessment of the current draft,
+below.  I see nowhere, except where it is stated that DHCP SHOULD NOT
+configure from the IPv4 LL prefix, that we introduce direct or indirect
+requirements on DHCP or DHCP client behavior.
+
+ > My goal is not to
+> break the DHCP client less.   It is to not break it at all.   If you 
+> don't agree with this goal, can you please try to build consensus by 
+> explaining why you don't agree with it?
+
+I do agree with you.  The DHCP client should not be broken or effected
+by IPv4LL.  The host stack which uses both will of course be more
+complex than one which does not.
+
+> Also, I think  that you should withdraw the statement that your proposed 
+> solution to LL34 has been accepted, since there was no discussion on it, 
+> and thus no opportunity for consensus.  
+
+There was plenty of discussion about it both here and on the zeroconf
+list, but that is neither here nor there.  I want to satisfy your
+technical concern even if I can't respond to your liking about the
+process by which we've been demanding decision points in otherwise
+circular ZEROCONF discussions.
+
+> I certainly do not agree that 
+> it solves the stated problem.    Possibly I am reading too much into the 
+> problem statement, but if so, I think we need a new discussion item: 
+> "IPv4LL state machine must not place requirements on DHCPv4 state machine."
+
+What if we add this sentence, verbatim, to the end of section 2.11?
+
+   This specification places no requirements on the DHCPv4 state machine.
+
+-----------
+
+Let's be 100% clear what the requirements that ZEROCONF is placing on
+DHCP.  The current text in
+http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-10.txt
+regarding DHCP is as follows (an exhaustive excerpt).  I add emphasis
+to aid those who follow the DHC list but not the zeroconf list.
+
+Abstract
+
+    To participate in wide-area IP networking, a host needs to be
+    configured, either manually by the user or automatically from a
+    source on the network such as a DHCP server.  Unfortunately, such
+                                                  *******************
+    external configuration information may not always be available.  It
+    ***************************************************************
+    is therefore beneficial for a host to be able to depend on a useful
+    subset of IP networking functions even when no configuration is
+    available.  This document describes how a host may automatically
+    configure an interface with an IPv4 address within the 169.254/16
+    prefix that is valid for communication with other devices connected
+    to the same physical (or logical) link.
+
+=> no requirements on dhcp
+
+1. Introduction
+
+    As the Internet Protocol continues to grow in popularity, it becomes
+    increasingly valuable to be able to use familiar IP tools such as FTP
+    not only for global communication, but for local communication as
+    well. For example, two people with laptop computers supporting IEEE
+    802.11 Wireless LANs [802.11] may meet and wish to exchange files.
+    It is desirable for these people to be able to use IP application
+    *****************************************************
+    software without the inconvenience of having to manually configure
+             *******                      *********
+    static IP addresses or set up a DHCP server [RFC2131].
+                           ******************************
+
+=> no requirements on dhcp
+
+1.6.  Alternate Use Prohibition
+
+    Note that addresses in the 169.254/16 prefix SHOULD NOT be configured
+              ***********************************************************
+    manually or by a DHCP server.  Manual or DHCP configuration may cause
+                ****************
+    a host to use an address in the 169.254/16 prefix without following
+    the special rules regarding duplicate detection and automatic
+    configuration that pertain to addresses in this prefix.  While
+    [RFC2131] indicates that a DHCP client SHOULD probe a newly received
+    address with ARP, this is not mandatory.  Similarly, while [RFC2131]
+    recommends that a DHCP server SHOULD probe an address using an ICMP
+    Echo Request before allocating it, this is also not mandatory, and
+    even if the server does this, Link-Local IPv4 addresses are not
+    routable, so a DHCP server not directly connected to a link cannot
+    detect whether a host on that link is already using the desired Link-
+    Local IPv4 address.
+
+    Administrators wishing to configure their own local addresses (using
+    manual configuration, a DHCP server, or any other mechanism not
+    described in this document) should use one of the existing private
+    address prefixes [RFC1918], not the 169.254/16 prefix.
+
+=> SHOULD requirement placed on DHCP administration
+
+2.6.1.  Source Address Usage
+
+    Since each interface on a host may have a Link-Local IPv4 address in
+          *********************************
+    addition to zero or more other addresses configured by other means
+                ************       *********************
+    (e.g. manually or via a DHCP server), a host may have to make a
+     ****             *****************
+
+    choice about what source address to use when it sends a packet or
+    initiates a TCP connection.
+
+=> no requirements placed on DHCP
+
+2.8.  Link-Local Packets are Local
+
+    It should be understood that this mediated communication is not
+    mandatory; it is an option afforded to designers of extremely simple
+    devices.  Any designer of a device desiring unmediated communication
+              **********************************************************
+    outside the local link need only implement today's conventional IP
+    ****************************************************************** 
+
+    host software (e.g. a DHCP client) in order to enjoy the same degree
+    **********************************
+    of global addressability available to other conventional IPv4 hosts.
+    Such networked devices should of course implement a degree of
+    security appropriate to being connected to a global public network.
+
+=> no requirements on DHCP
+
+2.11.  Transition from Link-Local to Routable Address
+
+    As discussed in Section 1.7, use of a routable address is preferred
+    to assignment of a Link-Local IPv4 address. A Link-Local IPv4 address
+                                                *************************
+    can be configured due to transient failures, such as incomplete link-
+    *****************
+    layer authentication, spanning tree convergence issues, or because a
+                                                               *********
+    DHCP server failed to respond to an initial query, or is inoperative
+    *****************************
+    for some time.
+
+    Where a Link-Local IPv4 address is assigned due to a transient
+    failure, experience has shown that five minutes (see Appendix A.2)
+             *********************************************************
+    may be too long an interval to wait prior to attempting to configure
+    ******************************************************************** 
+
+    with DHCP.  This document does not specify a strategy for quickly
+    *****************************************************************
+    recovering a routable address in situations where a Link-Local IPv4
+    *******************************************************************
+    address is assigned due to a transient failure. In situations where
+    *******************************************************************
+    many hosts are present on a single subnet, frequent attempts to
+    ***************************************************************
+    contact the DHCP server could result in a heavy traffic load. Further
+    ************************************************************
+    discussion of this issue is provided in [DNAv4].
+
+=> no requirements on DHCP.  The current text states what existing
+    implementations do, and that this has problems.  Apparently they
+    are ignoring the DHCP recommendations, which I hope I get right:
+
+    RFC2131, section 3 subsection 5 which suggests that
+
+                               The client should choose to retransmit
+      the DHCPREQUEST enough times to give adequate probability of
+      contacting the server without causing the client (and the user of
+      that client) to wait overly long before giving up; e.g., a client
+      retransmitting as described in section 4.1 might retransmit the
+      DHCPREQUEST message four times, for a total delay of 60 seconds,
+      before restarting the initialization procedure.  If the client
+      receives neither a DHCPACK or a DHCPNAK message after employing the
+      retransmission algorithm, the client reverts to INIT state and
+      restarts the initialization process.
+
+    and RFC2131, section 4.4.1 which requires (SHOULD) that a random
+    delay of 1-10 seconds elapse before a DHCPDISCOVER packet is sent
+    while in INIT state.
+
+    The Microsoft and Apple software which implements the '5 minute'
+    delay before initiating DHCP configuration lengthened the suggested
+    1-10 second wait before reentering INIT state.
+
+The appendices describe current practice and do not place any
+requirements on DHCP.
+
+========================================================================
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 13:55:20 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA04553
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 13:55:19 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8DA959126C; Tue, 30 Sep 2003 13:55:16 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5D5EC9126D; Tue, 30 Sep 2003 13:55:16 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 492FA9126C
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 13:55:15 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 361F15DE0A; Tue, 30 Sep 2003 13:55:15 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 1E3795DDCE
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 13:55:14 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h8UHtq9H005266;
+	Tue, 30 Sep 2003 20:55:52 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h8UHtnvB005265;
+	Tue, 30 Sep 2003 20:55:49 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to
+	routable from v4LL using DHCP
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Erik Guttman <erik.guttman@sun.com>
+Cc: Ted Lemon <mellon@nominum.com>, dhcwg@ietf.org, zeroconf@merit.edu
+In-Reply-To: <3F79B93E.6030601@sun.com>
+References: <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com>
+	 <3F79B93E.6030601@sun.com>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1064944549.4769.5.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Tue, 30 Sep 2003 20:55:49 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Erik,
+
+On Tue, 2003-09-30 at 20:11, Erik Guttman wrote:
+> I do agree with you.  The DHCP client should not be broken or effected
+> by IPv4LL.  The host stack which uses both will of course be more
+> complex than one which does not.
+
+Are you saying it is ok to run the DHCP and v4LL state machines
+independently of each other? I just want to be absolutely clear on this.
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 14:31:26 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA06173
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 14:31:25 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 1E03791271; Tue, 30 Sep 2003 14:31:08 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DFC8491272; Tue, 30 Sep 2003 14:31:07 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0223C91271
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 14:31:06 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id DB9C05DDBC; Tue, 30 Sep 2003 14:31:06 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from fuchsia.home (unknown [192.150.250.67])
+	by segue.merit.edu (Postfix) with ESMTP id 35B495DD9E
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 14:31:05 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.ex0.home [192.168.192.22]) by fuchsia.home with ESMTP
+	id h8UIUcIe016279; Wed, 1 Oct 2003 01:30:38 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8UIODb06827;
+	Wed, 1 Oct 2003 01:24:18 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Mika Liljeberg <mika.liljeberg@welho.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, Ted Lemon <mellon@nominum.com>,
+        dhcwg@ietf.org, zeroconf@merit.edu
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to routable from v4LL using DHCP 
+In-Reply-To: <1064944549.4769.5.camel@hades> 
+References: <1064944549.4769.5.camel@hades>  <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com> <3F79B93E.6030601@sun.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 01 Oct 2003 01:24:13 +0700
+Message-ID: <25653.1064946253@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Tue, 30 Sep 2003 20:55:49 +0300
+    From:        Mika Liljeberg <mika.liljeberg@welho.com>
+    Message-ID:  <1064944549.4769.5.camel@hades>
+
+  | Are you saying it is ok to run the DHCP and v4LL state machines
+  | independently of each other? I just want to be absolutely clear on this.
+
+The state machines run independently, when they're run - but you don't
+generate a LL address if you get an address from elsewhere.   DHCP simply
+does its thing, as it does now, no changes needed.   LL looks to see if an 
+address has been obtained (or even manually configured), and if not, it
+runs its state machine to acquire one.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 14:43:59 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA06787
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 14:43:56 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id DD31191278; Tue, 30 Sep 2003 14:43:47 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B0E7E9127A; Tue, 30 Sep 2003 14:43:47 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B114491278
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 14:43:46 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9D5B05DDE8; Tue, 30 Sep 2003 14:43:46 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 8FA9B5DDE7
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 14:43:45 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h8UIiU9H005407;
+	Tue, 30 Sep 2003 21:44:30 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h8UIiT79005406;
+	Tue, 30 Sep 2003 21:44:29 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to
+	routable from v4LL using DHCP
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Erik Guttman <erik.guttman@sun.com>, Ted Lemon <mellon@nominum.com>,
+        dhcwg@ietf.org, zeroconf@merit.edu
+In-Reply-To: <25653.1064946253@munnari.OZ.AU>
+References: <1064944549.4769.5.camel@hades>
+	 <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com>
+	 <3F79B93E.6030601@sun.com>   <25653.1064946253@munnari.OZ.AU>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1064947469.4768.13.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Tue, 30 Sep 2003 21:44:29 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Tue, 2003-09-30 at 21:24, Robert Elz wrote:
+>    
+>   | Are you saying it is ok to run the DHCP and v4LL state machines
+>   | independently of each other? I just want to be absolutely clear on this.
+> 
+> The state machines run independently, when they're run - but you don't
+> generate a LL address if you get an address from elsewhere.   DHCP simply
+> does its thing, as it does now, no changes needed.   LL looks to see if an 
+> address has been obtained (or even manually configured), and if not, it
+> runs its state machine to acquire one.
+
+That's not exactly independent.
+
+In any case, in an ad-hoc scenario I need a working address within
+approx. 10 seconds after the user activates an application and the RF is
+powered up. Not much time to dance around, there. I figure the only way
+to meet the usability requirements is to run the state machines in
+parallel and deprecate the v4LL address later if DHCP happens to
+succeed. Time syncing the state machines is kind of hard, as the DHCP
+client is in user space and the v4LL protocol is in kernel space. If
+synching the state machines is a requirement, I'm afraid the DHCP client
+will have to do it.
+
+	MikaL
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 15:14:45 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA09618
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 15:14:45 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 743A491210; Tue, 30 Sep 2003 15:14:38 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 4216F9127A; Tue, 30 Sep 2003 15:14:38 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5858491210
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 15:14:37 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4150F5DDD0; Tue, 30 Sep 2003 15:14:37 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from fuchsia.home (unknown [192.150.250.67])
+	by segue.merit.edu (Postfix) with ESMTP id A0FE25DDDB
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 15:14:35 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.ex0.home [192.168.192.22]) by fuchsia.home with ESMTP
+	id h8UJE7Ie015302; Wed, 1 Oct 2003 02:14:07 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8UJ7Cb02872;
+	Wed, 1 Oct 2003 02:07:12 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Ted Lemon <mellon@nominum.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu, dhcwg@ietf.org
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to routable from v4LL using DHCP 
+In-Reply-To: <6B18505F-F376-11D7-B8D3-000A95D9C74C@nominum.com> 
+References: <6B18505F-F376-11D7-B8D3-000A95D9C74C@nominum.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 01 Oct 2003 02:07:12 +0700
+Message-ID: <20155.1064948832@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Tue, 30 Sep 2003 13:46:35 -0500
+    From:        Ted Lemon <mellon@nominum.com>
+    Message-ID:  <6B18505F-F376-11D7-B8D3-000A95D9C74C@nominum.com>
+
+  | A device that implements both IPv4ll and a DHCPv4 client MUST NOT alter 
+  | the behavior of the DHCPv4 client to accommodate the IPv4ll state 
+  | machine.
+
+That's too much, for two reasons.   First, we don't specify how implementers
+implement the specifications, just the end results - so that's inappropriate
+right from the start.   Second, if I want to alter my dhcp client, to
+have the LL address generation done by it, as well as dhcp address aquisition,
+why shouldn't I?    Or if I just want to provide info from my dhcp client.
+
+I know those aren't the kinds of modifications you're concerned about, but
+they're covered by that blanket exclusion.
+
+If anything needs to be said, all it needs to be is that the DHCP state
+machine is not altered by LL.   That's it.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 15:21:19 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA10293
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 15:21:18 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A422A9127A; Tue, 30 Sep 2003 15:21:15 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 71C2A91285; Tue, 30 Sep 2003 15:21:15 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 8A4A69127A
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 15:21:14 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 70DE05DDE1; Tue, 30 Sep 2003 15:21:14 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from fuchsia.home (unknown [192.150.250.67])
+	by segue.merit.edu (Postfix) with ESMTP id 99D3D5DDB9
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 15:21:12 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.ex0.home [192.168.192.22]) by fuchsia.home with ESMTP
+	id h8UJKkIe023613; Wed, 1 Oct 2003 02:20:46 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h8UJDjb23361;
+	Wed, 1 Oct 2003 02:13:45 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Mika Liljeberg <mika.liljeberg@welho.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, Ted Lemon <mellon@nominum.com>,
+        dhcwg@ietf.org, zeroconf@merit.edu
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to routable from v4LL using DHCP 
+In-Reply-To: <1064947469.4768.13.camel@hades> 
+References: <1064947469.4768.13.camel@hades>  <1064944549.4769.5.camel@hades> <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com> <3F79B93E.6030601@sun.com> <25653.1064946253@munnari.OZ.AU> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 01 Oct 2003 02:13:45 +0700
+Message-ID: <22850.1064949225@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Tue, 30 Sep 2003 21:44:29 +0300
+    From:        Mika Liljeberg <mika.liljeberg@welho.com>
+    Message-ID:  <1064947469.4768.13.camel@hades>
+
+  | That's not exactly independent.
+
+It is independent state machines - they are just dependencies
+on when they're used.
+
+  | In any case, in an ad-hoc scenario I need a working address within
+  | approx. 10 seconds after the user activates an application and the RF is
+  | powered up.
+
+10 secs should be plenty - it only takes a couple of seconds after the
+link is stable to get a DHCP assigned address, if you're going to get one,
+in the vast majority of cases (and perhaps an extra second or two for
+one more retry).   LL is supposed to take about 3 seconds in the current
+version isn't it (I forget just what we eventually decided on the LL
+timers).   That's 5-8 if run serially (assuming that you start LL
+acquisition if DHCP doesn't quickly get an address, which is what I
+suggest - not wait for DHCP to exhaust all its possibilities).
+
+  | I figure the only way
+  | to meet the usability requirements is to run the state machines in
+  | parallel and deprecate the v4LL address later if DHCP happens to
+  | succeed.
+
+Fine, I have no problem with that.
+
+  | Time syncing the state machines is kind of hard, as the DHCP
+  | client is in user space and the v4LL protocol is in kernel space.
+
+That's an implementation choice, you could move either to the other
+space.   When one makes implementation choices, one, of course, has to
+live with the consequences.
+
+  | If synching the state machines is a requirement, I'm afraid the DHCP client
+  | will have to do it.
+
+I see no problem with that either, and I don't think Ted does either.
+What he's objecting to (I believe) is changing the nature of the DHCP
+exchange (the DHCP protocol), not really to changing the dhcp client code.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 30 16:07:10 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA13711
+	for <zeroconf-archive@lists.ietf.org>; Tue, 30 Sep 2003 16:07:05 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 9245491201; Tue, 30 Sep 2003 16:07:02 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6829791285; Tue, 30 Sep 2003 16:07:02 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 682E391201
+	for <zeroconf@trapdoor.merit.edu>; Tue, 30 Sep 2003 16:07:01 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4D3A75DE0A; Tue, 30 Sep 2003 16:07:01 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from hades.pp.htv.fi (cs180094.pp.htv.fi [213.243.180.94])
+	by segue.merit.edu (Postfix) with ESMTP id 3BD2D5DDE8
+	for <zeroconf@merit.edu>; Tue, 30 Sep 2003 16:07:00 -0400 (EDT)
+Received: from hades.pp.htv.fi (liljeber@localhost [127.0.0.1])
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) with ESMTP id h8UK7i9H005645;
+	Tue, 30 Sep 2003 23:07:45 +0300
+Received: (from liljeber@localhost)
+	by hades.pp.htv.fi (8.12.9/8.12.9/Debian-5) id h8UK7gus005644;
+	Tue, 30 Sep 2003 23:07:42 +0300
+X-Authentication-Warning: hades.pp.htv.fi: liljeber set sender to mika.liljeberg@welho.com using -f
+Subject: Re: [dhcwg] WG consensus action: ACCEPT LL34 better transition to
+	routable from v4LL using DHCP
+From: Mika Liljeberg <mika.liljeberg@welho.com>
+To: Robert Elz <kre@munnari.OZ.AU>
+Cc: Erik Guttman <erik.guttman@sun.com>, Ted Lemon <mellon@nominum.com>,
+        dhcwg@ietf.org, zeroconf@merit.edu
+In-Reply-To: <22850.1064949225@munnari.OZ.AU>
+References: <1064947469.4768.13.camel@hades> <1064944549.4769.5.camel@hades>
+	 <AD706D59-F2F0-11D7-8358-000A95D9C74C@nominum.com>
+	 <3F79B93E.6030601@sun.com> <25653.1064946253@munnari.OZ.AU>
+	 <22850.1064949225@munnari.OZ.AU>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Message-Id: <1064952461.4769.70.camel@hades>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.4 
+Date: Tue, 30 Sep 2003 23:07:42 +0300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On Tue, 2003-09-30 at 22:13, Robert Elz wrote:
+>   | That's not exactly independent.
+> 
+> It is independent state machines - they are just dependencies
+> on when they're used.
+
+I'd say that's mostly semantics. There's clearly a dependency but I
+think you're saying that it is limited to the DHCP client sending, as
+part of one of its own state transitions, the v4LL state machine a start
+or stop signal.
+
+I can live with that (it's more or less what I expected the requirement
+to be). But I do agree with Ted that there is some danger of
+misinterpritation. We need some fairly specific language on
+implementation issues to steer implementors away from harmful
+interpretations.
+
+	MikaL
+
+
+

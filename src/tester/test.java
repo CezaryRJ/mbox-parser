@@ -8,8 +8,10 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -18,7 +20,7 @@ public abstract class test {
 
 	 HashMap<String,String> settings = new  HashMap<String,String>();
 	 
-	 File[] data;
+	 Set<String> data;
 	 
 	 public String name;
 	 
@@ -31,7 +33,20 @@ public abstract class test {
 		 this.python_prog_location = python_prog_location;
 		 
 	 }
+	
+	public ArrayList<String> read_file(String location) throws FileNotFoundException{
 		
+		Scanner scanner = new Scanner(new File(location));
+		
+		ArrayList<String> out= new ArrayList<String>();
+		
+		while(scanner.hasNextLine()){
+			out.add(scanner.nextLine());
+		}
+		
+		scanner.close();
+		return out;
+	}
 	
 	public void read_settings() throws FileNotFoundException{
 		
@@ -50,16 +65,21 @@ public abstract class test {
 	}
 	
 	
-	public File[] scan_dir() throws IOException {
-		
-		 File[] fileList = new File(settings.get(data)).listFiles(new FilenameFilter() {
-		        public boolean accept(File arg0, String name) {
-		            return name.endsWith(".mailcl");
-		        }
-		    });
-		 
+	public Set<String> scan_dir() throws IOException {
+	    Set<String> fileList = new HashSet<>();
+	    try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(settings.get("data")))) {
+	        for (Path path : stream) {
+	            if (!Files.isDirectory(path)) {
+	            	if(path.getFileName().toString().endsWith(".mailcl")) {
+	            		 fileList.add(path.toAbsolutePath().toString());
+	            	}
+	               
+	            }
+	        }
+	    }
 	    return fileList;
 	}
+	
 	
 	public String get(String inn) {
 		

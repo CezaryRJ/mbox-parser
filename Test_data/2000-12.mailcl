@@ -1,0 +1,649 @@
+From owner-zeroconf@merit.edu  Fri Dec  1 08:13:12 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA20953
+	for <zeroconf-archive@odin.ietf.org>; Fri, 1 Dec 2000 08:13:12 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 98DE05DDA5; Fri,  1 Dec 2000 08:12:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 0DF7E5DDA8; Fri,  1 Dec 2000 08:12:52 -0500 (EST)
+Received: from thumper.research.telcordia.com (thumper.research.telcordia.com [128.96.41.1])
+	by segue.merit.edu (Postfix) with ESMTP id 9BE245DDA5
+	for <zeroconf@merit.edu>; Fri,  1 Dec 2000 08:12:50 -0500 (EST)
+Received: from stsang4 (tsang-pc [192.4.8.80])
+	by thumper.research.telcordia.com (8.10.1/8.10.1) with SMTP id eB1DCna12560;
+	Fri, 1 Dec 2000 08:12:50 -0500 (EST)
+From: "Simon Tsang (Telcordia Technologies)" <stsang@research.telcordia.com>
+To: "ZeroConf mailing list" <zeroconf@merit.edu>
+Cc: "Stan Moyer" <stanm@research.telcordia.com>,
+        "Dave Marples" <dmarples@research.telcordia.com>
+Subject: FYI...  "Bar BoF" on Networked Appliances at IETF 49
+Date: Fri, 1 Dec 2000 08:12:45 -0500
+Message-ID: <NDBBLFFGPKKEFJIANNBGGEHPEOAA.stsang@research.telcordia.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+(resending this as I'm not sure it was distributed first time round - apologies
+if this is a copy)
+
+Folks,
+
+The area of Networked Appliances has received much attention in recent months.
+Networked Appliances of the future will be 'plug and play' and many will be
+portable, raising a large number of architectural, protocol and configuration
+issues.  Some of these issues have been highlighted in recent Internet Drafts
+and these are available (with a FAQ) at the Networked Appliances web page at:
+
+http://www.argreenhouse.com/iapp/
+
+To enable further open discussion on this topic at IETF 49, there will be an
+informal BoF at lunchtime on Tuesday (Dec. 12).  If you are interested in
+attending, please reply to Stan Moyer (stanm@research.telcordia.com) or myself
+(stsang@research.telcordia.com).  We can plan to meet at noon in the terminal
+room (or some other likely meeting place) and I (or Stan) will make reservations
+at a nearby restaurant for the group (which is why your RSVP is necessary).
+
+I hope to hear from you soon and to see you at the BoF.
+
+Best Regards,
+Simon
+
+---------
+Simon Tsang (Ph.D)
+Research Scientist - Internet Service Management Research
+Telcordia Technologies, Inc. ( http://www.telcordia.com )
+
+E-mail: stsang@research.telcordia.com
+Phone: +1.973.829.4511   Fax: +1.973.829.5889
+Post:  MCC 1A 264R, 445 South Street, Morristown, NJ 07960, USA.
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Dec  1 08:13:15 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA20987
+	for <zeroconf-archive@odin.ietf.org>; Fri, 1 Dec 2000 08:13:15 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id BE3DA5DDC0; Fri,  1 Dec 2000 08:13:02 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A43D35DDB8; Fri,  1 Dec 2000 08:13:02 -0500 (EST)
+Received: from thumper.research.telcordia.com (thumper.research.telcordia.com [128.96.41.1])
+	by segue.merit.edu (Postfix) with ESMTP id 6B2E95DDA8
+	for <zeroconf@merit.edu>; Fri,  1 Dec 2000 08:13:00 -0500 (EST)
+Received: from stsang4 (tsang-pc [192.4.8.80])
+	by thumper.research.telcordia.com (8.10.1/8.10.1) with SMTP id eB1DCxa12566;
+	Fri, 1 Dec 2000 08:13:00 -0500 (EST)
+From: "Simon Tsang (Telcordia Technologies)" <stsang@research.telcordia.com>
+To: "ZeroConf mailing list" <zeroconf@merit.edu>
+Cc: "Stan Moyer" <stanm@research.telcordia.com>,
+        "Dave Marples" <dmarples@research.telcordia.com>
+Subject: Re: FYI...  "Bar BoF" on Networked Appliances at IETF 49
+Date: Fri, 1 Dec 2000 08:12:55 -0500
+Message-ID: <NDBBLFFGPKKEFJIANNBGIEHPEOAA.stsang@research.telcordia.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+(resending this as I'm not sure it was distributed first time round - apologies
+if this is a copy)
+
+Folks,
+
+Stan Moyer has a 10 minute slot at the Zeroconf WG meeting on Monday, 11 Dec in
+which he will briefly talk about the topic of Networked Appliances.  I will also
+be attending the session, and we will both be available for questions.  I look
+forward to seeing you there.
+
+Thanks,
+Simon
+
+-----Original Message-----
+From: Simon Tsang (Telcordia Technologies)
+[mailto:stsang@research.telcordia.com]
+Sent: Wednesday, November 29, 2000 4:00 PM
+To: ZeroConf mailing list
+Cc: Stan Moyer; Dave Marples
+Subject: FYI... "Bar BoF" on Networked Appliances at IETF 49
+
+
+Folks,
+
+The area of Networked Appliances has received much attention in recent months.
+Networked Appliances of the future will be 'plug and play' and many will be
+portable, raising a large number of architectural, protocol and configuration
+issues.  Some of these issues have been highlighted in recent Internet Drafts
+and these are available (with a FAQ) at the Networked Appliances web page at:
+
+http://www.argreenhouse.com/iapp/
+
+To enable further open discussion on this topic at IETF 49, there will be an
+informal BoF at lunchtime on Tuesday (Dec. 12).  If you are interested in
+attending, please reply to Stan Moyer (stanm@research.telcordia.com) or myself
+(stsang@research.telcordia.com).  We can plan to meet at noon in the terminal
+room (or some other likely meeting place) and I (or Stan) will make reservations
+at a nearby restaurant for the group (which is why your RSVP is necessary).
+
+I hope to hear from you soon and to see you at the BoF.
+
+Best Regards,
+Simon
+
+---------
+Simon Tsang (Ph.D)
+Research Scientist - Internet Service Management Research
+Telcordia Technologies, Inc. ( http://www.telcordia.com )
+
+E-mail: stsang@research.telcordia.com
+Phone: +1.973.829.4511   Fax: +1.973.829.5889
+Post:  MCC 1A 264R, 445 South Street, Morristown, NJ 07960, USA.
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Dec  5 09:10:23 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA25407
+	for <zeroconf-archive@odin.ietf.org>; Tue, 5 Dec 2000 09:10:23 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 757195DDB3; Tue,  5 Dec 2000 09:10:01 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 52E6D5DDB9; Tue,  5 Dec 2000 09:10:01 -0500 (EST)
+Received: from gw-nl4.philips.com (gw-nl4.philips.com [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id CA8BE5DDB3
+	for <zeroconf@merit.edu>; Tue,  5 Dec 2000 09:09:59 -0500 (EST)
+Received: from smtprelay-nl1.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id PAA19622
+          for <zeroconf@merit.edu>; Tue, 5 Dec 2000 15:09:58 +0100 (MET)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtprelay-eur1.philips.com(130.139.36.3) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma019618; Tue, 5 Dec 00 15:09:58 +0100
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id PAA00165
+	for <zeroconf@merit.edu>; Tue, 5 Dec 2000 15:09:57 +0100 (MET)
+Received: from EHLMS01.DIAMOND.PHILIPS.COM (ehlms01sv1.diamond.philips.com [130.139.54.212]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id PAA09385
+	for <zeroconf@merit.edu>; Tue, 5 Dec 2000 15:09:56 +0100 (MET)
+Received: by EHLMS01.DIAMOND.PHILIPS.COM (Soft-Switch LMS 4.0) with snapi
+          via EMEA3 id 0056890016442116; Tue, 5 Dec 2000 15:11:49 +0100
+To: <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>
+Subject: ZeroConf Req. version 6
+Message-ID: <0056890016442116000002L962*@MHS>
+Date: Tue, 5 Dec 2000 15:11:49 +0100
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1; name="MEMO 12/05/00 15:08:28"
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id JAA25407
+
+Dear all,
+
+I have the pleasure to react to the 6th version of the zeroconf requirements.
+My background is home networking for consumer devices. Below I first 
+give some motivation for the suggestions that follow afterwards.
+
+Motivation.
+
+It is expected that home networks will be composed of several links provided by different manufacturers. 
+It will not be uncommon that an IEEE 1394  local link is connected to HiperLAN or HomeRF.
+Nevertheless the user of the home network sees his set of interconnected devices as one network.
+This is made clear in the present requirements of the ZeroConf WG.
+
+The home will be connected to the outside world via broadcast media, telephone connections or
+other internet providers.
+The configuration inside the home should not unnecessarily propagate to the outside world.
+Vice versa, the connection or disconnection of the home to the outside world should not perturb current
+connections. Such a (dis)connections may mean that part of the devices in the home  frequently
+change between managed addressing and unmanaged addressing. A change in addressing involves that a 
+given host can be known with different addresses to different communication partners.
+
+It should be absolutely certain that two boxes from different suppliers conform to
+the same behaviour. Therefore, the possible configurations should be minimised.
+For example: According to the IP standard two subnets can coexist on one link-local network.
+This can give rise to different behaviours dependent on the interpretation of the
+implementor of the standard. Therefore I recommend to restrict the number of
+possible configurations and states as much as possible and to restrict a home network to
+one IP subnet.
+
+________________________________________________________________________________________________-
+
+Suggestions:
+
+page 3 section 1.5
+
+I understand the term "broadcast" to mean "broadcast provided by the physical medium"
+
+Modify a requirements:
+- protocols intended to span at least one IP subnet should not use broadcasts 
+or link-local addressing
+
+Add a requirement:
+
+Requirement;
+- A ZeroConf protocol spans at least one IP subnet.
+- A ZeroConf protocol can modify or add the addressses of hosts that are connected to at most one subnet
+
+Section 2.1 
+
+after the "terms" part,  add the following requirements:
+
+Requirement:
+- Two hosts are situated on different subnets if and only if all paths between them 
+pass through a router.
+- Two hosts are situated on the same subnet if there is a path over the same link, or a
+path via one or more bridges without routers.
+
+Section 2.1.2
+
+Definition:
+- Two hosts are connected if and only if there is a path between them.
+- A communication between two hosts is perturbed if the requirements on the connection
+ are not met.
+
+Requirement:
+- The installation or removal of a bridge or router does not perturb
+the communication between hosts that are connected before and after the topology change.
+
+Requirement:
+- A host can support one or more IP addressses on the same network interface.
+
+___________________________________________________________________________________________
+
+
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WL P 311                      Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:       +31 40 274                The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+
+
+From owner-zeroconf@merit.edu  Wed Dec  6 00:40:34 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id AAA25922
+	for <zeroconf-archive@odin.ietf.org>; Wed, 6 Dec 2000 00:40:34 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 63ACB5DD93; Wed,  6 Dec 2000 00:40:12 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 3EE485DDC8; Wed,  6 Dec 2000 00:40:12 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id F1ACC5DD93
+	for <zeroconf@merit.edu>; Wed,  6 Dec 2000 00:40:10 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id VAA14181
+	for <zeroconf@merit.edu>; Tue, 5 Dec 2000 21:40:10 -0800 (PST)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.5) with ESMTP id <T118064e1504daa9b0c@mailgate1.apple.com>;
+ Tue, 5 Dec 2000 21:40:10 -0800
+Received: from [206.111.147.153] (vpn-gh-85.apple.com [17.254.136.84])
+	by scv1.apple.com (8.9.3/8.9.3) with ESMTP id VAA22055;
+	Tue, 5 Dec 2000 21:40:09 -0800 (PST)
+User-Agent: Microsoft-Outlook-Express-Macintosh-Edition/5.02.2022
+Date: Tue, 05 Dec 2000 21:40:09 -0800
+Subject: 49th IETF Meeting Agenda for Zeroconf
+From: Stuart Cheshire <cheshire@apple.com>
+To: <agenda@ietf.org>
+Cc: <zeroconf@merit.edu>
+Message-ID: <B6531139.6560%cheshire@apple.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+The following discussion items have been suggested in email
+to the working  group chairs.  If more discussion items
+emerge we can rearrange the schedule at the meeting.
+
+ 5  - intro/agenda buffing
+      Stuart & Erik
+
+10  - brief discussion of end result of reqts draft
+      see:  draft-ietf-zeroconf-reqts-06.txt
+      Erik
+
+30  - IP autoconf draft 01 discussion
+      see:  draft-ietf-zeroconf-ipv4-linklocal-01.txt
+      stuart
+
+30  - mc address allocation protocol discussion
+      see:  draft-thaler-zeroconf-multicast-02.txt
+      tbd
+
+10  - report on DNSEXT work on mdns
+      see:  draft-ietf-dnsext-mdns-00.txt
+      tbd
+
+15  - ZC security draft
+      see:  draft-williams-zeroconf-security-00.txt
+      aidan williams & steve hanna
+
+15  - Plug for future BOF on Networked Appliances
+      Simon Tsang and Stan Moyer
+      see:  draft-tsang-appliances-reqs-01.txt
+      see:  draft-moyer-sip-appliances-framework-00.txt
+
+ 5  - going forward - work schedule and goals
+      erik & stuart
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Dec  8 23:14:03 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id XAA01798
+	for <zeroconf-archive@odin.ietf.org>; Fri, 8 Dec 2000 23:14:03 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id BC6135DD91; Fri,  8 Dec 2000 23:13:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9841E5DDD3; Fri,  8 Dec 2000 23:13:52 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 4D1C25DD91
+	for <zeroconf@merit.edu>; Fri,  8 Dec 2000 23:13:51 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id UAA01117
+	for <zeroconf@merit.edu>; Fri, 8 Dec 2000 20:13:50 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.1.5) with ESMTP id <T118064e1505ccea545@mailgate1.apple.com>;
+ Fri, 8 Dec 2000 20:13:50 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id UAA10553;
+	Fri, 8 Dec 2000 20:13:49 -0800 (PST)
+Message-Id: <200012090413.UAA10553@scv2.apple.com>
+Subject: Re: ZeroConf Req. version 6
+Date: Fri, 8 Dec 2000 20:13:53 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <peter.van.der.stok@philips.com>, <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Dear all,
+>
+>I have the pleasure to react to the 6th version of the zeroconf
+>requirements. My background is home networking for consumer devices.
+>Below I first give some motivation for the suggestions that follow
+>afterwards.
+
+Thanks for your comments.
+
+While the work of the working group goes on, and any constructive 
+discussion is still welcome, work on this *specific* document is 
+complete, and it is only in the most extreme circumstances that further 
+changes would be considered.
+
+>It is expected that home networks will be composed of several links
+>provided by different manufacturers. It will not be uncommon that an
+>IEEE 1394  local link is connected to HiperLAN or HomeRF. Nevertheless
+>the user of the home network sees his set of interconnected devices as
+>one network. This is made clear in the present requirements of the
+>ZeroConf WG.
+
+Where there are multiple link technologies, there must be some box to 
+connect those links together. Such boxes exist today -- one example I 
+know well is the Apple AirPort base station, which includes an IP router 
+to forward packets, and a DHCP server to configure clients. While 
+zeroconf considers this case, the focus is on making IP work on networks 
+where there is *no* supporting infrastructure.
+
+>The home will be connected to the outside world
+
+This is not the focus of the working group. While the home *might* be 
+connected to the outside world, the focus of the working group is 
+ensuring that IP continues to work even when the home network is not 
+connected to the outside world.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Dec 11 08:53:55 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA23563
+	for <zeroconf-archive@odin.ietf.org>; Mon, 11 Dec 2000 08:53:55 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id CA6945DDA8; Mon, 11 Dec 2000 08:53:40 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id BA6E35DD8E; Mon, 11 Dec 2000 08:53:40 -0500 (EST)
+Received: from gw-nl4.philips.com (gw-nl4.philips.com [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id 5AE625DD9E
+	for <zeroconf@merit.edu>; Mon, 11 Dec 2000 08:53:38 -0500 (EST)
+Received: from smtprelay-nl1.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id OAA11783
+          for <zeroconf@merit.edu>; Mon, 11 Dec 2000 14:53:36 +0100 (MET)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtprelay-eur1.philips.com(130.139.36.3) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma011780; Mon, 11 Dec 00 14:53:36 +0100
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id OAA09219
+	for <zeroconf@merit.edu>; Mon, 11 Dec 2000 14:53:35 +0100 (MET)
+Received: from EHLMS01.DIAMOND.PHILIPS.COM (ehlms01sv1.diamond.philips.com [130.139.54.212]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id OAA00945
+	for <zeroconf@merit.edu>; Mon, 11 Dec 2000 14:53:35 +0100 (MET)
+Received: by EHLMS01.DIAMOND.PHILIPS.COM (Soft-Switch LMS 4.0) with snapi
+          via EMEA3 id 0056890016605276; Mon, 11 Dec 2000 14:55:26 +0100
+To: <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>
+Subject: ZeroConf req v6
+Message-ID: <0056890016605276000002L962*@MHS>
+Date: Mon, 11 Dec 2000 14:55:26 +0100
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1; name="MEMO 12/11/00 14:51:55"
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id IAA23563
+
+Dear Stuart,
+
+Thank you for your very quick answer.
+
+You mention that work on this specific document is complete.
+Does that mean that work on version 6 is complete or work
+on the requirements is complete?
+
+I understand that boxes are necessary to connect two or more links together.
+It is nice to know that work in this direction has been done already.
+I understand that the work of the group is on requirements. I think that the
+addition of a DHCP server in such a box is not really an issue for the requirements.
+
+We, at philips research, are worried that a DHCP server may become a necessity in zeroconf networks.
+Without a DHCP server  two or more links can be interconnected at relatively low costs. 
+Also we are afraid that the presence of a DHCP server needs setting up of the server by the user.
+Therefore we encourage the requirements to be formulated such that a DHCP server is not needed.
+
+We hope that the requirement on the connection box is such that the addressing of hosts
+on connected links is defined unambiguously. I tried to
+make clear with my additions that adressing through a router is different 
+from addressing through a bridge. Also dependent on
+router or bridge functionality a different set of addresses of the hosts can be
+expected at the moment the bridge(router) is connected or disconnected.
+
+Further I understand that the ZeroConf group looks at the survivability of a network
+when it is not connected to the outside world. I think that also involves requirements
+on the network behaviour when a link to the oustside world is inserted or removed.
+
+We think that "in home networks" will be confronted by frequent and multiple
+connections and disconnecteions to the outside world. For example, this follows from many
+scenarios that involve access to the home from a mobile phone or access from the
+home to a movie distributor or a game provider.
+
+I hope I made my point of view clear and also showed the importance of the issues
+I try to address in the context of home networks.
+
+Unfortunately, I will not be at the WG meeting this week. If you think it worthwhile
+that my concerns are discussed more extensively with one or more WG members, I will be pleased
+to do so.
+
+Greetings
+
+peter van der Stok
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WL P 311                      Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:       +31 40 274                The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+
+
+From owner-zeroconf@merit.edu  Mon Dec 11 16:19:02 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id QAA11756
+	for <zeroconf-archive@odin.ietf.org>; Mon, 11 Dec 2000 16:19:02 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 6EE475DEB4; Mon, 11 Dec 2000 16:16:27 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 5129C5DEB7; Mon, 11 Dec 2000 16:16:27 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id BCBA25DEB4
+	for <zeroconf@merit.edu>; Mon, 11 Dec 2000 16:16:24 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id NAA10719;
+	Mon, 11 Dec 2000 13:16:20 -0800 (PST)
+Received: from efra05-home.Germany.Sun.COM (eastapp2.East.Sun.COM [129.148.162.99])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.0) with ESMTP id WAA16200;
+	Mon, 11 Dec 2000 22:16:07 +0100 (MET)
+From: Erik Guttman Sun Frankfurt Staff Engineer <Erik.Guttman@germany.sun.com>
+Message-Id: <200012112116.WAA16200@efra05-home.Germany.Sun.COM>
+Date: Mon, 11 Dec 2000 22:11:32 +0-100
+To: <peter.van.der.stok@philips.com>, <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>
+Reply-To: <Erik.Guttman@germany.sun.com>
+Subject: Re: ZeroConf req v6
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+>Dear Stuart,
+>
+>Thank you for your very quick answer.
+>
+>You mention that work on this specific document is complete.
+>Does that mean that work on version 6 is complete or work
+>on the requirements is complete?
+
+The requirements document is complete - it has gone through
+WG last call.  The only comments we are considering now are
+those which the WG agreed to in the last call period or where
+someone discovers something which is terribly wrong with the
+document.  It is only by adopting such processes that the IETF
+can make progress with documents and complete its work.
+
+>I understand that boxes are necessary to connect two or more links together.
+>It is nice to know that work in this direction has been done already.
+>I understand that the work of the group is on requirements. I think that the
+>addition of a DHCP server in such a box is not really an issue for the
+>requirements.
+
+Please feel free to comment on and submit individual contribution
+internet drafts on this topic.  Others have done so - see 
+
+draft-zeroconf-<author names>
+
+Comments on these documents are also welcome on this mailing list.
+The WG charter currently does not include any goals for coordinating
+what some have called 'mini-DHCP servers'.  This could change in the
+future, but we would need to have a lot of discussion and arrive at
+a broad agreement in the WG on goals and issues before broadening
+our charter.
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Dec 14 17:48:51 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id RAA04967
+	for <zeroconf-archive@odin.ietf.org>; Thu, 14 Dec 2000 17:48:51 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1F4D55DE78; Thu, 14 Dec 2000 17:46:06 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 09B785DE7D; Thu, 14 Dec 2000 17:46:06 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 7E1035DE78
+	for <zeroconf@merit.edu>; Thu, 14 Dec 2000 17:46:04 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id OAA11619
+	for <zeroconf@merit.edu>; Thu, 14 Dec 2000 14:46:03 -0800 (PST)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.1.2) with ESMTP id <T118164e1507a88b496@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Thu, 14 Dec 2000 14:46:03 -0800
+Received: from mail-in2.apple.com (mail-in2.apple.com [17.254.0.58])
+	by scv1.apple.com (8.9.3/8.9.3) with ESMTP id OAA03245;
+	Thu, 14 Dec 2000 14:45:33 -0800 (PST)
+Received: from [207.137.72.93] (vpn-gh-587.apple.com [17.254.138.74])
+	by mail-in2.apple.com (8.9.3.blt/8.9.3) with ESMTP id OAA01923;
+	Thu, 14 Dec 2000 14:45:32 -0800 (PST)
+User-Agent: Microsoft-Outlook-Express-Macintosh-Edition/5.02.2022
+Date: Thu, 14 Dec 2000 14:45:32 -0800
+Subject: Zeroconf meeting slides
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-ID: <B65E8D8C.6807%cheshire@apple.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+I'll be submitting the minutes of the Zeroconf meeting next week. Anyone who
+has slides that they'd like included, please email them to me.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+

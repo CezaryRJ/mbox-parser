@@ -1,0 +1,2422 @@
+
+From juergen.lonkowski@ah-engler.de  Sun May  3 09:37:14 2009
+Return-Path: <juergen.lonkowski@ah-engler.de>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 388F53A6B8B for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  3 May 2009 09:37:14 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -12.561
+X-Spam-Level: 
+X-Spam-Status: No, score=-12.561 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_NJABL_PROXY=1.643, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id exLsgzeA1h8S for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun,  3 May 2009 09:37:12 -0700 (PDT)
+Received: from 194-208-128-057.tele.net (194-208-128-057.tele.net [194.208.128.57]) by core3.amsl.com (Postfix) with SMTP id 05F4328C268 for <zeroconf-archive@lists.ietf.org>; Sun,  3 May 2009 09:36:27 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Re: Discount code #52560
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090503163628.05F4328C268@core3.amsl.com>
+Date: Sun,  3 May 2009 09:36:27 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://weeagree.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://weeagree.com/"><img src="http://weeagree.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://weeagree.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://weeagree.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://weeagree.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From k-sidal@advantec.co.jp  Fri May  8 20:29:35 2009
+Return-Path: <k-sidal@advantec.co.jp>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 508B03A6AAE for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri,  8 May 2009 20:29:35 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -31.275
+X-Spam-Level: 
+X-Spam-Status: No, score=-31.275 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, HOST_EQ_STATICB=1.372, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id LPLW57hd9rrn for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri,  8 May 2009 20:29:34 -0700 (PDT)
+Received: from staticnet66235host94.idstelcom.com (staticnet66235host94.idstelcom.com [66.205.235.94]) by core3.amsl.com (Postfix) with SMTP id 5391A3A6A2D for <zeroconf-archive@lists.ietf.org>; Fri,  8 May 2009 20:29:32 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Customer Receipt/Purchase Confirmation
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090509032933.5391A3A6A2D@core3.amsl.com>
+Date: Fri,  8 May 2009 20:29:32 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awakemoral.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awakemoral.com/"><img src="http://awakemoral.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://awakemoral.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awakemoral.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awakemoral.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From jeff.dalese@amicore.com  Sat May  9 14:37:51 2009
+Return-Path: <jeff.dalese@amicore.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id A244C3A6AD1 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  9 May 2009 14:37:51 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 1.32
+X-Spam-Level: *
+X-Spam-Status: No, score=1.32 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_DSL=1.129, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id ikYHlJgSv8AZ for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  9 May 2009 14:37:50 -0700 (PDT)
+Received: from 194-144-76-20.du.xdsl.is (194-144-76-20.du.xdsl.is [194.144.76.20]) by core3.amsl.com (Postfix) with SMTP id D43653A680C for <zeroconf-archive@lists.ietf.org>; Sat,  9 May 2009 14:37:48 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090509213748.D43653A680C@core3.amsl.com>
+Date: Sat,  9 May 2009 14:37:48 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://whizpearl.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://whizpearl.com/"><img src="http://whizpearl.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://whizpearl.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://whizpearl.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://whizpearl.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From kkalinadd@accredhome.com  Sat May  9 21:06:11 2009
+Return-Path: <kkalinadd@accredhome.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id D7DD53A6A06 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  9 May 2009 21:06:11 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -5.76
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.76 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id k-6hRoXgWpPe for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat,  9 May 2009 21:06:10 -0700 (PDT)
+Received: from lor34-1-82-240-238-27.fbx.proxad.net (lor34-1-82-240-238-27.fbx.proxad.net [82.240.238.27]) by core3.amsl.com (Postfix) with SMTP id 256183A6A18 for <zeroconf-archive@lists.ietf.org>; Sat,  9 May 2009 21:05:42 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090510040543.256183A6A18@core3.amsl.com>
+Date: Sat,  9 May 2009 21:05:42 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awakemoral.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awakemoral.com/"><img src="http://awakemoral.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://awakemoral.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awakemoral.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awakemoral.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mail@amazinggritsmusic.com  Sun May 10 03:24:25 2009
+Return-Path: <mail@amazinggritsmusic.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 220923A6B22 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 10 May 2009 03:24:25 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.002
+X-Spam-Level: 
+X-Spam-Status: No, score=-11.002 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, HELO_EQ_JP=1.244, HELO_EQ_NE_JP=1.244, HOST_EQ_JP=1.265, HOST_EQ_NE_JP=2.599, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id AfVTIUCn1enZ for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 10 May 2009 03:24:24 -0700 (PDT)
+Received: from p2118-ipbf806souka.saitama.ocn.ne.jp (p2118-ipbf806souka.saitama.ocn.ne.jp [122.25.61.118]) by core3.amsl.com (Postfix) with SMTP id 225763A67B5 for <zeroconf-archive@lists.ietf.org>; Sun, 10 May 2009 03:24:22 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Order Shipped -- Order #66754
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090510102423.225763A67B5@core3.amsl.com>
+Date: Sun, 10 May 2009 03:24:22 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awarefun.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awarefun.com/"><img src="http://awarefun.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://awarefun.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awarefun.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awarefun.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From n.karino@aa.bb-east.ne.jp  Mon May 11 06:32:43 2009
+Return-Path: <n.karino@aa.bb-east.ne.jp>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id D704D3A6D29 for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 06:32:43 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -21.825
+X-Spam-Level: 
+X-Spam-Status: No, score=-21.825 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, HELO_EQ_SK=1.35, HOST_EQ_SK=0.555, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id zheZuszkDjMa for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 06:32:37 -0700 (PDT)
+Received: from e1-nat-tpx-net.suzo.sk (e1-nat-tpx-net.suzo.sk [85.248.106.103]) by core3.amsl.com (Postfix) with SMTP id 4F3043A6C3F for <zeroconf-archive@lists.ietf.org>; Mon, 11 May 2009 06:32:35 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Order Shipped -- Order #91277
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090511133236.4F3043A6C3F@core3.amsl.com>
+Date: Mon, 11 May 2009 06:32:35 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://whizplus.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://whizplus.com/"><img src="http://whizplus.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://whizplus.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://whizplus.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://whizplus.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From millerrdd@alum.rpi.edu  Mon May 11 10:11:10 2009
+Return-Path: <millerrdd@alum.rpi.edu>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 3FB3D3A679C for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 10:11:10 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.33
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.33 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_IS_SMALL6=0.556, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id HFbhPRCTY3PL for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 10:11:09 -0700 (PDT)
+Received: from 360.cc (unknown [78.160.212.64]) by core3.amsl.com (Postfix) with SMTP id ACE7B3A672F for <zeroconf-archive@lists.ietf.org>; Mon, 11 May 2009 10:10:44 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090511171044.ACE7B3A672F@core3.amsl.com>
+Date: Mon, 11 May 2009 10:10:44 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://weewhiz.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://weewhiz.com/"><img src="http://weewhiz.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://weewhiz.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://weewhiz.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://weewhiz.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From lemon@3rivers.net  Mon May 11 14:01:49 2009
+Return-Path: <lemon@3rivers.net>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id B4FD228C16A for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 14:01:49 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -12.245
+X-Spam-Level: 
+X-Spam-Status: No, score=-12.245 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id VghfuKDUSZKQ for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 14:01:43 -0700 (PDT)
+Received: from aer.com (unknown [200.58.195.251]) by core3.amsl.com (Postfix) with SMTP id 09E5928C190 for <zeroconf-archive@lists.ietf.org>; Mon, 11 May 2009 14:01:36 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Order walmart.com
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090511210138.09E5928C190@core3.amsl.com>
+Date: Mon, 11 May 2009 14:01:36 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://whizplus.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://whizplus.com/"><img src="http://whizplus.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://whizplus.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://whizplus.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://whizplus.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From meadows@algorithmics.com  Mon May 11 19:24:49 2009
+Return-Path: <meadows@algorithmics.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 8DA183A686E for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 19:24:49 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -39.546
+X-Spam-Level: 
+X-Spam-Status: No, score=-39.546 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_JP=1.244, HOST_EQ_JP=1.265, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_BLACK=20, URIBL_JP_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id wQxQhdBLmddk for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 11 May 2009 19:24:48 -0700 (PDT)
+Received: from 118-86-28-166.ohta.j-cnet.jp (118-86-28-166.ohta.j-cnet.jp [118.86.28.166]) by core3.amsl.com (Postfix) with SMTP id 6F7B43A6892 for <zeroconf-archive@lists.ietf.org>; Mon, 11 May 2009 19:24:45 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Receipt Amazon
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090512022446.6F7B43A6892@core3.amsl.com>
+Date: Mon, 11 May 2009 19:24:45 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://swellzest.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://swellzest.com/"><img src="http://swellzest.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://swellzest.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://swellzest.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://swellzest.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mistimebhcm@aautomate.com  Tue May 12 00:19:46 2009
+Return-Path: <mistimebhcm@aautomate.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 33BEF3A6CEC for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 12 May 2009 00:19:46 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.843
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.843 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id hLRucwwKIN3C for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 12 May 2009 00:19:45 -0700 (PDT)
+Received: from rrcs-24-43-128-66.west.biz.rr.com (rrcs-24-43-128-66.west.biz.rr.com [24.43.128.66]) by core3.amsl.com (Postfix) with SMTP id 392C23A6C85 for <zeroconf-archive@lists.ietf.org>; Tue, 12 May 2009 00:19:43 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Order walmart.com
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090512071944.392C23A6C85@core3.amsl.com>
+Date: Tue, 12 May 2009 00:19:43 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://swellzest.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://swellzest.com/"><img src="http://swellzest.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://swellzest.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://swellzest.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://swellzest.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From nurvrgws@alston.com  Tue May 12 11:28:34 2009
+Return-Path: <nurvrgws@alston.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 47CD63A6CBF for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 12 May 2009 11:28:34 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -1.15
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.15 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id DEIjl1bQzLzn for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 12 May 2009 11:28:33 -0700 (PDT)
+Received: from 97-123-50-148.albq.qwest.net (97-123-50-148.albq.qwest.net [97.123.50.148]) by core3.amsl.com (Postfix) with SMTP id 4EA763A684B for <zeroconf-archive@lists.ietf.org>; Tue, 12 May 2009 11:28:31 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Customer Receipt/Purchase Confirmation
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090512182832.4EA763A684B@core3.amsl.com>
+Date: Tue, 12 May 2009 11:28:31 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://comfytasty.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://comfytasty.com/"><img src="http://comfytasty.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://comfytasty.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://comfytasty.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://comfytasty.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mary.magdon@ambest.com  Tue May 12 15:00:37 2009
+Return-Path: <mary.magdon@ambest.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 1941D3A6D31 for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 12 May 2009 15:00:37 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -24.283
+X-Spam-Level: 
+X-Spam-Status: No, score=-24.283 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_EQ_PL=1.135, HELO_MISMATCH_PL=1.448, HTML_IMAGE_ONLY_20=1.546, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id WAjIccg5HSoH for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 12 May 2009 15:00:34 -0700 (PDT)
+Received: from amplicolife.pl (unknown [190.178.3.20]) by core3.amsl.com (Postfix) with SMTP id 359953A691B for <zeroconf-archive@lists.ietf.org>; Tue, 12 May 2009 15:00:31 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Customer Receipt/Purchase Confirmation
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090512220033.359953A691B@core3.amsl.com>
+Date: Tue, 12 May 2009 15:00:31 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://spicyfirst.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://spicyfirst.com/"><img src="http://spicyfirst.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://spicyfirst.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://spicyfirst.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://spicyfirst.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From leder-trillione@amateurmatch.com  Wed May 13 07:20:26 2009
+Return-Path: <leder-trillione@amateurmatch.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 955A13A6C0B for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 13 May 2009 07:20:26 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -14.765
+X-Spam-Level: 
+X-Spam-Status: No, score=-14.765 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_EQ_JP=1.244, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id YlthselB1qy9 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 13 May 2009 07:20:21 -0700 (PDT)
+Received: from amc.toshiba.co.jp (unknown [85.96.65.238]) by core3.amsl.com (Postfix) with SMTP id 89C823A6AC9 for <zeroconf-archive@lists.ietf.org>; Wed, 13 May 2009 07:20:18 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Receipt Amazon
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090513142019.89C823A6AC9@core3.amsl.com>
+Date: Wed, 13 May 2009 07:20:18 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://rosyreal.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://rosyreal.com/"><img src="http://rosyreal.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://rosyreal.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://rosyreal.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://rosyreal.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mirko.aladics@aladics.com  Wed May 13 14:36:11 2009
+Return-Path: <mirko.aladics@aladics.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 2E2E93A68D0 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 13 May 2009 14:36:11 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -0.293
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.293 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_VERIZON_P=2.144, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HELO_EQ_DSL=1.129, HELO_EQ_VERIZON_POOL=1.495, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id DveGO+TJ32j1 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 13 May 2009 14:36:10 -0700 (PDT)
+Received: from pool-71-107-157-223.lsanca.dsl-w.verizon.net (pool-71-107-157-223.lsanca.dsl-w.verizon.net [71.107.157.223]) by core3.amsl.com (Postfix) with SMTP id 6D34E3A69E6 for <zeroconf-archive@lists.ietf.org>; Wed, 13 May 2009 14:36:01 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: itunes.com Invoice #74196
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090513213603.6D34E3A69E6@core3.amsl.com>
+Date: Wed, 13 May 2009 14:36:01 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://rosyreal.com"><img src="http://www.menshealth.com/media/MH_Static/Mens-Health-logo-231x62-sunday.gif"
+width="231" height="50" border="0">
+<img src="http://www.menshealth.com/spotlight/sexualhealth/images/logo-sexual-health.jpg" width="710" height="44" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://rosyreal.com/"><img src="http://rosyreal.com/changes.gif" border="0" alt="Read more"></a><br>
+<a href="http://rosyreal.com/"><img src="http://www.menshealth.com/media/MH_Static/2009/04/1240846107540/0904_sexy_alluring_woman.jpg" 
+border="0" alt="Copyright"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://rosyreal.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://rosyreal.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From ndsen@acctcorp.com  Thu May 14 05:53:17 2009
+Return-Path: <ndsen@acctcorp.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 448E53A6B3F for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 14 May 2009 05:53:17 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -6.815
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.815 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id z+pNdcKja+lF for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 14 May 2009 05:53:16 -0700 (PDT)
+Received: from ppp-124-122-204-185.revip2.asianet.co.th (ppp-124-122-204-185.revip2.asianet.co.th [124.122.204.185]) by core3.amsl.com (Postfix) with SMTP id AB6283A6EFB for <zeroconf-archive@lists.ietf.org>; Thu, 14 May 2009 05:53:13 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090514125314.AB6283A6EFB@core3.amsl.com>
+Date: Thu, 14 May 2009 05:53:13 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://briefpearl.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://briefpearl.com/"><img src="http://briefpearl.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://briefpearl.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://briefpearl.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://briefpearl.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From natalia@alfredofenollar.com  Fri May 15 06:12:17 2009
+Return-Path: <natalia@alfredofenollar.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id A1C4B3A6BD2 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 06:12:17 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -55.192
+X-Spam-Level: 
+X-Spam-Status: No, score=-55.192 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_NET=0.611, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_RHS_DOB=1.083, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id ZtEUo7ZESwPP for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 06:12:16 -0700 (PDT)
+Received: from agromir.net (unknown [189.106.108.11]) by core3.amsl.com (Postfix) with SMTP id BCCA13A6AE1 for <zeroconf-archive@lists.ietf.org>; Fri, 15 May 2009 06:12:13 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: itunes.com Invoice #81158
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090515131214.BCCA13A6AE1@core3.amsl.com>
+Date: Fri, 15 May 2009 06:12:13 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awardtop.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awardtop.com/"><img src="http://awardtop.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://awardtop.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awardtop.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awardtop.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From letycja.soloducho@ae.wroc.pl  Fri May 15 08:53:09 2009
+Return-Path: <letycja.soloducho@ae.wroc.pl>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 369B13A6BDD for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 08:53:09 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -23.11
+X-Spam-Level: 
+X-Spam-Status: No, score=-23.11 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id O0Wrv9iEV9jf for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 08:53:08 -0700 (PDT)
+Received: from 11-46-178-94.pool.ukrtel.net (11-46-178-94.pool.ukrtel.net [94.178.46.11]) by core3.amsl.com (Postfix) with SMTP id E05B43A6889 for <zeroconf-archive@lists.ietf.org>; Fri, 15 May 2009 08:53:04 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Order Shipped -- Order #67378
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090515155305.E05B43A6889@core3.amsl.com>
+Date: Fri, 15 May 2009 08:53:04 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://pearlpeak.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://pearlpeak.com/"><img src="http://pearlpeak.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://pearlpeak.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://pearlpeak.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://pearlpeak.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From lingcedr@aiha.com  Fri May 15 10:23:25 2009
+Return-Path: <lingcedr@aiha.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 9C5033A710E for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 10:23:25 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -13.08
+X-Spam-Level: 
+X-Spam-Status: No, score=-13.08 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_EQ_JP=1.244, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_UNI=0.591, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id u-cP49JqSr8X for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 10:23:16 -0700 (PDT)
+Received: from aicinc.co.jp (unknown [187.5.152.44]) by core3.amsl.com (Postfix) with SMTP id CEE343A710C for <zeroconf-archive@lists.ietf.org>; Fri, 15 May 2009 10:23:14 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: 0rder #651040
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090515172314.CEE343A710C@core3.amsl.com>
+Date: Fri, 15 May 2009 10:23:14 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://awarerelax.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://awarerelax.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://kindeasy.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://kindeasy.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://kindeasy.com/" style="color: #fff; text-decoration: none;">
+<img src="http://luckytrue.com/incmrq.gif" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://whizable.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://whizable.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://whizable.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://kindeasy.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://yuleultra.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://whizable.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 5, 02222 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From jeffrey@amfn.nl  Fri May 15 16:10:38 2009
+Return-Path: <jeffrey@amfn.nl>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 912143A6E80 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 16:10:38 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.914
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.914 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HOST_EQ_STATICB=1.372, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id Cwu7cI7C9LKh for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 15 May 2009 16:10:37 -0700 (PDT)
+Received: from static-196-42-46-74.coqui.net (static-196-42-46-74.coqui.net [196.42.46.74]) by core3.amsl.com (Postfix) with SMTP id 3FCB63A68FD for <zeroconf-archive@lists.ietf.org>; Fri, 15 May 2009 16:10:35 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: itunes.com Invoice #75841
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090515231036.3FCB63A68FD@core3.amsl.com>
+Date: Fri, 15 May 2009 16:10:35 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://clearhappy.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://clearhappy.com/"><img src="http://clearhappy.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://clearhappy.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://clearhappy.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://clearhappy.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From jody.whitneyn@agedwards.com  Sat May 16 04:37:56 2009
+Return-Path: <jody.whitneyn@agedwards.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id A18283A6A4E for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 16 May 2009 04:37:56 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 0.518
+X-Spam-Level: 
+X-Spam-Status: No, score=0.518 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_BR=0.955, HELO_EQ_DSL=1.129, HELO_EQ_TELESP=1.245, HOST_EQ_BR=1.295, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_RECV_SPAM_DOMN02=1.666, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id BZ-owGVgYHxV for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 16 May 2009 04:37:55 -0700 (PDT)
+Received: from 189-18-255-151.dsl.telesp.net.br (189-18-255-151.dsl.telesp.net.br [189.18.255.151]) by core3.amsl.com (Postfix) with SMTP id D4BFB3A6B17 for <zeroconf-archive@lists.ietf.org>; Sat, 16 May 2009 04:37:50 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Re: Discount code #33458
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090516113750.D4BFB3A6B17@core3.amsl.com>
+Date: Sat, 16 May 2009 04:37:50 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://clearhappy.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://clearhappy.com/"><img src="http://clearhappy.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://clearhappy.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://clearhappy.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://clearhappy.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From lancarte@ags.gob.mx  Sat May 16 22:09:38 2009
+Return-Path: <lancarte@ags.gob.mx>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id E08153A6A90 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 16 May 2009 22:09:38 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 1.353
+X-Spam-Level: *
+X-Spam-Status: No, score=1.353 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, DNS_FROM_RFC_BOGUSMX=1.482, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_BR=0.955, HELO_EQ_DSL=1.129, HELO_EQ_TELESP=1.245, HOST_EQ_BR=1.295, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_RECV_SPAM_DOMN02=1.666, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id yiPO8cofZhf5 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 16 May 2009 22:09:31 -0700 (PDT)
+Received: from 200-171-83-231.dsl.telesp.net.br (200-171-83-231.dsl.telesp.net.br [200.171.83.231]) by core3.amsl.com (Postfix) with SMTP id 146163A693E for <zeroconf-archive@lists.ietf.org>; Sat, 16 May 2009 22:09:29 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Order Shipped -- Order #29544
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090517050930.146163A693E@core3.amsl.com>
+Date: Sat, 16 May 2009 22:09:29 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://zapplum.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://zapplum.com/"><img src="http://zapplum.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://zapplum.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://zapplum.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://zapplum.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mattburr@444flower.com  Sun May 17 09:58:39 2009
+Return-Path: <mattburr@444flower.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 0392328C1FC for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 17 May 2009 09:58:39 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -6.294
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.294 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, HELO_DYNAMIC_HCC=4.295, HELO_EQ_MODEMCABLE=0.768, HOST_EQ_MODEMCABLE=1.368, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id hd1ZcWvkrbYE for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 17 May 2009 09:58:37 -0700 (PDT)
+Received: from cpc2-tref2-0-0-cust29.cdif.cable.ntl.com (cpc2-tref2-0-0-cust29.cdif.cable.ntl.com [82.11.240.30]) by core3.amsl.com (Postfix) with SMTP id DB22128C1D8 for <zeroconf-archive@lists.ietf.org>; Sun, 17 May 2009 09:58:34 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Order Shipped -- Order #02872
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090517165834.DB22128C1D8@core3.amsl.com>
+Date: Sun, 17 May 2009 09:58:34 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://zapplum.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://zapplum.com/"><img src="http://zapplum.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://zapplum.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://zapplum.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://zapplum.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From lexiumasur@alibabaa.com  Sun May 17 21:24:08 2009
+Return-Path: <lexiumasur@alibabaa.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 48BDB3A6D0A for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 17 May 2009 21:24:08 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -5.061
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.061 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id vFFhz+1jqcWH for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 17 May 2009 21:24:07 -0700 (PDT)
+Received: from c-71-56-12-149.hsd1.ga.comcast.net (c-71-56-12-149.hsd1.ga.comcast.net [71.56.12.149]) by core3.amsl.com (Postfix) with SMTP id 7C4F43A6AF7 for <zeroconf-archive@lists.ietf.org>; Sun, 17 May 2009 21:24:06 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Re: Discount code #01807
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090518042406.7C4F43A6AF7@core3.amsl.com>
+Date: Sun, 17 May 2009 21:24:06 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://surejust.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://surejust.com/"><img src="http://surejust.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://surejust.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://surejust.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://surejust.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From locks1@afst.ca  Sun May 17 21:55:33 2009
+Return-Path: <locks1@afst.ca>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 74D323A6F51 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 17 May 2009 21:55:33 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 3.544
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.544 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, HELO_DYNAMIC_IPADDR2=4.395, HELO_DYNAMIC_SPLIT_IP=3.493, HELO_EQ_IP_ADDR=1.119, HOST_EQ_STATIC=1.172, HOST_EQ_USERONOCOM=1.444, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RCVD_NUMERIC_HELO=2.067, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id ZZk-mvHUex5k for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 17 May 2009 21:55:26 -0700 (PDT)
+Received: from 80.224.3.248.static.user.ono.com (80.224.3.248.static.user.ono.com [80.224.3.248]) by core3.amsl.com (Postfix) with SMTP id 3E3863A6AA8 for <zeroconf-archive@lists.ietf.org>; Sun, 17 May 2009 21:55:22 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: itunes.com Invoice #69886
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090518045523.3E3863A6AA8@core3.amsl.com>
+Date: Sun, 17 May 2009 21:55:22 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://surejust.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://surejust.com/"><img src="http://surejust.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://surejust.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://surejust.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://surejust.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mailer-daemon@acepta.cl  Mon May 18 02:39:14 2009
+Return-Path: <mailer-daemon@acepta.cl>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 0167C28C19B for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 18 May 2009 02:39:14 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.333
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.333 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id cZ06XdPkKW6n for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 18 May 2009 02:39:12 -0700 (PDT)
+Received: from alfains.com (unknown [78.181.60.139]) by core3.amsl.com (Postfix) with SMTP id C70293A6892 for <zeroconf-archive@lists.ietf.org>; Mon, 18 May 2009 02:39:06 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090518093908.C70293A6892@core3.amsl.com>
+Date: Mon, 18 May 2009 02:39:06 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://clearhappy.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://clearhappy.com/"><img src="http://clearhappy.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://clearhappy.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://clearhappy.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://clearhappy.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From mariana.lago@alico.com.ar  Tue May 19 08:36:50 2009
+Return-Path: <mariana.lago@alico.com.ar>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 2C8E03A6B3A for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 19 May 2009 08:36:50 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -4.941
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.941 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, HELO_DYNAMIC_DHCP=1.398, HELO_DYNAMIC_HCC=4.295, HELO_EQ_CPE=0.5, HELO_EQ_MODEMCABLE=0.768, HOST_EQ_CPE=0.979, HOST_EQ_MODEMCABLE=1.368, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 2+nV+4Iozhru for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 19 May 2009 08:36:47 -0700 (PDT)
+Received: from CPE00184dd52d09-CM000a73a9462f.cpe.net.cable.rogers.com (CPE00184dd52d09-CM000a73a9462f.cpe.net.cable.rogers.com [99.244.170.224]) by core3.amsl.com (Postfix) with SMTP id 9CB013A6F5E for <zeroconf-archive@lists.ietf.org>; Tue, 19 May 2009 08:36:41 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Order walmart.com
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090519153643.9CB013A6F5E@core3.amsl.com>
+Date: Tue, 19 May 2009 08:36:41 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awarefirst.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awarefirst.com/"><img src="http://awarefirst.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://awarefirst.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awarefirst.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awarefirst.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From nartlnodon7@3mail.com  Wed May 20 15:16:35 2009
+Return-Path: <nartlnodon7@3mail.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id A2C0A3A6C00 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 20 May 2009 15:16:35 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -2.099
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.099 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_DHCP=1.398, HELO_DYNAMIC_IPADDR=2.426, HELO_EQ_AU=0.377, HELO_EQ_CPE=0.5, HOST_EQ_AU=0.327, HOST_EQ_CPE=0.979, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id PVek6qrP70+K for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 20 May 2009 15:16:34 -0700 (PDT)
+Received: from CPE-60-225-247-105.nsw.bigpond.net.au (CPE-60-225-247-105.nsw.bigpond.net.au [60.225.247.105]) by core3.amsl.com (Postfix) with SMTP id 951E33A68B3 for <zeroconf-archive@lists.ietf.org>; Wed, 20 May 2009 15:16:31 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Order walmart.com
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090520221632.951E33A68B3@core3.amsl.com>
+Date: Wed, 20 May 2009 15:16:31 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awardcool.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awardcool.com/"><img src="http://awardcool.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://awardcool.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awardcool.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awardcool.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From majordomo@ambia-inc.com  Thu May 21 04:58:59 2009
+Return-Path: <majordomo@ambia-inc.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id B81D63A6BF7 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 21 May 2009 04:58:59 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.282
+X-Spam-Level: 
+X-Spam-Status: No, score=-11.282 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_NET=0.611, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id SeCWZZ4r1RT8 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 21 May 2009 04:58:52 -0700 (PDT)
+Received: from 163169.net (unknown [189.75.178.168]) by core3.amsl.com (Postfix) with SMTP id 8FAD33A68B2 for <zeroconf-archive@lists.ietf.org>; Thu, 21 May 2009 04:58:50 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: itunes.com Invoice #74351
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090521115851.8FAD33A68B2@core3.amsl.com>
+Date: Thu, 21 May 2009 04:58:50 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://careplump.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://careplump.com/"><img src="http://careplump.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://careplump.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://careplump.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://careplump.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From jlowden@aerotek.com  Thu May 21 08:15:01 2009
+Return-Path: <jlowden@aerotek.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id A265F3A69D8 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 21 May 2009 08:15:01 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -17.464
+X-Spam-Level: 
+X-Spam-Status: No, score=-17.464 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_UNI=0.591, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id qJbdr6CQknN4 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 21 May 2009 08:14:54 -0700 (PDT)
+Received: from ppp-94-64-147-140.home.otenet.gr (ppp-94-64-147-140.home.otenet.gr [94.64.147.140]) by core3.amsl.com (Postfix) with SMTP id E426028C112 for <zeroconf-archive@lists.ietf.org>; Thu, 21 May 2009 08:14:51 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: 0rder #240156
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090521151451.E426028C112@core3.amsl.com>
+Date: Thu, 21 May 2009 08:14:51 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://av4sG.clearreceive.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://SdlrQ.clearreceive.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://Hv3Fr.towardroyal.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://Hp8d.clearreceive.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://p2lKJ.palatialinterest.com/" style="color: #fff; text-decoration: none;">
+<img src="http://bFMYh.clearreceive.com/has10.gif" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://u31ZQ.palatialinterest.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://we73r.clearreceive.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://J75Tx.palatialinterest.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://UVWWZ.towardroyal.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://7QtjR.assuredglorious.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://4udzV.palatialinterest.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 9, 30705 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From kvittrtoei@advancedsurgery.net  Thu May 21 09:30:34 2009
+Return-Path: <kvittrtoei@advancedsurgery.net>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 1F79C3A6939 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 21 May 2009 09:30:34 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -8.691
+X-Spam-Level: 
+X-Spam-Status: No, score=-8.691 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_EQ_PL=1.135, HELO_MISMATCH_PL=1.448, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id BwDjohhOF9Z4 for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 21 May 2009 09:30:28 -0700 (PDT)
+Received: from aigcredit.pl (unknown [190.246.25.50]) by core3.amsl.com (Postfix) with SMTP id 297B93A69FC for <zeroconf-archive@lists.ietf.org>; Thu, 21 May 2009 09:30:25 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: You've received an answer to your question
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090521163027.297B93A69FC@core3.amsl.com>
+Date: Thu, 21 May 2009 09:30:25 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awardcool.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awardcool.com/"><img src="http://awardcool.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://awardcool.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awardcool.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awardcool.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From juanakellycitrus@advantageoffice.net  Fri May 22 00:41:25 2009
+Return-Path: <juanakellycitrus@advantageoffice.net>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id C055A3A6781 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 00:41:25 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -21.952
+X-Spam-Level: 
+X-Spam-Status: No, score=-21.952 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_DSL=1.129, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id T0wcA-kJX48X for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 00:41:19 -0700 (PDT)
+Received: from 217-159-220-118-dsl.est.estpak.ee (217-159-220-118-dsl.est.estpak.ee [217.159.220.118]) by core3.amsl.com (Postfix) with SMTP id 020C33A68EE for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 00:40:54 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090522074055.020C33A68EE@core3.amsl.com>
+Date: Fri, 22 May 2009 00:40:54 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://trustzest.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://trustzest.com/"><img src="http://trustzest.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://trustzest.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://trustzest.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://trustzest.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From jarek@air-show.cz  Fri May 22 05:35:43 2009
+Return-Path: <jarek@air-show.cz>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 3C7073A6AE5 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 05:35:43 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -21.34
+X-Spam-Level: 
+X-Spam-Status: No, score=-21.34 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id UNAaNPIpwt6n for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 05:35:36 -0700 (PDT)
+Received: from 188mail.com (unknown [78.128.53.155]) by core3.amsl.com (Postfix) with SMTP id 6124D3A67DF for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 05:35:34 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Customer Receipt/Purchase Confirmation
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090522123535.6124D3A67DF@core3.amsl.com>
+Date: Fri, 22 May 2009 05:35:34 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://trustzest.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://trustzest.com/"><img src="http://trustzest.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://trustzest.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://trustzest.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://trustzest.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From majordomo@aagtd.com  Fri May 22 06:18:18 2009
+Return-Path: <majordomo@aagtd.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id D5D4C3A67F4 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 06:18:18 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -4.882
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.882 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_IT=0.635, HOST_EQ_IT=1.245, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id pHFq1H5EUINc for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 06:18:11 -0700 (PDT)
+Received: from 93-41-131-67.ip81.fastwebnet.it (93-41-131-67.ip81.fastwebnet.it [93.41.131.67]) by core3.amsl.com (Postfix) with SMTP id 9D2053A6D13 for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 06:18:09 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Order walmart.com
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090522131810.9D2053A6D13@core3.amsl.com>
+Date: Fri, 22 May 2009 06:18:09 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://nicewee.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://nicewee.com/"><img src="http://nicewee.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://nicewee.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://nicewee.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://nicewee.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From n1rgsnn@aicins.com  Fri May 22 09:40:45 2009
+Return-Path: <n1rgsnn@aicins.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id D55F03A7069 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 09:40:45 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.55
+X-Spam-Level: 
+X-Spam-Status: No, score=-11.55 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id XQHI9xAWeJIY for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 09:40:39 -0700 (PDT)
+Received: from host86-162-231-181.range86-162.btcentralplus.com (host86-162-231-181.range86-162.btcentralplus.com [86.162.231.181]) by core3.amsl.com (Postfix) with SMTP id CE3C33A705D for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 09:40:36 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090522164037.CE3C33A705D@core3.amsl.com>
+Date: Fri, 22 May 2009 09:40:36 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://trustzest.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://trustzest.com/"><img src="http://trustzest.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://trustzest.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://trustzest.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://trustzest.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From loghry@alphatrust.com  Fri May 22 14:08:25 2009
+Return-Path: <loghry@alphatrust.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 8F3553A699C for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 14:08:25 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -13.3
+X-Spam-Level: 
+X-Spam-Status: No, score=-13.3 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id AJGWkL3iKKTS for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 14:08:18 -0700 (PDT)
+Received: from amateurmatch.com (unknown [189.110.173.142]) by core3.amsl.com (Postfix) with SMTP id A7D833A6A29 for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 14:08:17 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090522210817.A7D833A6A29@core3.amsl.com>
+Date: Fri, 22 May 2009 14:08:17 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://zoomrest.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://zoomrest.com/"><img src="http://zoomrest.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://zoomrest.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://zoomrest.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://zoomrest.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From malek@amd.com  Fri May 22 16:01:20 2009
+Return-Path: <malek@amd.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 2B95E3A6C31 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 16:01:20 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -12.245
+X-Spam-Level: 
+X-Spam-Status: No, score=-12.245 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 8JUOSEnxf-JB for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 16:01:13 -0700 (PDT)
+Received: from alt-energy.com (unknown [189.111.157.180]) by core3.amsl.com (Postfix) with SMTP id CEA3F3A6A1F for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 16:00:21 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: You've received an answer to your question
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090522230047.CEA3F3A6A1F@core3.amsl.com>
+Date: Fri, 22 May 2009 16:00:21 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://nicewee.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://nicewee.com/"><img src="http://nicewee.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://nicewee.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://nicewee.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://nicewee.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From neng@agcmt.com.tw  Fri May 22 17:18:19 2009
+Return-Path: <neng@agcmt.com.tw>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 1B0153A6834 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 17:18:19 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -0.995
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.995 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, HELO_DYNAMIC_IPADDR2=4.395, HELO_DYNAMIC_SPLIT_IP=3.493, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 5dpBzqkDfHdL for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 17:18:17 -0700 (PDT)
+Received: from 123.150.69-86.rev.gaoland.net (123.150.69-86.rev.gaoland.net [86.69.150.123]) by core3.amsl.com (Postfix) with SMTP id 783283A67D1 for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 17:18:15 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Email Handling Opinion Needed
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090523001816.783283A67D1@core3.amsl.com>
+Date: Fri, 22 May 2009 17:18:15 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://awarefirst.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://awarefirst.com/"><img src="http://awarefirst.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://awarefirst.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://awarefirst.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://awarefirst.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From lemon@3rivers.net  Fri May 22 21:01:23 2009
+Return-Path: <lemon@3rivers.net>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 598C83A6898 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 21:01:23 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.34
+X-Spam-Level: 
+X-Spam-Status: No, score=-11.34 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id mHtG6jjF53Hm for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 22 May 2009 21:01:21 -0700 (PDT)
+Received: from aer.com (unknown [78.186.239.180]) by core3.amsl.com (Postfix) with SMTP id 9B0793A6B20 for <zeroconf-archive@lists.ietf.org>; Fri, 22 May 2009 21:01:17 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Sales Order walmart.com
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090523040118.9B0793A6B20@core3.amsl.com>
+Date: Fri, 22 May 2009 21:01:17 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://chicace.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://chicace.com/"><img src="http://chicace.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://chicace.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://chicace.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://chicace.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From nettes@amada.com  Sat May 23 01:27:46 2009
+Return-Path: <nettes@amada.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 19ACA3A6893 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 23 May 2009 01:27:46 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.723
+X-Spam-Level: 
+X-Spam-Status: No, score=-11.723 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HTML_IMAGE_RATIO_08=0.001, HTML_MESSAGE=0.001, IMPOTENCE=1.886, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id PQf4h1MsmU2o for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 23 May 2009 01:27:44 -0700 (PDT)
+Received: from 81-21-243-58.televork.ee (81-21-243-58.televork.ee [81.21.243.58]) by core3.amsl.com (Postfix) with SMTP id 8C1623A6818 for <zeroconf-archive@lists.ietf.org>; Sat, 23 May 2009 01:27:39 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: RE: Q&A Doctor Mandy
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090523082741.8C1623A6818@core3.amsl.com>
+Date: Sat, 23 May 2009 01:27:39 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><table style="font-family:Arial, Helvetica, sans-serif; font-size:12px;" cellpadding="0" cellspacing="0" border="0" align="center" width="770">
+<tr>
+<td>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:12px;" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="13"> </td><td align="left"></td>
+</tr>
+<tr>
+<td style="background: #f1f1ef;"></td><td style="color: #2f6588; background: #f1f1ef; font-family:'Times New Roman', Times, serif; height:61px;" valign="middle" align="left">
+<div style="font-size:33px;">Erectile Dysfunction <span style="font-size:14px;">NEWS AND VIEWS</span>
+</div>
+</td>
+</tr>
+<tr>
+<td style="background: #2f6588;"></td><td align="left" style="color: #f1f1ef; background: #2f6588; font-size:11px;">
+<div style="padding:2px 0 2px">
+19.5.2009</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table cellpadding="0" cellspacing="0" border="0" width="745">
+<tr>
+<td>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:12px;" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td><img style="margin:0; padding:0; border:none;" height="10" width="1" src="http://www.healthcentral.com/common/images/newsletter/spacer.gif"></td>
+</tr>
+<tr>
+<td valign="middle" align="center">
+<a href="http://KbwLb.kemfijov.cn/" target="_blank"><img src="http://ad.doubleclick.net/ad/cm.own.newsletters/erectiledysfunction;week=20;tile=1;sz=728x90;dcove=r;ord=123456789?" width="728" height="90" border="0" alt="" /></a><img alt="advertisement" style="margin:0; padding:0; border:none;" src="http://www.healthcentral.com/common/images/newsletter/advertisement_v.png"></td>
+</tr>
+<tr>
+<td><img style="margin:0; padding:0; border:none;" height="10" width="1" src="http://www.healthcentral.com/common/images/newsletter/spacer.gif"></td>
+</tr>
+</table>
+</td>
+</tr>
+<a href="http://ow5Y1.kemfijov.cn/"><img src="http://fBYXd.kemfijov.cn/has10.gif" border="0"></td>
+<tr>
+<td style="padding:20px 0 18px;" valign="middle" align="left">
+<div>
+<a style="text-decoration:none;color:#000;" href="http://L1E98.kemfijov.cn/"><span style="color:#dc8d28;">Alert: FAQs about HealthCentrals Anti-Spam Policy</span> </a>
+</div>
+</td>
+</tr>
+<p>
+
+This email was sent to: <a href="mailto:zeroconf-archive@lists.ietf.org" target="_blank" style="color: #5183a8;">zeroconf-archive@lists.ietf.org</a>. 
+
+If this email was forwarded to you by another email recipient and you would like 
+
+to subscribe, <a href="http://xpJpi.waffawew.cn/" target="_blank" style="color: #5183a8;">click here</a>.
+
+</p>
+
+<p>If you would like to forward this newsletter to a friend, <a href="http://JGy.waffawew.cn/" target="_blank" style="color: #5183a8;">click here</a></p>
+
+<p>
+
+If you'd like to unsubscribe, <a href="http://Akp3f.waffawew.cn/" target="_blank" style="color: #5183a8;">click here</a>. 
+
+</p>
+
+<p>
+
+The HealthCentral Network, 2300 Wilson Boulevard #600 Arlington, VA 22201
+
+</p>
+
+<p>
+
+(c) 2009 The HealthCentral Network, Inc. All rights reserved. <a href="http://F94Oi.waffawew.cn/" target="_blank" style="color: #5183a8;">Privacy Policy</a>.
+
+</p>
+
+</td>
+</tr>
+</table></BODY></HTML>
+
+From neffe.network@aktiv.mailnet.dyndns.biz  Sat May 23 09:51:26 2009
+Return-Path: <neffe.network@aktiv.mailnet.dyndns.biz>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 36C363A6EE4 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 23 May 2009 09:51:26 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.333
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.333 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id BBhqHJstbkEo for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 23 May 2009 09:51:19 -0700 (PDT)
+Received: from aebi.com (unknown [187.6.130.33]) by core3.amsl.com (Postfix) with SMTP id E10D33A6C3F for <zeroconf-archive@lists.ietf.org>; Sat, 23 May 2009 09:49:35 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Re: Discount code #53230
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090523164938.E10D33A6C3F@core3.amsl.com>
+Date: Sat, 23 May 2009 09:49:35 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://greathardy.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://greathardy.com/"><img src="http://greathardy.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://greathardy.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://greathardy.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://greathardy.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From jonathan.hardyo@accenture.com  Sun May 24 10:39:48 2009
+Return-Path: <jonathan.hardyo@accenture.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 3D4133A6D6D for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 24 May 2009 10:39:48 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -20.904
+X-Spam-Level: 
+X-Spam-Status: No, score=-20.904 tagged_above=-999 required=5 tests=[BAYES_99=3.5, GB_I_LETTER=-2, HELO_EQ_BR=0.955, HOST_EQ_BR=1.295, HTML_IMAGE_RATIO_08=0.001, HTML_MESSAGE=0.001, IMPOTENCE=1.886, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_NJABL_PROXY=1.643, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id S03zEWbvUCIe for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 24 May 2009 10:39:47 -0700 (PDT)
+Received: from 200165015178.user.veloxzone.com.br (200165015178.user.veloxzone.com.br [200.165.15.178]) by core3.amsl.com (Postfix) with SMTP id 34B4128C105 for <zeroconf-archive@lists.ietf.org>; Sun, 24 May 2009 10:39:32 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: RE: Q&A Doctor Shanna
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090524173935.34B4128C105@core3.amsl.com>
+Date: Sun, 24 May 2009 10:39:32 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><table style="font-family:Arial, Helvetica, sans-serif; font-size:12px;" cellpadding="0" cellspacing="0" border="0" align="center" width="770">
+<tr>
+<td>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:12px;" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="13"> </td><td align="left"></td>
+</tr>
+<tr>
+<td style="background: #f1f1ef;"></td><td style="color: #2f6588; background: #f1f1ef; font-family:'Times New Roman', Times, serif; height:61px;" valign="middle" align="left">
+<div style="font-size:33px;">Erectile Dysfunction <span style="font-size:14px;">NEWS AND VIEWS</span>
+</div>
+</td>
+</tr>
+<tr>
+<td style="background: #2f6588;"></td><td align="left" style="color: #f1f1ef; background: #2f6588; font-size:11px;">
+<div style="padding:2px 0 2px">
+19.5.2009</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table cellpadding="0" cellspacing="0" border="0" width="745">
+<tr>
+<td>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:12px;" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td><img style="margin:0; padding:0; border:none;" height="10" width="1" src="http://www.healthcentral.com/common/images/newsletter/spacer.gif"></td>
+</tr>
+<tr>
+<td valign="middle" align="center">
+<a href="http://h8a2U.tastyace.com/" target="_blank"><img src="http://ad.doubleclick.net/ad/cm.own.newsletters/erectiledysfunction;week=20;tile=1;sz=728x90;dcove=r;ord=123456789?" width="728" height="90" border="0" alt="" /></a><img alt="advertisement" style="margin:0; padding:0; border:none;" src="http://www.healthcentral.com/common/images/newsletter/advertisement_v.png"></td>
+</tr>
+<tr>
+<td><img style="margin:0; padding:0; border:none;" height="10" width="1" src="http://www.healthcentral.com/common/images/newsletter/spacer.gif"></td>
+</tr>
+</table>
+</td>
+</tr>
+<a href="http://j50As.tastyace.com/"><img src="http://Sw34Z.tastyace.com/has10.gif" border="0"></td>
+<tr>
+<td style="padding:20px 0 18px;" valign="middle" align="left">
+<div>
+<a style="text-decoration:none;color:#000;" href="http://GFOt0.tastyace.com/"><span style="color:#dc8d28;">Alert: FAQs about HealthCentrals Anti-Spam Policy</span> </a>
+</div>
+</td>
+</tr>
+<p>
+
+This email was sent to: <a href="mailto:zeroconf-archive@lists.ietf.org" target="_blank" style="color: #5183a8;">zeroconf-archive@lists.ietf.org</a>. 
+
+If this email was forwarded to you by another email recipient and you would like 
+
+to subscribe, <a href="http://jyTKe.joyagree.com/" target="_blank" style="color: #5183a8;">click here</a>.
+
+</p>
+
+<p>If you would like to forward this newsletter to a friend, <a href="http://MYjaU.joyagree.com/" target="_blank" style="color: #5183a8;">click here</a></p>
+
+<p>
+
+If you'd like to unsubscribe, <a href="http://lcZCE.joyagree.com/" target="_blank" style="color: #5183a8;">click here</a>. 
+
+</p>
+
+<p>
+
+The HealthCentral Network, 2300 Wilson Boulevard #600 Arlington, VA 22201
+
+</p>
+
+<p>
+
+(c) 2009 The HealthCentral Network, Inc. All rights reserved. <a href="http://3ADuI.joyagree.com/" target="_blank" style="color: #5183a8;">Privacy Policy</a>.
+
+</p>
+
+</td>
+</tr>
+</table></BODY></HTML>
+
+From miliddd@amigo.com  Sun May 24 14:34:45 2009
+Return-Path: <miliddd@amigo.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id E3B3628C1A1 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 24 May 2009 14:34:45 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 0.095
+X-Spam-Level: 
+X-Spam-Status: No, score=0.095 tagged_above=-999 required=5 tests=[APOSTROPHE_FROM=0.001, BAYES_99=3.5, DNS_FROM_RFC_BOGUSMX=1.482, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR=2.426, HELO_EQ_DIALUP=0.862, HELO_EQ_DSL=1.129, HOST_EQ_DIALUP=0.862, HTML_IMAGE_ONLY_16=1.526, HTML_IMAGE_RATIO_04=0.172, HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_DUL=0.877, RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id hFHtJy3dJXtb for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 24 May 2009 14:34:45 -0700 (PDT)
+Received: from r190-134-8-175.dialup.adsl.anteldata.net.uy (r190-134-26-214.dialup.adsl.anteldata.net.uy [190.134.26.214]) by core3.amsl.com (Postfix) with SMTP id 05C6628C133 for <zeroconf-archive@lists.ietf.org>; Sun, 24 May 2009 14:34:39 -0700 (PDT)
+To: "<zeroconf-archive"@lists.ietf.org
+Subject: Raise night activity!
+From: Men's@core3.amsl.com, Health@core3.amsl.com, Daily@core3.amsl.com, "Dose <zeroconf-archive"@lists.ietf.org
+MIME-Version: 1.0
+Content-Type: text/html
+Message-Id: <20090524213441.05C6628C133@core3.amsl.com>
+Date: Sun, 24 May 2009 14:34:39 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><center>
+<table id="Table_01" width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2">
+<a href="http://adoreadore.com"><img src="http://www.menshealth.fr/design/css/=base/=header/-images/logo.jpg"
+width="207" height="80" border="0">
+<img src="http://www.trendsmag.com/trendsmag/menshealth/images/m_t591.jpg" width="462" height="80" border="0"></a>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="539" valign="top"align="center"><table width="515"><tr><td valign="top"><br>
+<a href="http://adoreadore.com/"><img src="http://adoreadore.com/changes.gif" border="0" alt="THE SECRETS TO"></a><br>
+<a href="http://adoreadore.com/"><img src="http://www.menshealth.fr/IMG/arton417.jpg" 
+border="0" alt="Subscribe for catalogs"></a><br></td></tr></table></td>
+</td></tr></table><table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://adoreadore.com">
+<font color="#535353">Unsubscribe</font></a> | <a href="http://adoreadore.com"><font color="#535353">Your Privacy Rights</font></a>
+<br><br> <font color="#535353">2008 Rodale Inc., all rights reserved.<br>Customer Service Department, 33 East Minor Street, Emmaus, PA 18098
+</font></font><font color="#535353"></font></font></td></tr></table></center></BODY></HTML>
+
+From maarten.van.hulle@advocatenkantoor-martens.be  Wed May 27 03:47:11 2009
+Return-Path: <maarten.van.hulle@advocatenkantoor-martens.be>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 80A113A7005 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 27 May 2009 03:47:11 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 1.334
+X-Spam-Level: *
+X-Spam-Status: No, score=1.334 tagged_above=-999 required=5 tests=[AWL=-0.963, BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_BR=0.955, HELO_EQ_DSL=1.129, HELO_EQ_TELESP=1.245, HOST_EQ_BR=1.295, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RDNS_DYNAMIC=0.1, SARE_RECV_SPAM_DOMN02=1.666, SARE_UNI=0.591, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id Hr70RIOSohJ8 for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 27 May 2009 03:47:03 -0700 (PDT)
+Received: from 201-92-155-36.dsl.telesp.net.br (201-92-155-36.dsl.telesp.net.br [201.92.155.36]) by core3.amsl.com (Postfix) with SMTP id 81A9E3A6E59 for <zeroconf-archive@lists.ietf.org>; Wed, 27 May 2009 03:46:53 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: For next week
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090527104702.81A9E3A6E59@core3.amsl.com>
+Date: Wed, 27 May 2009 03:46:53 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://TaWne.begindimple.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://gn54c.begindimple.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://Iqgvc.afterfeel.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://rWlx7.speaktheir.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://3Xovk.begindimple.com/" style="color: #fff; text-decoration: none;">
+<img src="http://JMBSw.begindimple.com/c.jpg" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://OvxGH.begindimple.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://SZMLf.speaktheir.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://BLpi0.begindimple.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://0EtrN.ensurefind.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://tR0ZP.wherejuicy.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://E4HyG.ensurefind.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 2, 32703 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From mbuzzetti@afip.gov.ar  Thu May 28 05:15:50 2009
+Return-Path: <mbuzzetti@afip.gov.ar>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 09B053A6DED for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 28 May 2009 05:15:50 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -25.49
+X-Spam-Level: 
+X-Spam-Status: No, score=-25.49 tagged_above=-999 required=5 tests=[AWL=3.491, BAYES_99=3.5, FH_RELAY_NODNS=1.451, GB_I_LETTER=-2, HELO_EQ_AU=0.377, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RDNS_NONE=0.1, SARE_UNI=0.591, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 7XPJCVRobLDY for <ietfarch-zeroconf-archive@core3.amsl.com>; Thu, 28 May 2009 05:15:43 -0700 (PDT)
+Received: from agsworld.com.au (unknown [122.160.23.6]) by core3.amsl.com (Postfix) with SMTP id 452893A6DBE for <zeroconf-archive@lists.ietf.org>; Thu, 28 May 2009 05:15:40 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: Newsletter #767462
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090528121542.452893A6DBE@core3.amsl.com>
+Date: Thu, 28 May 2009 05:15:40 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://IMq7.courseparent.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://qkyn7.courseparent.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://ffd7.portsharp.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://dFczV.skylofty.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://i95UN.skylofty.com/" style="color: #fff; text-decoration: none;">
+<img src="http://nsPtT.skylofty.com/c.jpg" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://zwO3k.portsharp.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://wjlMD.skylofty.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://8BsLP.portsharp.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://w1I2I.veryanger.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://TpBIk.skylofty.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://vybVw.portsharp.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 0, 02063 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From lewws@aidandtrade.com  Fri May 29 11:56:16 2009
+Return-Path: <lewws@aidandtrade.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 35EC93A6EC7 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 29 May 2009 11:56:16 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -4.378
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.378 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_UNI=0.591, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id PGSwGVfHk2zI for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 29 May 2009 11:56:15 -0700 (PDT)
+Received: from 91-223-114-200.fibertel.com.ar (91-223-114-200.fibertel.com.ar [200.114.223.91]) by core3.amsl.com (Postfix) with SMTP id 0C6763A6A1D for <zeroconf-archive@lists.ietf.org>; Fri, 29 May 2009 11:55:46 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: Re: Your subscribe #107464
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090529185547.0C6763A6A1D@core3.amsl.com>
+Date: Fri, 29 May 2009 11:55:46 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://AcdTp.washshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://IU9sq.washshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://xlWFn.washshe.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://9f5YP.fieldwinner.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://9fFq.himhour.com/" style="color: #fff; text-decoration: none;">
+<img src="http://IsVqH.himhour.com/c.jpg" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://dq9Xf.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://wpVL.swellfour.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://d3PUK.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://sT0es.washshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://meMc1.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://sB1yw.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 2, 07606 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From majordomo@amberiris.co.uk  Fri May 29 14:02:40 2009
+Return-Path: <majordomo@amberiris.co.uk>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 6A1CA3A6AC6 for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 29 May 2009 14:02:40 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.989
+X-Spam-Level: 
+X-Spam-Status: No, score=-11.989 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_UNI=0.591, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id pVuwVnUfzloA for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 29 May 2009 14:02:39 -0700 (PDT)
+Received: from 4doc.com (unknown [189.25.57.141]) by core3.amsl.com (Postfix) with SMTP id 141633A67DD for <zeroconf-archive@lists.ietf.org>; Fri, 29 May 2009 14:02:37 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: For next week
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+X-Antivirus: avast! (VPS 090529-0, 29/05/2009), Outbound message
+X-Antivirus-Status: Clean
+Message-Id: <20090529210238.141633A67DD@core3.amsl.com>
+Date: Fri, 29 May 2009 14:02:37 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://IViCT.himhour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://jihWd.himhour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://DI0DN.washshe.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://7r8pi.tellshe.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://aS16H.himhour.com/" style="color: #fff; text-decoration: none;">
+<img src="http://ryFpf.himhour.com/c.jpg" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://rfGmM.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://snKS7.swellfour.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://zxZkK.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://e0pjE.himhour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://LC2A.himhour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://NEAeB.washshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 5, 83191 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From lex@accufacts.com  Sat May 30 05:35:30 2009
+Return-Path: <lex@accufacts.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 2E3893A702F for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 30 May 2009 05:35:30 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -1.737
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.737 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_BR=0.955, HELO_EQ_DSL=1.129, HOST_EQ_BR=1.295, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877, RDNS_DYNAMIC=0.1, SARE_UNI=0.591, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id zH1HwZ35ZGgC for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 30 May 2009 05:35:23 -0700 (PDT)
+Received: from 201-3-189-127.paemt704.dsl.brasiltelecom.net.br (201-3-189-127.paemt704.dsl.brasiltelecom.net.br [201.3.189.127]) by core3.amsl.com (Postfix) with SMTP id 1E81A28C0DB for <zeroconf-archive@lists.ietf.org>; Sat, 30 May 2009 05:35:17 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: RE: Newsletter #461673
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090530123519.1E81A28C0DB@core3.amsl.com>
+Date: Sat, 30 May 2009 05:35:17 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://lM8Gc.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://q93uP.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://oh80N.fieldwinner.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://Qmvb3.tellshe.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://h7lyF.fieldwinner.com/" style="color: #fff; text-decoration: none;">
+<img src="http://JzJ0B.fieldwinner.com/c.jpg" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://Slghx.swellfour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://FIRJs.swellfour.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://NpP9h.swellfour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://0s0Hm.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://PSsER.swellfour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://1JzEX.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 1, 70970 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>
+
+From ms@advantech.pl  Sat May 30 21:52:43 2009
+Return-Path: <ms@advantech.pl>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by core3.amsl.com (Postfix) with ESMTP id 928B13A6909 for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 30 May 2009 21:52:43 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.826
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.826 tagged_above=-999 required=5 tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, GB_I_LETTER=-2, HELO_MISMATCH_COM=0.553, HTML_MESSAGE=0.001, MIME_HTML_ONLY=1.457, RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_UNI=0.591, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32]) by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id w64qAu5iABeU for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 30 May 2009 21:52:36 -0700 (PDT)
+Received: from agriwatch.com (unknown [94.180.192.43]) by core3.amsl.com (Postfix) with SMTP id 8E85C28C1A2 for <zeroconf-archive@lists.ietf.org>; Sat, 30 May 2009 21:52:24 -0700 (PDT)
+To: zeroconf-archive@lists.ietf.org
+Subject: Newsletter #882840
+From: zeroconf-archive@lists.ietf.org
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20090531045225.8E85C28C1A2@core3.amsl.com>
+Date: Sat, 30 May 2009 21:52:24 -0700 (PDT)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td height="25" bgcolor="#f3f3f3" style="">
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="560" >
+<tr>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="left">
+<a href="http://Zic0H.himhour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Tell a friend</a>
+<span style="padding: 0 5px;">·</span> 
+<a href="http://Ru3UF.himhour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Download latest version</a></td>
+<td style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;" align="right">
+<a href="http://dwLPx.swellfour.com/" style="text-decoration: none; color: #b5b5b5; font-weight: bold;">See this email as a webpage</a></td>
+</tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="600" 
+style="font: normal 14px Helvetica, Arial, sans-serif; line-height: 19px; color: #2c2c2c;">
+<tr><td style="padding: 20px 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td align="left" width="450">
+<h1 style="font: bold 20px Helvetica, Arial, sans-serif; line-height: 28px; color: #999;">Hello!</h1></td>
+<td align="right" width="110"></td></tr>
+</table></td></tr><tr valign="top"><td>
+<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff">
+<tr valign="top"><td><table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td width="19" height="20" bgcolor="#ffffff" valign="top"></td>
+<td width="562" bgcolor="#ffffff" valign="top"></td><td width="19" bgcolor="#ffffff" valign="top"></td>
+</tr><tr valign="top"><td bgcolor="#ffffff"></td><td bgcolor="#ffffff" valign="top" height="70">
+<h1 style="font: bold 32px Helvetica, Arial, sans-serif; line-height: 32px; margin: 0; padding: 0; color: #000000; text-align: center">
+<a style="color:#454545; text-decoration:none;"  
+href="http://QSlTa.swellfour.com/">Shipped Privately And Discreetly To Your Door!</a><br><br></h1></td>
+<td bgcolor="#ffffff"></td></tr><tr valign="top"><td height="340" colspan="3" bgcolor="#ffffff" valign="top" align="center">
+<a href="http://zvytk.washshe.com/" style="color: #fff; text-decoration: none;">
+<img src="http://iLsyW.washshe.com/c.jpg" alt="See this email as a webpage" border="0"/></a></td>
+</tr></table></td></tr><tr><td><table cellpadding="0" cellspacing="0" border="0">
+<tr><td width="20">&nbsp;</td>
+<td width="560" style="padding: 24px 0 15px 0; font:normal 14px/19px Helvetica, Arial, sans-serif;"><strong>
+We want to put a great big grin on your face in 2009.</strong> You'll be to rejoice  all year.</td>
+<td width="20">&nbsp;</td></tr></table></td></tr></table></td></tr><tr>
+<td style="padding: 20px 0 40px 0; margin: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="560" align="center">
+<tr><td>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<a href="http://BDteL.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Unsubscribe</a> 
+<span style="padding: 0 5px;">·</span> <a href="http://aMVP2.tellshe.com" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Lost Password</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://ndAKe.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">
+Account Settings</a> <span style="padding: 0 5px;">·</span> 
+<a href="http://hbRDj.fieldwinner.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Help</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://FLB08.swellfour.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Terms of Service</a> 
+<span style="padding: 0 5px;">·</span> 
+<a href="http://w5bqR.tellshe.com/" style="text-decoration: none; color: #00aff0; font-weight: bold;">Privacy</a>
+</p><p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;">
+<strong>Ottho Heldringstraat 6, 05488 AZ Amsterdam, The Netherlands</p>
+<p style="font: normal 11px Helvetica, Arial, sans-serif; line-height: 13px; color: #b5b5b5;"></td>
+</tr></table></td></tr></table></BODY></HTML>

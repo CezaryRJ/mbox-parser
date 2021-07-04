@@ -1,0 +1,2860 @@
+From owner-zeroconf@merit.edu  Sun Nov  4 08:28:08 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA12119
+	for <zeroconf-archive@lists.ietf.org>; Sun, 4 Nov 2001 08:28:07 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id ACB9B91212; Sun,  4 Nov 2001 08:27:59 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7089891214; Sun,  4 Nov 2001 08:27:59 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 43DF991212
+	for <zeroconf@trapdoor.merit.edu>; Sun,  4 Nov 2001 08:27:58 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 0FD625DDB5; Sun,  4 Nov 2001 08:27:58 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from ostrogoth.immofac.net (ostrogoth.immofac.net [195.101.131.26])
+	by segue.merit.edu (Postfix) with ESMTP id B36F25DD9A
+	for <zeroconf@merit.edu>; Sun,  4 Nov 2001 08:27:57 -0500 (EST)
+Received: from enseirb.fr (apt-75-1.fac [192.168.32.175])
+	by ostrogoth.immofac.net (Postfix) with ESMTP
+	id B832D27EAE; Sun,  4 Nov 2001 14:30:33 +0100 (CET)
+Message-ID: <3BE54EC4.59EBC331@enseirb.fr>
+Date: Sun, 04 Nov 2001 15:20:52 +0100
+From: Dan HE <he@enseirb.fr>
+Reply-To: he@enseirb.fr
+Organization: INRIA
+X-Mailer: Mozilla 4.76 [en] (X11; U; Linux 2.2.16-22 i686)
+X-Accept-Language: fr-FR, zh-CN, en
+MIME-Version: 1.0
+To: Erik Guttman <Erik.Guttman@sun.com>
+Cc: zeroconf@merit.edu
+Subject: re: zmaap discussion
+References: <Roam.SIMC.2.0.6.1003747920.31839.erikg@ehdb03-home.germany>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Hi Erik
+
+when I was reading zmaap draft, I found at section 4.1 protocol
+overview,
+there addressed :
+   
+   ZMAAP is a peer-to-peer protocol that allows mini-MAASs to coordinate
+   their multicast address allocations.  Three messages are used for
+   this purpose: Address In Use (AIU), Address Claim (ACLM).
+
+Why there is only two kinds of messages but not three messages?
+
+
+Dan
+
+
+From owner-zeroconf@merit.edu  Tue Nov  6 22:09:02 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id WAA09910
+	for <zeroconf-archive@odin.ietf.org>; Tue, 6 Nov 2001 22:09:02 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 012CD912AD; Tue,  6 Nov 2001 22:08:55 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C0DF9912AE; Tue,  6 Nov 2001 22:08:54 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B0D72912AD
+	for <zeroconf@trapdoor.merit.edu>; Tue,  6 Nov 2001 22:08:53 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 808F85DDBB; Tue,  6 Nov 2001 22:08:53 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from cms1.etri.re.kr (cms1.etri.re.kr [129.254.16.11])
+	by segue.merit.edu (Postfix) with ESMTP id 595095DD9A
+	for <zeroconf@merit.edu>; Tue,  6 Nov 2001 22:08:48 -0500 (EST)
+Received: by cms1.etri.re.kr with Internet Mail Service (5.5.2653.19)
+	id <WK81JVJC>; Wed, 7 Nov 2001 12:10:54 +0900
+Message-ID: <325BAD07FE29D511B0DA00D0B7A8DC08274FEA@cms1.etri.re.kr>
+From: kimyj@etri.re.kr
+To: zeroconf@merit.edu
+Cc: ORG_ETRI_0412_DGroup@etri.re.kr
+Subject: Meeting agenda and some suggestion
+Date: Wed, 7 Nov 2001 12:10:54 +0900 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2653.19)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01C16739.D0163E40"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01C16739.D0163E40
+Content-Type: text/plain;
+	charset="euc-kr"
+
+Hello, my name is Yong-Jin Kim working for ETRI.
+Can I have the 52nd IETF meeting draft agenda for zeroconf ?
+
+BTW, after reviewing the works progressed in Zeroconf WG until now, 
+it seems better to seperate  the specifications for IPv6 from those for
+IPv4.
+Why ? 
+IPv6 is a different protocol from IPv4, so it can use other
+approach and mechanisms to fulfill the Zeroconf requirements.
+Now, IPv6 begin to deploy and the people who setup IPv6 network 
+will not want mixed specifications.
+
+Also, I think the requirement document should be written more generically.
+I don't think it shoud comment IPv6 considerations in the requirement, and
+those issue can be
+described by related IPv6 specifications dealing with zeroconf protocols or
+profiles.
+
+So, I would like to prepare a draft for the Zeroconf Host profile for IPv6
+and discuss it 
+at the 52nd meeting.
+
+Your comments will be appreiated.
+
+Yong-Jin.
+
+
+
+
+------_=_NextPart_001_01C16739.D0163E40
+Content-Type: text/html;
+	charset="euc-kr"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=euc-kr">
+<META NAME="Generator" CONTENT="MS Exchange Server version 5.5.2653.12">
+<TITLE>Meeting agenda and some suggestion</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT SIZE=2>Hello, my name is Yong-Jin Kim working for ETRI.</FONT>
+<BR><FONT SIZE=2>Can I have the 52nd IETF meeting draft agenda for zeroconf ?</FONT>
+</P>
+
+<P><FONT SIZE=2>BTW, after reviewing the works progressed in Zeroconf WG until now, </FONT>
+<BR><FONT SIZE=2>it seems better to seperate&nbsp; the specifications for IPv6 from those for IPv4.</FONT>
+<BR><FONT SIZE=2>Why ? </FONT>
+<BR><FONT SIZE=2>IPv6 is a different protocol from IPv4, so it can use other</FONT>
+<BR><FONT SIZE=2>approach and mechanisms to fulfill the Zeroconf requirements.</FONT>
+<BR><FONT SIZE=2>Now, IPv6 begin to deploy and the people who setup IPv6 network </FONT>
+<BR><FONT SIZE=2>will not want mixed specifications.</FONT>
+</P>
+
+<P><FONT SIZE=2>Also, I think the requirement document should be written more generically.</FONT>
+<BR><FONT SIZE=2>I don't think it shoud comment IPv6 considerations in the requirement, and those issue can be</FONT>
+<BR><FONT SIZE=2>described by related IPv6 specifications dealing with zeroconf protocols or profiles.</FONT>
+</P>
+
+<P><FONT SIZE=2>So, I would like to prepare a draft for the Zeroconf Host profile for IPv6 and discuss it </FONT>
+<BR><FONT SIZE=2>at the 52nd meeting.</FONT>
+</P>
+
+<P><FONT SIZE=2>Your comments will be appreiated.</FONT>
+</P>
+
+<P><FONT SIZE=2>Yong-Jin.</FONT>
+</P>
+<BR>
+<BR>
+
+</BODY>
+</HTML>
+------_=_NextPart_001_01C16739.D0163E40--
+
+
+From owner-zeroconf@merit.edu  Sun Nov 11 21:17:14 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA01900
+	for <zeroconf-archive@lists.ietf.org>; Sun, 11 Nov 2001 21:17:09 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id ECB4F91225; Sun, 11 Nov 2001 21:16:54 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AE65891229; Sun, 11 Nov 2001 21:16:54 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 757B891225
+	for <zeroconf@trapdoor.merit.edu>; Sun, 11 Nov 2001 21:16:53 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3AF4F5DDC3; Sun, 11 Nov 2001 21:16:53 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 03AC45DD8F
+	for <zeroconf@merit.edu>; Sun, 11 Nov 2001 21:16:52 -0500 (EST)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.11.3/8.11.3) with ESMTP id fAC2Gpu11713
+	for <zeroconf@merit.edu>; Sun, 11 Nov 2001 18:16:51 -0800 (PST)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T5729089ba5118064e13fc@mailgate1.apple.com>;
+ Sun, 11 Nov 2001 18:16:24 -0800
+Received: from [17.202.44.113] (chesh1.apple.com [17.202.44.113])
+	by scv3.apple.com (8.11.3/8.11.3) with SMTP id fAC2GZh07024;
+	Sun, 11 Nov 2001 18:16:35 -0800 (PST)
+Message-Id: <200111120216.fAC2GZh07024@scv3.apple.com>
+Subject: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+Date: Sun, 11 Nov 2001 18:16:34 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Cc: "Erik Guttman" <Erik.Guttman@germany.sun.com>,
+        "Erik Nordmark" <Erik.Nordmark@eng.sun.com>,
+        "Thomas Narten" <narten@us.ibm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+
+The IESG announced a one-month IETF Last-Call for
+"Dynamic Configuration of IPv4 Link-Local Addresses"
+from 25th July to 25th August.
+
+As a result of this, a number of comments were made.
+
+This email constitutes a WG action: It summarizes those comments and
+the results of their discussion. It is not a call for further
+discussion unless it is to take issue with the statements below or
+conclude an unresolved point.
+
+The discussions made some good points and have led to a reasonable
+number of proposed changes to the draft, but, I hope, not too many.
+
+I urge all interested parties to review those proposed changes and make
+comments, if they have any, within two weeks, by Sunday 25th November.
+This document has been through extensive review, culminating this year
+with Working Group Last Call, Area Director review, and an extended
+four-week IETF Last Call.
+
+I request that all further comments are in the form of suggestions for
+SPECIFIC TEXT that should be added to (or deleted from) the draft. At
+this stage we are close to completion, so we need to keep discussion
+focussed and to-the-point.
+
+When making comments, please clearly state which numbered issue you are
+discussing, to avoid any possible confusion.
+
+---------------------------------------------------------------------
+
+1. IPv4 Address Conflict Detection
+
+Marc Blanchet:
+>Since self-arp is ipv4 generic and not necessarily associated with
+>zeroconf, as noted in the draft, I would recommend to:
+>- extract all data related to arp-self (essentially section 2.2 and
+>beginning section 2) from this draft and make another draft.
+>- from ipv4-linklocal, reference the new draft for self-arp
+>- push the 2 as RFC.
+>
+>this will enable an implementor to reference the arp-self
+>document without necessarily supporting the ipv4-linklocal draft.
+
+Erik Nordmark:
+>The last paragraph in section 2 sure reads as this being a
+>novel requirement for DHCP. And as far as I can tell it does
+>add requirements since DHCP clients don't implement the full
+>claim and defend mechanism described in this document. So while
+>there are elements of the technique that are useful for DHCP
+>and statically configured addresses I think the details of
+>that, including excactly what the protocol should be in those
+>environments where the probability of failures is likely to be
+>different than in the randomly created addresses case, are best
+>left completely outside the scope of the document.
+
+Action: Marc makes a good point -- Address Conflict Detection is useful
+for all IPv4 interface configuration methods, not just for self-assigned
+link-local addresses. Erik also makes a good point -- it is not
+necessarily obvious to the reader which aspects of this draft are
+specific to link-local addresses, and which aspects are generic and
+applicable to all IPv4 address configuration mechanisms. I had hoped to
+avoid taking on extra work, but it is clear that this needs to be done,
+so I have copied the relevant text and submitted it as a separate
+document "draft-cheshire-ipv4-acd-00.txt". This could become a working
+group document, if we can find an appropriate home for it (not
+Zeroconf). This should appear on IETF-Announce in a few days, but for
+the impatient, the document can be fetched from:
+<http://files.stuartcheshire.org/draft-cheshire-ipv4-acd-00.txt>
+
+---------------------------------------------------------------------
+
+2. Abstract
+
+Joyce K. Reynolds:
+>The Abstract is too long and redundant with the Introduction.
+
+Thomas Narten:
+>See http://www.rfc-editor.org/policy.html
+
+Proposed Action: New text for the abstract:
+
+   In general, to participate in wide-area IP networking, a host needs
+   configuration information, either entered manually by the user, or
+   received automatically from an information source on the network such
+   as a DHCP server. However, such external configuration information
+   may not always be available. It would be beneficial for a host to
+   have some useful subset of IP networking that it can depend upon to
+   be always functional, even when no configuration information is
+   available to the host, or the configuration information the host has
+   is incorrect. This document describes a method by which a host may
+   automatically configure an interface with an IPv4 address in the
+   169.254/16 prefix that is valid for link-local communication on that
+   interface.
+
+---------------------------------------------------------------------
+
+3. TTL=255?
+
+Bernard Aboba:
+>Windows 98, 98SE, ME, Windows 2000 and XP systems set TTL=128
+>by default on outgoing packets sent to 169.254/16.
+
+Stuart Cheshire:
+>In the long-term, being able to guard against off-link packets
+>is a worthwhile goal. In the short-term, if vendors want to be
+>Windows-compatible and aren't worried about off-link packets,
+>they can ommit the TTL check on reception. If they do want to
+>check the TTL on reception and still work with Windows
+>machines, there is a Windows registry setting that can be
+>changed to make Windows generate packets with the TTL set to
+>255.
+
+Proposed Action: Add new text:
+
+   A host receiving a packet with a source and/or destination address in
+   the 169.254/16 prefix and a TTL less than 255, MAY choose to consider
+   such packets as potentially having been generated by a malicious
+   attacker outside the local link, and MAY choose to silently discard
+   such packets.
+
+   [Note: Implementers should be aware that Windows 98, 98SE, ME,
+   Windows 2000 and XP systems by default set TTL=128 on outgoing
+   packets, so a host implementing the TTL check described above will
+   also discard packets from these hosts. There is no way a host can
+   distinguish between packets generated locally with a TTL of 128, and
+   packets generated by a remote attacker, deliberately constructed with
+   a spoof source address in the 169.254/16 prefix, and a TTL higher
+   than 128, such that after passing through one or more misconfigured
+   routers, the TTL will have decremented to 128 by the time it reaches
+   the victim network. Hosts that require compatibility with these
+   Windows systems MAY choose to forego the protection of the TTL check
+   described above. Alternatively, if Windows compatibility is desired
+   without sacrificing protection against malicious off-link packets,
+   this can be achieved by configuring the Windows machines to use a
+   default TTL of 255, thereby allowing the use of the TTL check as a
+   reliable determination of whether the packet originated locally.
+   This configuration is performed by setting the Windows Registry
+   Key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services:\Tcpip\
+   Parameters\DefaultTTL of Type REG_DWORD to value 255.]
+
+---------------------------------------------------------------------
+
+4. Security Claims
+
+Erik Nordmark:
+> Section 2.5 a few paragraphs that seem to endorse the construction of
+> boxes that depend solely on the IP addresses being used for some notion
+> of weak security. As we all know bridges to wireless media breaks
+> any such assumptions. I don't think the IETF should be endorsing such
+> weak security in standards track documents.
+
+Bernard Aboba:
+>It is worth thinking about the nature of the protection that is
+>afforded. Today, the Internet enables hackers all over the
+>world to gain access to a much larger range of victims than
+>would otherwise be possible.
+>
+>It is alleged that a St. Peterburg hacker has gained access to
+>33 million credit cards. How could such a thing be possible
+>without the Internet? It would take a long time to gain that
+>many credit card numbers foraging through dumpsters.
+>
+>So one of the major problems that we have with security today
+>is that the range of potential attackers is greatly increased
+>by the Internet -- making criminals orders of magnitude more
+>productive. It also renders conventional criminal investigation
+>techniques ineffective.
+>
+>Q: "Where were you the night of Friday the 13th?" A: "Sitting
+>at my desk in front of the computer in St. Peterberg, Russia."
+>
+>In contrast, if I leave the door to my house open, I can only
+>be robbed by people who happen to be in the vicinity at the
+>time. To rob my house, the criminal has to be in that physical
+>location, and will leave evidence of his/her presence
+>(fingerprinters, DNA, etc.). It can be argued that moving from
+>the "Internet crime" paradigm to the "local criminal" paradigm
+>reduces the risk of theft by orders of magnitude -- bringing us
+>back to the "antique" model of criminality that existed prior
+>to the Internet.
+>
+>So, from this perspective, the security afforded by linklocal
+>addresses is actually quite strong, provided that hosts and
+>routers properly support them (the subject of another
+>discussion). If potential attackers can be limited to those
+>that are on my segment, you  have accomplished a lot -- you can
+>now only be attacked by people in the immediate (network)
+>vacinity. Conventional models of criminal activity apply;
+>social controls operate (neighborhood associations); family
+>structures may be invoked (if your machine is attacked by a
+>child). Jeff Schiller pointed this out during the original
+>Zeroconf WG discussion.
+>
+>By this notion, bridges do not really "weaken" the protection
+>-- the mechanism is not a firewall, and this should be made
+>clear. It's only value is restricting the source to someone
+>within some reasonable proximity of the destination. Even with
+>802.11 networks, home phone & powerline networks, etc. we are
+>talking about fairly small proximity.
+
+Erik Nordmark:
+>I think we are in agreement on the larger issues. I just want
+>the document to be clear in pointing out that the restriction
+>of communication to link-local addresses doesn't solve all
+>security issues.
+>
+>The current document could be read to recommend using
+>link-local addresses as the sole security solution for some
+>boxes. I think the proper thing to do is to point out the
+>issues - what link-local addresses protect against and what the
+>residual threats are. The standard place to have such
+>discussion is in the security considerations section.
+
+Keith Moore:
+>I think it's inappropriate to pretend that link-local addresses
+>provide any useful degree of security.  All security claims in
+>the document should be removed, and replaced with a statement
+>that link-local addresses *cannot* be relied on as a security
+>mechanism.
+
+Keith Moore:
+>In a couple of places this document makes claims that use of link-local
+>addresses provides a security benefit.  Such claims cannot be supported
+>in general, and we should not encourage the use of locally-scoped
+>addresses as a security mechanism.  (actually, we should actively
+>discourage such notions)
+
+Stuart Cheshire:
+>I tried to be very careful about how this was worded. Evidently
+>not careful enough. I did not say that link-local devices
+>should have *no* security, just that link-local devices should
+>"implement a degree of security appropriate for that expected
+>environment."
+>
+>If you can suggest specific text I'd be grateful.
+>
+>One of the goals of Zeroconf IP is to provide a viable
+>replacement for all the USB protocols, FireWire protocols, IrDA
+>protocols, BlueTooth protocols, etc., and help us escape that
+>Tower of Babel move closer to an all-IP world. Vendors of USB
+>printers currently implement little or no security, because
+>they assume that the number of devices that can launch an
+>attack against those printers is very small, and physically
+>localized.
+>
+>If we could achieve a world where every $49 ink-jet printer
+>supports link-local Zeroconf IP, then it becomes a smaller step
+>to enhance those printers to include global IP and security as
+>well. If we erect unreasonable barriers to printer vendors
+>considering supporting link-local Zeroconf IP, then they will
+>continue to use only serial ports, parallel ports, USB,
+>BlueTooth, etc.
+
+Keith Moore:
+>section 1.5:
+>
+>   Another example of why it is beneficial for hosts to maintain a link-
+>   local address in addition to other addresses is that there may be
+>   networks where some of the hosts have only a link-local address.
+>
+>true so far, but...
+>
+>   For example, a user with a wireless home network may have a laptop
+>   computer and an IP printer. The laptop computer may have both a
+>   self-configured link-local address and a DHCP-configured global
+>   address. The printer, in contrast, may have only a link-local
+>   address, because the user does not need (or want) the printer to be
+>   globally addressable.
+>
+>this is a poor example, because it suggests using link-local addresses
+>(and the absence of global addresses) as a security mechanism.
+>also, it's perfectly reasonable to want a printer to be globally
+>accessible - after all, that's what a fax machine is.
+
+Stuart Cheshire:
+>We've covered this already, but to answer the point: Link-local
+>addresses are one step on the road from insecure USB to global
+>addresses and security.
+>
+>We can't get to the destination if we can't take the first step.
+
+Keith Moore:
+>   (bottom page 9 - top of page 10)
+>   The designers of these devices assume that they will communicate
+>   only with other local devices, and implement a degree of security
+>   appropriate for that expected environment.
+>
+>they may indeed assume this. but that doesn't mean it's reasonable to
+>assign a link-local address to such devices and expect that this
+>provides security, and we shouldn't support their claims if they do
+>this.
+
+Keith Moore:
+>- It's fairly obvious that this mechanism is being designed
+>  for use in ad hoc networks of moderate size (say 100 or even
+>  1000 hosts).  Under those conditions, the threat potential is
+>  sufficiently large that it's not reasonable for a network-
+>  accessible device to ignore security issues.  Even a single
+>  host on a wireless link (or bridged to a wireless link)
+>  has to cope with myriad security threats.  The idea that
+>  a simple host can avoid addressing security is just a dream.
+
+Stuart Cheshire:
+>The mechanism is also designed for one PC connected to one
+>printer, using a crossover Ethernet cable instead of a USB
+>cable.
+>
+>The difference is that with the Ethernet printer, you *can*
+>connect it to a network of a thousand hosts if you want, at
+>which point you probably start bugging the printer vendor for
+>some security. With the USB printer you don't have that choice.
+
+Keith Moore:
+>- A home network user
+>  will still want to print from a PDA that is connected to a
+>  wide area wireless network (whether he is at home or not)
+
+Stuart Cheshire:
+>I agree. I'd love to have a $49 ink-jet printer that supports
+>secure printing over IP from anywhere in the world, but the
+>truth is that today's $49 ink-jet printers don't support IP at
+>all. They only use USB, they have no security, and if you're
+>not at home you can't use them.
+>
+>How do we get from today's world to our common goal of
+>ubiquitous secure worldwide IP everywhere?
+
+Keith Moore:
+>Device and application vendors will want to claim that link-local
+>addresss give them a justification to ignore security issues in their
+>products.  We should not lend support to such claims.
+
+Stuart Cheshire:
+>No argument. No one should ignore security issues, but can we
+>provide them with an environment where the security threats are
+>a little less daunting? If every product has to withstand
+>arbitrary attack from the whole world, many products are simply
+>not viable on IP, and will continue to use their current Tower
+>of Babel protocols.
+
+Keith Moore:
+>- Even if the addresses will not be routed, experience indicates
+>  that most general-purpose hosts are easily compromised.  A
+>  single Windows box on a home network that is attached to the
+>  Internet will suffice to give an attacker connectivity with all
+>  devices on that local network, even if they only use link-local
+>  addresses.  (and such devices are easily autodiscovered by
+>  watching for their ARP requests...)
+
+Stuart Cheshire:
+>The same thing applies to all the devices on the USB bus. I
+>argue that we have more hope of preaching the doctrine of
+>end-to-end security in the IP world than we do in the USB world.
+
+Keith Moore:
+>- The End-to-End principle argues that hosts need to be responsible
+>  for their own security just as they need to be responsible for
+>  recovery of data loss, end-to-end message integrity, etc.
+
+Stuart Cheshire:
+>No argument. Hence the recommended TTL=255 check, which is
+>reduces dependence on other devices to do the right thing.
+>(Note: The language in the draft may have to be modifed
+>somewhat for compatibility with older Windows systems, but the
+>principle remains.)
+
+Keith Moore:
+>- Link-local addresses *will* be routed from one network to
+>  another even if we prohibit this.  Some people will find this
+>  useful and ignore our prohibitions; others will fail to configure
+>  their routers appropriately (admittedly, the TTL rules help a
+>  lot here).
+
+Stuart Cheshire:
+>Some people accidentally turn on Windows printer sharing with
+>no password, thereby giving the world access to their local USB
+>printer. Is this any different?
+>
+>If devices choose to implement the TTL=255 check, they are
+>pretty safe from external packets brought in by a conventional
+>IP router.
+>
+>If the router is correctly configured to not forward inbound
+>169.254/16 packets, they are pretty safe.
+>
+>With sufficient misconfiguration, even the most secure system
+>can be made insecure, so it is unsurprising that link-local
+>addressing can be similarly subverted.
+
+Proposed Action: Remove implications that link-local addresses
+are a substitute for cryptographic security, and add following text
+in security section:
+
+   The use of link-local addresses may somewhat reduce the breadth of
+   attack to which a device may be subject, from the entire Internet to
+   only attackers who have access to the local link, but that should not
+   be seen as a reason to ignore security issues. Developments such as
+   wireless networking mean that an attacker does not necessarily need
+   to be inside the building to have access to the local link. Even a
+   device using only link-local addresses should still implement
+   end-to-end cryptographic security at a level appropriate to that
+   device and its intended operating environment.
+
+---------------------------------------------------------------------
+
+5. Applicability
+
+Keith Moore:
+>My first set of comments have to do with the intended purpose of
+>IPv4 link-local addresses.  (Some of them apply to IPv6 link-local
+>addresses also, but obviously those cannot be addressed in the
+>context of this document.)
+>
+>Link-local addresses are obviously valuable, for reasons implied
+>in the Introduction and Abstract.   They allow hosts on an isolated
+>network to begin communicating (assuming their applications can
+>discover one anothers' addresses) without explicit setup and without
+>support (e.g. DHCP, DNS) that would be present in a more sophisticated
+>network.  However, there are some limitations also that should be
+>mentioned:
+>
+>- poor scalability - This technique works well only for small,
+>  isolated networks, and connections of short duration.  As the
+>  number of ad hoc network participants gets larger the network
+>  overhead due to address defense gets higher, and the liklihood
+>  of address collisions gets higher. Along with that the liklihood
+>  of having connections torn down due to address collisions also
+>  increases.  networks of up to 100 hosts are probably okay, but
+>  after 1000 hosts the address collisions start becoming a
+>  significant factor in reliability.
+
+Stuart Cheshire:
+>I disagree.
+>
+>In the normal case, once a host has selected an address, it
+>will keep that address indefinitely. This is at least as
+>reliable as today's hard-wired Ethernet networks using manual
+>or DHCP-assigned addresses.
+>
+>Any new host joining the network will probe an address before
+>using it, thereby ensuring that it does not interfere with
+>existing hosts.
+>
+>The only time when undetected conflicts have to be resolved is
+>when two previously separate segments are bridged together. I
+>would argue that this is (a) rare, and (b) even on a
+>conventional managed network, bridging previously separate
+>networks together while hosts are running usually entails some
+>degree of chaos. The difference here is that when two hosts
+>find they inadvertently have the same IP address, instead of
+>failing silently and causing all kinds of confusion to the
+>users, the hosts automatically recover and continue working.
+
+Keith Moore:
+>- limited applicability - Link-local addresses are inherntly only
+>  usable on the local link, and are not a solution for anything
+>  that needs to be accessable from outside that link, or to access
+>  outside devices.
+
+Stuart Cheshire:
+>I agree, but I feel that the title of the draft, "Link-Local
+>Addresses", and numerous comments about ignoring packets from
+>outside the local link, non-forwarding, etc., make this very
+>clear to the reader. Is there specific additional text you
+>would like to see in the draft?
+
+Keith Moore:
+>I believe this document needs to expand its Applicability section
+>to include not only link-level considerations, but also to
+>specify reasonable expectations for use of link-local addresses
+>by applications.
+
+Stuart Cheshire:
+>Can you suggest specific text?
+>
+>I believe most applications can use link-local addresses
+>without any special awareness. If I type "epson.local.arpa"
+>into my Web browser to access the configuration page for my
+>Zeroconf Epson ink-jet printer, and multicast DNS correctly
+>looks up a link-local address for the printer, the Web browser
+>has no reason to (and SHOULD NOT) treat that address any
+>differently to any other address.
+>
+>I would say the same is true of just about any application.
+>
+>How many current applications give special treatment to Net 10
+>addresses? I suspect most do not, and do not need to. Perhaps a
+>few specialized applications should -- a tool that generates
+>externally visible web pages should try to avoid putting links
+>on those pages that aren't usable from outside the company's
+>internal network.
+
+Keith Moore:
+>2. the address is only usable in local contexts, even after the
+>   network has (re)joined the rest of the Internet
+
+Stuart Cheshire:
+>The same thing applies with DHCP, if I move my laptop from a
+>private network using Net 10 addresses, to a public network
+>using global addresses.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+6. Upper bound on number of hosts
+
+Keith Moore:
+>  (actually, having an explicit design parameter upper bound on # hosts
+>  per link using link-local addresses would be a very good idea - it
+>  would let us analyze the probability of various kinds of undesirable
+>  situations - broadcast storms, broken connections, etc -
+>  and it might be that there is a need to discourage hosts from using
+>  link-local addresses if they find they're on a large network.)
+
+Stuart Cheshire:
+>For three years at Apple I was on a switched Ethernet with 1016
+>available AppleTalk addresses and about 1000 hosts. Watching
+>the network with EtherPeek I saw it often took a host 50-100
+>tries to find an unused address. This process could take dozens
+>of milliseconds. I don't recommend overloading a network to
+>this extent, but to say it was unreliable is incorrect. Once a
+>host found an unused AppleTalk address, it kept it, and
+>defended it, and we never had any reliability problems caused
+>by hosts trampling on each other's AppleTalk addresses.
+>
+>I agree that the draft could make a specific statement in this regard.
+
+Keith Moore:
+>Having an indication of expected scaling limits helps a lot. 
+>I've seen a single bridged ethernet supporting several thousand
+>hosts. (yes, there were a few problems...)
+
+Proposed Action: Add new text in applicability section:
+
+   This protocol is intended for small ad-hoc networks -- a single link
+   containing only a few hosts. Although there are in principle 65024
+   available link-local addresses, attempting to use all those addresses
+   on a single link would result in it taking an inordinate length of
+   time for a host to find an available address. The precise definition
+   of "a few hosts" may vary depending on the situation, but it is
+   reasonable to say that it should not be more than 1300 hosts. A host
+   connecting to a link that already has 1300 hosts, selecting a
+   link-local address at random, has a 98% chance of selecting an unused
+   link-local address on the first try. A host has a 99.96% chance of
+   selecting an unused link-local address within two tries. The
+   probability that it will have to try more than ten times is about 1
+   in 10^17. This does not mean that a host should attempt to count the
+   number of other hosts on the link and refuse to operate if it finds
+   there are more than 1300. It does mean that network operators with
+   more than 1300 hosts on a single link may want to consider dividing
+   that single link into two or more subnets.
+
+---------------------------------------------------------------------
+
+7. Reduced reliability?
+
+Keith Moore:
+>- reduced reliability - The need to cease using addresses when
+>  collisions occur means that applications using link-local addresses
+>  will generally be less reliable than applications using stable
+>  addresses.
+
+Stuart Cheshire:
+>I disagree.
+>
+>When two hosts on the same link are using the same IP address,
+>no applications work reliably, no matter how the addresses were
+>assigned. The requirement in this draft to automatically select
+>a new address as soon as the conflict is detected restores
+>working operation as soon as possible. In contrast, two hosts
+>with the same manually-assigned address will fail to work until
+>a human intervenes to correct the situation. In the case of a
+>device like the Apple AirPort Base Station, which has no screen
+>or keyboard, the only way for a human to intervene to correct
+>the misconfigured address is via the network, which is
+>difficult if the network is not working. Having the device
+>automatically select a new address automatically automatically
+>restores its ability to communicate on the local link.
+
+Keith Moore:
+>Consequently, link-local addresses should be used sparingly, or
+>for special purposes by applications that are aware of them.
+>However this document offers no guidance to application authors
+>regarding appropriate (or inappropriate) use of link-local addresses.
+
+Stuart Cheshire:
+>I believe that Section 2.4, "Source Address Selection", gives
+>guidance in this respect:
+>
+>   If the destination address is a unicast address outside the
+>   169.254/16 prefix, then the host SHOULD use an appropriate
+>   routable source address, if it has one.
+>
+>   In the case where two hosts on the same link each have both a link-
+>   local address and another address configured via some other means,
+>   the host may use either its link-local source address or a routable
+>   address, depending on which is expected to be more likely to remain
+>   stable for the expected lifetime of the connection. Note that link-
+>   local addresses may be forced to change over time, as described in
+>   Section 2.3.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+8. Unlikely that link-local addresses by themselves will be useful
+
+Keith Moore:
+>1.3. Missing pieces
+>
+>It seems unlikely that link-local addresses by themselves will
+>significantly enable existing applications, for instance, that
+>expect to look up the names of their peers using DNS.  (yes,
+>applications can often be configured to use IP addresses, but
+>applications that are looking for named services will have a
+>hard time finding them.)
+
+Stuart Cheshire:
+>In fact, with self-assigned randomly-chosen addresses,
+>hand-configuring devices with dotted-decimal IP addresses
+>ceases to be viable. Link-local addresses absolutely require a
+>naming protocol (or shouting dotted-decimal IP addresses across
+>the room).
+>
+>Currently on Mac OS, name lookup is done with AppleTalk NBP.
+>(You find a file server in the Chooser using AppleTalk NBP, but
+>then connect to it using a TCP connection to its IP address,
+>which may be a self-assigned link-local address.)
+>
+>Currently on Windows, name lookup is done with NetBIOS.
+>
+>Ideally, we want to replace both with Multicast DNS.
+>
+>SLP can also allow hosts to learn useful address information in
+>this situation.
+>
+>Name-to-address mapping is one of the four Zeroconf
+>Requirements, as specified in draft-ietf-zeroconf-reqts-09.txt.
+>
+>I don't believe that a standards-track RFC at this time should
+>discuss Multicast DNS when Multicast DNS is in its infancy and
+>it is not at all clear how things will eventually work out.
+>
+>Can you suggest specific text?
+
+Keith Moore:
+>right.  the point is that these link-local addresses aren't
+>intended to be used directly - you need to use this mechanism
+>in conjunction with some kind of service discovery mechanism.
+>
+>I'm not sure it's essential for the draft to state this, but I
+>do think it would make it easier for a reader (who hasn't been
+>a participant in the WG) to understand the context in which
+>this protocol is intended to be used.
+
+Stuart Cheshire:
+>RFC 2460 (IPv6) does not discuss naming and DNS for IPv6
+>addresses. 
+>Nor does RFC 2462, "IPv6 Stateless Address Autoconfiguration".
+>What is different about this draft?
+
+Bernard Aboba:
+>Linklocal addressing is no different than DHCP assignment with
+>respect to naming. RFC 2131 doesn't make any statements about
+>naming; neither should this specification.
+>
+>I see no reason for this specification to include any
+>references to mDNS, normative or not.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+9. Impact on Applications
+
+Keith Moore:
+>The document says little or nothing about the impact of link-local
+>addresses on applications.  It's important to consider both the
+>effect on applications that aren't aware of link-local addresses,
+>and on those that are aware of them.
+>
+>One can argue that without link-local addresses there would be no
+>communications at all under certain circumstances, and that a
+>somewhat-less-reliable communications capability is preferable to
+>no communications capability at all.  This is true - provided that
+>link-local addresses do not decrease the reliability of communications
+>when better capabilities would otherwise be available.
+
+Stuart Cheshire:
+>The primary purpose of link-local addresses is to provide
+>communication where otherwise there would be none. Is there
+>specific wording you would like to see in the draft?
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+10. Addresses may change
+
+Keith Moore:
+>2.1 Non-aware Applications
+>
+>A non-aware application that uses a link-local address as a source
+>or destination address may have problems for any of several reasons:
+>
+>1. the address gets changed without warning, perhaps in mid-connection
+
+Stuart Cheshire:
+>This is as likely with a link-local address as it is with a
+>manual or DHCP-assigned address. That is to say, it can happen,
+>but usually does not. Good applications should cope with this.
+>Some applications do not cope well.
+
+Keith Moore:
+>- A distributed application may advertise its link-local address to
+>  its peers as a rendezvous point.  But that address may be changed
+>  without warning, and that address may not be usable from other
+>  points in the network.
+
+Stuart Cheshire:
+>Repeating previous comments: This is as likely with a
+>link-local address as it is with a manual or DHCP-assigned
+>address. That is to say, it can happen, but usually does not.
+>Good applications should cope with this. Some applications do
+>not cope well.
+
+Keith Moore:
+>   Implementations of IPv4 link-local address autoconfiguration MUST
+>   expect address collisions, and MUST be prepared to handle them
+>   gracefully by automatically selecting a new address whenever a
+>   collision is detected, as described in Section 2.
+>
+>Unless you very carefully work out the details so as not to interfere
+>with existing applications, this requirement on "implementations of
+>IPv4 link-local address autoconfiguration" appears to also extend to
+>applications.  In other words, applications that expect to work in
+>an environment using link-local  addresses MUST be able to survive
+>address changes.  (but how to do so without some other naming system?)
+
+Stuart Cheshire:
+>The requirement to handle address changes comes from mobility,
+>from DHCP, and from the fact that if they want to, the user can
+>even change their manual address without having to reboot the
+>machine.
+>
+>The naming system is NBP, NetBIOS, mDNS, SLP, or shouting
+>dotted decimal IP addresses across the room, just as with
+>manual or DHCP addresses :-)
+
+Keith Moore:
+>This is just one of many proposals that can (depending on how you
+>look at it) change fundamental assumptions in the Internet architecture,
+>or reflect changes in those assumptions that have already been made.
+>Some will argue that DHCP has already caused applications and
+>to assume that addresses are volatile
+
+Stuart Cheshire:
+>DHCP is a really a symptom, not a cause.
+>
+>It is the mobility of laptop computers and PDAs that have
+>invalidated the assumption that every host needs only one fixed
+>IP address. Sure, at the London IETF meeting we *could* all
+>have continued using our home IP addresses using Mobile IP, but
+>that wouldn't have been a necessary or efficient way to
+>communicate with the local printers in the IETF terminal room.
+>
+>For most applications, having an IP address that is
+>topologically appropriate for the current location is more
+>important than every piece of hardware being branded at birth
+>with a fixed globally unique IP address.
+>
+>With laptop computers and PDAs it is also no longer appropriate
+>to assume that you shut down your device and reboot it every
+>time you change location. My Palm V PDA hasn't been rebooted
+>since the day I took it out of its box.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+11. Source address selection problem
+
+Keith Moore:
+>For example,
+>
+>- A non-aware host may see multiple DNS A records for a service and
+>  (not knowing any better) choose a link-local address, even though
+>  that address is less stable/reliable than one of the alternatives.
+>  (that address might even "look" better to a clever application,
+>  since the host will have a local interface to the same network)
+
+Stuart Cheshire:
+>Providing better name service APIs is a problem that is already
+>being tackled, to solve the IPv6 "source address selection
+>problem", which is essentially the same problem.
+
+Keith Moore:
+>section 2.4:
+>
+>this section is worded as if a 'host' decides the source address,
+>but sometimes the application decides.
+
+Stuart Cheshire:
+>Except in very specialized cases, no normal application should
+>ever have to make this kind of decision.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+12. Multi-homed hosts
+
+Keith Moore:
+>- Another problem is that for a host with multiple interfaces,
+>  there may be multiple, reachable, destinations with the same
+>  link-local address. Non-aware applications are likely to
+>  assume that all reachable destinations can be uniquely
+>  distinguished by destination address alone (this is generally
+>  true even for NAT-aware applications).  Few existing
+>  applications bother to look at the source address assigned by
+>  the operating system, or to distinguish their peers by both
+>  source and destination address.
+
+Stuart Cheshire:
+>The same problem applies for Net 10 addresses today, where a
+>multi-homed host can have connections into multiple different
+>Net 10 address spaces. The same problem also applies for IPv6
+>hosts using link-local or site-local addresses. My preferred
+>solution here is that the networking stack should provide a
+>"connect-by-name" API, which allows the OS to handle all these
+>address selection and interface selection problems
+>transparently on the application's behalf.
+
+Keith Moore:
+>  I'm not sure how to fix this either, but it should at least
+>  be documented. The best fix I can think of is that hosts with
+>  multiple interfaces would only allow non-aware applications
+>  to use link-local addresses on a single, designated
+>  interface.
+
+Erik Nordmark:
+>Section 3.3 seems to skip the issue about how to connect or
+>send the first UDP to a link-local address in the absense of
+>API support to identify interfaces. Using the source IP address
+>to identify the interface works after the initial exchange e.g.
+>after a tcp connection has been established. But making it work
+>for UDP responders when the socket is bound to INADDR_ANY seems
+>hard.
+
+Stuart Cheshire:
+>Application software has to do what any good application
+>software (e.g. DNS server, NFS server, etc.) has to do today on
+>a multi-homed host -- it enumerates the available interfaces,
+>opens a socket per interface, and binds each socket to its
+>interface.
+
+Proposed Action: Add new text:
+
+   For applications that send packets (or initiate outgoing
+   connections) without identifying a desired source interface, by
+   interface identifier, source IP address, or any other means, an
+   operating system that configures link-local addresses on multiple
+   interfaces has two choices. It can either restrict such
+   applications to using link-local addresses on only one default
+   interface, or it can ARP for the given destination address on all
+   interfaces, and use the first response it gets. While clearly sub-
+   optimal, in most cases this heuristic approach will successfully
+   establish communication with the desired correspondent host.
+
+---------------------------------------------------------------------
+
+13. Ambiguous Address Re-Use
+
+Erik Nordmark:
+>   In addition, this kind of host should probe for, and defend, all of
+>   its link-local addresses on all of its active interfaces that are
+>   using link-local addresses.
+>I don't see why this is strictly needed. The host needs to
+>ensure that its IP are unique across the interfaces but it
+>should be able to handle having a local address X on interface
+>#1 while address X is also assigned to a remote node on
+>interface #2.
+
+Stuart Cheshire:
+>This case is discussed in 3.3.1, "Example Illustrating (Incorrect)
+>Ambiguous Address Re-Use":
+>
+>   When host A sends a UDP packet from source
+>   address P to destination address Q without specifying an explicit
+>   outgoing interface identifier, it is ambiguous whether A intends
+>   to talk to itself, or to host B.
+>
+>Do you disagree with that example?
+
+Erik Nordmark:
+>And defending its addresses on all interfaces has the disadvantage of
+>increasing the risk of having to pick a new address.
+
+Stuart Cheshire:
+>That is the benefit of using choice 3.2 (Single Shared
+>Link-Local Address) on hosts where the OS and application
+>software make that possible.
+
+Erik Nordmark:
+>The example in 3.3.1 doesn't seem to match what is said at the
+>top of section 3.3: "[...] enable use of the source address as
+>an unambiguous interface identifier". This means that in 3.3.1
+>P identifies the interface and the only Q on that interface is
+>assigned to B. If A wants to talk to itself it can use a source
+>of 127.0.0.1 (indentifying the loopback interface) and the same
+>as a destination, or a source of P and dest P, etc. Allowing a
+>source of P and a destination Q for loopback traffic seems
+>counter to using the strong end system model.
+
+Stuart Cheshire:
+>I believe that in most operating systems today, if a
+>multi-homed host has addresses P and Q, and sends a packet
+>addressed to Q, then that packet is looped back inside the
+>network stack and redelivered locally. It is not sent out on
+>the wire. It seemed wise not to mandate changing this behaviour
+>for LL destination addresses, but I do not have a strong
+>opinion about that.
+>
+>Am I wrong about the current behaviour of today's multi-homed
+>hosts?
+
+Erik Nordmark:
+>But I still don't understand the description in section 3.3 is
+>supposed to handle what is common in the BSD API: a TCP socket
+>is created and then connected to the destination address. In
+>this case there is nothing which can be used to infer the interface.
+>Is that intended to be outside the scope of section 3.3?
+
+Stuart Cheshire:
+>Section 3.3 does not propose a solution to applications that
+>think that an IP address alone is sufficient to uniquely
+>identify the desired destination. I believe that such a
+>solution would require magic.
+>
+>Section 3.3 explains how it is possible to produce a
+>well-written application that can use link-local addresses on a
+>multi-homed host.
+>
+>We do everything possible to make current software work as well
+>as it can with link-local addresses, but that doesn't mean that
+>there aren't ways you could improve current software to make it
+>work even better.
+>
+>If we can run Zeroconf IP over a USB cable, then you can use
+>today's ftp client software to transfer files over that cable.
+>Perhaps you could improve today's ftp client software to work
+>even better if you made it more aware of Zeroconf
+>Considerations. Compare that with how much work you'd have to
+>do to modify today's ftp client software to transfer files over
+>a USB cable where IP is *not* available.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+14. Multiple interfaces are connected to the same link?
+
+Keith Moore:
+>section 3.2:
+>
+>   Some operating systems have networking APIs that allow applications
+>   to specify network interfaces by name, index value, or other local
+>   identifier, and to identify interfaces this way both for incoming
+>   and outgoing packets/connections. For operating systems that have
+>   this capability (and have application software that makes use of it)
+>   it is sufficient to configure all interfaces with a single common
+>   IPv4 link-local address, and defend that address on all interfaces.
+>
+>this fails if multiple interfaces are connected to the same link.
+
+Erik Nordmark:
+>The second paragraph in section 3.4 seems to conflict with the
+>current model in section 3.1 - if you want to support multiple
+>interfaces being bridged togther in the same link then the
+>interfaces better have distinct link local addresses. Otherwise
+>you don't know which interface packets will arrive on which
+>means that the communication bound to an interface per the
+>strong ES model will fail half the time (when the packets
+>arrive on a different interface than were connection is sending
+>packets).
+
+Proposed Action: Add new text:
+
+   If a host receives an ARP packet where the 'sender hardware address'
+   is not the hardware address of the interface on which the packet was
+   received, but *is* the hardware address of one of the host's other
+   interfaces, then this indicates that the host has two or more
+   interfaces connected to the same network link. This can happen if the
+   user of a multi-homed host with two Ethernet interfaces connects both
+   interfaces to the same Ethernet hub. It can also occur less
+   obviously, such as a host with both wired and wireless Ethernet
+   interfaces, in an environment where a wireless gateway is available,
+   and (perhaps unknown to the user) happens to be bridged onto the same
+   wired Ethernet.
+
+   If a host implementing a single shared link-local address (Section
+   3.2) receives such an ARP packet, it should cease using its link-
+   local address on one of the two interfaces in question. If there is a
+   performance difference between the two interfaces (e.g. Gigabit wired
+   Ethernet and 11Mb/s wireless), then the host should generally cease
+   using its link-local address on the lower performance interface.
+
+   If a host implementing a different link-local address for each
+   interface (Section 3.3) receives such an ARP packet, it should
+   silently discard it and not treat it as a conflict. Such a host
+   should not shut down either interface's link-local address, because
+   to do so would break existing connections established to the
+   discontinued IP address.
+
+---------------------------------------------------------------------
+
+15. Relay claim/defend messages?
+
+Keith Moore:
+>  Another fix is for hosts with multiple
+>  interfaces to relay link-local claim/defend messages to other
+>  interfaces, in order to ensure that such addresses are unique.
+
+Stuart Cheshire:
+>I believe the transitive closure of this behaviour would be for
+>every ARP packet to spread to every reachable network. Any
+>topological loop would result in an infinite broadcast storm.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+16. Aware applications?
+
+Keith Moore:
+>Applications that are aware of link-local addresses can presumably
+>choose if and when to use them as either source or destination
+>addresses.  However, to do this effectively probably requires some
+>support from the socket API which is currently missing.  An application
+>can distinguish link-local addresses from other addresses, and it can
+>explicitly choose a source address using bind(), but it has no way
+>to say "use the best non-link-local address that is available", or for
+>that matter "use the best link-local address that is available".
+
+Stuart Cheshire:
+>I would be disappointed if application writers need to care
+>about this. I would feel that we have failed in our goal of
+>providing local IP that provides communications functionality
+>which is, at the API level, equivalent to today's global IP.
+>
+>Applications should simply specify a name to connect to, and
+>the OS should automatically provide the best quality connection
+>possible in the current environment.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+17. Timer hazards
+
+Keith Moore:
+>The claim/defend protocol appears to have a flaw which will cause
+>it to work very suboptimally, or not at all, for a large number of
+>hosts on a single Ethernet which are started at the same time (as
+>in after a power failure).  If the hosts all send their probes
+>at the same time, numerous collisions will result, causing requests
+>and responses to get dropped due to too much contention for the medium.
+>Since those hosts will retry at fixed intervals, the collisions
+>will with high probability happen again at the retry interval.
+
+Proposed Action: Add new text:
+
+   Where link-state information is available, the host should delay
+   beginning the probing process until after the underlying hardware
+   or link-layer driver software indicates that the physical link
+   (e.g. the port on an Ethernet hub) has become active and is
+   forwarding packets.
+
+   When ready to begin probing, the host should then wait for a
+   random time interval selected uniformly in the range zero to two
+   seconds, and should then send four probe packets, spaced two
+   seconds apart. This initial random delay helps ensure that a
+   large number of hosts powered on at the same time do not all send
+   their initial probe packets simultaneously.
+
+---------------------------------------------------------------------
+
+18. When to use link-local addresses
+
+Keith Moore:
+>Since link-local addresses do impact the network (significantly if
+>they are a lot of hosts using them), perhaps there should be some
+>well-defined conditions under which link-local addresses should
+>NOT be claimed or used?
+
+Stuart Cheshire:
+>The volume of ARP traffic generated by hosts using link-local
+>addresses is not significantly different to the volume of ARP
+>traffic generated by hosts using any other kind of address.
+>
+>A host that starts up and then is fortunate enough to never
+>need to use its link-local address sends six ARP packets on
+>startup. It is likely to send many more ARPs than that in the
+>course of just one hour using its other address.
+
+Keith Moore:
+>for instance, a host with a statically assigned address doesn't
+>need a link-local address unless it's talking to a host that only
+>has a link-local address.  similarly for a host that can get
+>an address with DHCP.  maybe hosts shouldn't claim a link-local
+>address until they find out that they need one.
+
+Stuart Cheshire:
+>That assumes that the host's statically assigned address is
+>correct.
+>
+>One of the purposes of link-local addresses is that you can
+>absolutely rely on them. No matter how badly configured a
+>host's networking stack is, you should at least be able to rely
+>on link-local addressing working sufficiently well for you to
+>communicate with the host to correct its misconfigured
+>networking settings. If hosts stop using link-local addresses
+>when their configuration indicates they don't need them, you
+>can lose this benefit in precisely the case where you need it.
+
+Proposed Action: Add further motivation to document:
+
+   Another example of why it is beneficial for hosts to maintain a link-
+   local address in addition to other addresses is that there may be
+   situations where two portable devices such as laptop computers are
+   brought together from two different networks. Each device may have
+   its own incompatible configuration parameters (subnet mask, default
+   router, etc.) that were previously assigned manually or by DHCP, and
+   even though connected to the same physical link they would be unable
+   to communicate successfully using these incompatible configuration
+   parameters. If each host also configures a link-local address, this
+   will allow them to communicate.
+
+---------------------------------------------------------------------
+
+19. Make changes less disruptive to applications and network
+
+Keith Moore:
+>At a minimum when we make changes like this it seems important to
+>consider what long-held assumptions are being challeged, and what
+>effects these changes might cause for current and future applications.
+>It also seems important to consider whether such changes can be made
+>in a way that is less disruptive both to applications and to Internet
+>flexibility.
+
+Stuart Cheshire:
+>I agree with this sentiment.
+>
+>Where I disagree is the notion that it is a backward step to
+>provide (limited) communication where otherwise there would be
+>no communication at all.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+20. Do we understand how to build ad-hoc networks?
+
+Keith Moore:
+>So if it seems like I've gone over this with a fine-toothed
+>comb, that's why. I think ad hoc networks are incredibly
+>useful, but I am not sure that we understand how to build them
+>without affecting existing applications
+
+Stuart Cheshire:
+>I am grateful for your fine-toothed comb analysis.
+>
+>However, both Mac OS and Windows have had some flavour of
+>link-local IP addressing for several years, and to my knowledge
+>no existing application has ever had to be rewritten before it
+>could make use of link-local IP networking.
+>
+>I agree that there are challenges, but not insurmountable ones.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+21. Definition of Link?
+
+Erik Nordmark:
+>The text in section 1.2 which attempts to define link seems to exclude
+>all link layers that modify some part of the link-layer packet.
+>This clearly excludes MPLS and might exclude source routing token ring
+>as two examples.
+>Why not just refer to or copy the definitions of "link" and the terms
+>it depend on from RFC 2460?
+>And presumably the definitions belong in section 1.1 and not 1.2.
+
+Stuart Cheshire:
+>I find the definition in RFC 2460 somewhat self-referential:
+>
+>   link - a communication facility or medium over which nodes can
+>          communicate at the link layer, i.e., the layer
+>          immediately below IPv6.  Examples are Ethernets...
+>
+>This defines "link" in terms of "link layer", but then leaves
+>the term "link layer" undefined. It gives a list of examples,
+>but a list of examples is not a definition.
+>
+>I actually think that in the most precise definition of "on the
+>same link" for the purposes of IP is the one the draft gives:
+>two hosts are "on the same link" if and only if IP packets sent
+>from one to the other arrive with no part of the IP packet
+>modified. If the TTL is decremented en route, they are not on
+>the same link. If the IP addresses are rewritten by a NAT box
+>or TCP port numbers are changed or the IP packet is modified in
+>any other way, then the hosts are not communicating directly on
+>the same link.
+>
+>The reason the draft defines this in terms of link-layer
+>payload instead of IP packets is that ARP packets must also
+>arrive unmodified, not just IP packets.
+
+Keith Moore:
+>section 1.2:
+>
+>   Two hosts are considered to be
+>   on the same link if, when one host sends packets to the other, the
+>   entire link-layer packet payload arrives unmodified. In particular,
+>   any device forwarding a packet whose source and/or destination
+>   address is in the 169.254/16 prefix MUST NOT modify any part of the
+>   IP header.
+>
+>This starts out being a definition of "on the same link" and ends up
+>making what looks like a (retroactive) requirement on packet forwarders.
+>
+>It's not clear whether the latter statement is meant to be a clarification
+>of the definition of "on the same link"
+
+Stuart Cheshire:
+>It is trying to define the possibly slippery concept of "same link".
+
+Keith Moore:
+>or if it's really meant to
+>impose a new requirement on devices that aren't aware of, and don't
+>implement, this protocol.  I think it's the former, but if that's true,
+>it needs to be reworded, and use of MUST NOT is not appropriate.
+>
+>If the latter is intended, it needs wider review.  I don't think the
+>zeroconf group can unilaterally impose requirements on routers and
+>bridges.
+
+Stuart Cheshire:
+>Like any standard, this one only asserts requirements on those
+>devices that choose to implement the standard. A router that
+>claims to conform to this standard MUST NOT forward link local
+>packets. A router that does not claim to conform to this
+>standard is not bound by it. Customers are free to purchase
+>whichever kind of router they prefer.
+
+Erik Nordmark:
+>there is a slight risk that we'd end up discussion
+>"transparent" vs. "non-transparent" links - links that don't
+>decrement ttl but do e.g. NAT type operations. Let's hope we
+>don't end up in those discussions.
+
+>And also seem to suggest that there might be link layers that
+>would not modify packets with link-local addresses but modify
+>other IP packets.
+
+>1) The link definition in RFC 2460 isn't this strict and there
+>   would be less confusion if there was a single definition 
+>   across IETF standards.
+>
+>2) It is up to the WG to decide whether or not such links are
+>   in scope or out of scope for the linklocal spec.
+
+Proposed Action: New text in section 1.1:
+
+   This document describes link-local addressing, for IP communication
+   between two hosts on a single link. Two hosts are considered to be on
+   the same link if, when one host sends packets to the other, the
+   entire link-layer packet payload arrives unmodified. The link-layer
+   *header* may be modified, such as in Token Ring Source Routing
+   [IEEE8025], but not the link-layer *payload*. In particular, if any
+   device forwarding a packet modifies any part of the IP header or IP
+   payload then the packet is no longer considered to be on the same
+   link. This means that the packet may pass through devices such as
+   Ethernet repeaters, bridges, hubs or switches and still be considered
+   to be on the same link for the purpose of this document, but not
+   through any device like an IP router that modifies the IP header.
+
+---------------------------------------------------------------------
+
+22. Recommendations on Randomness?
+
+Erik Nordmark:
+>I don't understand what the text in section 2.1 about
+>   This means that even without using any other
+>   persistent storage, a host will usually select the same link-local
+>   address each time it is booted [...]
+>relates to the fact the you refer to RFC 1750 which says "It recommends
+>the use of truly random hardware techniques ..."
+>
+>If you have truly random hardware techniques then you would *not* get the
+>same random number on each boot. So what is the relationship really with
+>RFC 1750?
+
+Stuart Cheshire:
+>The reference to RFC 1750 was put in at the request of Donald
+>Eastlake on 31st May this year. I do not have a strong opinion
+>about it myself. Would you prefer to see that reference removed?
+
+Erik Nordmark:
+>I'd like the WG to decide whether they want randomness or
+>non-randomness first. At the moment the spec is inconsistent
+>since it says strong randomness in one place and assumes
+>non-randomness elsewhere.
+
+Proposed Action: Remove reference to RFC 1750
+
+---------------------------------------------------------------------
+
+23. Dependency on routers?
+
+Keith Moore:
+>What I might say is that this is a fundamental assumption behind the
+>v4 link-local address mechanism; and unless this condition is met,
+>link-layer addressing cannot be expected to work correctly.
+
+Stuart Cheshire:
+>What do you mean by "work correctly"?
+>
+>Link-local, site-local, and other variants of local addressing
+>have been "working correctly" for years. Routers that forward
+>these packets may be annoying and a waste of bandwidth, but how
+>do they make it not "work correctly"?
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+24. Privacy concerns
+
+Keith Moore:
+>section 2.1:
+>
+>if a link-local address is (usually) derived from some persistent
+>per-host identifier then this can serve as a (coarse) identifier
+>for the host, and perhaps (if the host is assigned to a user) for
+>that user.  this is not a problem if link-local addresses never
+>escape the local net - after all, the MAC address is also visible
+>from the local link.  however, it might be a good idea to recommend
+>that applications that are aware of link-local addresses do not
+>expose them to the outside.
+>
+>this might just be a nit, but it's one of the issues that comes to
+>mind every time someone suggests using a persistent identifier.
+
+Proposed Action: Add new text:
+
+   Another reason to restrict leakage of link-local addresses
+   outside the local link is privacy concerns. If link-local
+   addresses are derived from a hash of the hardware address, some
+   argue that they could be indirectly associated with an
+   individual, and thereby used to track that individual's
+   activities. Within the local link the hardware addresses in the
+   packets are all directly observable, so as long as link-local
+   addresses don't leave the local link they provide no more
+   information to an intruder than could be gained by direct
+   observation of hardware addresses.
+
+---------------------------------------------------------------------
+
+25. Communication Between Link-Local and Routable Addresses
+
+Keith Moore:
+>   If the destination address is in the 169.254/16 prefix (including the
+>   169.254.255.255 broadcast address), the host SHOULD use its link-
+>   local source address, if it has one. If the host does not have a
+>   link-local source address, then it MAY choose to ARP for the
+>   destination address and then send its packet, with a routable source
+>   IP address and a link-local destination IP address, directly to its
+>   destination on the same physical link.
+>
+>is there any way that a host with only a link-local IP address would
+>know how to reply to that routable IP address?  is it just expected
+>to treat the entire link as a /32 and ARP for it?
+
+Stuart Cheshire:
+>Yes. This is what current implementations do.
+
+Keith Moore:
+>what if it has more than one interface?
+
+Stuart Cheshire:
+>Then it needs a RIP listener, or some other way to build a
+>rudimentary routing table, just like any multi-homed host.
+
+Keith Moore:
+>   A host need not implement a DHCP client in order to use
+>   a link-local address.
+>
+>True, but that host might not be able to communicate with other hosts
+>on the same network unless those hosts also use link-local addresses.
+
+Stuart Cheshire:
+>Not necessarily true. Link-local-to-routable address
+>communication is both possible and encouraged.
+
+Proposed Action: Add new text to clarify why this may be useful:
+
+1.7. Communication Between Link-Local and Routable Addresses
+
+   For some devices, engineering constraints may mean that it is only
+   possible to implement a single address per interface, either link-
+   local, or routable, but not both at the same time. For this reason,
+   the rules in Section 2.4 allow communication from a routable source
+   address to a link-local destination address on the same physical
+   link, and vice versa. This allows, for example, a laptop computer
+   with only a routable address to communicate with web servers world-
+   wide using its globally-routable address while at the same time
+   printing those web pages on a local printer that has only a link-
+   local address.
+
+---------------------------------------------------------------------
+
+26. Document dictates host and router behavior?
+
+Keith Moore:
+>section 2.5:
+>
+>okay, here we have several cases where zeroconf is trying to dictate
+>the behavior of things that don't know about link-layer addresses,
+>and don't need to conform to this spec.
+>
+>   Any host sending an IPv4 packet with a source and/or destination
+>   address in the 169.254/16 prefix MUST set the TTL in the IP header
+>   to 255.
+>
+>   Any host receiving an IPv4 packet whose source and/or destination
+>   address is in the 169.254/16 prefix MUST discard the packet if the
+>   TTL in the IP header is not 255.
+>
+>   An IPv4 packet whose source and/or destination address is in the
+>   169.254/16 prefix MUST NOT be sent to any router for forwarding, and
+>   any network device receiving such a packet MUST NOT forward it,
+>   regardless of the TTL in the IP header.
+>
+>these appear to be intended to apply to all hosts, whether they implement
+>link-local addresses or not.  it's reasonable to require this of hosts
+>that implement this spec, maybe not so reasonable (or realistic) to require
+>this of all hosts.
+>
+>if nothing else,  if you're imposing new requirements on hosts, they
+>need to be made very visible - not buried within a spec about link-local
+>addresses.
+
+Stuart Cheshire:
+>I don't understand the problem. Hosts that don't claim to
+>conform to this specification don't have to implement this.
+>However, such hosts will not interoperate well with hosts that
+>do conform to this specification.
+>
+>A host implementer could choose to ignore the fact that Class D
+>IP addresses are conventionally used for multicast, or the fact
+>that 224.0.0/24 is conventionally used for link-local
+>multicast, but market forces dictate that people don't want to
+>buy hosts that do that. There is a market for products that
+>*do* implement the specifications published in standards-track
+>RFCs.
+
+Keith Moore:
+>   This restriction also applies to multicast packets. IP packets with
+>   a link-local source address MUST NOT be forwarded off the local link
+>   even if they have a multicast destination address.
+>
+>again, quite reasonable to apply to hosts that implement this protocol.
+>not reasonable to apply to every multicast router.
+
+Stuart Cheshire:
+>Well, where *are* requirements on multicast routers specified,
+>if not in standards-track RFCs?
+
+Keith Moore:
+>   Similar considerations apply at layers above IP. For example, DNS
+>   Resource Records containing link-local addresses SHOULD NOT be sent
+>   to hosts outside the link to which those link-local addresses apply.
+>
+>now you appear to be imposing constraints on DNS implementations.
+
+Stuart Cheshire:
+>No more than currently imposed by use of Net 10 or IPv6 link
+>local addresses.
+>
+>Would it be better to not mention this in the draft, and leave
+>implementers to work it out for themselves?
+>
+>Whenever you have private name spaces, it is helpful if names
+>from one name space do leak across the boundary into a
+>different name space where they are not valid.
+>
+>I believe it is helpful for the document to point out this
+>inevitable fact so that all implementers are aware of it.
+>
+>It would be intellectually dishonest to pretend that the issue
+>did not exist.
+
+Keith Moore:
+>   Automatically generated web pages SHOULD NOT contain links with
+>   embedded link-local addresses if those pages are viewable from hosts
+>   outside the local link where the addresses are valid.
+>
+>now you appear to be imposing constraints on HTTP servers.
+
+Stuart Cheshire:
+>No more than currently imposed by use of Net 10 or IPv6 link
+>local addresses.
+
+Keith Moore:
+>rather than saying that DNS servers
+>should not expose 169.254/16 addresses, say that people should not
+>put those address into DNS servers if they can be exposed to the outside
+>(probably they shouldn't do it at all!).  similarly for web servers.
+
+Stuart Cheshire:
+>You're assuming that a person put the addresses into a DNS
+>server. The whole point of Zeroconf is that no person is
+>required to configure anything. The software is entirely
+>self-configuring, so requirements on what a person does have no
+>place here.
+>
+>Likewise, you're assuming that a person typed in link-local
+>addresses into some HTML text. This is not useful if the host
+>doesn't have a fixed address, (and embedding IP addresses in
+>HTML text is questionable at the best of times anyway, because
+>few hosts have an IP address that is truly fixed over time
+>periods of years or decades). The draft specifically says
+>
+>   Automatically generated web pages SHOULD NOT contain links with
+>   embedded link-local addresses if those pages are viewable from
+>   hosts outside the local link where the addresses are valid.
+>
+>There are three salient points here:
+>
+>1. Automatically generated web pages (not manually typed ones)
+>2. should not contain embedded IP addresses (host names are better)
+>3. and ESPECIALLY not embedded IP addresses that are not useful to
+>   the person (or device) reading the page.
+>
+>I don't see much to disagree with in that statement.
+
+This discussion of requirements on other devices drew my attention to
+an oversight in the draft. The requirement that routers not forward
+link-local packets leads to a related requirement: routers doing
+so-called "proxy ARP routing" not only must not forward packets with
+addresses in the 169.254/16 prefix, they also must not indiscriminately
+answer all ARP requests for addresses in the 169.254/16 prefix.
+
+Proposed Action: Additional text as below:
+
+   An IPv4 packet whose source and/or destination address is in the
+   169.254/16 prefix MUST NOT be sent to any router for forwarding, and
+   any network device receiving such a packet MUST NOT forward it,
+   regardless of the TTL in the IP header. Similarly, a router or other
+   host MUST NOT indiscriminately answer all ARP requests for addresses
+   in the 169.254/16 prefix. A router may of course answer ARP requests
+   for the one (or more) own link-local address(es) that it has
+   legitimately claimed for its own use according to the claim-and-
+   defend protocol described in this document.
+
+---------------------------------------------------------------------
+
+27. Protection should be implemented in border routers instead of
+end-systems?
+
+Keith Moore:
+>rather than saying that all IPv4 hosts should discard packets
+>from 169.254/16 with TTL != 255, you might recommend that border
+>routers be configured to discard such packets. and rather than
+>saying that hosts should not send packets with destination addresses
+>in 169.254/16 to routers, maybe you should say that routers should
+>be configured to black-hole them.
+
+Stuart Cheshire:
+>You previously argued end-to-end principles. Now you say that
+>the two end systems should not implement their own protection
+>against packets leaking in from outside the link, but should
+>instead rely on the correct operation of all routers on the
+>network to implement this protection.
+>
+>You previously argued that this draft could not impose
+>requirements on routers. Now you are arguing that it should.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+28. Section 3 titles
+
+Erik Nordmark:
+>The way I view it section 3.2 talks about constraints when the APIs
+>allow applications to specify and retrive interface information, and
+>section 3.3 talks about issues when such APIs are not available.
+>But the section titles doesn't match this so I'm confused about the
+>intent.
+
+Stuart Cheshire:
+>Section 3 covers multi-homing issues.
+>
+>Section 3.1 covers one choice for multi-homing -- don't do it.
+>
+>Section 3.2 covers another option -- a single address shared
+>between all interfaces -- and describes what is necessary to do
+>this.
+>
+>Section 3.3 covers an alternative option -- a different address
+>on each interface.
+>
+>Can you suggest better titles?
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+29. Section 8
+
+Keith Moore:
+>section 8:
+>
+>this section is missing a great deal, and needs a lot of work.
+
+Stuart Cheshire:
+>8. Intellectual Property
+>
+>   The IETF takes no position regarding the validity or scope of any
+>   intellectual property or other rights that might be claimed to
+>   pertain to the implementation or use of the technology described in
+>   this document or the extent to which any license under such rights
+>   might or might not be available; neither does it represent that it
+>   has made any effort to identify any such rights. Information on the
+>   IETF's procedures with respect to rights in standards-track and
+>   standards-related documentation can be found in BCP-11. Copies of
+>   claims of rights made available for publication and any assurances of
+>   licenses to be made available, or the result of an attempt made to
+>   obtain a general license or permission for the use of such
+>   proprietary rights by implementors or users of this specification
+>   can be obtained from the IETF Secretariat."
+>
+>   The IETF has been notified of intellectual property rights claimed
+>   in regard to some or all of the specification contained in this
+>   document.  For more information consult the online list of claimed
+>   rights.
+>
+>Can you elaborate on what needs to be added?
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+30. Vulnerability to single lost packet?
+
+Erik Nordmark:
+>The algorithm in section 2.3 seems to force an unneeded IP address
+>change if a single packet is lost.
+>A is trying to use address X, which is already in use by B.
+>A sends arp request. B sees it and responds with a gratuitus reponse.
+>This response is lost.
+>A sends the arp request again after 2 seconds. (It is supposed to do this 4
+>times). B sees it. Now the rules say that it MUST cease to use the address.
+>This doesn't seem very robust.
+
+Stuart Cheshire:
+>I think you are confusing sections 2.2 and 2.3. The four ARP
+>packets two seconds apart are in Section 2.2, "Claiming a
+>Link-Local Address". Also, they are ARP probes, not ARP
+>requests. ARP probes are benign. They have zero source address,
+>and cause no harm to any other host on the network.
+>
+>The forced reconfiguration in Section 2.3 only comes into
+>effect if the ARP probing process failed, and two hosts are
+>trying to use the same source IP address (for example when two
+>separate network segments are later joined). Forced
+>reconfiguration is rarely needed, and when it is needed, it is
+>the quickest (and only) way to restore working communication.
+>Two hosts cannot use the same IP address and have reliable
+>communication. Whether or not an ARP packet may occasionally be
+>lost makes no difference here. If two hosts are trying to use
+>the same source IP address, reliable communication will not be
+>restored until at least one of them stops using that address.
+
+Erik Nordmark:
+>Hmm - perhaps the text should be made more clear by
+> - using "ARP request or response packet" instead of "ARP packet"
+
+Proposed Action: Change text to say
+   ... ARP packet (request *or* reply) ...
+
+Also, additional clarification in "Terminology Used in this Document"
+
+   In this document, the term "ARP Probe" is used to refer to an ARP
+   request packet, broadcast on the local link, with an all-zero 'sender
+   IP address'. The 'sender hardware address' MUST contain the hardware
+   address of the interface sending the packet. The 'target hardware
+   address' field is ignored and SHOULD be set to all zeroes. The
+   'target IP address' field MUST be set to the address being probed.
+
+   In this document, the term "ARP Announcement" is used to refer to
+   an ARP request packet, broadcast on the local link, identical to
+   the ARP probe described above, except that both the sender and
+   target IP address fields contain the IP address being announced.
+
+I will change references to the term "gratuitous ARP" to the here-
+defined term "ARP Announcement".
+
+---------------------------------------------------------------------
+
+31. Multicast
+
+Erik Nordmark:
+>   If the destination address is the 255.255.255.255 broadcast address
+>   or a multicast address, then the host may use either its link-local
+>   source address or a routable address, as appropriate.
+>Huh? Sending to a global multicast address with a link-local source
+>is a good idea?
+>How about allowing either for broadcast or multicasts to 224.0.0.0/24
+>but mandating global source for other multicasts.
+
+Stuart Cheshire:
+>For example, hosts may want to use SSM addresses. There are no
+>SSM addresses in the 224.0.0.0/24 prefix.
+>
+>What if you have a MADCAP server on the network, but no DHCP
+>server, so the hosts are using link-local addresses? Is the
+>MADCAP server then restricted to assigning only multicast
+>addresses in the 224.0.0.0/24 prefix? Is a MADCAP server
+>allowed to assign multicast addresses in the 224.0.0.0/24
+>prefix?
+>
+>What about the Zeroconf couterpart to MADCAP (ZMAAP). Can it
+>also only assign multicast addresses in the 224.0.0.0/24
+>prefix?
+>
+>I did consider saying that link-local source addresses may not
+>send to multicast addresses outside 224.0.0.0/24, but I fear
+>(though I don't know for certain) that this would be overly
+>restrictive.
+
+Bernard Aboba:
+>Addresses in the 224.0.0.0/24 prefix are not dynamically
+>assigned. So they should not be assigned by MADCAP or ZMAAP.
+
+Erik Nordmark:
+>What is the utility of using SSM for packets that can not leave
+>the link? SSM deals with scalaing issues for large scope
+>multicast routing, and there are no scaling issues of that
+>nature for link-local multicast.
+
+Dave Thaler:
+>The utility is that one can allocate an address with 0 messages
+>on the wire, and 0 extra delay due to network latency.
+
+Proposed Action: No change to document
+
+---------------------------------------------------------------------
+
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Nov 12 04:07:03 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA23618
+	for <zeroconf-archive@lists.ietf.org>; Mon, 12 Nov 2001 04:07:03 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id D4A369122B; Mon, 12 Nov 2001 04:06:53 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9A64A9122D; Mon, 12 Nov 2001 04:06:53 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 57CB89122B
+	for <zeroconf@trapdoor.merit.edu>; Mon, 12 Nov 2001 04:06:51 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1DB065DDF7; Mon, 12 Nov 2001 04:06:51 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brandenburg.cs.mu.OZ.AU (96-1.nat.psu.ac.th [202.28.96.1])
+	by segue.merit.edu (Postfix) with ESMTP id 8F3025DD9A
+	for <zeroconf@merit.edu>; Mon, 12 Nov 2001 04:06:49 -0500 (EST)
+Received: from brandenburg.cs.mu.OZ.AU (localhost [127.0.0.1])
+	by brandenburg.cs.mu.OZ.AU (8.11.0/8.11.0) with ESMTP id fAC992701576;
+	Mon, 12 Nov 2001 16:09:06 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt 
+In-Reply-To: <200111120216.fAC2GZh07024@scv3.apple.com> 
+References: <200111120216.fAC2GZh07024@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Mon, 12 Nov 2001 16:09:02 +0700
+Message-ID: <1574.1005556142@brandenburg.cs.mu.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Sun, 11 Nov 2001 18:16:34 -0800
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200111120216.fAC2GZh07024@scv3.apple.com>
+
+  | 3. TTL=255?
+
+  |    [Note: Implementers should be aware that Windows 98, 98SE, ME,
+  |    Windows 2000 and XP systems by default set TTL=128 on outgoing
+
+Please, no mention of specific products, it is unnecessary, possibly
+incomplete, and what's more, a few years from now, most likely meaningless.
+
+Nor is it necessary to mention the magic 128, anything different than
+255 has the same effect.  The new paragraph goes to some pains to explain
+why testing for ttl == 255 || ttl == 128 would be the wrong solution, but
+just leaving the mention of 128 there will lead some people to a "better than
+nothing" frame of mind (which it wouldn't be...).   On the other hand, suggest
+that almost any other value might appear (which it might, given the registry
+entry that gets altered to change it, and why it might be altered for
+other reasons), and the temptation to make that kind of broken test vanishes.
+
+I suggest that this whole suggested new paragraph be instead written
+more like...   (stick it in brackets if you really must...)  The previous
+new paragraph is fine.
+
+	Note: Implementors should be aware that there are popular
+	implementations of this protocol that do not send packets
+	with the required TTL of 255.  This makes it impossible for
+	the receiving host to detect whether the packet has passed
+	through a router or not - even if the TTL that was used at the
+	source is known, that cannot be distinguished from a packet that
+	started with a higher TTL and "just happened" to arrive at the
+	destination with the expected value, after having been decremented
+	along the path.   Implementations that wish to interoperate with
+	these older implementations of the protocol MAY choose to forego
+	the protection of the TTL check described above.  Alternatively,
+	it is usually possible to change the behaviour of the older 
+	implementations so that they do send these packets with a TTL of 255,
+	though that may involve changing the default TTL for all IP packets
+	to be 255.  The mechanism by which this is achieved will depend upon
+	the implementation concerned.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Mon Nov 12 11:48:46 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA10807
+	for <zeroconf-archive@odin.ietf.org>; Mon, 12 Nov 2001 11:48:45 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id AB8B091279; Mon, 12 Nov 2001 11:48:40 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 733159127A; Mon, 12 Nov 2001 11:48:40 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 898FE91279
+	for <zeroconf@trapdoor.merit.edu>; Mon, 12 Nov 2001 11:48:39 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 6F3885DD9C; Mon, 12 Nov 2001 11:48:39 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brandenburg.cs.mu.OZ.AU (96-1.nat.psu.ac.th [202.28.96.1])
+	by segue.merit.edu (Postfix) with ESMTP id E23E55DD8F
+	for <zeroconf@merit.edu>; Mon, 12 Nov 2001 11:48:37 -0500 (EST)
+Received: from brandenburg.cs.mu.OZ.AU (localhost [127.0.0.1])
+	by brandenburg.cs.mu.OZ.AU (8.11.0/8.11.0) with ESMTP id fACGouf02568;
+	Mon, 12 Nov 2001 23:50:58 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: RJ Atkinson <rja@inet.org>
+Cc: zeroconf@merit.edu
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt 
+In-Reply-To: <5.1.0.14.2.20011112062754.01eda190@10.30.15.3> 
+References: <5.1.0.14.2.20011112062754.01eda190@10.30.15.3>  <200111120216.fAC2GZh07024@scv3.apple.com> <200111120216.fAC2GZh07024@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Mon, 12 Nov 2001 23:50:56 +0700
+Message-ID: <2566.1005583856@brandenburg.cs.mu.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Mon, 12 Nov 2001 06:29:00 -0500
+    From:        RJ Atkinson <rja@inet.org>
+    Message-ID:  <5.1.0.14.2.20011112062754.01eda190@10.30.15.3>
+
+  | NIT:
+  | 
+  |         s/popular/widely deployed/
+  | 
+  | What matters is not whether folks like those implementations,
+  | but that those implementations are widely deployed...
+
+Sure.
+
+One could argue that one definition of popular is widely used (deployed)
+but that would gain us nothing...
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Mon Nov 12 19:07:01 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA24365
+	for <zeroconf-archive@odin.ietf.org>; Mon, 12 Nov 2001 19:07:01 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8C8F79127F; Mon, 12 Nov 2001 19:06:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5E5C191280; Mon, 12 Nov 2001 19:06:52 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 7CDCB9127F
+	for <zeroconf@trapdoor.merit.edu>; Mon, 12 Nov 2001 19:06:51 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 62B985DDF2; Mon, 12 Nov 2001 19:06:51 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id CE2EB5DD8F
+	for <zeroconf@merit.edu>; Mon, 12 Nov 2001 19:06:50 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.11.3/8.11.3) with ESMTP id fAD06oX12531
+	for <zeroconf@merit.edu>; Mon, 12 Nov 2001 16:06:50 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T572db850f9118164e13b4@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 12 Nov 2001 16:06:48 -0800
+Received: from [17.202.44.113] (chesh1.apple.com [17.202.44.113])
+	by scv2.apple.com (8.11.3/8.11.3) with SMTP id fAD06mH24114
+	for <zeroconf@merit.edu>; Mon, 12 Nov 2001 16:06:48 -0800 (PST)
+Message-Id: <200111130006.fAD06mH24114@scv2.apple.com>
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+Date: Mon, 12 Nov 2001 16:06:48 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Please, no mention of specific products, it is unnecessary, possibly
+>incomplete, and what's more, a few years from now, most likely meaningless.
+
+I agree with you in principle, but I think we have to compromise to get 
+this published. We agree that TTL=255 is the right long-term goal, but we 
+also have to accept that strictly enforcing this today would be a problem 
+for any product that wants to be Windows-compatible. I think we owe it to 
+implementers to give them that information up-front, instead of making 
+them discover it by painful trial-and-error.
+
+I think we should publish this draft as a Proposed Standard now, and when 
+it moves to Draft Standard in a couple of years we should certainly 
+consider re-wording in the light of the prevailing conditions at that 
+time. I hope that by then Windows will be using TTL=255, and it will be 
+sufficient to merely mention in the Appendix that older versions did not.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Nov 13 05:40:31 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA19101
+	for <zeroconf-archive@odin.ietf.org>; Tue, 13 Nov 2001 05:40:31 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id A643D9121C; Tue, 13 Nov 2001 05:40:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 65FB391247; Tue, 13 Nov 2001 05:40:23 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6FFCB9121C
+	for <zeroconf@trapdoor.merit.edu>; Tue, 13 Nov 2001 05:40:22 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4DCA65DDD9; Tue, 13 Nov 2001 05:40:22 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brandenburg.cs.mu.OZ.AU (96-1.nat.psu.ac.th [202.28.96.1])
+	by segue.merit.edu (Postfix) with ESMTP id E995F5DD8D
+	for <zeroconf@merit.edu>; Tue, 13 Nov 2001 05:40:18 -0500 (EST)
+Received: from brandenburg.cs.mu.OZ.AU (localhost [127.0.0.1])
+	by brandenburg.cs.mu.OZ.AU (8.11.0/8.11.0) with ESMTP id fADAg4N01893;
+	Tue, 13 Nov 2001 17:42:05 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt 
+In-Reply-To: <200111130006.fAD06mH24114@scv2.apple.com> 
+References: <200111130006.fAD06mH24114@scv2.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Tue, 13 Nov 2001 17:42:04 +0700
+Message-ID: <1891.1005648124@brandenburg.cs.mu.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Mon, 12 Nov 2001 16:06:48 -0800
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200111130006.fAD06mH24114@scv2.apple.com>
+
+  | I agree with you in principle, but I think we have to compromise to get 
+  | this published.
+
+I'm not exactly sure what we have to compromise about?
+
+  | We agree that TTL=255 is the right long-term goal, but we 
+  | also have to accept that strictly enforcing this today would be a problem 
+  | for any product that wants to be Windows-compatible.
+
+Sure.
+
+  | I think we owe it to 
+  | implementers to give them that information up-front, instead of making 
+  | them discover it by painful trial-and-error.
+
+Fine, but you don't have to say "Windows" (let alone specific versions)
+in order to do that.   If I were do do an xxxBSD version now, which sets
+the TTL to 1 n packets it sends, and distribute that, would you add another
+note about that specific case?    All that needs to be said is that there
+are implementations which don't use 255, and that for now, enforcing the
+255 will cause interoperability problems.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Thu Nov 15 17:20:13 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA24456
+	for <zeroconf-archive@odin.ietf.org>; Thu, 15 Nov 2001 17:20:13 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 45EE8912D0; Thu, 15 Nov 2001 17:20:06 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 15617912D1; Thu, 15 Nov 2001 17:20:06 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 301EF912D0
+	for <zeroconf@trapdoor.merit.edu>; Thu, 15 Nov 2001 17:20:05 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 083E15DDD1; Thu, 15 Nov 2001 17:20:05 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 7DDDF5DDCC
+	for <zeroconf@merit.edu>; Thu, 15 Nov 2001 17:20:04 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.11.3/8.11.3) with ESMTP id fAFMK3X05819
+	for <zeroconf@merit.edu>; Thu, 15 Nov 2001 14:20:03 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T573cc9a60d118164e13b8@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Thu, 15 Nov 2001 14:20:02 -0800
+Received: from [206.111.147.149] (vpn-gh-1040.apple.com [17.254.140.15])
+	by scv2.apple.com (8.11.3/8.11.3) with SMTP id fAFMK1H00936
+	for <zeroconf@merit.edu>; Thu, 15 Nov 2001 14:20:01 -0800 (PST)
+Message-Id: <200111152220.fAFMK1H00936@scv2.apple.com>
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+Date: Thu, 15 Nov 2001 14:20:02 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>I'm not exactly sure what we have to compromise about?
+
+My personal view here agrees with yours. However, the document has to 
+reflect WG consensus. There can be two extremes of opinion:
+
+A. Forget the TTL=255 test, because deployed copies of Windows since 1998 
+don't work with this, and we can't break them.
+
+B. TTL=255 is the right thing to do. Who cares about Windows?
+
+The compromise is to say that TTL=255 is the right thing to do, but we 
+also acknowledge that Windows-compatibility is of utmost importance to 
+many (perhaps even the vast majority of) vendors.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Nov 15 17:29:12 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA24976
+	for <zeroconf-archive@odin.ietf.org>; Thu, 15 Nov 2001 17:29:12 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id ABFF9912D2; Thu, 15 Nov 2001 17:29:04 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 818A7912D3; Thu, 15 Nov 2001 17:29:04 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9A3DC912D2
+	for <zeroconf@trapdoor.merit.edu>; Thu, 15 Nov 2001 17:29:03 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 801F75DDDB; Thu, 15 Nov 2001 17:29:03 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from garlic.amaranth.net (garlic.amaranth.net [208.254.46.17])
+	by segue.merit.edu (Postfix) with ESMTP id 4AD585DDD5
+	for <zeroconf@merit.edu>; Thu, 15 Nov 2001 17:29:03 -0500 (EST)
+Received: from yarrow.senie.com (amaranth.ne.mediaone.net [24.218.3.14])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.6/8.11.6) with ESMTP id fAFMT1u04680
+	(using TLSv1/SSLv3 with cipher DES-CBC3-SHA (168 bits) verified NO)
+	for <zeroconf@merit.edu>; Thu, 15 Nov 2001 17:29:02 -0500
+Message-Id: <5.1.0.14.2.20011115172614.03877c80@mail.amaranth.net>
+X-Sender: dts@mail.amaranth.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.1
+Date: Thu, 15 Nov 2001 17:28:16 -0500
+To: <zeroconf@merit.edu>
+From: Daniel Senie <dts@senie.com>
+Subject: Re: Summary of Issues for
+  draft-ietf-zeroconf-ipv4-linklocal-04.txt
+In-Reply-To: <200111152220.fAFMK1H00936@scv2.apple.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 05:20 PM 11/15/01, Stuart Cheshire wrote:
+> >I'm not exactly sure what we have to compromise about?
+>
+>My personal view here agrees with yours. However, the document has to
+>reflect WG consensus. There can be two extremes of opinion:
+>
+>A. Forget the TTL=255 test, because deployed copies of Windows since 1998
+>don't work with this, and we can't break them.
+>
+>B. TTL=255 is the right thing to do. Who cares about Windows?
+>
+>The compromise is to say that TTL=255 is the right thing to do, but we
+>also acknowledge that Windows-compatibility is of utmost importance to
+>many (perhaps even the vast majority of) vendors.
+
+The compromise at least sets the stage for where we'd like to be going. So 
+let's encourage vendors to set TTL=255, and hopefully at some point in the 
+future enough will do so that the test will be usable.
+
+Hopefully Microsoft will be willing to follow this recommendation as they 
+put out new releases, and bug fixes in the future.
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Thu Nov 15 19:10:47 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA28954
+	for <zeroconf-archive@lists.ietf.org>; Thu, 15 Nov 2001 19:10:47 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 37E0D912D7; Thu, 15 Nov 2001 19:10:29 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 074C3912D8; Thu, 15 Nov 2001 19:10:28 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 2210B912D7
+	for <zeroconf@trapdoor.merit.edu>; Thu, 15 Nov 2001 19:10:28 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 08F2C5DDF2; Thu, 15 Nov 2001 19:10:28 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id 3030F5DDD7
+	for <zeroconf@merit.edu>; Thu, 15 Nov 2001 19:10:27 -0500 (EST)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.9.3/8.9.3) with ESMTP id QAA73339;
+	Thu, 15 Nov 2001 16:00:03 -0800 (PST)
+	(envelope-from aboba@internaut.com)
+Date: Thu, 15 Nov 2001 16:00:03 -0800 (PST)
+From: Bernard Aboba <aboba@internaut.com>
+To: Daniel Senie <dts@senie.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Summary of Issues for  draft-ietf-zeroconf-ipv4-linklocal-04.txt
+In-Reply-To: <5.1.0.14.2.20011115172614.03877c80@mail.amaranth.net>
+Message-ID: <Pine.BSF.4.21.0111151538280.73304-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Hopefully Microsoft will be willing to follow this recommendation as they 
+> put out new releases, and bug fixes in the future.
+
+New releases, perhaps. But it is unlikely that even if a fix were to be
+made available, that it would be deployed to even a small fraction of the
+existing installed base, many of whom are home users with little or no
+understanding of networking.
+
+Also, the fix would have to be deployed uniformly, or systems deploying
+the fix would be unable to interoperate with those who don't have it. This
+kind of "all or nothing" upgrade is in practice very difficult to pull
+off. 
+
+Early on, the question was asked "why do IPv4 linklocal at all?" instead
+of focussing on IPv6 linklocal. The answer was backward compatibility --
+systems implementing IPv6 linklocal, while interoperable with each other,
+cannot communicate with existing IPv4 linklocal systems. So it was argued
+that a new IPv4 linklocal specification could be backwards
+compatible, thereby achieving a degree of interoperability that a
+pure IPv6 linklocal approach could not. 
+
+If we're abandoning interoperability between "new" IPv4 linklocal systems
+and legacy ones, then that argument no longer holds. It would therefore
+seem to make more sense to focus on implementing IPv6 linklocal in new
+releases, since the interoperabilty problems won't be any worse than with
+a "new" IPv4 linklocal specification. 
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Nov 16 04:06:01 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA24535
+	for <zeroconf-archive@lists.ietf.org>; Fri, 16 Nov 2001 04:06:00 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id DC2F6912CD; Fri, 16 Nov 2001 04:05:51 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7CCDD912D5; Fri, 16 Nov 2001 04:05:50 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 36172912CD
+	for <zeroconf@trapdoor.merit.edu>; Fri, 16 Nov 2001 04:05:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 174FF5DDBC; Fri, 16 Nov 2001 04:05:49 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brandenburg.cs.mu.OZ.AU (96-1.nat.psu.ac.th [202.28.96.1])
+	by segue.merit.edu (Postfix) with ESMTP id 57B315DD92
+	for <zeroconf@merit.edu>; Fri, 16 Nov 2001 04:05:47 -0500 (EST)
+Received: from brandenburg.cs.mu.OZ.AU (localhost [127.0.0.1])
+	by brandenburg.cs.mu.OZ.AU (8.11.0/8.11.0) with ESMTP id fAG966m02219;
+	Fri, 16 Nov 2001 16:06:07 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt 
+In-Reply-To: <200111152220.fAFMK1H00936@scv2.apple.com> 
+References: <200111152220.fAFMK1H00936@scv2.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 16 Nov 2001 16:06:06 +0700
+Message-ID: <2217.1005901566@brandenburg.cs.mu.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Thu, 15 Nov 2001 14:20:02 -0800
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200111152220.fAFMK1H00936@scv2.apple.com>
+
+  | My personal view here agrees with yours. However, the document has to 
+  | reflect WG consensus. There can be two extremes of opinion:
+
+I think you entirely missed the point.   I wasn't in any way suggesting
+that the compromise position be altered ...
+
+  | The compromise is to say that TTL=255 is the right thing to do, but we 
+  | also acknowledge ...
+
+that's just fine, and seems right to me.   All I want is that you not
+say ...
+
+  | that Windows-compatibility is of utmost importance to many
+
+That is, it doesn't matter what other system is out there, or who makes
+it, or what model numbers of it don't operate the way that we would prefer.
+
+All that it is necessary to say is that there is widely deployed software (now)
+that doesn't do things the way that we prefer, and that for that reason,
+providing a mechanism to disable the TTL==255 test is something that 
+implementors probably want to consider.
+
+Did you actually read what I suggested replacing your suggested text with,
+or did you just notice which section I was commenting on, and jump to
+conclusions about what I was trying to say?
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Fri Nov 16 15:35:51 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA24451
+	for <zeroconf-archive@odin.ietf.org>; Fri, 16 Nov 2001 15:35:50 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id C0FC6912DB; Fri, 16 Nov 2001 15:34:56 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9270A912DC; Fri, 16 Nov 2001 15:34:56 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A7175912DB
+	for <zeroconf@trapdoor.merit.edu>; Fri, 16 Nov 2001 15:34:55 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 78B9B5DDE7; Fri, 16 Nov 2001 15:34:55 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id F37DA5DDE3
+	for <zeroconf@merit.edu>; Fri, 16 Nov 2001 15:34:54 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.11.3/8.11.3) with ESMTP id fAGKYsX09872
+	for <zeroconf@merit.edu>; Fri, 16 Nov 2001 12:34:54 -0800 (PST)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T57418fbac3118164e13b8@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Fri, 16 Nov 2001 12:34:53 -0800
+Received: from [206.111.147.149] (vpn-gh-58.apple.com [17.254.136.57])
+	by scv3.apple.com (8.11.3/8.11.3) with SMTP id fAGKYqh23879
+	for <zeroconf@merit.edu>; Fri, 16 Nov 2001 12:34:52 -0800 (PST)
+Message-Id: <200111162034.fAGKYqh23879@scv3.apple.com>
+Subject: Re: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+Date: Fri, 16 Nov 2001 12:34:53 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>The issue here isn't the technical compromise.
+
+I never said it was a technical compromise. It is an editorial 
+compromise, between idealism of the purity of a Standards-Track RFC, and 
+the pragmatism of providing accurate helpful information to implementers.
+
+>Did you actually read what I suggested replacing your suggested
+>text with, or did you just notice which section I was commenting
+>on, and jump to conclusions about what I was trying to say?
+
+Yes, of course I read it.
+
+No one will accuse me of being in love with Microsoft, but I also have to 
+accept that many of the vendors that I deal with at Apple (the vendors to 
+whom this draft is aimed) care 99% about Microsoft, 1% about Apple, and 
+not at all about any other platform. We may all hate that, but to delude 
+ourselves about the reality of the attitudes out there doesn't help us.
+
+My fear is that if we write, "there are widely deployed implementations 
+of this protocol..." then we are deliberately obfuscating the truth. *We* 
+may all know that we're using "widely deployed implementations" as a 
+euphemism for "Microsoft", but will others? I think many implementers may 
+read that paragraph, and react by saying, "Why should I care if some 
+stupid vendor can't follow the RFC? That's their problem." If that 
+implementer knows that the vendor in question is Microsoft, and their 
+"defective" implementation actually shipped three years (four years? five 
+years?) before the RFC was published, and the implementer in question is 
+trying to make a printer solely for the Windows market, they may have a 
+very different reaction.
+
+So, to tally the opinions so far:
+
+Opinions voiced in support of removing mention of Microsoft in
+Section 2.5:
+1. Stuart Cheshire
+2. Robert Elz
+3. Ran Atkinson
+
+Opinions voiced in support of retaining mention of Microsoft in
+Section 2.5:
+(None)
+
+Other opinions voiced without making a strong statement either way on
+the *specific* wording that should appear in the draft:
+1. Daniel Senie
+2. Bernard Aboba
+
+Daniel and Bernard, if you'd like to take a more strongly held position 
+on the question of specific mention of Microsoft in Section 2.5, please 
+do so, and I will adjust the tally accordingly.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Nov 16 16:37:38 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA26447
+	for <zeroconf-archive@odin.ietf.org>; Fri, 16 Nov 2001 16:37:38 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id AC7189121B; Fri, 16 Nov 2001 16:37:28 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0115891221; Fri, 16 Nov 2001 16:37:26 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 02F3D9121B
+	for <zeroconf@trapdoor.merit.edu>; Fri, 16 Nov 2001 16:37:25 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D16525DDE3; Fri, 16 Nov 2001 16:37:25 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from garlic.amaranth.net (garlic.amaranth.net [208.254.46.17])
+	by segue.merit.edu (Postfix) with ESMTP id 6CFCD5DDDB
+	for <zeroconf@merit.edu>; Fri, 16 Nov 2001 16:37:25 -0500 (EST)
+Received: from yarrow.senie.com (amaranth.ne.mediaone.net [24.218.3.14])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.6/8.11.6) with ESMTP id fAGLbKu04820
+	(using TLSv1/SSLv3 with cipher DES-CBC3-SHA (168 bits) verified NO);
+	Fri, 16 Nov 2001 16:37:20 -0500
+Message-Id: <5.1.0.14.2.20011116160833.038c2ec0@mail.amaranth.net>
+X-Sender: dts@mail.amaranth.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.1
+Date: Fri, 16 Nov 2001 16:37:16 -0500
+To: Stuart Cheshire <cheshire@apple.com>, <zeroconf@merit.edu>
+From: Daniel Senie <dts@senie.com>
+Subject: Re: Summary of Issues for
+  draft-ietf-zeroconf-ipv4-linklocal-04.txt
+In-Reply-To: <200111162034.fAGKYqh23879@scv3.apple.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 03:34 PM 11/16/01, Stuart Cheshire wrote:
+> >The issue here isn't the technical compromise.
+>
+>I never said it was a technical compromise. It is an editorial
+>compromise, between idealism of the purity of a Standards-Track RFC, and
+>the pragmatism of providing accurate helpful information to implementers.
+>
+> >Did you actually read what I suggested replacing your suggested
+> >text with, or did you just notice which section I was commenting
+> >on, and jump to conclusions about what I was trying to say?
+>
+>Yes, of course I read it.
+>
+>No one will accuse me of being in love with Microsoft, but I also have to
+>accept that many of the vendors that I deal with at Apple (the vendors to
+>whom this draft is aimed) care 99% about Microsoft, 1% about Apple, and
+>not at all about any other platform. We may all hate that, but to delude
+>ourselves about the reality of the attitudes out there doesn't help us.
+>
+>My fear is that if we write, "there are widely deployed implementations
+>of this protocol..." then we are deliberately obfuscating the truth. *We*
+>may all know that we're using "widely deployed implementations" as a
+>euphemism for "Microsoft", but will others? I think many implementers may
+>read that paragraph, and react by saying, "Why should I care if some
+>stupid vendor can't follow the RFC? That's their problem." If that
+>implementer knows that the vendor in question is Microsoft, and their
+>"defective" implementation actually shipped three years (four years? five
+>years?) before the RFC was published, and the implementer in question is
+>trying to make a printer solely for the Windows market, they may have a
+>very different reaction.
+>
+>So, to tally the opinions so far:
+>
+>Opinions voiced in support of removing mention of Microsoft in
+>Section 2.5:
+>1. Stuart Cheshire
+>2. Robert Elz
+>3. Ran Atkinson
+>
+>Opinions voiced in support of retaining mention of Microsoft in
+>Section 2.5:
+>(None)
+>
+>Other opinions voiced without making a strong statement either way on
+>the *specific* wording that should appear in the draft:
+>1. Daniel Senie
+>2. Bernard Aboba
+>
+>Daniel and Bernard, if you'd like to take a more strongly held position
+>on the question of specific mention of Microsoft in Section 2.5, please
+>do so, and I will adjust the tally accordingly.
+
+I would prefer the SPECIFIC vendor not be listed. Mentioning that at least 
+one vendor has an incompatible implementation is appropriate, and that it 
+would be advisable for the near term (purposely vague as to timeframe) that 
+enforcing the TTL=255 may not be worthwhile.
+
+The specific information in the form of Registry details is inappropriate, 
+in my opinion.
+
+So, count me as believing Microsoft NOT be mentioned, Registry details NOT 
+be mentioned, but generic information warning of the compatability issue 
+SHOULD be mentioned.
+
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Fri Nov 16 16:49:03 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA26699
+	for <zeroconf-archive@odin.ietf.org>; Fri, 16 Nov 2001 16:49:03 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id E1B7691221; Fri, 16 Nov 2001 16:48:50 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B1AD7912DD; Fri, 16 Nov 2001 16:48:50 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B594A91221
+	for <zeroconf@trapdoor.merit.edu>; Fri, 16 Nov 2001 16:48:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 697745DDE3; Fri, 16 Nov 2001 16:48:49 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail4.microsoft.com (mail4.microsoft.com [131.107.3.122])
+	by segue.merit.edu (Postfix) with ESMTP id 1FC175DD93
+	for <zeroconf@merit.edu>; Fri, 16 Nov 2001 16:48:49 -0500 (EST)
+Received: from inet-vrs-04.redmond.corp.microsoft.com ([157.54.8.154]) by mail4.microsoft.com with Microsoft SMTPSVC(5.0.2195.2966);
+	 Fri, 16 Nov 2001 13:48:26 -0800
+Received: from 157.54.8.109 by inet-vrs-04.redmond.corp.microsoft.com (InterScan E-Mail VirusWall NT); Fri, 16 Nov 2001 13:48:26 -0800
+Received: from red-imc-02.redmond.corp.microsoft.com ([157.54.9.107]) by inet-hub-02.redmond.corp.microsoft.com with Microsoft SMTPSVC(5.0.2195.2966);
+	 Fri, 16 Nov 2001 13:48:26 -0800
+Received: from win-imc-02.wingroup.windeploy.ntdev.microsoft.com ([157.54.0.84]) by red-imc-02.redmond.corp.microsoft.com with Microsoft SMTPSVC(5.0.2195.2966);
+	 Fri, 16 Nov 2001 13:48:26 -0800
+Received: from win-msg-01.wingroup.windeploy.ntdev.microsoft.com ([157.54.0.52]) by win-imc-02.wingroup.windeploy.ntdev.microsoft.com with Microsoft SMTPSVC(6.0.3588.0);
+	 Fri, 16 Nov 2001 13:47:45 -0800
+X-MimeOLE: Produced By Microsoft Exchange V6.0.6063.0
+Content-Class: urn:content-classes:message
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Subject: RE: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+Date: Fri, 16 Nov 2001 13:47:45 -0800
+Message-ID: <2E33960095B58E40A4D3345AB9F65EC102DB7E3D@win-msg-01.wingroup.windeploy.ntdev.microsoft.com>
+Thread-Topic: Summary of Issues for draft-ietf-zeroconf-ipv4-linklocal-04.txt
+thread-index: AcFu5vhIZXDoBXx1TCSx1JogZgO7YAAAO7yA
+From: "Dave Thaler" <dthaler@windows.microsoft.com>
+To: <zeroconf@merit.edu>
+X-OriginalArrivalTime: 16 Nov 2001 21:47:45.0961 (UTC) FILETIME=[53BF7990:01C16EE8]
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id QAA26699
+
+Daniel Senie writes:
+> >Opinions voiced in support of removing mention of Microsoft in
+> >Section 2.5:
+[...]
+> >Opinions voiced in support of retaining mention of Microsoft in
+> >Section 2.5:
+[...]
+> >Other opinions voiced without making a strong statement either way on
+> >the *specific* wording that should appear in the draft:
+[...]
+> I would prefer the SPECIFIC vendor not be listed. Mentioning that at
+least
+> one vendor has an incompatible implementation is appropriate, and that
+it
+> would be advisable for the near term (purposely vague as to timeframe)
+> that
+> enforcing the TTL=255 may not be worthwhile.
+[...]
+> So, count me as believing Microsoft NOT be mentioned, Registry details
+NOT
+> be mentioned, but generic information warning of the compatability
+issue
+> SHOULD be mentioned.
+
+I agree with Daniel's statement.  I'd like to see the draft suggest
+that implementations have a configuration switch to either
+a) be "unsecure" and support backward interoperability, or
+b) be "secure" and only accept TTL=255.
+(using the word "secure" very loosely...)
+
+-Dave
+
+
+From owner-zeroconf@merit.edu  Thu Nov 29 04:05:44 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA17013
+	for <zeroconf-archive@lists.ietf.org>; Thu, 29 Nov 2001 04:05:44 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7029A9127D; Thu, 29 Nov 2001 04:05:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 440D59127E; Thu, 29 Nov 2001 04:05:35 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 544549127D
+	for <zeroconf@trapdoor.merit.edu>; Thu, 29 Nov 2001 04:05:34 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2EE195DDAD; Thu, 29 Nov 2001 04:05:34 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 9674C5DD8F
+	for <zeroconf@merit.edu>; Thu, 29 Nov 2001 04:05:33 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.11.3/8.11.3) with ESMTP id fAT95XX03523
+	for <zeroconf@merit.edu>; Thu, 29 Nov 2001 01:05:33 -0800 (PST)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T57820b49b8118164e1528@mailgate2.apple.com>;
+ Thu, 29 Nov 2001 01:05:32 -0800
+Received: from [206.111.147.149] (vpn-gh-10.apple.com [17.254.136.9])
+	by scv3.apple.com (8.11.3/8.11.3) with SMTP id fAT95WD26372;
+	Thu, 29 Nov 2001 01:05:32 -0800 (PST)
+Message-Id: <200111290905.fAT95WD26372@scv3.apple.com>
+Subject: Re: zeroconf meeting at IETF?
+Date: Thu, 29 Nov 2001 01:05:32 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Richard Johnson" <raj@cisco.com>, <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Just curious.  Maybe I'm missing something.  I don't see any zeroconf
+>meetings at this upcoming IETF.  Is there one that I'm missing or is
+>there simple nothing to really discuss?
+
+Our two main documents are in the final stages, and there has been little 
+discussion on the mailing list recently, so there was no justification to 
+have a physical meeting this time. Treat it like one of those snow days 
+in school where everyone gets sent home early :-)
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+

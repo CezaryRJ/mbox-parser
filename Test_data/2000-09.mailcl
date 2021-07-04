@@ -1,0 +1,1006 @@
+From owner-zeroconf@merit.edu  Tue Sep  5 15:10:23 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA11530
+	for <zeroconf-archive@odin.ietf.org>; Tue, 5 Sep 2000 15:10:22 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 2F6A95DDA2; Tue,  5 Sep 2000 15:10:04 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1D0E05DDA0; Tue,  5 Sep 2000 15:10:04 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 9AD085DDE0
+	for <zeroconf@merit.edu>; Tue,  5 Sep 2000 15:10:02 -0400 (EDT)
+Received: from sunmail1.Sun.COM ([129.145.1.2])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id MAA17186;
+	Tue, 5 Sep 2000 12:09:58 -0700 (PDT)
+Received: from jurassic.eng.sun.com (jurassic.Eng.Sun.COM [129.146.84.31])
+	by sunmail1.Sun.COM (8.9.1b+Sun/8.9.1/ENSMAIL,v1.6.1-sunmail1) with ESMTP id MAA19327;
+	Tue, 5 Sep 2000 12:09:54 -0700 (PDT)
+Received: from lillen (lillen.Eng.Sun.COM [129.146.86.161])
+	by jurassic.eng.sun.com (8.11.1.Beta0+Sun/8.11.1.Beta0) with SMTP id e85J9pk905589;
+	Tue, 5 Sep 2000 12:09:51 -0700 (PDT)
+Date: Tue, 5 Sep 2000 12:09:52 -0700 (PDT)
+From: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Reply-To: Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Subject: Re: zeroconf wg actions: mailing list decisions
+To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Cc: zeroconf@merit.edu, erik.guttman@germany.sun.com, cheshire@apple.com,
+        narten@raleigh.ibm.com, Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Message-ID: <Roam.SIMC.2.0.6.968180992.10072.nordmark@jurassic>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> The definition I propose is:
+> 
+>      A zeroconf protocol requires no a prior configuration.  A host
+>      obtains all configuration a posteriori, on the basis of
+>      interactions with other hosts or routers on the network, over
+>      time.
+> 
+>      A non-zeroconf protocol requires configuration (for instance
+>      user configuration, configuration burned into hardware,
+>      configuration obtained from a client-server dynamic configuration
+>      protocol, etc.)
+
+Erik,
+The "burned into hardware" might be misleading since I think we do
+want to consider IPv6 stateless address autoconfiguration (driven from
+the IEEE address burned into hardware) as a zeroconf protocol.
+
+Are you trying to capture IP level configuration that is burned in?
+(e.g. phones where a SIM hard has the DNS server addresses burned in
+when the phone/SIM is bought)
+
+If so it might make sense to somehow exclude e.g. link-layer 
+configuration from the "burned in" discussion.
+
+  Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep  5 17:12:43 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA13931
+	for <zeroconf-archive@odin.ietf.org>; Tue, 5 Sep 2000 17:12:42 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4619B5DDF0; Tue,  5 Sep 2000 17:12:30 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 34CD05DDEE; Tue,  5 Sep 2000 17:12:30 -0400 (EDT)
+Received: from sol.extremenetworks.com (sol.extremenetworks.com [216.52.8.2])
+	by segue.merit.edu (Postfix) with ESMTP id 5697E5DDE0
+	for <zeroconf@merit.edu>; Tue,  5 Sep 2000 17:12:28 -0400 (EDT)
+Received: from mosquito.extremenetworks.com ([10.0.8.126]) by sol.extremenetworks.com with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2650.21)
+	id SKW7BLWZ; Tue, 5 Sep 2000 14:11:43 -0700
+Message-Id: <4.3.2.7.2.20000905170620.00b128e0@sol.extremenetworks.com>
+X-Sender: rja@sol.extremenetworks.com (Unverified)
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Tue, 05 Sep 2000 17:07:23 -0400
+To: Erik Nordmark <Erik.Nordmark@Eng.Sun.COM>
+From: RJ Atkinson <rja@extremenetworks.com>
+Subject: Re: zeroconf wg actions: mailing list decisions
+Cc: zeroconf@merit.edu
+In-Reply-To: <Roam.SIMC.2.0.6.968180992.10072.nordmark@jurassic>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 15:09 05/09/00, Erik Nordmark wrote:
+
+>The "burned into hardware" might be misleading since I think we do
+>want to consider IPv6 stateless address autoconfiguration (driven 
+>from the IEEE address burned into hardware) as a zeroconf protocol.
+
+Agree.  If its burned into the Ethernet chipset, it isn't 
+user configuration, so would be in-the-zone to be considered 
+zeroconf.
+
+Ran
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 19 08:11:30 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA13290
+	for <zeroconf-archive@odin.ietf.org>; Tue, 19 Sep 2000 08:11:30 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 40B285DDB3; Tue, 19 Sep 2000 08:11:15 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 2F50A5DDA9; Tue, 19 Sep 2000 08:11:15 -0400 (EDT)
+Received: from hotmail.com (law-f263.hotmail.com [209.185.130.179])
+	by segue.merit.edu (Postfix) with ESMTP id C9DF05DD8E
+	for <zeroconf@segue.merit.edu>; Tue, 19 Sep 2000 08:11:13 -0400 (EDT)
+Received: from mail pickup service by hotmail.com with Microsoft SMTPSVC;
+	 Tue, 19 Sep 2000 05:11:13 -0700
+Received: from 192.11.222.101 by lw1fd.hotmail.msn.com with HTTP;	Tue, 19 Sep 2000 12:11:13 GMT
+X-Originating-IP: [192.11.222.101]
+From: "tarun matta" <tarunmatta@hotmail.com>
+To: zeroconf@merit.edu
+Subject: is anybody there
+Date: Tue, 19 Sep 2000 12:11:13 GMT
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+Message-ID: <LAW-F263o1c9oJjgQv100002ead@hotmail.com>
+X-OriginalArrivalTime: 19 Sep 2000 12:11:13.0366 (UTC) FILETIME=[B4381F60:01C02232]
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+hi,
+i am tarun & i work for lucent
+i am new to this group.
+i want to know is there any activity
+going on in this WG.
+
+if yes,then what are we working on
+& what are our aims in the near
+future?
+also, how can i contribute to the
+group?
+is there anything specific i must
+read?
+
+regards,
+tarun
+_________________________________________________________________________
+Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com.
+
+Share information about yourself, create your own public profile at 
+http://profiles.msn.com.
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 19 08:28:15 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA13792
+	for <zeroconf-archive@odin.ietf.org>; Tue, 19 Sep 2000 08:28:14 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 2F72F5DD9F; Tue, 19 Sep 2000 08:28:05 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1F7855DD99; Tue, 19 Sep 2000 08:28:05 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id BF0915DD8E
+	for <zeroconf@merit.edu>; Tue, 19 Sep 2000 08:28:03 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id FAA06830;
+	Tue, 19 Sep 2000 05:28:01 -0700 (PDT)
+Received: from vayne (remote-nl-31.Holland.Sun.COM [129.159.209.113])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id OAA28890;
+	Tue, 19 Sep 2000 14:27:59 +0200 (MET DST)
+Date: Tue, 19 Sep 2000 14:37:38 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: is anybody there
+To: tarun matta <tarunmatta@hotmail.com>
+Cc: zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <LAW-F263o1c9oJjgQv100002ead@hotmail.com>
+Message-ID: <Roam.SIMC.2.0.6.969367058.29469.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> hi,
+> i am tarun & i work for lucent
+> i am new to this group.
+> i want to know is there any activity
+> going on in this WG.
+
+Yes, there is work going on. 
+
+> if yes,then what are we working on
+> & what are our aims in the near
+> future?
+
+See http://www.ietf.org/html.charters/zeroconf-charter.html
+
+> also, how can i contribute to the group?
+
+Things you can do:
+
+ 1. Read the WG document and others as they are published and
+    send your comments.  Specifically:
+    http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+
+ 2. Send comments on the charter to the list.  Is there anything
+    we should be working on that we are not considering.
+
+> is there anything specific i must read?
+
+ 3. Very important:  Read the archives of the WG mailing list.
+    http://www.merit.edu/mail.archives/zeroconf/
+
+Erik
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Sep 20 18:41:23 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA09950
+	for <zeroconf-archive@odin.ietf.org>; Wed, 20 Sep 2000 18:41:23 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 727A75DDE5; Wed, 20 Sep 2000 18:41:08 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 610425DDDF; Wed, 20 Sep 2000 18:41:08 -0400 (EDT)
+Received: from hilton.cec.wustl.edu (hilton.cec.wustl.edu [128.252.21.4])
+	by segue.merit.edu (Postfix) with ESMTP id 21D705DDD4
+	for <zeroconf@merit.edu>; Wed, 20 Sep 2000 18:41:07 -0400 (EDT)
+Received: from localhost (bac1@localhost)
+	by hilton.cec.wustl.edu (8.9.1/8.9.1) with SMTP id RAA02967;
+	Wed, 20 Sep 2000 17:41:00 -0500 (CDT)
+Date: Wed, 20 Sep 2000 17:41:00 -0500 (CDT)
+From: Brian Curtis <bac1@cec.wustl.edu>
+To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Cc: tarun matta <tarunmatta@hotmail.com>, zeroconf@merit.edu
+Subject: Re: is anybody there
+In-Reply-To: <Roam.SIMC.2.0.6.969367058.29469.erikg@sun-ffm.germany>
+Message-ID: <Pine.SOL.3.96.1000920174040.1903C-100000@hilton.cec.wustl.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+remove from list
+
+On Tue, 19 Sep 2000, Erik Guttman wrote:
+
+|> hi,
+|> i am tarun & i work for lucent
+|> i am new to this group.
+|> i want to know is there any activity
+|> going on in this WG.
+|
+|Yes, there is work going on. 
+|
+|> if yes,then what are we working on
+|> & what are our aims in the near
+|> future?
+|
+|See http://www.ietf.org/html.charters/zeroconf-charter.html
+|
+|> also, how can i contribute to the group?
+|
+|Things you can do:
+|
+| 1. Read the WG document and others as they are published and
+|    send your comments.  Specifically:
+|    http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+|
+| 2. Send comments on the charter to the list.  Is there anything
+|    we should be working on that we are not considering.
+|
+|> is there anything specific i must read?
+|
+| 3. Very important:  Read the archives of the WG mailing list.
+|    http://www.merit.edu/mail.archives/zeroconf/
+|
+|Erik
+|
+|
+|
+|
+|
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Sep 20 18:41:32 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA09965
+	for <zeroconf-archive@odin.ietf.org>; Wed, 20 Sep 2000 18:41:32 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A55CB5DDE7; Wed, 20 Sep 2000 18:41:23 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9458B5DDDF; Wed, 20 Sep 2000 18:41:23 -0400 (EDT)
+Received: from hilton.cec.wustl.edu (hilton.cec.wustl.edu [128.252.21.4])
+	by segue.merit.edu (Postfix) with ESMTP id B2E425DDD4
+	for <zeroconf@merit.edu>; Wed, 20 Sep 2000 18:41:20 -0400 (EDT)
+Received: from localhost (bac1@localhost)
+	by hilton.cec.wustl.edu (8.9.1/8.9.1) with SMTP id RAA03047;
+	Wed, 20 Sep 2000 17:41:20 -0500 (CDT)
+Date: Wed, 20 Sep 2000 17:41:19 -0500 (CDT)
+From: Brian Curtis <bac1@cec.wustl.edu>
+To: tarun matta <tarunmatta@hotmail.com>
+Cc: zeroconf@merit.edu
+Subject: Re: is anybody there
+In-Reply-To: <LAW-F263o1c9oJjgQv100002ead@hotmail.com>
+Message-ID: <Pine.SOL.3.96.1000920174109.1903D-100000@hilton.cec.wustl.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+remove from list
+
+On Tue, 19 Sep 2000, tarun matta wrote:
+
+|hi,
+|i am tarun & i work for lucent
+|i am new to this group.
+|i want to know is there any activity
+|going on in this WG.
+|
+|if yes,then what are we working on
+|& what are our aims in the near
+|future?
+|also, how can i contribute to the
+|group?
+|is there anything specific i must
+|read?
+|
+|regards,
+|tarun
+|_________________________________________________________________________
+|Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com.
+|
+|Share information about yourself, create your own public profile at 
+|http://profiles.msn.com.
+|
+|
+|
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Sep 25 03:23:42 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id DAA28274
+	for <zeroconf-archive@odin.ietf.org>; Mon, 25 Sep 2000 03:23:42 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A05F95DDA3; Mon, 25 Sep 2000 03:23:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 71C475DD97; Mon, 25 Sep 2000 03:23:32 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 7921D5DDA3
+	for <zeroconf@merit.edu>; Mon, 25 Sep 2000 03:23:30 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id AAA29953;
+	Mon, 25 Sep 2000 00:23:23 -0700 (PDT)
+Received: from vayne (muc-isdn-1 [129.157.164.101])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id JAA14425;
+	Mon, 25 Sep 2000 09:23:20 +0200 (MET DST)
+Date: Mon, 25 Sep 2000 09:33:01 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com, cheshire@apple.com, myron.hattig@intel.com
+Message-ID: <Roam.SIMC.2.0.6.969867181.4546.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a notice of a Working Group Last Call on the document
+
+  http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+
+Please send your comments in the next two weeks.  At that time 
+(October 9) we will evaluate the working group consensus on the 
+document, if necessary revise the document, then submit it to the 
+IESG for publication as an Informational RFC.
+
+Erik
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Sep 25 09:20:51 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA02863
+	for <zeroconf-archive@odin.ietf.org>; Mon, 25 Sep 2000 09:20:51 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A3D855DDBB; Mon, 25 Sep 2000 09:20:43 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 92A3E5DD97; Mon, 25 Sep 2000 09:20:43 -0400 (EDT)
+Received: from sol.extremenetworks.com (sol.extremenetworks.com [216.52.8.2])
+	by segue.merit.edu (Postfix) with ESMTP id 6BAD55DD96
+	for <zeroconf@merit.edu>; Mon, 25 Sep 2000 09:20:42 -0400 (EDT)
+Received: from mosquito.extremenetworks.com ([10.0.8.108]) by sol.extremenetworks.com with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2650.21)
+	id TMP320LB; Mon, 25 Sep 2000 06:19:30 -0700
+Message-Id: <4.3.2.7.2.20000925090150.00aac3f0@sc-sol-04.extremenetworks.com>
+X-Sender: rja@sc-sol-04.extremenetworks.com (Unverified)
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Mon, 25 Sep 2000 09:15:01 -0400
+To: Erik Guttman <Erik.Guttman@germany.sun.com>
+From: RJ Atkinson <rja@extremenetworks.com>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+Cc: zeroconf@merit.edu
+In-Reply-To: <Roam.SIMC.2.0.6.969867181.4546.erikg@sun-ffm.germany>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 03:33 25/09/00, you wrote:
+>This is a notice of a Working Group Last Call on the document
+>
+>  http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+>
+>Please send your comments in the next two weeks.  At that time 
+>(October 9) we will evaluate the working group consensus on the 
+>document, if necessary revise the document, then submit it to the 
+>IESG for publication as an Informational RFC.
+
+        Section 3 should be rewritten to be consistent with and
+specifically address the all of the kinds of threats that are 
+outlined in draft-rescorla-sec-cons-01.txt.  If the author believes
+a specific threat from that I-D is not applicable, then this
+should be stated and the rationale for that belief given
+explicitly.  The revised text should use security terminology 
+that is consistent with both RFC-2828 and also
+draft-rescorla-sec-cons-01.txt.
+
+        Otherwise, the draft looks fine to me.
+
+Ran
+rja@inet.org
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Sep 25 19:48:45 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id TAA17584
+	for <zeroconf-archive@odin.ietf.org>; Mon, 25 Sep 2000 19:48:44 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 71AC35DD90; Mon, 25 Sep 2000 19:48:36 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 586D45DDAB; Mon, 25 Sep 2000 19:48:36 -0400 (EDT)
+Received: from macbeth.zyan.com (macbeth.zyan.com [206.253.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 6B4435DD90
+	for <zeroconf@merit.edu>; Mon, 25 Sep 2000 19:48:34 -0400 (EDT)
+Received: from clarson ([208.41.7.181])
+          by macbeth.zyan.com (8.8.7/8.8.7) with SMTP id QAA22502
+          for <zeroconf@merit.edu>; Mon, 25 Sep 2000 16:48:31 -0700 (PDT)
+Message-ID: <007201c0274b$a0e13c80$b50729d0@clarson>
+From: "Charles Larson" <clarson@miinet.com>
+To: <zeroconf@merit.edu>
+Subject: Configuring devices without consoles
+Date: Mon, 25 Sep 2000 16:52:09 -0700
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_006F_01C02710.F181CEB0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.00.2919.6700
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2919.6700
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_006F_01C02710.F181CEB0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+I have a problem which it seems this group partially addresses.  I would =
+like some comments on whether the topic should be considered here or =
+elsewhere.  Or some pointers if anybody is aware of a solution.
+
+We build industrial instrumentation which has an ethernet port.  The =
+device may or may not have a console.  In the commercial world, I =
+suppose this would apply to a network printer.  I want to be able to =
+configure that device, possibly with a static IP address, possibly for =
+DHCP without needing a console.  In other words I want to configure it =
+over the ethernet.  The trouble is that if it is unconfigured or =
+configured incorrectly, I cant talk to it.
+
+I seems to me that the zero configuration protocol solves this or could =
+solve it.  Once the device has configured itself using zeroconfig, we =
+can communicate with it to set its regular internet configuration =
+parameters.
+
+It seems to me that there are some considerations which are necessary in =
+the zeroconfig protocol to insure that it can be used for this.  =
+Locating the devices would be part of the problem.  But I think that is =
+just service location, which is already considered.  I suppose actually =
+configuring the device is outside of the scope of this group.
+
+Comments?
+
+Thanks,
+Charles Larson.
+
+------=_NextPart_000_006F_01C02710.F181CEB0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type>
+<META content=3D"MSHTML 5.00.2920.0" name=3DGENERATOR>
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT face=3DArial size=3D2>I have a problem which it seems this =
+group=20
+partially addresses.&nbsp; I would like some comments on whether the =
+topic=20
+should be considered here or elsewhere.&nbsp; Or some pointers if =
+anybody is=20
+aware of a solution.</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>We build industrial instrumentation =
+which has an=20
+ethernet port.&nbsp; The device may or may not have a console.&nbsp; In =
+the=20
+commercial world, I suppose this would apply to a network printer.&nbsp; =
+I want=20
+to be able to configure that device, possibly with a static IP address, =
+possibly=20
+for DHCP without needing a console.&nbsp; In other words I want to =
+configure it=20
+over the ethernet.&nbsp; The trouble is that if it is unconfigured or =
+configured=20
+incorrectly, I cant talk to it.</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>I seems to me that the zero =
+configuration protocol=20
+solves this or could solve it.&nbsp; Once the device has configured =
+itself using=20
+zeroconfig,&nbsp;we can communicate with it to set its regular internet=20
+configuration parameters.</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>It seems to me that there are some =
+considerations=20
+which are necessary in the zeroconfig protocol to insure that it can be =
+used for=20
+this.&nbsp; Locating the devices would be part of the problem.&nbsp; But =
+I think=20
+that is just service location, which is already considered.&nbsp; I =
+suppose=20
+actually configuring the device is outside of the scope of this=20
+group.</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>Comments?</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>Thanks,</FONT></DIV>
+<DIV><FONT face=3DArial size=3D2>Charles =
+Larson.</FONT></DIV></BODY></HTML>
+
+------=_NextPart_000_006F_01C02710.F181CEB0--
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Sep 26 10:04:24 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id KAA10361
+	for <zeroconf-archive@odin.ietf.org>; Tue, 26 Sep 2000 10:04:24 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B4A205DD90; Tue, 26 Sep 2000 10:04:06 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A1C9E5DDA3; Tue, 26 Sep 2000 10:04:06 -0400 (EDT)
+Received: from sol.extremenetworks.com (sol.extremenetworks.com [216.52.8.2])
+	by segue.merit.edu (Postfix) with ESMTP id C58B65DD90
+	for <zeroconf@merit.edu>; Tue, 26 Sep 2000 10:04:04 -0400 (EDT)
+Received: from mosquito.extremenetworks.com ([10.0.8.101]) by sol.extremenetworks.com with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2650.21)
+	id T4AJACXC; Tue, 26 Sep 2000 07:02:50 -0700
+Message-Id: <4.3.2.7.2.20000926095644.00b0f100@sc-sol-04.extremenetworks.com>
+X-Sender: rja@sc-sol-04.extremenetworks.com (Unverified)
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Tue, 26 Sep 2000 09:58:18 -0400
+To: "Charles Larson" <clarson@miinet.com>
+From: RJ Atkinson <rja@extremenetworks.com>
+Subject: Re: Configuring devices without consoles
+Cc: <zeroconf@merit.edu>
+In-Reply-To: <007201c0274b$a0e13c80$b50729d0@clarson>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Charles,
+
+	Email to IETF lists should be sent as MIME text/plain
+and using a standard character set (e.g. US-ASCII, ISO-8859-1).
+
+	Your note was using some fancy format that is 
+not readable using all mail readers.  Please resend
+as text/plain and in a standard character set.
+
+	My guess is that you use MS-Outlook, which seems to
+be the main source of this kind of problem.  I don't use
+Outlook, so can't help with how to configure it to use
+normal email formats for outgoing mail, sorry.
+
+Thanks,
+
+Ran
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Sep 27 10:06:22 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id KAA12234
+	for <zeroconf-archive@odin.ietf.org>; Wed, 27 Sep 2000 10:06:21 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 066005DDF7; Wed, 27 Sep 2000 10:06:08 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id EA5625DDEC; Wed, 27 Sep 2000 10:06:07 -0400 (EDT)
+Received: from gw-nl4.philips.com (unknown [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id 3D43F5DDEA
+	for <zeroconf@merit.edu>; Wed, 27 Sep 2000 10:06:06 -0400 (EDT)
+Received: from smtprelay-nl1.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id QAA23493
+          for <zeroconf@merit.edu>; Wed, 27 Sep 2000 16:06:05 +0200 (MEST)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtprelay-eur1.philips.com(130.139.36.3) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma023484; Wed, 27 Sep 00 16:06:05 +0200
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id QAA29446
+	for <zeroconf@merit.edu>; Wed, 27 Sep 2000 16:06:04 +0200 (MET DST)
+Received: from EHLMS01.DIAMOND.PHILIPS.COM (ehlms01sv1.diamond.philips.com [130.139.54.212]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id QAA25811
+	for <zeroconf@merit.edu>; Wed, 27 Sep 2000 16:06:04 +0200 (MET DST)
+Received: by EHLMS01.DIAMOND.PHILIPS.COM (Soft-Switch LMS 4.0) with snapi
+          via EMEA3 id 0056890014406765; Wed, 27 Sep 2000 16:07:08 +0200
+To: <zeroconf@merit.edu>
+Subject: comments on zeroconf requirements
+Message-ID: <0056890014406765000002L952*@MHS>
+Date: Wed, 27 Sep 2000 16:07:08 +0200
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1; name="MEMO 09/27/00 16:04:46"
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id KAA12234
+
+---------------------- Forwarded by Peter van der Stok/EHV/RESEARCH/PHILIPS on 27-09-2000 16:04 ---------------------------
+
+
+Peter van der Stok
+27-09-2000 15:16
+To:	Majordomo@merit.edu@SMTP 
+cc:	Peter van der Stok/EHV/RESEARCH/PHILIPS@EMEA3 
+Subject:	comments on zeroconf requirements  
+Classification:	Unclassified
+
+
+Dear all,
+
+This is the first time I contact you from Philips research to comment on the ZeroConf
+Requirements document. My comments are coloured by my region of interest: 
+home networks.
+
+The document is much improved with respect to former versions I saw elsewhere.
+I like the increase in rigour and the motivation of the requirements.
+
+I do have problems with the requirement mentioned at the end of section 1.6:
+.... resolve conflicts and state changes in a timely manner
+
+Two questions:
+- what is a timely manner
+- what are conflicts and state changes and what is their relation?
+
+It may well help to define a view that each participant has on the network.
+Each participant knows a set of IP addresses with a host name and a physical address.
+One can then define consistency constraints on these views, like
+
+- when host A with IP address aa knows host B with IP address bb 
+then also host B with IP address bb knows host A with IP address aa
+- The view of host A may contain other hosts than the view of host B
+- The hosts that are present in the view of host A and the view of host B
+are known by the same IP address, host name and physical address.
+- A host, present in the view of a correct host that is connected to a network, 
+is correct and connected to the network
+-  A correct host connected to a subnet is present in the views of the correct hosts connected
+to that subnet
+
+Items like default route and netmask need not be in the view but can be known only locally.
+However then a consistency criterium  about hosts in the same subnet must be specified
+
+- Hosts in the same subnets have the same default route and netmask
+
+Once these or other consistency criteria are defined, requirements on time may be put forward.
+I expect that different manufacturers wil have attributed different time out values on the time that
+resonses are expected from other hosts. So negociation between hosts needs to be possible
+to agree on the time span, DT, that views do not satisfy the consistency criteria.
+
+Requirement
+- Hosts negotiate the maximum time that the views of the hosts in their view may be
+inconsistent
+
+Requirement on inconsistency
+- Within DT timeunits after the last modification on the network, all views 
+of hosts connected to the network are consistent.
+
+A major problem is the definition of a network. What limits a network? It does not look as if
+a given hop count of TTL defines a network properly. In the home there are some natural
+boundaries on a network and routers that connect the home network to the outside world can
+be easily identified. These routers seem to be the natural boundary and anything that
+connects networks within the home is part of one home network. More difficult is the situation that
+a WAP telephone tries to look at the devices in the home network. Is the WAP telephone then
+part of the network. The telephone certainly needs to know the state of the devices
+connected tot the home network. From the former consistency definition that means that
+the devices in the home need to know about the WAP phone. 
+
+As last comment I like to react to the process definition.
+A process is something active while in the definition it is something static.
+
+I like to modify the definition
+
+process - A process executes the implementation of an algorithm in hardware, software
+or a combination of both.
+
+
+Eventually one may add that it sequentially executes this implementation because later on
+the set of processes is defined.
+
+I hope this is a useful contribution to the discussion
+
+Greetings
+
+peter van der Stok
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WL P 311                      Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:       +31 40 274                The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 28 11:08:52 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA22951
+	for <zeroconf-archive@odin.ietf.org>; Thu, 28 Sep 2000 11:08:52 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 608D15DE3A; Thu, 28 Sep 2000 11:06:33 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 481535DE34; Thu, 28 Sep 2000 11:06:33 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id DCD835DE24
+	for <zeroconf@merit.edu>; Thu, 28 Sep 2000 11:05:58 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id IAA20802;
+	Thu, 28 Sep 2000 08:05:36 -0700 (PDT)
+Received: from vayne (muc-isdn-4 [129.157.164.104])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id RAA19642;
+	Thu, 28 Sep 2000 17:04:31 +0200 (MET DST)
+Date: Thu, 28 Sep 2000 17:14:13 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: Configuring devices without consoles
+To: Charles Larson <clarson@miinet.com>
+Cc: zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <007201c0274b$a0e13c80$b50729d0@clarson>
+Message-ID: <Roam.SIMC.2.0.6.970154053.31293.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+> We build industrial instrumentation which has an ethernet port.  The device
+> may or may not have a console.  In the commercial world, I suppose this
+> would apply to a network printer.  I want to be able to configure that
+> device, possibly with a static IP address, possibly for DHCP without needing
+> a console.  In other words I want to configure it over the ethernet.  The
+> trouble is that if it is unconfigured or configured incorrectly, I cant talk
+> to it.
+> 
+> I seems to me that the zero configuration protocol solves this or could
+> solve it.  Once the device has configured itself using zeroconfig, we can
+> communicate with it to set its regular internet configuration parameters.
+
+Yes.  Automatic IP address configuration would supply the device with
+an address and Service Discovery would enable the device to be discovered
+by your configuration management application.
+
+> It seems to me that there are some considerations which are necessary in the
+> zeroconfig protocol to insure that it can be used for this.  Locating the
+> devices would be part of the problem.  But I think that is just service
+> location, which is already considered.  I suppose actually configuring the
+> device is outside of the scope of this group.
+
+Device configuration protocols which are not peer to peer are by
+their nature outside of the scope of the Zero Configuration Working
+group.  You should consider work going on in the DHC and SNMPCONF 
+for example, which are focussed on these issues.
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Sep 28 17:04:28 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id RAA02213
+	for <zeroconf-archive@odin.ietf.org>; Thu, 28 Sep 2000 17:04:27 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 196725DE76; Thu, 28 Sep 2000 17:04:19 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 096B25DE74; Thu, 28 Sep 2000 17:04:19 -0400 (EDT)
+Received: from mta5.snfc21.pbi.net (mta5.snfc21.pbi.net [206.13.28.241])
+	by segue.merit.edu (Postfix) with ESMTP id C06705DE71
+	for <ZeroConf@Merit.edu>; Thu, 28 Sep 2000 17:04:17 -0400 (EDT)
+Received: from SERVER.PacBell.net ([63.199.7.253])
+ by mta5.snfc21.pbi.net (Sun Internet Mail Server sims.3.5.2000.01.05.12.18.p9)
+ with ESMTP id <0G1L00B6UXX0CT@mta5.snfc21.pbi.net> for ZeroConf@Merit.edu;
+ Thu, 28 Sep 2000 10:29:24 -0700 (PDT)
+Date: Thu, 28 Sep 2000 10:27:06 -0700
+From: Peter Johansson <PJohansson@ACM.org>
+Subject: Re: WG LAST CALL: draft-ietf-zeroconf-reqts-05.txt
+In-reply-to: <Roam.SIMC.2.0.6.969867181.4546.erikg@sun-ffm.germany>
+X-Sender: Celeborn@PacBell.net
+To: Zero Configuration <ZeroConf@merit.edu>
+Message-id: <4.3.2.7.2.20000928101328.00beacd0@PacBell.net>
+MIME-version: 1.0
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Content-type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 06:33 AM 9/25/00, Erik Guttman wrote:
+
+>This is a notice of a Working Group Last Call on the document
+>
+>   http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-reqts-05.txt
+>
+>Please send your comments in the next two weeks.  At that time (October 9) 
+>we will evaluate the working group consensus on the document, if necessary 
+>revise the document, then submit it to the IESG for publication as an 
+>Informational RFC.
+
+In section 1, I think the last sentence should read "Zeroconf protocols MAY 
+use configured information, when it is available, but do not rely on its 
+presence." For those of you that don't have the requirements document in 
+front of you, the change is from "configuration" to "configured 
+information". I could not parse the intent of "configuration" as it is now 
+written. I think the change I propose is consistent with the intent of the 
+working group, but if I'm mistaken I think a (short) discussion is 
+merited---so as too avoid confusion over a fundamental part of the 
+requirements.
+
+In section 1.6, what is a "spurious topology change"? I suggest that the 
+word "spurious" be removed; the sentence seems to be applicable without it.
+
+In section 2.1.2, what is a "bridge"?
+
+
+
+Regards,
+
+Peter Johansson
+
+Congruent Software, Inc.
+98 Colorado Avenue
+Berkeley, CA  94707
+
+(510) 527-3926
+(510) 527-3856 FAX
+
+PJohansson@ACM.org
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Sep 29 09:57:00 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA00054
+	for <zeroconf-archive@odin.ietf.org>; Fri, 29 Sep 2000 09:57:00 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 952F25DDA1; Fri, 29 Sep 2000 09:56:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 82FA85DDA6; Fri, 29 Sep 2000 09:56:40 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 2FB565DDA1
+	for <zeroconf@merit.edu>; Fri, 29 Sep 2000 09:56:39 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA17694;
+	Fri, 29 Sep 2000 06:56:32 -0700 (PDT)
+Received: from vayne (muc-isdn-10 [129.157.164.110])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id PAA00077;
+	Fri, 29 Sep 2000 15:56:28 +0200 (MET DST)
+Date: Fri, 29 Sep 2000 16:06:11 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: Re: comments on zeroconf requirements
+To: peter.van.der.stok@philips.com
+Cc: zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <0056890014406765000002L952*@MHS>
+Message-ID: <Roam.SIMC.2.0.6.970236371.20412.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Peter Van Der Stok wrote:
+> I do have problems with the requirement mentioned at the end of section 1.6:
+> .... resolve conflicts and state changes in a timely manner
+
+This is a requirements document, not a protocol specification.  Conflicts
+which were never detected or resolved would not be timely.  Conflicts which
+were detected and resolved in microseconds would surely be timely.  We have
+a shared notion of timeliness (from our experience with DHCP and DNS for
+instance). 
+
+The goal is that we state what the issues and priorities are in the 
+requirements doc so that we will have criteria for evaluating candidate 
+zeroconf protocols for standardization.
+
+> - what are conflicts and state changes and what is their relation?
+
+These are described in various sections.  2.1.2 shows how topology
+changes can create conflicts such as duplicate IP addresses.  2.2.2
+discusses duplicate names.  Multicast address allocation would also
+be a source of conflicts if one address was allocated in distinct
+networks and those networks were fused.  I agree it would be useful
+to draw out this point.
+
+> A major problem is the definition of a network. What limits a network? 
+
+Why do we need a limiting definition?
+
+draft-ietf-zeroconf-reqts-05.txt says:
+
+   Zeroconf protocols have no specific topological restrictions or 
+   requirements; networks may consist of multiple IP subnets or a 
+   single IP subnet; networks may be isolated or connected to larger 
+   networks (e.g. Internet). However, there is a conditional 
+   requirement. The condition exists if a protocol is targeted to     
+   operate in multiple IP subnet topologies. The requirement is the 
+   protocol MUST be routable. For example, a protocol MUST use IP 
+   multicast and not use IP broadcast. 
+    
+   Requirement: 
+   - If a protocol is to operate in multiple IP subnet topologies, 
+     the protocol MUST be routable. 
+
+If a zeroconf protocol operates on a single subnet (link-local only)
+then it is by definition applicable only to a limited topology.  If
+the protocol is not link-local only, it must use a routable protocol.
+We are defining requirements for zeroconf protocols without creating 
+arbitrary restrictions on them (such as which networks they can and 
+cannot be used).  
+
+Thanks for your input,
+
+Erik
+
+
+
+

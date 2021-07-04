@@ -1,0 +1,352 @@
+From owner-zeroconf@merit.edu  Tue Jun 27 09:44:48 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA12309
+	for <zeroconf-archive@odin.ietf.org>; Tue, 27 Jun 2000 09:44:47 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 7DE175DD95; Tue, 27 Jun 2000 09:44:25 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6B5555DDEE; Tue, 27 Jun 2000 09:44:25 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 258C65DD95
+	for <zeroconf@merit.edu>; Tue, 27 Jun 2000 09:44:24 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA24676
+	for <zeroconf@merit.edu>; Tue, 27 Jun 2000 06:44:22 -0700 (PDT)
+Received: from vayne (muc-isdn-12 [129.157.164.112])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id PAA23837;
+	Tue, 27 Jun 2000 15:44:19 +0200 (MET DST)
+Date: Tue, 27 Jun 2000 15:53:14 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: summary of 'zeroconf security - conclusions'
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com
+Message-ID: <Roam.SIMC.2.0.6.962113994.29017.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+The following is a long overdue wrap up of the thread last month:
+
+  'zeroconf security - conclusions'
+
+I will post a revised set of conclusions following this message.
+
+I am omitting calls for either not supporting security or claiming
+that it is out of scope, since security (configuration) *is* on the
+WG charter.
+
+Erik
+
+---
+1) Should we consider securing ARP to protect address configuration 
+   against a 'hoarding attack'?  The DHC WG says no.
+
+   ARP is not the only issue.
+
+   DHCP servers would have to be able to distinguish between bogus
+   and a legitimate requests for addresses.  This is not possible now.
+
+Thomas Narten <narten@raleigh.ibm.com>
+  http://www.merit.edu/mail.archives/zeroconf/msg00659.html
+
+---
+2) Securing the network or securing the device?
+
+Erik Guttman <erik.guttman@sun.com> proposed:
+> It is not specified in the requirements whether security is
+> on by default or not.  ...  It is out of the scope of the WG
+> to do more than point this out.
+  http://www.merit.edu/mail.archives/zeroconf/msg00616.html
+
+Thomas Narten <narten@raleigh.ibm.com> replied:
+> I'm not sure it makes complete sense to talk about security being on
+> or off by default. If a home user decides he wants his network to be
+> secure, new devices shouldn't just work when plugged in until they
+> have been properly secured. This is regardless of whether the new
+> device is configured to be secure or not out of the box.
+>
+> An alternate way of looking at this is that by defualt all new devices
+> MUST be able to determine whether security is enabled or not (on the
+> network to which it is connected) and if so, do the necessary things
+> to configure itself to operate in a secure environment. I.e., the
+> device doesn't get to decide, the network to which it attaches has
+> presumably already decided.
+  http://www.merit.edu/mail.archives/zeroconf/msg00659.html
+
+Agreement with Thomas from Peter Johansson <PJohansson@ACM.org> 
+  http://www.merit.edu/mail.archives/zeroconf/msg00663.html
+and Richard Johnson <raj@cisco.com>
+  http://www.merit.edu/mail.archives/zeroconf/msg00664.html
+
+Ross Finlayson <finlayson@live.com> added:
+> Jeff also made another good point at Adelaide: It may be acceptable
+> (in some cases) for zeroconf systems be without security *initially*,
+> but then require some minimal configuration soon afterwards to set
+> security parameters.
+ -<snip>-
+> I.e., "zeroconf" in this case would apply only to the device's ability
+> to announce itself to the rest of the network after initially being
+> turned on, and start up in "Here I am, but now I need to be configured"
+> mode.  Now it's true that this creates a window of vulnerability
+> (between turning the device on and configuring it for security) where
+> an attacker could intervene and (mis)configure the device for himself,
+> but this may often be an acceptable threat.  (This was the essence of
+> Jeff's comment, I think.)
+  http://www.merit.edu/mail.archives/zeroconf/msg00641.html
+
+Thomas Marshall Eubanks <tme@21rst-century.com> was more pessimistic:
+> This would definitely fail the "my mother" test
+ -<snip>-
+> Also, does this mean that such a device would require reconfiguration 
+> every time it was moved from one net to another ? If I take my radio 
+> on vacation, I have to re-enter a password ?!?
+  http://www.merit.edu/mail.archives/zeroconf/msg00644.htm
+
+Thomas Narten <narten@raleigh.ibm.com> suggested how this could be
+implemented in an intuitive way, for consumers.
+  http://www.merit.edu/mail.archives/zeroconf/msg00658.html
+
+Donald E. Eastlake 3rd <lde008@dma.isg.mot.com> agreed with Thomas's
+suggestion's being simple enough.
+  http://www.merit.edu/mail.archives/zeroconf/msg00656.html
+
+Peter Johansson <PJohansson@ACM.org> was concerned about the risk at 
+the time of configuration, and suggested quaranting the network.
+  http://www.merit.edu/mail.archives/zeroconf/msg00643.html
+
+Steve Hanna <steve.hanna@sun.com> suggested instead a 'secure
+network' especially for configuration, and other mechanisms.
+  http://www.merit.edu/mail.archives/zeroconf/msg00648.html
+
+
+---
+3) ZEROCONF requirements will be silent to whether hosts implement
+   security mechanisms for *non-zeroconf protocols* (DHC, DNS, SLP DAs,
+   MADCAP, etc.)
+
+   http://www.merit.edu/mail.archives/zeroconf/msg00618.html
+   http://www.merit.edu/mail.archives/zeroconf/msg00622.html
+   http://www.merit.edu/mail.archives/zeroconf/msg00662.html
+
+---
+4) Can we concentrate on the remote threats and allow social
+   mechanisms to counter threats due to sharing a network with
+   physically close neighbors?
+
+   No.
+
+Peter Johansson <PJohansson@ACM.org> 
+   http://www.merit.edu/mail.archives/zeroconf/msg00626.html
+Steve Hanna <steve.hanna@sun.com> 
+   http://www.merit.edu/mail.archives/zeroconf/msg00625.html
+
+---
+5) Use of link level security or IPSec with a shared key to secure 
+   zero configuration protocols?
+
+Suggested by Steve Hanna <steve.hanna@sun.com> 
+   http://www.merit.edu/mail.archives/zeroconf/msg00625.html
+
+Bernard Aboba <aboba@internaut.com> replied that link-level security
+requires all access points be secure.  He liked the idea of using 
+IPsec to secure ZC protocols, but thought it may not be reasonable to
+require that devices implement it.
+  http://www.merit.edu/mail.archives/zeroconf/msg00627.html
+  http://www.merit.edu/mail.archives/zeroconf/msg00630.html
+
+---
+6) What does "manual keying" implicitly require of a low-end 
+   device's user interface capabilities?
+
+From Peter Johansson <PJohansson@ACM.org> 
+  http://www.merit.edu/mail.archives/zeroconf/msg00635.html
+
+Aidan Williams <Aidan.Williams@motorola.com> wrote:
+> For symmetric keys, you need a way of getting the key
+> to your devices without other people being about to
+> snarf a copy as it goes by.
+ -<snip>-
+> My feeling is that manual keying really means that
+> device devices will use contact/touch/a wire or a really
+> short range wireless link to provide an out-of-band channel
+> over which manual keying can be performed.
+>
+> People aren't going to type in strings of hex digits,
+> and besides, where's the keyboard?
+  http://www.merit.edu/mail.archives/zeroconf/msg00645.html
+
+Thomas Narten <narten@raleigh.ibm.com> wrote:
+> The key doesn't get transferred in the clear. Ever. There are
+> standard ways of generating session keys (e.g., diffie-hellman)
+> that allow two unknowns to create a private channel over which
+> they can communicate secretly. So this should be a non-problem
+> in practice.
+http://www.merit.edu/mail.archives/zeroconf/msg00660.html
+
+---
+7) Securing the LAN?  Is local encryption needed?
+
+Thomas Narten <narten@raleigh.ibm.com> argues that it may be
+unacceptable to have arbitrary traffic sent in the clear.  He
+proposes that maybe ZEROCONF or another WG should look at the
+problem of 'securing a LAN' (or set of LAN segments) where 
+everyone on the 'inside' trusts each other and all traffic
+will be encrypted and authenticated.  Key distribution
+will be 'interesting' since we want it to be as minimal to
+configure as possible.
+  http://www.merit.edu/mail.archives/zeroconf/msg00661.html
+
+Richard Johnson <raj@cisco.com> believes that link-layer 
+mechanisms may provide enough security at L2.
+  http://www.merit.edu/mail.archives/zeroconf/msg00665.html
+
+Rose, William <Wrose@leviton.com> agrees with Richard Johnson
+but adds that there are other considerations:  (1) traffic
+analysis, (2) manual intervention - so that a device can only
+join the network if it is physically 'set up' (at the minimum
+a button pressed, etc.) 
+  http://www.merit.edu/mail.archives/zeroconf/msg00666.html
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 27 09:44:50 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA12321
+	for <zeroconf-archive@odin.ietf.org>; Tue, 27 Jun 2000 09:44:50 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 90C385DDE5; Tue, 27 Jun 2000 09:44:28 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 74B955DDEF; Tue, 27 Jun 2000 09:44:28 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 235675DDE5
+	for <zeroconf@merit.edu>; Tue, 27 Jun 2000 09:44:25 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA24687
+	for <zeroconf@merit.edu>; Tue, 27 Jun 2000 06:44:23 -0700 (PDT)
+Received: from vayne (muc-isdn-12 [129.157.164.112])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id PAA23828;
+	Tue, 27 Jun 2000 15:44:18 +0200 (MET DST)
+Date: Tue, 27 Jun 2000 15:53:13 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: revised list of zeroconf security requirements
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com
+Message-ID: <Roam.SIMC.2.0.6.962113993.19291.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+The following security requirement summary takes into consideration
+the mailing list discussion and hopefully aligns it with the requirements
+specification:
+
+ 0 Scope of discussion:
+
+   0.1) The ZEROCONF WG is working on 4 protocol areas - host
+        configuration, service discovery, name to address resolution
+        and multicast address allocation.  Application level protocols
+        (including device control) are out of scope.
+
+        The goal is to not make IP any less secure, not to 'raise the
+        bar.'
+
+   0.2) The threats which have been discussed and broadly agreed upon
+        are:
+
+        . masquerading (A host uses zeroconf protocols to fool others
+          by sending messages it shouldn't)
+        . hoarding (A host subverts zeroconf protocols by pretending to
+          have resources it doesn't have)
+        . antagonistic server (This server undermines hosts because it
+          uses a protocol which automatically configures hosts which
+          use 'zeroconf protocols')
+
+        Additional threats which were mentioned were:
+
+        . Inventory attack - ZeroConf protocols (especially service 
+          discovery) would allow thieves to take inventory very easily.
+        . Evesdropping attack - Capturing ZC protocol messages issued by
+          hosts use could inform about what the network is used for, how
+          much it is used, etc.         
+        . Denial of service attack - But is there anything specific to
+          Zero Configuration networking here? 
+
+ 1 Conclusions of discussion:
+    
+   1.1)  Security for non-zeroconf protocols (DHCP, DNS, MADCAP) is out
+         of scope.
+
+   1.2)  Security for application level (device control) protocols is out 
+         of scope.  
+
+   1.3)  Security defaults 
+
+         + Devices come without security configuration.
+         + Devices operating in a network where security configuration
+           is required discover this and can be configured.  To the 
+           greatest extent possible, this configuration should not
+           require manual intervention.
+
+   1.4) It was suggested that the ability to authenticate messages as
+        having come from a peer with a shared secret may not be enough.
+        Encryption capability, to provide privacy, was suggested as
+        being important.
+
+ 2 Requirements arising from discussion:
+
+    2.1) Hosts MUST implement a security mechanism (or mechanisms) to 
+         protect against the following threats:
+
+          + Hoarding attack.
+
+            . A host MUST be able to determine whether a multicast 
+              address allocation claim (used in a claim and defend
+              protocol) is legitimate or not, if configured to do so.
+
+          + Masquerading attack.  
+
+            . Service discovery, name to address resolution and 
+              multicast address allocation services MUST support a 
+              mechanism so that legitimate and illigitimate responses 
+              can be differentiated, if configured to do so.
+
+            . Note that in the case of name to address resolution, and
+              multicast address allocation this can be used to prevent
+              'hoarding attacks.'  A malevolent host could respond to 
+              all names to prevent 'nameless' host from picking a
+              unique name or claim all multicast group allocations.
+
+          + Antagonistic server attack.  
+
+            . A host MUST be able to determine if a server is posing
+              as a 'service discovery registrar' or is legitimate.
+
+              If a host implements DNSSec, DHC autentication, it 
+              could use them to identify legitimate servers from
+              antagonistic ones, but it is outside of the scope
+              of the ZEROCONF WG to require or recommend its deployment.
+
+    2.2) Hosts MAY implement security mechanisms to protect them against
+         the following threats:
+
+           + Evesdropping attack.  The host may be able to employ 
+             layer 2 or layer 3 security to provide privacy for
+             communications.  
+
+    2.3) Hosts MUST be configurable to use that security, as easily
+         as possible.
+  
+ Erik
+
+
+
+

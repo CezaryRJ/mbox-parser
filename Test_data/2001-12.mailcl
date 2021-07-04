@@ -1,0 +1,863 @@
+From owner-zeroconf@merit.edu  Tue Dec 18 04:19:46 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id EAA16240
+	for <zeroconf-archive@lists.ietf.org>; Tue, 18 Dec 2001 04:19:46 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2190A91241; Tue, 18 Dec 2001 04:19:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E189091244; Tue, 18 Dec 2001 04:19:37 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id DD77D91241
+	for <zeroconf@trapdoor.merit.edu>; Tue, 18 Dec 2001 04:19:36 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AF21C5DE0D; Tue, 18 Dec 2001 04:19:36 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from gw-nl4.philips.com (gw-nl4.philips.com [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id E0D255DE04
+	for <zeroconf@merit.edu>; Tue, 18 Dec 2001 04:19:35 -0500 (EST)
+Received: from smtpscan-nl1.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id KAA08750
+          for <zeroconf@merit.edu>; Tue, 18 Dec 2001 10:19:34 +0100 (CET)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtpscan-nl1.philips.com(130.139.36.21) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma008741; Tue, 18 Dec 01 10:19:34 +0100
+Received: from smtprelay-nl1.philips.com (localhost [127.0.0.1]) 
+	by smtpscan-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id KAA02161
+	for <zeroconf@merit.edu>; Tue, 18 Dec 2001 10:19:31 +0100 (MET)
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id KAA25160
+	for <zeroconf@merit.edu>; Tue, 18 Dec 2001 10:19:30 +0100 (MET)
+Received: from ehv501soh.diamond.philips.com (e3soh01.diamond.philips.com [130.139.54.213]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id KAA05782
+	for <zeroconf@merit.edu>; Tue, 18 Dec 2001 10:19:28 +0100 (MET)
+To: zeroconf@merit.edu
+Cc: rob.udink@philips.com
+Subject: Re: internet draft
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+Message-ID: <OF5D197434.0215B5CF-ONC1256B26.002ED50F@diamond.philips.com>
+Date: Tue, 18 Dec 2001 09:47:56 +0100
+X-MIMETrack: Serialize by Router on ehv501soh/H/SERVER/PHILIPS(Release 5.0.5 |September
+ 22, 2000) at 18/12/2001 10:19:55,
+	Serialize complete at 18/12/2001 10:19:55
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_alternative 0030A400C1256B26_="
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multipart message in MIME format.
+--=_alternative 0030A400C1256B26_=
+Content-Type: text/plain; charset="us-ascii"
+
+Dear all,
+
+based on the feedback I received after my talk during the 51st IETF 
+meeting in London
+I prepared an Internet-draft that is currently available at
+
+ftp://ietf.org/internet-drafts/draft-vanderstok-zeroconf-issues-00.txt
+
+In the draft I try to identify situations in which ambiguities exist with 
+respect to the deployment of
+zero-configuration protocols. Most of the concerns are related to 
+situations between
+a small completely unconfigured network and a network that is competely 
+configured with DHCP servers.
+
+As Stuart Cheshire pointed out, many issues are easily resolved. However, 
+multiple
+possibly conflicting solutions are possible for most of them.
+It is my opinion that zeroconf WG can play a role in coordinating and 
+identifying areas where
+the removal of configuration administration  can lead to conflicting 
+implementations.
+Recommendations can be formulated in the Zeroconf Host Profile 
+Applicability Statement.
+
+I know that some people disagree.
+
+Peter
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WDC 1-015                  Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:      +31 40 2745033       The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+--=_alternative 0030A400C1256B26_=
+Content-Type: text/html; charset="us-ascii"
+
+
+<br><font size=2 face="sans-serif">Dear all,</font>
+<br>
+<br><font size=2 face="sans-serif">based on the feedback I received after my talk during the 51st IETF meeting in London</font>
+<br><font size=2 face="sans-serif">I prepared an Internet-draft that is currently available at</font>
+<br><font size=2 face="Courier New"><br>
+ftp://ietf.org/internet-drafts/draft-vanderstok-zeroconf-issues-00.txt</font>
+<br>
+<br><font size=2 face="sans-serif">In the draft I try to identify situations in which ambiguities exist with respect to the deployment of</font>
+<br><font size=2 face="sans-serif">zero-configuration protocols. Most of the concerns are related to situations between</font>
+<br><font size=2 face="sans-serif">a small completely unconfigured network and a network that is competely configured with DHCP servers.</font>
+<br>
+<br><font size=2 face="sans-serif">As Stuart Cheshire pointed out, many issues are easily resolved. However, &nbsp;multiple</font>
+<br><font size=2 face="sans-serif">possibly conflicting solutions are possible for most of them.</font>
+<br><font size=2 face="sans-serif">It is my opinion that zeroconf WG can play a role in coordinating and identifying areas where</font>
+<br><font size=2 face="sans-serif">the removal of configuration administration &nbsp;can lead to conflicting implementations.</font>
+<br><font size=2 face="sans-serif">Recommendations can be formulated in the Zeroconf Host Profile Applicability Statement.</font>
+<br>
+<br><font size=2 face="sans-serif">I know that some people disagree.</font>
+<br>
+<br><font size=2 face="sans-serif">Peter<br>
+<br>
+Peter van der Stok &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Philips Research Laboratories Eindhoven<br>
+Bldg: WDC 1-015 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Prof. Holstlaan 4<br>
+Phone: +31 40 2742649 &nbsp; &nbsp; &nbsp; 5656 AA Eindhoven<br>
+Fax: &nbsp; &nbsp; &nbsp;+31 40 2745033 &nbsp; &nbsp; &nbsp; The Netherlands<br>
+Mailto: Peter.van.der.Stok@ philips.com</font>
+<br>
+--=_alternative 0030A400C1256B26_=--
+
+
+From owner-zeroconf@merit.edu  Tue Dec 18 17:38:47 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA28180
+	for <zeroconf-archive@lists.ietf.org>; Tue, 18 Dec 2001 17:38:46 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 794309124E; Tue, 18 Dec 2001 17:38:36 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 4310D9124F; Tue, 18 Dec 2001 17:38:36 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 38D9C9124E
+	for <zeroconf@trapdoor.merit.edu>; Tue, 18 Dec 2001 17:38:35 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 190175DDFC; Tue, 18 Dec 2001 17:38:35 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail4.nec.com (dns4.nec.com [131.241.15.4])
+	by segue.merit.edu (Postfix) with ESMTP id BC3075DDF8
+	for <zeroconf@merit.edu>; Tue, 18 Dec 2001 17:38:34 -0500 (EST)
+Received: from netkeeper.sj.nec.com (netkeeper.sj.nec.com [131.241.31.2])
+	by mail4.nec.com (/) with ESMTP id fBIMcJP08111;
+	Tue, 18 Dec 2001 14:38:19 -0800 (PST)
+Received: from galatica.pc.sj.nec.com (localhost [127.0.0.1])
+	by netkeeper.sj.nec.com (8.9.1a/8.9.1) with ESMTP id OAA27032;
+	Tue, 18 Dec 2001 14:38:22 -0800 (PST)
+Received: by GALATICA with Internet Mail Service (5.5.2653.19)
+	id <W3YPA5PQ>; Tue, 18 Dec 2001 14:36:17 -0800
+Message-ID: <F3E15FD680AED311A6E600E0291E108C2FAAA9@GALATICA>
+From: Jim Busse <JIM@pc.sj.nec.com>
+To: peter.van.der.stok@philips.com, zeroconf@merit.edu
+Cc: rob.udink@philips.com
+Subject: RE: internet draft
+Date: Tue, 18 Dec 2001 14:36:08 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2653.19)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01C18814.630ACC20"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01C18814.630ACC20
+Content-Type: text/plain;
+	charset="iso-8859-1"
+
+Peter:
+ 
+Please help me understand.   I was a little confused after reading your
+draft.  I think most of the draft revolves around naming services, so:
+ 
+Is it your suggestion that Zeroconf expand its scope to include the
+specification of a naming service which would comply with the Zeroconf
+protocol requirements?
+ 
+Or is your suggestion that Zeroconf WG provide some "suggestions" or
+"recommendations" how naming services could comply with Zeroconf
+requirements?
+ 
+If your suggestion is not accurately summarized by either of these, could
+you please help me understand by giving me a simple summary of your
+suggestion? 
+ 
+Thanks.
+ 
+Jim Busse
+
+-----Original Message-----
+From: peter.van.der.stok@philips.com [mailto:peter.van.der.stok@philips.com]
+Sent: Tuesday, December 18, 2001 12:48 AM
+To: zeroconf@merit.edu
+Cc: rob.udink@philips.com
+Subject: Re: internet draft
+
+
+
+Dear all, 
+
+based on the feedback I received after my talk during the 51st IETF meeting
+in London 
+I prepared an Internet-draft that is currently available at 
+
+ftp://ietf.org/internet-drafts/draft-vanderstok-zeroconf-issues-00.txt 
+
+In the draft I try to identify situations in which ambiguities exist with
+respect to the deployment of 
+zero-configuration protocols. Most of the concerns are related to situations
+between 
+a small completely unconfigured network and a network that is competely
+configured with DHCP servers. 
+
+As Stuart Cheshire pointed out, many issues are easily resolved. However,
+multiple 
+possibly conflicting solutions are possible for most of them. 
+It is my opinion that zeroconf WG can play a role in coordinating and
+identifying areas where 
+the removal of configuration administration  can lead to conflicting
+implementations. 
+Recommendations can be formulated in the Zeroconf Host Profile Applicability
+Statement. 
+
+I know that some people disagree. 
+
+Peter
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WDC 1-015                  Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:      +31 40 2745033       The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com 
+
+
+
+------_=_NextPart_001_01C18814.630ACC20
+Content-Type: text/html;
+	charset="iso-8859-1"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+
+
+<META content="MSHTML 5.50.4616.200" name=GENERATOR></HEAD>
+<BODY>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2>Peter:</FONT></SPAN></DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2></FONT></SPAN>&nbsp;</DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff size=2>Please 
+help me understand.&nbsp;&nbsp; I was a little confused after reading your 
+draft.&nbsp; I think most of the draft revolves around naming services, 
+so:</FONT></SPAN></DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2></FONT></SPAN>&nbsp;</DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff size=2>Is it 
+your suggestion that Zeroconf expand its scope to include the specification of a 
+naming service which would comply with the Zeroconf protocol 
+requirements?</FONT></SPAN></DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2></FONT></SPAN>&nbsp;</DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff size=2>Or is 
+your suggestion that Zeroconf WG provide some "suggestions" or 
+"recommendations"&nbsp;how naming services&nbsp;could comply with Zeroconf 
+requirements?</FONT></SPAN></DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2></FONT></SPAN>&nbsp;</DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff size=2>If 
+your suggestion is not accurately summarized by either of these, could you 
+please help me understand by giving me a simple summary of your suggestion? 
+</FONT></SPAN></DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2></FONT></SPAN>&nbsp;</DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2>Thanks.</FONT></SPAN></DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff 
+size=2></FONT></SPAN>&nbsp;</DIV>
+<DIV><SPAN class=985362422-18122001><FONT face=Arial color=#0000ff size=2>Jim 
+Busse</FONT></SPAN></DIV>
+<BLOCKQUOTE>
+  <DIV class=OutlookMessageHeader dir=ltr align=left><FONT face=Tahoma 
+  size=2>-----Original Message-----<BR><B>From:</B> 
+  peter.van.der.stok@philips.com 
+  [mailto:peter.van.der.stok@philips.com]<BR><B>Sent:</B> Tuesday, December 18, 
+  2001 12:48 AM<BR><B>To:</B> zeroconf@merit.edu<BR><B>Cc:</B> 
+  rob.udink@philips.com<BR><B>Subject:</B> Re: internet 
+  draft<BR><BR></FONT></DIV><BR><FONT face=sans-serif size=2>Dear all,</FONT> 
+  <BR><BR><FONT face=sans-serif size=2>based on the feedback I received after my 
+  talk during the 51st IETF meeting in London</FONT> <BR><FONT face=sans-serif 
+  size=2>I prepared an Internet-draft that is currently available at</FONT> 
+  <BR><FONT face="Courier New" 
+  size=2><BR>ftp://ietf.org/internet-drafts/draft-vanderstok-zeroconf-issues-00.txt</FONT> 
+  <BR><BR><FONT face=sans-serif size=2>In the draft I try to identify situations 
+  in which ambiguities exist with respect to the deployment of</FONT> <BR><FONT 
+  face=sans-serif size=2>zero-configuration protocols. Most of the concerns are 
+  related to situations between</FONT> <BR><FONT face=sans-serif size=2>a small 
+  completely unconfigured network and a network that is competely configured 
+  with DHCP servers.</FONT> <BR><BR><FONT face=sans-serif size=2>As Stuart 
+  Cheshire pointed out, many issues are easily resolved. However, 
+  &nbsp;multiple</FONT> <BR><FONT face=sans-serif size=2>possibly conflicting 
+  solutions are possible for most of them.</FONT> <BR><FONT face=sans-serif 
+  size=2>It is my opinion that zeroconf WG can play a role in coordinating and 
+  identifying areas where</FONT> <BR><FONT face=sans-serif size=2>the removal of 
+  configuration administration &nbsp;can lead to conflicting 
+  implementations.</FONT> <BR><FONT face=sans-serif size=2>Recommendations can 
+  be formulated in the Zeroconf Host Profile Applicability Statement.</FONT> 
+  <BR><BR><FONT face=sans-serif size=2>I know that some people disagree.</FONT> 
+  <BR><BR><FONT face=sans-serif size=2>Peter<BR><BR>Peter van der Stok &nbsp; 
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Philips Research Laboratories 
+  Eindhoven<BR>Bldg: WDC 1-015 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+  &nbsp; &nbsp;Prof. Holstlaan 4<BR>Phone: +31 40 2742649 &nbsp; &nbsp; &nbsp; 
+  5656 AA Eindhoven<BR>Fax: &nbsp; &nbsp; &nbsp;+31 40 2745033 &nbsp; &nbsp; 
+  &nbsp; The Netherlands<BR>Mailto: Peter.van.der.Stok@ philips.com</FONT> 
+<BR></BLOCKQUOTE></BODY></HTML>
+
+------_=_NextPart_001_01C18814.630ACC20--
+
+
+From owner-zeroconf@merit.edu  Wed Dec 19 03:33:34 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA25769
+	for <zeroconf-archive@odin.ietf.org>; Wed, 19 Dec 2001 03:33:34 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 66C3691258; Wed, 19 Dec 2001 03:32:17 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 285C091259; Wed, 19 Dec 2001 03:32:17 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id DD7C291258
+	for <zeroconf@trapdoor.merit.edu>; Wed, 19 Dec 2001 03:32:15 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 84B7E5DD99; Wed, 19 Dec 2001 03:32:15 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from gw-nl4.philips.com (gw-nl4.philips.com [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id E8F625DD92
+	for <zeroconf@merit.edu>; Wed, 19 Dec 2001 03:32:14 -0500 (EST)
+Received: from smtpscan-nl2.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id JAA25266;
+          Wed, 19 Dec 2001 09:32:06 +0100 (CET)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtpscan-nl2.philips.com(130.139.36.22) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma025264; Wed, 19 Dec 01 09:32:06 +0100
+Received: from smtprelay-nl1.philips.com (localhost [127.0.0.1]) 
+	by smtpscan-nl2.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id JAA16221; Wed, 19 Dec 2001 09:32:05 +0100 (MET)
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id JAA24461; Wed, 19 Dec 2001 09:32:03 +0100 (MET)
+Received: from ehv501soh.diamond.philips.com (e3soh01.diamond.philips.com [130.139.54.213]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id JAA20316; Wed, 19 Dec 2001 09:32:01 +0100 (MET)
+To: Jim Busse <JIM@pc.sj.nec.com>
+Cc: rob.udink@philips.com, zeroconf@merit.edu
+Subject: RE: internet draft
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+Message-ID: <OF1E07BD29.AC0FC1A0-ONC1256B27.002D5410@diamond.philips.com>
+Date: Wed, 19 Dec 2001 09:28:47 +0100
+X-MIMETrack: Serialize by Router on ehv501soh/H/SERVER/PHILIPS(Release 5.0.5 |September
+ 22, 2000) at 19/12/2001 09:32:28,
+	Serialize complete at 19/12/2001 09:32:28
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_alternative 002EE2E0C1256B27_="
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multipart message in MIME format.
+--=_alternative 002EE2E0C1256B27_=
+Content-Type: text/plain; charset="us-ascii"
+
+Jim,
+
+Thanks for your question.
+My suggestion is the second:
+
+Zeroconf WG provide some "suggestions" or "recommendations" how naming 
+services could comply with Zeroconf requirements.
+
+This is supported by the content of sections 3.2 and 4 of ZeroConf Host 
+profile Applicability Statement.
+I wanted to point out where, in my view, additional recommendations are 
+needed.
+This may lead to recommendations to for example DNS WGs.
+I am convinced that my list is not exhaustive and other ponts may come up 
+in the future.
+Some points are possibly already addressed outside my perception.
+
+Peter
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WDC 1-015                  Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:      +31 40 2745033       The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+
+
+
+Jim Busse <JIM@pc.sj.nec.com>
+Sent by: owner-zeroconf@merit.edu
+18-12-01 23:36
+
+ 
+        To:     Peter van der Stok/EHV/RESEARCH/PHILIPS@EMEA3
+zeroconf@merit.edu
+        cc:     Rob Udink/EHV/RESEARCH/PHILIPS@EMEA3
+        Subject:        RE: internet draft
+        Classification: 
+
+
+
+Peter:
+ 
+Please help me understand.   I was a little confused after reading your 
+draft.  I think most of the draft revolves around naming services, so:
+ 
+Is it your suggestion that Zeroconf expand its scope to include the 
+specification of a naming service which would comply with the Zeroconf 
+protocol requirements?
+ 
+Or is your suggestion that Zeroconf WG provide some "suggestions" or 
+"recommendations" how naming services could comply with Zeroconf 
+requirements?
+ 
+If your suggestion is not accurately summarized by either of these, could 
+you please help me understand by giving me a simple summary of your 
+suggestion? 
+ 
+Thanks.
+ 
+Jim Busse
+-----Original Message-----
+From: peter.van.der.stok@philips.com [mailto:peter.van.der.stok@philips.com]
+Sent: Tuesday, December 18, 2001 12:48 AM
+To: zeroconf@merit.edu
+Cc: rob.udink@philips.com
+Subject: Re: internet draft
+
+
+Dear all, 
+
+based on the feedback I received after my talk during the 51st IETF 
+meeting in London 
+I prepared an Internet-draft that is currently available at 
+
+ftp://ietf.org/internet-drafts/draft-vanderstok-zeroconf-issues-00.txt 
+
+In the draft I try to identify situations in which ambiguities exist with 
+respect to the deployment of 
+zero-configuration protocols. Most of the concerns are related to 
+situations between 
+a small completely unconfigured network and a network that is competely 
+configured with DHCP servers. 
+
+As Stuart Cheshire pointed out, many issues are easily resolved. However, 
+multiple 
+possibly conflicting solutions are possible for most of them. 
+It is my opinion that zeroconf WG can play a role in coordinating and 
+identifying areas where 
+the removal of configuration administration  can lead to conflicting 
+implementations. 
+Recommendations can be formulated in the Zeroconf Host Profile 
+Applicability Statement. 
+
+I know that some people disagree. 
+
+Peter
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WDC 1-015                  Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:      +31 40 2745033       The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com 
+
+
+--=_alternative 002EE2E0C1256B27_=
+Content-Type: text/html; charset="us-ascii"
+
+
+<br><font size=2 color=blue face="Arial">Jim,</font>
+<br>
+<br><font size=2 color=blue face="Arial">Thanks for your question.</font>
+<br><font size=2 color=blue face="Arial">My suggestion is the second:</font>
+<br>
+<br><font size=2 color=blue face="Arial">Zeroconf WG provide some &quot;suggestions&quot; or &quot;recommendations&quot; how naming services could comply with Zeroconf requirements.</font>
+<br>
+<br><font size=2 face="sans-serif">This is supported by the content of sections 3.2 and 4 of ZeroConf Host profile Applicability Statement.</font>
+<br><font size=2 face="sans-serif">I wanted to point out where, in my view, additional recommendations are needed.</font>
+<br><font size=2 face="sans-serif">This may lead to recommendations to for example DNS WGs.</font>
+<br><font size=2 face="sans-serif">I am convinced that my list is not exhaustive and other ponts may come up in the future.</font>
+<br><font size=2 face="sans-serif">Some points are possibly already addressed outside my perception.</font>
+<br>
+<br><font size=2 face="sans-serif">Peter<br>
+<br>
+Peter van der Stok &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Philips Research Laboratories Eindhoven<br>
+Bldg: WDC 1-015 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Prof. Holstlaan 4<br>
+Phone: +31 40 2742649 &nbsp; &nbsp; &nbsp; 5656 AA Eindhoven<br>
+Fax: &nbsp; &nbsp; &nbsp;+31 40 2745033 &nbsp; &nbsp; &nbsp; The Netherlands<br>
+Mailto: Peter.van.der.Stok@ philips.com</font>
+<br>
+<br>
+<br>
+<table width=100%>
+<tr valign=top>
+<td>
+<td><font size=1 face="sans-serif"><b>Jim Busse &lt;JIM@pc.sj.nec.com&gt;</b></font>
+<br><font size=1 face="sans-serif">Sent by: owner-zeroconf@merit.edu</font>
+<p><font size=1 face="sans-serif">18-12-01 23:36</font>
+<br>
+<td><font size=1 face="Arial">&nbsp; &nbsp; &nbsp; &nbsp; </font>
+<br><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; To: &nbsp; &nbsp; &nbsp; &nbsp;Peter van der Stok/EHV/RESEARCH/PHILIPS@EMEA3<br>
+zeroconf@merit.edu</font>
+<br><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; cc: &nbsp; &nbsp; &nbsp; &nbsp;Rob Udink/EHV/RESEARCH/PHILIPS@EMEA3</font>
+<br><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Subject: &nbsp; &nbsp; &nbsp; &nbsp;RE: internet draft</font>
+<p><font size=1 face="sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Classification: &nbsp; &nbsp; &nbsp; &nbsp;</font>
+<br></table>
+<br>
+<br>
+<br><font size=2 color=blue face="Arial">Peter:</font>
+<br><font size=3 face="Times New Roman">&nbsp;</font>
+<br><font size=2 color=blue face="Arial">Please help me understand. &nbsp; I was a little confused after reading your draft. &nbsp;I think most of the draft revolves around naming services, so:</font>
+<br><font size=3 face="Times New Roman">&nbsp;</font>
+<br><font size=2 color=blue face="Arial">Is it your suggestion that Zeroconf expand its scope to include the specification of a naming service which would comply with the Zeroconf protocol requirements?</font>
+<br><font size=3 face="Times New Roman">&nbsp;</font>
+<br><font size=2 color=blue face="Arial">Or is your suggestion that Zeroconf WG provide some &quot;suggestions&quot; or &quot;recommendations&quot; how naming services could comply with Zeroconf requirements?</font>
+<br><font size=3 face="Times New Roman">&nbsp;</font>
+<br><font size=2 color=blue face="Arial">If your suggestion is not accurately summarized by either of these, could you please help me understand by giving me a simple summary of your suggestion? </font>
+<br><font size=3 face="Times New Roman">&nbsp;</font>
+<br><font size=2 color=blue face="Arial">Thanks.</font>
+<br><font size=3 face="Times New Roman">&nbsp;</font>
+<br><font size=2 color=blue face="Arial">Jim Busse</font>
+<br><font size=2 face="Tahoma">-----Original Message-----<b><br>
+From:</b> peter.van.der.stok@philips.com [mailto:peter.van.der.stok@philips.com]<b><br>
+Sent:</b> Tuesday, December 18, 2001 12:48 AM<b><br>
+To:</b> zeroconf@merit.edu<b><br>
+Cc:</b> rob.udink@philips.com<b><br>
+Subject:</b> Re: internet draft<br>
+</font>
+<br><font size=2 face="sans-serif"><br>
+Dear all,</font><font size=3 face="Times New Roman"> <br>
+</font><font size=2 face="sans-serif"><br>
+based on the feedback I received after my talk during the 51st IETF meeting in London</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+I prepared an Internet-draft that is currently available at</font><font size=3 face="Times New Roman"> </font><font size=2 face="Courier New"><br>
+<br>
+ftp://ietf.org/internet-drafts/draft-vanderstok-zeroconf-issues-00.txt</font><font size=3 face="Times New Roman"> <br>
+</font><font size=2 face="sans-serif"><br>
+In the draft I try to identify situations in which ambiguities exist with respect to the deployment of</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+zero-configuration protocols. Most of the concerns are related to situations between</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+a small completely unconfigured network and a network that is competely configured with DHCP servers.</font><font size=3 face="Times New Roman"> <br>
+</font><font size=2 face="sans-serif"><br>
+As Stuart Cheshire pointed out, many issues are easily resolved. However, &nbsp;multiple</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+possibly conflicting solutions are possible for most of them.</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+It is my opinion that zeroconf WG can play a role in coordinating and identifying areas where</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+the removal of configuration administration &nbsp;can lead to conflicting implementations.</font><font size=3 face="Times New Roman"> </font><font size=2 face="sans-serif"><br>
+Recommendations can be formulated in the Zeroconf Host Profile Applicability Statement.</font><font size=3 face="Times New Roman"> <br>
+</font><font size=2 face="sans-serif"><br>
+I know that some people disagree.</font><font size=3 face="Times New Roman"> <br>
+</font><font size=2 face="sans-serif"><br>
+Peter<br>
+<br>
+Peter van der Stok &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Philips Research Laboratories Eindhoven<br>
+Bldg: WDC 1-015 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Prof. Holstlaan 4<br>
+Phone: +31 40 2742649 &nbsp; &nbsp; &nbsp; 5656 AA Eindhoven<br>
+Fax: &nbsp; &nbsp; &nbsp;+31 40 2745033 &nbsp; &nbsp; &nbsp; The Netherlands<br>
+Mailto: Peter.van.der.Stok@ philips.com</font><font size=3 face="Times New Roman"> </font>
+<br>
+<br>
+--=_alternative 002EE2E0C1256B27_=--
+
+
+From owner-zeroconf@merit.edu  Wed Dec 19 10:17:23 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA29233
+	for <zeroconf-archive@odin.ietf.org>; Wed, 19 Dec 2001 10:17:23 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4173391230; Wed, 19 Dec 2001 10:17:10 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0969091231; Wed, 19 Dec 2001 10:17:09 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9DE5E91230
+	for <zeroconf@trapdoor.merit.edu>; Wed, 19 Dec 2001 10:17:08 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 7F1B85DE0B; Wed, 19 Dec 2001 10:17:08 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mtiwmhc22.worldnet.att.net (mtiwmhc22.worldnet.att.net [204.127.131.47])
+	by segue.merit.edu (Postfix) with ESMTP id 443F85DE02
+	for <zeroconf@merit.edu>; Wed, 19 Dec 2001 10:17:08 -0500 (EST)
+Received: from tsg1 ([12.81.70.47]) by mtiwmhc22.worldnet.att.net
+          (InterMail vM.4.01.03.27 201-229-121-127-20010626) with SMTP
+          id <20011219151706.GWYP941.mtiwmhc22.worldnet.att.net@tsg1>;
+          Wed, 19 Dec 2001 15:17:06 +0000
+Message-ID: <00cf01c188a0$2b9192b0$020aff0c@tsg1>
+From: "todd glassey" <todd.glassey@worldnet.att.net>
+To: <peter.van.der.stok@philips.com>, "Jim Busse" <JIM@pc.sj.nec.com>
+Cc: <rob.udink@philips.com>, <zeroconf@merit.edu>
+References: <OF1E07BD29.AC0FC1A0-ONC1256B27.002D5410@diamond.philips.com>
+Subject: proposed change to the "Subject Header" from this WG
+Date: Wed, 19 Dec 2001 07:16:42 -0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_00CC_01C1885D.1C05C200"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2505.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2505.0000
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00CC_01C1885D.1C05C200
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hey List Manager - Is there a way to get something like [zeroconf] or =
+[zc] added in as the basis of each subject line so these can be filtered =
+properly and I and others dont miss them.
+
+Todd
+
+
+
+------=_NextPart_000_00CC_01C1885D.1C05C200
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2505.0" name=3DGENERATOR>
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT face=3DArial size=3D2>Hey List Manager - Is there a way to =
+get something=20
+like [zeroconf] or [zc] added in as the basis of each subject line so =
+these can=20
+be filtered properly and I and others dont miss them.</FONT></DIV>
+<DIV><FONT face=3DArial size=3D2></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>Todd</FONT></DIV>
+<DIV><FONT face=3DArial size=3D2></FONT>&nbsp;</DIV>
+<BLOCKQUOTE=20
+style=3D"PADDING-RIGHT: 0px; PADDING-LEFT: 5px; MARGIN-LEFT: 5px; =
+BORDER-LEFT: #000000 2px solid; MARGIN-RIGHT: 0px"><FONT=20
+  face=3DArial size=3D2></FONT>&nbsp;</BLOCKQUOTE></BODY></HTML>
+
+------=_NextPart_000_00CC_01C1885D.1C05C200--
+
+
+
+From owner-zeroconf@merit.edu  Wed Dec 19 12:22:59 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA02043
+	for <zeroconf-archive@odin.ietf.org>; Wed, 19 Dec 2001 12:22:59 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 191E891205; Wed, 19 Dec 2001 12:22:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DB57F91231; Wed, 19 Dec 2001 12:22:51 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B47F791205
+	for <zeroconf@trapdoor.merit.edu>; Wed, 19 Dec 2001 12:22:50 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 955F35DE1E; Wed, 19 Dec 2001 12:22:50 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from astro.cs.utk.edu (astro.cs.utk.edu [160.36.58.43])
+	by segue.merit.edu (Postfix) with ESMTP id EB4505DD97
+	for <zeroconf@merit.edu>; Wed, 19 Dec 2001 12:22:49 -0500 (EST)
+Received: from astro.cs.utk.edu (localhost [127.0.0.1])
+        by astro.cs.utk.edu (cf 8.9.3) with ESMTP id fBJHMOi04562;
+        Wed, 19 Dec 2001 12:22:24 -0500 (EST)
+Message-Id: <200112191722.fBJHMOi04562@astro.cs.utk.edu>
+X-URI: http://www.cs.utk.edu/~moore/
+From: Keith Moore <moore@cs.utk.edu>
+To: "todd glassey" <todd.glassey@worldnet.att.net>
+Cc: peter.van.der.stok@philips.com, "Jim Busse" <JIM@pc.sj.nec.com>,
+        rob.udink@philips.com, zeroconf@merit.edu
+Subject: Re: proposed change to the "Subject Header" from this WG 
+In-reply-to: Your message of "Wed, 19 Dec 2001 07:16:42 PST."
+             <00cf01c188a0$2b9192b0$020aff0c@tsg1> 
+Date: Wed, 19 Dec 2001 12:22:24 -0500
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Hey List Manager - Is there a way to get something like [zeroconf] or [zc]
+> added in as the basis of each subject line so these can be filtered properly
+> and I and others dont miss them.
+
+arrgh.  please don't.  I'm sick and tired of those frobs polluting 
+subject lines.
+
+if the list is run properly, and your mail delivery works properly,
+you should be able to filter/collate on the return-path header. 
+
+Keith
+
+
+From owner-zeroconf@merit.edu  Wed Dec 19 13:07:41 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA02979
+	for <zeroconf-archive@odin.ietf.org>; Wed, 19 Dec 2001 13:07:41 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2369991231; Wed, 19 Dec 2001 13:07:31 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EDA3B91232; Wed, 19 Dec 2001 13:07:30 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 11AE191231
+	for <zeroconf@trapdoor.merit.edu>; Wed, 19 Dec 2001 13:07:30 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D46255DE0D; Wed, 19 Dec 2001 13:07:29 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mta6.snfc21.pbi.net (mta6.snfc21.pbi.net [206.13.28.240])
+	by segue.merit.edu (Postfix) with ESMTP id B606A5DD96
+	for <ZeroConf@Merit.edu>; Wed, 19 Dec 2001 13:07:29 -0500 (EST)
+Received: from SERVER.ACM.org ([63.199.7.253])
+ by mta6.snfc21.pbi.net (iPlanet Messaging Server 5.1 (built May  7 2001))
+ with ESMTP id <0GOL00I8HROGMR@mta6.snfc21.pbi.net> for ZeroConf@Merit.edu;
+ Wed, 19 Dec 2001 10:07:28 -0800 (PST)
+Date: Wed, 19 Dec 2001 10:07:19 -0800
+From: Peter Johansson <PJohansson@ACM.org>
+Subject: Re: proposed change to the "Subject Header" from this WG
+In-reply-to: <200112191722.fBJHMOi04562@astro.cs.utk.edu>
+X-Sender: Celeborn@PostOffice.PacBell.net
+To: Zero Configuration <ZeroConf@merit.edu>
+Message-id: <5.1.0.14.2.20011219100531.03876b00@PostOffice.PacBell.net>
+MIME-version: 1.0
+X-Mailer: QUALCOMM Windows Eudora Version 5.1
+Content-type: text/plain; charset=us-ascii; format=flowed
+Content-transfer-encoding: 7BIT
+References: <"Your message of Wed, 19 Dec 2001 07:16:42 PST."
+ <00cf01c188a0$2b9192b0$020aff0c@tsg1>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7BIT
+
+At 12:22 PM 12/19/2001 -0500, Keith Moore wrote:
+
+>if the list is run properly, and your mail delivery works properly, you 
+>should be able to filter/collate on the return-path header.
+
+I have no trouble filtering on the Sender: field (in this case, 
+owner-zeroconf@merit.edu).
+
+I, too, would argue against cluttering the subject line.
+
+
+Regards,
+
+Peter Johansson
+
+Congruent Software, Inc.
+98 Colorado Avenue
+Berkeley, CA  94707
+
+(510) 527-3926
+(510) 527-3856 FAX
+
+PJohansson@ACM.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Dec 19 14:01:20 2001
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA04298
+	for <zeroconf-archive@odin.ietf.org>; Wed, 19 Dec 2001 14:01:19 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id D16BD91232; Wed, 19 Dec 2001 14:00:14 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9D6AE91233; Wed, 19 Dec 2001 14:00:14 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 8CEED91232
+	for <zeroconf@trapdoor.merit.edu>; Wed, 19 Dec 2001 14:00:13 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E40DE5DE08; Wed, 19 Dec 2001 13:45:20 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mtiwmhc23.worldnet.att.net (mtiwmhc23.worldnet.att.net [204.127.131.48])
+	by segue.merit.edu (Postfix) with ESMTP id AD8BD5DE04
+	for <ZeroConf@Merit.edu>; Wed, 19 Dec 2001 13:45:20 -0500 (EST)
+Received: from tsg1 ([12.81.79.26]) by mtiwmhc23.worldnet.att.net
+          (InterMail vM.4.01.03.27 201-229-121-127-20010626) with SMTP
+          id <20011219184519.RSAM7926.mtiwmhc23.worldnet.att.net@tsg1>;
+          Wed, 19 Dec 2001 18:45:19 +0000
+Message-ID: <01ae01c188bd$411eab50$020aff0c@tsg1>
+From: "todd glassey" <todd.glassey@worldnet.att.net>
+To: "Peter Johansson" <PJohansson@ACM.org>,
+        "Zero Configuration" <ZeroConf@merit.edu>
+References: <"Your message of Wed, 19 Dec 2001 07:16:42 PST." <00cf01c188a0$2b9192b0$020aff0c@tsg1> <5.1.0.14.2.20011219100531.03876b00@PostOffice.PacBell.net>
+Subject: Re: proposed change to the "Subject Header" from this WG
+Date: Wed, 19 Dec 2001 10:44:55 -0800
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2505.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2505.0000
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Peter you are wrong I think -
+----- Original Message -----
+From: "Peter Johansson" <PJohansson@ACM.org>
+To: "Zero Configuration" <ZeroConf@Merit.edu>
+Sent: Wednesday, December 19, 2001 10:07 AM
+Subject: Re: proposed change to the "Subject Header" from this WG
+
+
+> At 12:22 PM 12/19/2001 -0500, Keith Moore wrote:
+>
+> >if the list is run properly, and your mail delivery works properly, you
+> >should be able to filter/collate on the return-path header.
+>
+> I have no trouble filtering on the Sender: field (in this case,
+> owner-zeroconf@merit.edu).
+
+But you can't see the sender field with most mail tools - and there is
+nothing stopping people from placing the ZeroConf on the CC line so that the
+FILTER for ZC  would have to be on all lines. And if you look at what
+pressing the reply buton does to this email. It said the Sender in this case
+is 'From: "Peter Johansson" <PJohansson@ACM.org>' so here the ZC rule would
+fail as well.
+
+Myself - I think that this is a personal issue with virtually all who
+objected. and that there are no real good reasons for not putting better
+tags into the HEADER or at least consistant ones.
+
+>
+> I, too, would argue against cluttering the subject line.
+
+Why - what in particular makes it easier to see ZeroConf in a list of
+subjects?
+
+>
+>
+> Regards,
+>
+> Peter Johansson
+>
+> Congruent Software, Inc.
+> 98 Colorado Avenue
+> Berkeley, CA  94707
+>
+> (510) 527-3926
+> (510) 527-3856 FAX
+>
+> PJohansson@ACM.org
+>
+
+
+

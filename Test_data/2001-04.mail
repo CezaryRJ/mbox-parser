@@ -1,0 +1,1756 @@
+From owner-zeroconf@merit.edu  Mon Apr  2 13:13:24 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id NAA21310
+	for <zeroconf-archive@odin.ietf.org>; Mon, 2 Apr 2001 13:13:24 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 77AF05DE15; Mon,  2 Apr 2001 13:13:09 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6040A5DE19; Mon,  2 Apr 2001 13:13:09 -0400 (EDT)
+Received: from gate.internaut.com (unknown [64.38.134.101])
+	by segue.merit.edu (Postfix) with ESMTP id 665E25DE15
+	for <zeroconf@merit.edu>; Mon,  2 Apr 2001 13:13:07 -0400 (EDT)
+Received: from e1kj2 (e1kj2 [64.38.134.109])
+	by gate.internaut.com (8.10.2/8.10.2) with SMTP id f32H2gN26172;
+	Mon, 2 Apr 2001 10:02:43 -0700
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "McDonald, Ira" <imcdonald@sharplabs.com>,
+        "'Daniel Senie'" <dts@senie.com>
+Cc: <zeroconf@merit.edu>, <dthaler@microsoft.com>
+Subject: RE: IPv4 linklocal security
+Date: Mon, 2 Apr 2001 10:13:57 -0700
+Message-ID: <OJEJKOMOEAKLMOILFCPJAEAJEFAA.aboba@internaut.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="Windows-1252"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+In-reply-to: <1115A7CFAC25D311BC4000508B2CA5375ED110@mailsrvnt02.enet.sharplabs.com>
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Importance: Normal
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+There are two issues here. One is what a well-behaved
+system should do. The other is how to protect yourself
+against someone who is ill-intentioned.
+
+Setting TTL=1 on well-intentioned systems does not
+prevent an ill-intentioned person from setting a
+higher TTL in order to take advantage of routers who
+do not treat 169.254/16 as a linklocal prefix. As I've
+noted, such attacks are occurring today.
+
+There are a number of things that could be done in
+order to improve resilience to such attacks, aside
+from setting TTL=255 (which would cause backwards
+compatibility problems). For example, Dave Thaler
+has suggested:
+
+1. Dropping packets on the host that are destined to
+   the linklocal prefix, but don't originate from the
+   linklocal prefix.
+
+2. Dropping packets on the host that originate from
+   the linklocal prefix that are destined for
+   non-linklocal prefixes.
+
+Implementing these two things would require the attacker
+to use both linklocal source and destination addresses.
+Ideally, a home gateway should have address spoofing protection
+enabled so that it will not accept any packets originating
+from the internal prefix on its external interface. That
+would kill all spoofs, not just linklocal ones.
+
+
+-----Original Message-----
+From: McDonald, Ira [mailto:imcdonald@sharplabs.com]
+Sent: Friday, March 30, 2001 4:11 PM
+To: 'Daniel Senie'; Bernard Aboba
+Cc: zeroconf@merit.edu; dthaler@microsoft.com
+Subject: RE: IPv4 linklocal security
+
+
+Hi Bernard and Daniel,
+
+I agree with Daniel.  Let's make a SHOULD of setting TTL=1
+(a MUST is impractical because it will invalidate too many
+existing implementations), so that routers will ALWAYS
+discard link-local traffic.
+
+Cheers,
+- Ira McDonald, consulting architect at Sharp and Xerox
+  High North Inc
+
+-----Original Message-----
+From: Daniel Senie [mailto:dts@senie.com]
+Sent: Friday, March 30, 2001 9:46 AM
+To: Bernard Aboba
+Cc: zeroconf@merit.edu; dthaler@microsoft.com
+Subject: Re: IPv4 linklocal security
+
+
+Bernard Aboba wrote:
+>
+> Even though packets to or from the linklocal prefix (169.254/16) are not
+> supposed to be forwarded, it is likely that it will take some time before
+> this is implemented by ISPs and vendors.
+>
+> Today, more than a year after IANA first allocated the linklocal prefix,
+> it appears that virtually no ISPs or router vendors prohibit forwarding of
+> packets to or from the linklocal prefix.
+
+I've had filters in my firewalls for this particular prefix for some
+time. To date I've seen very few attempts using the prefix.
+
+I see lots of Netbios/IP traffic to/from these addresses floating
+around, but generally discount that as misconfigured clients nearby
+(e.g. on the cable modem system, or on the DMZ at the colo I use).
+However, I have started seeing lots of traffic attempting to reach
+services (e.g. HTTP) coming from link local addresses.
+
+>
+> Hackers are apparently taking advantage of this; I have noted quite a few
+> breakin attempts coming from hosts within the linklocal prefix within the
+> last few days.
+>
+> As a thought exercise, I urge each of you to do a traceroute to an address
+> within the linklocal prefix, say 169.254.101.152. When I last did a
+> traceroute, I discovered that routers up to 4 hops away were forwarding
+> packets destined to this prefix. When the packets reached the core routers
+> running BGP, a host unreachable message was returned.
+>
+> The implication is that an attacker sending packets to a linklocal source
+> address could reach hosts up to 4 hops away, and possibly more if the path
+> did not traverse a backbone router. Since most routers route only
+> on the destination address and not the source, packets sourced
+> with a linklocal prefix can go much further, probably all the way
+> to the destination. Declaring 169.254/16 a linklocal prefix
+> is unlikely to have much effect on this particular attack in the short and
+> possibly even medium term.
+
+RFC 1918, a BCP, does two things: it specifies a block of addresses to
+use, and recommends those addresses not be routed across the Internet.
+It doesn't mention all blocks which have special use, though.
+
+Perhaps draft-manning-dsua-06.txt, should be targetted as a BCP
+indicating which blocks should not be routed?
+
+The linklocal document should specify whatever action we'd like routers
+to take, and that should be noted for the RFC editor so they can mark
+the RFC Index to indicate the linklocal RFC updates router requirements.
+
+>
+> So what do we do about this? Given that routers are likely to continue
+> forwarding packets with linklocal source addresses for the forseeable
+> future, and packets with linklocal destinations for the short term, the
+> reality is that we cannot depend on ISPs and router vendors to make sure
+> that linklocal really means link local.
+
+Recommend filtering for source addresses. Recommend black-holing
+169.254/16 in routers (route to null interface).
+
+>
+> Given this reality, I feel that it is necessary for hosts to
+> incorporate their own protection mechanisms, rather than relying on
+> routers to do the right thing. One way to accomplish this is to
+> require that packets sent to or from the linklocal scope contain
+> TTL=255. Since even the most dysfunctional router will decrement
+> TTL, a host receiving a packet to or from the linklocal prefix with a TTL
+> < 255 can know that the packet was forwarded off-segment, and thus can
+> silently discard it.
+
+Why not require hosts to set TTL=1? That way, if a router does get hold
+of such a packet, it'll discard it due to TTL expiry.
+
+>
+> I believe that adding this protection is the right thing to do, since
+> otherwise, devices using only linklocal addresses will not have a
+> reasonable way to protect themselves. Implementing this kind of protection
+> in the TCP/IP stack will also make it easier for application developers,
+> who will not have to try to implement this in individual applications
+> using linklocal addressing (such as mDNS), thereby requiring the use of
+> raw sockets.
+
+I think we should approach this on multiple levels:
+
+- recommend filtering (source or dest) at routers (Access lists or route
+to null for destination case). This covers us from an operational
+perspective. This could be a small, stand-alone BCP.
+
+- either incorporate into linklocal or write another short document that
+updates router requirements with the desired action. This will help in
+th long term, as router vendors release new code.
+
+- decide on a plan for setting TTL or other such mechanism on the hosts
+to effect somewhat shorter-term issues. Perhaps this should be an update
+to the host requirements document?
+
+I'm willing to take care of a few short documents if we decide they
+should exist and should be stand-alone items (or help write sections if
+they're going to be in other documents).
+
+--
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  3 02:26:14 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA24285
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Apr 2001 02:26:13 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D0B695DE82; Tue,  3 Apr 2001 02:22:11 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id BB6235DE84; Tue,  3 Apr 2001 02:22:11 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 51AA45DE82
+	for <zeroconf@merit.edu>; Tue,  3 Apr 2001 02:22:10 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id XAA16779
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:22:09 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52adb65f6b118164e13a4@apple.com> for <zeroconf@merit.edu>;
+ Mon, 2 Apr 2001 23:22:08 -0700
+Received: from [17.201.23.37] ([17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id XAA25461
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:22:08 -0700 (PDT)
+Message-Id: <200104030622.XAA25461@scv2.apple.com>
+Subject: Re: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Mon, 2 Apr 2001 23:22:09 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Find enclosed some comments on the IPv4 linklocal draft. Despite the
+>length of the review, most of these represent minor changes in wording.
+>
+>http://www.drizzle.com/~aboba/zeroconf/stuart.txt
+
+Thanks. For the purpose of the official IETF record, I'm attaching the 
+document here. Comments will follow.
+
+-----------
+
+Here are my comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt.
+
+Section 1. 
+
+"Hosts and routers using addresses in the 169.254/16 range MUST follow
+the rules laid out in this document. This document will discuss
+claiming and defending addresses, maintaining link-local and routable
+addresses on the same interface, and multihoming issues."
+
+The rules apply not only to hosts and routers with interface
+addresses within the 169.254/16 prefix; they also describe how
+routers and network address translators are to behave when
+receiving packets with linklocal addresses in the source and
+destination address. 
+
+Suggested change:
+
+"This document prescribes rules for how IPv4 linklocal addresses 
+MUST be treated by hosts, routers and network address translators.
+In particular, it describes how routers and network address translators
+MUST behave when receiving packets with IPv4 linklocal addresses
+in the source or destination address. With respects to hosts, it will 
+discuss
+claiming and defending addresses, maintaining link-local and routable
+addresses on the same interface, and multihoming issues."
+
+-----------------------------------------------------------------------
+
+"Note that addresses in the 169.254/16 range SHOULD NOT be configured
+manually or by a DHCP server, since doing so may cause a host to use
+an address in the 169.254/16 range without awareness of the special
+rules regarding duplicate detection and automatic configuration
+that pertain to addresses in this range."
+
+I think it's worthwile to describe the issue with DHCP assignment
+in more detail. The language in RFC 2131 is as follows:
+
+"As a consistency check, the allocating
+server SHOULD probe the reused address before allocating the address,
+e.g., with an ICMP echo request, and the client SHOULD probe the
+newly received address, e.g., with ARP."
+
+Suggested change:
+
+"Note that addresses in the 169.254/16 range SHOULD NOT be configured
+manually or by a DHCP server. Manual or DHCP configuration may cause a 
+host
+to use an address in the 169.254/16 range without awareness of the
+special rules regarding duplicate detection and automatic configuration
+that pertain to addresses in this range. While RFC 2131 indicates
+that a DHCP client SHOULD probe a newly received address, this is
+not mandatory.  
+
+Since linklocal addresses are not routable, it is not possible for a
+host on one segment to detect whether a host on another segment has
+allocated an IPv4 linklocal address. For example, a host sending a
+ping to a linklocal address will only receive a reply if that address is
+in use on the local segment; the packet must not be forwarded off the
+link.
+
+As a result, a DHCP server not directly connected to a link 
+will not be able to probe an IPv4 linklocal address 
+before allocating it as recommended by [RFC 2131] and therefore
+will not be able to guarantee uniqueness of the allocated address."
+
+
+----------------------------------------------------------------------
+General comment: 
+The term "range" is used to describe 169.254/16 throughout the document.
+I believe that the more correct term is "prefix".
+
+----------------------------------------------------------------------- 
+
+Section 1.1
+
+"This document uses the term "routable address" to refer to any
+unicast address outside the 169.254/16 range, including global
+addresses and private addresses such as Net 10/8 [RFC 1918]."
+
+This is confusing. In other documents and drafts the term "routable
+address" refers to addresses that are routable on the global Internet --
+which does not include private address space. For consistency, it
+would be better if the term "routable and private addresses" were
+used instead.
+
+Section 1.3
+
+In this section you launch into issues with autoconfiguration in the
+first paragraph. This seems a bit abrupt, because you haven't yet
+talked much about what linklocal addresses are and how they should
+behave. 
+
+I recommend adding a brief introductory paragraph at the beginning
+of this section, or moving text from section 2.1 & 2.5 here. Suggested
+addition:
+
+"In order to provide for automatic configuration, this document
+describes IPv4 linklocal addressing. IANA has allocated the address 
+prefix 
+169.254/16 for IPv4 linklocal use. Within the 169.254/16 prefix, the 
+169.254.0/24 and 169.254.255/24 prefixes are reserved for future use and 
+are 
+not used. 
+
+Linklocal addresses,  by definition, are local to the link and are not to 
+be 
+forwarded off the link by network devices, including routers and network 
+address translators. In order to ensure that hosts and routers
+will always be able to reach these addresses on the local segment, 
+addresses within prefix 169.254/16 MUST NOT be subnetted."
+
+Section 2.1. 
+ 
+I think that given the desire that the address survive a reboot, we don't
+really want randomly chosen addresses, we want pseudo-random addresses 
+that
+are uniformly distributed across the range (so as to minimize 
+collisions). 
+
+My recommendation is to change the first paragraph as follows:
+
+"When a host wishes to configure a link-local address, it selects an
+address using a pseudo-random number generator with a uniform..."
+
+--------------------------------------------------------------------
+
+"Recommendations for pseudo-random number generators can be found in
+"Randomness Recommendations for Security" [RFC 1750]."
+
+Actually, RFC 1750 is really more about issues with pseudo-random
+number generators. Recommend change to:
+
+"Issues wth pseudo-random number generators are discussed in
+"Randomness Recommendations for Security" [RFC 1750]."
+
+-------------------------------------------------------------------
+
+Section 2.2
+
+"The appropriate number of ARP probes and the interval between them is
+implementation-dependent."
+
+Later on, you say:
+
+"After successfully configuring a link-local address, a host on
+Ethernet SHOULD broadcast two gratuitous ARPs, spaced two seconds
+apart."
+
+Why do you only provide advice on the number of ARP probes *after*
+configuring the linklocal address and not before? Seems like you'd
+want to make suggestions on both. 
+
+Also, elsewhere in the document you discuss remotely bridged networks
+(such as VPN scenarios). In such circumstances, it would seem that
+you would want to increase the ARP spacing. Thus, either more
+gratuitous ARPs or wider spacing might make sense.
+
+-------------------------------------------------------------------
+"On link-layer network technologies that do not support
+ARP there may be equivalent mechanisms for determining whether a
+particular IP address is currently in use, but these kinds of
+networks are not discussed in this document."
+
+Are we saying that linklocal addressing doesn't apply to NBMA
+networks? I would suggest a change of language to:
+
+"On link-layer network technologies that do not support
+ARP other techniques may be available for determining whether a
+particular IP address is currently in use. However, the 
+the application of claim and defend mechanisms to such networks
+is left to a future document."
+
+----------------------------------------------------------------------
+
+There are a number of references to Ethernet in the document. In most
+cases, Ethernet is not in fact a requirement, and other IEEE 802
+media would work just as well. I recommend going through the document
+and replacing "Ethernet" with "IEEE 802 media". References to these
+documents are included below:
+
+
+[1]  IEEE Standards for Local and Metropolitan Area Networks: Overview
+     and Architecture, ANSI/IEEE Std 802, 1990.
+
+[2]  ISO/IEC 10038 Information technology - Telecommunications and
+     information exchange between systems - Local area networks - Media
+     Access Control (MAC) Bridges, (also ANSI/IEEE Std 802.1D- 1993),
+     1993.
+
+[3]  ISO/IEC Final CD 15802-3 Information technology - Tele-
+     communications and information exchange between systems - Local and
+     metropolitan area networks - Common specifications - Part 3:Media
+     Access Control (MAC) bridges, (current draft available as IEEE
+     P802.1D/D15).
+
+[4] IEEE Standards for Local and Metropolitan Area Networks: Draft
+     Standard for Virtual Bridged Local Area Networks, P802.1Q/D8,
+     January 1998.
+
+[5] ISO/IEC 8802-3 Information technology - Telecommunications and
+     information exchange between systems - Local and metropolitan area
+     networks - Common specifications - Part 3:  Carrier Sense Multiple
+     Access with Collision Detection (CSMA/CD) Access Method and
+     Physical Layer Specifications, (also ANSI/IEEE Std 802.3- 1996),
+     1996.
+
+[6] IEEE Standards for Local and Metropolitan Area Networks: Demand
+     Priority Access Method, Physical Layer and Repeater Specification
+     For 100 Mb/s Operation, IEEE Std 802.12-1995.
+
+[7] IEEE Standards for Local and Metropolitan Area Networks: Port based
+     Network Access Control, IEEE Draft 802.1X/D10, January 2001.
+
+[8] Information technology - Telecommunications and information
+     exchange between systems - Local and metropolitan area networks -
+     Specific Requirements Part 11:  Wireless LAN Medium Access Control
+     (MAC) and Physical Layer (PHY) Specifications, IEEE Std.
+     802.11-1997, 1997.
+
+----------------------------------------------------------------------
+
+"For Ethernet at 10Mb/s, 100Mb/s or 1Gb/s
+(henceforth referred to simply as 'Ethernet'), four probes with a
+two-second wait after each probe is recommended (making a total of
+eight seconds)."
+
+Does this requirement apply only to Ethernet framing, and not other
+IEEE 802 media? Recommend change to:
+
+"For links supporting ARP, four probes with a two-second
+wait after each probe is recommended (making a total of eight seconds)."
+
+----------------------------------------------------------------------
+
+"Hosts that are equipped with persistent storage MAY, for each
+interface, record the IP address they have selected, and on the next
+boot should use that address as their first candidate when probing."
+
+Recommend breaking the sentence as follows:
+
+Hosts that are equipped with persistent storage MAY, for each
+interface, record the IP address they have selected. On booting, hosts
+with a previously recorded address SHOULD use that address as their
+first candidate when probing." 
+
+------------------------------------------------------------------------
+Section 2.4
+
+"If the destination address is a unicast address outside the
+169.254/16 range, or a multicast address with scope larger than link-
+local, the host SHOULD NOT use its link-local source address, and
+should instead use its appropriate routable interface address."
+
+Recommend changing the SHOULD NOT to a MUST NOT, since such packets
+will not arrive in a properly functioning network. Therefore there is 
+no point in sending such packets. Keeping the existing language could
+give license to send such packets in situations where the host will
+re-transmit if it doesn't receive a reply. This could result in a
+multicast storm.
+
+-----------------------------------------------------------------------
+Section 2.5
+
+
+"An IPv4 datagram whose source and/or destination addresses is in the
+169.254/16 range MUST NOT be sent to any router for forwarding, and
+any network device receiving such a datagram MUST NOT forward it,
+regardless of the TTL in the IP header."
+
+Recommend clarifying this paragraph so that bridging is ok, but that 
+NAT'ing is not acceptable:
+
+"An IPv4 datagram whose source and/or destination addresses is in the
+169.254/16 range MUST NOT be sent to any router or NAT for forwarding. Any
+router or NAT receiving such a datagram MUST NOT forward it or
+translate the source and/or destination address, regardless of 
+the TTL in the IP header."
+
+-------------------------------------------------------------------------
+
+"This restriction also applies to multicast packets. IP datagrams with
+a link-local source address MUST NOT be forwarded off the local link
+even if they have a multicast destination address."
+
+Recommend modifying this as follows:
+
+"This restriction also applies to multicast packets. IP datagrams with
+a link-local source address MUST NOT be routed or address translated
+off the local link even if they have a multicast destination address."
+
+--------------------------------------------------------------------------
+
+"This does not mean that link-local devices are forbidden from
+communication outside the local link. IP hosts that implement both
+link-local and conventional routable IP addresses may still use
+their routable addresses without restriction as they do today."
+
+Recommend adding language relating to privately-addressed networks:
+
+"In adition, NAT devices may translate addresses of IP hosts that 
+implement 
+private addressing."
+
+--------------------------------------------------------------------------
+"Alternatively, a remote host could use a secure tunnelling protocol
+to establish access to a 'virtual interface' on the local link, via
+which it could then send and receive 'virtual' link-local packets
+just like any other host directly connected to that link."
+
+I would recommend deleting this paragraph. As described in
+draft-ietf-ipsec-dhcp-09.txt, such virtual interfaces are
+typically routed and not bridged. As noted in the Zeroconf WG
+discussion, such bridged VPNs would unite two linklocal segments,
+thereby potentially resulting in address conflicts that did not 
+previously exist before the segments were connected via the VPN. 
+Depending on how far apart the bridged segments are, the timers
+recommended in this document might not be sufficient. So overall
+I'm not convinced that this scenario will work very well. 
+
+For example, in order to make such a scenario work,
+the VPN protocol would need to support bridging. This can
+be accomplished using L2TP using PPP BCP, or potentially by
+tunneling Ethernet. The mechanisms for doing this, and the
+methods for guaranteeing the IEEE 802 hard and soft
+invariants have been the subject of considerable debate
+within the L2TPEXT WG, so the subject is best avoided until
+a definitive solution can be referenced.
+
+---------------------------------------------------------------------------
+
+Section 3
+
+"When bringing up a new interface, the host
+should first probe for all of its existing link-local addresses on
+that new interface. If any of the addresses are found to be in use
+already on the new link, then the interfaces in question must be
+reconfigured to select new unique link-local addresses."
+
+Recommend capitalization of requirements, as follows:
+
+"When bringing up a new interface, the host
+SHOULD first probe for all of its existing link-local addresses on
+that new interface. If any of the addresses are found to be in use
+already on the new link, then the interfaces in question MUST be
+reconfigured to select new unique link-local addresses."
+
+
+---------------------------------------------------------------------------
+-
+
+Section 3.2
+
+Note the example in this section would NOT work if the host A were 
+configured
+as a bridge, as is required in Bluetooth Ethernet emulation, for example. 
+However, in this case gratuitous ARPs from D and C would reach other, 
+resulting
+in address conflict resolution. 
+
+
+---------------------------------------------------------------------------
+--
+
+Section 4
+
+"When joining two large networks there is a greater chance of
+collision, but large networks are not expected to rely heavily on
+link-local addresses for normal communication. Large networks are
+better managed by using existing mechanisms such as DHCP servers to
+allocate addresses."
+
+I think that this sentence doesn't apply to the new IPv4 linklocal
+spec as much as to the old one. Presumably there will be devices that
+will only support IPv4 linklocal addressing for security reasons and
+these devices will not be able to determine whether they are on a small
+or large network, since they won't be looking for a DHCP server.
+
+Recommend changing this to:
+
+"When joining two large networks (defined as networks with a substantial
+number of hosts per segment) there is a greater chance of collision. In
+such networks, it is likely that the re-joining of previously separated
+segments will result in one or more hosts needing to change their 
+IPv4 linklocal address, with subsequent loss of TCP connections. In 
+cases where separation and re-joining is frequent, as in remotely
+bridged networks, this could prove disruptive. Furthermore, in such
+networks, the interal between gratuitous ARPs may need to be enlarged
+in order to enable conflict detection. However, unless the
+number of hosts on the re-joined segments is very large, the traffic
+resulting from the re-join and subsequent address conflict resolution
+will be small."
+
+--------------------------------------------------------------------------
+
+Is it worth making a statement about the status of the DHCP auto-config 
+option?
+
+Suggested text:
+
+"Since this specification does not require DHCP server detection, use of
+the DHCP AutoConfigure option would serve no useful purpose. 
+
+No existing implementations send the DHCP AutoConfigure option, nor do 
+they 
+act upon this option if it is received in a DHCPOFFER or DHCPACK. Since 
+this
+document proposes that linklocal addresses be usable at all times, there 
+is
+no need for such an option, and hosts receiving this option MUST ignore 
+it."
+
+------------------------------------------------------------------------
+
+Appendix
+
+"Having failed to contact a DHCP server, these implementations retry
+once every five minutes. If the failure to contact a DHCP server was
+a transient problem such as a loose Ethernet cable, after correcting
+the error, it could take up to five minutes for the system to
+reconfigure with a server-assigned address."
+
+Actually this problem exists only on operating systems that do not
+implement media sense. Where media sense is available, the loss of
+interface connectivity can be detected, and auto-configuration
+begun immediately after re-connection.
+
+BTW, I am wondering if it might not make sense to enlarge the Appendix
+with additional description of the behavior of existing systems. That
+would allow us to completely eliminate the need for the older draft.
+Some potential text is given below:
+
+5.  Behavior of Legacy Implementations
+
+5.1.  Microsoft Windows 98 and 98SE
+
+Windows 98 and 98SE systems choose their IP address on a pseudo-random
+basis. This ensures that systems rebooting will obtain the same auto-
+configured address, unless a conflict is detected. The address selection
+algorithm is based on computing a hash on the interface MAC address, so
+that a large collection of hosts should obey the uniform probability
+distribution in choosing addresses within the 169.254/16 address space.
+
+The Windows 98 and 98SE DHCP Client sends out a total of 4 DHCPDISCOVERs, 
+with an inter-packet interval of 6 seconds.  When no response is received 
+after
+all 4 packets (24 seconds), it will auto-configure an address.
+
+The auto-configure retry count for Windows 98 and 98SE systems is 10.  
+After 
+trying 10 auto-configured IP addresses, and finding all are taken, the 
+host 
+will boot without an IP address. Auto-configured Windows 98 and 98SE 
+systems 
+check for the presence of a DHCP server every five minutes. If a DHCP 
+server is
+found and Windows 98 is not successful in obtaining a new lease, it
+keeps the existing auto-configured IP address.
+
+If Windows 98 and 98SE is successful at obtaining a new lease, it drops 
+all
+existing connections without warning. This may cause users to lose
+connection to sessions in progress. Once a new lease is obtained,
+Windows 98 and 98SE will not allocate further connections using the auto-
+configured IP address.
+
+Windows 98 and 98SE systems do not send packets addressed to a linklocal 
+address to the default gateway if one is present; these addresses are 
+always
+resolved on the local segment.
+
+Windows 98 and 98SE systems do not implement media sense. This means
+that network connectivity issues (such as a loose cable) may prevent a
+system from contacting the DHCP server, thereby causing it to auto-
+configure. When the connectivity problem is fixed (such as when the
+cable is re-connected) the situation will not immediately correct
+itself. Since the system will not sense the re-connection, it will
+remain in autoconf mode until an attempt is made to reach the DHCP
+server.
+
+The mini-DHCP server included with Windows 98 SE Internet Connection
+Sharing (ICS), which functions as a NAT, allocates out of the 192.168/16
+private address space [6] by default.  
+However, it is possible to change the allocation prefix via a
+registry key, and no checks are made to prevent allocation out of the
+linklocal prefix. When configured to do so, Windows 98 SE ICS will NAT
+packets from the linklocal prefix off the local link. Windows 98SE ICS
+does not automatically route for the linklocal prefix, so that hosts
+obtaining addresses via DHCP cannot communicate with auto-configured-
+only devices.
+
+Other home gateways exist that allocate addresses out of the linklocal
+prefix by default. Windows 98 and 98SE systems can use a 169.254/16 
+linklocal
+address as the source address when communicating with non-linklocal
+hosts. However, Windows 98 and 98SE do not support router
+solicitation/advertisement as specified in [7]. This means that Windows
+98 and 98SE systems will typically not be able to discover a default 
+gateway 
+when in autoconfig mode.
+
+5.2.  Windows 2000 and Windows ME
+
+
+5.2.1.  client behavior
+
+The auto-configuration behavior of Windows 2000 and ME systems is
+identical to Windows 98 and 98SE except in several respects:
+
+Media Sense
+Router Discovery
+Silent RIP
+
+Windows 2000 and ME implement media sense. This means that as soon as
+network connectivity is detected, a DHCPDISCOVER will be sent on an
+interface. This means that systems will immediately transition out of
+autoconf mode as soon as connectivity is restored.
+
+Windows 2000 and Windows ME also support router discovery [7], although
+it is turned off by default. Windows 2000 also supports a RIP listener.
+This means that it is possible to discover a default gateway while in
+autoconfig mode.
+
+Windows 2000 and ME ICS behaves identically to Windows 98 SE with
+respect to address allocation and NATing of linklocal prefixes.
+
+5.3.  Apple MacOS 8.5
+
+MacOS 8.5 choose the IP address on a ?  basis. <Insert more on the
+algorithm here. Is it truly random?  What happens when a system reboots?
+Does it get the same address?>
+
+MacOS 8.5 sends three DHCPDISCOVER packets, with timeouts of 4, 8, and
+then 16 seconds.  When no response is received from all of these
+requests (28 seconds), it will auto-configure.
+
+The auto-configure retry count for MacOS 8.5 is 10.  After trying 10
+auto-configured IP addresses, and finding all are taken, the host will
+boot without an IP address. Auto-configured MacOS 8.5 systems check for
+the presence of a DHCP server every five minutes.
+
+If MacOS 8.5 is not successful in obtaining a new lease, it drops the
+existing auto-configured IP address.  If MacOS 8.5 is successful at
+obtaining a new lease, it drops all existing connections after posting a
+warning. This may cause users to lose connection to sessions in
+progress. Once a new lease is obtained, MacOS 8.5 will not allocate
+further connections using the auto-configured IP address.  [Issue: check
+with Stuart on this]
+
+<Any comments on media sense behavior?> <Any comments on the behavior of
+the Airport with respect to NATing of linklocal prefixes?>
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  3 02:27:03 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA24298
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Apr 2001 02:27:03 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B8E495DEB9; Tue,  3 Apr 2001 02:23:51 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7CAC05DEB8; Tue,  3 Apr 2001 02:23:51 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 3E1DE5DE9E
+	for <zeroconf@merit.edu>; Tue,  3 Apr 2001 02:23:49 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id XAA17086
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:23:48 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52adb7e58e118164e13a4@apple.com> for <zeroconf@merit.edu>;
+ Mon, 2 Apr 2001 23:23:48 -0700
+Received: from [17.201.23.37] ([17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id XAA02152
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:23:48 -0700 (PDT)
+Message-Id: <200104030623.XAA02152@scv1.apple.com>
+Subject: Re: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Mon, 2 Apr 2001 23:23:48 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Find enclosed some comments on the IPv4 linklocal draft. Despite the
+>length of the review, most of these represent minor changes in wording.
+
+Thanks. I liked almost all of the comments. Let me address the few I have 
+comments about:
+
+>This is confusing. In other documents and drafts the term "routable
+>address" refers to addresses that are routable on the global Internet --
+>which does not include private address space. For consistency, it
+>would be better if the term "routable and private addresses" were
+>used instead.
+
+I was trying to pick a concise term that did not make the text clumsy, 
+since clumsy text is less clear.
+
+I would argue that other documents and drafts are wrong -- you can have a 
+large private routed network without it being connected to the global 
+Internet. I feel that the draft uses the term "routable" accurately, and 
+it also defines the term to further reduce confusion. Even if some people 
+misinterpret the word "routable" to mean "global", then that does not 
+result in those people misunderstanding any significant aspects of how to 
+handle link-local addresses.
+
+>There are a number of references to Ethernet in the document. In most
+>cases, Ethernet is not in fact a requirement, and other IEEE 802
+>media would work just as well. I recommend going through the document
+>and replacing "Ethernet" with "IEEE 802 media". References to these
+>documents are included below:
+
+Good point. But do you want me to list *all* eight references?
+
+>"If the destination address is a unicast address outside the
+>169.254/16 range, or a multicast address with scope larger than link-
+>local, the host SHOULD NOT use its link-local source address, and
+>should instead use its appropriate routable interface address."
+>
+>Recommend changing the SHOULD NOT to a MUST NOT, since such packets
+>will not arrive in a properly functioning network. Therefore there is 
+>no point in sending such packets. Keeping the existing language could
+>give license to send such packets in situations where the host will
+>re-transmit if it doesn't receive a reply. This could result in a
+>multicast storm.
+
+Agreed. And I'll also correspondingly change:
+>   If the destination address is in the 169.254/16 range, the host
+>   SHOULD use its link-local source address.
+to:
+>   If the destination address is in the 169.254/16 range, the host
+>   MUST use its link-local source address.
+
+However, for multicast destinations I'll keep the "SHOULD NOT use its 
+link-local source address", since almost all IPv4 multicast addresses 
+have scope larger than link-local, and saying "MUST NOT" would prohibit 
+LL sources from using almost all multicast addresses. As long as TTL of 
+1, I think sending to general multicast addresses is safe. 
+
+>Is it worth making a statement about the status of the DHCP auto-config 
+>option?
+
+I'd rather say nothing about it at all, and simply let that RFC be 
+reclassified as historic. It was a mistake that it got published at all 
+-- I'd rather not draw further attention to it now.
+
+
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  3 02:52:36 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA24444
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Apr 2001 02:52:36 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0274D5DDF0; Tue,  3 Apr 2001 02:50:24 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id E06BC5DDCD; Tue,  3 Apr 2001 02:50:23 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id B12F75DD8F
+	for <zeroconf@merit.edu>; Tue,  3 Apr 2001 02:50:22 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id XAA20244
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:50:22 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52add01fd3118164e13a4@apple.com>;
+ Mon, 2 Apr 2001 23:50:16 -0700
+Received: from [17.201.23.37] ([17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id XAA07301;
+	Mon, 2 Apr 2001 23:50:15 -0700 (PDT)
+Message-Id: <200104030650.XAA07301@scv2.apple.com>
+Subject: Re: link-local-0.2 txt
+Date: Mon, 2 Apr 2001 23:50:17 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <peter.van.der.stok@philips.com>, <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Would it be a good idea to give a definition of on-link and off-link
+>thus showing that hosts connected to different physical segments
+>connected by bridges are all on-link.
+
+Can you suggest some proposed text?
+
+>I doubt the general applicability of the motivation. In a "stable" home
+>network connections via a Residential Gateway can prove to be rather
+>volatile with a duration of a few minutes to dowload some document or
+>music. For the download of another document, a new connection can be
+>opened with an allocation of a different IP address by the IP service
+>provider.
+
+Good point.
+
+>Many people may mind the term: extremely simple device. A set-top box is
+>actually not simple. I suggest to remove extremely simple and replace it
+>with cost efficient if an adjective is needed at all.
+
+The point here is not so much how much it costs, but how powerful a 
+computing device it is. Powerful computing devices can more easily 
+implement stronger security. The argument here is that very simple 
+devices do not have that luxury -- they may be pushing their limits just 
+to implement basic link-local IP.
+
+>Tunnelling for off-link access.
+>I suggest removing this paragraph for the same reasons as cited by 
+>earlier comments by (Aboba?)
+
+Agreed.
+
+>Is it possible to make a list of items that have to be addressed by a
+>physical medium standard that will be confronted with the link-local
+>addresssing. The document already discusses several flavours of
+>ethernet, but there are also flavours of for example USB and IEEE 1394
+>
+>Items such as:
+>- ARP sending frequency,
+>- Number of ARP packets
+
+Will do.
+
+>- physical (dis)connection behavior; especially as many IHDN standards 
+>specify this in great detail
+
+Can you suggest some proposed text?
+
+By the way, I do not support the idea of sending gratuitous ARPs whenever 
+a link-state change is detected, since this (a) wastes bandwidth, and (b) 
+causes reconfigurations that may in fact not have been necessary, such as 
+in the case of a wireless host momentarily passing into range.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  3 03:00:25 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id DAA24480
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Apr 2001 03:00:24 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id AE8B75DDD8; Tue,  3 Apr 2001 02:22:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 95F4D5DE39; Tue,  3 Apr 2001 02:22:49 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 036DE5DDD8
+	for <zeroconf@merit.edu>; Tue,  3 Apr 2001 02:22:48 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id XAA16868
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:22:47 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52adb6f4b5118164e13a4@apple.com>;
+ Mon, 2 Apr 2001 23:22:46 -0700
+Received: from [17.201.23.37] ([17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id XAA01932;
+	Mon, 2 Apr 2001 23:22:46 -0700 (PDT)
+Message-Id: <200104030622.XAA01932@scv1.apple.com>
+Subject: Re: IPv4 linklocal security
+Date: Mon, 2 Apr 2001 23:22:47 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Cc: <dthaler@microsoft.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>There are a number of things that could be done in
+>order to improve resilience to such attacks, aside
+>from setting TTL=255 (which would cause backwards
+>compatibility problems). For example, Dave Thaler
+>has suggested:
+>
+>1. Dropping packets on the host that are destined to
+>   the linklocal prefix, but don't originate from the
+>   linklocal prefix.
+>
+>2. Dropping packets on the host that originate from
+>   the linklocal prefix that are destined for
+>   non-linklocal prefixes.
+>
+>Implementing these two things would require the attacker
+>to use both linklocal source and destination addresses.
+>Ideally, a home gateway should have address spoofing protection
+>enabled so that it will not accept any packets originating
+>from the internal prefix on its external interface. That
+>would kill all spoofs, not just linklocal ones.
+
+I support this solution, instead of setting TTL = 255.
+
+I think the draft should say, "MUST set TTL to 1".
+
+Setting TTL = 1 at least limits *outward* leakage of link-local 
+addresses, which is a good thing -- we don't want to give the 169.254 
+network a bad name by annoying network administrators with lots of 
+spurious traffic.
+
+My feeling about the inbound security risk is this:
+
+Inbound packets have got to get onto your link somehow. That means a 
+router. Even today's routers won't deliver packets directly to a host on 
+a local link unless you tell the router that the specified destination is 
+directly reachable on that link -- e.g.:
+
+ ifconfig eth0 169.254.1.2 netmask 255.255.0.0 broadcast 169.254.255.255
+ route add -net 169.254.0.0 netmask 255.255.0.0 eth0
+
+Unless you do that, the router won't have any knowledge of net 
+169.254/16, so it will just bounce the packets to its default gateway.
+
+Am I missing something here?
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Apr  3 04:20:15 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id EAA24932
+	for <zeroconf-archive@odin.ietf.org>; Tue, 3 Apr 2001 04:20:15 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 5B9DA5DE61; Tue,  3 Apr 2001 02:31:28 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 49BC85DE5F; Tue,  3 Apr 2001 02:31:28 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id D7AB05DE19
+	for <zeroconf@merit.edu>; Tue,  3 Apr 2001 02:31:26 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id XAA18013
+	for <zeroconf@merit.edu>; Mon, 2 Apr 2001 23:31:26 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52adbee146118164e13a4@apple.com>;
+ Mon, 2 Apr 2001 23:31:26 -0700
+Received: from [17.201.23.37] ([17.201.23.37])
+	by scv2.apple.com (8.9.3/8.9.3) with SMTP id XAA29451;
+	Mon, 2 Apr 2001 23:31:25 -0700 (PDT)
+Message-Id: <200104030631.XAA29451@scv2.apple.com>
+Subject: RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Mon, 2 Apr 2001 23:31:26 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "BELOEIL Luc FTRD/DMI/CAE" <luc.beloeil@rd.francetelecom.fr>
+Cc: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>=> As far as I understood the draft, that situation was just to enable
+>remote connection to a specified link-local subnet (the remote client
+>accesses it specified home network through its "gateway" between link-local
+>subnet and internet, for example). Thus the purpose of this sentence is NOT
+>"bridging two segments", is it ? But the draft is perhaps not enough clear
+>here ? In that situation we are in the same situation that in the example
+>"3.2 Example Illustrating Acceptable Address Re-Use" : the remote client
+>behave as the host A of the example. So that implies some constraints on the
+>"gateway" and on the remote client. Here the remote client MUST NOT behave
+>as a bridge. Or did I miss something ?
+
+The point is that this can get very complicated very quickly.
+
+If the tunnel server performs the ARPing to allocate a unique address on 
+the local link, when it informs the tunnel client at the other end, the 
+address may not be acceptable to the tunnel client, perhaps because the 
+tunnel client already has another interface with that address, or a peer 
+(or peers) on its other local links that have that same address. Thus the 
+tunnel client needs to be able to decline the address and tell the tunnel 
+server to choose another.
+
+Also, a conflict on the local link at the tunnel server end may force a 
+reconfiguration. That requires the tunnel server to inform the tunnel 
+client that the address it was allocated has been forcibly revoked, which 
+is not handled very well by current tunneling protocols.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr  4 02:00:21 2001
+Received: from segue.merit.edu ([198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA03292
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Apr 2001 02:00:20 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4D27E5DDF1; Wed,  4 Apr 2001 01:24:58 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 394575DE03; Wed,  4 Apr 2001 01:24:58 -0400 (EDT)
+Received: from rly-ip02.mx.aol.com (rly-ip02.mx.aol.com [152.163.225.160])
+	by segue.merit.edu (Postfix) with ESMTP id 1058A5DDF1
+	for <ZeroConf@Merit.edu>; Wed,  4 Apr 2001 01:24:57 -0400 (EDT)
+Received: from tot-tq.proxy.aol.com (tot-tq.proxy.aol.com [152.163.201.1])
+	  by rly-ip02.mx.aol.com (8.8.8/8.8.8/AOL-5.0.0)
+	  with ESMTP id BAA18162 for <ZeroConf@Merit.edu>;
+	  Wed, 4 Apr 2001 01:24:55 -0400 (EDT)
+Received: from VAIO.PacBell.net (AC94A20F.ipt.aol.com [172.148.162.15])
+	by tot-tq.proxy.aol.com (8.10.0/8.10.0) with ESMTP id f345Oqr26642
+	for <ZeroConf@Merit.edu>; Wed, 4 Apr 2001 01:24:52 -0400 (EDT)
+Message-Id: <5.0.2.1.2.20010404131926.01f52d80@PacBell.net>
+X-Sender: Celeborn@PacBell.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.0.2
+Date: Wed, 04 Apr 2001 13:22:02 +0800
+To: Zero Configuration <ZeroConf@merit.edu>
+From: Peter Johansson <PJohansson@ACM.org>
+Subject: Re: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+In-Reply-To: <200104030622.XAA25461@scv2.apple.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+X-Apparently-From: PJohansson@aol.com
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 11:22 PM 4/2/01, Stuart Cheshire wrote:
+
+>There are a number of references to Ethernet in the document. In most 
+>cases, Ethernet is not in fact a requirement, and other IEEE 802 media 
+>would work just as well.
+
+Why are we mentioning EITHER Ethernet or IEEE 802, specifically? Is there 
+something unique to Draft-IETF-ZeroConf-LinkLocal that concerns itself 
+solely with IEEE 802 networks?
+
+What about the other media that support Internet protocol that will have 
+link local usage? For example, IPv4 over IEEE 1394 (RFC 2734)?
+
+
+Regards,
+
+Peter Johansson
+
+Congruent Software, Inc.
+98 Colorado Avenue
+Berkeley, CA  94707
+
+(510) 527-3926
+(510) 527-3856 FAX
+
+PJohansson@ACM.org
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr  4 04:09:00 2001
+Received: from segue.merit.edu ([198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id EAA11067
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Apr 2001 04:09:00 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 30C3A5DE03; Wed,  4 Apr 2001 04:08:52 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 15E015DDB6; Wed,  4 Apr 2001 04:08:52 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 492E85DE3F
+	for <ZeroConf@merit.edu>; Wed,  4 Apr 2001 04:08:50 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id BAA08094
+	for <ZeroConf@merit.edu>; Wed, 4 Apr 2001 01:08:49 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52b33e6720118164e13a4@apple.com>;
+ Wed, 4 Apr 2001 01:08:49 -0700
+Received: from [206.111.147.153] (vpn-gh-2.apple.com [17.254.136.1])
+	by scv2.apple.com (8.9.3/8.9.3) with ESMTP id BAA02131;
+	Wed, 4 Apr 2001 01:08:49 -0700 (PDT)
+User-Agent: Microsoft-Outlook-Express-Macintosh-Edition/5.02.2022
+Date: Wed, 04 Apr 2001 01:08:50 -0700
+Subject: Re: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+From: Stuart Cheshire <cheshire@apple.com>
+To: Peter Johansson <PJohansson@acm.org>,
+        Zero Configuration <ZeroConf@merit.edu>
+Message-ID: <B6F024A2.8C63%cheshire@apple.com>
+In-Reply-To: <5.0.2.1.2.20010404131926.01f52d80@PacBell.net>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+on 4/3/01 10:22 pm, Peter Johansson wrote:
+
+> Why are we mentioning EITHER Ethernet or IEEE 802, specifically? Is there
+> something unique to Draft-IETF-ZeroConf-LinkLocal that concerns itself
+> solely with IEEE 802 networks?
+> 
+> What about the other media that support Internet protocol that will have
+> link local usage? For example, IPv4 over IEEE 1394 (RFC 2734)?
+
+We mention Ethernet to provide context. For example, the draft recommends an
+interval of two seconds between ARPs. On what networks is this appropriate?
+On *all* networks that support ARP? What about a network that supports ARP
+but runs at a rate of one bit per second? Mentioning 10/100/1000Mb/s
+Ethernet indicates the scope for which the recommendation was intended. For
+networks outside this scope, implementers may want to adjust the timing
+parameters (and issue a new RFC specifying IPv4 link-local for those
+networks).
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr  4 08:35:25 2001
+Received: from segue.merit.edu ([198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA16004
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Apr 2001 08:35:25 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 95DF35DEA7; Wed,  4 Apr 2001 08:34:37 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7FF695DEA9; Wed,  4 Apr 2001 08:34:37 -0400 (EDT)
+Received: from gw-nl4.philips.com (gw-nl4.philips.com [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id ECD895DEA7
+	for <zeroconf@merit.edu>; Wed,  4 Apr 2001 08:34:35 -0400 (EDT)
+Received: from smtprelay-nl1.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id OAA07391;
+          Wed, 4 Apr 2001 14:34:31 +0200 (MEST)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtprelay-eur1.philips.com(130.139.36.3) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma007388; Wed, 4 Apr 01 14:34:31 +0200
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id OAA12790; Wed, 4 Apr 2001 14:34:30 +0200 (MET DST)
+Received: from EHLMS01.DIAMOND.PHILIPS.COM (ehlms01sv1.diamond.philips.com [130.139.54.212]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id OAA26838; Wed, 4 Apr 2001 14:34:28 +0200 (MET DST)
+Received: by EHLMS01.DIAMOND.PHILIPS.COM (Soft-Switch LMS 4.0) with snapi
+          via EMEA3 id 0056890025886887; Wed, 4 Apr 2001 14:36:01 +0200
+To: <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>, <cheshire@apple.com>
+Subject: Re: link-local-0.2 txt
+Message-ID: <0056890025886887000002L972*@MHS>
+Date: Wed, 4 Apr 2001 14:36:01 +0200
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1; name="MEMO 04/04/01 14:32:14"
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id IAA16004
+
+_____________________________________________________________________________-
+>>Would it be a good idea to give a definition of on-link and off-link
+>>thus showing that hosts connected to different physical segments
+>>connected by bridges are all on-link.
+
+>Can you suggest some proposed text?
+
+below mij proposal:
+
+A bridge connects two, possibly different, physical media such that all packets from one medium 
+are forwarded to the other medium without modification to the IP related control information
+(with exception of ARP packets) 
+Routers change IP related control information (e.g. TTL) when routing packets from one medium 
+to the other,
+
+Two devices are called on-link when there is a path between them that passes via zero to n (n>0) bridges
+and no routers. 
+
+Two devices are called off-link when every path between them involves a router.
+
+
+>>- physical (dis)connection behavior; especially as many IHDN standards
+>>specify this in great detail
+
+>Can you suggest some proposed text?
+
+>By the way, I do not support the idea of sending gratuitous ARPs whenever
+>a link-state change is detected, since this (a) wastes bandwidth, and (b)
+>causes reconfigurations that may in fact not have been necessary, such as
+>in the case of a wireless host momentarily passing into range.
+
+Your last remark prevents a simple solution.
+The main idea of the following text is that two on-links hosts do not share the same IP address and
+ ongoing communication may be stopped even if this was not absolutely necessary with hindsight.
+
+A boundary condition exists:
+In the home, applications are developed that maintain a view on the network configuration and
+use. That allows the monitoring of streams between devices and stopping these streams when a
+receiving device has been removed. Also they may be used for menu choices to support the selection
+of devices by a user. It will be embarassing if devices are selected in one room that are removed
+in another room (especially if this happened a few minutes ago; As long as no communication
+ with the disconnected device is initiated, the device is considered connected).. 
+Suggestion: a higher level protocol in the home looks after the presence of devices 
+(membership protocol).
+
+
+Below follows my proposal
+
+Consider the two actions (connect and disconnect) separately;
+
+- Consider disconnect
+When a device disconnects, the link-local protocol is recommended not to take any action: 
+Any ongoing IP communication will eventually signal that the host is unreachable. 
+The IP address of the disconnected host can eventually be allocated to a new host. 
+
+- Consider connect
+three cases: the connected device was recently disconnected, the connected device
+is repetetively connected and disconnected (wireless media)  or the connected device is reinserted 
+after reboot. The last case is simple and the host will send "ARP probes" with its former address if
+stored somewhere.
+
+->Running comment:
+->For the first two cases one may wonder when the device is considered disconnected, especially as 
+->disconnection is not signalled.
+-> For very short disconnection intervals all communication can go on and the device will keep
+->its own IP address. For long disconnection intervals the device closes all it ongoing communcations
+->selects its former IP address and sends an "ARP" probe. The question remains what is long.
+
+A host considers itself correct when no disconnections have happened over a period longer than
+a given correctness interval, C. The length of C is medium dependent.
+Call "te" the time of the end of the last correctness interval. Assume t is the present clock time. Consider 
+three states: (Connected, Possibly connected and Disconnected). A host decides to be in one
+of these three states if
+1) Connected: the interval [te,t) is small i.e. t-te < C1, where C1 is medium dependent
+2) Possibly connected: the interval [te,t) is larger than C1 but smaller than C2, i.e. C1 <= t-te < C2, where C1 is
+      a medium dependent constant
+3) Disconnected: the interval [te,t) is larger than C2 but smaller than C3, i.e. C2 <= t - te < C3, where C3 is a medium
+    dependent constant with C3 < C
+
+Under condition 1, the host continues with the allocated IP address and continues ongoing communication.
+Under condition 2, the host sends a gratuitous ARP and continues communication unless a conflict is detetected
+Under condition 3, the host stops all ongoing communication, allocates its former IP address and sends "ARP probes" as
+any starting host.
+
+The correct values of the constants C1,C2, C3  and C are important. Typically C is longer than the period over which ARP probes
+are sent by a host, while C3 is less than half the period over which ARP probes are sent by a host.
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr  4 12:52:05 2001
+Received: from segue.merit.edu ([198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id MAA25639
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Apr 2001 12:52:05 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E7FDC5DE17; Wed,  4 Apr 2001 12:51:48 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D66A75DE15; Wed,  4 Apr 2001 12:51:48 -0400 (EDT)
+Received: from gate.internaut.com (unknown [64.38.134.101])
+	by segue.merit.edu (Postfix) with ESMTP id 85C485DDAC
+	for <ZeroConf@merit.edu>; Wed,  4 Apr 2001 12:51:47 -0400 (EDT)
+Received: from e1kj2 (e1kj2 [64.38.134.109])
+	by gate.internaut.com (8.10.2/8.10.2) with SMTP id f34GfUN10591;
+	Wed, 4 Apr 2001 09:41:30 -0700
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "Stuart Cheshire" <cheshire@apple.com>,
+        "Peter Johansson" <PJohansson@acm.org>,
+        "Zero Configuration" <ZeroConf@merit.edu>
+Subject: RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Wed, 4 Apr 2001 09:53:01 -0700
+Message-ID: <OJEJKOMOEAKLMOILFCPJIEEBEFAA.aboba@internaut.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+In-Reply-To: <B6F024A2.8C63%cheshire@apple.com>
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>> Why are we mentioning EITHER Ethernet or IEEE 802, specifically? Is there
+>> something unique to Draft-IETF-ZeroConf-LinkLocal that concerns itself
+>> solely with IEEE 802 networks?
+>>
+>> What about the other media that support Internet protocol that will have
+>> link local usage? For example, IPv4 over IEEE 1394 (RFC 2734)?
+
+>We mention Ethernet to provide context. For example, the draft recommends
+an
+>interval of two seconds between ARPs. On what networks is this appropriate?
+>On *all* networks that support ARP? What about a network that supports ARP
+>but runs at a rate of one bit per second?
+
+I don't think we're likely to see more ARP-supporting media at low data
+rates. New media (1394, 802.11, etc.) are all high speed. So it's
+probably fine for these parameters to apply to any media that
+supports ARP. The recommendations can be a SHOULD in order to be
+able to deal with exceptions.
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr  4 13:45:11 2001
+Received: from segue.merit.edu ([198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id NAA27129
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Apr 2001 13:45:10 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4B4B65DE15; Wed,  4 Apr 2001 12:56:09 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 367895DDDA; Wed,  4 Apr 2001 12:56:09 -0400 (EDT)
+Received: from gate.internaut.com (unknown [64.38.134.101])
+	by segue.merit.edu (Postfix) with ESMTP id B43BD5DDAC
+	for <zeroconf@merit.edu>; Wed,  4 Apr 2001 12:56:07 -0400 (EDT)
+Received: from e1kj2 (e1kj2 [64.38.134.109])
+	by gate.internaut.com (8.10.2/8.10.2) with SMTP id f34GjrN10864;
+	Wed, 4 Apr 2001 09:45:53 -0700
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "Stuart Cheshire" <cheshire@apple.com>, <zeroconf@merit.edu>
+Cc: <dthaler@microsoft.com>
+Subject: RE: IPv4 linklocal security
+Date: Wed, 4 Apr 2001 09:57:24 -0700
+Message-ID: <OJEJKOMOEAKLMOILFCPJMEEBEFAA.aboba@internaut.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+In-Reply-To: <200104030622.XAA01932@scv1.apple.com>
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>Unless you do that, the router won't have any knowledge of net 
+>169.254/16, so it will just bounce the packets to its default gateway.
+
+>Am I missing something here?
+
+No, except that the default route may get you quite a ways (try a
+traceroute and see). As Daniel Senie suggested, I think you really
+want a router who receives packets to 169.254/16 to send them to
+the "bit bucket". 
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr  4 14:29:53 2001
+Received: from segue.merit.edu ([198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id OAA28347
+	for <zeroconf-archive@odin.ietf.org>; Wed, 4 Apr 2001 14:29:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id CCB825DE7E; Wed,  4 Apr 2001 14:29:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id BCF075DE6C; Wed,  4 Apr 2001 14:29:44 -0400 (EDT)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 5D4D25DE63
+	for <zeroconf@merit.edu>; Wed,  4 Apr 2001 14:29:43 -0400 (EDT)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id LAA09047
+	for <zeroconf@merit.edu>; Wed, 4 Apr 2001 11:29:42 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52b576d606118164e13a4@apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Apr 2001 11:29:42 -0700
+Received: from [206.111.147.153] (vpn-gh-61.apple.com [17.254.136.60])
+	by scv1.apple.com (8.9.3/8.9.3) with ESMTP id LAA07018;
+	Wed, 4 Apr 2001 11:29:41 -0700 (PDT)
+User-Agent: Microsoft-Outlook-Express-Macintosh-Edition/5.02.2022
+Date: Wed, 04 Apr 2001 11:29:43 -0700
+Subject: Re: WG Last Call for draft-ietf-zeroconf-ipv4-linklocal-02.txt
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-ID: <B6F0B627.8C91%cheshire@apple.com>
+In-Reply-To: <B6D4683A.853D%cheshire@apple.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+The last call period for draft-ietf-zeroconf-ipv4-linklocal-02.txt ended at
+midnight Tuesday 3rd April 2001.
+
+Thanks to everyone who sent comments. There were many good suggestions for
+clarifications and improvements to the wording, but no contentious
+disagreements. A list of modifications and a new revised draft will be
+posted to the list in the near future. The new draft will be submitted to
+the IESG for consideration as a Proposed Standard.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Apr  5 17:27:32 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id RAA14871
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Apr 2001 17:27:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C9F475DE9D; Thu,  5 Apr 2001 17:27:22 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id B8EFB5DE69; Thu,  5 Apr 2001 17:27:22 -0400 (EDT)
+Received: from sj-msg-core-4.cisco.com (sj-msg-core-4.cisco.com [171.71.163.10])
+	by segue.merit.edu (Postfix) with ESMTP id 7FB475DDFC
+	for <ZeroConf@merit.edu>; Thu,  5 Apr 2001 17:27:21 -0400 (EDT)
+Received: from mira-sjcm-2.cisco.com (mira-sjcm-2.cisco.com [171.69.43.98])
+	by sj-msg-core-4.cisco.com (8.9.3/8.9.1) with ESMTP id OAA28138;
+	Thu, 5 Apr 2001 14:27:17 -0700 (PDT)
+Received: from kitab.cisco.com (kitab.cisco.com [171.69.187.233])
+	by mira-sjcm-2.cisco.com (Mirapoint)
+	with ESMTP id ACH10657;
+	Thu, 5 Apr 2001 14:27:07 -0700 (PDT)
+Received: (from raj@localhost)
+	by kitab.cisco.com (8.11.0/8.9.2) id f35LR6g06771;
+	Thu, 5 Apr 2001 14:27:06 -0700 (PDT)
+	(envelope-from raj)
+From: Richard Johnson <raj@cisco.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <15052.58151.961354.768646@kitab.cisco.com>
+Date: Thu, 5 Apr 2001 14:27:03 -0700
+To: Jim Busse <JIM@pc.sj.nec.com>
+Cc: Bernard Aboba <aboba@internaut.com>, Stuart Cheshire <cheshire@apple.com>,
+        Peter Johansson <PJohansson@acm.org>,
+        Zero Configuration <ZeroConf@merit.edu>
+Subject: RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+In-Reply-To: <F3E15FD680AED311A6E600E0291E108C1BC5FD@GALATICA>
+References: <F3E15FD680AED311A6E600E0291E108C1BC5FD@GALATICA>
+X-Mailer: VM 6.90 under 20.4 "Emerald" XEmacs  Lucid
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Jim Busse writes:
+ > Bernard:
+ > In support of your low-bit-rate observation:  Bluetooth is effective
+ > 750Kbit.  If there are parked piconets, an ARP sequence covering those
+ > piconets might be something you don't want to repeat in seconds.  Repeated
+ > in Minutes is probably OK.
+ > Jim Busse
+ > Chief Architect
+ > NEC Systems Inc
+
+Maybe some statement like "... rate limited to no more than X
+percentage of the bandwidth (or effective throughput rate?) can be
+used for ARP"?
+
+/raj
+
+ >  -----Original Message-----
+ > From: 	Bernard Aboba [mailto:aboba@internaut.com] 
+ > Sent:	Wednesday, April 04, 2001 9:53 AM
+ > To:	Stuart Cheshire; Peter Johansson; Zero Configuration
+ > Subject:	RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+ > 
+ > >> Why are we mentioning EITHER Ethernet or IEEE 802, specifically? Is there
+ > >> something unique to Draft-IETF-ZeroConf-LinkLocal that concerns itself
+ > >> solely with IEEE 802 networks?
+ > >>
+ > >> What about the other media that support Internet protocol that will have
+ > >> link local usage? For example, IPv4 over IEEE 1394 (RFC 2734)?
+ > 
+ > >We mention Ethernet to provide context. For example, the draft recommends
+ > an
+ > >interval of two seconds between ARPs. On what networks is this appropriate?
+ > >On *all* networks that support ARP? What about a network that supports ARP
+ > >but runs at a rate of one bit per second?
+ > 
+ > I don't think we're likely to see more ARP-supporting media at low data
+ > rates. New media (1394, 802.11, etc.) are all high speed. So it's
+ > probably fine for these parameters to apply to any media that
+ > supports ARP. The recommendations can be a SHOULD in order to be
+ > able to deal with exceptions.
+
+
+
+From owner-zeroconf@merit.edu  Thu Apr  5 23:15:04 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id XAA20317
+	for <zeroconf-archive@odin.ietf.org>; Thu, 5 Apr 2001 23:15:04 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 3412E5DDA0; Thu,  5 Apr 2001 17:12:01 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1E0F25DDFC; Thu,  5 Apr 2001 17:12:01 -0400 (EDT)
+Received: from mail4.nec.com (dns4.nec.com [131.241.15.4])
+	by segue.merit.edu (Postfix) with ESMTP id 9A1025DDA0
+	for <ZeroConf@merit.edu>; Thu,  5 Apr 2001 17:11:59 -0400 (EDT)
+Received: from netkeeper2.sj.nec.com (netkeeper2.sj.nec.com [131.241.31.10])
+	by mail4.nec.com (/) with ESMTP id f35LBr528428;
+	Thu, 5 Apr 2001 14:11:53 -0700 (PDT)
+Received: from galatica.pc.sj.nec.com (localhost [127.0.0.1])
+	by netkeeper2.sj.nec.com (8.9.1a/8.9.1) with ESMTP id OAA29093;
+	Thu, 5 Apr 2001 14:14:56 -0700 (PDT)
+Received: by GALATICA with Internet Mail Service (5.5.2448.0)
+	id <HYV57RV7>; Thu, 5 Apr 2001 14:02:14 -0700
+Message-ID: <F3E15FD680AED311A6E600E0291E108C1BC5FD@GALATICA>
+From: Jim Busse <JIM@pc.sj.nec.com>
+To: Bernard Aboba <aboba@internaut.com>, Stuart Cheshire <cheshire@apple.com>,
+        Peter Johansson <PJohansson@acm.org>,
+        Zero Configuration <ZeroConf@merit.edu>
+Subject: RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Thu, 5 Apr 2001 14:02:12 -0700 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Bernard:
+In support of your low-bit-rate observation:  Bluetooth is effective
+750Kbit.  If there are parked piconets, an ARP sequence covering those
+piconets might be something you don't want to repeat in seconds.  Repeated
+in Minutes is probably OK.
+Jim Busse
+Chief Architect
+NEC Systems Inc
+
+
+ -----Original Message-----
+From: 	Bernard Aboba [mailto:aboba@internaut.com] 
+Sent:	Wednesday, April 04, 2001 9:53 AM
+To:	Stuart Cheshire; Peter Johansson; Zero Configuration
+Subject:	RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+
+>> Why are we mentioning EITHER Ethernet or IEEE 802, specifically? Is there
+>> something unique to Draft-IETF-ZeroConf-LinkLocal that concerns itself
+>> solely with IEEE 802 networks?
+>>
+>> What about the other media that support Internet protocol that will have
+>> link local usage? For example, IPv4 over IEEE 1394 (RFC 2734)?
+
+>We mention Ethernet to provide context. For example, the draft recommends
+an
+>interval of two seconds between ARPs. On what networks is this appropriate?
+>On *all* networks that support ARP? What about a network that supports ARP
+>but runs at a rate of one bit per second?
+
+I don't think we're likely to see more ARP-supporting media at low data
+rates. New media (1394, 802.11, etc.) are all high speed. So it's
+probably fine for these parameters to apply to any media that
+supports ARP. The recommendations can be a SHOULD in order to be
+able to deal with exceptions.
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Apr 18 04:39:24 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id EAA08114
+	for <zeroconf-archive@odin.ietf.org>; Wed, 18 Apr 2001 04:39:23 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 705E75DE04; Wed, 18 Apr 2001 04:39:12 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 5D71E5DDD9; Wed, 18 Apr 2001 04:39:12 -0400 (EDT)
+Received: from mail2.rdc2.bc.home.com (mail2.rdc2.bc.home.com [24.2.10.85])
+	by segue.merit.edu (Postfix) with ESMTP id 1BAAA5DDA7
+	for <zeroconf@merit.edu>; Wed, 18 Apr 2001 04:39:11 -0400 (EDT)
+Received: from canada.com ([24.113.66.244]) by mail2.rdc2.bc.home.com
+          (InterMail vM.4.01.03.20 201-229-121-120-20010223) with ESMTP
+          id <20010418083910.YCHL20687.mail2.rdc2.bc.home.com@canada.com>
+          for <zeroconf@merit.edu>; Wed, 18 Apr 2001 01:39:10 -0700
+Message-ID: <3ADD5271.52AE76D9@canada.com>
+Date: Wed, 18 Apr 2001 01:38:09 -0700
+From: "J.P. Joly" <joly@canada.com>
+X-Mailer: Mozilla 4.75 [en] (Windows NT 5.0; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: this is a test - please ignore
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+I just want to make sure I'm receiving messages on this list.
+
+Thanks - jp
+
+
+
+

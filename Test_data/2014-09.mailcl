@@ -1,0 +1,994 @@
+
+From gina.h.rinehart@gmail.com  Mon Sep  8 23:10:32 2014
+Return-Path: <gina.h.rinehart@gmail.com>
+X-Original-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Received: from localhost (ietfa.amsl.com [127.0.0.1]) by ietfa.amsl.com (Postfix) with ESMTP id 327ED1A0ADD for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Mon,  8 Sep 2014 23:10:32 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 3.156
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.156 tagged_above=-999 required=5 tests=[BAYES_60=1.5, DKIM_SIGNED=0.1, DKIM_VALID=-0.1, DKIM_VALID_AU=-0.1, FREEMAIL_FROM=0.001, HTML_MESSAGE=0.001, LOTS_OF_MONEY=0.001, SPF_PASS=-0.001, US_DOLLARS_3=1.754] autolearn=no
+Received: from mail.ietf.org ([4.31.198.44]) by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 5H0CtLqBiQKf for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Mon,  8 Sep 2014 23:10:31 -0700 (PDT)
+Received: from mail-wi0-x242.google.com (mail-wi0-x242.google.com [IPv6:2a00:1450:400c:c05::242]) (using TLSv1 with cipher ECDHE-RSA-RC4-SHA (128/128 bits)) (No client certificate requested) by ietfa.amsl.com (Postfix) with ESMTPS id BC9991A0AF6 for <zeroconf-archive@lists.ietf.org>; Mon,  8 Sep 2014 23:10:23 -0700 (PDT)
+Received: by mail-wi0-f194.google.com with SMTP id n3so176694wiv.9 for <zeroconf-archive@lists.ietf.org>; Mon, 08 Sep 2014 23:10:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=0FMHUuXyfIB6eXzSN+R9jmzXTgp3EyAdyolbieoT0PQ=; b=Dw9vxUinG/JLnOUEej0A2cUOrczmaiFadMLo+BXWX2tD3WNa2mv8qC9M6FMK+2mcKi 2WDT4FsULaNIc44KiVOcJcF5PHnWfUmYMP87uT+XkSf3QPSOt6dCqFuQcWM/bhJh5aWj W1YzGkySa7tdvdjOwXsWEa7BFMLF1JYzTErZQWRrbD+8Y9hRVcUjWxqKF7lQuHULueQd haxIzt3B5ffhEVBbU2ZwP+baKqhNFSLrIgSZRTwZHNwHCJQZoBvYREi7pksXzsRUAsLu PfTdWgel0XhZKw9UY8YcPH72ojXXHUSGEUVsUfdgP5egIaoCCAgzk9HKN3YN6Cn+EVkj an1Q==
+MIME-Version: 1.0
+X-Received: by 10.194.221.74 with SMTP id qc10mr39664353wjc.39.1410243022413; Mon, 08 Sep 2014 23:10:22 -0700 (PDT)
+Received: by 10.217.13.18 with HTTP; Mon, 8 Sep 2014 23:10:22 -0700 (PDT)
+Date: Tue, 9 Sep 2014 07:10:22 +0100
+Message-ID: <CALA69o1eM5OM7fP0rkQR4+COJtRdpQgg6C6e0djp=G_zWcar1A@mail.gmail.com>
+Subject: RE
+From: "G.H Rinehart" <gina.h.rinehart@gmail.com>
+To: undisclosed-recipients:;
+Content-Type: multipart/alternative; boundary=001a11c3b02e65e60f05029bcad7
+
+--001a11c3b02e65e60f05029bcad7
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+My Dear Beloved,
+
+Greetings to you. I know contacting you Via Internet is not a good medium
+as well known but it is my only option to communicate with you due to my
+health status.
+
+I am happy to know you as God knows you better and knows why i was directed
+to you at this point in time. Please do not be afraid of how I got your
+contact which was from the ministry of commerce and foreign trade
+departments.
+
+I am writing this mail to you with heavy sorrow in my heart, My name is
+Georgina Hope Rinehart, A great citizen of Australia, born in Perth,
+Western Australia, in February 1954. I am a 60-years-old widow with a
+weight problem, a persecution complex and I am contacting you because I
+don=E2=80=99t have any other option than to tell you as I know I won't surv=
+ive for
+long and I was touched to open up to you about my humanitarian project
+worth ($200,000,000.00USD) Two Hundred Million Dollars which I intend to
+use for charity.
+
+Please reply me back if you respect Your God and Creator, So we can proceed
+with the project.
+
+You can check on my Wikipedia page to get a proper understanding of me:
+
+http://en.wikipedia.org/wiki/Gina_Rinehart
+
+God bless you Always!
+
+Warm Regards.
+Mrs. Georgina Hope Rinehart.
+
+--001a11c3b02e65e60f05029bcad7
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span style=3D"line-height:18px;outline:none;font-family:H=
+elvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">My Dear Belov=
+ed,=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:Helv=
+etica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"lin=
+e-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb=
+(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;fon=
+t-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Gre=
+etings to you. I know contacting you Via Internet is not a good medium as w=
+ell known but it is my only option to communicate with you due to my health=
+ status.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family=
+:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=
+=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;co=
+lor:rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:n=
+one;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15=
+px">I am happy to know you as God knows you better and knows why i was dire=
+cted to you at this point in time. Please do not be afraid of how I got you=
+r contact which was from the ministry of commerce and foreign trade departm=
+ents.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:He=
+lvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"l=
+ine-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:r=
+gb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;f=
+ont-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">I=
+ am writing this mail to you with heavy sorrow in my heart, My name is Geor=
+gina Hope Rinehart, A great citizen of Australia, born in Perth, Western Au=
+stralia, in February 1954. I am a 60-years-old widow with a weight problem,=
+ a persecution complex and I am contacting you because I don=E2=80=99t have=
+ any other option than to tell you as I know I won&#39;t survive for long a=
+nd I was touched to open up to you about my humanitarian project worth ($20=
+0,000,000.00USD) Two Hundred Million Dollars which I intend to use for char=
+ity.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:Hel=
+vetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"li=
+ne-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rg=
+b(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;fo=
+nt-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Pl=
+ease reply me back if you respect Your God and Creator, So we can proceed w=
+ith the project.=C2=A0</span><br style=3D"line-height:18px;outline:none;fon=
+t-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br=
+ style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-se=
+rif;color:rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;out=
+line:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-s=
+ize:15px">You can check on my Wikipedia page to get a proper understanding =
+of me:=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:H=
+elvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"=
+line-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:=
+rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;=
+font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">=
+<a rel=3D"nofollow" target=3D"_blank" href=3D"http://en.wikipedia.org/wiki/=
+Gina_Rinehart" style=3D"color:rgb(0,0,0);line-height:1.2em;outline:none">ht=
+tp://en.wikipedia.org/wiki/Gina_Rinehart</a>=C2=A0</span><br style=3D"line-=
+height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb(5=
+1,51,51);font-size:15px"><br style=3D"line-height:18px;outline:none;font-fa=
+mily:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><span s=
+tyle=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-seri=
+f;color:rgb(51,51,51);font-size:15px">God bless you Always!=C2=A0</span><br=
+ style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-se=
+rif;color:rgb(51,51,51);font-size:15px"><br style=3D"line-height:18px;outli=
+ne:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-siz=
+e:15px"><span style=3D"line-height:18px;outline:none;font-family:Helvetica,=
+Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Warm Regards.=C2=A0</s=
+pan><br style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,=
+sans-serif;color:rgb(51,51,51);font-size:15px"><span style=3D"line-height:1=
+8px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51)=
+;font-size:15px">Mrs. Georgina Hope Rinehart.</span><br></div>
+
+--001a11c3b02e65e60f05029bcad7--
+
+From gina.h.rinehart@gmail.com  Mon Sep  8 23:10:33 2014
+Return-Path: <gina.h.rinehart@gmail.com>
+X-Original-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Received: from localhost (ietfa.amsl.com [127.0.0.1]) by ietfa.amsl.com (Postfix) with ESMTP id 32AB71A0AF6 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Mon,  8 Sep 2014 23:10:33 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 2.456
+X-Spam-Level: **
+X-Spam-Status: No, score=2.456 tagged_above=-999 required=5 tests=[BAYES_50=0.8, DKIM_SIGNED=0.1, DKIM_VALID=-0.1, DKIM_VALID_AU=-0.1, FREEMAIL_FROM=0.001, HTML_MESSAGE=0.001, LOTS_OF_MONEY=0.001, SPF_PASS=-0.001, US_DOLLARS_3=1.754] autolearn=no
+Received: from mail.ietf.org ([4.31.198.44]) by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id X_tRTnPt1Vrg for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Mon,  8 Sep 2014 23:10:32 -0700 (PDT)
+Received: from mail-wi0-x244.google.com (mail-wi0-x244.google.com [IPv6:2a00:1450:400c:c05::244]) (using TLSv1 with cipher ECDHE-RSA-RC4-SHA (128/128 bits)) (No client certificate requested) by ietfa.amsl.com (Postfix) with ESMTPS id C64461A0AF7 for <zeroconf-archive@ietf.org>; Mon,  8 Sep 2014 23:10:23 -0700 (PDT)
+Received: by mail-wi0-f196.google.com with SMTP id ex7so1441357wid.11 for <zeroconf-archive@ietf.org>; Mon, 08 Sep 2014 23:10:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=0FMHUuXyfIB6eXzSN+R9jmzXTgp3EyAdyolbieoT0PQ=; b=Dw9vxUinG/JLnOUEej0A2cUOrczmaiFadMLo+BXWX2tD3WNa2mv8qC9M6FMK+2mcKi 2WDT4FsULaNIc44KiVOcJcF5PHnWfUmYMP87uT+XkSf3QPSOt6dCqFuQcWM/bhJh5aWj W1YzGkySa7tdvdjOwXsWEa7BFMLF1JYzTErZQWRrbD+8Y9hRVcUjWxqKF7lQuHULueQd haxIzt3B5ffhEVBbU2ZwP+baKqhNFSLrIgSZRTwZHNwHCJQZoBvYREi7pksXzsRUAsLu PfTdWgel0XhZKw9UY8YcPH72ojXXHUSGEUVsUfdgP5egIaoCCAgzk9HKN3YN6Cn+EVkj an1Q==
+MIME-Version: 1.0
+X-Received: by 10.194.221.74 with SMTP id qc10mr39664353wjc.39.1410243022413; Mon, 08 Sep 2014 23:10:22 -0700 (PDT)
+Received: by 10.217.13.18 with HTTP; Mon, 8 Sep 2014 23:10:22 -0700 (PDT)
+Date: Tue, 9 Sep 2014 07:10:22 +0100
+Message-ID: <CALA69o1eM5OM7fP0rkQR4+COJtRdpQgg6C6e0djp=G_zWcar1A@mail.gmail.com>
+Subject: RE
+From: "G.H Rinehart" <gina.h.rinehart@gmail.com>
+To: undisclosed-recipients:;
+Content-Type: multipart/alternative; boundary=001a11c3b02e65e60f05029bcad7
+
+--001a11c3b02e65e60f05029bcad7
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+My Dear Beloved,
+
+Greetings to you. I know contacting you Via Internet is not a good medium
+as well known but it is my only option to communicate with you due to my
+health status.
+
+I am happy to know you as God knows you better and knows why i was directed
+to you at this point in time. Please do not be afraid of how I got your
+contact which was from the ministry of commerce and foreign trade
+departments.
+
+I am writing this mail to you with heavy sorrow in my heart, My name is
+Georgina Hope Rinehart, A great citizen of Australia, born in Perth,
+Western Australia, in February 1954. I am a 60-years-old widow with a
+weight problem, a persecution complex and I am contacting you because I
+don=E2=80=99t have any other option than to tell you as I know I won't surv=
+ive for
+long and I was touched to open up to you about my humanitarian project
+worth ($200,000,000.00USD) Two Hundred Million Dollars which I intend to
+use for charity.
+
+Please reply me back if you respect Your God and Creator, So we can proceed
+with the project.
+
+You can check on my Wikipedia page to get a proper understanding of me:
+
+http://en.wikipedia.org/wiki/Gina_Rinehart
+
+God bless you Always!
+
+Warm Regards.
+Mrs. Georgina Hope Rinehart.
+
+--001a11c3b02e65e60f05029bcad7
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span style=3D"line-height:18px;outline:none;font-family:H=
+elvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">My Dear Belov=
+ed,=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:Helv=
+etica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"lin=
+e-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb=
+(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;fon=
+t-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Gre=
+etings to you. I know contacting you Via Internet is not a good medium as w=
+ell known but it is my only option to communicate with you due to my health=
+ status.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family=
+:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=
+=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;co=
+lor:rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:n=
+one;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15=
+px">I am happy to know you as God knows you better and knows why i was dire=
+cted to you at this point in time. Please do not be afraid of how I got you=
+r contact which was from the ministry of commerce and foreign trade departm=
+ents.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:He=
+lvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"l=
+ine-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:r=
+gb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;f=
+ont-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">I=
+ am writing this mail to you with heavy sorrow in my heart, My name is Geor=
+gina Hope Rinehart, A great citizen of Australia, born in Perth, Western Au=
+stralia, in February 1954. I am a 60-years-old widow with a weight problem,=
+ a persecution complex and I am contacting you because I don=E2=80=99t have=
+ any other option than to tell you as I know I won&#39;t survive for long a=
+nd I was touched to open up to you about my humanitarian project worth ($20=
+0,000,000.00USD) Two Hundred Million Dollars which I intend to use for char=
+ity.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:Hel=
+vetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"li=
+ne-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rg=
+b(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;fo=
+nt-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Pl=
+ease reply me back if you respect Your God and Creator, So we can proceed w=
+ith the project.=C2=A0</span><br style=3D"line-height:18px;outline:none;fon=
+t-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br=
+ style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-se=
+rif;color:rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;out=
+line:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-s=
+ize:15px">You can check on my Wikipedia page to get a proper understanding =
+of me:=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:H=
+elvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"=
+line-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:=
+rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;=
+font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">=
+<a rel=3D"nofollow" target=3D"_blank" href=3D"http://en.wikipedia.org/wiki/=
+Gina_Rinehart" style=3D"color:rgb(0,0,0);line-height:1.2em;outline:none">ht=
+tp://en.wikipedia.org/wiki/Gina_Rinehart</a>=C2=A0</span><br style=3D"line-=
+height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb(5=
+1,51,51);font-size:15px"><br style=3D"line-height:18px;outline:none;font-fa=
+mily:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><span s=
+tyle=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-seri=
+f;color:rgb(51,51,51);font-size:15px">God bless you Always!=C2=A0</span><br=
+ style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-se=
+rif;color:rgb(51,51,51);font-size:15px"><br style=3D"line-height:18px;outli=
+ne:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-siz=
+e:15px"><span style=3D"line-height:18px;outline:none;font-family:Helvetica,=
+Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Warm Regards.=C2=A0</s=
+pan><br style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,=
+sans-serif;color:rgb(51,51,51);font-size:15px"><span style=3D"line-height:1=
+8px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51)=
+;font-size:15px">Mrs. Georgina Hope Rinehart.</span><br></div>
+
+--001a11c3b02e65e60f05029bcad7--
+
+From s-2pr49gmknwcbgdpzlb6esplmjin7o7ntc493wwjau9n5etm899jrmteq@bounce.linkedin.com  Tue Sep  9 00:43:51 2014
+Return-Path: <s-2pr49gmknwcbgdpzlb6esplmjin7o7ntc493wwjau9n5etm899jrmteq@bounce.linkedin.com>
+X-Original-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Received: from localhost (ietfa.amsl.com [127.0.0.1]) by ietfa.amsl.com (Postfix) with ESMTP id 8A4F61A1F73 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Tue,  9 Sep 2014 00:43:51 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -11.051
+X-Spam-Level:
+X-Spam-Status: No, score=-11.051 tagged_above=-999 required=5 tests=[BAYES_00=-1.9, DKIM_ADSP_CUSTOM_MED=0.001, DKIM_SIGNED=0.1, DKIM_VALID=-0.1, FREEMAIL_FROM=0.001, GB_I_INVITATION=-2, HTML_MESSAGE=0.001, RCVD_IN_DNSWL_MED=-2.3, RCVD_IN_RP_CERTIFIED=-3, RCVD_IN_RP_SAFE=-2, REMOVE_BEFORE_LINK=1.8, RP_MATCHES_RCVD=-1.652, SPF_HELO_PASS=-0.001, SPF_PASS=-0.001] autolearn=ham
+Received: from mail.ietf.org ([4.31.198.44]) by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id gXbh9srOZaMt for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Tue,  9 Sep 2014 00:43:49 -0700 (PDT)
+Received: from maile-ee.linkedin.com (maile-ee.linkedin.com [199.101.162.61]) (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)) (No client certificate requested) by ietfa.amsl.com (Postfix) with ESMTPS id A383E1A212A for <zeroconf-archive@ietf.org>; Tue,  9 Sep 2014 00:43:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linkedin.com; s=proddkim1024; t=1410248627; bh=1WbozvyMkhfHSorHu5qa8ARQ5lYUejfEx8gecOYS/TY=; h=From:Subject:MIME-Version:Content-Type:To:Date:X-LinkedIn-Class: X-LinkedIn-Template:X-LinkedIn-fbl; b=NsIEnuOkY+TwqSsqYL1QJfIgOsQwNWXxAplWlzWV+NwYfvBNRiWOiEY40/7GPufaO 1qSJl2oDe+UsfrNEn6o3z8i1+MFTGNSRUG8z0ybDMItCDIecIfq9WFZK8tg40chz6c DPRazm5gSePCgD6aMW11cMtJzNVDw9SENry1VTAY=
+From: "G.H. Rinehart" <gina.h.rinehart@gmail.com>
+Message-ID: <1744246321.936430.1410248627647.JavaMail.app@ela4-app7908.prod>
+Subject: I'd like to add you to my professional network on LinkedIn
+MIME-Version: 1.0
+Content-Type: multipart/alternative;  boundary="----=_Part_936428_1903873851.1410248627646"
+To:  <zeroconf-archive@ietf.org>
+Date: Tue, 9 Sep 2014 07:43:47 +0000 (UTC)
+X-LinkedIn-Class: INVITE-GUEST
+X-LinkedIn-Template: invite_guest
+X-LinkedIn-fbl: s-2pr49gmknwcbgdpzlb6esplmjin7o7ntc493wwjau9n5etm899jrmteq
+X-LinkedIn-Id: dzg0f7-hzuxm6k7-1t
+
+------=_Part_936428_1903873851.1410248627646
+Content-Type: text/plain;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: text-body
+
+Hi,
+
+I&#39;d like to include you in my network to share updates and stay in touc=
+h.
+
+- G.H.
+
+Accept: http://www.linkedin.com/blink?simpleRedirect=3D0Qe3ANd30Mc3oPc3cNcj=
+0RcjARfkh9rCZFt65QqnpKqipEj4BgkRcVqjRVpkJApn9xq7cCt7dBtmtvpnhFtCVFfmJB9C5Qo=
+ORBt6BSrCAJt7dBtmsJr6RBfmtKqmJzon9Q9ClQqnpKimtBkClOs3Rx9DgNbjtHdCRUtnFEbjtC=
+c6tWp3RBfP9SbSkLrmZzbCVFp6lHrCBIbDtTtOYLeDdMt7hE&msgID=3DI7845550072_1&mark=
+AsRead=3D
+
+
+You are receiving Invitation emails. Unsubscribe here: http://www.linkedin.=
+com/blink?simpleRedirect=3D1DsCZ5cylCt6lFc3gBpnpFq6dOoiRCrCZzrT9BuzRIqm5Jpi=
+pQs64MczxGcTdSpP9IcDoZp6Bx9z4Sc30OfmhF9z4JfmhFripQciQTqPpJu7lWq2QTpz1DuCgZp=
+6BB9DhPpnlDnSlQqnpKqjRHpipBoCBOoTdytndKtiRBt6BSrCAJt7dBtmsJr6RBfmtKqmJzon9Q=
+9B4ScSh5hSxmhD9JhB51fmVBqSZkp6BJ9DdKtjRQ9DgNbjtHdCRUtnFEbjtCc6tWp3RBfP9SbSk=
+LrmZzbCVFp6lHrCBIbDtTtOYLeDdMt7hE&msgID=3DI7845550072_1&markAsRead=3D
+
+ Learn why we included this at the following link: http://www.linkedin.com/=
+blink?simpleRedirect=3D3wUdPgZp4BBr6dFt79x9DhPpnlDnSlQqnpKqjRHpipIsBlBoSBSs=
+CljsClJrThPtmcZoipQciQTqPpJu7lWq2QTpz1DuCgZpjYOtyZBbSRLoOVKqmhBqSVFr2VTtTsL=
+bPFMt7hE&msgID=3DI7845550072_1&markAsRead=3D
+&copy; 2014, LinkedIn Corporation. 2029 Stierlin Ct. Mountain View, CA 9404=
+3, USA
+------=_Part_936428_1903873851.1410248627646
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: html-body
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"-webkit-text-size-adj=
+ust:none;">
+ <head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html;charset=3Dutf-8" /=
+>
+  <meta name=3D"HandheldFriendly" content=3D"true" />
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width; initial-scale=3D=
+0.666667; maximum-scale=3D0.666667; user-scalable=3D0" />
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+  <title></title>
+  <style type=3D"text/css">@media all and (max-width:590px) { *[class].resp=
+onsive { width:290px !important; } *[id]#center { width:50%; margin:0 auto;=
+ display:table; } *[class].responsive-spacer table { width:20px !important;=
+ } *[class].vspacer { margin-top:10px !important; margin-bottom:15px !impor=
+tant; margin-left:0 !important; } *[class].res-font14 { font-size:14px !imp=
+ortant; } *[class].res-font16 { font-size:16px !important; } *[class].res-f=
+ont13 { font-size:13px !important; } *[class].res-font12 { font-size:12px !=
+important; } *[class].res-font10 { font-size:10px !important; } *[class].re=
+s-font18 { font-size:18px !important; } *[class].res-font18 span { font-siz=
+e:18px !important; } *[class].responsive-50per { width:100% !important; } *=
+[class].responsive-spacer70 { width:70px !important; } *[class].hideIMG { h=
+eight:0px !important; width:0px !important; } *[class].res-height30 { heigh=
+t:30px !important; } *[class].res-height20 { height:20px !important; } *[cl=
+ass].res-height20 div { height:20px !important; } *[class].res-height10 { h=
+eight:10px !important; } *[class].res-height10 div { height:10px !important=
+; } *[class].res-height10.email-spacer div { height:10px !important; min-he=
+ight:10px !important; line-height:10px !important; font-size:10px !importan=
+t; } *[class].res-height0 { height:0px !important; } *[class].res-height0 d=
+iv { height:0px !important; } *[class].res-width280 { width:280px !importan=
+t; } *[class].res-width25 { width:25px !important; } *[class].res-width10 {=
+ width:10px !important; } *[class].res-width10 table { width:10px !importan=
+t; } *[class].res-width120 { width:120px !important; } *[class].res-padding=
+ { width:0 !important; } *[class].res-padding table { width:0 !important; }=
+ *[class].cellpadding-none { width:0px !important; } *[class].cellpadding-n=
+one table { border:collapse !important; } *[class].cellpadding-none table t=
+d { padding:0 !important; } *[class].display-none { display:none !important=
+; } *[class].display-block { display:block !important; } *[class].remove-ma=
+rgin { margin:0 !important; } *[class].remove-border { border:none !importa=
+nt; } *[class].res-img60 { width:60px !important; height:60px !important; }=
+ *[class].res-img75 { width:75px !important; height:75px !important; } *[cl=
+ass].res-img100 { width:100px !important; height:100px !important; } *[clas=
+s].res-img320 { width:320px !important; height:auto !important; position:re=
+lative; } *[class].res-img90x63 { width:90px !important; height:63px !impor=
+tant; } *[class].res-border { border-top:1px solid #E1E1E1 !important; } *[=
+class].responsive2col { width:100% !important; } *[class].center-content { =
+text-align:center !important; } *[class].hide-for-mobile { display:none !im=
+portant; } *[class].show-for-mobile { width:100% !important; max-height:non=
+e !important; visibility:visible !important; overflow:visible !important; f=
+loat:none !important; height:auto !important; display:block !important; } *=
+[class].responsive-table { display:table !important; } *[class].responsive-=
+row { display:table-row !important; } *[class].responsive-cell { display:ta=
+ble-cell !important; } *[class].fix-table-content { table-layout:fixed; } *=
+[class].res-padding08 { padding-top:8px; } *[class].header-spacer { table-l=
+ayout:auto !important; width:250px !important; } *[class].header-spacer td,=
+ *[class].header-spacer div { width:250px !important; } } @media all and (-=
+webkit-min-device-pixel-ratio:1.5) { *[id]#base-header-logo { background-im=
+age:url(http://s.c.lnkd.licdn.com/scds/common/u/images/email/logos/logo_lin=
+kedin_tm_email_197x48_v1.png) !important; background-size:95px; background-=
+repeat:no-repeat; width:95px !important; height:21px !important; } *[id]#ba=
+se-header-logo img { display:none; } *[id]#base-header-logo a { height:21px=
+ !important; } *[id]#base-header-logo-china { background-image:url(http://s=
+.c.lnkd.licdn.com/scds/common/u/images/email/logos/logo_linkedin_tm_china_e=
+mail_266x42_v1.png) !important; background-size:133px; background-repeat:no=
+-repeat; width:133px !important; height:21px !important; } *[id]#base-heade=
+r-logo-china img { display:none; } *[id]#base-header-logo-china a { height:=
+21px !important; } } </style>
+ </head>
+ <body style=3D"background-color:#DFDFDF;padding:0;margin:0 auto;width:100%=
+;">
+  <span style=3D"display: none !important;font-size: 1px;visibility: hidden=
+;opacity: 0;color: transparent;height: 0;width: 0;mso-hide: all;"></span>
+  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-fam=
+ily:Helvetica,Arial,sans-serif; border-collapse:collapse; width:100% !impor=
+tant; font-family:Helvetica,Arial,sans-serif; margin:0; padding:0;" width=
+=3D"100%" bgcolor=3D"#DFDFDF">
+   <tbody>
+    <tr>
+     <td colspan=3D"3">
+      <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font=
+-family:Helvetica,Arial,sans-serif; " width=3D"1">
+       <tbody>
+        <tr>
+         <td>
+          <div style=3D"height:5px;font-size:5px;line-height:5px;">
+           &nbsp;
+          </div></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+    <tr>
+     <td>
+      <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"cent=
+er" width=3D"100%" style=3D"table-layout: fixed;">
+       <tbody>
+        <tr>
+         <td align=3D"center">
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"=
+font-family:Helvetica,Arial,sans-serif; min-width:290px;" width=3D"600" cla=
+ss=3D"responsive">
+           <tbody>
+            <tr>
+             <td style=3D"font-family:Helvetica,Arial,sans-serif;">
+              <table width=3D"1" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"1" class=3D"email-spacer">
+               <tbody>
+                <tr>
+                 <td>
+                  <div style=3D"height:8px;font-size:8px;line-height:8px">
+                   &nbsp;
+                  </div></td>
+                </tr>
+               </tbody>
+              </table>
+              <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"font-family:Helvetica,Arial,sans-serif;" width=3D"100%" bgcolor=3D"#DDD=
+DDD">
+               <tbody>
+                <tr>
+                 <td align=3D"left" valign=3D"middle" width=3D"95" height=
+=3D"21" id=3D"base-header-logo"><a style=3D"text-decoration:none;cursor:poi=
+nter;border:none;display:block;height:21px;width:100%;" href=3D"http://www.=
+linkedin.com/blink?simpleRedirect=3Dt7dBtmtvpnhFtCVFfmJB9CZDrSMJpnhFtCVFbnh=
+PpnlDbmNJpjRDrCBHoS5Ot2pMrmUZt2pQciQTqPpJu7lWq2QTpz1DuCgZpjYOtyZBbSRLoOVKqm=
+hBqSVFr2VTtTsLbPFMt7hE&amp;msgID=3DI7845550072_1&amp;markAsRead=3D"><img sr=
+c=3D"http://s.c.lnkd.licdn.com/scds/common/u/images/email/logos/logo_linked=
+in_tm_email_95x21_v1.png" width=3D"95" height=3D"21" alt=3D"LinkedIn" style=
+=3D"border:none;text-decoration:none;" /></a></td>
+                </tr>
+               </tbody>
+              </table>
+              <table width=3D"1" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"1" class=3D"email-spacer">
+               <tbody>
+                <tr>
+                 <td>
+                  <div style=3D"height:8px;font-size:8px;line-height:8px">
+                   &nbsp;
+                  </div></td>
+                </tr>
+               </tbody>
+              </table>
+              <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"font-family:Helvetica,Arial,sans-serif;" width=3D"100%" bgcolor=3D"#333=
+333">
+               <tbody>
+                <tr>
+                 <td width=3D"20" class=3D"responsive-spacer">
+                  <table width=3D"20" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"1" class=3D"email-spacer">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:0px;font-size:0px;line-height:0p=
+x">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                 <td width=3D"100%">
+                  <table width=3D"1" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"1" class=3D"email-spacer">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:12px;font-size:12px;line-height:=
+12px">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                 <td width=3D"20" class=3D"responsive-spacer">
+                  <table width=3D"20" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"1" class=3D"email-spacer">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:0px;font-size:0px;line-height:0p=
+x">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table>
+              <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%" bgcolor=3D"#FF=
+FFFF">
+               <tbody>
+                <tr>
+                 <td width=3D"20" class=3D"res-width10">
+                  <table width=3D"20px" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"1" class=3D"email-spacer res-width10">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:0px;font-size:0px;line-height:0p=
+x">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                 <td style=3D"color: #333333; font-family: Helvetica,Arial,=
+sans-serif; font-size: 15px; line-height: 18px;" align=3D"left">
+                  <table width=3D"1" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"1" class=3D"email-spacer res-height10">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:20px;font-size:20px;line-height:=
+20px">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table>
+                  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%">
+                       <tbody>
+                        <tr>
+                         <td style=3D"vertical-align: top; font-family: Hel=
+vetica,Arial,sans-serif;" width=3D"100%">
+                          <table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td style=3D"font-size: 20px; font-weight: bol=
+d; color:#333333;" valign=3D"top">G.H. Rinehart</td>
+                            </tr>
+                            <tr>
+                             <td style=3D"color:#333333;font-size:15px;" cl=
+ass=3D"res-font16">Business Oriented</td>
+                            </tr>
+                            <tr>
+                             <td style=3D"color:#B3B3B3;font-size:13px;" cl=
+ass=3D"res-font16">Canberra, Australia</td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%">
+                       <tbody>
+                        <tr>
+                         <td style=3D"border-bottom:1px solid #e5e5e5;">
+                          <table width=3D"1" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"1" class=3D"email-spacer">
+                           <tbody>
+                            <tr>
+                             <td>
+                              <div style=3D"height:20px;font-size:20px;line=
+-height:20px">
+                               &nbsp;
+                              </div></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                    <tr>
+                     <td>
+                      <table width=3D"1" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"1" class=3D"email-spacer">
+                       <tbody>
+                        <tr>
+                         <td>
+                          <div style=3D"height:20px;font-size:20px;line-hei=
+ght:20px">
+                           &nbsp;
+                          </div></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%">
+                       <tbody>
+                        <tr>
+                         <td style=3D"font-family:Helvetica,Arial,sans-seri=
+f;color:#333333;font-size:15px;">I'd like to include you in my network to s=
+hare updates and stay in touch.</td>
+                        </tr>
+                        <tr>
+                         <td>
+                          <table width=3D"1" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"1" class=3D"email-spacer">
+                           <tbody>
+                            <tr>
+                             <td>
+                              <div style=3D"height:15px;font-size:15px;line=
+-height:15px">
+                               &nbsp;
+                              </div></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                        <tr>
+                         <td>- G.H.</td>
+                        </tr>
+                        <tr>
+                         <td>
+                          <table width=3D"1" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"1" class=3D"email-spacer">
+                           <tbody>
+                            <tr>
+                             <td>
+                              <div style=3D"height:20px;font-size:20px;line=
+-height:20px">
+                               &nbsp;
+                              </div></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                        <tr>
+                         <td>
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"left">
+                           <tbody>
+                            <tr>
+                             <td align=3D"center" height=3D"30" valign=3D"m=
+iddle" bgcolor=3D"#287BBC" background=3D"http://s.c.lnkd.licdn.com/scds/com=
+mon/u/img/email/bg_btn_katy_blue_medium.png" style=3D"background:url(http:/=
+/s.c.lnkd.licdn.com/scds/common/u/img/email/bg_btn_katy_blue_medium.png) re=
+peat-x scroll bottom #287BBC;background-color:#287BBC;border:1px solid #1B5=
+480;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px; cur=
+sor: pointer;">
+                              <table border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%=
+" bgcolor=3D"transparent">
+                               <tbody>
+                                <tr>
+                                 <td width=3D"13">
+                                  <table width=3D"13px" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"1" class=3D"email-spacer">
+                                   <tbody>
+                                    <tr>
+                                     <td>
+                                      <div style=3D"height:0px;font-size:0p=
+x;line-height:0px">
+                                       &nbsp;
+                                      </div></td>
+                                    </tr>
+                                   </tbody>
+                                  </table></td>
+                                 <td><a href=3D"http://www.linkedin.com/bli=
+nk?simpleRedirect=3D0Qe3ANd30Mc3oPc3cNcj0RcjARfkh9rCZFt65QqnpKqipEj4BgkRcVq=
+jRVpkJApn9xq7cCt7dBtmtvpnhFtCVFfmJB9C5QoORBt6BSrCAJt7dBtmsJr6RBfmtKqmJzon9Q=
+9ClQqnpKimtBkClOs3Rx9DgNbjtHdCRUtnFEbjtCc6tWp3RBfP9SbSkLrmZzbCVFp6lHrCBIbDt=
+TtOYLeDdMt7hE&amp;msgID=3DI7845550072_1&amp;markAsRead=3D" style=3D"text-de=
+coration:none; font-size: 13px;font-family: Helvetica,Arial,sans-serif;font=
+-weight: bold;color: white;white-space: nowrap;display: block;" target=3D"_=
+blank"><span style=3D"font-size: 13px;font-family: Helvetica,Arial,sans-ser=
+if;font-weight: bold;color: white;white-space: nowrap;display: block;">Conf=
+irm that you know G.H.</span></a></td>
+                                 <td width=3D"13">
+                                  <table width=3D"13px" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"1" class=3D"email-spacer">
+                                   <tbody>
+                                    <tr>
+                                     <td>
+                                      <div style=3D"height:0px;font-size:0p=
+x;line-height:0px">
+                                       &nbsp;
+                                      </div></td>
+                                    </tr>
+                                   </tbody>
+                                  </table></td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                    <tr>
+                     <td>
+                      <table width=3D"1" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"1" class=3D"email-spacer">
+                       <tbody>
+                        <tr>
+                         <td>
+                          <div style=3D"height:20px;font-size:20px;line-hei=
+ght:20px">
+                           &nbsp;
+                          </div></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                 <td width=3D"20" class=3D"res-width10">
+                  <table width=3D"20px" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"1" class=3D"email-spacer res-width10">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:0px;font-size:0px;line-height:0p=
+x">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table>
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"=
+font-family:Helvetica,Arial,sans-serif; " width=3D"600" class=3D"responsive=
+">
+           <tbody>
+            <tr>
+             <td align=3D"left">
+              <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"font-family:Helvetica,Arial,sans-serif; " width=3D"100%" class=3D"respo=
+nsive">
+               <tbody>
+                <tr>
+                 <td>
+                  <table width=3D"1" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"1" class=3D"email-spacer">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:10px;font-size:10px;line-height:=
+10px">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td align=3D"left">
+                  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-family:Helvetica,Arial,sans-serif; font-size:11px; font-family=
+:Helvetica,Arial,sans-serif; color:#999999;" width=3D"100%" class=3D"respon=
+sive res-font10">
+                   <tbody>
+                    <tr>
+                     <td>You are receiving Invitation to Connect emails. <a=
+ style=3D"text-decoration:none;color:#0077B5;" href=3D"http://www.linkedin.=
+com/blink?simpleRedirect=3D1DsCZ5cylCt6lFc3gBpnpFq6dOoiRCrCZzrT9BuzRIqm5Jpi=
+pQs64MczxGcTdSpP9IcDoZp6Bx9z4Sc30OfmhF9z4JfmhFripQciQTqPpJu7lWq2QTpz1DuCgZp=
+6BB9DhPpnlDnSlQqnpKqjRHpipBoCBOoTdytndKtiRBt6BSrCAJt7dBtmsJr6RBfmtKqmJzon9Q=
+9B4ScSh5hSxmhD9JhB51fmVBqSZkp6BJ9DdKtjRQ9DgNbjtHdCRUtnFEbjtCc6tWp3RBfP9SbSk=
+LrmZzbCVFp6lHrCBIbDtTtOYLeDdMt7hE&amp;msgID=3DI7845550072_1&amp;markAsRead=
+=3D">Unsubscribe</a></td>
+                    </tr>
+                    <tr>
+                     <td><a style=3D"text-decoration:none;color:#0077B5;" h=
+ref=3D"http://www.linkedin.com/blink?simpleRedirect=3D3wUdPgZp4BBr6dFt79x9D=
+hPpnlDnSlQqnpKqjRHpipIsBlBoSBSsCljsClJrThPtmcZoipQciQTqPpJu7lWq2QTpz1DuCgZp=
+jYOtyZBbSRLoOVKqmhBqSVFr2VTtTsLbPFMt7hE&amp;msgID=3DI7845550072_1&amp;markA=
+sRead=3D">Learn why we included this.</a></td>
+                    </tr>
+                    <tr>
+                     <td>
+                      <table width=3D"1" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"1" class=3D"email-spacer">
+                       <tbody>
+                        <tr>
+                         <td>
+                          <div style=3D"height:10px;font-size:10px;line-hei=
+ght:10px">
+                           &nbsp;
+                          </div></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                    <tr>
+                     <td>&copy; 2014, LinkedIn Corporation. 2029 Stierlin C=
+t. Mountain View, CA 94043, USA</td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td>
+                  <table width=3D"1" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"1" class=3D"email-spacer">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <div style=3D"height:20px;font-size:20px;line-height:=
+20px">
+                       &nbsp;
+                      </div></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table>
+  <img src=3D"http://www.linkedin.com/emimp/dzg0f7-hzuxm6k7-1t.gif" style=
+=3D"width:1px; height:1px;" />
+ </body>
+</html>
+------=_Part_936428_1903873851.1410248627646--
+
+From gina.h.rinehart@gmail.com  Wed Sep 10 11:07:48 2014
+Return-Path: <gina.h.rinehart@gmail.com>
+X-Original-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Received: from localhost (ietfa.amsl.com [127.0.0.1]) by ietfa.amsl.com (Postfix) with ESMTP id 994601A70FE for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Wed, 10 Sep 2014 11:07:48 -0700 (PDT)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 1.756
+X-Spam-Level: *
+X-Spam-Status: No, score=1.756 tagged_above=-999 required=5 tests=[BAYES_50=0.8, DKIM_SIGNED=0.1, DKIM_VALID=-0.1, DKIM_VALID_AU=-0.1, FREEMAIL_FROM=0.001, HTML_MESSAGE=0.001, LOTS_OF_MONEY=0.001, RCVD_IN_DNSWL_LOW=-0.7, SPF_PASS=-0.001, US_DOLLARS_3=1.754] autolearn=no
+Received: from mail.ietf.org ([4.31.198.44]) by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id D9Qn5bMyjQQ6 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Wed, 10 Sep 2014 11:07:47 -0700 (PDT)
+Received: from mail-wi0-f193.google.com (mail-wi0-f193.google.com [209.85.212.193]) (using TLSv1 with cipher ECDHE-RSA-RC4-SHA (128/128 bits)) (No client certificate requested) by ietfa.amsl.com (Postfix) with ESMTPS id 232CB1A70E1 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Wed, 10 Sep 2014 11:07:46 -0700 (PDT)
+Received: by mail-wi0-f193.google.com with SMTP id q5so845579wiv.0 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Wed, 10 Sep 2014 11:07:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=bh2lRfBgB1Tq1NzP9j3UIyBmCgiRrbI3LUNUF53Jc4o=; b=siLFffqpru8DRlHHK4GfBiCzNw9aBmFvXHoC7gNBYvc/B1wLU6NEKzMRDXN/zWOdcb Kl+BFbHtSCM5qhXwtj5q9vX8kYTDCiHqqVcA3SpdoSqLOz1+vGUnh6DKfAG0mXDndjQ+ oyJvG1ckAFqFH7IdC4UWKgstyV3Ywo6/nc4lq1QeczvfikSy6EqZ7VlIDtK+uIIsxP/a BHfpT8+ZX10D1FlNzC1zstV0YAo35aFnEa65RWvo7Pm3kljG7HT785xbAdazziIgMpNf icgS9jPbYRF1ppmGZy3zQ1u1/D0AfGRuQQ/p7+IDTdAtDhYdgcgtiqn9atFbwxuCUrWe BhwQ==
+MIME-Version: 1.0
+X-Received: by 10.180.211.76 with SMTP id na12mr844109wic.57.1410366526993; Wed, 10 Sep 2014 09:28:46 -0700 (PDT)
+Received: by 10.217.13.18 with HTTP; Wed, 10 Sep 2014 09:28:46 -0700 (PDT)
+Date: Wed, 10 Sep 2014 17:28:46 +0100
+Message-ID: <CALA69o1uMyq-_hqXzOoya5zwJd=oC3tz2Q1wBPrcisNSK8pyuQ@mail.gmail.com>
+Subject: RE
+From: "G.H Rinehart" <gina.h.rinehart@gmail.com>
+To: undisclosed-recipients:;
+Content-Type: multipart/alternative; boundary=001a11c26476d83b9f0502b88b9c
+
+--001a11c26476d83b9f0502b88b9c
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+My Dear Beloved,
+
+Greetings to you. I know contacting you Via Internet is not a good medium
+as well known but it is my only option to communicate with you due to my
+health status.
+
+I am happy to know you as God knows you better and knows why i was directed
+to you at this point in time. Please do not be afraid of how I got your
+contact which was from the ministry of commerce and foreign trade
+departments.
+
+I am writing this mail to you with heavy sorrow in my heart, My name is
+Georgina Hope Rinehart, A great citizen of Australia, born in Perth,
+Western Australia, in February 1954. I am a 60-years-old widow with a
+weight problem, a persecution complex and I am contacting you because I
+don=E2=80=99t have any other option than to tell you as I know I won't surv=
+ive for
+long and I was touched to open up to you about my humanitarian project
+worth ($200,000,000.00USD) Two Hundred Million Dollars which I intend to
+use for charity.
+
+Please reply me back if you respect Your God and Creator, So we can proceed
+with the project.
+
+You can check on my Wikipedia page to get a proper understanding of me:
+
+http://en.wikipedia.org/wiki/Gina_Rinehart
+
+God bless you Always!
+
+Warm Regards.
+Mrs. Georgina Hope Rinehart.
+
+--001a11c26476d83b9f0502b88b9c
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span style=3D"line-height:18px;outline:none;font-family:H=
+elvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">My Dear Belov=
+ed,=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:Helv=
+etica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"lin=
+e-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb=
+(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;fon=
+t-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Gre=
+etings to you. I know contacting you Via Internet is not a good medium as w=
+ell known but it is my only option to communicate with you due to my health=
+ status.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family=
+:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=
+=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;co=
+lor:rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:n=
+one;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15=
+px">I am happy to know you as God knows you better and knows why i was dire=
+cted to you at this point in time. Please do not be afraid of how I got you=
+r contact which was from the ministry of commerce and foreign trade departm=
+ents.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:He=
+lvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"l=
+ine-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:r=
+gb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;f=
+ont-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">I=
+ am writing this mail to you with heavy sorrow in my heart, My name is Geor=
+gina Hope Rinehart, A great citizen of Australia, born in Perth, Western Au=
+stralia, in February 1954. I am a 60-years-old widow with a weight problem,=
+ a persecution complex and I am contacting you because I don=E2=80=99t have=
+ any other option than to tell you as I know I won&#39;t survive for long a=
+nd I was touched to open up to you about my humanitarian project worth ($20=
+0,000,000.00USD) Two Hundred Million Dollars which I intend to use for char=
+ity.=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:Hel=
+vetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"li=
+ne-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rg=
+b(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;fo=
+nt-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Pl=
+ease reply me back if you respect Your God and Creator, So we can proceed w=
+ith the project.=C2=A0</span><br style=3D"line-height:18px;outline:none;fon=
+t-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br=
+ style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-se=
+rif;color:rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;out=
+line:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-s=
+ize:15px">You can check on my Wikipedia page to get a proper understanding =
+of me:=C2=A0</span><br style=3D"line-height:18px;outline:none;font-family:H=
+elvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><br style=3D"=
+line-height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:=
+rgb(51,51,51);font-size:15px"><span style=3D"line-height:18px;outline:none;=
+font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px">=
+<a rel=3D"nofollow" href=3D"http://en.wikipedia.org/wiki/Gina_Rinehart" tar=
+get=3D"_blank" style=3D"color:rgb(0,0,0);line-height:1.2em;outline:none">ht=
+tp://en.wikipedia.org/wiki/Gina_Rinehart</a>=C2=A0</span><br style=3D"line-=
+height:18px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb(5=
+1,51,51);font-size:15px"><br style=3D"line-height:18px;outline:none;font-fa=
+mily:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-size:15px"><span s=
+tyle=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-seri=
+f;color:rgb(51,51,51);font-size:15px">God bless you Always!=C2=A0</span><br=
+ style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,sans-se=
+rif;color:rgb(51,51,51);font-size:15px"><br style=3D"line-height:18px;outli=
+ne:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51);font-siz=
+e:15px"><span style=3D"line-height:18px;outline:none;font-family:Helvetica,=
+Arial,sans-serif;color:rgb(51,51,51);font-size:15px">Warm Regards.=C2=A0</s=
+pan><br style=3D"line-height:18px;outline:none;font-family:Helvetica,Arial,=
+sans-serif;color:rgb(51,51,51);font-size:15px"><span style=3D"line-height:1=
+8px;outline:none;font-family:Helvetica,Arial,sans-serif;color:rgb(51,51,51)=
+;font-size:15px">Mrs. Georgina Hope Rinehart.</span><br></div>
+
+--001a11c26476d83b9f0502b88b9c--

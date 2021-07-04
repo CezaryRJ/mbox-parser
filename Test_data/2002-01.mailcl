@@ -1,0 +1,130 @@
+From owner-zeroconf@merit.edu  Sat Jan 26 03:01:50 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA03617
+	for <zeroconf-archive@lists.ietf.org>; Sat, 26 Jan 2002 03:01:50 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id EBA96912AA; Sat, 26 Jan 2002 03:01:39 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B9688912AB; Sat, 26 Jan 2002 03:01:38 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 93628912AA
+	for <zeroconf@trapdoor.merit.edu>; Sat, 26 Jan 2002 03:01:37 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9818D5DE6C; Sat, 26 Jan 2002 03:01:36 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from web20603.mail.yahoo.com (web20603.mail.yahoo.com [216.136.226.161])
+	by segue.merit.edu (Postfix) with SMTP id 030685DDCB
+	for <ZeroConf@Merit.edu>; Sat, 26 Jan 2002 03:01:36 -0500 (EST)
+Message-ID: <20020126080135.16316.qmail@web20603.mail.yahoo.com>
+Received: from [207.18.199.151] by web20603.mail.yahoo.com via HTTP; Sat, 26 Jan 2002 00:01:35 PST
+Date: Sat, 26 Jan 2002 00:01:35 -0800 (PST)
+From: Chandrasekhar Varada <csvarada@yahoo.com>
+Subject: why is zeroconf restricted to a link/ lan segment ?
+To: ZeroConf@merit.edu
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Greetings!
+
+I have a basic doubt. 
+Zeroconf link local address draft has a restriction on
+the packet forwarding, i.e Router should not forward
+the packets if its  source or destination address is a
+link local address. This restricts the  scope of
+zeroconf to a link and so it cannot be extended to
+multiple networks or to a corporate network. 
+
+Is this because, we have DHCP for that? or 
+is there any other specific reason?
+
+Thanks for you time,
+Chandu.
+
+__________________________________________________
+Do You Yahoo!?
+Great stuff seeking new owners in Yahoo! Auctions! 
+http://auctions.yahoo.com
+
+
+From owner-zeroconf@merit.edu  Sat Jan 26 05:09:31 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA04713
+	for <zeroconf-archive@lists.ietf.org>; Sat, 26 Jan 2002 05:09:30 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 42A72912AB; Sat, 26 Jan 2002 05:09:22 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 165DD912AD; Sat, 26 Jan 2002 05:09:22 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1EAA2912AB
+	for <zeroconf@trapdoor.merit.edu>; Sat, 26 Jan 2002 05:09:21 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EF2F45DE4C; Sat, 26 Jan 2002 05:09:20 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 741025DDAB
+	for <ZeroConf@merit.edu>; Sat, 26 Jan 2002 05:09:20 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.11.3/8.11.3) with ESMTP id g0QA9JQ04664
+	for <ZeroConf@merit.edu>; Sat, 26 Jan 2002 02:09:19 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T58acf684a3118164e13bc@mailgate2.apple.com>;
+ Sat, 26 Jan 2002 02:09:19 -0800
+Received: from [206.111.147.149] (vpn-gh-1065.apple.com [17.254.140.40])
+	by scv2.apple.com (8.11.3/8.11.3) with SMTP id g0QA9Iw23386;
+	Sat, 26 Jan 2002 02:09:18 -0800 (PST)
+Message-Id: <200201261009.g0QA9Iw23386@scv2.apple.com>
+Subject: Re: why is zeroconf restricted to a link/ lan segment ?
+Date: Sat, 26 Jan 2002 02:09:19 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Chandrasekhar Varada" <csvarada@yahoo.com>, <ZeroConf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>I have a basic doubt. 
+>Zeroconf link local address draft has a restriction on
+>the packet forwarding, i.e Router should not forward
+>the packets if its  source or destination address is a
+>link local address. This restricts the  scope of
+>zeroconf to a link and so it cannot be extended to
+>multiple networks or to a corporate network. 
+>
+>Is this because, we have DHCP for that? or 
+>is there any other specific reason?
+
+You have kind-of answered the question yourself.
+
+The point of Zeroconf is to enable IP networking in the absence of 
+traditional supporting infrastructure. We want IP networking to work with 
+just a couple of IP hosts on their own -- no DHCP server, no DNS server, 
+nothing else.
+
+If you have more than one link, you need to have some kind of box to 
+connect the two links together. That box is supporting infrastructure. 
+Once you have that box there, it is a small step to also put a DHCP 
+server in it, and other supporting services.
+
+The purpose of Zeroconf is not to compete with DHCP and other established 
+techniques that already work well. The purpose of Zeroconf is to to 
+provide a safety net so that product developers can produce software (and 
+hardware) products that can safely that assume IP communication is always 
+available, even in environments where traditional supporting network 
+infrastructure is not.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+

@@ -1,0 +1,1051 @@
+From owner-zeroconf@merit.edu  Tue Feb  8 22:40:19 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id WAA19036
+	for <zeroconf-archive@lists.ietf.org>; Tue, 8 Feb 2005 22:40:19 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id EA54791279; Tue,  8 Feb 2005 22:40:15 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B5C249127D; Tue,  8 Feb 2005 22:40:15 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BC1C691279
+	for <zeroconf@trapdoor.merit.edu>; Tue,  8 Feb 2005 22:40:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A7F99582E4; Tue,  8 Feb 2005 22:40:14 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 91D14582E1
+	for <zeroconf@segue.merit.edu>; Tue,  8 Feb 2005 22:40:14 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 86ECC18CA; Tue,  8 Feb 2005 22:40:14 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from snicker.merit.edu (snicker.merit.edu [198.108.62.156])
+	by testbed9.merit.edu (Postfix) with ESMTP id 80EE118C9
+	for <zeroconf@merit.edu>; Tue,  8 Feb 2005 22:40:14 -0500 (EST)
+Received: from [192.168.1.100] (pcp01944370pcs.canton01.mi.comcast.net [68.40.122.196])
+	by snicker.merit.edu (Postfix) with ESMTP id 44969171881
+	for <zeroconf@merit.edu>; Tue,  8 Feb 2005 22:40:14 -0500 (EST)
+Date: Tue, 08 Feb 2005 22:39:59 -0500
+From: Sue Joiner <smj@merit.edu>
+To: zeroconf@merit.edu
+Subject: Test Message to the zeroconf list, please ignore
+Message-ID: <13AADF5109D978A273761D06@[192.168.1.100]>
+X-Mailer: Mulberry/3.1.6 (Win32)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+There seems to be a problem with the list and I am testing to see if I can 
+resolve the problem.
+
+Sorry for the message.
+
+   -sue
+
+Sue Joiner
+Merit Network
+
+
+From owner-zeroconf@merit.edu  Tue Feb  8 22:50:58 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id WAA19658
+	for <zeroconf-archive@lists.ietf.org>; Tue, 8 Feb 2005 22:50:57 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id DF3EE9127D; Tue,  8 Feb 2005 22:50:54 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AED3791282; Tue,  8 Feb 2005 22:50:54 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B525B9127D
+	for <zeroconf@trapdoor.merit.edu>; Tue,  8 Feb 2005 22:50:53 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 90486582EC; Tue,  8 Feb 2005 22:50:53 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 6D1AA582E4
+	for <zeroconf@segue.merit.edu>; Tue,  8 Feb 2005 22:50:53 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 58C6318F5; Tue,  8 Feb 2005 22:50:53 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from snicker.merit.edu (snicker.merit.edu [198.108.62.156])
+	by testbed9.merit.edu (Postfix) with ESMTP id 51C6F18F3
+	for <zeroconf@merit.edu>; Tue,  8 Feb 2005 22:50:53 -0500 (EST)
+Received: from [192.168.1.100] (pcp01944370pcs.canton01.mi.comcast.net [68.40.122.196])
+	by snicker.merit.edu (Postfix) with ESMTP id E665F171881
+	for <zeroconf@merit.edu>; Tue,  8 Feb 2005 22:50:52 -0500 (EST)
+Date: Tue, 08 Feb 2005 22:50:37 -0500
+From: Sue Joiner <smj@merit.edu>
+To: zeroconf@merit.edu
+Subject: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt
+Message-ID: <B7EB399668CE1E34D9FF7F41@[192.168.1.100]>
+X-Mailer: Mulberry/3.1.6 (Win32)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Date: Mon, 7 Feb 2005 15:27:38 -0800 (PST)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt
+Message-ID: <Pine.LNX.4.56.0502071527250.29713@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Mail-Handler: MailHop Outbound by DynDNS.org
+X-Originating-IP: 67.182.139.247
+X-Report-Abuse-To: abuse@dyndns.org (see
+http://www.mailhop.org/outbound/abuse.html for abuse reporting information)
+X-MHO-User: aboba
+
+The RFC Editor has announced AUTH48 on
+draft-ietf-zeroconf-ipv4-linklocal-17.txt.  In the meantime, Stuart has
+found a number of issues with the document, most of which are editorial.
+
+Before making the changes, we will be posting the issues to the list to
+get feedback.
+
+
+
+---------- End Forwarded Message ----------
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 02:00:11 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id CAA29942
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 02:00:10 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 12AA791253; Wed,  9 Feb 2005 01:59:59 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CE32F912A9; Wed,  9 Feb 2005 01:59:58 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BA30391253
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 01:59:57 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A6368582D8; Wed,  9 Feb 2005 01:59:57 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 87E0758284
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 01:59:57 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 7DFF51916; Wed,  9 Feb 2005 01:59:57 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out4.apple.com (mail-out4.apple.com [17.254.13.23])
+	by testbed9.merit.edu (Postfix) with ESMTP id 3E3131914
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 01:59:57 -0500 (EST)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out4.apple.com (8.12.11/8.12.11) with ESMTP id j196xusQ015734
+	for <zeroconf@merit.edu>; Tue, 8 Feb 2005 22:59:56 -0800 (PST)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.17) with ESMTP id <T6f009c0b42118064e142c@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Tue, 8 Feb 2005 22:59:56 -0800
+Received: from [17.219.204.238] (vpn2priv-238.apple.com [17.219.204.238])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id j196xqWa011348
+	for <zeroconf@merit.edu>; Tue, 8 Feb 2005 22:59:54 -0800 (PST)
+Message-Id: <200502090659.j196xqWa011348@relay4.apple.com>
+Subject: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt
+Date: Tue, 8 Feb 2005 22:59:39 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+During the "authors 48 hours" final review period we found various minor 
+changes that needed to be made to the document. They are, in my opinion, 
+typographical, grammatical, and editorial in nature, and none of them 
+changes the technical content or intent of the document. Admittedly, 
+there were a couple of glaring errors, like the description of passive 
+mode ftp being completely backwards, but correcting those mistakes does 
+not change the spirit nor the details of the protocol being specified.
+
+In the interest of full transparency, we're informing the (ex) Working 
+Group members on zeroconf@merit.edu, so that everyone has the opportunity 
+to see the (proposed) final document before the RFC editor publishes it, 
+and comment if they find any errors. After so many years of work, we 
+don't want to publish RFC 3927 with silly mistakes in it.
+
+Below is a summary of the changes:
+
+1. Various minor typographical nits (spurious extra spaces, spelling 
+mistakes, "ad-hoc" and "adhoc" should be "ad hoc", error in ascii-art 
+diagram, grammatically incomplete sentences, punctuation errors, etc.)
+
+2. For most of the life of draft-ietf-zeroconf-ipv4-linklocal, the term 
+"address conflict" was used exclusively, rather than "collision". However 
+towards the end of the process some text was added that was inconsistent 
+with this. Those have been changed back to "address conflict" for 
+consistency with the rest of the document.
+
+3. The terminology section introduces a very specific term "ARP Probe", 
+but the term was not always written with a capital 'P' in all places.
+
+4. Incorrect (or at least strange) text.
+
+4a. Source and/or destination address
+
+      IPv4 Link-Local addresses SHOULD
+      only be sent when a Link-Local address is used as the source
+      address.
+
+should say:
+
+      IPv4 Link-Local addresses SHOULD
+      only be sent when a Link-Local address is used as the source
+      and/or destination
+      address.
+
+4b. The host SHOULD use a routable...
+
+   The host SHOULD use a routable address in preference to an IPv4
+   Link-Local address except for communication to peers for which the
+   host has an existing TCP connection at the time in which the host
+   obtained a routable address configuration.
+
+This says that if a host has *any* existing TCP connection to a peer,
+then it can use it's LL address in preference to its routable address in
+*all* future UDP or TCP communication with that peer. Is that what it 
+meant to say? No. The new text says:
+
+   Where both an IPv4 Link-Local and a routable address are available
+   on the same interface, the routable address should be preferred as
+   the source address for new communications, but packets sent from or
+   to the IPv4 Link-Local address are still delivered as expected. The
+   IPv4 Link-Local address may continue to be used as a source address
+   in communications where switching to a preferred address would cause
+   hardship to a specific upper-layer activity (e.g., an existing TCP
+   connection). For more details, see Section 1.7.
+
+4c. Set the IPv4 TTL to 1?
+
+   A sensible default for applications which are sending from an IPv4
+   Link-Local address is to explicitly set the IPv4 TTL to 1.
+
+This would be *REALLY* bad advice to put in the document.
+
+Inexperienced application writers would take this to mean that if they
+want their application to work with IPv4LL, then they should (to quote
+the *exact* words of the document) "explicitly set the IPv4 TTL to 1".
+
+I foresee developers making a home networking product, and because they 
+want it to work with IPv4LL, they will follow the advice of the RFC and 
+use a setsockopt() call to explicitly set the IPv4 TTL to 1. When they 
+test their software or device in the target environment, it will work 
+fine, and they will ship it that way. Unfortunately, when you or I buy 
+this device, any attempt to communicate more than one hop away will fail, 
+even if the device has a perfectly correct routable address -- because 
+the developer explicitly set the IPv4 TTL to 1, as mandated by this 
+document. D'oh!
+
+There's an ironic own-goal here. The same people who were opposed to 
+IPv4LL because it would encourage the creation of devices that work only 
+on the local link, shot themselves in the foot by allowing text in the 
+document that will cause the very failure they wanted to prevent.
+
+This text has been removed. The advice to set the TTL to 1 may be 
+applicable to OS vendors making TCP/IP stacks, but not to application 
+writers.
+
+4d. Passive mode ftp
+
+   For example, FTP [RFC959] passive mode
+   transmits the IPv4 address of the client.  Assume a client starts up
+   and obtains its *passive* IPv4 configuration at a time when the host
+   has only a Link-Local address.  Later, the host gets a global IP
+   address configuration (for one of its interfaces).  The client uses
+   this global IPv4 address to contact an FTP server off of the local
+   link for which it had (or still has) an IPv4 Link-Local address
+   configured.  If the FTP client transmits its stale out-date passive
+   IPv4 configuration to the FTP server, the FTP server will be unable
+   to reach the FTP client.  The passive FTP operation will fail.
+
+This was completely backwards. Passive mode ftp DOES NOT suffer the 
+failure described; it is active mode ftp that has a potential failure. 
+New text:
+
+   For example, FTP [RFC959] (when not using
+   passive mode) transmits the IP address of the client. Suppose a
+   client starts up and obtains its IPv4 configuration at a time when
+   it has only a Link-Local address. Later, the host gets a global IP
+   address, and the client contacts an FTP server outside the local
+   link. If the FTP client transmits its old Link-Local address instead
+   of its new global IP address in the FTP "port" command, then the FTP
+   server will be unable to open a data connection back to the client,
+   and the FTP operation will fail.
+
+---
+
+The first version of RFC 3927, as it originally came from the RFC editor 
+for review, can be fetched from:
+
+<http://files.zeroconf.org/rfc3927old.txt>
+
+The revised version can be fetched from:
+
+<http://files.zeroconf.org/rfc3927new.txt>
+
+The changes, in "diff -u" format, can be fetched from
+<http://files.zeroconf.org/rfc3927diffs.txt>,
+or you can get the old and new for yourself and compare them using the 
+"diff" tool of your choice.
+
+The lines in rfc3927new.txt are intentionally NOT re-wrapped to 72 
+characters, because that has the potential to turn a one-word change into 
+a one-paragraph diff. The RFC editor will re-wrap the lines and 
+repaginate as necessary before publication.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 03:48:53 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA10615
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 03:48:53 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 035C0912B5; Wed,  9 Feb 2005 03:46:13 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 71136912AD; Wed,  9 Feb 2005 03:46:12 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 47191912B3
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 03:46:10 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 0996358287; Wed,  9 Feb 2005 03:46:10 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id E0BFC58280
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 03:46:09 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id D61E81936; Wed,  9 Feb 2005 03:46:09 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from fivedots.coe.psu.ac.th (fivedots.coe.psu.ac.th [202.12.73.64])
+	by testbed9.merit.edu (Postfix) with ESMTP id 3C0641935
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 03:46:09 -0500 (EST)
+Received: from delta.coe.psu.ac.th ([172.30.0.98] helo=delta.noi.kre.to)
+	by fivedots.coe.psu.ac.th with esmtp (Exim 3.36 #1 (Debian))
+	id 1CynU6-0001rz-00; Wed, 09 Feb 2005 15:46:06 +0700
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.noi.kre.to (8.12.11/8.11.6) with ESMTP id j198jW6q029624;
+	Wed, 9 Feb 2005 15:45:33 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt 
+In-Reply-To: <200502090659.j196xqWa011348@relay4.apple.com> 
+References: <200502090659.j196xqWa011348@relay4.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 09 Feb 2005 15:45:32 +0700
+Message-ID: <6768.1107938732@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Tue, 8 Feb 2005 22:59:39 -0800
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200502090659.j196xqWa011348@relay4.apple.com>
+
+  | 4a. Source and/or destination address
+  | 
+  |       IPv4 Link-Local addresses SHOULD
+  |       only be sent when a Link-Local address is used as the source
+  |       address.
+  | 
+  | should say:
+  | 
+  |       IPv4 Link-Local addresses SHOULD
+  |       only be sent when a Link-Local address is used as the source
+  |       and/or destination
+  |       address.
+
+I think that one is actually a technical change, but I see no reason
+not to make it, except perhaps that it isn't what the WG approved.
+
+  | 4b. The host SHOULD use a routable...
+  | 
+  |    The host SHOULD use a routable address in preference to an IPv4
+  |    Link-Local address except for communication to peers for which the
+  |    host has an existing TCP connection at the time in which the host
+  |    obtained a routable address configuration.
+  | 
+  | This says that if a host has *any* existing TCP connection to a peer,
+
+Yes, I guess that it is possible to imagine that someone may be so
+stupid as to read the text that way, though I doubt anyone would
+actually ever do it.   Correcting that is (just) reasonable, but ...
+
+  |    IPv4 Link-Local address may continue to be used as a source address
+  |    in communications where switching to a preferred address would cause
+  |    hardship to a specific upper-layer activity (e.g., an existing TCP
+  |    connection). For more details, see Section 1.7.
+
+This is not an acceptable replacement.   "cause hardship" ??   What on
+earth does that mean - "I'd have to execute an assignment statement,
+that's a hardship, so I won't do it".   Let's remain a little more in
+keeping with the intent of the text that was agreed.
+
+Replace the 4 lines quoted above with (a spelling checked version of...)
+
+	IPv4 Link-Local address may continue to be used as a source address
+	in communications where switching to a preferred address would
+	cause communications failure because of the requirements of an
+	upper layer protocol (e.g., an existing TCP connection).
+	For more details, see Section 1.7.
+
+(to readers of this message, note that that text begins in the middle of
+a sentence.)
+
+  | 4c. Set the IPv4 TTL to 1?
+  | 
+  |    A sensible default for applications which are sending from an IPv4
+  |    Link-Local address is to explicitly set the IPv4 TTL to 1.
+  | 
+  | This would be *REALLY* bad advice to put in the document.
+
+This is definitely a technical change, and totally inappropriate at this
+stage.
+
+  | Inexperienced application writers would take this to mean that if they
+  | want their application to work with IPv4LL, then they should (to quote
+  | the *exact* words of the document) "explicitly set the IPv4 TTL to 1".
+
+Yes, so they can, and provided they note the exact words of the
+document "sending from an IPv4 Link-Local address", what they're
+doing is just fine.    If they keep the TTL at 1 when sending from
+a routable address (to other than a link-local address), that's
+simply a bug (one which, incidentally, I cannot imagine surviving
+even the most rudimentary of testing by the implementor).
+
+  | I foresee developers making a home networking product, and because they 
+  | want it to work with IPv4LL, they will follow the advice of the RFC and 
+  | use a setsockopt() call to explicitly set the IPv4 TTL to 1.
+
+I foresee developers doing all kinds of crazy things, but I won't change
+the specifications to attempt to handle them all.   People are idiots,
+almost all of us, we know that - and we know we do things incorrectly.
+Eventually we also fix our mistakes (most times).
+
+  | This text has been removed. The advice to set the TTL to 1 may be 
+  | applicable to OS vendors making TCP/IP stacks, but not to application 
+  | writers.
+
+Put the text back.   Deleting this was a decision the working group could
+have made when the document was under discussion, but there is no longer a
+working group to approve any change like this (and I kind of doubt it would
+have been approved anyway).
+
+
+No problems with any of the other changes.   Or perhaps I should say,
+given that they're made, they're OK - on the other hand, if someone had
+asked *me* to actually make some of the meaningless editorial changes that
+have been made, I'd not have been happy at all...
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 13:40:58 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA25525
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 13:40:57 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id AF1719122E; Wed,  9 Feb 2005 13:40:55 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7CBA49125E; Wed,  9 Feb 2005 13:40:55 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 974249122E
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 13:40:54 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 84739582FA; Wed,  9 Feb 2005 13:40:54 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 6DA60582F3
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 13:40:54 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 643BA1995; Wed,  9 Feb 2005 13:40:54 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by testbed9.merit.edu (Postfix) with ESMTP id 430D81960
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 13:40:54 -0500 (EST)
+Received: from mailgate2.apple.com (a17-128-100-204.apple.com [17.128.100.204])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id j19IeqYe015940
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 10:40:52 -0800 (PST)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.3.17) with ESMTP id <T6f031dbecf118064cc424@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Wed, 9 Feb 2005 10:40:50 -0800
+Received: from [17.219.205.9] ([17.219.205.9])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id j19IemQ4013024
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 10:40:49 -0800 (PST)
+Message-Id: <200502091840.j19IemQ4013024@relay4.apple.com>
+Subject: Hardship to a specific upper-layer activity?
+Date: Wed, 9 Feb 2005 10:40:28 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Replace the 4 lines quoted above with (a spelling checked version of...)
+>
+>	IPv4 Link-Local address may continue to be used as a source address
+>	in communications where switching to a preferred address would
+>	cause communications failure because of the requirements of an
+>	upper layer protocol (e.g., an existing TCP connection).
+>	For more details, see Section 1.7.
+
+Agreed. This more precisely captures the intended meaning. The previous 
+wording came from Thomas Narten; unless he raises any objection to the 
+revised text, I think we should take it.
+
+I've provisionally updated <http://files.zeroconf.org/rfc3927new.txt> 
+with your new text.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 13:41:34 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA25592
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 13:41:34 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 26C799125E; Wed,  9 Feb 2005 13:41:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E8701912BE; Wed,  9 Feb 2005 13:41:33 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id F2D4E9125E
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 13:41:32 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id DEF87582FA; Wed,  9 Feb 2005 13:41:32 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id C7C0A582F3
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 13:41:32 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id BE5DF1995; Wed,  9 Feb 2005 13:41:32 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by testbed9.merit.edu (Postfix) with ESMTP id 85A401960
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 13:41:32 -0500 (EST)
+Received: from mailgate2.apple.com (a17-128-100-204.apple.com [17.128.100.204])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id j19IfWUr016101
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 10:41:32 -0800 (PST)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.3.17) with ESMTP id <T6f031e5f17118064cc424@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Wed, 9 Feb 2005 10:41:31 -0800
+Received: from [17.219.205.9] ([17.219.205.9])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id j19IfUVV013255
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 10:41:30 -0800 (PST)
+Message-Id: <200502091841.j19IfUVV013255@relay4.apple.com>
+Subject: Set the IPv4 TTL to 1?
+Date: Wed, 9 Feb 2005 10:41:09 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Put the text back.   Deleting this was a decision the working
+>group could have made when the document was under discussion, but
+>there is no longer a working group to approve any change like this
+>(and I kind of doubt it would have been approved anyway).
+
+The working group did consider whether "Link-local sources should specify 
+TTL=1", and the proposal was rejected 
+<http://www.drizzle.com/~aboba/ZEROCONF/ll29.html>. I'm not sure how it 
+found its way into the document.
+
+If this is the only area of disagreement, then I'll compromise so we can 
+move forward and publish the RFC, but reluctantly, because it's terrible 
+terrible advice to have in the document. For the record, I should state 
+why I think this:
+
+* I already see far too many consumer devices that don't work beyond the 
+local link, by design or by accident, and this advice risks encouraging 
+more such devices.
+
+* Is this "advice" actually part of the formal specification or not?
+It doesn't say, "MUST", "SHOULD" or "MAY". Is an implementer required or 
+expected to follow it, or not?
+
+* One of the goals of IPv4LL was that it should be as much like normal IP 
+as possible, so as to minimize any additional burden on application 
+writers. This "advice" looks like it places an additional burden on 
+application writers.
+
+* You say that application code should only set the TTL when "sending 
+from an IPv4 Link-Local address"? If you've ever tried it, you'll know 
+that on a multi-homed host, determining in advance what address you're 
+going to be sending from is very difficult from user-level code. Most 
+application code that opens connections or sends UDP packets simply 
+specifies the DNS name or destination address, and lets the kernel pick 
+the interface and source address. Most application code that accepts 
+connections simply binds to INADDR_ANY and lets the kernel handle the job 
+of making sure the right source address is used when sending back the TCP 
+ACKs.
+
+* This "advice" creates gratuitous incompatibility with existing deployed 
+devices that followed the instructions in earlier drafts to check that 
+the TTL on received packets is 255.
+
+With all that said, if this is the only point of disagreement, then I 
+will accept it and we should publish the RFC.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 15:00:55 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA07091
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 15:00:54 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0B063912C0; Wed,  9 Feb 2005 15:00:28 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C6395912C3; Wed,  9 Feb 2005 15:00:27 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D3039912C0
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 15:00:26 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B97B5582F2; Wed,  9 Feb 2005 15:00:26 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id A118358296
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 15:00:26 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 96C3019A3; Wed,  9 Feb 2005 15:00:26 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from sj-iport-2.cisco.com (sj-iport-2-in.cisco.com [171.71.176.71])
+	by testbed9.merit.edu (Postfix) with ESMTP id 48063197D
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 15:00:26 -0500 (EST)
+Received: from sj-core-5.cisco.com (171.71.177.238)
+  by sj-iport-2.cisco.com with ESMTP; 09 Feb 2005 12:09:08 -0800
+Received: from [171.71.95.195] (dhcp-171-71-95-195.cisco.com [171.71.95.195])
+	by sj-core-5.cisco.com (8.12.10/8.12.6) with ESMTP id j19K0MTj029291;
+	Wed, 9 Feb 2005 12:00:22 -0800 (PST)
+In-Reply-To: <200502090659.j196xqWa011348@relay4.apple.com>
+References: <200502090659.j196xqWa011348@relay4.apple.com>
+Mime-Version: 1.0 (Apple Message framework v619)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Message-Id: <3A8CD9D7-7AD5-11D9-85A6-00112473A260@cisco.com>
+Content-Transfer-Encoding: 7bit
+Cc: <zeroconf@merit.edu>
+From: John Schnizlein <jschnizl@cisco.com>
+Subject: Re: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt
+Date: Wed, 9 Feb 2005 12:00:21 -0800
+To: Stuart Cheshire <cheshire@apple.com>
+X-Mailer: Apple Mail (2.619)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+The 48-hour edit period is not the right time and place to reverse a 
+contentious decision that went back and forth for some time before it 
+was settled.
+
+John
+
+On Feb 8, 2005, at 10:59 PM, Stuart Cheshire wrote:
+
+> During the "authors 48 hours" final review period we found various 
+> minor
+> changes that needed to be made to the document.
+...
+> 4c. Set the IPv4 TTL to 1?
+>
+>    ...
+>
+> This text has been removed. 
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 15:54:13 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA14653
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 15:54:13 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id CF00B912C3; Wed,  9 Feb 2005 15:54:10 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9C1F4912C4; Wed,  9 Feb 2005 15:54:10 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A4EC7912C3
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 15:54:09 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8C393582F3; Wed,  9 Feb 2005 15:54:09 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 755025828D
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 15:54:09 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 6B2D719D1; Wed,  9 Feb 2005 15:54:09 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from rsys001a.roke.co.uk (rsys001a.roke.co.uk [193.118.192.110])
+	by testbed9.merit.edu (Postfix) with ESMTP id 2D1EF19C8
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 15:54:09 -0500 (EST)
+Received: by rsys001a.roke.co.uk with Internet Mail Service (5.5.2657.72)
+	id <C0V87J5Q>; Wed, 9 Feb 2005 20:57:12 -0000
+Received: from [127.0.0.1] (orion.roke.co.uk [193.118.192.66]) by rsys002a.roke.co.uk with SMTP (Microsoft Exchange Internet Mail Service Version 5.5.2657.72)
+	id C0V6192T; Wed, 9 Feb 2005 20:56:16 -0000
+From: "Conroy, Lawrence (SMTP)" <lwc@roke.co.uk>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+In-Reply-To: <3A8CD9D7-7AD5-11D9-85A6-00112473A260@cisco.com>
+References: <200502090659.j196xqWa011348@relay4.apple.com> <3A8CD9D7-7AD5-11D9-85A6-00112473A260@cisco.com>
+Mime-Version: 1.0 (Apple Message framework v619.2)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Message-Id: <40e5e0f04aa680dfda9d49fd8e19d700@roke.co.uk>
+Content-Transfer-Encoding: 7bit
+Subject: Re: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt
+Date: Wed, 9 Feb 2005 20:53:10 +0000
+X-Mailer: Apple Mail (2.619.2)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Hi Stuart, folks,
+   The A48 is not the place to correct any technical oddities remaining 
+in a document
+after the WG *and* the IESG have worked on it.
+ From what I've read, this text and the whole document reflects the 
+opinion and level
+of understanding of the majority of the WG. I'm sure you would have 
+heard if this
+were not so. Thus, please let the pain stop - put it back and get the 
+RFC "out the door".
+
+Conversely, in keeping with your explanation/rationale, I trust that 
+Apple will
+interpret this *suggestion* to the best interest of its customers, as 
+always.
+
+all the best,
+   Lawrence
+
+On 9 Feb 2005, at 20:00, John Schnizlein wrote:
+> The 48-hour edit period is not the right time and place to reverse a 
+> contentious decision that went back and forth for some time before it 
+> was settled.
+> John
+>
+> On Feb 8, 2005, at 10:59 PM, Stuart Cheshire wrote:
+>> During the "authors 48 hours" final review period we found various 
+>> minor
+>> changes that needed to be made to the document.
+> ...
+>> 4c. Set the IPv4 TTL to 1?
+>>    ...
+>> This text has been removed.
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 16:44:24 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA29364
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 16:44:24 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 33E04912C8; Wed,  9 Feb 2005 16:44:21 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DAE71912CA; Wed,  9 Feb 2005 16:44:20 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 96672912C8
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 16:44:19 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 7FE5B582F9; Wed,  9 Feb 2005 16:44:19 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 69049582ED
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 16:44:19 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 5F52819D3; Wed,  9 Feb 2005 16:44:19 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by testbed9.merit.edu (Postfix) with ESMTP id 3DD08197D
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 16:44:19 -0500 (EST)
+Received: from mailgate2.apple.com (a17-128-100-204.apple.com [17.128.100.204])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id j19LiIkE004921
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 13:44:18 -0800 (PST)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.3.17) with ESMTP id <T6f03c5b549118064cc424@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Wed, 9 Feb 2005 13:44:18 -0800
+Received: from [17.219.205.9] ([17.219.205.9])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id j19LiGEP003118
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 13:44:17 -0800 (PST)
+Message-Id: <200502092144.j19LiGEP003118@relay4.apple.com>
+Subject: Re: Edits to draft-ietf-zeroconf-ipv4-linklocal-17.txt
+Date: Wed, 9 Feb 2005 13:43:53 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>The 48-hour edit period is not the right time and place to reverse a 
+>contentious decision that went back and forth for some time before it 
+>was settled.
+>
+>John
+
+I already said, if this is the only point of disagreement, then I will 
+accept it and we should publish the RFC.
+
+My point was not to reverse a contentious decision, but to wonder how it 
+got in the document at all, given that the the apparent working group 
+consensus on John Schnizlein's proposed text was "Rejected".
+
+<http://www.drizzle.com/~aboba/ZEROCONF/ll29.html>
+<http://www.drizzle.com/~aboba/ZEROCONF/issues.html>
+
+If this is the only point of disagreement, then I will accept it and we 
+should publish the RFC.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 19:24:39 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA16129
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 19:24:38 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id BC92291278; Wed,  9 Feb 2005 19:24:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 83EFA912CA; Wed,  9 Feb 2005 19:24:34 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9CA5791278
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 19:24:33 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 817DB5828D; Wed,  9 Feb 2005 19:24:33 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 6BE8858288
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 19:24:33 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 623A819EA; Wed,  9 Feb 2005 19:24:33 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out4.apple.com (mail-out4.apple.com [17.254.13.23])
+	by testbed9.merit.edu (Postfix) with ESMTP id 367B619DB
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 19:24:33 -0500 (EST)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out4.apple.com (8.12.11/8.12.11) with ESMTP id j1A0OWwN018790
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 16:24:32 -0800 (PST)
+Received: from relay3.apple.com (relay3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.17) with ESMTP id <T6f04586799118064e142c@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Wed, 9 Feb 2005 16:24:32 -0800
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by relay3.apple.com (8.12.11/8.12.11) with SMTP id j1A0OUor007585
+	for <zeroconf@merit.edu>; Wed, 9 Feb 2005 16:24:31 -0800 (PST)
+Message-Id: <200502100024.j1A0OUor007585@relay3.apple.com>
+Subject: Re: Set the IPv4 TTL to 1?
+Date: Wed, 9 Feb 2005 16:24:30 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Based on the list discussion, I have updated the document to restore the 
+deleted paragraph about explicitly setting the TTL to 1.
+
+The updated copy can be fetched from:
+
+<http://files.zeroconf.org/rfc3927new.txt>
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Feb  9 20:13:58 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id UAA20582
+	for <zeroconf-archive@lists.ietf.org>; Wed, 9 Feb 2005 20:13:58 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 028B1912CA; Wed,  9 Feb 2005 20:13:55 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id BDE2B912CB; Wed,  9 Feb 2005 20:13:54 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id C6ABC912CA
+	for <zeroconf@trapdoor.merit.edu>; Wed,  9 Feb 2005 20:13:53 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B3BAE582D8; Wed,  9 Feb 2005 20:13:53 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id 9C77C58296
+	for <zeroconf@segue.merit.edu>; Wed,  9 Feb 2005 20:13:53 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 924D719EC; Wed,  9 Feb 2005 20:13:53 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from fivedots.coe.psu.ac.th (fivedots.coe.psu.ac.th [202.12.73.64])
+	by testbed9.merit.edu (Postfix) with ESMTP id 46CB519DB
+	for <zeroconf@merit.edu>; Wed,  9 Feb 2005 20:13:53 -0500 (EST)
+Received: from delta.coe.psu.ac.th ([172.30.0.98] helo=delta.noi.kre.to)
+	by fivedots.coe.psu.ac.th with esmtp (Exim 3.36 #1 (Debian))
+	id 1Cz2tv-0007mb-01; Thu, 10 Feb 2005 08:13:47 +0700
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.noi.kre.to (8.12.11/8.11.6) with ESMTP id j19LUeH5017510;
+	Thu, 10 Feb 2005 04:30:41 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Set the IPv4 TTL to 1? 
+In-Reply-To: <200502091841.j19IfUVV013255@relay4.apple.com> 
+References: <200502091841.j19IfUVV013255@relay4.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 10 Feb 2005 04:30:40 +0700
+Message-ID: <26438.1107984640@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Wed, 9 Feb 2005 10:41:09 -0800
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200502091841.j19IfUVV013255@relay4.apple.com>
+
+  | The working group did consider whether "Link-local sources should specify 
+  | TTL=1", and the proposal was rejected 
+  | <http://www.drizzle.com/~aboba/ZEROCONF/ll29.html>. I'm not sure how it 
+  | found its way into the document.
+
+Yes, there was a big argument about this, which, if for no other reason
+is justification for not changing anything this late in this area of the
+doc.
+
+  | * Is this "advice" actually part of the formal specification or not?
+  | It doesn't say, "MUST", "SHOULD" or "MAY". Is an implementer required or 
+  | expected to follow it, or not?
+
+No, it is just a suggestion (or that's how I read it).
+
+  | * You say that application code should only set the TTL when "sending 
+  | from an IPv4 Link-Local address"? If you've ever tried it, you'll know 
+  | that on a multi-homed host, determining in advance what address you're 
+  | going to be sending from is very difficult from user-level code.
+
+Determining what will be picked for you is difficult.   Determining
+what should be used is trivial.   If the application wants to send
+from an LL address, and an LL address is available, forcing its use
+is simple - as would be setting a TTL of 1 in that case.
+
+That said, I doubt many applications will bother, I certainly don't
+expect server applications to bother - but if an application writer
+feels the need to consider which TTL should be set, when LL addresses are
+in use, setting 1 is a reasonable choice (compat with followers of old
+versions of the spec notwithstanding).   [Aside: do you really expect
+application writers to ever even look in this spec?]
+
+  | With all that said, if this is the only point of disagreement, then I 
+  | will accept it and we should publish the RFC.
+
+I think that is probably best.
+
+kre
+
+ps If/when this ever advances to DS, if implementations aren't documented
+to be following this advice, then the proper procedure is to remove it.
+
+
+
+From owner-zeroconf@merit.edu  Sat Feb 19 16:17:55 2005
+Received: from trapdoor.merit.edu (trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id QAA08560
+	for <zeroconf-archive@lists.ietf.org>; Sat, 19 Feb 2005 16:17:55 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 893B091206; Sat, 19 Feb 2005 16:17:13 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 42A89912AA; Sat, 19 Feb 2005 16:17:13 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6FE6D91206
+	for <zeroconf@trapdoor.merit.edu>; Sat, 19 Feb 2005 16:17:11 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 50345582C9; Sat, 19 Feb 2005 16:17:11 -0500 (EST)
+Delivered-To: zeroconf@segue.merit.edu
+Received: from testbed9.merit.edu (testbed9.merit.edu [198.108.1.10])
+	by segue.merit.edu (Postfix) with ESMTP id D158E582C4
+	for <zeroconf@segue.merit.edu>; Sat, 19 Feb 2005 16:17:10 -0500 (EST)
+Received: by testbed9.merit.edu (Postfix)
+	id 6790B198F; Sat, 19 Feb 2005 16:17:10 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from outbound.mailhop.org (outbound.mailhop.org [63.208.196.171])
+	by testbed9.merit.edu (Postfix) with ESMTP id 4D02C1992
+	for <zeroconf@merit.edu>; Sat, 19 Feb 2005 16:17:10 -0500 (EST)
+Received: from c-67-182-139-247.client.comcast.net ([67.182.139.247] helo=internaut.com)
+	by outbound.mailhop.org with esmtpa (Exim 4.44)
+	id 1D2byP-000JEJ-MJ
+	for zeroconf@merit.edu; Sat, 19 Feb 2005 16:17:09 -0500
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id j1JLH8g11621
+	for <zeroconf@merit.edu>; Sat, 19 Feb 2005 13:17:08 -0800
+Date: Sat, 19 Feb 2005 13:17:08 -0800 (PST)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: Are we done? 
+Message-ID: <Pine.LNX.4.56.0502191316210.11573@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Mail-Handler: MailHop Outbound by DynDNS.org
+X-Originating-IP: 67.182.139.247
+X-Report-Abuse-To: abuse@dyndns.org (see http://www.mailhop.org/outbound/abuse.html for abuse reporting information)
+X-MHO-User: aboba
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+There has been no activity on this list for 10 days.  Does this mean that
+we have converged, and can publish the IPv4LL document with the changes
+that have been agreed up?
+
+If there are any issues with this, speak up now.
+
+

@@ -1,0 +1,158 @@
+From owner-zeroconf@merit.edu  Tue Nov  4 13:49:40 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA27429
+	for <zeroconf-archive@lists.ietf.org>; Tue, 4 Nov 2003 13:49:40 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 45D65912B7; Tue,  4 Nov 2003 13:49:41 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 19783912BB; Tue,  4 Nov 2003 13:49:41 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0B797912B7
+	for <zeroconf@trapdoor.merit.edu>; Tue,  4 Nov 2003 13:49:40 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E65925DEC1; Tue,  4 Nov 2003 13:49:39 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from sj-iport-3.cisco.com (sj-iport-3-in.cisco.com [171.71.176.72])
+	by segue.merit.edu (Postfix) with ESMTP id A778B5DE89
+	for <zeroconf@merit.edu>; Tue,  4 Nov 2003 13:49:39 -0500 (EST)
+Received: from cisco.com (171.71.177.238)
+  by sj-iport-3.cisco.com with ESMTP; 04 Nov 2003 10:53:49 -0800
+Received: from flask.cisco.com (IDENT:mirapoint@flask.cisco.com [161.44.122.62])
+	by sj-core-5.cisco.com (8.12.9/8.12.6) with ESMTP id hA4InbmU009143
+	for <zeroconf@merit.edu>; Tue, 4 Nov 2003 10:49:37 -0800 (PST)
+Received: from rdroms-w2k01.cisco.com (dhcp-64-102-59-86.cisco.com [64.102.59.86])
+	by flask.cisco.com (Mirapoint Messaging Server MOS 3.3.6-GR)
+	with ESMTP id ADS21601;
+	Tue, 4 Nov 2003 13:49:35 -0500 (EST)
+Message-Id: <4.3.2.7.2.20031101084842.01f7caa8@flask.cisco.com>
+X-Sender: rdroms@flask.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Tue, 04 Nov 2003 09:25:58 -0500
+To: zeroconf@merit.edu
+From: Ralph Droms <rdroms@cisco.com>
+Subject: Re: A Zeroconf situation? 
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I agree with kre - the decision about whether a device should get a DHCP
+address should be made by the DHCP server, not the device.  In that way, the
+decision is controlled by the network administrator and a device can adapt
+to whatever local policy is in place.  In particular, it is precisely the
+netadmin who knows how many IP addresses are available on a network, and who
+can best construct a policy about which devices are assigned a global IPv4
+address through DHCp and which are not.
+
+The DHCP specification allows for differential assignment of addresses to
+hosts requesting DHCP service - that is, a server is free to decide not to
+respond to a request from a host for a DHCP address.  The specification
+makes no statement about the policies a server might use in responding to a
+host.  Most DHCP servers provides a variety of mechanisms for controlling
+the assignment of DHCP addresses.
+
+I believe the current IPv4LL spec adequately addresses the issue of packets
+exchanges between a device with an IPv4LL address and a device with a
+routable IPv4 address - both unicast and multicast.
+
+- Ralph
+
+At 05:47 PM 10/30/2003 +0700, Robert Elz wrote:
+>     Date:        Wed, 29 Oct 2003 14:33:30 -0800
+>     From:        "Phillip Remaker" <remaker@cisco.com>
+>     Message-ID:  <01e101c39e6c$ae1d53c0$82da45ab@amer.cisco.com>
+>
+>   | I have an appliance.  A home gateway, a home router, a Networked
+>   | Refrigerator, An ethernet connected vacuum cleaner.... whatever....
+>   | Unconfigured, out of shrink wrap.  I drop it in a static addressed or
+>   | DHCP-served network, but I *don't* want to to claim a DHCP address
+>
+>Notice here that it is you who doesn't want it to have a DHCP address,
+>not the appliance itself.   If it was in my house instead of yours
+>I can assure you I would want the exact same appliance to get an address
+>from DHCP.   Other than getting at the device and configuring it, which
+>is what we're all trying to avoid, there's no way to make the device
+>act differently.
+>
+>The obvious answer here is that the DHCP servers act differently - yours
+>doesn't give the appliance an address (doesn't offer one), mine does.
+>In each case, the appliance tries to get a DHCP address, in your house
+>it fails, in mine it succeeds.   Then, as in the note Christian quoted,
+>when yours fails to get a DHCP address, it gives itself a LL one instead.
+>
+>   | (there may be a VERY limited number of IPv4 addresses from the lcoal
+>   | DHCP server, and I would not want the device to presume that it can
+>   | have one of them).
+>
+>The device should be presuming nothing - it should simply take the
+>best that is available to it in the environment into which it happens
+>to have been placed.
+>
+>   | I want it to come up as IPv4LL, and unable to route, unable to claim 
+> a DHCP
+>   | address.  I want it to detect the presence of a DHCP server, but not 
+> claim
+>   | an address.
+>
+>Why on earth would you want to detect the DHCP server in that event?
+>If it has nothing for you, you don't care if it exists or not.
+>If you want to see if there is a DHCP server that will tell you
+>other useful information (like the IP address of your Impress server)
+>then you can try a DHCPINFORM request after a DHCPDISCOVER has
+>revealed nothing.
+>
+>   | Effectively,  we have two ships-in-the-night V4 subnets on a broadcast
+>   | domain.
+>
+>Not quite.
+>
+>   | Most V4 stacks won't have a link local and globally scoped address
+>   | on the same interface.
+>
+>The idea is that if you're going to have any devices on your net which
+>are using LL addresses, and you want to be able to communicate with them,
+>then those V4 stacks can't be ignorant.   They don't need both addresses,
+>but they do need to know how to reach LL addresses (ie: that LL addresses
+>are out there on the LAN, and the device should simply ARP for one).
+>
+>   | Even if I multicast from a non v4LL address to a
+>   | v4LL address, how would the v4LL device be able to respond to an 'off
+>   | subnet' address (apparently, it wouldn't?)
+>
+>It would.   The LL spec requires LL using devices to ARP for *everything*
+>they need to reach.   If the destination is on the same LAN, it will reply.
+>If it isn't, a device with only LL can't communicate with it, which has
+>all cost one ARP request to discover.
+>
+>   | So in short, is there a
+>   |
+>   | 1) Means to communicate between a link local and globally scoped address?
+>   | Is it allowed?
+>
+>yes, it is allowed.   What's more it all almost "just works" even with
+>current devices (or most of them) - they may need to be configured
+>with an explicit interface route for LL addresses (and devices with
+>multiple interfaces will probably only be able to talk to LL devices
+>on one of them without code updates) but it does all work.
+>
+>All this has been discussed many times before.
+>
+>   | The fundamenal idea is that I can drop an unconfigured device onto any
+>   | network in a non-disruptive way, and then discover and configure it while
+>   | not having to mess with the stack/addressing of the configuring machine.
+>
+>This you would need to do, currently.   Once LL is truly accepted, we
+>can expect systems to simply "know" how to reach them without needing
+>anything special done to them to make it happen (that is, devices will
+>auto-configure themselves with a route to LL destinations, and multi-interface
+>systems will provide a means to choose which interface to use).
+>Short term, things will be a bit messy, but not actually hard.
+>
+>Read the draft.   Look back over the list archives.
+>
+>kre
+
+
+

@@ -1,0 +1,56 @@
+From owner-zeroconf@merit.edu  Wed Aug  4 11:40:35 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA12415
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Aug 2004 11:40:35 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id CF06B91217; Wed,  4 Aug 2004 11:40:27 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9EB6791241; Wed,  4 Aug 2004 11:40:27 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id A2ECA91217
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Aug 2004 11:40:26 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8E60F5A5A5; Wed,  4 Aug 2004 11:40:26 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-4.sun.com (brmea-mail-4.Sun.COM [192.18.98.36])
+	by segue.merit.edu (Postfix) with ESMTP id 00E065A5B9
+	for <zeroconf@merit.edu>; Wed,  4 Aug 2004 11:40:25 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-4.sun.com (8.12.10/8.12.9) with ESMTP id i74Fc053022692;
+	Wed, 4 Aug 2004 09:38:01 -0600 (MDT)
+Received: from [10.0.1.3] (vpn-129-150-112-85.Holland.Sun.COM [129.150.112.85])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i74FeJ3r028786;
+	Wed, 4 Aug 2004 17:40:21 +0200 (MEST)
+Date: Wed, 4 Aug 2004 17:40:13 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@skin.local
+Reply-To: erik.guttman@sun.com
+To: zeroconf@merit.edu
+Cc: narten@us.ibm.com, margaret@thingmagic.com
+Subject: ZEROCONF WG to conclude
+Message-ID: <Pine.OSX.4.58.0408041732430.1357@skin.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+I have requested that the IESG conclude the ZEROCONF WG.  We have
+completed our charter.
+
+There has been no discussion of the intellectual property related to the
+Automatic Address Configuration for IPv4 protocol specification.
+
+I want to thank you all again for a productive and instructive effort over
+the past few years.  I wish you success and health and continuing
+willingness and opportunities to participate in efforts such as this,
+aiming to contribute to the common good.
+
+Best regards,
+
+Erik Guttman
+ZEROCONF WG chair
+
+

@@ -1,0 +1,3804 @@
+From owner-zeroconf@merit.edu  Tue Jun  3 06:20:59 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA25602
+	for <zeroconf-archive@lists.ietf.org>; Tue, 3 Jun 2003 06:20:59 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 800A59124D; Tue,  3 Jun 2003 06:19:35 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9F9CE9124A; Tue,  3 Jun 2003 06:19:33 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1B621912F5
+	for <zeroconf@trapdoor.merit.edu>; Tue,  3 Jun 2003 06:17:42 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 872B25EABC; Tue,  3 Jun 2003 06:17:41 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from douglas.ukservers.net (douglas.ukservers.net [217.10.138.220])
+	by segue.merit.edu (Postfix) with ESMTP id B60785EDF1
+	for <zeroconf@merit.edu>; Tue,  3 Jun 2003 06:17:40 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by douglas.ukservers.net (Postfix) with ESMTP
+	id 1892E598A0; Tue,  3 Jun 2003 11:17:42 +0100 (BST)
+Message-ID: <00aa01c329b9$5ca56e60$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Erik Guttman" <erik.guttman@sun.com>, "zeroconf" <zeroconf@merit.edu>
+References: <3ED1E3FB.20302@sun.com>
+Subject: LL32 - support
+Date: Tue, 3 Jun 2003 11:17:39 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+In general, I agree with the proposed change and with most of the tidying
+comments made by others.
+
+I think that the title "multiple interfaces" can be misleading to
+implementers who think that they only have one physical connection. A note
+should be placed immediately afterwards.
+
+'These considerations apply whenever a host has multiple IP addresses
+whether or not it has multiple physical interfaces. Other examples of
+multiple interfaces include different logical endpoints (tunnels, virtual
+private networks etc.) and multiple logical networks on the same physical
+medium. This is often referred to as "multihoming".'
+
+The sentence "This could be due to having more than one interface attached
+to distinct physical networks, or due to support of a tunnel, virtual
+private network, or some other interface termination at the host over a
+single interface." could then be omitted from section 3.1
+
+The title of 3.3 could be changed to:
+
+"Interaction with hosts with routable addresses on local links"
+
+Philip
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun  3 12:50:08 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA13956
+	for <zeroconf-archive@lists.ietf.org>; Tue, 3 Jun 2003 12:50:08 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 058D491258; Tue,  3 Jun 2003 12:50:02 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C2B9D912ED; Tue,  3 Jun 2003 12:50:01 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D739591258
+	for <zeroconf@trapdoor.merit.edu>; Tue,  3 Jun 2003 12:50:00 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C37085DD90; Tue,  3 Jun 2003 12:50:00 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-2.sun.com (brmea-mail-2.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 421D75DD8F
+	for <zeroconf@merit.edu>; Tue,  3 Jun 2003 12:50:00 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by brmea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h53GnoYU009995;
+	Tue, 3 Jun 2003 10:49:51 -0600 (MDT)
+Received: from sun.com (vpn-129-156-96-197.EMEA.Sun.COM [129.156.96.197])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h53Gnl6J590263;
+	Tue, 3 Jun 2003 09:49:48 -0700 (PDT)
+Message-ID: <3EDCD0E8.6080200@sun.com>
+Date: Tue, 03 Jun 2003 18:46:32 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Cc: Robert Elz <kre@munnari.OZ.AU>, Stuart Cheshire <cheshire@apple.com>
+Subject: Re: Example email from vendor: Probe after cable connection or not?
+References: <200305300102.h4U12eFf012412@scv1.apple.com> <8479.1054280894@munnari.OZ.AU>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Since there has been no debate - I say we just accept the text
+suggested by Stuart.
+
+We will work this text into the revised section 2.2
+
+2.2 Claiming a Link-Local Address
+
+    After it has selected an address, a host MUST test to see if
+    the address is already in use before beginning to use it. To be
+    more specific, any time that a network interface transitions from
+    an inactive to an active state, the host is in a position where
+    it has no knowledge of what addresses may be currently in use on
+    that link. Were it immediately to begin using an address which is
+    already in use by some other host, this would be disruptive to that
+    other host. For this reason, before using the address (e.g. using
+    it as the source address in an IP packet, or as the Sender IP
+    address in an ARP packet) a host MUST perform the probing test
+    described below to achieve better confidence that using the address
+    will not cause disruption. Examples of events that entail an
+    interface becoming active include:
+
+       * Reboot/startup
+       * Wake from sleep (if network interface was inactive during
+         sleep)
+       * Bringing up previously inactive network interface
+       * Ethernet hardware link-state change that indicates
+         a cable was attached.
+       * Association with a wireless base station.
+       * etc.
+
+    Note that a host MUST NOT perform this check periodically as a
+    matter of course.  This would be a waste of network bandwidth,
+    and is unnecessary due to the ability of hosts to passively
+    discover conflicts, as described in Section 2.5.
+
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun  3 12:56:18 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA14306
+	for <zeroconf-archive@lists.ietf.org>; Tue, 3 Jun 2003 12:56:18 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0B603912ED; Tue,  3 Jun 2003 12:56:11 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C08DC912EF; Tue,  3 Jun 2003 12:56:10 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id C441E912ED
+	for <zeroconf@trapdoor.merit.edu>; Tue,  3 Jun 2003 12:56:07 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id AE6DC5DDAD; Tue,  3 Jun 2003 12:56:07 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 5B2CD5DDAC
+	for <zeroconf@merit.edu>; Tue,  3 Jun 2003 12:56:07 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by brmea-mail-3.sun.com (8.12.9/8.12.9) with ESMTP id h53Gu6ep012959
+	for <zeroconf@merit.edu>; Tue, 3 Jun 2003 10:56:06 -0600 (MDT)
+Received: from sun.com (vpn-129-156-96-197.EMEA.Sun.COM [129.156.96.197])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h53Gu36J592127;
+	Tue, 3 Jun 2003 09:56:04 -0700 (PDT)
+Message-ID: <3EDCD25F.3010907@sun.com>
+Date: Tue, 03 Jun 2003 18:52:47 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf <zeroconf@merit.edu>
+Cc: Erik Guttman <Erik.Guttman@sun.com>
+Subject: WG Action - ACCEPT [LL32]  Multihoming problems not solved but that
+ is OK
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+After fruitful discussion, I believe we have consensus around a revised
+version of text for this section.
+
+NOTES:
+
+1 Mika asked
+
+   But what does this mean, anyway? I hear developers asking: "Most
+   TCP/IP stacks support multihoming. Is this specification supposed
+   to be implementable on multihomed stacks or not?"
+
+   Assuming the implementor of a multhomed stack does not want to wing
+   it, is he supposed to:
+
+   1) not implement LLs at all?
+   2) turn LLs off if more than one interface is activated?
+   3) provide per-interface configuration knobs and leave it to the
+      user to deal with the problem?
+   4) any of the above? (probably)
+
+   I respond:
+
+   We cannot (have not been able to, will not be able to) provide
+   answers to these questions.  The best we can do is to provide
+   guidance about what the problems are and how one might start on
+   the way to solve them.  Once we have experience solving the
+   problems we could undertake to standardize the successful
+   approach(es).
+
+------------------------------
+Replace section 3 with the following text:
+
+
+3. Considerations for Multiple Interfaces
+
+These considerations apply whenever a host has multiple IP addresses
+whether or not it has multiple physical interfaces. Other examples of
+multiple interfaces include different logical endpoints (tunnels,
+virtual private networks etc.) and multiple logical networks on the same
+physical medium. This is often referred to as "multihoming".
+
+Hosts which have more than one active interface and elect to implement
+dynamic configuration of Link-Local IPv4 addresses on one or more of
+those interfaces will face various problems. This section lists these
+problems but does no more than indicate how one might solve them. At the
+time of this writing, there is no silver bullet which solves these
+problems in all cases, in a general way. Implementors must think through
+these issues before implementing the protocol specified in this document
+on a system which may have more than one active interface as part of a
+multihoming capable TCP/IP stack.
+
+3.1. Scoped addresses
+
+The general problem here is that a host may be attached to more than one
+network at the same time.  It would be nice if there was a single
+address space used in every network, but this is not the case. Addresses
+used in one network, be it a network behind a NAT or a link on which
+Link-Local IPv4 addresses are used, cannot be used in another network
+and have the same effect.
+
+It would also be nice if addresses were not exposed to applications, but
+they are. Most software using TCP/IP which await messages receives from
+any interface at a particular port number, for a particular transport
+protocol. Applications are generally only aware (and care) that they
+have received a message. The application knows the source address of the
+sender to whom the application will reply.
+
+The first scoped address problem is source address selection. A
+multihomed host has more than one address. Which address should be used
+as the source address when sending to a particular destination? This
+answer is usually answered by referring to a routing table, which
+expresses which interface (with which address) to send, and how to send
+(should one forward to a router, or send directly). The choice is made
+complicated by scoped addresses because the address range in which the
+destination lies may be ambiguous. The table may not be able to yield a
+good answer.  This problem is bound up with next-hop selection, which
+is discussed in Section 3.2.
+
+The second scoped address problem arises from scoped parameters leaking
+outside their scope. This is discussed in Section 7.
+
+It is possible to overcome these problems. One way is to expose scope
+information to applications such that they are always aware of what
+scope a peer is in. This way, the correct interface could be selected, a
+safe procedure could be followed with respect to forwarding addresses
+and other scoped parameters. There are other possible approaches. None
+of these methods have been standardized for IPv4 nor are they specified
+in this document.  A good API design could mitigate the problems, either
+by exposing address scopes to 'scoped-address aware' applications or by
+cleverly encapsulating the scoping information and logic so that
+applications do the right thing without being aware of address scoping.
+
+An implementor could undertake to solve these problems, but cannot
+simply ignore them. With sufficient experience, it is hoped that
+specifications will emerge explaining how to overcome scoped address
+multihoming problems.
+
+3.2. Address Ambiguity
+
+This is a core problem with respect to Link-Local IPv4 addresses
+configured on more than one interface. What should a host do when it
+needs to send to Link-Local destination L and L can be resolved using
+ARP on more than one link?
+
+One possibility is to support this only in the case where the
+application specifically expresses which interface to send from.
+
+There no standard or obvious solution to this problem.
+Existing application software written for the Internet protocol suite is
+largely incapable of dealing with address ambiguity. This does not
+preclude an implementor from finding a solution, writing applications
+which are able to use it, and providing a host which can support dynamic
+configuration of Link-Local IPv4 addresses on more than one interface.
+This solution will almost surely not be generally applicable to existing
+software and transparent to higher layers, however.
+
+3.3. Interaction with hosts with routable addresses on local links
+
+Attention is paid in this specification to transition from the use of
+Link-Local IPv4 addresses to routable addresses (see Section 1.5). The
+intention is to allow a host with a single interface to first support
+Link-Local configuration then gracefully transition to the use of a
+routable address. Since the host transitioning to the use of a routable
+address will not advertise scoped address information, the scoped
+address issues described in Section 3.1 will apply. A host which
+conforms to this specification will know that a Link-Local IPv4
+destination must be reached by forwarding to the destination, not to a
+router, even if the host is sending from a routable address.
+
+A host with a Link-Local IPv4 address may send to a destination which
+does not have a Link-Local IPv4 address. If the host is not multihomed,
+the procedure is simple and unambiguous: Using ARP and forwarding
+directly to on-link destinations is the default route. If the host is
+multihomed, however, the routing policy is more complex, especially if
+one of the interfaces is configured with a routable address and the
+default route is (sensibly) directed at a router accessible through that
+interface. The following example illustrates this problem and provides
+a common solution to it.
+
+                        i1 +---------+ i2   i3 +-------+
+              ROUTER-------=  HOST1  =---------= HOST2 |
+                     link1 +-------=-+  link2  +-------+
+
+In the figure above, HOST1 is connected to link1 and link2. Interface
+i1 is configured with a routable address, while i2 is a Link-Local IPv4
+address. HOST1 has its default route set to ROUTER's address, through
+i1. HOST1 will route to destinations in 169.254/16 to i2, sending
+directly to the destination.
+
+HOST2 has a configured (non-Link-Local) IPv4 address assigned to i3.
+
+Using a name resolution or service discovery protocol HOST1 can discover
+HOST2's address. Since HOST2's address is not in 169.254/16, HOST1's
+routing policy will send datagrams to HOST2 via i1, to the ROUTER.
+Unless there is a route from ROUTER to HOST2, the datagrams sent from
+HOST1 to HOST2 will not reach it.
+
+One solution to this problem is for a host to attempt to reach any host
+locally (using ARP) for which it receives an unreachable ICMP error
+message (ICMP message codes 0, 1, 6 or 7, see [RFC792]). The host tries
+all its attached links in a round robin fashion. This has been
+implemented successfully for some IPv6 hosts, to circumvent exactly this
+problem. In terms of this example, HOST1 upon failing to reach HOST2
+via the ROUTER, will attempt to forward to HOST2 via i2 and succeed.
+
+It may also be possible to overcome this problem using techniques
+described in section 3.2, or other means not discussed here. This
+specification does not provide a standard solution, nor does it preclude
+implementors from supporting multihomed configurations, provided that
+they address the concerns in this section for the applications which
+will be supported on the host.
+
+3.4. Unintentional Autoimmunity
+
+Care must be taken if a multihomed host can support more than one
+interface onto the same link, all of which will support Link-Local
+autoconfiguration. If these interfaces attempt to allocate the same
+address, they will defend the host against itself - causing the claiming
+algorithm to fail. The simplest solution to this problem is to run the
+algorithm independently on each interface configured with Link-Local
+IPv4 addresses.
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 12:11:55 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA29237
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 12:11:55 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D84F69120E; Wed,  4 Jun 2003 12:11:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AA2B791211; Wed,  4 Jun 2003 12:11:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BC78A9120E
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 12:11:48 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A1C3D5DDE2; Wed,  4 Jun 2003 12:11:48 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 2CB8F5DDD6
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 12:11:48 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h54GBlLv012345
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 09:11:47 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-189.EMEA.Sun.COM [129.159.0.189])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h54GBj6J850099
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 09:11:46 -0700 (PDT)
+Message-ID: <3EDE197C.4080700@sun.com>
+Date: Wed, 04 Jun 2003 18:08:28 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: at long last - draft 8 of IPv4 LL
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Folks,
+
+Please see 
+http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-08.txt
+
+This document includes all changes specified by accepted issues, as well
+as text suggested by Stuart last week for section 2.2.
+
+If I don't hear any outcry, and after I have had a chance to read it
+over again, I will call a WG last call on the doc.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 17:33:55 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA13577
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 17:33:55 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id C524191280; Wed,  4 Jun 2003 17:33:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9265B91281; Wed,  4 Jun 2003 17:33:40 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 05FA591280
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 17:32:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D1E805DE53; Wed,  4 Jun 2003 17:32:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 5B7435DE45
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 17:32:38 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.12.9/8.12.9) with ESMTP id h54LWZfR014541
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 14:32:35 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T629fa49125118164e13c8@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Jun 2003 14:32:37 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv3.apple.com (8.12.9/8.12.9) with SMTP id h54LWZ0K015436
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 14:32:35 -0700 (PDT)
+Message-Id: <200306042132.h54LWZ0K015436@scv3.apple.com>
+Subject: Re: New Issue [LL32] Multihoming problems not solved but that is OK
+Date: Wed, 4 Jun 2003 14:32:38 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Since the host transitioning to the use of a routable
+>address will not advertise scoped address information,
+>the scoped address issues described in Section 3.1 will apply
+
+I don't understand that sentence. What does "advertise scoped address 
+information" mean? Does it mean "advertise information that includes 
+scoped addresses"? If the host "will not advertise scoped addresses", 
+then there's no scoped address problem, is there? I think there's a 
+missing negation somewhere.
+
+>A host which
+>conforms to this specification will know that a Link-Local IPv4
+>destination must be reached by forwarding to the destination, not to a
+>router, even if the host is sending from a routable address.
+
+"...must be reached by sending directly to the destination..."
+
+(The word "forwarding" implies a middleman who is neither the sender nor 
+the recipient. If you say that someone forwarded an email to you, does 
+that imply that it's an email they wrote themselves and sent directly to 
+you, or one they received from someone else and then forwarded to you?)
+
+>A host with a Link-Local IPv4 address may send to a destination which
+>does not have a Link-Local IPv4 address. If the host is not multihomed,
+>the procedure is simple and unambiguous: Using ARP and forwarding
+>directly to on-link destinations is the default route. If the host is
+>multihomed, however, the routing policy is more complex, especially if
+>one of the interfaces is configured with a routable address and the
+>default route is (sensibly) directed at a router accessible through that
+>interface. The following example illustrates this problem and provides
+>a common solution to it.
+
+As one of the people who argued for the "ARP for everything" behaviour, 
+I'm willing to make a concession here. When a device has a link-local 
+address, and only a link-local address, and no other information, then 
+"ARP for everything" is the only reasonable thing to do. The moment the 
+device has any kind of explicit routing configuration (e.g. manually, or 
+from a DHCP server) that supersedes the "ARP for everything" rule (the 
+"Always ARP for 169.254/16" rule remains in force).
+
+>Care must be taken if a multihomed host can support more than one
+>interface onto the same link, all of which will support Link-Local
+>autoconfiguration. If these interfaces attempt to allocate the same
+>address, they will defend the host against itself - causing the claiming
+>algorithm to fail. The simplest solution to this problem is to run the
+>algorithm independently on each interface configured with Link-Local
+>IPv4 addresses.
+
+The phrase "run the algorithm independently on each interface" may seem a 
+simple thing to say, but when you have Ethernet and wireless, and 
+(unknown to you) the wireless base station you're talking to is bridged 
+onto the same Ethernet, the interfaces aren't independent any more, even 
+if you wish they were. Figure 1 "(Incorrect) Ambiguous Re-Use of Address 
+Q" in draft-07 described the difficulty when another host has an IP 
+address that's the same as one of your own IP addresses.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 17:36:50 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA13673
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 17:36:50 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 5175091281; Wed,  4 Jun 2003 17:36:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 1CC8591284; Wed,  4 Jun 2003 17:36:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1109A91281
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 17:36:43 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id F042F5DE23; Wed,  4 Jun 2003 17:36:42 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 818E95DDF8
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 17:36:42 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h54LafiB026527
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 14:36:41 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T629fa80bcd118064e16b4@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Jun 2003 14:36:25 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv3.apple.com (8.12.9/8.12.9) with SMTP id h54Lad0K017519
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 14:36:39 -0700 (PDT)
+Message-Id: <200306042136.h54Lad0K017519@scv3.apple.com>
+Subject: Re: LL11: Add security consideration
+Date: Wed, 4 Jun 2003 14:36:42 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>> I know that Erik Nordmark views changing your IP address firmly in the 
+>> category of "problem" rather than "solution", which is why he wants 
+>> language in the draft to encourage other people to see it that way too, 
+>
+>Stuart,
+>
+>I truly believe you've misunderstood what I've said. The alternative
+>is that you are intentionally misconstruing my comments, which I do not
+>think is the case.
+
+Thanks for giving me the benefit of the doubt. I am not intentionally 
+misconstruing your comments; I am struggling to understand them.
+
+One of the things I learned from Mary Baker, my PhD advisor at Stanford, 
+was that the difference between a good research paper and a great one 
+comes not from seeing how much you can add, but from how much you can 
+take away. One of the exercises she made me do was to take sentences from 
+my papers and delete every adjective from them. Surprisingly often, the 
+resulting sentence was a dramatic improvement. (Lest you doubt the 
+effectiveness of Mary Baker's advice here, during the time I was in her 
+research group we published a large number of research papers without a 
+single one ever being rejected. When you are submitting to extremely 
+competitive conferences and journals that on average reject over 90% of 
+all submissions, getting a paper accepted at all is an achievement. 
+Managing to do it time and again without fail is truly remarkable.)
+
+In the case of this new paragraph for the IPv4LL document, I am trying to 
+understand what concrete value it adds to the document.
+
+Let me make my question very precise:
+
+   Having read the new paragraph, what specific action should
+   an implementer take, that they would not otherwise have taken
+   were that new paragraph not in the document?
+
+The best possible outcome I can think of is that the implementer takes no 
+action. The danger is that some implementers might believe that some 
+action is required, and then go and change their implementations in some 
+way that breaks them.
+
+The remainder of your email illustrates the difference of opinion that we 
+still seem to have:
+
+>My first point is that the change to the way ARP is used from
+>detecting and doing nothing, to detecting and changing the IP
+>address, is a significant change hence it makes sense to think
+>carefully about this change.
+
+Who has to "think carefully about this change"? Us, or the implementers?
+
+If is is "us", then it's our job to think carefully about it, make a 
+decision, and then record that result in the document (which we have 
+done).
+
+If it is "the implementers", then that implies we should put information 
+in the document so that implementers can each think carefully about this 
+for themselves, arrive at their own separate decisions, and produce a 
+bunch of implementations that don't do the same thing. Is that what we 
+want?
+
+>My second point is that without being able to secure ARP, there is a
+>very difficult tradeoff between reacting to ARP messages by changing
+>the IP address (helps when the box doesn't need a long-term stable
+>IP address when there are no attackers on the link) and defending
+>the address (helps when those are not true). Glossing over the
+>existence of this tradeoff would be a disservice to the quality and
+>integrity of the standards issued by the IETF. Since we are not
+>going to get a secure ARP deployed at a minimum the specification
+>needs to present this tradeoff to the readers/implementors.
+
+When you say you want to "present a tradeoff" to someone, it implies 
+giving a balanced argument, so that they can weigh up all the evidence on 
+both sides and reach their own informed decision. Is that what we're 
+doing here?
+
+As it stands, the paragraph reads like something saying, "This standard 
+says you should pick a new address if you detect a conflict; here are 
+some reasons why making your implementation actually do that would be a 
+terrible mistake."
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 21:27:47 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA21275
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 21:27:46 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id F04DE9128B; Wed,  4 Jun 2003 21:27:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id BFBB59128C; Wed,  4 Jun 2003 21:27:39 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D88029128B
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 21:27:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C48615DE44; Wed,  4 Jun 2003 21:27:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 8484D5DE34
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 21:27:38 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h551RbiB007947
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:27:37 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T62a07b77d3118064e16b4@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Jun 2003 18:27:21 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv1.apple.com (8.12.9/8.12.9) with SMTP id h551Radi004558
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:27:36 -0700 (PDT)
+Message-Id: <200306050127.h551Radi004558@scv1.apple.com>
+Subject: Re: at long last - draft 8 of IPv4 LL
+Date: Wed, 4 Jun 2003 18:27:39 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Folks,
+>
+>Please see 
+>http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-08.txt
+
+Thank you Erik. Much-needed progress.
+
+With a quick preliminary skim through the document I found a couple of 
+glaring problems. I hope fixing these will not be controversial.
+
+1. Communication between Routable and LL
+2. Probing Interval
+
+I'll discuss these in subsequent emails to keep the discussion (and 
+subject lines) under control.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 21:46:41 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA21697
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 21:46:41 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 19F8C9128C; Wed,  4 Jun 2003 21:46:27 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 60ACA9128D; Wed,  4 Jun 2003 21:46:24 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 573A99128C
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 21:46:17 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 2B0305DE6C; Wed,  4 Jun 2003 21:46:17 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id DD88F5DE2B
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 21:46:16 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h551kGiB010284
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:46:16 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T62a08cc91a118164e13c8@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Jun 2003 18:46:16 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv2.apple.com (8.12.9/8.12.9) with SMTP id h551kDaH017525
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:46:13 -0700 (PDT)
+Message-Id: <200306050146.h551kDaH017525@scv2.apple.com>
+Subject: LL17/LL18 Communication between Routable and LL
+Date: Wed, 4 Jun 2003 18:46:17 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+LL17 (host with Routable ARPs for LL address) was accepted, but
+LL18 (host with LL address ARPs for Routable) was rejected!
+
+This places us in the uncomfortable situation where my Mac with a manual 
+routable address can send packets to my LL printer, but my LL printer 
+can't reply! I hope we all agree that this is nonsense. There's no point 
+saying that "Hosts with configured addresses MUST ARP for v4 LL 
+addresses" if the device with the v4 LL address isn't willing to ARP back.
+
+Below is the text I proposed on 6th February this year, in response to 
+Thomas Narten's comments saying, "Two nodes, both with legitimate 
+addresses that should work, for some strange reason won't talk to each 
+other. Seems to me like the MAY should really be a MUST."
+
+   If the destination address is a unicast address outside the
+   169.254/16 prefix, then the host SHOULD use an appropriate routable
+   source address, if it has one. If the host has no appropriate
+   routable source address, then it MUST ARP for the destination address
+   and then send its packet, with a link-local source IP address and a
+   routable destination IP address, directly to the destination on the
+   same physical link. In the case of a device with only a link-local
+   address, this requirement can be paraphrased as "ARP for everything".
+   In many network stacks, achieving this "ARP for everything" behaviour
+   may be as simple as having no primary IP router configured, having
+   the primary IP router address configured to 0.0.0.0, or having the
+   primary IP router address set to be the same as the host's own
+   link-local IP address. In any event, the host MUST NOT send a packet
+   with a link-local source address to any router for forwarding.
+
+LL18 wasn't rejected because people argued against it; it was rejected 
+because it got forgotten and no one said anything about it at all.
+
+I hope there's no disagreement about fixing this.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 21:53:00 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA21786
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 21:53:00 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 428999128D; Wed,  4 Jun 2003 21:52:54 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 13F6F9128E; Wed,  4 Jun 2003 21:52:54 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 26AC59128D
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 21:52:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0237C5DE8E; Wed,  4 Jun 2003 21:52:53 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id B37255DE6C
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 21:52:52 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h551qniB011343
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:52:49 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T62a0928a81118064e16b4@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Jun 2003 18:52:33 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv3.apple.com (8.12.9/8.12.9) with SMTP id h551ql0K022026
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:52:47 -0700 (PDT)
+Message-Id: <200306050152.h551ql0K022026@scv3.apple.com>
+Subject: Re: at long last - draft 8 of IPv4 LL
+Date: Wed, 4 Jun 2003 18:52:51 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Folks,
+>
+>Please see 
+>http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-08.txt
+
+Thank you Erik. Much-needed progress.
+
+With a quick preliminary skim through the document I found a couple of 
+glaring problems. I hope fixing these will not be controversial.
+
+1. Communication between Routable and LL
+2. Probing Interval
+
+I'll discuss these in subsequent emails to keep the discussion (and 
+subject lines) under control.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun  4 21:55:19 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA21838
+	for <zeroconf-archive@lists.ietf.org>; Wed, 4 Jun 2003 21:55:18 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 40CFF9128E; Wed,  4 Jun 2003 21:55:12 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 101329128F; Wed,  4 Jun 2003 21:55:11 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 026B99128E
+	for <zeroconf@trapdoor.merit.edu>; Wed,  4 Jun 2003 21:55:11 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E6E715DE8F; Wed,  4 Jun 2003 21:55:10 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id A99B95DE2B
+	for <zeroconf@merit.edu>; Wed,  4 Jun 2003 21:55:10 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out2.apple.com (8.12.9/8.12.9) with ESMTP id h551t8fR006979
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:55:08 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T62a094af16118064e16b4@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Wed, 4 Jun 2003 18:54:53 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv1.apple.com (8.12.9/8.12.9) with SMTP id h551t8di017243
+	for <zeroconf@merit.edu>; Wed, 4 Jun 2003 18:55:08 -0700 (PDT)
+Message-Id: <200306050155.h551t8di017243@scv1.apple.com>
+Subject: LL31 Probing Interval
+Date: Wed, 4 Jun 2003 18:55:11 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Right now, the document says:
+
+   When ready to begin probing, the host should then wait
+   for a random time interval selected uniformly in the range
+   zero to one seconds, and should then send three probe
+   packets, spaced randomly, zero to one seconds apart.
+
+This means that, technically, if a device waits zero seconds, sends three 
+ARP Probes spaced zero seconds apart, and then immediately begins using 
+the address, that's legal.
+
+It is clear that after waiting a total of zero seconds the host has NOT 
+established to the required degree of certainty that the address is not 
+already in use.
+
+It may be *unlikely* for a properly implemented device to do this, but if 
+you use a packet sniffer and observe a device do this, you can't say 
+categorically that the device does not implement the specification 
+properly. Indeed, every device that were to implement this random 
+interval between probes would sometimes exhibit extremely short probing 
+times.
+
+I see that this text was offered by Christian Huitema, and the random 
+spacing was proposed to "avoid synchronization effects".
+
+This is, I believe, a misapplication of a common design principle. The 
+common design principle that's being misapplied is that in a continuing 
+ongoing periodic process on multiple machines, you should take care to 
+avoid synchronization. The canonical example of this that's taught to 
+computer science students is the synchronization of periodic DECnet 
+routing messages. The canonical research paper on the subject is 
+"Synchronization of Periodic Routing Messages" by Sally Floyd and Van 
+Jacobson (do a Google search for "DECnet synchronization").
+
+The problem in DECnet was that the device would do its work, then sleep 
+for 120 seconds, then repeat. If it took time epsilon to do its work, 
+this meant that the time between packets was epsilon+120seconds. Time 
+epsilon was influenced by how many pages faults the process took, which 
+was influenced by how long it was since it last ran, which was influenced 
+by how long it was since it last received a packet from a peer. Devices 
+that had just recently received a packet would tend to run faster and 
+'catch up' with the device ahead; devices that had not recently received 
+a packet would tend to run slower and let the others 'catch up' with 
+them. It's not hard to see how over a period of time this would result in 
+all the packets becoming synchronized into a monster packet blast every 
+two minutes. The solution is to use a drift-free time model, so that 
+execution time epsilon does not influence the overall time interval, and 
+to introduce just the right amount of randomness to make sure the devices 
+de-correlate and stay de-correlated.
+
+This is all very interesting, but what has it got to do with link-local 
+devices sending three probes? ABSOLUTELY NOTHING.
+
+The document should simply say:
+
+   When ready to begin probing, the host should then wait for a random
+   time interval selected uniformly in the range zero to one seconds,
+   and should then send three probe packets spaced one second apart.
+
+Christian Huitema is a very well-known and widely respected academic in 
+computer science; I'll hope he'll agree in retrospect that applying the 
+DECnet de-synchronization principle to three probe packets is a mistake, 
+and withdraw the suggestion.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun  5 05:52:25 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA12997
+	for <zeroconf-archive@lists.ietf.org>; Thu, 5 Jun 2003 05:52:25 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id F3CAA9129E; Thu,  5 Jun 2003 05:52:19 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C33889129F; Thu,  5 Jun 2003 05:52:18 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D7ED89129E
+	for <zeroconf@trapdoor.merit.edu>; Thu,  5 Jun 2003 05:52:17 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B59FE5DEFC; Thu,  5 Jun 2003 05:52:17 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 985985DDA1
+	for <zeroconf@merit.edu>; Thu,  5 Jun 2003 05:51:13 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h559p6218515;
+	Thu, 5 Jun 2003 16:51:06 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h559osi07900;
+	Thu, 5 Jun 2003 16:50:55 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: New Issue [LL32] Multihoming problems not solved but that is OK 
+In-Reply-To: <200306042132.h54LWZ0K015436@scv3.apple.com> 
+References: <200306042132.h54LWZ0K015436@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 05 Jun 2003 16:50:54 +0700
+Message-ID: <7238.1054806654@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Wed, 4 Jun 2003 14:32:38 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306042132.h54LWZ0K015436@scv3.apple.com>
+
+  | The phrase "run the algorithm independently on each interface" may seem a 
+  | simple thing to say, but when you have Ethernet and wireless, and 
+  | (unknown to you) the wireless base station you're talking to is bridged 
+  | onto the same Ethernet, the interfaces aren't independent any more, even 
+  | if you wish they were.
+
+All that is true, but this describes exactly the case where the "run the
+algorithm independently on each interface" is required.   That is, on
+the wireless, and on the ethernet, you pick a random address (different
+random addresses 99.99% of the times) and probe that one.   Each interface
+sees the other probe (because of the bridging) but they're for different
+addresses, so ignored.
+
+Maybe there's just a misunderstanding of what the text is attempting to
+say there?
+
+Or are you still believing that a host should pick one LL address, and
+attempt to use the same one on every inteface?   We discarded that notion
+ages ago, as I recall it.
+
+  | Figure 1 "(Incorrect) Ambiguous Re-Use of Address 
+  | Q" in draft-07 described the difficulty when another host has an IP 
+  | address that's the same as one of your own IP addresses.
+
+It attempted to describe a difficulty, but not one that ever made any
+sense to me.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun  5 06:01:15 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA13223
+	for <zeroconf-archive@lists.ietf.org>; Thu, 5 Jun 2003 06:01:15 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 995909129F; Thu,  5 Jun 2003 06:00:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 62AFE912A0; Thu,  5 Jun 2003 06:00:49 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5F0789129F
+	for <zeroconf@trapdoor.merit.edu>; Thu,  5 Jun 2003 06:00:48 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 3CC1C5DDAF; Thu,  5 Jun 2003 06:00:48 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 5DEDD5DDA1
+	for <zeroconf@merit.edu>; Thu,  5 Jun 2003 06:00:46 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h55A0e225486;
+	Thu, 5 Jun 2003 17:00:42 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h55A0Pi07401;
+	Thu, 5 Jun 2003 17:00:25 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL11: Add security consideration 
+In-Reply-To: <200306042136.h54Lad0K017519@scv3.apple.com> 
+References: <200306042136.h54Lad0K017519@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 05 Jun 2003 17:00:25 +0700
+Message-ID: <7367.1054807225@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Wed, 4 Jun 2003 14:36:42 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306042136.h54Lad0K017519@scv3.apple.com>
+
+  | If it is "the implementers", then that implies we should put information 
+  | in the document so that implementers can each think carefully about this 
+  | for themselves, arrive at their own separate decisions, and produce a 
+  | bunch of implementations that don't do the same thing. Is that what we 
+  | want?
+
+I know you're expecting a "no way" answer to that one, but actually,
+yes, that's exactly what I think we want.   Different implementations
+have different needs.   Keeping on operating, no matter what, is
+going to be useful for some implementations, and for those, address
+conflict causes immediate selection of a new address, so there is
+something that works may be the best solution.
+
+However, implementors need to weigh that against the possibility that
+after having been connected for some time, a "bad guy" can drive them
+off the net, trivially easily, if they have adopted that strategy - all
+that is needed is to claim the address, and then defend every other
+address that the node tries.   Bye bye node, and it only takes a second.
+
+Some implementations might actually prefer to keep actively attempting
+to use the address upon detecting a conflict.   Two such implementations
+will deadlock, until one of them is removed, but depending upon the needs
+of the implementation in question, that may be the best result - that is,
+only human activity (as in cycling my power) can cause me to abandon
+what I was doing and start again.
+
+Implementations only all need to do the same thing when that's required
+for interoperability.   Here, that's not needed.
+
+  | When you say you want to "present a tradeoff" to someone, it implies 
+  | giving a balanced argument, so that they can weigh up all the evidence on 
+  | both sides and reach their own informed decision. Is that what we're 
+  | doing here?
+
+Perhaps not, but it is better to at least give some hint that there
+may be some problems that should be investigated, than to completely hide
+the problem and hope no-one notices.
+
+  | As it stands, the paragraph reads like something saying, "This standard 
+  | says you should pick a new address if you detect a conflict; here are 
+  | some reasons why making your implementation actually do that would be a 
+  | terrible mistake."
+
+When reduced to that simple form, it sounds fairly bizarre.   Maybe we
+should simply stop saying that a new address "should" be picked, and just
+say that it may be ?    With perhaps some of the reasons why doing so, or
+not doing so, will sometimes be the best choice.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun  5 06:03:59 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA13267
+	for <zeroconf-archive@lists.ietf.org>; Thu, 5 Jun 2003 06:03:59 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 3FFCE912A2; Thu,  5 Jun 2003 06:03:45 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0B342912A1; Thu,  5 Jun 2003 06:03:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 7869B912A2
+	for <zeroconf@trapdoor.merit.edu>; Thu,  5 Jun 2003 06:03:01 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 5E8245DDAF; Thu,  5 Jun 2003 06:03:01 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id E48AD5DDB1
+	for <zeroconf@merit.edu>; Thu,  5 Jun 2003 06:02:59 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h55A2u227279;
+	Thu, 5 Jun 2003 17:02:57 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h55A2di07860;
+	Thu, 5 Jun 2003 17:02:39 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL17/LL18 Communication between Routable and LL 
+In-Reply-To: <200306050146.h551kDaH017525@scv2.apple.com> 
+References: <200306050146.h551kDaH017525@scv2.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 05 Jun 2003 17:02:39 +0700
+Message-ID: <8363.1054807359@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Wed, 4 Jun 2003 18:46:17 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306050146.h551kDaH017525@scv2.apple.com>
+
+  | I hope there's no disagreement about fixing this.
+
+Not from me - a host that has only LL addresses should ARP for everything.
+(at least, if it has only one interface, beyond that, just unspecified
+I think - I can imagine "learning" which (routable) addresses are likely
+to be out each interface - I can't imagine actually specifying how).
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun  5 06:16:51 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA13757
+	for <zeroconf-archive@lists.ietf.org>; Thu, 5 Jun 2003 06:16:51 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 5643B912A1; Thu,  5 Jun 2003 06:16:37 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 1D98E912A3; Thu,  5 Jun 2003 06:16:37 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D93C7912A1
+	for <zeroconf@trapdoor.merit.edu>; Thu,  5 Jun 2003 06:16:35 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id BC6CE5DE77; Thu,  5 Jun 2003 06:16:35 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 2FBA65DE5D
+	for <zeroconf@merit.edu>; Thu,  5 Jun 2003 06:16:34 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h55AGS207860;
+	Thu, 5 Jun 2003 17:16:31 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h55AGJi08621;
+	Thu, 5 Jun 2003 17:16:19 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL31 Probing Interval 
+In-Reply-To: <200306050155.h551t8di017243@scv1.apple.com> 
+References: <200306050155.h551t8di017243@scv1.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 05 Jun 2003 17:16:19 +0700
+Message-ID: <7912.1054808179@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Wed, 4 Jun 2003 18:55:11 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306050155.h551t8di017243@scv1.apple.com>
+
+
+  | This is, I believe, a misapplication of a common design principle. The 
+  | common design principle that's being misapplied is that in a continuing 
+  | ongoing periodic process on multiple machines, you should take care to 
+  | avoid synchronization.
+
+I actually doubt that that one was in anyone's mind here - as you
+say, for this, you need a continual stream of packets over time,
+and that doesn't exist here.
+
+Rather, I suspect the intent was to avoid having situations arise
+where (by whatever chance) several hosts all probe at the same time,
+and then continue to all retry at identical times because the
+specification allows no method of escape.
+
+The problem is that there can be sudden packet bursts, which can
+overwhelm receivers (too many too quickly to receive) - so some
+receivers never see some of the probes, and because after the
+first attempt, everything repeats identically for each new attempt,
+the same nodes keep on not seeing the same probes on every attempt.
+That means that the probing isn't really being done at all.
+Randomising the retry prevents this kind of synhcronisation from
+happening, and makes it very likely that every node will have a
+chance to see every other nodes probes, at least for some of the
+attempts.
+
+You're correct that as written, the text allows for a host waiting
+for 0 time - but if it was observed doing that, I think one could
+conclude with a high degree of certainty, that it was in fact broken.
+The chances of any random number generator over the interval [0,1]
+always generating 0 (or generating continuous 0's over any sample
+more than a few) are so small that if that is observed, you can
+reasonably claim something is broken (either no random numbers are
+being used at all, or the random number generator is defective).
+
+I wouldn't object to fixing the text, but I'd do so by requiring
+a wait for a reasonable time for a reply, before probing again.
+So, rather than "then send three probe packets, spaced randomly,
+zero to one seconds apart" perhaps "then send three probe packets,
+spaced randomly 0.1 to one seconds apart".
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 10 05:09:46 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA17975
+	for <zeroconf-archive@lists.ietf.org>; Tue, 10 Jun 2003 05:09:46 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 13E7291228; Tue, 10 Jun 2003 05:09:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CD9C29125D; Tue, 10 Jun 2003 05:09:39 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CBB5491228
+	for <zeroconf@trapdoor.merit.edu>; Tue, 10 Jun 2003 05:09:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id AA3245DDF6; Tue, 10 Jun 2003 05:09:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 6584C5DDB1
+	for <zeroconf@merit.edu>; Tue, 10 Jun 2003 05:09:38 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by nwkea-mail-1.sun.com (8.12.9/8.12.9) with ESMTP id h5A99b4Z017138
+	for <zeroconf@merit.edu>; Tue, 10 Jun 2003 02:09:38 -0700 (PDT)
+Received: from sun.com (vpn-129-159-0-156.EMEA.Sun.COM [129.159.0.156])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h5A99ZZb231786
+	for <zeroconf@merit.edu>; Tue, 10 Jun 2003 02:09:37 -0700 (PDT)
+Message-ID: <3EE59F77.8060201@sun.com>
+Date: Tue, 10 Jun 2003 11:05:59 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG last call: draft-ietf-zeroconf-ipv4-linklocal-08.txt
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+In the interest of expediency, I am starting a 2 week working group
+last call on the link-local document.  Please send comments to the
+WG mailing list until June 24, 2003.
+
+The comments sent by Stuart on past issues in recent days should be
+considered as part of the last call discussion.
+
+I believe the issues at hand are settled well enough, and well enough
+understood, that we can reach a consensus on questions that emerge
+*during the WG last call period.*  That is, we are departing from the
+'issue by issue' procedure we have followed since February to attempt
+to wrap this document up.
+
+Please see:
+http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-08.txt
+
+Thanks,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 11 03:06:54 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA27811
+	for <zeroconf-archive@lists.ietf.org>; Wed, 11 Jun 2003 03:06:53 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 56E7591239; Wed, 11 Jun 2003 03:06:41 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9F9F19123B; Wed, 11 Jun 2003 03:06:40 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from ALPHA8.ITS.MONASH.EDU.AU (alpha8.its.monash.edu.au [130.194.1.8])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EC90D91239
+	for <zeroconf@trapdoor.merit.edu>; Wed, 11 Jun 2003 03:06:31 -0400 (EDT)
+Received: from kapow.its.monash.edu.au ([130.194.1.71])
+ by vaxh.its.monash.edu.au (PMDF V5.2-31 #39306)
+ with ESMTP id <01KWZ4V1HYY89C4OF5@vaxh.its.monash.edu.au> for
+ zeroconf@trapdoor.merit.edu; Wed, 11 Jun 2003 17:01:00 +1000
+Received: from kapow.its.monash.edu.au (unknown [127.0.0.1])
+	by localhost (Postfix) with ESMTP id 3BEEA2002C	for
+ <zeroconf@trapdoor.merit.edu>; Wed, 11 Jun 2003 17:00:59 +1000 (EST)
+Received: from eng.monash.edu.au (knuth.eng.monash.edu.au [130.194.252.110])
+	by kapow.its.monash.edu.au (Postfix) with ESMTP id AE9FE20049	for
+ <zeroconf@trapdoor.merit.edu>; Wed, 11 Jun 2003 17:00:51 +1000 (EST)
+Date: Wed, 11 Jun 2003 17:00:51 +1000
+From: Greg Daley <greg.daley@eng.monash.edu.au>
+Subject: Announce: BoF Proposal: Detecting Network Attachment
+To: zeroconf@trapdoor.merit.edu
+Reply-To: greg.daley@eng.monash.edu.au
+Message-id: <3EE6D3A3.9080307@eng.monash.edu.au>
+Organization: Monash University
+MIME-version: 1.0
+Content-type: text/plain; format=flowed; charset=us-ascii
+Content-transfer-encoding: 7BIT
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.0.0) Gecko/20020529
+X-Accept-Language: en, en-us
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7BIT
+
+Hi,
+
+There has been some interest in various IETF WGs
+regarding what to do when attaching to a network,
+and how to distinguish if a host has attached to
+a currently configured network or a new one.
+
+I believe that in zeroconf, this may be of use in
+detecting network resource conflicts upon joining
+a link.
+
+There is currently a BoF proposed for IETF57 which
+aims to discuss issues uncovered in DHC, Mobile-IP
+and Zeroconf WGs.  The hope is that getting together
+people from these (and other) groups who are interested
+in the problems may lead to a unified approach
+to these problems (or at least only one approach each
+for IPv4 and IPv6).
+
+Here is the proposed BoF's description:
+
+
+Detecting Network Attachment (DNA) Proposed BoF Description:
+
+Network Attachment occurs when a host arrives on a new
+IP subnet.  When attaching to a network, a host either
+already has a valid configuration for this subnet or
+must configure addresses.  A host determines whether
+it requires additional configuration by Detecting Network
+Attachment.
+
+When a host has existing upper layer protocols sessions,
+it is important to receive a timely indication that
+attachment has occurred.  This may be the case if a host
+is connected intermittently, is moving or has urgent data
+to transmit upon attachment to a link.
+
+For these nodes, it is also important detect if an acquired
+link is new, or has already been visited. This information
+may be used to distinguish between events where
+configuration must be initiated, or a host already has
+valid configuration.
+
+This meeting hopes to providing a forum for those
+interested in developing generic attachment detection
+technologies for IPv4 and IPv6.
+
+The BOF aims to:
+
+* Describe existing issues encountered in DHC, ZEROCONF
+    and Mobileip WGs, which could benefit from work on
+    detecting network attachment.
+
+* Define the problem scope, and environments where network
+    attachment detection is desirable.
+
+* Determine if sufficient interest exists to form a
+    Working Group on this topic.
+
+* Reach consensus on the area of work for a potential WG,
+    including which problems are outside scope.
+---
+
+
+If you are interested in this topic, and contributing to
+an agenda for the proposed BoF, please subscribe to
+the mailing list:  dna@eng.monash.edu.au
+
+You may subscribe by sending an email to:
+
+majordomo@ecselists.eng.monash.edu.au
+
+with the words:
+
+subscribe dna
+
+in the body of the email.
+
+More information is available at the website:
+
+http://www.ctie.monash.edu.au/dna/
+
+
+Greg Daley
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 19 10:52:48 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA22706
+	for <zeroconf-archive@lists.ietf.org>; Thu, 19 Jun 2003 10:52:47 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2CD6B91233; Thu, 19 Jun 2003 10:52:38 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id F0CFC91236; Thu, 19 Jun 2003 10:52:37 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D466591233
+	for <zeroconf@trapdoor.merit.edu>; Thu, 19 Jun 2003 10:52:36 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B53A85DE5C; Thu, 19 Jun 2003 10:52:36 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 71AD55DDD2
+	for <zeroconf@merit.edu>; Thu, 19 Jun 2003 10:52:36 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by nwkea-mail-1.sun.com (8.12.9/8.12.9) with ESMTP id h5JEqZ4Z002705
+	for <zeroconf@merit.edu>; Thu, 19 Jun 2003 07:52:35 -0700 (PDT)
+Received: from sun.com (vpn-129-156-96-233.EMEA.Sun.COM [129.156.96.233])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h5JEqXSd942950
+	for <zeroconf@merit.edu>; Thu, 19 Jun 2003 07:52:34 -0700 (PDT)
+Message-ID: <3EF1CE27.1030909@sun.com>
+Date: Thu, 19 Jun 2003 16:52:23 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf <zeroconf@merit.edu>
+Subject: Re: WG last call: draft-ietf-zeroconf-ipv4-linklocal-08.txt
+Content-Type: text/plain; charset=ISO-8859-2; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+<wg chair hat on>
+Folks:
+
+Please read the final document and send comments.
+
+<wg chair hat off>
+
+These are responses to Stuart's mails during the first week in June.
+
+LL32
+
+   > 'will not advertise scoped address information'
+
+   This paraphrases the essential MUST NOT from LL23.  It could
+   be reworded slightly for clarity.
+
+   >must be reached by forwarding to the destination
+   >"...must be reached by sending directly to the destination..."
+
+   Agreed we should replace forwarding to sent.  This is a slight
+   rewording.
+
+   > The phrase "run the algorithm independently on each interface" may
+   > seem a simple thing to say, but when you have Ethernet and wireless,
+   > and (unknown to you) the wireless base station you're talking to is
+   > bridged onto the same Ethernet, the interfaces aren't independent
+   > any more, even if you wish they were.
+
+   We disagree.  If each interface runs the algorithm independently then
+   the hosts wireless and wired interface will select and defend
+   properly.  Only if they attempt to select and defend the same address
+   will they fail.  In that case they need to choose different addreses.
+   Using the algorithm, they are very likely to choose a different
+   address that the other interface did not choose, and therefore will
+   succeed.
+
+LL11
+
+   > As it stands, the paragraph reads like something saying, "This
+   > standard says you should pick a new address if you detect a
+   > conflict; here are some reasons why making your implementation
+   > actually do that would be a terrible mistake."
+
+   We disagree.  It says something like 'doing this exposes you to
+   vulnerabilities.'  Its like driving - you should know that you
+   could be smooshed every time you go on the freeway.  You don't
+   have to go on the freeway, but it would be extremely negligent
+   of your driving instructor to not let you know what you are facing.
+   You should not neglect what precautions you have like seat belts
+   insurance, etc (higher layer security protocols, no assumptions
+   that no one would ever perform an active attack as described).
+
+LL18
+
+   This issue was never codified, but we discussed it on the list
+   and there was broad agreement for it.  If you notice, this is
+   addressed in the new section 3 and section 2.6.2, both of which
+   have gone through WG last calls.  Your text changes the MAY to
+   a MUST, i.e. from
+
+    If the host does not have a routable source
+    address, then it MAY choose to ARP for the destination address and
+    then send its packet, with a Link-Local IPv4 source address and a
+    routable destination IPv4 address, directly to its destination on the
+    same physical link.
+
+   to
+
+    If the host has no appropriate
+    routable source address, then it MUST ARP for the destination address
+    and then send its packet, with a link-local source IP address and a
+    routable destination IP address, directly to the destination on the
+    same physical link.
+
+  I support this change.
+
+LL11
+
+<wg chair hat on>
+
+  This text has been reopened twice.  I do not think it should be
+  opened again.
+
+<wg chair hat off>
+
+  >   When ready to begin probing, the host should then wait
+  >   for a random time interval selected uniformly in the range
+  >   zero to one seconds, and should then send three probe
+  >   packets, spaced randomly, zero to one seconds apart.
+  >
+  > This means that, technically, if a device waits zero seconds, sends
+  > three ARP Probes spaced zero seconds apart, and then immediately
+  > begins using the address, that's legal.
+
+  While it is technically legal, there is an effective zero probability
+  that four random numbers selected uniformly will all occur at the
+  same 'zero' value.
+
+Best regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Mon Jun 23 23:29:39 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA19733
+	for <zeroconf-archive@lists.ietf.org>; Mon, 23 Jun 2003 23:29:38 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0A2A891225; Mon, 23 Jun 2003 23:29:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id D03A991253; Mon, 23 Jun 2003 23:29:31 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D63E891225
+	for <zeroconf@trapdoor.merit.edu>; Mon, 23 Jun 2003 23:29:30 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C45E05DE0A; Mon, 23 Jun 2003 23:29:30 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 8470F5DE01
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 23:29:30 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.12.9/8.12.9) with ESMTP id h5O3TPfR006207
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 20:29:25 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6302c41e18118164e1558@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 23 Jun 2003 20:29:29 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv2.apple.com (8.12.9/8.12.9) with SMTP id h5O3TQaH023145
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 20:29:26 -0700 (PDT)
+Message-Id: <200306240329.h5O3TQaH023145@scv2.apple.com>
+Subject: Re: WG last call: draft-ietf-zeroconf-ipv4-linklocal-08.txt
+Date: Mon, 23 Jun 2003 20:29:30 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "zeroconf" <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>These are responses to Stuart's mails during the first week in June.
+
+Erik, thank you for taking the time to respond.
+
+Unfortunately, the two weeks you chose for the official Working Group 
+Last Call were the exact two weeks leading up to the Apple Worldwide 
+Developer Conference this week in San Francisco, so no one at Apple 
+(including myself) has had any time to read the latest draft. This is 
+unfortunate.
+
+I will respond briefly to your specific points tonight.
+Reading the entire document will have to wait, I'm afraid.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Mon Jun 23 23:32:48 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA19820
+	for <zeroconf-archive@lists.ietf.org>; Mon, 23 Jun 2003 23:32:48 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E450691253; Mon, 23 Jun 2003 23:32:35 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A5CA591254; Mon, 23 Jun 2003 23:32:35 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 08C5891253
+	for <zeroconf@trapdoor.merit.edu>; Mon, 23 Jun 2003 23:32:18 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E02B85DDFC; Mon, 23 Jun 2003 23:32:18 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 73F3D5DDFB
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 23:32:18 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h5O3WFiB009970
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 20:32:15 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6302c6acf1118164e1558@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 23 Jun 2003 20:32:17 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv2.apple.com (8.12.9/8.12.9) with SMTP id h5O3WDaH023925
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 20:32:13 -0700 (PDT)
+Message-Id: <200306240332.h5O3WDaH023925@scv2.apple.com>
+Subject: LL32 Multihoming
+Date: Mon, 23 Jun 2003 20:32:18 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>> The phrase "run the algorithm independently on each interface" may
+>> seem a simple thing to say, but when you have Ethernet and wireless,
+>> and (unknown to you) the wireless base station you're talking to is
+>> bridged onto the same Ethernet, the interfaces aren't independent
+>> any more, even if you wish they were.
+>
+>We disagree.  If each interface runs the algorithm independently then
+>the hosts wireless and wired interface will select and defend
+>properly.  Only if they attempt to select and defend the same address
+>will they fail.  In that case they need to choose different addreses.
+>Using the algorithm, they are very likely to choose a different
+>address that the other interface did not choose, and therefore will
+>succeed.
+
+Speaking as someone who has implemented this code, the problem is this:
+
+1. Many IPv4 APIs (setsockopt IP_ADD_MEMBERSHIP, IP_MULTICAST_IF, etc.) 
+identify interfaces using IPv4 addresses.
+
+1(b). Therefore: It is helpful to ensure that each local interface has a 
+different IPv4 address.
+
+2. If a host sends from interface A to destination address B, and the 
+host also has an interface with address B, this is ambiguous and problems 
+arise.
+
+2(b). Therefore: It is helpful to ensure that no local interface has an 
+IPv4 address that it identical to *any* peer connected via *any* 
+interface.
+
+When you put these two requirement together, it means that if a host with 
+address A on Ethernet, and address B on AirPort, sees its own AirPort 
+packet come back on the Ethernet interface, then it may do the wrong 
+thing. It may incorrectly conclude that some other host on the Ethernet 
+has the same address as its AirPort interface, and proceed to change its 
+AirPort address to something else. This results in an infinite 
+"autoimmune" response packet storm. I know. It happened. It was bad.
+
+The fix is that when receiving an apparently conflicting ARP packet, it 
+should check *all* of its MAC addresses, to make sure the packet didn't 
+come from itself. This does in fact fix the problem.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Mon Jun 23 23:37:54 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA19903
+	for <zeroconf-archive@lists.ietf.org>; Mon, 23 Jun 2003 23:37:53 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0053791254; Mon, 23 Jun 2003 23:37:48 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id C82E691256; Mon, 23 Jun 2003 23:37:47 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CA60091254
+	for <zeroconf@trapdoor.merit.edu>; Mon, 23 Jun 2003 23:37:46 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B86455DDFC; Mon, 23 Jun 2003 23:37:46 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 4ACC05DDFB
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 23:37:46 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h5O3bhiB010810
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 20:37:43 -0700 (PDT)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6302cbad94118164e1558@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 23 Jun 2003 20:37:44 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv2.apple.com (8.12.9/8.12.9) with SMTP id h5O3bfaH025774
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 20:37:41 -0700 (PDT)
+Message-Id: <200306240337.h5O3bfaH025774@scv2.apple.com>
+Subject: LL11 Security consideration for the threat where an attacker forces address reconfiguration
+Date: Mon, 23 Jun 2003 20:37:46 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>> As it stands, the paragraph reads like something saying, "This
+>> standard says you should pick a new address if you detect a
+>> conflict; here are some reasons why making your implementation
+>> actually do that would be a terrible mistake."
+>
+>We disagree.  It says something like 'doing this exposes you to
+>vulnerabilities.'  Its like driving - you should know that you
+>could be smooshed every time you go on the freeway.  You don't
+>have to go on the freeway, but it would be extremely negligent
+>of your driving instructor to not let you know what you are facing.
+>You should not neglect what precautions you have like seat belts
+>insurance, etc (higher layer security protocols, no assumptions
+>that no one would ever perform an active attack as described).
+
+I'm afraid you are still not seeing the point I am making.
+
+The point is not about the security issue. The point is about the implied 
+response to the security issue.
+
+Having understood the security issue, is the correct response to not 
+implement IPv4LL AT ALL? Or, is the correct response to implement IPv4LL, 
+except the part about changing the address in response to a conflict?
+
+If the former, this is an internally-consistent and reasonable response 
+to the problem.
+
+If the latter, this is a completely bogus and pointless response to the 
+problem: The entire purpose of IPv4LL, the beginning and end of its 
+reason for existence, is one thing and one thing only: An algorithm for a 
+group of cooperating hosts, in the absence of any other authority, to 
+arrive at a set of mutually unique IP addresses. That its only purpose. 
+If you implement IPv4LL, except the part about ensuring that each host 
+has a different address, then what have you implemented? Nothing.
+
+I am very serious about this. If there is anyone on this list willing to 
+argue in favour of the "Implement IPv4LL but don't change address on 
+conflict" position, then we need to have a serious discussion about what 
+it is that IPv4LL is supposed to be doing. IPv4LL does *NOTHING* except 
+maintain mutually unique IP addresses in the absence of DHCP or manual 
+administration. What else is there for it to do?
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 00:03:15 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id AAA20378
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 00:03:14 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id DE77C91263; Tue, 24 Jun 2003 00:02:20 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8343C91261; Tue, 24 Jun 2003 00:02:20 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EA9BA91257
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 00:02:13 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id AEE885DDCA; Tue, 24 Jun 2003 00:02:13 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 113895DDBF
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 00:02:13 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h5O42AiB014571
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 21:02:10 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6302e1c7dc118064e1724@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Mon, 23 Jun 2003 21:01:53 -0700
+Received: from [17.202.44.119] (chesh7.apple.com [17.202.44.119])
+	by scv1.apple.com (8.12.9/8.12.9) with SMTP id h5O429di019311
+	for <zeroconf@merit.edu>; Mon, 23 Jun 2003 21:02:09 -0700 (PDT)
+Message-Id: <200306240402.h5O429di019311@scv1.apple.com>
+Subject: LL31 Probing intervals
+Date: Mon, 23 Jun 2003 21:02:14 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>>When ready to begin probing, the host should then wait
+>>for a random time interval selected uniformly in the range
+>>zero to one seconds, and should then send three probe
+>>packets, spaced randomly, zero to one seconds apart.
+>>
+>> This means that, technically, if a device waits zero seconds, sends
+>> three ARP Probes spaced zero seconds apart, and then immediately
+>> begins using the address, that's legal.
+>
+>While it is technically legal, there is an effective zero probability
+>that four random numbers selected uniformly will all occur at the
+>same 'zero' value.
+
+"Design for testability" is an important principle throughout computer 
+hardware and software design. If you want to know that something is 
+operating properly, then the ability to apply objective tests to 
+determine that is a big asset.
+
+Any allowed randomness makes objective testing harder. Anyone who has 
+wasted time tracking down a hard-to-reproduce bug caused by an 
+uninitialized stack variable will tell you the perils of code where the 
+execution is different and essentially random every time it is run.
+
+Therefore, randomness in software and hardware design should only be 
+applied where the benefit it brings is sufficient to merit bearing the 
+cost of the testing and debugging disadvantages that go with it.
+
+A random interval between packets in the range 0-1000ms has no technical 
+merit and is clearly indefensible.
+
+A more plausible proposal -- were there strong credible experimental 
+evidence and theoretical analysis to support the position that it is 
+worth the additional code and testing difficulty -- would be a random 
+interval between packets of 1000-1333ms. This means that every device 
+must wait between three and four seconds before completing probing. This 
+is verifiable through testing. This means that every device waits at 
+least 1000ms between packets, so vendors of future Ethernet switches have 
+clear guidance about how quickly they must bring the port on-line if they 
+wish to have IPv4LL operate reliably. Predicability and knowing what to 
+expect is the point of having a standard. Unpredictability and not having 
+any idea precisely what the device is allowed to do is not helpful to the 
+vendors making products to work in this area.
+
+Were there strong evidence to support the 1000-1333ms proposal, I could 
+live with it. However, I strongly doubt that serious research would 
+demonstrate any material benefit gained by having the extra randomness in 
+addition to the initial random delay. Furthermore, experience dealing 
+with device vendors suggests that no one will actually implement this. I 
+would prefer us not to have language in a standard that we know is not 
+really necessary, and not really implemented by anyone.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 06:10:31 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA08936
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 06:10:31 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 3A9F79125F; Tue, 24 Jun 2003 06:10:24 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 0847C91260; Tue, 24 Jun 2003 06:10:23 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1AB049125F
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 06:10:23 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0994F5DE03; Tue, 24 Jun 2003 06:10:23 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-2.sun.com (brmea-mail-2.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id B75E65DDF5
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 06:10:22 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by brmea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h5OAAJvc006823;
+	Tue, 24 Jun 2003 04:10:19 -0600 (MDT)
+Received: from sun.com (vpn-129-156-96-96.EMEA.Sun.COM [129.156.96.96])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h5OAAGSd438352;
+	Tue, 24 Jun 2003 03:10:17 -0700 (PDT)
+Message-ID: <3EF82370.4050109@sun.com>
+Date: Tue, 24 Jun 2003 12:09:52 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL11 Security consideration for the threat where an attacker
+ forces address reconfiguration
+References: <200306240337.h5O3bfaH025774@scv2.apple.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Stuart Cheshire wrote:
+>>>As it stands, the paragraph reads like something saying, "This
+>>>standard says you should pick a new address if you detect a
+>>>conflict; here are some reasons why making your implementation
+>>>actually do that would be a terrible mistake."
+>>
+>>We disagree.  It says something like 'doing this exposes you to
+>>vulnerabilities.'  Its like driving - you should know that you
+>>could be smooshed every time you go on the freeway.  You don't
+>>have to go on the freeway, but it would be extremely negligent
+>>of your driving instructor to not let you know what you are facing.
+>>You should not neglect what precautions you have like seat belts
+>>insurance, etc (higher layer security protocols, no assumptions
+>>that no one would ever perform an active attack as described).
+> 
+> 
+> I'm afraid you are still not seeing the point I am making.
+> 
+> The point is not about the security issue. The point is about the implied 
+> response to the security issue.
+> 
+> Having understood the security issue, is the correct response to not 
+> implement IPv4LL AT ALL? Or, is the correct response to implement IPv4LL, 
+> except the part about changing the address in response to a conflict?
+
+The correct response is to make an advised decision whether to implement
+it or not.  If one implements the protocol, with the risks in mind,
+one can take the necessary precautions - for instance using application
+layer security, or whatever.  IPv4LL is absolutely no different in this
+respect than any other protocol published by the IETF.
+
+If an implementor does not care about standards compliance, she or he
+will probably ignore the standard.  If interoperation and vendor
+reputation (delivering quality networking products to the market) is a
+high priority, the implementor will not ignore requirements.
+
+You are suggesting toning down security considerations which have 
+achieved consensus in the WG.  Your argument is that this will avoid
+alarming implementors, that the current wording tempts implementors to
+ignore requirements.  This does argument does not persuade me.  What are
+others' opinions?
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 06:50:58 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA10660
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 06:50:57 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id C919791262; Tue, 24 Jun 2003 06:50:52 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9AC8691264; Tue, 24 Jun 2003 06:50:52 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 609FF91262
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 06:50:50 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 3E69D5DD92; Tue, 24 Jun 2003 06:50:50 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 4E31F5DD9E
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 06:50:18 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h5OAo7F13604;
+	Tue, 24 Jun 2003 17:50:08 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h5OAnDg01675;
+	Tue, 24 Jun 2003 17:49:13 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL32 Multihoming 
+In-Reply-To: <200306240332.h5O3WDaH023925@scv2.apple.com> 
+References: <200306240332.h5O3WDaH023925@scv2.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Tue, 24 Jun 2003 17:49:13 +0700
+Message-ID: <29984.1056451753@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Mon, 23 Jun 2003 20:32:18 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306240332.h5O3WDaH023925@scv2.apple.com>
+
+  | 1(b). Therefore: It is helpful to ensure that each local interface has a 
+  | different IPv4 address.
+
+That's fine, and if you want to implement the address choice algorithm
+so that addresses assigned to one interface cannot be assigned to another,
+go for it.
+
+  | 2. If a host sends from interface A to destination address B, and the 
+  | host also has an interface with address B, this is ambiguous and problems 
+  | arise.
+
+But this is utter nonsense, and simply illustrates a defect in the
+implementation.
+
+When sending to a link local address, you *must* know which interface
+you're planning on using, there cannot be any room for flexibility.
+
+Otherwise, you have no idea which (of several) possible owners of the
+target address you should communicate with - this is regardless of what
+local addresses might be in use, and whether any of those are duplicated
+anywhere.
+
+  | 2(b). Therefore: It is helpful to ensure that no local interface has an 
+  | IPv4 address that it identical to *any* peer connected via *any* 
+  | interface.
+
+This seems to imply that you want to be able to operate in a mode where
+you don't care which interface you're sending to.  That is, when a packet
+is to be sent to a destination and you have no idea which interface it
+is connected to, you'd ARP on all of them.   But for that to work, you
+have to assume there will only be one reply.   Otherwise you're simply
+lost.   And to make sure there's only one reply, you really have to
+do the address claim/defend algorithm on the whole network (each probe
+needs to be relayed to all nets).
+
+If we assume that (one day) all nodes support LL addresses on all interfaces,
+then that's going to mean that the whole internet will see every probe.
+
+That's absurd.
+
+And of course, there's also nothing in these protocols to provide any
+measure of loop control on these relayed probes that would be needed.
+
+So, clearly we cannot do network wide address uniqueness testing, only
+link wide.   Thus, it is clearly possible for any address to exist on
+multiple links, and some means other than the address itself is going to
+be required for disambiguating that case.
+
+As soon as you reach that conclusion, you also see that exactly the same
+mechanism suffices to handle local addresses - a packet addressed to a
+link local address on interface 1 cannot possibly get caught by any
+link local address on interface 2, even where the target address is the
+local LL address of interface 2.   At this point it is no longer required
+that the local LL address of interface 2 fail to conflict with LL addresses
+on the link connected to interface 1.
+
+  | When you put these two requirement together,
+
+We do not do that.
+
+  | it means that if a host with 
+  | address A on Ethernet, and address B on AirPort, sees its own AirPort 
+  | packet come back on the Ethernet interface, then it may do the wrong 
+  | thing. It may incorrectly conclude that some other host on the Ethernet 
+  | has the same address as its AirPort interface, and proceed to change its 
+  | AirPort address to something else.
+
+It should not, that is broken behaviour.
+
+  | The fix is that when receiving an apparently conflicting ARP packet, it 
+  | should check *all* of its MAC addresses, to make sure the packet didn't 
+  | come from itself. This does in fact fix the problem.
+
+It is fine to do that, but it should not be necessary.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 07:30:11 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA12201
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 07:30:11 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0AE1F91265; Tue, 24 Jun 2003 07:11:43 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CAAC891266; Tue, 24 Jun 2003 07:11:42 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BC96991265
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 07:11:41 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A997E5DE40; Tue, 24 Jun 2003 07:11:41 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id E57515DE27
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 07:11:39 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h5OBBDF28575;
+	Tue, 24 Jun 2003 18:11:13 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h5OB9xg06875;
+	Tue, 24 Jun 2003 18:09:59 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL11 Security consideration for the threat where an attacker forces address reconfiguration 
+In-Reply-To: <200306240337.h5O3bfaH025774@scv2.apple.com> 
+References: <200306240337.h5O3bfaH025774@scv2.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Tue, 24 Jun 2003 18:09:58 +0700
+Message-ID: <22059.1056452998@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Mon, 23 Jun 2003 20:37:46 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306240337.h5O3bfaH025774@scv2.apple.com>
+
+  | If the latter, this is a completely bogus and pointless response to the 
+  | problem: The entire purpose of IPv4LL, the beginning and end of its 
+  | reason for existence, is one thing and one thing only: An algorithm for a 
+  | group of cooperating hosts, in the absence of any other authority, to 
+  | arrive at a set of mutually unique IP addresses. That its only purpose.
+
+Yes, and that is fine.   And regardless of whether or not addresses
+are changed upon late conflict detection does not make much difference
+to that.
+
+That is, the mechanism doesn't have to be perfect in every possible
+scenario to be useful, does it?
+
+  | If you implement IPv4LL, except the part about ensuring that each host 
+  | has a different address, then what have you implemented? Nothing.
+
+Of course, so you do implement that part, and make sure you get a
+unique address.   Then, if it later turns out you were wrong, one
+reasonable option is to just say "I give up".
+
+That is, it works most of the time, but in some rare situations, it
+might not.
+
+Aside from deliberate attacks, which nothing in the LL draft will allow
+a host to survive, the only way this problem can occur, that I'm aware
+of, if when two previously independent links are connected to become
+one link (bridging enabled, or whatever).
+
+In that circumstance, if address conflicts occur, it is entirely
+reasonable for a host, if it wants, to simply cling onto its address
+and refuse to let go.   If the other host changes, then everything
+is OK, there was no real need for both of them to alter addresses.
+If both alter, that's OK too.   If both are determined to hold their
+addresses, then those two are effectively locked off the LL link.
+
+For some hosts, that may very well be the best solution - I can't
+talk, but I will make sure the other guy can't either.   It all
+depends just what the host is doing.
+
+  | I am very serious about this. If there is anyone on this list willing to 
+  | argue in favour of the "Implement IPv4LL but don't change address on 
+  | conflict" position, then we need to have a serious discussion about what 
+  | it is that IPv4LL is supposed to be doing. IPv4LL does *NOTHING* except 
+  | maintain mutually unique IP addresses in the absence of DHCP or manual 
+  | administration. What else is there for it to do?
+
+You are wanting perfection where no prefection is possible.   If you claim
+that IPv4LL should not exist if it fails to guarantee that every host
+(implementing it) will always get a usable v4LL address that it can use,
+then you might as well abandon v4LL now, as we know that is simply not
+possible to achieve.
+
+Much better is to abandon that requirement, and just allow it to work
+most of the time.
+
+Also note, that no-one is requiring that hosts hold onto their addresses.
+Just that the implementor consider the issues involved with changing,
+and whether that allows an unreasonable security issue for the host.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 22:45:21 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id WAA03752
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 22:45:06 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4157D91211; Tue, 24 Jun 2003 22:27:54 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 072569125C; Tue, 24 Jun 2003 22:27:53 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1947491211
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 22:27:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 059245DE7F; Tue, 24 Jun 2003 22:27:53 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 8EE315DDF1
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 22:27:52 -0400 (EDT)
+Received: from mailgate1.apple.com (A17-128-100-225.apple.com [17.128.100.225])
+	by mail-out1.apple.com (8.12.9/8.12.9) with ESMTP id h5P2RniB007418
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 19:27:49 -0700 (PDT)
+Received: from scv1.apple.com (scv1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6307b1c36e118064e1724@mailgate1.apple.com> for <zeroconf@merit.edu>;
+ Tue, 24 Jun 2003 19:27:32 -0700
+Received: from [17.219.192.145] (vpn-scv-x0-145.apple.com [17.219.192.145])
+	by scv1.apple.com (8.12.9/8.12.9) with SMTP id h5P2Rmdi010472
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 19:27:48 -0700 (PDT)
+Message-Id: <200306250227.h5P2Rmdi010472@scv1.apple.com>
+Subject: Re: LL11 Security consideration for the threat where an attacker forces address reconfiguration
+Date: Tue, 24 Jun 2003 19:27:51 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>The correct response is to make an advised decision whether to implement
+>it or not.
+
+Erik, I asked an *extremely* simple question, and you have still skirted 
+around answering it.
+
+When you write "it" in your sentence what are you talking about?
+
+Are you saying, "The correct response is to make an advised decision 
+whether to implement IPv4LL or not."
+
+Are you saying, "The correct response is to make an advised decision 
+whether to pick a new address in response to a conflict."
+
+Which is it? This ambiguity is precisely the point I am making. Until I 
+know what you are saying, I can't tell if I agree with you or not.
+
+>If one implements the protocol, with the risks in mind,
+>one can take the necessary precautions - for instance using
+>application layer security, or whatever.
+
+How does application layer security protect against Erik Nordmark's 
+"distinct threat".
+
+>You are suggesting toning down security considerations which have 
+>achieved consensus in the WG.
+
+No, I'm saying that the document should be providing answers, not 
+unanswered questions. Having explained the "distinct threat", the 
+document should give developers guidance about what they should do about 
+that threat, not raise the issue and then leave the question unanswered.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 23:11:05 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA04524
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 23:11:04 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id EC24E91236; Tue, 24 Jun 2003 23:10:57 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B809791237; Tue, 24 Jun 2003 23:10:57 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id CA2B391236
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 23:10:56 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B1ACB5DEA2; Tue, 24 Jun 2003 23:10:56 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 45FFE5DE2E
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 23:10:56 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.12.9/8.12.9) with ESMTP id h5P3AofR016495
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 20:10:50 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6307d97980118164e13c0@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Tue, 24 Jun 2003 20:10:55 -0700
+Received: from [17.219.192.145] (vpn-scv-x0-145.apple.com [17.219.192.145])
+	by scv3.apple.com (8.12.9/8.12.9) with SMTP id h5P3Ao0K012267
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 20:10:50 -0700 (PDT)
+Message-Id: <200306250310.h5P3Ao0K012267@scv3.apple.com>
+Subject: Re: LL11 Security consideration for the threat where an attacker forces address reconfiguration
+Date: Tue, 24 Jun 2003 20:10:55 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Of course, so you do implement that part, and make sure you get a
+>unique address.   Then, if it later turns out you were wrong, one
+>reasonable option is to just say "I give up".
+
+I do not agree. I do not think it is reasonable for a networking product 
+to just "give up". I do not want to buy a product that just gives up, and 
+I'd rather that other people didn't have to either.
+
+>Aside from deliberate attacks, which nothing in the LL draft will allow
+>a host to survive
+
+Agreed. The entire specification is predicated on cooperating hosts. If 
+the other participants refuse to cooperate, systematically denying every 
+probe, then this (or any other mechanism based on cooperation) cannot 
+succeed.
+
+>the only way this problem can occur, that I'm aware
+>of, if when two previously independent links are connected to become
+>one link (bridging enabled, or whatever).
+
+No, it happens when network operators have Spanning Tree port blocking 
+times set too high. AppleTalk had no late conflict detection, and failed 
+badly in these environments. As a result, Apple had to advise all sites 
+using AppleTalk to disable Spanning Tree, or at least dramatically reduce 
+the port blocking time. It was an ongoing headache for Apple.
+
+Late conflict detection provides MUCH improved behaviour in these 
+situations.
+
+>if address conflicts occur, it is entirely reasonable for a host,
+>if it wants, to simply cling onto its address and refuse to let go.
+
+No, I absolutely disagree.
+
+The motivation for this Working Group (at least for some of us) since the 
+first day has been to bring some of the benefits of AppleTalk to IP, 
+without repeating the mistakes of AppleTalk.
+
+Ignoring late conflicts was one of the disastrous mistakes of AppleTalk.
+It caused endless problems.
+
+If this Working Group cannot agree that a host MUST NOT ignore late 
+conflicts, then I fear we will have arrived at an unresolvable deadlock.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 24 23:33:35 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id WAA03754
+	for <zeroconf-archive@lists.ietf.org>; Tue, 24 Jun 2003 22:45:09 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 40F269125C; Tue, 24 Jun 2003 22:28:14 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 18D649126E; Tue, 24 Jun 2003 22:28:14 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 3347A9125C
+	for <zeroconf@trapdoor.merit.edu>; Tue, 24 Jun 2003 22:28:13 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1ECEA5DE9F; Tue, 24 Jun 2003 22:28:13 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 9D0FC5DE9A
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 22:28:12 -0400 (EDT)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.12.9/8.12.9) with ESMTP id h5P2S7fR009401
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 19:28:07 -0700 (PDT)
+Received: from scv3.apple.com (scv3.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T6307b25cfd118164e13c0@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Tue, 24 Jun 2003 19:28:12 -0700
+Received: from [17.219.192.145] (vpn-scv-x0-145.apple.com [17.219.192.145])
+	by scv3.apple.com (8.12.9/8.12.9) with SMTP id h5P2S20K023732
+	for <zeroconf@merit.edu>; Tue, 24 Jun 2003 19:28:02 -0700 (PDT)
+Message-Id: <200306250228.h5P2S20K023732@scv3.apple.com>
+Subject: Re: LL32 Multihoming
+Date: Tue, 24 Jun 2003 19:28:07 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I wrote:
+>The fix is that when receiving an apparently conflicting ARP packet, it 
+>should check *all* of its MAC addresses, to make sure the packet didn't 
+>come from itself.
+
+Robert Elz wrote
+>It is fine to do that...
+
+That's all I was asking for.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 05:20:22 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA05387
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 05:20:21 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 992489121B; Wed, 25 Jun 2003 05:19:37 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6F2079121D; Wed, 25 Jun 2003 05:19:37 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 58BB09121B
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 05:19:36 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 344D65DEC4; Wed, 25 Jun 2003 05:19:36 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id B02135DD90
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 05:19:35 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h5P9JWfU013185;
+	Wed, 25 Jun 2003 02:19:32 -0700 (PDT)
+Received: from sun.com (vpn-129-159-1-3.EMEA.Sun.COM [129.159.1.3])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h5P9JTA1134273;
+	Wed, 25 Jun 2003 02:19:30 -0700 (PDT)
+Message-ID: <3EF96904.10708@sun.com>
+Date: Wed, 25 Jun 2003 11:19:00 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL11 Security consideration for the threat where an attacker
+ forces address reconfiguration
+References: <200306250227.h5P2Rmdi010472@scv1.apple.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Stuart Cheshire wrote:
+>>The correct response is to make an advised decision whether to implement
+>>it or not.
+> 
+> 
+> Erik, I asked an *extremely* simple question, and you have still skirted 
+> around answering it.
+> 
+> When you write "it" in your sentence what are you talking about?
+> 
+> Are you saying, "The correct response is to make an advised decision 
+> whether to implement IPv4LL or not."
+> 
+> Are you saying, "The correct response is to make an advised decision 
+> whether to pick a new address in response to a conflict."
+> 
+> Which is it? This ambiguity is precisely the point I am making. Until I 
+> know what you are saying, I can't tell if I agree with you or not.
+
+One can either implement the entire specification - abiding by *all*
+requirements, as standardized, or not.  We cannot prevent those
+who are determined to from violating standards.  But the IETF must
+expect that if vendors are interested in interoperability, 
+administrability and their products functioning correctly and
+appropriately on the network, they will implement specifications
+abiding by the rules.  A MUST is a MUST.
+
+>>If one implements the protocol, with the risks in mind,
+>>one can take the necessary precautions - for instance using
+>>application layer security, or whatever.
+> 
+> 
+> How does application layer security protect against Erik Nordmark's 
+> "distinct threat".
+> 
+> 
+>>You are suggesting toning down security considerations which have 
+>>achieved consensus in the WG.
+> 
+> 
+> No, I'm saying that the document should be providing answers, not 
+> unanswered questions. Having explained the "distinct threat", the 
+> document should give developers guidance about what they should do about 
+> that threat, not raise the issue and then leave the question unanswered.
+
+    In all cases, whether or not Link-Local IPv4 addresses are used, it
+    is necessary for implementers of devices supporting the Internet
+    Protocol to analyze the known and credible threats to which a
+    specific host or device might be subjected, and to the extent that it
+    is feasible, to provide security mechanisms which ameliorate or
+    reduce the risks associated with such threats.
+
+Security can be provided for applications which are using ipv4 ll which
+'ameliorate or reduce the risks' described above.  For example, use of
+application layer security.  In the case we are discussing, where one
+can use the weakness of ARP combined with its central role in IPv4 LL
+to disable hosts, there is no direct defense.  One extremely concerned
+about these specific on-link active attacks might decide for this reason
+to avoid implementing IPv4 LL entirely.
+
+If the criteria for publishing this RFC on the standards track is that
+we come up with a secure solution to the problems exposed by IPv4 LL,
+we will not publish this document.  In this case, I believe it is
+sufficient to document weaknesses which are exposed but not countered.
+IPv4 LL relies on ARP and which has known vulnerabilities; IPv4 LL 
+amplifies those vulnerabilities in ways we document.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 10:48:32 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA12356
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 10:48:32 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 22A4B9121D; Wed, 25 Jun 2003 10:48:26 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E097091228; Wed, 25 Jun 2003 10:48:25 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id C61F19121D
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 10:48:24 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 98D505DF0F; Wed, 25 Jun 2003 10:48:24 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mcbain.stg.com (mcbain.stg.com [65.162.207.13])
+	by segue.merit.edu (Postfix) with ESMTP id E89A45DEF8
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 10:48:23 -0400 (EDT)
+Received: from stg.com (pikachu.stg.com [65.162.207.170]) by
+          mcbain.stg.com (Netscape Messaging Server 4.15) with ESMTP id
+          HH1L4M00.02P; Wed, 25 Jun 2003 09:48:22 -0500 
+Message-ID: <3EF9B636.9050009@stg.com>
+Date: Wed, 25 Jun 2003 09:48:22 -0500
+From: "Chris Herzog" <zog@stg.com>
+Organization: Software Technologies Group, Inc.
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030529
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL31 Probing intervals
+References: <200306240402.h5O429di019311@scv1.apple.com>
+In-Reply-To: <200306240402.h5O429di019311@scv1.apple.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Stuart Cheshire wrote:
+
+>>>When ready to begin probing, the host should then wait
+>>>for a random time interval selected uniformly in the range
+>>>zero to one seconds, and should then send three probe
+>>>packets, spaced randomly, zero to one seconds apart.
+>>>
+>>>This means that, technically, if a device waits zero seconds, sends
+>>>three ARP Probes spaced zero seconds apart, and then immediately
+>>>begins using the address, that's legal.
+>>
+>>While it is technically legal, there is an effective zero probability
+>>that four random numbers selected uniformly will all occur at the
+>>same 'zero' value.
+> 
+> 
+> "Design for testability" is an important principle throughout computer 
+> hardware and software design. If you want to know that something is 
+> operating properly, then the ability to apply objective tests to 
+> determine that is a big asset.
+> 
+> Any allowed randomness makes objective testing harder. Anyone who has 
+> wasted time tracking down a hard-to-reproduce bug caused by an 
+> uninitialized stack variable will tell you the perils of code where the 
+> execution is different and essentially random every time it is run.
+> 
+> Therefore, randomness in software and hardware design should only be 
+> applied where the benefit it brings is sufficient to merit bearing the 
+> cost of the testing and debugging disadvantages that go with it.
+> 
+> A random interval between packets in the range 0-1000ms has no technical 
+> merit and is clearly indefensible.
+
+I'm in strong agreement with Stuart on this topic.  If there are 
+boundary cases that are inappropriate to use, unlikely to occur, may 
+cause interoperability problems, be difficult to test and verify, but 
+still possible *and* compliant with the specification, it would seem 
+that the specification should be tightened to exclude them to not just 
+consider it covered because it's very unlikely to happen.
+
+ From an implementation perspective, if I had a nickle for every broken 
+homebrew random number generator I've come across, well, I'd have a 
+quite a number of nickles.  Also allowing very short delays and probing 
+times increases the chances of interoperability problems when a number 
+of these products get together on the same network.  I'm imagining a 
+network of these devices coming up from a cold start where not only the 
+devices themselves but the networking infrastructure like switches, 
+hubs, etc. all need to come up at the same time.  Allowing very short 
+times puts a very stringent requirement on the other network components 
+to have to be ready to operate almost instantaneously upon network restart.
+
+
+
+
+-- 
+Chris Herzog                    Software Technologies Group, Inc.
+mailto:zog@stg.com              http://www.stg.com
+(708) 547-0110 x225             FAX (708) 547-0783
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 11:02:56 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA13732
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 11:02:56 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 9AFE091232; Wed, 25 Jun 2003 11:02:50 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 6AF1891238; Wed, 25 Jun 2003 11:02:50 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 7907F91232
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 11:02:49 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 5E67F5DEF8; Wed, 25 Jun 2003 11:02:49 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id DA0CA5DED8
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 11:02:48 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h5PF2ifU025326;
+	Wed, 25 Jun 2003 08:02:44 -0700 (PDT)
+Received: from sun.com (vpn-129-159-1-15.EMEA.Sun.COM [129.159.1.15])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h5PF2fFr133868;
+	Wed, 25 Jun 2003 08:02:42 -0700 (PDT)
+Message-ID: <3EF9B977.5040109@sun.com>
+Date: Wed, 25 Jun 2003 17:02:15 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu, erik.nordmark@sun.com
+Subject: Re: LL32 Multihoming
+References: <200306250228.h5P2S20K023732@scv3.apple.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Stuart,
+
+This issue reawakens concerns raised by Erik Nordmark which we have
+already dealt with in the 'issue resolution process.'
+
+Stuart Cheshire wrote:
+ > 2(b). Therefore: It is helpful to ensure that no local interface has
+ > an IPv4 address that it identical to *any* peer connected via *any*
+ > interface.
+
+We had language like this in the document which was removed because
+it gives rise to a new and significant vulnerability. (See LL14)
+A host on one link can disrupt hosts on other links (it is not
+connected to) if IPv4LL has this property.
+
+Example: Imagine a multihomed host H1 is connected to links 1 and 2.
+An attacker is on link 1 and causes H1 to reconfigure by claiming
+addresses.  This should only effect link 1, not link 2.  The effects
+could be wider than the links immediately connected to the attacker's
+multihomed neighbors.  Following the example:  Host H2 is connected to
+both link 2 and link 3.  As H1 is forced to reconfigure its address on
+link 2 to be unique, this forces H2 to reconfigure as well, which has
+consequences on link 3.
+
+LL14 was rejected since LL15 was accepted:  the algorithm being
+completely separate on each interface meant that the vulnerability no
+longer arises.  Your 2b above conflicts with the accepted LL15 and if
+ignored gives rise to the concern in LL14 - which can no longer be 
+ignored (rejected.)
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 11:19:07 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA14941
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 11:19:06 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id BABBD91238; Wed, 25 Jun 2003 11:18:58 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8AB039123E; Wed, 25 Jun 2003 11:18:58 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 96C0D91238
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 11:18:57 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 817A85DE08; Wed, 25 Jun 2003 11:18:57 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from garlic.amaranth.net (garlic.amaranth.net [208.254.46.17])
+	by segue.merit.edu (Postfix) with ESMTP id E9A7D5DEFB
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 11:18:56 -0400 (EDT)
+Received: from Willow.senie.com (amaranth.ne.client2.attbi.com [24.34.18.226])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.7/8.11.7) with ESMTP id h5PFIKX13622
+	(using TLSv1/SSLv3 with cipher RC4-SHA (128 bits) verified NO);
+	Wed, 25 Jun 2003 11:18:21 -0400
+Message-Id: <5.2.1.1.2.20030625111132.02a81960@mail.amaranth.net>
+X-Sender: dts@mail.amaranth.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.2.1
+Date: Wed, 25 Jun 2003 11:18:14 -0400
+To: Erik Guttman <erik.guttman@sun.com>, Stuart Cheshire <cheshire@apple.com>
+From: Daniel Senie <dts@senie.com>
+Subject: Re: LL32 Multihoming
+Cc: zeroconf@merit.edu, erik.nordmark@sun.com
+In-Reply-To: <3EF9B977.5040109@sun.com>
+References: <200306250228.h5P2S20K023732@scv3.apple.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 11:02 AM 6/25/2003, Erik Guttman wrote:
+>Stuart,
+>
+>This issue reawakens concerns raised by Erik Nordmark which we have
+>already dealt with in the 'issue resolution process.'
+>
+>Stuart Cheshire wrote:
+> > 2(b). Therefore: It is helpful to ensure that no local interface has
+> > an IPv4 address that it identical to *any* peer connected via *any*
+> > interface.
+>
+>We had language like this in the document which was removed because
+>it gives rise to a new and significant vulnerability. (See LL14)
+>A host on one link can disrupt hosts on other links (it is not
+>connected to) if IPv4LL has this property.
+>
+>Example: Imagine a multihomed host H1 is connected to links 1 and 2.
+>An attacker is on link 1 and causes H1 to reconfigure by claiming
+>addresses.  This should only effect link 1, not link 2.  The effects
+>could be wider than the links immediately connected to the attacker's
+>multihomed neighbors.  Following the example:  Host H2 is connected to
+>both link 2 and link 3.  As H1 is forced to reconfigure its address on
+>link 2 to be unique, this forces H2 to reconfigure as well, which has
+>consequences on link 3.
+>
+>LL14 was rejected since LL15 was accepted:  the algorithm being
+>completely separate on each interface meant that the vulnerability no
+>longer arises.  Your 2b above conflicts with the accepted LL15 and if
+>ignored gives rise to the concern in LL14 - which can no longer be ignored 
+>(rejected.)
+
+Umm, this doesn't follow well from the first message in this discussion thread.
+
+Stuart talked about a concern regarding IP address collision with one's own 
+interfaces. Since a host CAN validate the source MAC address of the packets 
+that come back it's possible to determine if you're arguing iwth yourself. 
+It's still true someone could spoof your MAC address in an ARP packet to 
+cause damage, but as we know that's a place where ARP has issues, and we 
+can't solve them here.
+
+Erik, you're talking about reconfiguration based on claims (possibly bogus) 
+of use of IP address. Aside from someone spoofing the MAC address as well, 
+it isn't clear your response aligns with the problem Stuart raised.
+
+I think what Stuart is talking about both has merit, and relates to 
+operational experience, and deserves to be considered as such. Laptops with 
+multiple interfaces are now the norm (for all new products shipping, since 
+the push to put 802.11a/b/g/x/y/z is near universal).
+
+Dan 
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 11:46:26 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA17515
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 11:46:24 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id C8ED69123E; Wed, 25 Jun 2003 11:45:15 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 94D179123F; Wed, 25 Jun 2003 11:45:15 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 8C9049123E
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 11:45:14 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A2E685DE08; Wed, 25 Jun 2003 11:45:11 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from fuchsia.home (ip27.coe.tnet.co.th [203.146.155.27])
+	by segue.merit.edu (Postfix) with ESMTP id 3E2C45DD94
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 11:45:09 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.ex0.home [192.168.192.22]) by fuchsia.home with ESMTP
+	id h5PFhom0020190; Wed, 25 Jun 2003 22:43:57 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h5PANQF23246;
+	Wed, 25 Jun 2003 17:23:26 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL32 Multihoming 
+In-Reply-To: <200306250228.h5P2S20K023732@scv3.apple.com> 
+References: <200306250228.h5P2S20K023732@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 25 Jun 2003 17:23:26 +0700
+Message-ID: <27155.1056536606@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Tue, 24 Jun 2003 19:28:07 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306250228.h5P2S20K023732@scv3.apple.com>
+
+  | Robert Elz wrote
+  | >It is fine to do that...
+  | That's all I was asking for.
+
+Except "it is fine to do that" means "you can do that if you want to"
+it doesn't mean "everyone must do that".
+
+I wouldn't object to text that notes that this may be a useful thing to
+do sometimes, but I would object to anything that mandated this.  And
+object much more to anything that even pretended that "defend all my LL
+addresses on all my interfaces" was even a rational approach.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 12:02:09 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA18832
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 12:02:05 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 297D89127C; Wed, 25 Jun 2003 12:01:28 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AA10F91282; Wed, 25 Jun 2003 12:01:27 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 3CF6E9127C
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 12:01:22 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 2A3195DEF0; Wed, 25 Jun 2003 12:01:22 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id A85875DEEC
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 12:01:21 -0400 (EDT)
+Received: from jurassic.eng.sun.com ([129.146.17.55])
+	by nwkea-mail-2.sun.com (8.12.9/8.12.9) with ESMTP id h5PG1EfU000919;
+	Wed, 25 Jun 2003 09:01:14 -0700 (PDT)
+Received: from sun.com (vpn-129-159-1-15.EMEA.Sun.COM [129.159.1.15])
+	by jurassic.eng.sun.com (8.12.10.Beta0+Sun/8.12.10.Beta0) with ESMTP id h5PG1BFr154571;
+	Wed, 25 Jun 2003 09:01:12 -0700 (PDT)
+Message-ID: <3EF9C72D.3060907@sun.com>
+Date: Wed, 25 Jun 2003 18:00:45 +0200
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Daniel Senie <dts@senie.com>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu,
+        erik.nordmark@sun.com
+Subject: Re: LL32 Multihoming
+References: <200306250228.h5P2S20K023732@scv3.apple.com> <5.2.1.1.2.20030625111132.02a81960@mail.amaranth.net>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Daniel Senie wrote:
+> At 11:02 AM 6/25/2003, Erik Guttman wrote:
+> 
+>> Stuart,
+>>
+>> This issue reawakens concerns raised by Erik Nordmark which we have
+>> already dealt with in the 'issue resolution process.'
+>>
+>> Stuart Cheshire wrote:
+>> > 2(b). Therefore: It is helpful to ensure that no local interface has
+>> > an IPv4 address that it identical to *any* peer connected via *any*
+>> > interface.
+>>
+>> We had language like this in the document which was removed because
+>> it gives rise to a new and significant vulnerability. (See LL14)
+>> A host on one link can disrupt hosts on other links (it is not
+>> connected to) if IPv4LL has this property.
+>>
+>> Example: Imagine a multihomed host H1 is connected to links 1 and 2.
+>> An attacker is on link 1 and causes H1 to reconfigure by claiming
+>> addresses.  This should only effect link 1, not link 2.  The effects
+>> could be wider than the links immediately connected to the attacker's
+>> multihomed neighbors.  Following the example:  Host H2 is connected to
+>> both link 2 and link 3.  As H1 is forced to reconfigure its address on
+>> link 2 to be unique, this forces H2 to reconfigure as well, which has
+>> consequences on link 3.
+>>
+>> LL14 was rejected since LL15 was accepted:  the algorithm being
+>> completely separate on each interface meant that the vulnerability no
+>> longer arises.  Your 2b above conflicts with the accepted LL15 and if
+>> ignored gives rise to the concern in LL14 - which can no longer be 
+>> ignored (rejected.)
+> 
+> 
+> Umm, this doesn't follow well from the first message in this discussion 
+> thread.
+> 
+> Stuart talked about a concern regarding IP address collision with one's 
+> own interfaces. Since a host CAN validate the source MAC address of the 
+> packets that come back it's possible to determine if you're arguing iwth 
+> yourself. It's still true someone could spoof your MAC address in an ARP 
+> packet to cause damage, but as we know that's a place where ARP has 
+> issues, and we can't solve them here.
+> 
+> Erik, you're talking about reconfiguration based on claims (possibly 
+> bogus) of use of IP address. Aside from someone spoofing the MAC address 
+> as well, it isn't clear your response aligns with the problem Stuart 
+> raised.
+> 
+> I think what Stuart is talking about both has merit, and relates to 
+> operational experience, and deserves to be considered as such. Laptops 
+> with multiple interfaces are now the norm (for all new products 
+> shipping, since the push to put 802.11a/b/g/x/y/z is near universal).
+
+
+I am fine with adding text to 3.4 to discuss how to avoid auto immune
+problems in this case.   I even drafted up a version of his text to
+send out.  That is, I fully support Stuart's effort to add clarifying
+text for LL32.
+
+But then I looked closer at the preceding text and saw his point 2b.  We
+can't suggest that without reopening LL14 and LL15.  That was the 
+concern I brought up.
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 25 12:28:11 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA20177
+	for <zeroconf-archive@lists.ietf.org>; Wed, 25 Jun 2003 12:28:11 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8BB5F91272; Wed, 25 Jun 2003 12:28:04 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 576BF91273; Wed, 25 Jun 2003 12:28:04 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id E825391272
+	for <zeroconf@trapdoor.merit.edu>; Wed, 25 Jun 2003 12:28:02 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D467F5DF34; Wed, 25 Jun 2003 12:28:02 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from garlic.amaranth.net (garlic.amaranth.net [208.254.46.17])
+	by segue.merit.edu (Postfix) with ESMTP id 664255DF07
+	for <zeroconf@merit.edu>; Wed, 25 Jun 2003 12:28:02 -0400 (EDT)
+Received: from Willow.senie.com (amaranth.ne.client2.attbi.com [24.34.18.226])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.7/8.11.7) with ESMTP id h5PGRsZ18224
+	(using TLSv1/SSLv3 with cipher RC4-SHA (128 bits) verified NO);
+	Wed, 25 Jun 2003 12:27:55 -0400
+Message-Id: <5.2.1.1.2.20030625122008.02db8360@mail.amaranth.net>
+X-Sender: dts@mail.amaranth.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.2.1
+Date: Wed, 25 Jun 2003 12:27:13 -0400
+To: Erik Guttman <erik.guttman@sun.com>
+From: Daniel Senie <dts@senie.com>
+Subject: Re: LL32 Multihoming
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu,
+        erik.nordmark@sun.com
+In-Reply-To: <3EF9C72D.3060907@sun.com>
+References: <200306250228.h5P2S20K023732@scv3.apple.com>
+ <5.2.1.1.2.20030625111132.02a81960@mail.amaranth.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 12:00 PM 6/25/2003, Erik Guttman wrote:
+>Daniel Senie wrote:
+>>At 11:02 AM 6/25/2003, Erik Guttman wrote:
+>>
+>>>Stuart,
+>>>
+>>>This issue reawakens concerns raised by Erik Nordmark which we have
+>>>already dealt with in the 'issue resolution process.'
+>>>
+>>>Stuart Cheshire wrote:
+>>> > 2(b). Therefore: It is helpful to ensure that no local interface has
+>>> > an IPv4 address that it identical to *any* peer connected via *any*
+>>> > interface.
+>>>
+>>>We had language like this in the document which was removed because
+>>>it gives rise to a new and significant vulnerability. (See LL14)
+>>>A host on one link can disrupt hosts on other links (it is not
+>>>connected to) if IPv4LL has this property.
+>>>
+>>>Example: Imagine a multihomed host H1 is connected to links 1 and 2.
+>>>An attacker is on link 1 and causes H1 to reconfigure by claiming
+>>>addresses.  This should only effect link 1, not link 2.  The effects
+>>>could be wider than the links immediately connected to the attacker's
+>>>multihomed neighbors.  Following the example:  Host H2 is connected to
+>>>both link 2 and link 3.  As H1 is forced to reconfigure its address on
+>>>link 2 to be unique, this forces H2 to reconfigure as well, which has
+>>>consequences on link 3.
+>>>
+>>>LL14 was rejected since LL15 was accepted:  the algorithm being
+>>>completely separate on each interface meant that the vulnerability no
+>>>longer arises.  Your 2b above conflicts with the accepted LL15 and if
+>>>ignored gives rise to the concern in LL14 - which can no longer be 
+>>>ignored (rejected.)
+>>
+>>Umm, this doesn't follow well from the first message in this discussion 
+>>thread.
+>>Stuart talked about a concern regarding IP address collision with one's 
+>>own interfaces. Since a host CAN validate the source MAC address of the 
+>>packets that come back it's possible to determine if you're arguing iwth 
+>>yourself. It's still true someone could spoof your MAC address in an ARP 
+>>packet to cause damage, but as we know that's a place where ARP has 
+>>issues, and we can't solve them here.
+>>Erik, you're talking about reconfiguration based on claims (possibly 
+>>bogus) of use of IP address. Aside from someone spoofing the MAC address 
+>>as well, it isn't clear your response aligns with the problem Stuart raised.
+>>I think what Stuart is talking about both has merit, and relates to 
+>>operational experience, and deserves to be considered as such. Laptops 
+>>with multiple interfaces are now the norm (for all new products shipping, 
+>>since the push to put 802.11a/b/g/x/y/z is near universal).
+>
+>
+>I am fine with adding text to 3.4 to discuss how to avoid auto immune
+>problems in this case.   I even drafted up a version of his text to
+>send out.  That is, I fully support Stuart's effort to add clarifying
+>text for LL32.
+
+Good. Thinking about this auto immune thing, the the issue of seeing 
+yourself is reminiscent of spanning tree. Same general set of issues.
+
+
+>But then I looked closer at the preceding text and saw his point 2b.  We
+>can't suggest that without reopening LL14 and LL15.  That was the concern 
+>I brought up.
+
+Ah. OK. Just reread his text on this and agree this could be problematic, 
+and possibly excessive to boot. I'm not convinced a change to require 
+uniqueness in this way is a good idea. In fact, it could be an 
+exceptionally bad idea... given a segment with 3 machines, each of which is 
+multihomed to a second segment. Now assume those other segments are also 
+interconnected by other multihomed hosts. The result is very similar to the 
+bridging storms that required STP to solve. In other words, hosts would 
+claim and defend, insist on uniqueness on all interfaces, and potentially 
+set up a vibration that'd not stop as changes were required from one 
+segment to the next in a ripple effect. Due to the size of the address 
+space, the likelihood of such a storm is low. This could be perturbed by 
+faulty random number generators, though, or other coding errors. In 
+environments with large numbers of hosts, the problem would be more likely 
+to occur, with a potential for self-inflicted denial of service.
+
+Bad idea. Keep the link info separate.
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 26 03:43:51 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA11287
+	for <zeroconf-archive@lists.ietf.org>; Thu, 26 Jun 2003 03:43:51 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 182BD91299; Thu, 26 Jun 2003 03:43:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CFA5A9129A; Thu, 26 Jun 2003 03:43:43 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id AF78F91299
+	for <zeroconf@trapdoor.merit.edu>; Thu, 26 Jun 2003 03:43:42 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 8B5095DFE0; Thu, 26 Jun 2003 03:43:42 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 101805DF69
+	for <zeroconf@merit.edu>; Thu, 26 Jun 2003 03:43:42 -0400 (EDT)
+Received: from bebop.France.Sun.COM ([129.157.174.15])
+	by brmea-mail-3.sun.com (8.12.9/8.12.9) with ESMTP id h5Q7hW1J024628;
+	Thu, 26 Jun 2003 01:43:33 -0600 (MDT)
+Received: from lillen (lillen [129.157.212.23])
+	by bebop.France.Sun.COM (8.11.6+Sun/8.10.2/ENSMAIL,v2.2) with SMTP id h5Q7hWQ20341;
+	Thu, 26 Jun 2003 09:43:32 +0200 (MEST)
+Date: Thu, 26 Jun 2003 09:38:32 +0200 (CEST)
+From: Erik Nordmark <Erik.Nordmark@sun.com>
+Reply-To: Erik Nordmark <Erik.Nordmark@sun.com>
+Subject: Re: LL32 Multihoming
+To: Daniel Senie <dts@senie.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, Stuart Cheshire <cheshire@apple.com>,
+        zeroconf@merit.edu, erik.nordmark@sun.com
+In-Reply-To: "Your message with ID" <5.2.1.1.2.20030625111132.02a81960@mail.amaranth.net>
+Message-ID: <Roam.SIMC.2.0.6.1056613112.18353.nordmark@bebop.france>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Stuart talked about a concern regarding IP address collision with one's own 
+> interfaces. Since a host CAN validate the source MAC address of the packets 
+> that come back it's possible to determine if you're arguing iwth yourself. 
+> It's still true someone could spoof your MAC address in an ARP packet to 
+> cause damage, but as we know that's a place where ARP has issues, and we 
+> can't solve them here.
+> 
+> Erik, you're talking about reconfiguration based on claims (possibly bogus) 
+> of use of IP address. Aside from someone spoofing the MAC address as well, 
+> it isn't clear your response aligns with the problem Stuart raised.
+
+Stuart raised multiple points and I'm not sure which one you are concerned
+with.
+
+One of them was that it might be helpful for an implementation to checks
+its *own* v4ll addresses assigned to its interfaces to avoid assigning
+itself the same v4ll address on multiple interfaces. This issue is
+local to the implementation and might make a lot of sense for instance
+if there are APIs (e.g. IP_MULTICAST_IF) that identify an interface
+using an IPv4 address.
+
+Another one was the 2(b) that was quoted, which is to ensure that no remote
+v4ll address on any interface conflicts with any v4ll address assigned
+to any interface.
+This one I think is a bad idea for two reasons:
+1. It isn't necessary. A node using v4ll addresses on multiple interfaces
+   must have API and application support for always specifying the interface
+   to qualify remote v4ll addresses, because even if its local addresses
+   don't conflict with any remote address it needs to be able to deal
+   with conflicting remote addresses across interfaces.
+2. It allows an attacker (or non-malicious brokeness) on one interface to
+   disable v4ll on all interfaces on the multihomed node.
+
+   Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 26 05:44:46 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA13751
+	for <zeroconf-archive@lists.ietf.org>; Thu, 26 Jun 2003 05:44:46 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D52819129B; Thu, 26 Jun 2003 05:44:39 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A094F9129C; Thu, 26 Jun 2003 05:44:39 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6E2AB9129B
+	for <zeroconf@trapdoor.merit.edu>; Thu, 26 Jun 2003 05:44:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4DE2F5E00B; Thu, 26 Jun 2003 05:44:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from douglas.ukservers.net (douglas.ukservers.net [217.10.138.220])
+	by segue.merit.edu (Postfix) with ESMTP id EAC4C5E00A
+	for <zeroconf@merit.edu>; Thu, 26 Jun 2003 05:44:36 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by douglas.ukservers.net (Postfix) with ESMTP
+	id 9FC3C599A2; Thu, 26 Jun 2003 10:44:35 +0100 (BST)
+Message-ID: <002f01c33bc7$8e809cf0$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Erik Guttman" <erik.guttman@sun.com>, "Daniel Senie" <dts@senie.com>
+Cc: "Stuart Cheshire" <cheshire@apple.com>, <zeroconf@merit.edu>,
+        <erik.nordmark@sun.com>
+References: <200306250228.h5P2S20K023732@scv3.apple.com> <5.2.1.1.2.20030625111132.02a81960@mail.amaranth.net> <3EF9C72D.3060907@sun.com>
+Subject: Re: LL32 Multihoming
+Date: Thu, 26 Jun 2003 10:44:35 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Section 2.5 states:
+
+"At any time, if a host receives an ARP packet
+(request *or* reply) where the 'sender IP address' is the host's own IP
+address, but the 'sender hardware address' does not match any of the
+host's own interface addresses, then this is a conflicting ARP packet,
+indicating an address collision."
+
+The use of ANY of the host's own interface addresses, seems to conflict with
+the rule of running the algorithm independently on each interface and of
+avoiding address conflict issues propagating across networks. Is this
+correct? Is it not sufficient to compare the ARP packet with the HW address
+of the interface using the conflicting IP address?
+
+Philip
+
+----- Original Message -----
+From: "Erik Guttman" <erik.guttman@sun.com>
+To: "Daniel Senie" <dts@senie.com>
+Cc: "Stuart Cheshire" <cheshire@apple.com>; <zeroconf@merit.edu>;
+<erik.nordmark@sun.com>
+Sent: Wednesday, June 25, 2003 5:00 PM
+Subject: Re: LL32 Multihoming
+
+
+> Daniel Senie wrote:
+> > At 11:02 AM 6/25/2003, Erik Guttman wrote:
+> >
+> >> Stuart,
+> >>
+> >> This issue reawakens concerns raised by Erik Nordmark which we have
+> >> already dealt with in the 'issue resolution process.'
+> >>
+> >> Stuart Cheshire wrote:
+> >> > 2(b). Therefore: It is helpful to ensure that no local interface has
+> >> > an IPv4 address that it identical to *any* peer connected via *any*
+> >> > interface.
+> >>
+> >> We had language like this in the document which was removed because
+> >> it gives rise to a new and significant vulnerability. (See LL14)
+> >> A host on one link can disrupt hosts on other links (it is not
+> >> connected to) if IPv4LL has this property.
+> >>
+> >> Example: Imagine a multihomed host H1 is connected to links 1 and 2.
+> >> An attacker is on link 1 and causes H1 to reconfigure by claiming
+> >> addresses.  This should only effect link 1, not link 2.  The effects
+> >> could be wider than the links immediately connected to the attacker's
+> >> multihomed neighbors.  Following the example:  Host H2 is connected to
+
+> >> both link 2 and link 3.  As H1 is forced to reconfigure its address on
+> >> link 2 to be unique, this forces H2 to reconfigure as well, which has
+> >> consequences on link 3.
+> >>
+> >> LL14 was rejected since LL15 was accepted:  the algorithm being
+> >> completely separate on each interface meant that the vulnerability no
+> >> longer arises.  Your 2b above conflicts with the accepted LL15 and if
+> >> ignored gives rise to the concern in LL14 - which can no longer be
+> >> ignored (rejected.)
+> >
+> >
+> > Umm, this doesn't follow well from the first message in this discussion
+> > thread.
+> >
+> > Stuart talked about a concern regarding IP address collision with one's
+> > own interfaces. Since a host CAN validate the source MAC address of the
+> > packets that come back it's possible to determine if you're arguing iwth
+> > yourself. It's still true someone could spoof your MAC address in an ARP
+> > packet to cause damage, but as we know that's a place where ARP has
+> > issues, and we can't solve them here.
+> >
+> > Erik, you're talking about reconfiguration based on claims (possibly
+> > bogus) of use of IP address. Aside from someone spoofing the MAC address
+> > as well, it isn't clear your response aligns with the problem Stuart
+> > raised.
+> >
+> > I think what Stuart is talking about both has merit, and relates to
+> > operational experience, and deserves to be considered as such. Laptops
+> > with multiple interfaces are now the norm (for all new products
+> > shipping, since the push to put 802.11a/b/g/x/y/z is near universal).
+>
+>
+> I am fine with adding text to 3.4 to discuss how to avoid auto immune
+> problems in this case.   I even drafted up a version of his text to
+> send out.  That is, I fully support Stuart's effort to add clarifying
+> text for LL32.
+>
+> But then I looked closer at the preceding text and saw his point 2b.  We
+> can't suggest that without reopening LL14 and LL15.  That was the
+> concern I brought up.
+>
+> Erik
+>
+>
+>
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 26 08:53:44 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA22132
+	for <zeroconf-archive@lists.ietf.org>; Thu, 26 Jun 2003 08:53:43 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id ADB9991222; Thu, 26 Jun 2003 08:53:22 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 736079129F; Thu, 26 Jun 2003 08:53:22 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 6738191222
+	for <zeroconf@trapdoor.merit.edu>; Thu, 26 Jun 2003 08:53:21 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 44EB55E018; Thu, 26 Jun 2003 08:53:21 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from garlic.amaranth.net (garlic.amaranth.net [208.254.46.17])
+	by segue.merit.edu (Postfix) with ESMTP id C4A8A5DFCC
+	for <zeroconf@merit.edu>; Thu, 26 Jun 2003 08:53:20 -0400 (EDT)
+Received: from Willow.senie.com (amaranth.ne.client2.attbi.com [24.34.18.226])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.7/8.11.7) with ESMTP id h5QCrBZ09149
+	(using TLSv1/SSLv3 with cipher RC4-SHA (128 bits) verified NO);
+	Thu, 26 Jun 2003 08:53:13 -0400
+Message-Id: <5.2.1.1.2.20030626084535.01b2de10@mail.amaranth.net>
+X-Sender: dts@mail.amaranth.net
+X-Mailer: QUALCOMM Windows Eudora Version 5.2.1
+Date: Thu, 26 Jun 2003 08:53:06 -0400
+To: "Philip Nye" <philip@engarts.com>, "Erik Guttman" <erik.guttman@sun.com>
+From: Daniel Senie <dts@senie.com>
+Subject: Re: LL32 Multihoming
+Cc: "Stuart Cheshire" <cheshire@apple.com>, <zeroconf@merit.edu>,
+        <erik.nordmark@sun.com>
+In-Reply-To: <002f01c33bc7$8e809cf0$131010ac@aldebaran>
+References: <200306250228.h5P2S20K023732@scv3.apple.com>
+ <5.2.1.1.2.20030625111132.02a81960@mail.amaranth.net>
+ <3EF9C72D.3060907@sun.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 05:44 AM 6/26/2003, Philip Nye wrote:
+>Section 2.5 states:
+>
+>"At any time, if a host receives an ARP packet
+>(request *or* reply) where the 'sender IP address' is the host's own IP
+>address, but the 'sender hardware address' does not match any of the
+>host's own interface addresses, then this is a conflicting ARP packet,
+>indicating an address collision."
+>
+>The use of ANY of the host's own interface addresses, seems to conflict with
+>the rule of running the algorithm independently on each interface and of
+>avoiding address conflict issues propagating across networks.
+
+The case Stuart raised is one where two interfaces are on the SAME network. 
+As I previously stated, this is now the common case on new laptops being 
+produced, as they have a wireless interface and Ethernet built in. It's 
+common to have that wired interface connected to a LAN with the wireless AP 
+on the same LAN, so that a user can unplug and walk around the house or 
+office. The result is the two interfaces are on the same network, and the 
+laptop could wind up arguing with itself about addressing.
+
+I can see no downside to the host being instructed how to not argue with 
+itself. This affects ONLY that host. The extra check for this is 
+inexpensive and unobtrusive. If it helps some hosts avoid blowing 
+themselves up, what's the downside?
+
+>  Is this
+>correct? Is it not sufficient to compare the ARP packet with the HW address
+>of the interface using the conflicting IP address?
+
+The other suggestion, regarding hosts insisting on uniqueness of OTHER 
+hosts' addresses across all attached networks is likely disruptive.
+
+It may make sense to have hosts detect they are multihomed to the same 
+link, and do something useful in that case (as I've said before, this is 
+analogous to spanning tree, trying to keep bad things from happening with 
+cross-connected networks).
+
+
+>Philip
+>
+>----- Original Message -----
+>From: "Erik Guttman" <erik.guttman@sun.com>
+>To: "Daniel Senie" <dts@senie.com>
+>Cc: "Stuart Cheshire" <cheshire@apple.com>; <zeroconf@merit.edu>;
+><erik.nordmark@sun.com>
+>Sent: Wednesday, June 25, 2003 5:00 PM
+>Subject: Re: LL32 Multihoming
+>
+>
+> > Daniel Senie wrote:
+> > > At 11:02 AM 6/25/2003, Erik Guttman wrote:
+> > >
+> > >> Stuart,
+> > >>
+> > >> This issue reawakens concerns raised by Erik Nordmark which we have
+> > >> already dealt with in the 'issue resolution process.'
+> > >>
+> > >> Stuart Cheshire wrote:
+> > >> > 2(b). Therefore: It is helpful to ensure that no local interface has
+> > >> > an IPv4 address that it identical to *any* peer connected via *any*
+> > >> > interface.
+> > >>
+> > >> We had language like this in the document which was removed because
+> > >> it gives rise to a new and significant vulnerability. (See LL14)
+> > >> A host on one link can disrupt hosts on other links (it is not
+> > >> connected to) if IPv4LL has this property.
+> > >>
+> > >> Example: Imagine a multihomed host H1 is connected to links 1 and 2.
+> > >> An attacker is on link 1 and causes H1 to reconfigure by claiming
+> > >> addresses.  This should only effect link 1, not link 2.  The effects
+> > >> could be wider than the links immediately connected to the attacker's
+> > >> multihomed neighbors.  Following the example:  Host H2 is connected to
+>
+> > >> both link 2 and link 3.  As H1 is forced to reconfigure its address on
+> > >> link 2 to be unique, this forces H2 to reconfigure as well, which has
+> > >> consequences on link 3.
+> > >>
+> > >> LL14 was rejected since LL15 was accepted:  the algorithm being
+> > >> completely separate on each interface meant that the vulnerability no
+> > >> longer arises.  Your 2b above conflicts with the accepted LL15 and if
+> > >> ignored gives rise to the concern in LL14 - which can no longer be
+> > >> ignored (rejected.)
+> > >
+> > >
+> > > Umm, this doesn't follow well from the first message in this discussion
+> > > thread.
+> > >
+> > > Stuart talked about a concern regarding IP address collision with one's
+> > > own interfaces. Since a host CAN validate the source MAC address of the
+> > > packets that come back it's possible to determine if you're arguing iwth
+> > > yourself. It's still true someone could spoof your MAC address in an ARP
+> > > packet to cause damage, but as we know that's a place where ARP has
+> > > issues, and we can't solve them here.
+> > >
+> > > Erik, you're talking about reconfiguration based on claims (possibly
+> > > bogus) of use of IP address. Aside from someone spoofing the MAC address
+> > > as well, it isn't clear your response aligns with the problem Stuart
+> > > raised.
+> > >
+> > > I think what Stuart is talking about both has merit, and relates to
+> > > operational experience, and deserves to be considered as such. Laptops
+> > > with multiple interfaces are now the norm (for all new products
+> > > shipping, since the push to put 802.11a/b/g/x/y/z is near universal).
+> >
+> >
+> > I am fine with adding text to 3.4 to discuss how to avoid auto immune
+> > problems in this case.   I even drafted up a version of his text to
+> > send out.  That is, I fully support Stuart's effort to add clarifying
+> > text for LL32.
+> >
+> > But then I looked closer at the preceding text and saw his point 2b.  We
+> > can't suggest that without reopening LL14 and LL15.  That was the
+> > concern I brought up.
+> >
+> > Erik
+> >
+> >
+> >
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 26 09:45:02 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA24595
+	for <zeroconf-archive@lists.ietf.org>; Thu, 26 Jun 2003 09:45:01 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2E0999129F; Thu, 26 Jun 2003 09:44:55 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E98BF912A1; Thu, 26 Jun 2003 09:44:54 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EBE8F9129F
+	for <zeroconf@trapdoor.merit.edu>; Thu, 26 Jun 2003 09:44:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D73255DDA4; Thu, 26 Jun 2003 09:44:53 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 5CBC35DD9C
+	for <zeroconf@merit.edu>; Thu, 26 Jun 2003 09:44:44 -0400 (EDT)
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id h5QDiF113101;
+	Thu, 26 Jun 2003 20:44:16 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.cs.mu.OZ.AU (8.11.6/8.11.6) with ESMTP id h5QDc1t11067;
+	Thu, 26 Jun 2003 20:38:02 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: zeroconf@merit.edu
+Subject: Re: LL11 Security consideration for the threat where an attacker forces address reconfiguration 
+In-Reply-To: <200306250310.h5P3Ao0K012267@scv3.apple.com> 
+References: <200306250310.h5P3Ao0K012267@scv3.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 26 Jun 2003 20:38:01 +0700
+Message-ID: <9831.1056634681@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Tue, 24 Jun 2003 20:10:55 -0700
+    From:        Stuart Cheshire <cheshire@apple.com>
+    Message-ID:  <200306250310.h5P3Ao0K012267@scv3.apple.com>
+
+  | I do not agree. I do not think it is reasonable for a networking product 
+  | to just "give up". I do not want to buy a product that just gives up, and 
+  | I'd rather that other people didn't have to either.
+
+Opinions differ.   I do not want to buy a networking product that allows
+others to trivially easily steal my connections, and I'd rather that other
+people didn't have to either.
+
+This all depends on what the devices are doing, there is not, and cannot
+be, one right answer for everyone.
+
+  | No, it happens when network operators have Spanning Tree port blocking 
+  | times set too high.
+
+This is something that only affects initial address assignment.  You may
+recall that I made several different proposals for how to deal with this
+one (one being as simple as to never assign a LL address for at least a
+minute, to make sure that this problem won't occur in any practical sense).
+
+  | AppleTalk had no late conflict detection, and failed 
+  | badly in these environments. As a result, Apple had to advise all sites 
+  | using AppleTalk to disable Spanning Tree, or at least dramatically reduce 
+  | the port blocking time. It was an ongoing headache for Apple.
+
+I'd advise that anyway, for ports where no other switch is connected,
+it speeds up getting operational - regardless of appletalk.
+
+Still, I agree, we need a method to assign addresses initially which isn't
+broken by something that we know exists in the world.
+
+But we don't need "any time an address conflict is ever detected, give
+up and start again" for this purpose.
+
+If we have probed the address after the network (link) is operational
+(which we can tell when we receive any packets that aren't link level
+management noise - STP packets and such) and not found a conflict, then
+this startup problem doesn't exist.   If we haven't received any real
+packets from the network, then the issue I'm concerned with doesn't
+exist (we can't be talking to anyone else yet, as we can't have received
+an ARP reply from anyone).
+
+  | Late conflict detection provides MUCH improved behaviour in these 
+  | situations.
+
+If the only thing that you want to fix is this one thing, and you don't
+care about any other problems, then yes, it does.   I care about the
+other problems, and unconstrained late conflict resolution (detection
+is harmless) causes way too many problems to allow in general (for some
+nodes it is fine, for others it is not).
+
+  | The motivation for this Working Group (at least for some of us) since the 
+  | first day has been to bring some of the benefits of AppleTalk to IP, 
+  | without repeating the mistakes of AppleTalk.
+
+Fine.   But avoiding the mistakes of appletalk should not mean introducing
+problems that appletalk never had!    That is, we aren't free to do anything
+at all we can imagine, constrained only by not repeating a mistake that
+was in appletalk.
+
+  | Ignoring late conflicts was one of the disastrous mistakes of AppleTalk.
+  | It caused endless problems.
+
+So, we need to find a fix that works, the one you're proposing would be
+worse that the issues that you saw - you just haven't seen it happen yet
+(just like apple obviously didn't see the STP related problems before
+they started shipping ethertalk the way it was shipped, or that would
+have been fixed before it was too late, I'm sure).
+
+  | If this Working Group cannot agree that a host MUST NOT ignore late 
+  | conflicts, then I fear we will have arrived at an unresolvable deadlock.
+
+Stuart, we already had agreement in this WG on L11, you're the only
+one arguing against what is there now.   That is, implementations must
+consider carefully whether they should simply abandon an address upon
+detecting a conflict.   And they certainly should.
+
+Note, also this isn't a question of "ignore" late conflicts, but with what
+the host does once it detects one.   So, while I expect everyone would
+agree with you on the question as you phrased it above, that isn't really
+the relevant question, is it?
+
+If you want to re-open one of the issues (or was there just one?) that
+related to initial address assignment procedures, and the timers used for
+that, you might find me agreeing with you (even though the WG more or
+less decided to simply ignore the problems caused by STP).   But not on
+this one.
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 26 12:45:14 2003
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA08335
+	for <zeroconf-archive@lists.ietf.org>; Thu, 26 Jun 2003 12:45:13 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 571FF912AB; Thu, 26 Jun 2003 12:28:03 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 1C8D7912AC; Thu, 26 Jun 2003 12:28:03 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9BB97912AB
+	for <zeroconf@trapdoor.merit.edu>; Thu, 26 Jun 2003 12:28:00 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 893345DDED; Thu, 26 Jun 2003 12:28:00 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail1.microsoft.com (mail1.microsoft.com [131.107.3.125])
+	by segue.merit.edu (Postfix) with ESMTP id 43E9A5DDEE
+	for <zeroconf@merit.edu>; Thu, 26 Jun 2003 12:28:00 -0400 (EDT)
+Received: from inet-vrs-01.redmond.corp.microsoft.com ([157.54.8.27]) by mail1.microsoft.com with Microsoft SMTPSVC(5.0.2195.6659);
+	 Thu, 26 Jun 2003 09:27:59 -0700
+Received: from 157.54.6.197 by inet-vrs-01.redmond.corp.microsoft.com (InterScan E-Mail VirusWall NT); Thu, 26 Jun 2003 09:27:59 -0700
+Received: from RED-IMC-04.redmond.corp.microsoft.com ([157.54.2.168]) by INET-HUB-06.redmond.corp.microsoft.com with Microsoft SMTPSVC(6.0.3790.0);
+	 Thu, 26 Jun 2003 09:27:59 -0700
+Received: from win-imc-01.wingroup.windeploy.ntdev.microsoft.com ([157.54.0.39]) by RED-IMC-04.redmond.corp.microsoft.com with Microsoft SMTPSVC(6.0.3790.0);
+	 Thu, 26 Jun 2003 09:27:58 -0700
+Received: from WIN-MSG-10.wingroup.windeploy.ntdev.microsoft.com ([157.54.12.82]) by win-imc-01.wingroup.windeploy.ntdev.microsoft.com with Microsoft SMTPSVC(6.0.3788.0);
+	 Thu, 26 Jun 2003 09:27:58 -0700
+X-MimeOLE: Produced By Microsoft Exchange V6.5.6940.0
+Content-class: urn:content-classes:message
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Subject: RE: LL31 Probing intervals
+Date: Thu, 26 Jun 2003 09:27:40 -0700
+Message-ID: <DAC3FCB50E31C54987CD10797DA511BA0246F1C0@WIN-MSG-10.wingroup.windeploy.ntdev.microsoft.com>
+Thread-Topic: LL31 Probing intervals
+Thread-Index: AcM6BYi1QeXtxFIrTKSxy2UVhiwpMwB+Yh2x
+From: "Christian Huitema" <huitema@windows.microsoft.com>
+To: "Stuart Cheshire" <cheshire@apple.com>, <zeroconf@merit.edu>
+X-OriginalArrivalTime: 26 Jun 2003 16:27:58.0391 (UTC) FILETIME=[E78BE470:01C33BFF]
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+The randomization is necessary to avoid synchronized transmission =
+(broadcast storms) if the reconnection is triggered by a synchronized =
+event, e.g. a power failure or the on-off cycling of a wireless access =
+point.
+=20
+Testing a randomized timer is arguably harder than testing a fixed =
+value, but it is not rocket science. Just simulate the link =
+connect/disconnect event, measure the "time to first packet" and observe =
+that the intervals are indeed reasonably random. Then, repeat after =
+simulating collisions, and observes that the unit under test does indeed =
+back-off.
+=20
+And yes, there are implementers who can get their random generators =
+right, even if many platforms do in fact come with a strong random =
+number generator. But even so, we would not be worse off than if they =
+had used fixed timers.
+=20
+-- Christian Huitema
+
+________________________________
+
+From: owner-zeroconf@merit.edu on behalf of Stuart Cheshire
+Sent: Mon 6/23/2003 9:02 PM
+To: zeroconf@merit.edu
+Subject: LL31 Probing intervals
+
+
+
+>>When ready to begin probing, the host should then wait
+>>for a random time interval selected uniformly in the range
+>>zero to one seconds, and should then send three probe
+>>packets, spaced randomly, zero to one seconds apart.
+>>
+>> This means that, technically, if a device waits zero seconds, sends
+>> three ARP Probes spaced zero seconds apart, and then immediately
+>> begins using the address, that's legal.
+>
+>While it is technically legal, there is an effective zero probability
+>that four random numbers selected uniformly will all occur at the
+>same 'zero' value.
+
+"Design for testability" is an important principle throughout computer
+hardware and software design. If you want to know that something is
+operating properly, then the ability to apply objective tests to
+determine that is a big asset.
+
+Any allowed randomness makes objective testing harder. Anyone who has
+wasted time tracking down a hard-to-reproduce bug caused by an
+uninitialized stack variable will tell you the perils of code where the
+execution is different and essentially random every time it is run.
+
+Therefore, randomness in software and hardware design should only be
+applied where the benefit it brings is sufficient to merit bearing the
+cost of the testing and debugging disadvantages that go with it.
+
+A random interval between packets in the range 0-1000ms has no technical
+merit and is clearly indefensible.
+
+A more plausible proposal -- were there strong credible experimental
+evidence and theoretical analysis to support the position that it is
+worth the additional code and testing difficulty -- would be a random
+interval between packets of 1000-1333ms. This means that every device
+must wait between three and four seconds before completing probing. This
+is verifiable through testing. This means that every device waits at
+least 1000ms between packets, so vendors of future Ethernet switches =
+have
+clear guidance about how quickly they must bring the port on-line if =
+they
+wish to have IPv4LL operate reliably. Predicability and knowing what to
+expect is the point of having a standard. Unpredictability and not =
+having
+any idea precisely what the device is allowed to do is not helpful to =
+the
+vendors making products to work in this area.
+
+Were there strong evidence to support the 1000-1333ms proposal, I could
+live with it. However, I strongly doubt that serious research would
+demonstrate any material benefit gained by having the extra randomness =
+in
+addition to the initial random delay. Furthermore, experience dealing
+with device vendors suggests that no one will actually implement this. I
+would prefer us not to have language in a standard that we know is not
+really necessary, and not really implemented by anyone.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+
+

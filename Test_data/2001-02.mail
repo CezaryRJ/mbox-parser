@@ -1,0 +1,50 @@
+From owner-zeroconf@merit.edu  Mon Feb 12 04:37:45 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id EAA03059
+	for <zeroconf-archive@odin.ietf.org>; Mon, 12 Feb 2001 04:37:44 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 199A25DDB5; Mon, 12 Feb 2001 04:35:31 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 05E915DE21; Mon, 12 Feb 2001 04:35:31 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id A05FE5DDB5
+	for <zeroconf@merit.edu>; Mon, 12 Feb 2001 04:35:29 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id BAA11175;
+	Mon, 12 Feb 2001 01:35:24 -0800 (PST)
+Received: from vayne (muc-isdn-7 [129.157.164.107])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id KAA22556;
+	Mon, 12 Feb 2001 10:35:18 +0100 (MET)
+Date: Mon, 12 Feb 2001 10:45:55 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: zeroconf agenda at IETF 50
+To: zeroconf@merit.edu
+Cc: erik.guttman@sun.com, cheshire@apple.com,
+        Thomas Narten <narten@raleigh.ibm.com>,
+        Erik Nordmark <Erik.Nordmark@eng.sun.com>
+Message-ID: <Roam.SIMC.2.0.6.981971155.30540.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+I want to propose the following agenda for the IETF 50
+ZEROCONF WG meeting.
+
+ - Discuss IPv4 link-local autoconf draft 
+ - Discuss Zeroconf Multicast Address Allocation draft
+ - Discuss Security configuration draft
+
+We need to issue these three drafts very soon so they
+can be discussed, of course ;-)  
+
+Any other topics to discuss?
+
+Erik
+
+
+
+

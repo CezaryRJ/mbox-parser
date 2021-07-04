@@ -1,0 +1,571 @@
+From owner-zeroconf@merit.edu  Wed Mar  6 08:35:59 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA07073
+	for <zeroconf-archive@odin.ietf.org>; Wed, 6 Mar 2002 08:35:59 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7145B91261; Wed,  6 Mar 2002 08:35:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 3F29C91264; Wed,  6 Mar 2002 08:35:38 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 4938F91261
+	for <zeroconf@trapdoor.merit.edu>; Wed,  6 Mar 2002 08:35:37 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 22F725DE19; Wed,  6 Mar 2002 08:35:37 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from web20006.mail.yahoo.com (web20006.mail.yahoo.com [216.136.225.69])
+	by segue.merit.edu (Postfix) with SMTP id 765A15DDE4
+	for <zeroconf@merit.edu>; Wed,  6 Mar 2002 08:35:36 -0500 (EST)
+Message-ID: <20020306133529.49569.qmail@web20006.mail.yahoo.com>
+Received: from [63.118.187.193] by web20006.mail.yahoo.com via HTTP; Wed, 06 Mar 2002 05:35:29 PST
+Date: Wed, 6 Mar 2002 05:35:29 -0800 (PST)
+From: Shailendra Suman <shaily1974@yahoo.com>
+Subject: zeroconf implementation
+To: zeroconf@merit.edu
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi Everybody,
+
+I am very new in this area. I wanted to know is there
+any implemetation of zeroconf for linux...while
+searching on net I got zcip on
+/pub/Linux/kernel.org/pub/software/network/zcip
+. 
+I downloaded this and compiled on redHat 7.1..
+
+Now I don't know how to configure my m/c for
+automatically assigning IP address.. I tried to run
+zcip from command prompt 
+it is running in loop probing for different ip-address
+of series 169.254.x.x giving message address in
+use....and unable to get IP address.
+
+My machine is already on a network with dhcp
+server...is this the reason for not getting IP using
+zeroconf....How to test zcip....
+
+Any other implementation for zeroconf for Linux....
+
+Thanks in Advance..
+
+Shaily
+
+
+
+
+
+
+
+
+
+__________________________________________________
+Do You Yahoo!?
+Try FREE Yahoo! Mail - the world's greatest free email!
+http://mail.yahoo.com/
+
+
+From owner-zeroconf@merit.edu  Wed Mar  6 15:42:29 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA04470
+	for <zeroconf-archive@odin.ietf.org>; Wed, 6 Mar 2002 15:42:29 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 67B7C91287; Wed,  6 Mar 2002 15:41:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 4193B91288; Wed,  6 Mar 2002 15:41:34 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 4BDB191287
+	for <zeroconf@trapdoor.merit.edu>; Wed,  6 Mar 2002 15:41:33 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2470A5DDE2; Wed,  6 Mar 2002 15:41:33 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from neon-gw.transmeta.com (neon-gw-l3.transmeta.com [63.209.4.196])
+	by segue.merit.edu (Postfix) with ESMTP id 2C1685DDD2
+	for <zeroconf@merit.edu>; Wed,  6 Mar 2002 15:41:32 -0500 (EST)
+Received: (from root@localhost)
+	by neon-gw.transmeta.com (8.9.3/8.9.3) id MAA02109;
+	Wed, 6 Mar 2002 12:40:39 -0800
+Received: from mailhost.transmeta.com(10.1.1.15) by neon-gw.transmeta.com via smap (V2.1)
+	id xma002105; Wed, 6 Mar 02 12:40:39 -0800
+Received: from daedalus.transmeta.com (daedalus.transmeta.com [10.10.27.58])
+	by deepthought.transmeta.com (8.11.6/8.11.6) with ESMTP id g26Kee402071;
+	Wed, 6 Mar 2002 12:40:41 -0800 (PST)
+Received: from daedalus.transmeta.com (seb@localhost.localdomain [127.0.0.1]) by daedalus.transmeta.com (8.9.3/8.7.3) with ESMTP id MAA25837; Wed, 6 Mar 2002 12:40:40 -0800
+Message-Id: <200203062040.MAA25837@daedalus.transmeta.com>
+To: Shailendra Suman <shaily1974@yahoo.com>
+Cc: zeroconf@merit.edu
+Subject: Re: zeroconf implementation 
+In-Reply-To: Your message of "Wed, 06 Mar 2002 05:35:29 PST."
+             <20020306133529.49569.qmail@web20006.mail.yahoo.com> 
+Date: Wed, 06 Mar 2002 12:40:40 -0800
+From: Sebastian Kuzminsky <seb@transmeta.com>
+X-Scanned-By: MIMEDefang 2.3 (www dot roaringpenguin dot com slash mimedefang)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Shailendra Suman <shaily1974@yahoo.com> wrote:
+] I am very new in this area. I wanted to know is there
+] any implemetation of zeroconf for linux...while
+] searching on net I got zcip on
+] /pub/Linux/kernel.org/pub/software/network/zcip
+] . 
+] I downloaded this and compiled on redHat 7.1..
+] 
+] Now I don't know how to configure my m/c for
+] automatically assigning IP address.. I tried to run
+] zcip from command prompt 
+] it is running in loop probing for different ip-address
+] of series 169.254.x.x giving message address in
+] use....and unable to get IP address.
+] 
+] My machine is already on a network with dhcp
+] server...is this the reason for not getting IP using
+] zeroconf....How to test zcip....
+
+
+Hi, i'm the author of zcip.  It hasn't received very extensive
+testing yet, though it works fine for us internally and i've verified
+interoperability with a bunch of flavors of Windows.
+
+
+zcip should work just fine on a network with a dhcp server, that's how
+i do most of my testing.  (Of course if there's a dhcp server you're
+probably better off using that to get your IP configuration.)
+
+
+To help me debug the problem you're having, please run the following
+commands and mail me all of the output:
+
+    ifconfig
+    route
+    zcip
+
+
+I also need to see a packet trace of zcip running, ie run "tcpdump -l -n"
+before starting zcip, and mail me the output of that, too.
+
+
+
+
+We'll get you going!
+
+
+
+
+Sebastian
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 12 21:21:04 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA15496
+	for <zeroconf-archive@lists.ietf.org>; Tue, 12 Mar 2002 21:21:04 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 91D2391297; Tue, 12 Mar 2002 21:20:58 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5F6A091298; Tue, 12 Mar 2002 21:20:58 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 044D191297
+	for <zeroconf@trapdoor.merit.edu>; Tue, 12 Mar 2002 21:20:56 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D83185DD9D; Tue, 12 Mar 2002 21:20:56 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mta06bw.bigpond.com (mta06bw.bigpond.com [139.134.6.96])
+	by segue.merit.edu (Postfix) with ESMTP id AE1235DD92
+	for <zeroconf@merit.edu>; Tue, 12 Mar 2002 21:20:55 -0500 (EST)
+Received: from localhost.localdomain ([144.135.24.84]) by
+          mta06bw.bigpond.com (Netscape Messaging Server 4.15) with SMTP
+          id GSW3UT00.9Z6 for <zeroconf@merit.edu>; Wed, 13 Mar 2002
+          12:20:53 +1000 
+Received: from CPE-203-51-26-23.nsw.bigpond.net.au ([203.51.26.23]) by bwmam06.mailsvc.email.bigpond.com(MailRouter V3.0i 47/741378); 13 Mar 2002 12:20:52
+Content-Type: text/plain;
+  charset="us-ascii"
+From: Brad Hards <bhards@bigpond.net.au>
+To: zeroconf@merit.edu
+Subject: Linux implementation (zcip)
+Date: Wed, 13 Mar 2002 13:22:30 +1100
+X-Mailer: KMail [version 1.3.99]
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Message-Id: <200203131322.30448.bhards@bigpond.net.au>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+
+I've been looking at the zcip implementation, and have a couple of questions, 
+a comment, and a request. The questions are about how the IETF draft is 
+supposed to be implemented, so this is at least partly on-topic.
+
+These questions are against the zcip-1 code that I recently got off a 
+kernel.org mirror. They may not represent the current state of the code
+
+Q1. The zcip code doesn't support multi-homing (aka IP aliasing, having more 
+than one virtual interface (including IP) on a single physical network device 
+yet, but I'd like to make it work in the near future. Which of the section 3 
+choices (link local on one interface, shared link-local address, unique 
+link-local address on all interfaces) is expected?
+
+Q2. I am worried about existing interoperability problems. Is it expected that 
+major vendors (especially Microsoft) will release service packs or patches to 
+ensure conformance? Or is it worth adding a non-default option to defend more 
+agressively?
+
+C1. For people who tried running zcip-1, and had the "infinite fast loop" 
+problem, where zcip seemed to find immediate conflicts on every address, you 
+need to configure your kernel to support packet filtering (CONFIG_FILTER) in 
+the networking options area. Then rebuild. Vendor kernels seem to have this 
+turned on, and Linus kernels have it turned off.
+
+R1. Could the author of zcip get in contact with me? I have a patch adding 
+documentation and some minor code changes that I'd like to get incorporated.
+
+Brad Hards
+
+
+From owner-zeroconf@merit.edu  Tue Mar 12 21:38:23 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA16720
+	for <zeroconf-archive@lists.ietf.org>; Tue, 12 Mar 2002 21:38:23 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id DF2E191205; Tue, 12 Mar 2002 21:38:14 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B125691298; Tue, 12 Mar 2002 21:38:14 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B921191205
+	for <zeroconf@trapdoor.merit.edu>; Tue, 12 Mar 2002 21:38:13 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9C3845DDED; Tue, 12 Mar 2002 21:38:13 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from neon-gw.transmeta.com (neon-gw-l3.transmeta.com [63.209.4.196])
+	by segue.merit.edu (Postfix) with ESMTP id DB2AE5DD92
+	for <zeroconf@merit.edu>; Tue, 12 Mar 2002 21:38:12 -0500 (EST)
+Received: (from root@localhost)
+	by neon-gw.transmeta.com (8.9.3/8.9.3) id SAA30169;
+	Tue, 12 Mar 2002 18:38:06 -0800
+Received: from mailhost.transmeta.com(10.1.1.15) by neon-gw.transmeta.com via smap (V2.1)
+	id xma030117; Tue, 12 Mar 02 18:37:51 -0800
+Received: from daedalus.transmeta.com (daedalus.transmeta.com [10.10.27.58])
+	by deepthought.transmeta.com (8.11.6/8.11.6) with ESMTP id g2D2bj409235;
+	Tue, 12 Mar 2002 18:37:49 -0800 (PST)
+Received: from daedalus.transmeta.com (seb@localhost.localdomain [127.0.0.1]) by daedalus.transmeta.com (8.9.3/8.7.3) with ESMTP id SAA13978; Tue, 12 Mar 2002 18:37:44 -0800
+Message-Id: <200203130237.SAA13978@daedalus.transmeta.com>
+To: Brad Hards <bhards@bigpond.net.au>
+Cc: zeroconf@merit.edu
+Subject: Re: Linux implementation (zcip) 
+In-Reply-To: Your message of "Wed, 13 Mar 2002 13:22:30 +1100."
+             <200203131322.30448.bhards@bigpond.net.au> 
+Date: Tue, 12 Mar 2002 18:37:44 -0800
+From: Sebastian Kuzminsky <seb@transmeta.com>
+X-Scanned-By: MIMEDefang 2.3 (www dot roaringpenguin dot com slash mimedefang)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Brad Hards <bhards@bigpond.net.au> wrote:
+] These questions are against the zcip-1 code that I recently got off a 
+] kernel.org mirror. They may not represent the current state of the code
+
+
+Hi, i'm the author of zcip.  Sorry there's no contact info in the
+zcip tarball, i'm still waiting for the mailing list to be set up on
+kernel.org.  Version 1 is the current top of tree.
+
+
+
+
+] Q1. The zcip code doesn't support multi-homing (aka IP aliasing, having more 
+] than one virtual interface (including IP) on a single physical network device 
+] yet, but I'd like to make it work in the near future. Which of the section 3 
+] choices (link local on one interface, shared link-local address, unique 
+] link-local address on all interfaces) is expected?
+
+
+I think "multi-homed" is used in the draft to mean a host with multiple
+physical network interfaces, not a host with multiple IP addresses on
+a single physical interface.  See figures 1 and 2.
+
+
+
+
+] Q2. I am worried about existing interoperability problems. Is it expected that 
+] major vendors (especially Microsoft) will release service packs or patches to 
+] ensure conformance? Or is it worth adding a non-default option to defend more 
+] agressively?
+
+
+I dont know what Microsoft's plans are.
+
+
+I assume you're talking about the W2K/WXP aggressive claim behavior?
+It would probably make sense to observe a pair of W2K/WXP hosts collide
+and see how they defend the claim, then add a flag to mimic that behavior.
+
+
+If someone sends me this information i'll add the "defend from WXP"
+flag to zcip.
+
+
+
+
+] C1. For people who tried running zcip-1, and had the "infinite fast loop" 
+] problem, where zcip seemed to find immediate conflicts on every address, you 
+] need to configure your kernel to support packet filtering (CONFIG_FILTER) in 
+] the networking options area. Then rebuild. Vendor kernels seem to have this 
+] turned on, and Linus kernels have it turned off.
+
+
+Cool, that's what going on.  I'll add a check for this kernel feature
+and print an informative error message if it's missing.
+
+
+
+
+] R1. Could the author of zcip get in contact with me? I have a patch adding 
+] documentation and some minor code changes that I'd like to get incorporated.
+
+
+I'd be pleased to receive your patches.
+
+
+
+
+Sebastian
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 12 22:14:27 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id WAA17068
+	for <zeroconf-archive@lists.ietf.org>; Tue, 12 Mar 2002 22:14:27 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 346C191298; Tue, 12 Mar 2002 22:14:19 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 01FB891299; Tue, 12 Mar 2002 22:14:18 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id E825991298
+	for <zeroconf@trapdoor.merit.edu>; Tue, 12 Mar 2002 22:14:17 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id C3F7F5DDA0; Tue, 12 Mar 2002 22:14:17 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from mta02ps.bigpond.com (mta02ps.bigpond.com [144.135.25.134])
+	by segue.merit.edu (Postfix) with ESMTP id 984CC5DD9D
+	for <zeroconf@merit.edu>; Tue, 12 Mar 2002 22:14:16 -0500 (EST)
+Received: from localhost.localdomain ([144.135.25.81]) by
+          mta02ps.bigpond.com (Netscape Messaging Server 4.15) with SMTP
+          id GSW6BQ00.5UT; Wed, 13 Mar 2002 13:14:14 +1000 
+Received: from CPE-203-51-26-23.nsw.bigpond.net.au ([203.51.26.23]) by psmam05.mailsvc.email.bigpond.com(MailRouter V3.0i 101/2273591); 13 Mar 2002 13:14:14
+Content-Type: text/plain;
+  charset="iso-8859-1"
+From: Brad Hards <bhards@bigpond.net.au>
+To: Sebastian Kuzminsky <seb@transmeta.com>
+Subject: Re: Linux implementation (zcip)
+Date: Wed, 13 Mar 2002 14:15:51 +1100
+X-Mailer: KMail [version 1.3.99]
+Cc: zeroconf@merit.edu
+References: <200203130237.SAA13978@daedalus.transmeta.com>
+In-Reply-To: <200203130237.SAA13978@daedalus.transmeta.com>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Message-Id: <200203131415.51836.bhards@bigpond.net.au>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+
+On Wed, 13 Mar 2002 13:37, Sebastian Kuzminsky wrote:
+> Brad Hards <bhards@bigpond.net.au> wrote:
+<snip>
+> ] Q1. The zcip code doesn't support multi-homing (aka IP aliasing, having
+> more ] than one virtual interface (including IP) on a single physical
+> network device ] yet, but I'd like to make it work in the near future.
+> Which of the section 3 ] choices (link local on one interface, shared
+> link-local address, unique ] link-local address on all interfaces) is
+> expected?
+>
+> I think "multi-homed" is used in the draft to mean a host with multiple
+> physical network interfaces, not a host with multiple IP addresses on
+> a single physical interface.  See figures 1 and 2.
+Mea culpa :-(. Ignore the multi-home reference, and go with the "having
+more than one virtual interface (including IP) on a single physical
+network device" description. 
+
+<snip>
+> I assume you're talking about the W2K/WXP aggressive claim behavior?
+> It would probably make sense to observe a pair of W2K/WXP hosts collide
+> and see how they defend the claim, then add a flag to mimic that behavior.
+I only know of it from your README, but am philosphically opposed to having 
+anyone beat up on my Linux box :-)
+<snip>
+
+Patch provided off-list.
+
+Thanks for the fast response!
+
+Brad
+
+
+From owner-zeroconf@merit.edu  Tue Mar 12 23:18:10 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA18707
+	for <zeroconf-archive@lists.ietf.org>; Tue, 12 Mar 2002 23:18:10 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4F95991299; Tue, 12 Mar 2002 23:17:58 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 191D69129A; Tue, 12 Mar 2002 23:17:58 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 0B66F91299
+	for <zeroconf@trapdoor.merit.edu>; Tue, 12 Mar 2002 23:17:56 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D3CBB5DDA8; Tue, 12 Mar 2002 23:17:56 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from neon-gw.transmeta.com (neon-gw-l3.transmeta.com [63.209.4.196])
+	by segue.merit.edu (Postfix) with ESMTP id 216365DD90
+	for <zeroconf@merit.edu>; Tue, 12 Mar 2002 23:17:56 -0500 (EST)
+Received: (from root@localhost)
+	by neon-gw.transmeta.com (8.9.3/8.9.3) id UAA05744
+	for <zeroconf@merit.edu>; Tue, 12 Mar 2002 20:17:49 -0800
+Received: from mailhost.transmeta.com(10.1.1.15) by neon-gw.transmeta.com via smap (V2.1)
+	id xma005720; Tue, 12 Mar 02 20:17:31 -0800
+Received: from daedalus.transmeta.com (daedalus.transmeta.com [10.10.27.58])
+	by deepthought.transmeta.com (8.11.6/8.11.6) with ESMTP id g2D4HS419435;
+	Tue, 12 Mar 2002 20:17:30 -0800 (PST)
+Received: from daedalus.transmeta.com (seb@localhost.localdomain [127.0.0.1]) by daedalus.transmeta.com (8.9.3/8.7.3) with ESMTP id UAA14754; Tue, 12 Mar 2002 20:17:28 -0800
+Message-Id: <200203130417.UAA14754@daedalus.transmeta.com>
+To: zeroconf@merit.edu, seb@transmeta.com
+Subject: zcip - new release
+Date: Tue, 12 Mar 2002 20:17:28 -0800
+From: Sebastian Kuzminsky <seb@transmeta.com>
+X-Scanned-By: MIMEDefang 2.3 (www dot roaringpenguin dot com slash mimedefang)
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hello everyone, i'm not sure if it's acceptable to post software
+announcements to this list, but here it goes.
+
+
+I've release a new version of zcip, an implementation of the IETF draft
+"Dynamic Configuration of IPv4 Link-Local Addresses" for Linux and
+Unix-like operating systems.
+
+
+Version 2 includes a bunch of documentation and some code changes from
+Brad Hards.  Grab it at:
+
+    ftp://ftp.kernel.org/pub/software/network/zcip
+
+
+
+
+Sebastian
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 18 19:25:27 2002
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA27085
+	for <zeroconf-archive@lists.ietf.org>; Mon, 18 Mar 2002 19:25:27 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id B3AA091239; Mon, 18 Mar 2002 19:25:19 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8BC109123A; Mon, 18 Mar 2002 19:25:19 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 8789E91239
+	for <zeroconf@trapdoor.merit.edu>; Mon, 18 Mar 2002 19:25:18 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 66A875DDEA; Mon, 18 Mar 2002 19:25:18 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from AVIANSERVER.aviancommunications.com (avianserver.aviancommunications.com [205.158.157.131])
+	by segue.merit.edu (Postfix) with ESMTP id C4CD25DD8D
+	for <zeroconf@merit.edu>; Mon, 18 Mar 2002 19:25:17 -0500 (EST)
+X-MimeOLE: Produced By Microsoft Exchange V6.0.4417.0
+content-class: urn:content-classes:message
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01C1CEDC.8B448033"
+Subject: Draft status?
+Date: Mon, 18 Mar 2002 19:25:16 -0500
+Message-ID: <DE6495F924D2304DA0FAD60FC1C0060103AD6F@AVIANSERVER.aviancommunications.com>
+Thread-Topic: Draft status?
+Thread-Index: AcHO3IqrxQTn/cd8S/q/e5pjhJ9kCA==
+From: "Nevo Hed" <Nevo@aviancommunications.com>
+To: <zeroconf@merit.edu>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multi-part message in MIME format.
+
+------_=_NextPart_001_01C1CEDC.8B448033
+Content-Type: text/plain;
+	charset="US-ASCII"
+Content-Transfer-Encoding: quoted-printable
+
+I skimmed recent posts and could not understand for sure whats the
+current
+link-local draft state ... the current draft seems to be the 04 version
+and expiration date of January ...
+
+I saw the 'summary of issues...' post from November ...=20
+
+Is there any idea if and when link-local will become an RFC?
+
+Thanks
+   -Nevo
+
+
+------_=_NextPart_001_01C1CEDC.8B448033
+Content-Type: text/html;
+	charset="US-ASCII"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+6.0.4417.0">
+<TITLE>Draft status?</TITLE>
+</HEAD>
+<BODY>
+<!-- Converted from text/plain format -->
+
+<P><FONT SIZE=3D2>I skimmed recent posts and could not understand for =
+sure whats the current</FONT>
+
+<BR><FONT SIZE=3D2>link-local draft state ... the current draft seems to =
+be the 04 version</FONT>
+
+<BR><FONT SIZE=3D2>and expiration date of January ...</FONT>
+</P>
+
+<P><FONT SIZE=3D2>I saw the 'summary of issues...' post from November =
+... </FONT>
+</P>
+
+<P><FONT SIZE=3D2>Is there any idea if and when link-local will become =
+an RFC?</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Thanks</FONT>
+
+<BR><FONT SIZE=3D2>&nbsp;&nbsp; -Nevo</FONT>
+</P>
+
+</BODY>
+</HTML>
+------_=_NextPart_001_01C1CEDC.8B448033--
+
+

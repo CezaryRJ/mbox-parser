@@ -1,0 +1,79 @@
+From owner-zeroconf@merit.edu  Fri Jul  7 10:23:10 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA27370
+	for <zeroconf-archive@odin.ietf.org>; Fri, 7 Jul 2000 10:23:10 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 62CBE5DE20; Fri,  7 Jul 2000 10:20:42 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 448A05DE1A; Fri,  7 Jul 2000 10:20:42 -0400 (EDT)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 30BB95DE03
+	for <zeroconf@merit.edu>; Fri,  7 Jul 2000 10:20:14 -0400 (EDT)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id HAA24555;
+	Fri, 7 Jul 2000 07:20:05 -0700 (PDT)
+Received: from vayne (muc-isdn-1 [129.157.164.101])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.9) with SMTP id QAA18148;
+	Fri, 7 Jul 2000 16:20:03 +0200 (MET DST)
+Date: Fri, 7 Jul 2000 16:28:58 +0200 (MET DST)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: IETF 48 ZEROCONF WG meeting agenda
+To: zeroconf@merit.edu
+Cc: erik.guttman@sun.com, cheshire@apple.com,
+        Erik Nordmark <Erik.Nordmark@eng.sun.com>,
+        Thomas Narten <narten@raleigh.ibm.com>
+Message-ID: <Roam.SIMC.2.0.6.962980138.3253.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+Proposed WG meeting agenda
+
+30  Discuss Requirements document
+
+    We will have a new version of draft-ietf-zeroconf-reqts-xx.txt
+    before the meeting.  We need to work out remaining issues with
+    this document at the meeting.  
+
+    Our goal is to have submitted the requirements document to 
+    advance to Informational RFC well before IETF 49.
+
+30  WG charter discussion
+
+    We will also decide what to do next.  Options include 
+
+      - concluding the WG
+
+      - writing a profile document for the protocols which 
+        exist which fulfill the requirements even though
+        there are not standards track protocols corresponding
+        to some of the zeroconf protocol requirements
+
+      - charter new standardization work for protocols specified 
+        by the requirements document but in the charter of any
+        other WG.
+
+        Work could include:
+
+          . Multicast Address Allocation (currently has no home)
+          . Address Allocation for IPv4 (currently has no home)
+          . Security Bootstrapping for ZeroConf hosts (work has
+            not even started)
+
+        Multicast DNS will be a chartered item of the DNSEXT WG and
+        Service Discovery is a chartered item of the SVRLOC WG.
+
+Please send any requests for further topics/timeslots.
+
+Erik
+
+
+
+
+

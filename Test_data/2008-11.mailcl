@@ -1,0 +1,1769 @@
+From jeff.couch@agsystems.com  Mon Nov 24 07:34:06 2008
+Return-Path: <jeff.couch@agsystems.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 267D03A68F7
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Nov 2008 07:34:06 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -37.32
+X-Spam-Level: 
+X-Spam-Status: No, score=-37.32 tagged_above=-999 required=5
+	tests=[BAYES_60=1, FH_RELAY_NODNS=1.451, GB_I_LETTER=-2,
+	HELO_MISMATCH_COM=0.553, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RDNS_NONE=0.1, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_WS_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id k+m4TaIzUVSw
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Mon, 24 Nov 2008 07:34:05 -0800 (PST)
+Received: from acmetruck.com (unknown [92.112.100.64])
+	by core3.amsl.com (Postfix) with SMTP id 552EF3A68DB
+	for <zeroconf-archive@lists.ietf.org>; Mon, 24 Nov 2008 07:34:03 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: hold all the aces
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081124153404.552EF3A68DB@core3.amsl.com>
+Date: Mon, 24 Nov 2008 07:34:03 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.ilvehnp.cn/" target="_blank">
+<img src="http://www.ilvehnp.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.ilvehnp.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.ilvehnp.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.ilvehnp.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From msalamanca@amb.es  Mon Nov 24 13:42:11 2008
+Return-Path: <msalamanca@amb.es>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 1500F3A6B0B
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Nov 2008 13:42:11 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -29.804
+X-Spam-Level: 
+X-Spam-Status: No, score=-29.804 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, DNS_FROM_RFC_BOGUSMX=1.482,
+	FH_HELO_ALMOST_IP=5.417, FH_HOST_ALMOST_IP=1.889, GB_I_LETTER=-2,
+	HELO_DYNAMIC_SPLIT_IP=3.493, HOST_EQ_STATIC=1.172,
+	HOST_EQ_STATICIP=1.511, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905,
+	RCVD_IN_XBL=3.033, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id hcoz6x8ahqv5
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Mon, 24 Nov 2008 13:42:10 -0800 (PST)
+Received: from 213.Red-80-58-246.staticIP.rima-tde.net (213.Red-80-58-246.staticIP.rima-tde.net [80.58.246.213])
+	by core3.amsl.com (Postfix) with SMTP id 1CA1E3A69F9
+	for <zeroconf-archive@lists.ietf.org>; Mon, 24 Nov 2008 13:42:06 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: noone jokes on you
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081124214209.1CA1E3A69F9@core3.amsl.com>
+Date: Mon, 24 Nov 2008 13:42:06 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.mthiuvi.cn/" target="_blank">
+<img src="http://www.mthiuvi.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.mthiuvi.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.mthiuvi.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.mthiuvi.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From jeastond@adam.com  Mon Nov 24 21:07:33 2008
+Return-Path: <jeastond@adam.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id B4B8E3A691A
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Mon, 24 Nov 2008 21:07:33 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -48.467
+X-Spam-Level: 
+X-Spam-Status: No, score=-48.467 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888,
+	FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR2=4.395,
+	HELO_EQ_IT=0.635, HOST_EQ_IT=1.245, HOST_EQ_STATIC=1.172,
+	HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_SORBS_WEB=0.619,
+	RCVD_IN_XBL=3.033, TVD_RCVD_IP=1.931, URIBL_BLACK=20,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id K2fPpQPhoiso
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Mon, 24 Nov 2008 21:07:33 -0800 (PST)
+Received: from 88-149-207-158.staticnet.ngi.it (88-149-207-158.staticnet.ngi.it [88.149.207.158])
+	by core3.amsl.com (Postfix) with SMTP id 7CC6D3A69FB
+	for <zeroconf-archive@lists.ietf.org>; Mon, 24 Nov 2008 21:07:30 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: hold all the aces
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081125050731.7CC6D3A69FB@core3.amsl.com>
+Date: Mon, 24 Nov 2008 21:07:30 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.jipival.cn/" target="_blank">
+<img src="http://www.jipival.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.jipival.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.jipival.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.jipival.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From j.mccraypmccraynn@alphanumeric.com  Tue Nov 25 00:17:14 2008
+Return-Path: <j.mccraypmccraynn@alphanumeric.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 661263A6A90
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Nov 2008 00:17:14 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -22.05
+X-Spam-Level: 
+X-Spam-Status: No, score=-22.05 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553,
+	HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033, RDNS_NONE=0.1,
+	SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10,
+	URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 2mDoZoN9uHoW
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Tue, 25 Nov 2008 00:17:13 -0800 (PST)
+Received: from americasmoneyline.com (unknown [118.136.90.87])
+	by core3.amsl.com (Postfix) with SMTP id C1FD83A682F
+	for <zeroconf-archive@lists.ietf.org>; Tue, 25 Nov 2008 00:17:02 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Re: Order status
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081125081706.C1FD83A682F@core3.amsl.com>
+Date: Tue, 25 Nov 2008 00:17:02 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><a href="http://meantsure.com/" target="_blank">
+<img src="http://meantsure.com/yudi2.gif" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a></BODY></HTML>
+
+
+From jody.ogdenn@agedwards.com  Tue Nov 25 06:15:45 2008
+Return-Path: <jody.ogdenn@agedwards.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 7428F28C178
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Nov 2008 06:15:45 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -42.71
+X-Spam-Level: 
+X-Spam-Status: No, score=-42.71 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, GB_I_LETTER=-2, HELO_EQ_DSL=1.129,
+	HELO_EQ_PL=1.135, HOST_EQ_PL=1.95, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 3Yen+hpXyo2I
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Tue, 25 Nov 2008 06:15:44 -0800 (PST)
+Received: from alz134.neoplus.adsl.tpnet.pl (alz134.neoplus.adsl.tpnet.pl [83.26.55.134])
+	by core3.amsl.com (Postfix) with SMTP id 62E5228C177
+	for <zeroconf-archive@lists.ietf.org>; Tue, 25 Nov 2008 06:15:42 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: You wont get away with it
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081125141543.62E5228C177@core3.amsl.com>
+Date: Tue, 25 Nov 2008 06:15:42 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.qeguleq.cn/" target="_blank">
+<img src="http://www.qeguleq.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.qeguleq.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.qeguleq.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.qeguleq.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From oao@agp-la.org  Tue Nov 25 11:26:43 2008
+Return-Path: <oao@agp-la.org>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 9905C3A6C31
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Nov 2008 11:26:43 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -17.421
+X-Spam-Level: 
+X-Spam-Status: No, score=-17.421 tagged_above=-999 required=5
+	tests=[BAYES_80=2, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765,
+	FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR=2.426,
+	HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033,
+	RDNS_DYNAMIC=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id DJM1bnCWpgn3
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Tue, 25 Nov 2008 11:26:43 -0800 (PST)
+Received: from xplr-ts-w10-208-114-176-193.barrettxplore.com (xplr-ts-w10-208-114-176-193.barrettxplore.com [208.114.176.193])
+	by core3.amsl.com (Postfix) with SMTP id F03FE3A6AA7
+	for <zeroconf-archive@lists.ietf.org>; Tue, 25 Nov 2008 11:26:39 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: More man's meat for laughable money
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081125192640.F03FE3A6AA7@core3.amsl.com>
+Date: Tue, 25 Nov 2008 11:26:39 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.rinesay.cn/" target="_blank">
+<img src="http://www.rinesay.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.rinesay.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.rinesay.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.rinesay.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From knoxnn@ae.ibm.com  Tue Nov 25 18:17:30 2008
+Return-Path: <knoxnn@ae.ibm.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 630ED3A6B1E
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Tue, 25 Nov 2008 18:17:30 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -28.314
+X-Spam-Level: 
+X-Spam-Status: No, score=-28.314 tagged_above=-999 required=5
+	tests=[BAYES_50=0.001, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553,
+	HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_NONE=0.1,
+	RELAY_IS_222=2.179, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id dzuTpk7Pk8XR
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Tue, 25 Nov 2008 18:17:29 -0800 (PST)
+Received: from alk.com (unknown [222.253.148.78])
+	by core3.amsl.com (Postfix) with SMTP id 3B0803A6B08
+	for <zeroconf-archive@lists.ietf.org>; Tue, 25 Nov 2008 18:17:27 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126021728.3B0803A6B08@core3.amsl.com>
+Date: Tue, 25 Nov 2008 18:17:27 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://creasestill.com/" target="_blank">
+<img src="http://creasestill.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage"></a></BODY></HTML>
+
+
+From marmalade1@3mail.com  Wed Nov 26 03:33:53 2008
+Return-Path: <marmalade1@3mail.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 27FA928C0ED
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Nov 2008 03:33:53 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -5.729
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.729 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HOST_EQ_D_D_D_D=0.765,
+	FH_HOST_EQ_D_D_D_DB=0.888, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR2=4.395,
+	HELO_DYNAMIC_SPLIT_IP=3.493, HELO_EQ_IP_ADDR=1.119,
+	HOST_EQ_USERONOCOM=1.444, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RCVD_NUMERIC_HELO=2.067,
+	RDNS_DYNAMIC=0.1, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10,
+	URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id qOJ3J7NXnTHH
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Wed, 26 Nov 2008 03:33:52 -0800 (PST)
+Received: from 82.158.32.71.dyn.user.ono.com (82.158.32.71.dyn.user.ono.com [82.158.32.71])
+	by core3.amsl.com (Postfix) with SMTP id 2B99D28C12E
+	for <zeroconf-archive@lists.ietf.org>; Wed, 26 Nov 2008 03:33:49 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your shaft'll look like skyscaper
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126113350.2B99D28C12E@core3.amsl.com>
+Date: Wed, 26 Nov 2008 03:33:49 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.pinohog.cn/" target="_blank">
+<img src="http://www.pinohog.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.pinohog.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.pinohog.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.pinohog.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From orenatarenata@alphaville.com.br  Wed Nov 26 04:06:52 2008
+Return-Path: <orenatarenata@alphaville.com.br>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 532103A6982
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Nov 2008 04:06:52 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -2.095
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.095 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888,
+	FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR2=4.395,
+	HELO_EQ_DE=0.35, HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526,
+	HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, URIBL_WS_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id t-IT4uiuk5E3
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Wed, 26 Nov 2008 04:06:51 -0800 (PST)
+Received: from 91-64-121-196-dynip.superkabel.de (91-64-121-196-dynip.superkabel.de [91.64.121.196])
+	by core3.amsl.com (Postfix) with SMTP id A8F443A68DB
+	for <zeroconf-archive@lists.ietf.org>; Wed, 26 Nov 2008 04:06:49 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Good news everyone
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126120650.A8F443A68DB@core3.amsl.com>
+Date: Wed, 26 Nov 2008 04:06:49 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.qeguleq.cn/" target="_blank">
+<img src="http://www.qeguleq.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.qeguleq.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.qeguleq.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.qeguleq.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From jpenny@amlabel.com  Wed Nov 26 04:32:15 2008
+Return-Path: <jpenny@amlabel.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 3D04F28C131
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Nov 2008 04:32:15 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -40.995
+X-Spam-Level: 
+X-Spam-Status: No, score=-40.995 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_COM=0.553,
+	HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033,
+	RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id RWMSRdI-A6JP
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Wed, 26 Nov 2008 04:32:14 -0800 (PST)
+Received: from aaxes.com (unknown [189.73.199.101])
+	by core3.amsl.com (Postfix) with SMTP id 0068F28C12E
+	for <zeroconf-archive@lists.ietf.org>; Wed, 26 Nov 2008 04:32:09 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126123211.0068F28C12E@core3.amsl.com>
+Date: Wed, 26 Nov 2008 04:32:09 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://wheelcould.com/" target="_blank">
+<img src="http://wheelcould.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage"></a></BODY></HTML>
+
+
+From judym@amclassicintl.com  Wed Nov 26 04:50:51 2008
+Return-Path: <judym@amclassicintl.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 2936428C16F
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Nov 2008 04:50:51 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -20.704
+X-Spam-Level: 
+X-Spam-Status: No, score=-20.704 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, GB_I_LETTER=-2,
+	HELO_MISMATCH_COM=0.553, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033,
+	RDNS_NONE=0.1, URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id vyzAPpzZECw0
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Wed, 26 Nov 2008 04:50:50 -0800 (PST)
+Received: from americanstoploss.com (unknown [93.177.164.158])
+	by core3.amsl.com (Postfix) with SMTP id 96F843A694A
+	for <zeroconf-archive@lists.ietf.org>; Wed, 26 Nov 2008 04:50:47 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Nascar races cancelled
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126125048.96F843A694A@core3.amsl.com>
+Date: Wed, 26 Nov 2008 04:50:47 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.pinohog.cn/" target="_blank">
+<img src="http://www.pinohog.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.pinohog.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.pinohog.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.pinohog.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From mgy@aep.com  Wed Nov 26 07:55:06 2008
+Return-Path: <mgy@aep.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 136103A687A
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Nov 2008 07:55:06 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -45.445
+X-Spam-Level: 
+X-Spam-Status: No, score=-45.445 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, GB_I_LETTER=-2, HELO_EQ_DE=0.35,
+	HELO_EQ_DSL=1.129, HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526,
+	HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id gazso6jSZb8M
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Wed, 26 Nov 2008 07:55:05 -0800 (PST)
+Received: from e176008089.adsl.alicedsl.de (e176008089.adsl.alicedsl.de [85.176.8.89])
+	by core3.amsl.com (Postfix) with SMTP id 5C97E3A6B60
+	for <zeroconf-archive@lists.ietf.org>; Wed, 26 Nov 2008 07:55:03 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: You wont get away with it
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126155504.5C97E3A6B60@core3.amsl.com>
+Date: Wed, 26 Nov 2008 07:55:03 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.benumoz.cn/" target="_blank">
+<img src="http://www.benumoz.cn/style.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.benumoz.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.benumoz.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.benumoz.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From marketingl@ambadvogados.com.br  Wed Nov 26 14:11:50 2008
+Return-Path: <marketingl@ambadvogados.com.br>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id C946A3A69EA
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Wed, 26 Nov 2008 14:11:50 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -62.808
+X-Spam-Level: 
+X-Spam-Status: No, score=-62.808 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, GB_I_LETTER=-2, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033,
+	URIBL_AB_SURBL=10, URIBL_JP_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id mHXgF6pKI+Y0
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Wed, 26 Nov 2008 14:11:50 -0800 (PST)
+Received: from chary-integrater.volia.net (chary-integrater.volia.net [77.122.9.8])
+	by core3.amsl.com (Postfix) with SMTP id 992453A6A03
+	for <zeroconf-archive@lists.ietf.org>; Wed, 26 Nov 2008 14:11:46 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Rangers disqualified
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081126221148.992453A6A03@core3.amsl.com>
+Date: Wed, 26 Nov 2008 14:11:46 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.nedevub.cn/" target="_blank">
+<img src="http://www.nedevub.cn/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.nedevub.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.nedevub.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.nedevub.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From natalienn@agri-fab.com  Fri Nov 28 04:59:23 2008
+Return-Path: <natalienn@agri-fab.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 34D763A698D
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 28 Nov 2008 04:59:23 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -20.256
+X-Spam-Level: 
+X-Spam-Status: No, score=-20.256 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888,
+	FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR2=4.395,
+	HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id SpMRiEe4FB4P
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Fri, 28 Nov 2008 04:59:22 -0800 (PST)
+Received: from 222-236-124-91.pool.ukrtel.net (234-149-124-91.pool.ukrtel.net [91.124.149.234])
+	by core3.amsl.com (Postfix) with SMTP id 3E66D3A67F5
+	for <zeroconf-archive@lists.ietf.org>; Fri, 28 Nov 2008 04:59:20 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Ask any question
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081128125921.3E66D3A67F5@core3.amsl.com>
+Date: Fri, 28 Nov 2008 04:59:20 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.gihuxuh.cn/" target="_blank">
+<img src="http://www.gihuxuh.cn/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.gihuxuh.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.gihuxuh.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.gihuxuh.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From jolines@allied-brokers.com  Fri Nov 28 08:39:01 2008
+Return-Path: <jolines@allied-brokers.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 0EA2E3A692D
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Fri, 28 Nov 2008 08:39:01 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -5.933
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.933 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, GB_I_LETTER=-2, HTML_IMAGE_ONLY_20=1.546,
+	HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_3=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5, RCVD_IN_XBL=3.033,
+	SARE_HTML_A_BODY=0.742, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_PH_SURBL=1.787, URIBL_SBL=20,
+	URIBL_SC_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 7Nxfz+sEFqsf
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Fri, 28 Nov 2008 08:39:00 -0800 (PST)
+Received: from e-0.ar4.mlt.zp.ukrtel.net (e-0.ar4.mlt.zp.ukrtel.net [82.207.99.4])
+	by core3.amsl.com (Postfix) with SMTP id 010DF3A67FF
+	for <zeroconf-archive@lists.ietf.org>; Fri, 28 Nov 2008 08:38:42 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: You Order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+X-Antivirus: avast! (VPS 000773-1, 06.09.2007), Outbound message
+X-Antivirus-Status: Clean
+Message-Id: <20081128163848.010DF3A67FF@core3.amsl.com>
+Date: Fri, 28 Nov 2008 08:38:42 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://qbcusoq.com/" target="_blank">
+<img src="http://images.qbcusoq.com/r34.gif" border=0 alt="Click here to view as a webpage."></a>
+<table>
+<tr>
+<td valign=top>                                                                                      
+<a href="qbcusoq.com"><b>
+ <a href="qbcusoq.com"></td>
+</tr></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=600>
+<tr>
+<td>
+<br><br><font face="verdana" size="1" color="#787878">
+ <a href="coyaboc.com"><font color="#3399ff">Windows Live Customer Support </font></a> | 
+<a href="vnfnyah.com"> <font color="#3399ff">Hotmail Support FAQs </font></a> | 
+<a href="vnfnyah.com"> <font color="#3399ff">Newsletter feedback</font></a>
+<br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+As a Windows Live member you have received this e-mail to inform you of updates, 
+changes to the service, or special news and information vital to the service. 
+Our policy is to send e-mail messages only to announce such information, and we'll continue 
+to honor this policy. These communications are required as a part of this service. 
+If you do not wish to receive these letters you may discontinue your participation in 
+the service and close your account.<br><br>
+Microsoft respects your privacy. To learn more, please read our online <a href="coyaboc.com">
+<font color="#3399ff">
+Privacy Statement</a></font><br><br>
+Microsoft Corporation<br>
+One Microsoft Way<br>
+Redmond, WA 98052 <br></font>
+</td></tr></table></BODY></HTML>
+
+
+From juraj.gajdosikh@alfalaval.com  Sat Nov 29 00:14:17 2008
+Return-Path: <juraj.gajdosikh@alfalaval.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 540833A68AA
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 29 Nov 2008 00:14:17 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -30.628
+X-Spam-Level: 
+X-Spam-Status: No, score=-30.628 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, GB_I_LETTER=-2, HELO_EQ_PL=1.135,
+	HOST_EQ_PL=1.95, HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526,
+	HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id uZDVB6qXFcrp
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sat, 29 Nov 2008 00:14:16 -0800 (PST)
+Received: from 2-127.zicom.pl (2-127.zicom.pl [85.117.2.127])
+	by core3.amsl.com (Postfix) with SMTP id D1D553A65A5
+	for <zeroconf-archive@lists.ietf.org>; Sat, 29 Nov 2008 00:14:14 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: aby-maker is a changeable thing!
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081129081414.D1D553A65A5@core3.amsl.com>
+Date: Sat, 29 Nov 2008 00:14:14 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.controllegacy.com/" target="_blank">
+<img src="http://www.controllegacy.com/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.controllegacy.com/" target="_blank">
+Unsubscribe</a> | <a href="http://www.controllegacy.com/" target="_blank">More Newsletters</a> | 
+<a href="http://www.controllegacy.com/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From keke.mohammadian@aisystems.net.au  Sat Nov 29 05:38:05 2008
+Return-Path: <keke.mohammadian@aisystems.net.au>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id AB4AB3A680D
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 29 Nov 2008 05:38:05 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -29.189
+X-Spam-Level: 
+X-Spam-Status: No, score=-29.189 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, GB_I_LETTER=-2,
+	HELO_EQ_IT=0.635, HELO_IS_SMALL6=0.556, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_NONE=0.1,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id vG+im9PueUXA
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sat, 29 Nov 2008 05:38:05 -0800 (PST)
+Received: from acev.it (unknown [59.162.192.230])
+	by core3.amsl.com (Postfix) with SMTP id D4EFE3A67D6
+	for <zeroconf-archive@lists.ietf.org>; Sat, 29 Nov 2008 05:38:00 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: no recurring smiles gibe in bathhouse
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081129133803.D4EFE3A67D6@core3.amsl.com>
+Date: Sat, 29 Nov 2008 05:38:00 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.checkcompassion.com/" target="_blank">
+<img src="http://www.checkcompassion.com/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.checkcompassion.com/" target="_blank">
+Unsubscribe</a> | <a href="http://www.checkcompassion.com/" target="_blank">More Newsletters</a> | 
+<a href="http://www.checkcompassion.com/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From ntdongn@amadeus.kist.re.kr  Sat Nov 29 06:12:50 2008
+Return-Path: <ntdongn@amadeus.kist.re.kr>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id B9E893A6800
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 29 Nov 2008 06:12:50 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -27.496
+X-Spam-Level: 
+X-Spam-Status: No, score=-27.496 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HOST_EQ_D_D_D_D=0.765, GB_I_LETTER=-2,
+	HELO_DYNAMIC_IPADDR=2.426, HELO_EQ_DYNAMIC=1.144,
+	HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id Wh7QBkuqxU9F
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sat, 29 Nov 2008 06:12:50 -0800 (PST)
+Received: from h19.21.17.98.dynamic.ip.windstream.net (h19.21.17.98.dynamic.ip.windstream.net [98.17.21.19])
+	by core3.amsl.com (Postfix) with SMTP id A6F533A6904
+	for <zeroconf-archive@lists.ietf.org>; Sat, 29 Nov 2008 06:12:47 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Fox News splits up
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081129141248.A6F533A6904@core3.amsl.com>
+Date: Sat, 29 Nov 2008 06:12:47 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.legatik.cn/" target="_blank">
+<img src="http://www.legatik.cn/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.legatik.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.legatik.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.legatik.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From mrubio1@americanbible.org  Sat Nov 29 10:56:07 2008
+Return-Path: <mrubio1@americanbible.org>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id D47D63A6BFB
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 29 Nov 2008 10:56:07 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -15.436
+X-Spam-Level: 
+X-Spam-Status: No, score=-15.436 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2,
+	HELO_DYNAMIC_IPADDR=2.426, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457, PLING_QUERY=1.39,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, URIBL_SC_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id yJdHfmhfwbyq
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sat, 29 Nov 2008 10:56:07 -0800 (PST)
+Received: from mx306-1-88-173-33-180.fbx.proxad.net (mx306-1-88-173-33-180.fbx.proxad.net [88.173.33.180])
+	by core3.amsl.com (Postfix) with SMTP id B58F73A6BE2
+	for <zeroconf-archive@lists.ietf.org>; Sat, 29 Nov 2008 10:55:49 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: they told it can never be enlarged? Lie!
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081129185550.B58F73A6BE2@core3.amsl.com>
+Date: Sat, 29 Nov 2008 10:55:49 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.controllegacy.com/" target="_blank">
+<img src="http://www.controllegacy.com/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.controllegacy.com/" target="_blank">
+Unsubscribe</a> | <a href="http://www.controllegacy.com/" target="_blank">More Newsletters</a> | 
+<a href="http://www.controllegacy.com/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From keserastas@afwaterheater.com  Sat Nov 29 11:26:32 2008
+Return-Path: <keserastas@afwaterheater.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id DDD723A6BD0
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 29 Nov 2008 11:26:32 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -18.028
+X-Spam-Level: 
+X-Spam-Status: No, score=-18.028 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888,
+	FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR2=4.395,
+	HELO_EQ_FR=0.35, HELO_EQ_MODEMCABLE=0.768, HOST_EQ_MODEMCABLE=1.368,
+	HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id fT+MfHLOHt-8
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sat, 29 Nov 2008 11:26:32 -0800 (PST)
+Received: from 85-170-121-204.rev.numericable.fr (85-170-121-204.rev.numericable.fr [85.170.121.204])
+	by core3.amsl.com (Postfix) with SMTP id D9CCA3A68BE
+	for <zeroconf-archive@lists.ietf.org>; Sat, 29 Nov 2008 11:26:30 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Rise up to skies!
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081129192630.D9CCA3A68BE@core3.amsl.com>
+Date: Sat, 29 Nov 2008 11:26:30 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.manadvocacy.com/" target="_blank">
+<img src="http://www.manadvocacy.com/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.manadvocacy.com/" target="_blank">
+Unsubscribe</a> | <a href="http://www.manadvocacy.com/" target="_blank">More Newsletters</a> | 
+<a href="http://www.manadvocacy.com/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From karin.johannisson.uu@analys.urkund.se  Sat Nov 29 13:47:00 2008
+Return-Path: <karin.johannisson.uu@analys.urkund.se>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 948653A67DB
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sat, 29 Nov 2008 13:47:00 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -36.73
+X-Spam-Level: 
+X-Spam-Status: No, score=-36.73 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, HELO_MISMATCH_NET=0.611,
+	HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_XBL=3.033, RDNS_NONE=0.1, SARE_HTML_A_BODY=0.742,
+	SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_RHS_DOB=1.083,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id wRhRqIbpd-H2
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sat, 29 Nov 2008 13:47:00 -0800 (PST)
+Received: from 92.125.92-152.xdsl.ab.ru (92.125.92-152.xdsl.ab.ru [92.125.92.152])
+	by core3.amsl.com (Postfix) with SMTP id DF3343A67C0
+	for <zeroconf-archive@lists.ietf.org>; Sat, 29 Nov 2008 13:46:56 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081129214657.DF3343A67C0@core3.amsl.com>
+Date: Sat, 29 Nov 2008 13:46:56 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://joinago.com/" target="_blank">
+<img src="http://joinago.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From marketingdd@amba.com.br  Sun Nov 30 02:54:56 2008
+Return-Path: <marketingdd@amba.com.br>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 89CD23A67F9
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 02:54:56 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -26.477
+X-Spam-Level: 
+X-Spam-Status: No, score=-26.477 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, HELO_DYNAMIC_HCC=4.295, HELO_EQ_MODEMCABLE=0.768,
+	HOST_EQ_MODEMCABLE=1.368, HTML_IMAGE_ONLY_04=2.041,
+	HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877,
+	RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id c913Pv7yT5AH
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 02:54:56 -0800 (PST)
+Received: from cpc3-basf5-0-0-cust120.nott.cable.ntl.com (cpc3-basf5-0-0-cust120.nott.cable.ntl.com [86.1.168.121])
+	by core3.amsl.com (Postfix) with SMTP id 091E23A67E9
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 02:54:52 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: RE: Message
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130105455.091E23A67E9@core3.amsl.com>
+Date: Sun, 30 Nov 2008 02:54:52 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://takeeach.com/" target="_blank">
+<img src="http://takeeach.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From mluna@ahmpr.com  Sun Nov 30 03:06:28 2008
+Return-Path: <mluna@ahmpr.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id BD89F3A67F9
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 03:06:28 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -19.253
+X-Spam-Level: 
+X-Spam-Status: No, score=-19.253 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888,
+	FM_DDDD_TIMES_2=1.999, GB_I_LETTER=-2, HELO_DYNAMIC_IPADDR2=4.395,
+	HOST_EQ_STATIC=1.172, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905, RCVD_IN_XBL=3.033,
+	SARE_RECV_SPEEDY_AR=0.808, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id pjs8bJ75gYuz
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 03:06:28 -0800 (PST)
+Received: from 201-251-126-209.static.speedy.com.ar (201-251-126-209.static.speedy.com.ar [201.251.126.209])
+	by core3.amsl.com (Postfix) with SMTP id AB4E13A67E5
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 03:06:26 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Like this - easy procedure - loong result!
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130110626.AB4E13A67E5@core3.amsl.com>
+Date: Sun, 30 Nov 2008 03:06:26 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.vokijoc.cn/" target="_blank">
+<img src="http://www.vokijoc.cn/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.vokijoc.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.vokijoc.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.vokijoc.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From onee@agora.com.br  Sun Nov 30 05:56:46 2008
+Return-Path: <onee@agora.com.br>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 4DB3F3A67A8
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 05:56:46 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -35.158
+X-Spam-Level: 
+X-Spam-Status: No, score=-35.158 tagged_above=-999 required=5
+	tests=[BAYES_60=1, HELO_EQ_DE=0.35, HTML_IMAGE_ONLY_04=2.041,
+	HTML_MESSAGE=0.001, HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877,
+	SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id sjMuaiCURJLg
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 05:56:45 -0800 (PST)
+Received: from i577BC28B.versanet.de (i577BC28B.versanet.de [87.123.194.139])
+	by core3.amsl.com (Postfix) with SMTP id DE3DF3A67B4
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 05:54:14 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130135443.DE3DF3A67B4@core3.amsl.com>
+Date: Sun, 30 Nov 2008 05:54:14 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><a href="http://hattook.com/" target="_blank">
+<img src="http://hattook.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From mstf@accucaps.com  Sun Nov 30 06:31:32 2008
+Return-Path: <mstf@accucaps.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 7FF743A6B1B
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 06:31:32 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -18.292
+X-Spam-Level: 
+X-Spam-Status: No, score=-18.292 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HELO_EQ_D_D_D_D=1.597,
+	FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888,
+	FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR2=4.395,
+	HELO_EQ_DYNAMIC=1.144, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742,
+	SARE_HTML_IMG_ONLY=1.666, TVD_RCVD_IP=1.931, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10,
+	URIBL_RHS_DOB=1.083, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 9wjap5ZqsZzI
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 06:31:31 -0800 (PST)
+Received: from 94-248-83-42.dynamic.peoplenet.ua (94-248-83-42.dynamic.peoplenet.ua [94.248.83.42])
+	by core3.amsl.com (Postfix) with SMTP id CFEE63A6AA9
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 06:31:27 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Re: Order status
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130143128.CFEE63A6AA9@core3.amsl.com>
+Date: Sun, 30 Nov 2008 06:31:27 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+</HEAD>
+<BODY><a href="http://leadthat.com/" target="_blank">
+<img src="http://leadthat.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From krisr02@advbiol.com  Sun Nov 30 06:40:06 2008
+Return-Path: <krisr02@advbiol.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id BA9963A67A8
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 06:40:06 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -12.103
+X-Spam-Level: 
+X-Spam-Status: No, score=-12.103 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, HELO_EQ_DYNAMIC=1.144, HELO_EQ_IT=0.635,
+	HOST_EQ_IT=1.245, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877,
+	RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083, URIBL_SC_SURBL=10,
+	URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id hgDg-oWR-LIA
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 06:40:06 -0800 (PST)
+Received: from host25-4-dynamic.17-79-r.retail.telecomitalia.it (host11-228-dynamic.35-79-r.retail.telecomitalia.it [79.35.228.11])
+	by core3.amsl.com (Postfix) with SMTP id 822153A6B49
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 06:40:02 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Your order
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130144003.822153A6B49@core3.amsl.com>
+Date: Sun, 30 Nov 2008 06:40:02 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><a href="http://starold.com/" target="_blank">
+<img src="http://starold.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From naka@4dcsi.com  Sun Nov 30 07:01:14 2008
+Return-Path: <naka@4dcsi.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id B78B83A67E6
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 07:01:14 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -17.02
+X-Spam-Level: 
+X-Spam-Status: No, score=-17.02 tagged_above=-999 required=5
+	tests=[BAYES_60=1, FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765,
+	FM_DDDD_TIMES_2=1.999, HELO_DYNAMIC_IPADDR=2.426, HELO_EQ_DE=0.35,
+	HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083,
+	URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id SN0MhyqtzeWR
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 07:01:14 -0800 (PST)
+Received: from HSI-KBW-082-212-061-122.hsi.kabelbw.de (HSI-KBW-082-212-061-122.hsi.kabelbw.de [82.212.61.122])
+	by core3.amsl.com (Postfix) with SMTP id 048EB3A67B0
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 07:01:12 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130150113.048EB3A67B0@core3.amsl.com>
+Date: Sun, 30 Nov 2008 07:01:12 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://leadthat.com/" target="_blank">
+<img src="http://leadthat.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From leigh.wattn@alcoa.com.au  Sun Nov 30 07:35:55 2008
+Return-Path: <leigh.wattn@alcoa.com.au>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 7F6053A683A
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 07:35:55 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -17.805
+X-Spam-Level: 
+X-Spam-Status: No, score=-17.805 tagged_above=-999 required=5
+	tests=[BAYES_60=1, HELO_EQ_RU=0.595, HELO_MISMATCH_RU=3.1,
+	HOST_EQ_RU=0.875, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_PBL=0.905, RCVD_IN_SORBS_DUL=0.877,
+	RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1, SARE_HTML_A_BODY=0.742,
+	SARE_HTML_IMG_ONLY=1.666, TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10,
+	URIBL_BLACK=20, URIBL_JP_SURBL=10, URIBL_OB_SURBL=10,
+	URIBL_RHS_DOB=1.083, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id y5Qs2+59HgYj
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 07:35:54 -0800 (PST)
+Received: from MS-175-16.dyn-ip-II.SPb.SkyLink.RU (MS-175-16.dyn-ip-II.SPb.SkyLink.RU [89.253.16.175])
+	by core3.amsl.com (Postfix) with SMTP id 423A93A67B0
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 07:35:50 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130153552.423A93A67B0@core3.amsl.com>
+Date: Sun, 30 Nov 2008 07:35:50 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-2">
+</HEAD>
+<BODY><a href="http://partroad.com/" target="_blank">
+<img src="http://partroad.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From lgiku@aceone21.com  Sun Nov 30 08:11:34 2008
+Return-Path: <lgiku@aceone21.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 1250B3A6B8D
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 08:11:34 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -16.5
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.5 tagged_above=-999 required=5
+	tests=[BAYES_50=0.001, HELO_DYNAMIC_HCC=4.295, HELO_EQ_DSL=1.129,
+	HOST_EQ_STATICB=1.372, HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033,
+	SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	TVD_SPACE_RATIO=2.219, URIBL_AB_SURBL=10, URIBL_BLACK=20,
+	URIBL_JP_SURBL=10, URIBL_OB_SURBL=10, URIBL_RHS_DOB=1.083,
+	URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 83HCLj35RfbM
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 08:11:33 -0800 (PST)
+Received: from static243-174-210.adsl.no (static243-174-210.adsl.no [83.243.174.210])
+	by core3.amsl.com (Postfix) with SMTP id 412883A6930
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 08:11:31 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130161132.412883A6930@core3.amsl.com>
+Date: Sun, 30 Nov 2008 08:11:31 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=us-ascii">
+</HEAD>
+<BODY><a href="http://signnoon.com/" target="_blank">
+<img src="http://signnoon.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+
+From newaccounts@3ifinancial.com  Sun Nov 30 11:53:07 2008
+Return-Path: <newaccounts@3ifinancial.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 533D43A6A2D
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 11:53:07 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -21.609
+X-Spam-Level: 
+X-Spam-Status: No, score=-21.609 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_RELAY_NODNS=1.451, GB_I_LETTER=-2,
+	HELO_MISMATCH_COM=0.553, HTML_EXTRA_CLOSE=2.809,
+	HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CF_RANGE_E8_51_100=1.5, RAZOR2_CHECK=0.5,
+	RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_XBL=3.033, RDNS_NONE=0.1,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_OB_SURBL=10, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id oerpWmmdxQdt
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 11:53:06 -0800 (PST)
+Received: from alzus.jnj.com (unknown [79.135.139.25])
+	by core3.amsl.com (Postfix) with SMTP id A00543A6A1C
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 11:53:03 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: wind joystick round leg!
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081130195305.A00543A6A1C@core3.amsl.com>
+Date: Sun, 30 Nov 2008 11:53:03 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.hijusew.cn/" target="_blank">
+<img src="http://www.hijusew.cn/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.hijusew.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.hijusew.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.hijusew.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From mumtaz235@amlai.com  Sun Nov 30 16:14:38 2008
+Return-Path: <mumtaz235@amlai.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 4D4E43A6A48
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 16:14:38 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -39.254
+X-Spam-Level: 
+X-Spam-Status: No, score=-39.254 tagged_above=-999 required=5
+	tests=[BAYES_99=3.5, FH_HOST_EQ_D_D_D_D=0.765, GB_I_LETTER=-2,
+	HELO_DYNAMIC_IPADDR=2.426, HELO_EQ_DYNAMIC=1.144,
+	HTML_EXTRA_CLOSE=2.809, HTML_IMAGE_ONLY_16=1.526, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_2=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E4_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_WEB=0.619, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 4zvuBTwXj0Yy
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 16:14:37 -0800 (PST)
+Received: from h245.14.117.75.dynamic.ip.windstream.net (h245.14.117.75.dynamic.ip.windstream.net [75.117.14.245])
+	by core3.amsl.com (Postfix) with SMTP id 9F1733A67EF
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 16:14:34 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: proof you're not small-pen loser
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081201001435.9F1733A67EF@core3.amsl.com>
+Date: Sun, 30 Nov 2008 16:14:34 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1250">
+</HEAD>
+<BODY><tr><td class=EC_container bgcolor="#F2F2F2"><table cellpadding=0 cellspacing=0 width="100%">
+<tr><td><div align=center> <a href="http://www.jasehob.cn/" target="_blank">
+<img src="http://www.jasehob.cn/adv1.jpg" border=0 alt="Having trouble viewing this email? Click 
+here to view as a webpage."></a> </div></td></tr><tr><td class=EC_legal><strong>
+About this mailing: </strong><br>You are receiving this e-mail because you subscribed to 
+MSN Featured Offers. Microsoft respects your privacy. If you do not wish to receive this 
+MSN Featured Offers e-mail, please click the "Unsubscribe" link below. This will not unsubscribe 
+you from e-mail communications from third-party advertisers that may appear in MSN Feature Offers. 
+This shall not constitute an offer by MSN. MSN shall not be responsible or liable for the 
+advertisers' content nor any of the goods or service advertised. Prices and item availability 
+subject to change without notice.<br><br>2008 Microsoft | <a href="http://www.jasehob.cn/" target="_blank">
+Unsubscribe</a> | <a href="http://www.jasehob.cn/" target="_blank">More Newsletters</a> | 
+<a href="http://www.jasehob.cn/" target="_blank">Privacy</a><br><br>
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+</td></tr></table></td></tr></table></div></div></div></BODY></HTML>
+
+
+From keir93@agpr.com  Sun Nov 30 18:10:06 2008
+Return-Path: <keir93@agpr.com>
+X-Original-To: ietfarch-zeroconf-archive@core3.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@core3.amsl.com
+Received: from localhost (localhost [127.0.0.1])
+	by core3.amsl.com (Postfix) with ESMTP id 13ADF28C19D
+	for <ietfarch-zeroconf-archive@core3.amsl.com>; Sun, 30 Nov 2008 18:10:06 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: -6.773
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.773 tagged_above=-999 required=5
+	tests=[BAYES_60=1, DNS_FROM_RFC_BOGUSMX=1.482,
+	FH_HELO_EQ_D_D_D_D=1.597, FH_HOST_EQ_D_D_D_D=0.765,
+	FH_HOST_EQ_D_D_D_DB=0.888, FM_DDDD_TIMES_2=1.999,
+	HELO_DYNAMIC_HCC=4.295, HELO_DYNAMIC_IPADDR2=4.395, HELO_EQ_BR=0.955,
+	HELO_EQ_DSL=1.129, HELO_EQ_TELESP=1.245, HOST_EQ_BR=1.295,
+	HTML_IMAGE_ONLY_04=2.041, HTML_MESSAGE=0.001,
+	HTML_SHORT_LINK_IMG_1=0.001, MIME_HTML_ONLY=1.457,
+	RAZOR2_CF_RANGE_51_100=0.5, RAZOR2_CF_RANGE_E8_51_100=1.5,
+	RAZOR2_CHECK=0.5, RCVD_IN_BL_SPAMCOP_NET=1.96, RCVD_IN_PBL=0.905,
+	RCVD_IN_SORBS_DUL=0.877, RCVD_IN_XBL=3.033, RDNS_DYNAMIC=0.1,
+	SARE_HTML_A_BODY=0.742, SARE_HTML_IMG_ONLY=1.666,
+	SARE_RECV_SPAM_DOMN02=1.666, TVD_RCVD_IP=1.931, TVD_SPACE_RATIO=2.219,
+	URIBL_AB_SURBL=10, URIBL_BLACK=20, URIBL_JP_SURBL=10,
+	URIBL_RHS_DOB=1.083, URIBL_WS_SURBL=10, USER_IN_WHITELIST=-100]
+Received: from mail.ietf.org ([64.170.98.32])
+	by localhost (core3.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id LUgEMd550l5X
+	for <ietfarch-zeroconf-archive@core3.amsl.com>;
+	Sun, 30 Nov 2008 18:10:04 -0800 (PST)
+Received: from 200-161-186-150.dsl.telesp.net.br (200-161-186-150.dsl.telesp.net.br [200.161.186.150])
+	by core3.amsl.com (Postfix) with SMTP id 558B428C19B
+	for <zeroconf-archive@lists.ietf.org>; Sun, 30 Nov 2008 18:10:02 -0800 (PST)
+To: <zeroconf-archive@lists.ietf.org>
+Subject: Delivery Status Notification (Failure)
+From: <zeroconf-archive@lists.ietf.org>
+MIME-Version: 1.0
+Importance: High
+Content-Type: text/html
+Message-Id: <20081201021003.558B428C19B@core3.amsl.com>
+Date: Sun, 30 Nov 2008 18:10:02 -0800 (PST)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=Windows-1252">
+</HEAD>
+<BODY><a href="http://passmind.com/" target="_blank">
+<img src="http://passmind.com/8dvs9.jpg" border=0 alt="Click here to view as a webpage."></a></BODY></HTML>
+
+

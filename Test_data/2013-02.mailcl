@@ -1,0 +1,42 @@
+
+From account.desk@webmaster.com  Fri Feb  8 12:19:56 2013
+Return-Path: <account.desk@webmaster.com>
+X-Original-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Delivered-To: ietfarch-zeroconf-archive@ietfa.amsl.com
+Received: from localhost (localhost [127.0.0.1]) by ietfa.amsl.com (Postfix) with ESMTP id 6AE8821F8B70 for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Fri,  8 Feb 2013 12:19:56 -0800 (PST)
+X-Virus-Scanned: amavisd-new at amsl.com
+X-Spam-Flag: NO
+X-Spam-Score: 4.131
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.131 tagged_above=-999 required=5 tests=[BAYES_50=0.001, FH_HOST_EQ_D_D_D_D=0.765, FH_HOST_EQ_D_D_D_DB=0.888, HOST_EQ_STATIC=1.172, HOST_MISMATCH_COM=0.311, RELAY_IS_203=0.994]
+Received: from mail.ietf.org ([64.170.98.30]) by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 5fa+4epyd+DO for <ietfarch-zeroconf-archive@ietfa.amsl.com>; Fri,  8 Feb 2013 12:19:56 -0800 (PST)
+Received: from mail.delasalle.edu.hk (020.79.198.203.static.netvigator.com [203.198.79.20]) by ietfa.amsl.com (Postfix) with ESMTP id E815421F8947 for <zeroconf-archive@lists.ietf.org>; Fri,  8 Feb 2013 12:19:55 -0800 (PST)
+Received: from delasalle.edu.hk (mail.delasalle.edu.hk [127.0.0.1]) by mail.delasalle.edu.hk (Postfix) with ESMTP id 81ED23222FF; Sat,  9 Feb 2013 04:19:37 +0800 (HKT)
+From: "Webmaster Helpdesk" <account.desk@webmaster.com>
+Reply-To: account.desk@email.com
+Subject: Dear Subscriber
+Date: Sat, 9 Feb 2013 04:19:37 +0800
+Message-Id: <20130208201937.M37074@webmaster.com>
+X-Mailer: OpenWebMail 2.53 
+X-OriginatingIP: 41.138.185.89 (kwh)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+To: undisclosed-recipients:;
+
+Dear Subscriber,
+
+Your Mailbox Has Exceeded Is Storage Limit/Quota As Set By the Web
+Administrator, And You Will Not Be Able To Receive Or Send New Mails Until
+You Re-validate. To Re-validate Your Account Please Fill the Form Below;
+
+Verify your Webmail
+Username:
+Password:
+
+Thank you for using the Web Email!
+WEBMASTER TECHNICAL ADMIN
+
+Regards,
+System Administrator
+Webmaster Technical Support Team
+Copyright Webmaster Helpdesk Technical Support Centre.

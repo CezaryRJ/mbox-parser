@@ -1,0 +1,2120 @@
+From owner-zeroconf@merit.edu  Wed Mar  1 19:53:58 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA19323
+	for <zeroconf-archive@odin.ietf.org>; Wed, 1 Mar 2000 19:53:56 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id C4B0E5DDC1; Wed,  1 Mar 2000 19:53:39 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id B3CD05DDB5; Wed,  1 Mar 2000 19:53:39 -0500 (EST)
+Received: from igw1.ericsson.com.au (igw1.ericsson.com.au [203.61.155.3])
+	by segue.merit.edu (Postfix) with ESMTP id 89E285DDA8
+	for <zeroconf@merit.edu>; Wed,  1 Mar 2000 19:53:36 -0500 (EST)
+Received: from brsi02.epa.ericsson.se ([146.11.15.8])
+	by igw1.ericsson.com.au (8.9.1b+Sun/8.9.1) with ESMTP id LAA03065;
+	Thu, 2 Mar 2000 11:53:32 +1100 (EST)
+Received: from eaubrnt019.epa.ericsson.se (eaubrnt019 [146.11.9.165])
+	by brsi02.epa.ericsson.se (8.9.1/8.9.1) with ESMTP id LAA05502;
+	Thu, 2 Mar 2000 11:54:06 +1100 (EST)
+Received: by eaubrnt019.epa.ericsson.se with Internet Mail Service (5.5.2448.0)
+	id <GD471SV5>; Thu, 2 Mar 2000 11:53:29 +1100
+Message-ID: <4B6BC00CD15FD2119E5F0008C7A419A50185D72F@eaubrnt018.epa.ericsson.se>
+From: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+To: "'Matt Holdrege'" <holdrege@lucent.com>
+Cc: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: RE: FW: Comments on draft-ietf-zeroconf-reqts-02
+Date: Thu, 2 Mar 2000 11:53:29 +1100 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01BF83E1.B9951F02"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01BF83E1.B9951F02
+Content-Type: text/plain
+
+Hi Matt,
+
+we have much more than just NAT solutions, I'm not a fan of NATs at all and
+that's why I want to see IPv6 deployed. we have application level solutions,
+Transport level solutions, and Network level translators. We also have
+solutions for communicating over IPv4 as I'm sure some of you know. For more
+details check the NGTRANS WG page.
+For most users if applications can communicate then that's fine. I'm not
+sure that the average computer user knows or even cares what IP stack
+they're running. 
+
+I think the solutions ARE there, all we have to do is just take them
+seriously, instead of avoiding them.
+
+Cheers,
+Hesham
+
+> -----Original Message-----
+> From:	Matt Holdrege [SMTP:holdrege@lucent.com]
+> Sent:	Thursday, 2 March 2000 3:49
+> To:	Hesham Soliman (EPA)
+> Cc:	'zeroconf@merit.edu'
+> Subject:	Re: FW: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> No doubt, but as with the development of any niche IPv6 area, you have to 
+> consider how you will communicate with the greater IPv4 internet. We now 
+> have a IPv4 to IPv6 NAT RFC, but NAT's aren't perfect and you really need 
+> to consider how it will work for each service and protocol.
+> 
+> My point is that just saying "we need IPv6" isn't nearly enough.
+> 
+> 
+> At 05:20 PM 2/28/00 +1100, Hesham Soliman (EPA) wrote:
+> 
+> >I agree, no one seems to be considering IPv6 in any of these discussions.
+> 
+> >This is despite the fact that Home networking  would be a perfect market 
+> >for it, considering that it basically solves half the problems in the 
+> >charter of this WG.
+> >
+> >Hesham
+> >-----Original Message-----  From:   Dave Thaler 
+> >[SMTP:dthaler@dthaler.microsoft.com]  Sent:   Monday, 28 February 2000 
+> >6:22  To:     pax@metrolink.com  Cc:     imcdonald@sharplabs.com; 
+> >ferguson@cisco.com; mhattig@pacifier.com; 
+> >zeroconf@merit.edu  Subject:        Re: Comments on 
+> >draft-ietf-zeroconf-reqts-02
+> >
+> > > "McDonald, Ira" wrote:  > > I also concur.  And strongly urge that we 
+> > not plan to make  > > ZC-capable devices support multiple IP addresses 
+> > (e.g.,  > > link-local and also DHCP-derived) on the same 
+> > interface.  >  > FWIW, I agree completely:  >  >    it's important that 
+> > ZC-capable devices can operate in a >    "normal" IP 
+> > environment.  >  >    and adding multiple IP address support to 
+> > ZC-cabable >    devices overly complicates several issues.  >  > Take 
+> > care,  > Pax.
+> >
+> >Aren't multiple IP addresses a "normal" IPv6 environment?
+> >
+> >-Dave
+
+------_=_NextPart_001_01BF83E1.B9951F02
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3DUS-ASCII">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2644.0">
+<TITLE>RE: FW: Comments on draft-ietf-zeroconf-reqts-02</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hi Matt,</FONT>
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">we have much more =
+than just NAT solutions, I'm not a fan of NATs at all and that's why I =
+want to see IPv6 deployed. we have application level solutions, =
+Transport level solutions, and Network level translators. We also have =
+solutions for communicating over IPv4 as I'm sure some of you know. For =
+more details check the NGTRANS WG page.</FONT></P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">For most users if =
+applications can communicate then that's fine. I'm not sure that the =
+average computer user knows or even cares what IP stack they're =
+running. </FONT></P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">I think the =
+solutions ARE there, all we have to do is just take them seriously, =
+instead of avoiding them.</FONT>
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Cheers,</FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hesham</FONT>
+</P>
+<UL>
+<P><FONT SIZE=3D1 FACE=3D"Arial">-----Original Message-----</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">From:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Matt Holdrege [SMTP:holdrege@lucent.com]</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">Sent:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Thursday, 2 March 2000 3:49</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">To:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">Hesham Soliman (EPA)</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Cc:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">'zeroconf@merit.edu'</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>=
+</B> <FONT SIZE=3D1 FACE=3D"Arial">Re: FW: Comments on =
+draft-ietf-zeroconf-reqts-02</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">No doubt, but as with the development =
+of any niche IPv6 area, you have to </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">consider how you will communicate =
+with the greater IPv4 internet. We now </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">have a IPv4 to IPv6 NAT RFC, but =
+NAT's aren't perfect and you really need </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">to consider how it will work for each =
+service and protocol.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">My point is that just saying &quot;we =
+need IPv6&quot; isn't nearly enough.</FONT>
+</P>
+<BR>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">At 05:20 PM 2/28/00 +1100, Hesham =
+Soliman (EPA) wrote:</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">&gt;I agree, no one seems to be =
+considering IPv6 in any of these discussions. </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;This is despite the fact that =
+Home networking&nbsp; would be a perfect market </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;for it, considering that it =
+basically solves half the problems in the </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;charter of this WG.</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;Hesham</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;-----Original Message-----&nbsp; =
+From:&nbsp;&nbsp; Dave Thaler </FONT>
+<BR><FONT SIZE=3D2 =
+FACE=3D"Arial">&gt;[SMTP:dthaler@dthaler.microsoft.com]&nbsp; =
+Sent:&nbsp;&nbsp; Monday, 28 February 2000 </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;6:22&nbsp; =
+To:&nbsp;&nbsp;&nbsp;&nbsp; pax@metrolink.com&nbsp; =
+Cc:&nbsp;&nbsp;&nbsp;&nbsp; imcdonald@sharplabs.com; </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;ferguson@cisco.com; =
+mhattig@pacifier.com; </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;zeroconf@merit.edu&nbsp; =
+Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Re: Comments on =
+</FONT>
+<BR><FONT SIZE=3D2 =
+FACE=3D"Arial">&gt;draft-ietf-zeroconf-reqts-02</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; &gt; &quot;McDonald, Ira&quot; =
+wrote:&nbsp; &gt; &gt; I also concur.&nbsp; And strongly urge that we =
+</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; not plan to make&nbsp; &gt; &gt; =
+ZC-capable devices support multiple IP addresses </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; (e.g.,&nbsp; &gt; &gt; =
+link-local and also DHCP-derived) on the same </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; interface.&nbsp; &gt;&nbsp; &gt; =
+FWIW, I agree completely:&nbsp; &gt;&nbsp; &gt;&nbsp;&nbsp;&nbsp; it's =
+important that </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; ZC-capable devices can operate =
+in a &gt;&nbsp;&nbsp;&nbsp; &quot;normal&quot; IP </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; environment.&nbsp; &gt;&nbsp; =
+&gt;&nbsp;&nbsp;&nbsp; and adding multiple IP address support to =
+</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; ZC-cabable =
+&gt;&nbsp;&nbsp;&nbsp; devices overly complicates several issues.&nbsp; =
+&gt;&nbsp; &gt; Take </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt; care,&nbsp; &gt; Pax.</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;Aren't multiple IP addresses a =
+&quot;normal&quot; IPv6 environment?</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;-Dave</FONT>
+</P>
+</UL>
+</BODY>
+</HTML>
+------_=_NextPart_001_01BF83E1.B9951F02--
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  1 21:07:31 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA20017
+	for <zeroconf-archive@odin.ietf.org>; Wed, 1 Mar 2000 21:07:31 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 30FB65DDA8; Wed,  1 Mar 2000 21:07:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1FBA65DDB5; Wed,  1 Mar 2000 21:07:23 -0500 (EST)
+Received: from igw1.ericsson.com.au (igw1.ericsson.com.au [203.61.155.3])
+	by segue.merit.edu (Postfix) with ESMTP id D51895DDA8
+	for <zeroconf@merit.edu>; Wed,  1 Mar 2000 21:07:19 -0500 (EST)
+Received: from brsi02.epa.ericsson.se ([146.11.15.8])
+	by igw1.ericsson.com.au (8.9.1b+Sun/8.9.1) with ESMTP id NAA04979;
+	Thu, 2 Mar 2000 13:07:17 +1100 (EST)
+Received: from eaubrnt019.epa.ericsson.se (eaubrnt019 [146.11.9.165])
+	by brsi02.epa.ericsson.se (8.9.1/8.9.1) with ESMTP id NAA16763;
+	Thu, 2 Mar 2000 13:07:51 +1100 (EST)
+Received: by eaubrnt019.epa.ericsson.se with Internet Mail Service (5.5.2448.0)
+	id <GD4714W9>; Thu, 2 Mar 2000 13:07:15 +1100
+Message-ID: <4B6BC00CD15FD2119E5F0008C7A419A50185D731@eaubrnt018.epa.ericsson.se>
+From: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+To: "'Matt Holdrege'" <holdrege@lucent.com>
+Cc: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: RE: FW: Comments on draft-ietf-zeroconf-reqts-02
+Date: Thu, 2 Mar 2000 13:07:14 +1100 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01BF83EC.0765371C"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01BF83EC.0765371C
+Content-Type: text/plain
+
+Hi Matt,
+
+
+> -----Original Message-----
+> From:	Matt Holdrege [SMTP:holdrege@lucent.com]
+> Sent:	Thursday, 2 March 2000 12:46
+> To:	Hesham Soliman (EPA)
+> Cc:	'zeroconf@merit.edu'
+> Subject:	RE: FW: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> The reason I mentioned NAT is that I'm assuming that low-cost ZC devices 
+> would not undergo the burden of complex interfaces such as BIP or 6-in-4. 
+> If there is a very simple NGTRANS method that would work well in a ZC 
+> scenario, please let me know.
+> 
+Again you're assuming that your ISP is only offering IPv4, Why ? I know that
+is the situation now but may not be in the near future. In fact there are
+already ISP's in Japan offering IPv6. Things like 6 over 4 or 6to4 are
+expected to be in border routers. 
+You don't need them in every device if you're running an IPv6 network. 
+
+
+> I also agree with Paul that protocols based on one IP version should not 
+> impact the development under another IP version.
+> 
+	Of course, but my point is our reqts document should be addressing
+the problem for "IP networks", that means BOTH V4 and V6. At the moment V6
+is avoided for some reason, despite the fact that is very well suited to
+this market.
+
+
+	Cheers,
+	Hesham
+
+------_=_NextPart_001_01BF83EC.0765371C
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3DUS-ASCII">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2644.0">
+<TITLE>RE: FW: Comments on draft-ietf-zeroconf-reqts-02</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hi Matt,</FONT>
+</P>
+<BR>
+<UL>
+<P><FONT SIZE=3D1 FACE=3D"Arial">-----Original Message-----</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">From:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Matt Holdrege [SMTP:holdrege@lucent.com]</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">Sent:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Thursday, 2 March 2000 12:46</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">To:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">Hesham Soliman (EPA)</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Cc:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">'zeroconf@merit.edu'</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>=
+</B> <FONT SIZE=3D1 FACE=3D"Arial">RE: FW: Comments on =
+draft-ietf-zeroconf-reqts-02</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">The reason I mentioned NAT is that I'm =
+assuming that low-cost ZC devices </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">would not undergo the burden of =
+complex interfaces such as BIP or 6-in-4. </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">If there is a very simple NGTRANS =
+method that would work well in a ZC </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">scenario, please let me know.</FONT>
+</P>
+</UL>
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Again you're =
+assuming that your ISP is only offering IPv4, Why ? I know that is the =
+situation now but may not be in the near future. In fact there are =
+already ISP's in Japan offering IPv6. Things like 6 over 4 or 6to4 are =
+expected to be in border routers. </FONT></P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">You don't need them =
+in every device if you're running an IPv6 network. </FONT>
+</P>
+<BR>
+<UL>
+<P><FONT SIZE=3D2 FACE=3D"Arial">I also agree with Paul that protocols =
+based on one IP version should not </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">impact the development under another =
+IP version.</FONT>
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Of course, but my =
+point is our reqts document should be addressing the problem for =
+&quot;IP networks&quot;, that means BOTH V4 and V6. At the moment V6 is =
+avoided for some reason, despite the fact that is very well suited to =
+this market.</FONT></P>
+<BR>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Cheers,</FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hesham</FONT>
+</P>
+</UL>
+</BODY>
+</HTML>
+------_=_NextPart_001_01BF83EC.0765371C--
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  1 21:43:18 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA20446
+	for <zeroconf-archive@odin.ietf.org>; Wed, 1 Mar 2000 21:43:18 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D6EE65DDC9; Wed,  1 Mar 2000 21:43:09 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C6B7F5DDB9; Wed,  1 Mar 2000 21:43:09 -0500 (EST)
+Received: from igw1.ericsson.com.au (igw1.ericsson.com.au [203.61.155.3])
+	by segue.merit.edu (Postfix) with ESMTP id 875825DDB5
+	for <zeroconf@merit.edu>; Wed,  1 Mar 2000 21:43:06 -0500 (EST)
+Received: from brsi02.epa.ericsson.se ([146.11.15.8])
+	by igw1.ericsson.com.au (8.9.1b+Sun/8.9.1) with ESMTP id NAA06061;
+	Thu, 2 Mar 2000 13:43:04 +1100 (EST)
+Received: from eaubrnt019.epa.ericsson.se (eaubrnt019 [146.11.9.165])
+	by brsi02.epa.ericsson.se (8.9.1/8.9.1) with ESMTP id NAA22032;
+	Thu, 2 Mar 2000 13:43:38 +1100 (EST)
+Received: by eaubrnt019.epa.ericsson.se with Internet Mail Service (5.5.2448.0)
+	id <GD471VYD>; Thu, 2 Mar 2000 13:43:02 +1100
+Message-ID: <4B6BC00CD15FD2119E5F0008C7A419A50185D732@eaubrnt018.epa.ericsson.se>
+From: "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+To: "'Matt Holdrege'" <holdrege@lucent.com>,
+        "Hesham Soliman (EPA)" <Hesham.Soliman@ericsson.com.au>
+Cc: "'zeroconf@merit.edu'" <zeroconf@merit.edu>
+Subject: RE: FW: Comments on draft-ietf-zeroconf-reqts-02
+Date: Thu, 2 Mar 2000 13:43:01 +1100 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01BF83F1.070F7EDA"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01BF83F1.070F7EDA
+Content-Type: text/plain
+
+How about the scenario of a ZC  IPv6 network that has one GW with the
+following functions :
+- configured or 6 to 4 tunnelling to communicate to V6 islands over V4
+- Application level GW to communicate with apps running on V4 hosts 
+- Optional Network layer translator like SIIT 
+and NO NAT 
+This way we have applications talking regardless of the stack they sit on.
+What do you think about that ?
+
+Cheers,
+Hesham
+
+> -----Original Message-----
+> From:	Matt Holdrege [SMTP:holdrege@lucent.com]
+> Sent:	Thursday, 2 March 2000 1:21
+> To:	Hesham Soliman (EPA)
+> Cc:	'zeroconf@merit.edu'
+> Subject:	RE: FW: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> At 01:07 PM 3/2/00 +1100, Hesham Soliman (EPA) wrote:
+> >Again you're assuming that your ISP is only offering IPv4, Why ? I know 
+> >that is the situation now but may not be in the near future. In fact
+> there 
+> >are already ISP's in Japan offering IPv6. Things like 6 over 4 or 6to4
+> are 
+> >expected to be in border routers.
+> 
+> Yes I'm assuming the vast majority of ISP's run IPv4 and I have to work 
+> under that assumption until it ceases to be true. That doesn't mean I'm 
+> against IPv6 development in ZC or any other area. I'm just saying we have 
+> to carefully understand what the issues are with using IPv6 in any
+> scenario 
+> that links back to an IPv4 Internet. In my role as editor of 
+> draft-ietf-nat-protocol-complications-01.txt I'm somewhat sensative to
+> this 
+> issue.
+> 
+> That said, I'm still assuming that an IPv6 ZC would be NAT'd to the 
+> Internet. Or do you think it is more likely that a real world ZC border 
+> router would encapsulate?
+
+------_=_NextPart_001_01BF83F1.070F7EDA
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3DUS-ASCII">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2644.0">
+<TITLE>RE: FW: Comments on draft-ietf-zeroconf-reqts-02</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">How about the =
+scenario of a ZC&nbsp; IPv6 network that has one GW with the following =
+functions :</FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">- configured or 6 =
+to 4 tunnelling to communicate to V6 islands over V4</FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">- Application level =
+GW to communicate with apps running on V4 hosts </FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">- Optional Network =
+layer translator like SIIT </FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">and NO NAT </FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">This way we have =
+applications talking regardless of the stack they sit on. What do you =
+think about that ?</FONT>
+</P>
+
+<P><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Cheers,</FONT>
+<BR><FONT COLOR=3D"#0000FF" SIZE=3D2 FACE=3D"Arial">Hesham</FONT>
+</P>
+<UL>
+<P><FONT SIZE=3D1 FACE=3D"Arial">-----Original Message-----</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">From:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Matt Holdrege [SMTP:holdrege@lucent.com]</FONT>
+<BR><B><FONT SIZE=3D1 FACE=3D"Arial">Sent:&nbsp;&nbsp;</FONT></B> <FONT =
+SIZE=3D1 FACE=3D"Arial">Thursday, 2 March 2000 1:21</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">To:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">Hesham Soliman (EPA)</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Cc:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B> <FONT SIZE=3D1 =
+FACE=3D"Arial">'zeroconf@merit.edu'</FONT>
+<BR><B><FONT SIZE=3D1 =
+FACE=3D"Arial">Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>=
+</B> <FONT SIZE=3D1 FACE=3D"Arial">RE: FW: Comments on =
+draft-ietf-zeroconf-reqts-02</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">At 01:07 PM 3/2/00 +1100, Hesham =
+Soliman (EPA) wrote:</FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;Again you're assuming that your =
+ISP is only offering IPv4, Why ? I know </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;that is the situation now but may =
+not be in the near future. In fact there </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;are already ISP's in Japan =
+offering IPv6. Things like 6 over 4 or 6to4 are </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">&gt;expected to be in border =
+routers.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">Yes I'm assuming the vast majority of =
+ISP's run IPv4 and I have to work </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">under that assumption until it ceases =
+to be true. That doesn't mean I'm </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">against IPv6 development in ZC or any =
+other area. I'm just saying we have </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">to carefully understand what the =
+issues are with using IPv6 in any scenario </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">that links back to an IPv4 Internet. =
+In my role as editor of </FONT>
+<BR><FONT SIZE=3D2 =
+FACE=3D"Arial">draft-ietf-nat-protocol-complications-01.txt I'm =
+somewhat sensative to this </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">issue.</FONT>
+</P>
+
+<P><FONT SIZE=3D2 FACE=3D"Arial">That said, I'm still assuming that an =
+IPv6 ZC would be NAT'd to the </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">Internet. Or do you think it is more =
+likely that a real world ZC border </FONT>
+<BR><FONT SIZE=3D2 FACE=3D"Arial">router would encapsulate?</FONT>
+</P>
+</UL>
+</BODY>
+</HTML>
+------_=_NextPart_001_01BF83F1.070F7EDA--
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar  6 07:58:48 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA03621
+	for <zeroconf-archive@odin.ietf.org>; Mon, 6 Mar 2000 07:58:46 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B98CF5DD98; Mon,  6 Mar 2000 07:58:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A78525DDA0; Mon,  6 Mar 2000 07:58:35 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 30DAF5DD98
+	for <zeroconf@merit.edu>; Mon,  6 Mar 2000 07:58:34 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id EAA20551
+	for <zeroconf@merit.edu>; Mon, 6 Mar 2000 04:58:32 -0800 (PST)
+Received: from vayne (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with SMTP id NAA19886;
+	Mon, 6 Mar 2000 13:58:28 +0100 (MET)
+Date: Mon, 6 Mar 2000 14:06:30 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik Guttman <Erik.Guttman@germany.sun.com>
+Subject: zero configuration open issues 
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com
+Message-ID: <Roam.SIMC.2.0.6.952347990.18242.erikg@sun-ffm.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I'm including a list of what, IMO, are the open issues for the ZeroConf WG.
+Please send comments - and help to do the work to resolve the issues. 
+
+  Host configuration - REVIEW OF REQTS DOC NEEDED.
+    - Is there a requirement that topology changes are detected?
+      There was discussion of this on the list.
+    - How do router advert detections fit in?  How should hosts behave
+      differently?
+
+  Malloc - INPUT FOR REQTS DOC NEEDED.
+    - What are the specific requirements?  (can we extract them from
+      draft-thaler-zeroconf-multicast-00.txt?)  
+
+  multicast name to address resolution - INPUT FOR REQTS DOC NEEDED.
+    - What are the specific requirements for name to address resolution?
+      Is this a no-brainer - Shouldn't hosts support a stub server which
+      replies to multicast dns requests for their name?  What are the other
+      requirements?
+
+  Service Discovery - REVIEW OF REQTS DOC NEEDED.
+    - has the list of requirements been over constrained (to sound like
+      SLP)?  Are there other requirements or fewer ones?  
+     
+  Security - REVIEW OF REQTS DOC NEEDED.
+    - Is 0 admin, 0 security OK or is this "punting?"
+    - Transitioning to 'configured/administered networks' what security
+      support should be described in the requirements doc?  Currently
+      Reqts, Sec. 4.2 lists DNSsec, DHCP auth, MADCAP security and service 
+      discovery (SLP?) security as "MUST support these protocols if 
+      configured to do so."  This is a heavy requirement.  What is more
+      appropriate?  SHOULD?  MAY?  Silence?
+    - Is it possible to have one configuration element to configure all ZC
+      protocols.  One idea is something similar to dhcp authentication where
+      each server/client has a unique key pair which can be derived by the use
+      of one master key and a unique id per client. (see appendix A of 
+      draft-ietf-dhc-authentication-12.txt). 
+
+  IPv6 - INPUT FOR REQTS DOC NEEDED.
+    - which ZC requirements are different for IPv6?  The draft is pretty
+      silent to IPv6 issues and some of the requirements may be IPv4-
+      specific.  
+    - Suggestion:  One requirements doc followed by two profile documents.
+
+Erik
+
+
+
+
+
+From owner-zeroconf@merit.edu  Sun Mar 12 09:13:05 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA05226
+	for <zeroconf-archive@odin.ietf.org>; Sun, 12 Mar 2000 09:13:05 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id C44485DD9D; Sun, 12 Mar 2000 09:12:46 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id AD00D5DDA2; Sun, 12 Mar 2000 09:12:46 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 490985DD9D
+	for <zeroconf@merit.edu>; Sun, 12 Mar 2000 09:12:45 -0500 (EST)
+Received: from efra05-home.Germany.Sun.COM ([129.157.43.5])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA07472;
+	Sun, 12 Mar 2000 06:12:41 -0800 (PST)
+Received: from germany.sun.com (muc-isdn-16 [129.157.164.116])
+	by efra05-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v1.7) with ESMTP id PAA09588;
+	Sun, 12 Mar 2000 15:12:37 +0100 (MET)
+Message-ID: <38CBA7B6.A462E72C@germany.sun.com>
+Date: Sun, 12 Mar 2000 15:20:38 +0100
+From: Erik Guttman <Erik.Guttman@germany.sun.com>
+Reply-To: Erik.Guttman@sun.com
+Organization: Sun Microsystems
+X-Mailer: Mozilla 4.7 [en] (X11; U; SunOS 5.5.1 sun4m)
+X-Accept-Language: de-DE, fr-FR, en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com, narten@raleigh.ibm.com,
+        Erik.Nordmark@eng.sun.com
+Subject: ZEROCONF WG meeting agenda
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Proposed Agenda for ZEROCONF WG meeting
+
+Minutes   Presenter          Topic
+=======   ============       ==============================
+   5      Erik Guttman       Agenda update & meeting goals
+
+  30      Myron Hattig       Requirements revision & issues
+
+   5      Erik & Stuart      ZeroConf protocol areas intro
+
+  15      Stuart Cheshire    IPv4 Link Local Host Autoconf Reqts
+                             Standardization and deployment
+
+  15      Dave Thaler        Multicast Address Allocation Reqts
+                             Status of protocol design effort
+
+  15      TBD                Multicast DNS Reqts
+                             Status of mDNS research & stds
+           
+
+  15      Stuart Cheshire    Service Discovery Reqts
+                             Standardization and deployment
+
+  15      Erik Guttman       Zero Configuration Security Reqts
+                             Open issues to resolve
+
+  15      Stuart & Erik      Next Steps 
+
+
+Meeting Goals
+=============
+
+ [1] Discuss revisions in the ZeroConf requirements draft and 
+     work through remaining issues.  The goal is to move
+     to WG last call after one more set of revisions.
+
+ [2] Different protocol areas in the ZeroConf specification will
+     be discussed.  This is an opportunity for the WG to
+     take issue with the current spec and make counterproposals.
+
+ [3] The ZeroConf WG will produce a 'profile' document after the 
+     reqts document is complete.  The goal is to briefly acquaint 
+     the WG with the state of development of each of the protocols
+     which might be put into the profile specification.
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 24 14:20:46 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA17892
+	for <zeroconf-archive@odin.ietf.org>; Fri, 24 Mar 2000 14:20:44 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 0D4125DD9E; Fri, 24 Mar 2000 14:20:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id EEC8C5DDA4; Fri, 24 Mar 2000 14:20:33 -0500 (EST)
+Received: from lukla.Sun.COM (lukla.Sun.COM [192.18.98.31])
+	by segue.merit.edu (Postfix) with ESMTP id 3EEE05DD9E
+	for <zeroconf@merit.edu>; Fri, 24 Mar 2000 14:19:59 -0500 (EST)
+Received: from eastmail1.East.Sun.COM ([129.148.1.240])
+	by lukla.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id HAA25241
+	for <zeroconf@merit.edu>; Fri, 24 Mar 2000 07:21:47 -0700 (MST)
+Received: from sunlabs.East.Sun.COM (sunlabs-74.East.Sun.COM [129.148.74.250])
+	by eastmail1.East.Sun.COM (8.9.3+Sun/8.9.3/ENSMAIL,v1.7) with ESMTP id JAA08143
+	for <zeroconf@merit.edu>; Fri, 24 Mar 2000 09:21:28 -0500 (EST)
+Received: from sun.com (dhcp75-155 [129.148.75.155])
+	by sunlabs.East.Sun.COM (8.9.3+Sun/8.9.1) with ESMTP id JAA05204
+	for <zeroconf@merit.edu>; Fri, 24 Mar 2000 09:21:03 -0500 (EST)
+Message-ID: <38DB7941.688D4146@sun.com>
+Date: Fri, 24 Mar 2000 09:18:41 -0500
+From: Steve Hanna <steve.hanna@sun.com>
+Organization: Sun Microsystems, Inc.
+X-Mailer: Mozilla 4.72 [en] (WinNT; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: Zeroconf security
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+I would like to comment on one of the open issues Erik Guttman recently
+posted:
+
+- Is 0 admin, 0 security OK or is this "punting?"
+
+IMHO, leaving security out of zeroconf networking would be similar to
+building a car with no locks. It's an invitation for mischief and a
+dangerous thing.
+
+Perhaps you'll say "But zero config is only for home systems and small
+business. What harm will it do to leave out security?"
+
+Pranksters will flip on people's alarm clocks at 2:00 AM. Peeping toms
+will flip on lights at inappropriate times. Criminals will drive down
+the street, opening doors and disabling alarms. And vandals may even
+burn down houses by repeatedly triggering the self-clean cycle on ovens.
+
+OK, maybe things won't be so bad. But we have an obligation to build
+secure protocols. If a user doesn't want to use security, they don't
+have to. But we have to build it in as an option.
+
+Security MUST be included in all zeroconf protocols, it MUST be
+mandatory to implement (although it can be off by default), and it MUST
+be easy to use. I recognize that security can never be truly zeroconf.
+But we can get pretty close (I'd be glad to elaborate, if you like).
+
+Comments?
+
+Steve
+
+
+
+From owner-zeroconf@merit.edu  Sun Mar 26 14:28:28 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA18671
+	for <zeroconf-archive@odin.ietf.org>; Sun, 26 Mar 2000 14:28:23 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9B00E5DDE3; Sun, 26 Mar 2000 14:28:09 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 21E035DDE7; Sun, 26 Mar 2000 14:28:09 -0500 (EST)
+Received: from mgw-x1.nokia.com (mgw-x1.nokia.com [131.228.20.21])
+	by segue.merit.edu (Postfix) with ESMTP id 1A6BB5DDBB
+	for <zeroconf@merit.edu>; Sun, 26 Mar 2000 14:28:03 -0500 (EST)
+Received: from mgw-i1.ntc.nokia.com (mgw-i1.ntc.nokia.com [131.228.118.60])
+	by mgw-x1.nokia.com (8.9.3/8.9.3/o) with ESMTP id VAA27936;
+	Sun, 26 Mar 2000 21:27:58 +0200 (EET)
+From: franklin.reynolds@nokia.com
+Received: from daebh02nok.americas.nokia.com (daebh02nok.americas.nokia.com [172.18.242.183])
+	by mgw-i1.ntc.nokia.com (8.9.3/8.9.3) with ESMTP id VAA16129;
+	Sun, 26 Mar 2000 21:27:57 +0200 (EET)
+Received: by daebh02nok with Internet Mail Service (5.5.2448.0)
+	id <GT3L9Z45>; Sun, 26 Mar 2000 13:27:56 -0600
+Message-ID: <B9CFA6CE8FFDD211A1FB0008C7894E46AA5FC9@bseis01nok>
+To: steve.hanna@sun.com, zeroconf@merit.edu
+Subject: RE: Zeroconf security
+Date: Sun, 26 Mar 2000 13:25:34 -0600
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At the November IETF meeting I tried to raise this issue
+and the majority (or at least the majority of people who spoke
+up) seemed to feel that the group should punt on security
+for Zeroconf networks. Part of the argument was that by 
+limiting the scope of the WG, it will be able to finish its
+tasks quickly.
+
+The risk is that Zeroconf networks without adequate security
+might seem like a bad idea to enough people to create a real
+obstacle to the acceptance and deployment of Zeroconf technology.
+
+I think that if the Zeroconf WG feels that it is the wrong group
+to work towards simple, secure networks (as oppossed to zeroconf),
+then we need to consider the creation of a complementary WG that
+is chartered to deal with simple, secure networks.
+
+Franklin Reynolds
+Nokia Research Center
+
+> -----Original Message-----
+> From: EXT Steve Hanna [mailto:steve.hanna@sun.com]
+> Sent: Friday, March 24, 2000 9:19 AM
+> To: zeroconf@merit.edu
+> Subject: Zeroconf security
+> 
+> 
+> I would like to comment on one of the open issues Erik 
+> Guttman recently
+> posted:
+> 
+> - Is 0 admin, 0 security OK or is this "punting?"
+> 
+> IMHO, leaving security out of zeroconf networking would be similar to
+> building a car with no locks. It's an invitation for mischief and a
+> dangerous thing.
+> 
+> Perhaps you'll say "But zero config is only for home systems and small
+> business. What harm will it do to leave out security?"
+> 
+> Pranksters will flip on people's alarm clocks at 2:00 AM. Peeping toms
+> will flip on lights at inappropriate times. Criminals will drive down
+> the street, opening doors and disabling alarms. And vandals may even
+> burn down houses by repeatedly triggering the self-clean 
+> cycle on ovens.
+> 
+> OK, maybe things won't be so bad. But we have an obligation to build
+> secure protocols. If a user doesn't want to use security, they don't
+> have to. But we have to build it in as an option.
+> 
+> Security MUST be included in all zeroconf protocols, it MUST be
+> mandatory to implement (although it can be off by default), 
+> and it MUST
+> be easy to use. I recognize that security can never be truly zeroconf.
+> But we can get pretty close (I'd be glad to elaborate, if you like).
+> 
+> Comments?
+> 
+> Steve
+> 
+
+
+
+From owner-zeroconf@merit.edu  Sun Mar 26 20:00:00 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA22970
+	for <zeroconf-archive@odin.ietf.org>; Sun, 26 Mar 2000 19:59:59 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id DFD0C5DDBB; Sun, 26 Mar 2000 16:36:52 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id BD9F75DDC2; Sun, 26 Mar 2000 16:36:52 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 5397B5DDBB
+	for <zeroconf@merit.edu>; Sun, 26 Mar 2000 16:36:51 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated)
+	by garlic.amaranth.net (8.10.0/8.10.0) with ESMTP id e2QLak320178;
+	Sun, 26 Mar 2000 16:36:46 -0500
+Message-ID: <38DE82EC.D7F65F67@senie.com>
+Date: Sun, 26 Mar 2000 16:36:44 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.72 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Steve Hanna <steve.hanna@sun.com>
+Cc: zeroconf@merit.edu
+Subject: Re: Zeroconf security
+References: <38DB7941.688D4146@sun.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Steve Hanna wrote:
+> 
+> I would like to comment on one of the open issues Erik Guttman recently
+> posted:
+> 
+> - Is 0 admin, 0 security OK or is this "punting?"
+> 
+> IMHO, leaving security out of zeroconf networking would be similar to
+> building a car with no locks. It's an invitation for mischief and a
+> dangerous thing.
+> 
+> Perhaps you'll say "But zero config is only for home systems and small
+> business. What harm will it do to leave out security?"
+> 
+> Pranksters will flip on people's alarm clocks at 2:00 AM. Peeping toms
+> will flip on lights at inappropriate times. Criminals will drive down
+> the street, opening doors and disabling alarms. And vandals may even
+> burn down houses by repeatedly triggering the self-clean cycle on ovens.
+> 
+> OK, maybe things won't be so bad. But we have an obligation to build
+> secure protocols. If a user doesn't want to use security, they don't
+> have to. But we have to build it in as an option.
+> 
+> Security MUST be included in all zeroconf protocols, it MUST be
+> mandatory to implement (although it can be off by default), and it MUST
+> be easy to use. I recognize that security can never be truly zeroconf.
+> But we can get pretty close (I'd be glad to elaborate, if you like).
+
+I'd like an explanation of how you intend to implement security
+(certificates, etc.) in a zeroconf network. The problem you get into is
+that this requires configuration. It's that configuration requirement
+which runs counter to zeroconf.
+
+It is NOT clear that there is a need or desire to run secure protocols
+in this case.
+
+It is my contention that anyone requiring secure protocols and the like
+can implement configured (not zeroconf) networks, and implement the
+security as needed in that context. I'm not convinced we need to
+reinvent all of that in zeroconf.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Sun Mar 26 20:53:54 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA22972
+	for <zeroconf-archive@odin.ietf.org>; Sun, 26 Mar 2000 19:59:59 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B5D075DDC0; Sun, 26 Mar 2000 17:30:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 96C1C5DDC2; Sun, 26 Mar 2000 17:30:38 -0500 (EST)
+Received: from lukla.Sun.COM (lukla.Sun.COM [192.18.98.31])
+	by segue.merit.edu (Postfix) with ESMTP id 5E9715DDC0
+	for <zeroconf@merit.edu>; Sun, 26 Mar 2000 17:30:37 -0500 (EST)
+Received: from engmail4.Eng.Sun.COM ([129.144.134.6])
+	by lukla.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id PAA18460;
+	Sun, 26 Mar 2000 15:30:35 -0700 (MST)
+Received: from nasnfs.eng.sun.com (nasnfs.Eng.Sun.COM [129.146.122.19])
+	by engmail4.Eng.Sun.COM (8.9.1b+Sun/8.9.1/ENSMAIL,v1.6) with ESMTP id OAA06540;
+	Sun, 26 Mar 2000 14:30:34 -0800 (PST)
+Received: from nasnfs.Eng.Sun.COM (centralapp.Central.Sun.COM [129.147.34.61])
+	by nasnfs.eng.sun.com (8.9.3+Sun/8.9.1) with ESMTP id OAA00476;
+	Sun, 26 Mar 2000 14:30:15 -0800 (PST)
+From: James Kempf <James.Kempf@Eng.Sun.COM>
+Message-Id: <200003262230.OAA00476@nasnfs.eng.sun.com>
+Date: Mon, 27 Mar 2000 07:55:58 +0-1000
+To: "Daniel Senie" <dts@senie.com>, "Steve Hanna" <steve.hanna@sun.com>
+Cc: <zeroconf@merit.edu>
+Reply-To: <James.Kempf@Eng.Sun.COM>
+Subject: Re: Zeroconf security
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Here's a bit of a reality check about trying to do security with zero 
+configuration (and I mean "zero" literally).
+
+Last year, I worked with a group on designing a management installation
+agent that installs system management software without any initial configuration.
+The idea is that a company buys a computer and the OS comes preinstalled with
+this agent that goes out and installs system management software (like
+Tivoli for example) when the machine first boots. I don't want to go into
+the details of how this works, we came up with a credible design but 
+it is unimportant for this discussion.
+
+The important point is that we had to back off our initial attempt to do
+security without configuration because we couldn't figure out how to 
+get an organization that would be willing to assume the legal risk of a compromised
+key. The initial design assumed that there was an organization like Verisign
+that would hand out a global public key that would be embedded in every
+agent. We talked about using a cert chain, but every design we could think
+of would require some kind of initial configuration on the computer before
+it could work. When we looked into the issue, we found that Verisign and
+others have expressed a reluctance in the past to take on the legal risk
+involved in managing such a system.
+
+Finally, what we decided to do was require the company buying the computer 
+and the company selling it arrange to have the buyer's public key installed
+in the agent at the time the computer is configured by the seller. This
+requires some configuration, but the important information can be prearranged,
+like credit card numbers, so that it doesn't have to occur with every purchase.
+The legal risk in this case is clearly defined and partitioned so that 
+ajudication in the event of a dispute would be much easier.
+
+Probably there are other ways this could have been done, and I've simplified
+this description some, but the point I'm trying to make is that doing
+real zero conf security is a hard (and perhaps unsolvable) problem not
+for any technical reason but because of legal and organizational reasons.
+
+			jak
+
+
+
+
+>Steve Hanna wrote:
+>> 
+>> I would like to comment on one of the open issues Erik Guttman recently
+>> posted:
+>> 
+>> - Is 0 admin, 0 security OK or is this "punting?"
+>> 
+>> IMHO, leaving security out of zeroconf networking would be similar to
+>> building a car with no locks. It's an invitation for mischief and a
+>> dangerous thing.
+>> 
+>> Perhaps you'll say "But zero config is only for home systems and small
+>> business. What harm will it do to leave out security?"
+>> 
+>> Pranksters will flip on people's alarm clocks at 2:00 AM. Peeping toms
+>> will flip on lights at inappropriate times. Criminals will drive down
+>> the street, opening doors and disabling alarms. And vandals may even
+>> burn down houses by repeatedly triggering the self-clean cycle on ovens.
+>> 
+>> OK, maybe things won't be so bad. But we have an obligation to build
+>> secure protocols. If a user doesn't want to use security, they don't
+>> have to. But we have to build it in as an option.
+>> 
+>> Security MUST be included in all zeroconf protocols, it MUST be
+>> mandatory to implement (although it can be off by default), and it MUST
+>> be easy to use. I recognize that security can never be truly zeroconf.
+>> But we can get pretty close (I'd be glad to elaborate, if you like).
+>
+>I'd like an explanation of how you intend to implement security
+>(certificates, etc.) in a zeroconf network. The problem you get into is
+>that this requires configuration. It's that configuration requirement
+>which runs counter to zeroconf.
+>
+>It is NOT clear that there is a need or desire to run secure protocols
+>in this case.
+>
+>It is my contention that anyone requiring secure protocols and the like
+>can implement configured (not zeroconf) networks, and implement the
+>security as needed in that context. I'm not convinced we need to
+>reinvent all of that in zeroconf.
+>
+>-- 
+>-----------------------------------------------------------------
+>Daniel Senie                                        dts@senie.com
+>Amaranth Networks Inc.                    http://www.amaranth.com
+>
+
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 08:24:22 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA29059
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 08:24:22 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2E7CB5DDC0; Mon, 27 Mar 2000 08:24:14 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1DB4D5DDAC; Mon, 27 Mar 2000 08:24:14 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id AD4965DD8F
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 08:24:12 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id FAA01007
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 05:24:11 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0003710638@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 27 Mar 2000 05:24:09 -0800
+Received: from [169.208.32.248] (vpn-pp-6.apple.com [17.254.144.5])
+	by scv2.apple.com (8.9.3/8.9.3) with ESMTP id FAA28545;
+	Mon, 27 Mar 2000 05:24:07 -0800 (PST)
+User-Agent: Microsoft Outlook Express Macintosh Edition - 5.01 (1630)
+Date: Mon, 27 Mar 2000 22:56:02 -0800
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-Id: <B5059782.1800%cheshire@apple.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>For example an internet alarm clock or toaster that will never be taken to
+>the office must still include DHCP client?
+
+I think we should specify that ZC hosts SHOULD be able to operate in large
+configured networks (e.g. using DHCP) as well as in standalone isolated
+networks. There may be some devices, like X10-style networked light
+switches, which may never need to be globally accessible, but I think the
+argument for putting IP on these devices is not very strong. To my mind, the
+benefit of ZC is that it allows the same devices (and application-layer
+protocols) to operate in both large and small networks. If we create devices
+that don't work in large networks then we don't get that benefit.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 08:26:58 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA00121
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 08:26:58 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id B67E15DDD2; Mon, 27 Mar 2000 08:26:48 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 958765DDAC; Mon, 27 Mar 2000 08:26:48 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 5071D5DD8F
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 08:26:47 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id FAA09105
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 05:26:46 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0003710662@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 27 Mar 2000 05:26:37 -0800
+Received: from [169.208.32.248] (vpn-pp-6.apple.com [17.254.144.5])
+	by scv2.apple.com (8.9.3/8.9.3) with ESMTP id FAA28756;
+	Mon, 27 Mar 2000 05:26:34 -0800 (PST)
+User-Agent: Microsoft Outlook Express Macintosh Edition - 5.01 (1630)
+Date: Mon, 27 Mar 2000 22:58:30 -0800
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-Id: <B5059816.1801%cheshire@apple.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>It is easy to accidentally introduce a mis-configured DHCP server (perhaps
+>appliances with wireless interfaces) into a DHCP network. Should all hosts
+>in the ZeroConf network necesarily acquiesce to DHCP in this case?
+
+I agree with this description of the problem. I strongly believe that the
+appearance of a DHCP server should offer a host an additional IP address to
+use, but not take away the existing link-local address that it already has.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 08:33:34 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA03018
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 08:33:34 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 300365DDAC; Mon, 27 Mar 2000 08:30:53 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 157C05DE08; Mon, 27 Mar 2000 08:30:53 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id A50B55DDAC
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 08:30:51 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id FAA09530
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 05:30:51 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0003710690@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 27 Mar 2000 05:30:49 -0800
+Received: from [169.208.32.248] (vpn-pp-6.apple.com [17.254.144.5])
+	by scv2.apple.com (8.9.3/8.9.3) with ESMTP id FAA29056;
+	Mon, 27 Mar 2000 05:30:47 -0800 (PST)
+User-Agent: Microsoft Outlook Express Macintosh Edition - 5.01 (1630)
+Date: Mon, 27 Mar 2000 23:02:42 -0800
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-Id: <B5059912.1802%cheshire@apple.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>I also concur.  And strongly urge that we not plan to make
+>ZC-capable devices support multiple IP addresses (e.g.,
+>link-local and also DHCP-derived) on the same interface.
+
+Retrofitting current single-homed software to support multiple addresses on
+an interface may be tricky sometimes, but I think that when you design a
+system from the start supporting two addresses per interface, it is not
+nearly so difficult. We're not saying that ZC hosts MUST support two
+addresses per interface, but I think we should make it a "SHOULD", because
+of the benefits that offers.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 08:33:42 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA03085
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 08:33:42 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 158E15DE16; Mon, 27 Mar 2000 08:31:43 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 030FF5DE15; Mon, 27 Mar 2000 08:31:43 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id AD3B05DE13
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 08:31:41 -0500 (EST)
+Received: from mailgate2.apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id FAA09586
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 05:31:41 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 2.0.15) with ESMTP id <B0003710691@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Mon, 27 Mar 2000 05:31:34 -0800
+Received: from [169.208.32.248] (vpn-pp-6.apple.com [17.254.144.5])
+	by scv2.apple.com (8.9.3/8.9.3) with ESMTP id FAA29204;
+	Mon, 27 Mar 2000 05:31:30 -0800 (PST)
+User-Agent: Microsoft Outlook Express Macintosh Edition - 5.01 (1630)
+Date: Mon, 27 Mar 2000 23:03:24 -0800
+Subject: Re: FW: Comments on draft-ietf-zeroconf-reqts-02
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-Id: <B505993C.1803%cheshire@apple.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+>I don't understand why the charter cannot be modified such that
+>IPv4 and IPv6 can both be discussed, but are not tied together
+>in such a way so that we get bogged down in IPv6 cruft. In fact,
+>there should be no reason why we cannot do both, but address
+>both v4 and v6 as separate issues? They are indeed different.
+
+I think that if we write the protocol requirements document properly, then
+there should be no difference between v4 and v6. The protocol requirements
+document should specify the mimimum requirements for Internet-style
+(connectionless packet-switched) datagram networking in the absence of
+external configuration information. The profile document, listing specific
+protocols, may be different for v4 and v6, but even in that case I hope that
+the solutions for v4 and v6 will be substantially similar, at least for host
+name resolution, service discovery, and multicast address allocation.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 10:11:13 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA15484
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 10:11:13 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A0D8F5DD8F; Mon, 27 Mar 2000 10:11:04 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 8332B5DDEE; Mon, 27 Mar 2000 10:11:04 -0500 (EST)
+Received: from lukla.Sun.COM (lukla.Sun.COM [192.18.98.31])
+	by segue.merit.edu (Postfix) with ESMTP id 39A025DD8F
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 10:11:03 -0500 (EST)
+Received: from eastmail1.East.Sun.COM ([129.148.1.240])
+	by lukla.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id IAA09538;
+	Mon, 27 Mar 2000 08:10:59 -0700 (MST)
+Received: from sunlabs.East.Sun.COM (sunlabs.East.Sun.COM [129.148.75.250])
+	by eastmail1.East.Sun.COM (8.9.3+Sun/8.9.3/ENSMAIL,v1.7) with ESMTP id KAA08379;
+	Mon, 27 Mar 2000 10:10:58 -0500 (EST)
+Received: from sun.com (dhcp75-155 [129.148.75.155])
+	by sunlabs.East.Sun.COM (8.9.3+Sun/8.9.1) with ESMTP id KAA05808;
+	Mon, 27 Mar 2000 10:09:58 -0500 (EST)
+Message-ID: <38DF7956.DBB74AEA@sun.com>
+Date: Mon, 27 Mar 2000 10:08:06 -0500
+From: Steve Hanna <steve.hanna@sun.com>
+Organization: Sun Microsystems, Inc.
+X-Mailer: Mozilla 4.72 [en] (WinNT; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: krishnan@ne.mediaone.net
+Cc: Daniel Senie <dts@senie.com>, zeroconf@merit.edu
+Subject: Re: Zeroconf security
+References: <200003262331.SAA32462@h0050041aa184.ne.mediaone.net>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+As Rajesh pointed out, many zeroconf networks will use wireless media.
+Without security, such a system is outrageously vulnerable. Powerline
+networking is often similarly insecure.
+
+Instead of the gossip- or certificate-based protocols mentioned by
+Rajesh and Jim, I would suggest a simple group key model. When you buy a
+new toaster, you download a group key to it (perhaps by plugging it into
+a power outlet on the front of your home controller). When the toaster
+needs to send an IP packet (for service discovery or whatever), it
+includes a keyed hash using the group key. And it ignores all received
+IP packets unless they include such a keyed hash.
+
+Added cost: a few bits of non-volatile storage to store the key.
+Calculating the keyed hash is trivial on any processor that can run IP.
+Added configuration: plugging the toaster into the home controller
+before you put it in the kitchen. For large appliances, you can bring
+the home controller to the appliance or use a card (smart card, etc.) to
+transfer the key. Don't send the group key over the wireless net,
+though. Then it won't be a secret any more!
+
+People who don't care about zeroconf security can just skip the part
+about plugging the toaster into the home controller. Then it will accept
+all IP packets.
+
+-Steve
+
+P.S. If we want to be standards-based, we can put the keyed hash in an
+IPsec format. Just don't mess with IKE! Or the 4-bit processor on your
+toaster will *really* start smoking!
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 10:51:19 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA20950
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 10:51:19 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A7EB95DDBE; Mon, 27 Mar 2000 10:51:11 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 93EA25DDDE; Mon, 27 Mar 2000 10:51:11 -0500 (EST)
+Received: from apollo.leviton.com (apollo.leviton.com [209.177.59.130])
+	by segue.merit.edu (Postfix) with ESMTP id 615285DDBE
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 10:51:10 -0500 (EST)
+Received: by APOLLO with Internet Mail Service (5.5.2650.21)
+	id <HWY68268>; Mon, 27 Mar 2000 10:47:36 -0500
+Message-ID: <F6D40944E658D311AD550008C7E6522833DBB0@APOLLO>
+From: "Rose, William" <Wrose@leviton.com>
+To: zeroconf@merit.edu
+Subject: RE: Zeroconf security
+Date: Mon, 27 Mar 2000 10:47:35 -0500
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01BF9803.C5631B96"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+------_=_NextPart_001_01BF9803.C5631B96
+Content-Type: text/plain;
+	charset="iso-8859-1"
+
+Coming at this from a Home Networks perspective, clocks, ovens, lights, and
+other similar devices will be on subnetworks or clusters that are
+(hopefully) connected to the zeroconfig network. They will not be on the
+zeroconfig directly. This is a reality due to the costs associated with the
+devices and the media they will run on. In many if not most cases, these
+cluster networks will have their own security requirements. Especially since
+they will often run on shared media such as powerline and wireless. And
+since there are numerous protocols for the clusters, LonWorks, CEBus, Home
+PnA, Home RF, Bluetooth, etc., they will not necessarily have compatible
+security methodologies. We are discussing this issue at the CEA/VESA HN
+subcommittee which is working on an IP 1394 backbone standard. While we have
+not reached a consensus, it appears that there are only a limited number of
+options:
+A.	There could be a requirement for a single approach to security that
+will be forced on all devices
+B.	Anything wishing to control a device on a different cluster could be
+forced to know that cluster's security approach, keys, etc. 
+C.	Security within a cluster network could be stripped off by the
+gateway/bridge/router connecting the cluster to other dissimilar clusters
+and the rest of the world
+
+There are problems with each. 
+1.	If a single security approach is mandated, then all cluster
+protocols must conform and use a common key (similar to one key to all of
+your doors). Not likely to happen, especially for legacy devices. 
+2.	If a single security approach is not mandated but the security stays
+with the messages, then anyone wishing to control a device from outside the
+cluster would have to know that cluster's security system. This seems
+unacceptable since there would be multiple keys and approaches required for
+every home requiring a great deal of configuration.
+3.	If there is no single approach, and security is stripped at the
+connection to the cluster, then there needs to be some security added to the
+connections to the home that would then be stripped as it connects to the
+clusters. Even if there is no connection to the rest of the world, there
+will be connections on the outside of the house (a deck, at the pool, etc.).
+These need to be secure.
+
+I don't have the answer, I am just pointing out the reality. The industry
+needs an answer to this sooner rather than later. 
+
+Bill Rose
+Chair, CEA Home Network Committee
+
+
+
+
+-----Original Message-----
+From: franklin.reynolds@nokia.com [mailto:franklin.reynolds@nokia.com]
+Sent: Sunday, March 26, 2000 2:26 PM
+To: steve.hanna@sun.com; zeroconf@merit.edu
+Subject: RE: Zeroconf security
+
+
+At the November IETF meeting I tried to raise this issue
+and the majority (or at least the majority of people who spoke
+up) seemed to feel that the group should punt on security
+for Zeroconf networks. Part of the argument was that by 
+limiting the scope of the WG, it will be able to finish its
+tasks quickly.
+
+The risk is that Zeroconf networks without adequate security
+might seem like a bad idea to enough people to create a real
+obstacle to the acceptance and deployment of Zeroconf technology.
+
+I think that if the Zeroconf WG feels that it is the wrong group
+to work towards simple, secure networks (as oppossed to zeroconf),
+then we need to consider the creation of a complementary WG that
+is chartered to deal with simple, secure networks.
+
+Franklin Reynolds
+Nokia Research Center
+
+> -----Original Message-----
+> From: EXT Steve Hanna [mailto:steve.hanna@sun.com]
+> Sent: Friday, March 24, 2000 9:19 AM
+> To: zeroconf@merit.edu
+> Subject: Zeroconf security
+> 
+> 
+> I would like to comment on one of the open issues Erik 
+> Guttman recently
+> posted:
+> 
+> - Is 0 admin, 0 security OK or is this "punting?"
+> 
+> IMHO, leaving security out of zeroconf networking would be similar to
+> building a car with no locks. It's an invitation for mischief and a
+> dangerous thing.
+> 
+> Perhaps you'll say "But zero config is only for home systems and small
+> business. What harm will it do to leave out security?"
+> 
+> Pranksters will flip on people's alarm clocks at 2:00 AM. Peeping toms
+> will flip on lights at inappropriate times. Criminals will drive down
+> the street, opening doors and disabling alarms. And vandals may even
+> burn down houses by repeatedly triggering the self-clean 
+> cycle on ovens.
+> 
+> OK, maybe things won't be so bad. But we have an obligation to build
+> secure protocols. If a user doesn't want to use security, they don't
+> have to. But we have to build it in as an option.
+> 
+> Security MUST be included in all zeroconf protocols, it MUST be
+> mandatory to implement (although it can be off by default), 
+> and it MUST
+> be easy to use. I recognize that security can never be truly zeroconf.
+> But we can get pretty close (I'd be glad to elaborate, if you like).
+> 
+> Comments?
+> 
+> Steve
+> 
+
+------_=_NextPart_001_01BF9803.C5631B96
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Diso-8859-1">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version =
+5.5.2650.12">
+<TITLE>RE: Zeroconf security</TITLE>
+</HEAD>
+<BODY>
+
+<P><FONT SIZE=3D2>Coming at this from a Home Networks perspective, =
+clocks, ovens, lights, and other similar devices will be on subnetworks =
+or clusters that are (hopefully) connected to the zeroconfig network. =
+They will not be on the zeroconfig directly. This is a reality due to =
+the costs associated with the devices and the media they will run on. =
+In many if not most cases, these cluster networks will have their own =
+security requirements. Especially since they will often run on shared =
+media such as powerline and wireless. And since there are numerous =
+protocols for the clusters, LonWorks, CEBus, Home PnA, Home RF, =
+Bluetooth, etc., they will not necessarily have compatible security =
+methodologies. We are discussing this issue at the CEA/VESA HN =
+subcommittee which is working on an IP 1394 backbone standard. While we =
+have not reached a consensus, it appears that there are only a limited =
+number of options:</FONT></P>
+
+<P><FONT SIZE=3D2>A.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There could be a =
+requirement for a single approach to security that will be forced on =
+all devices</FONT>
+<BR><FONT SIZE=3D2>B.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Anything wishing to =
+control a device on a different cluster could be forced to know that =
+cluster's security approach, keys, etc. </FONT></P>
+
+<P><FONT SIZE=3D2>C.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Security within a =
+cluster network could be stripped off by the gateway/bridge/router =
+connecting the cluster to other dissimilar clusters and the rest of the =
+world</FONT></P>
+
+<P><FONT SIZE=3D2>There are problems with each. </FONT>
+<BR><FONT SIZE=3D2>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If a single =
+security approach is mandated, then all cluster protocols must conform =
+and use a common key (similar to one key to all of your doors). Not =
+likely to happen, especially for legacy devices. </FONT></P>
+
+<P><FONT SIZE=3D2>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If a single security =
+approach is not mandated but the security stays with the messages, then =
+anyone wishing to control a device from outside the cluster would have =
+to know that cluster's security system. This seems unacceptable since =
+there would be multiple keys and approaches required for every home =
+requiring a great deal of configuration.</FONT></P>
+
+<P><FONT SIZE=3D2>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If there is no =
+single approach, and security is stripped at the connection to the =
+cluster, then there needs to be some security added to the connections =
+to the home that would then be stripped as it connects to the clusters. =
+Even if there is no connection to the rest of the world, there will be =
+connections on the outside of the house (a deck, at the pool, etc.). =
+These need to be secure.</FONT></P>
+
+<P><FONT SIZE=3D2>I don't have the answer, I am just pointing out the =
+reality. The industry needs an answer to this sooner rather than later. =
+</FONT></P>
+
+<P><FONT SIZE=3D2>Bill Rose</FONT>
+<BR><FONT SIZE=3D2>Chair, CEA Home Network Committee</FONT>
+</P>
+<BR>
+<BR>
+<BR>
+
+<P><FONT SIZE=3D2>-----Original Message-----</FONT>
+<BR><FONT SIZE=3D2>From: franklin.reynolds@nokia.com [<A =
+HREF=3D"mailto:franklin.reynolds@nokia.com">mailto:franklin.reynolds@nok=
+ia.com</A>]</FONT>
+<BR><FONT SIZE=3D2>Sent: Sunday, March 26, 2000 2:26 PM</FONT>
+<BR><FONT SIZE=3D2>To: steve.hanna@sun.com; zeroconf@merit.edu</FONT>
+<BR><FONT SIZE=3D2>Subject: RE: Zeroconf security</FONT>
+</P>
+<BR>
+
+<P><FONT SIZE=3D2>At the November IETF meeting I tried to raise this =
+issue</FONT>
+<BR><FONT SIZE=3D2>and the majority (or at least the majority of people =
+who spoke</FONT>
+<BR><FONT SIZE=3D2>up) seemed to feel that the group should punt on =
+security</FONT>
+<BR><FONT SIZE=3D2>for Zeroconf networks. Part of the argument was that =
+by </FONT>
+<BR><FONT SIZE=3D2>limiting the scope of the WG, it will be able to =
+finish its</FONT>
+<BR><FONT SIZE=3D2>tasks quickly.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>The risk is that Zeroconf networks without adequate =
+security</FONT>
+<BR><FONT SIZE=3D2>might seem like a bad idea to enough people to =
+create a real</FONT>
+<BR><FONT SIZE=3D2>obstacle to the acceptance and deployment of =
+Zeroconf technology.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>I think that if the Zeroconf WG feels that it is the =
+wrong group</FONT>
+<BR><FONT SIZE=3D2>to work towards simple, secure networks (as oppossed =
+to zeroconf),</FONT>
+<BR><FONT SIZE=3D2>then we need to consider the creation of a =
+complementary WG that</FONT>
+<BR><FONT SIZE=3D2>is chartered to deal with simple, secure =
+networks.</FONT>
+</P>
+
+<P><FONT SIZE=3D2>Franklin Reynolds</FONT>
+<BR><FONT SIZE=3D2>Nokia Research Center</FONT>
+</P>
+
+<P><FONT SIZE=3D2>&gt; -----Original Message-----</FONT>
+<BR><FONT SIZE=3D2>&gt; From: EXT Steve Hanna [<A =
+HREF=3D"mailto:steve.hanna@sun.com">mailto:steve.hanna@sun.com</A>]</FON=
+T>
+<BR><FONT SIZE=3D2>&gt; Sent: Friday, March 24, 2000 9:19 AM</FONT>
+<BR><FONT SIZE=3D2>&gt; To: zeroconf@merit.edu</FONT>
+<BR><FONT SIZE=3D2>&gt; Subject: Zeroconf security</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; I would like to comment on one of the open =
+issues Erik </FONT>
+<BR><FONT SIZE=3D2>&gt; Guttman recently</FONT>
+<BR><FONT SIZE=3D2>&gt; posted:</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; - Is 0 admin, 0 security OK or is this =
+&quot;punting?&quot;</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; IMHO, leaving security out of zeroconf =
+networking would be similar to</FONT>
+<BR><FONT SIZE=3D2>&gt; building a car with no locks. It's an =
+invitation for mischief and a</FONT>
+<BR><FONT SIZE=3D2>&gt; dangerous thing.</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; Perhaps you'll say &quot;But zero config is =
+only for home systems and small</FONT>
+<BR><FONT SIZE=3D2>&gt; business. What harm will it do to leave out =
+security?&quot;</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; Pranksters will flip on people's alarm clocks =
+at 2:00 AM. Peeping toms</FONT>
+<BR><FONT SIZE=3D2>&gt; will flip on lights at inappropriate times. =
+Criminals will drive down</FONT>
+<BR><FONT SIZE=3D2>&gt; the street, opening doors and disabling alarms. =
+And vandals may even</FONT>
+<BR><FONT SIZE=3D2>&gt; burn down houses by repeatedly triggering the =
+self-clean </FONT>
+<BR><FONT SIZE=3D2>&gt; cycle on ovens.</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; OK, maybe things won't be so bad. But we have =
+an obligation to build</FONT>
+<BR><FONT SIZE=3D2>&gt; secure protocols. If a user doesn't want to use =
+security, they don't</FONT>
+<BR><FONT SIZE=3D2>&gt; have to. But we have to build it in as an =
+option.</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; Security MUST be included in all zeroconf =
+protocols, it MUST be</FONT>
+<BR><FONT SIZE=3D2>&gt; mandatory to implement (although it can be off =
+by default), </FONT>
+<BR><FONT SIZE=3D2>&gt; and it MUST</FONT>
+<BR><FONT SIZE=3D2>&gt; be easy to use. I recognize that security can =
+never be truly zeroconf.</FONT>
+<BR><FONT SIZE=3D2>&gt; But we can get pretty close (I'd be glad to =
+elaborate, if you like).</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; Comments?</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+<BR><FONT SIZE=3D2>&gt; Steve</FONT>
+<BR><FONT SIZE=3D2>&gt; </FONT>
+</P>
+
+</BODY>
+</HTML>
+------_=_NextPart_001_01BF9803.C5631B96--
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 19:06:46 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA27598
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 19:06:45 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2C6C05DD94; Mon, 27 Mar 2000 19:06:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1ABB95DD95; Mon, 27 Mar 2000 19:06:35 -0500 (EST)
+Received: from thalia.fm.intel.com (thalia.fm.intel.com [132.233.247.11])
+	by segue.merit.edu (Postfix) with ESMTP id 838705DD94
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 19:06:33 -0500 (EST)
+Received: from SMTP (fmsmsxvs05-1.fm.intel.com [132.233.42.205])
+	by thalia.fm.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.19 2000/01/29 00:15:43 dmccart Exp $) with SMTP id AAA25752
+	for <zeroconf@merit.edu>; Tue, 28 Mar 2000 00:07:16 GMT
+Received: from fmsmsx28.FM.INTEL.COM ([132.233.48.28]) by 132.233.48.205
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Tue, 28 Mar 2000 00:06:32 0000 (GMT)
+Received: by fmsmsx28.fm.intel.com with Internet Mail Service (5.5.2448.0)
+	id <GPN8AWMT>; Mon, 27 Mar 2000 16:06:31 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F28D7@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Mon, 27 Mar 2000 16:06:30 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+I think transitioning to larger networks is a MUST for the protocol
+requirement. Whether a product vendor implements a particular portion of the
+protocol or not is up to the vendor.
+
+-myron
+
+> -----Original Message-----
+> From: Stuart Cheshire [mailto:cheshire@apple.com]
+> Sent: Monday, March 27, 2000 10:56 PM
+> To: zeroconf@merit.edu
+> Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+> 
+> 
+> >For example an internet alarm clock or toaster that will 
+> never be taken to
+> >the office must still include DHCP client?
+> 
+> I think we should specify that ZC hosts SHOULD be able to 
+> operate in large
+> configured networks (e.g. using DHCP) as well as in 
+> standalone isolated
+> networks. There may be some devices, like X10-style networked light
+> switches, which may never need to be globally accessible, but 
+> I think the
+> argument for putting IP on these devices is not very strong. 
+> To my mind, the
+> benefit of ZC is that it allows the same devices (and 
+> application-layer
+> protocols) to operate in both large and small networks. If we 
+> create devices
+> that don't work in large networks then we don't get that benefit.
+> 
+> Stuart Cheshire <cheshire@apple.com>
+> 
+> 
+> 
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 27 19:12:29 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id TAA27653
+	for <zeroconf-archive@odin.ietf.org>; Mon, 27 Mar 2000 19:12:28 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5491B5DDB4; Mon, 27 Mar 2000 19:12:18 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 43C0E5DDB0; Mon, 27 Mar 2000 19:12:18 -0500 (EST)
+Received: from slafw.enet.sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id AE5E05DD95
+	for <zeroconf@merit.edu>; Mon, 27 Mar 2000 19:12:16 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by slafw.enet.sharplabs.com (8.9.1/8.9.2) with ESMTP id QAA18678;
+	Mon, 27 Mar 2000 16:09:52 -0800 (PST)
+Received: by admsrvnt02 with Internet Mail Service (5.5.2448.0)
+	id <HK0VRGQD>; Mon, 27 Mar 2000 16:12:08 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA53730FFFD@MAILSRVNT02>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'Stuart Cheshire'" <cheshire@apple.com>, zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+Date: Mon, 27 Mar 2000 16:11:58 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi Stuart,
+
+As the author of that quoted text below, let me put it
+back into context, please.
+
+Manufacturers of network printers (favorite examples of
+zero configuration and service location scenarios) almost
+all buy their protocol stacks from third-parties.  To my
+present knowledge, these third-parties uniformly do NOT
+support multiple IP addresses on the same network interface
+in their current implementations.
+
+Designing a new system from scratch doesn't necessarily
+mean that you get the option of altering network protocol
+stacks for significant new features.
+
+Implementors at both Xerox and Sharp have repeatedly
+expressed their concerns to me in the last few weeks about
+ZC-capable devices having to retain link-local IP addresses
+*in addition to* administratively configured IP addresses. 
+
+Such a requirement (even worded as a SHOULD) will tend to 
+delay adoption of ZC solutions in network products. ZC is
+supposed to be defining some lightweight, scalable solutions
+for smaller networks, I think?
+
+Cheers,
+- Ira McDonald, consulting architect at Sharp and Xerox
+  High North Inc
+
+-----Original Message-----
+From: Stuart Cheshire [mailto:cheshire@apple.com]
+Sent: Monday, March 27, 2000 11:03 PM
+To: zeroconf@merit.edu
+Subject: RE: Comments on draft-ietf-zeroconf-reqts-02
+
+
+>I also concur.  And strongly urge that we not plan to make
+>ZC-capable devices support multiple IP addresses (e.g.,
+>link-local and also DHCP-derived) on the same interface.
+
+Retrofitting current single-homed software to support multiple addresses on
+an interface may be tricky sometimes, but I think that when you design a
+system from the start supporting two addresses per interface, it is not
+nearly so difficult. We're not saying that ZC hosts MUST support two
+addresses per interface, but I think we should make it a "SHOULD", because
+of the benefits that offers.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 29 23:11:32 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA00108
+	for <zeroconf-archive@odin.ietf.org>; Wed, 29 Mar 2000 23:11:32 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id DF6A75DDA6; Wed, 29 Mar 2000 23:11:17 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id CDECD5DD8D; Wed, 29 Mar 2000 23:11:17 -0500 (EST)
+Received: from kitab.cisco.com (dhcp-193-220.ietf.connect.com.au [169.208.193.220])
+	by segue.merit.edu (Postfix) with ESMTP id C057F5DD9A
+	for <zeroconf@merit.edu>; Wed, 29 Mar 2000 23:11:13 -0500 (EST)
+Received: (from raj@localhost)
+	by kitab.cisco.com (8.9.2/8.9.2) id UAA01505;
+	Wed, 29 Mar 2000 20:11:24 -0800 (PST)
+	(envelope-from raj)
+From: Richard Johnson <raj@cisco.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14562.54251.454367.384482@kitab.cisco.com>
+Date: Wed, 29 Mar 2000 20:11:23 -0800 (PST)
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: <zeroconf@merit.edu>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+In-Reply-To: <B5059816.1801%cheshire@apple.com>
+References: <B5059816.1801%cheshire@apple.com>
+X-Mailer: VM 6.74 under 20.4 "Emerald" XEmacs  Lucid
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Stuart Cheshire writes:
+ > I agree with this description of the problem. I strongly believe that the
+ > appearance of a DHCP server should offer a host an additional IP address to
+ > use, but not take away the existing link-local address that it already has.
+ > 
+ > Stuart Cheshire <cheshire@apple.com>
+
+I completely agree with this.  I would, furthermore, like to address
+the issue of whether or not DHCP support is a MUST for a small
+zeroconf device.  I don't see any reason why someone couldn't create a 
+small "toaster" which doesn't have enough memory to fully support
+DHCP, but could easily do simple zeroconf to get an IP address.  Why
+should we rule out such a product by stating that a zeroconf product
+MUST use DHCP if a DHCP server is available?  I think that once we
+allow for a zeroconf originated address in addition to a DHCP address, 
+then we should also allow for *just* a zeroconf address.  Yes, this
+may mean that the device is limited to the local link, but that's a
+bridge (no pun intended) which we haven't crossed yet and may end up
+not being a requirement in the end.
+
+I'd like to see the draft wording say something like:
+
+... if a DHCP server comes online after hosts are configured with a
+zeroconf IP host configuration protocol then hosts MAY acquire a DHCP
+originated address in addition to their zeroconf address.
+
+/raj
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 29 23:20:47 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA00210
+	for <zeroconf-archive@odin.ietf.org>; Wed, 29 Mar 2000 23:20:46 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8B8E95DDB5; Wed, 29 Mar 2000 23:20:39 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7A52E5DDAD; Wed, 29 Mar 2000 23:20:39 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 2B5635DD8D
+	for <zeroconf@merit.edu>; Wed, 29 Mar 2000 23:20:38 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated)
+	by garlic.amaranth.net (8.10.0/8.10.0) with ESMTP id e2U4KX310035;
+	Wed, 29 Mar 2000 23:20:33 -0500
+Message-ID: <38E2D60E.CADB673@senie.com>
+Date: Wed, 29 Mar 2000 23:20:30 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.72 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Richard Johnson <raj@cisco.com>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+References: <B5059816.1801%cheshire@apple.com> <14562.54251.454367.384482@kitab.cisco.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Richard Johnson wrote:
+> 
+> Stuart Cheshire writes:
+>  > I agree with this description of the problem. I strongly believe that the
+>  > appearance of a DHCP server should offer a host an additional IP address to
+>  > use, but not take away the existing link-local address that it already has.
+>  >
+>  > Stuart Cheshire <cheshire@apple.com>
+> 
+> I completely agree with this.  I would, furthermore, like to address
+> the issue of whether or not DHCP support is a MUST for a small
+> zeroconf device.  I don't see any reason why someone couldn't create a
+> small "toaster" which doesn't have enough memory to fully support
+> DHCP, but could easily do simple zeroconf to get an IP address.  Why
+> should we rule out such a product by stating that a zeroconf product
+> MUST use DHCP if a DHCP server is available?  I think that once we
+> allow for a zeroconf originated address in addition to a DHCP address,
+> then we should also allow for *just* a zeroconf address.  Yes, this
+> may mean that the device is limited to the local link, but that's a
+> bridge (no pun intended) which we haven't crossed yet and may end up
+> not being a requirement in the end.
+> 
+> I'd like to see the draft wording say something like:
+> 
+> ... if a DHCP server comes online after hosts are configured with a
+> zeroconf IP host configuration protocol then hosts MAY acquire a DHCP
+> originated address in addition to their zeroconf address.
+
+On the surface, this all seems to make sense. The issue that arises is
+how OTHER stations will talk to this type of station which can't migrate
+to a real address.
+
+In an environment where all other devices are using addresses from a
+DHCP server, and NEVER used zeroconf, how will this device you propose
+communicate? There's no reason why a PC running Windows or Linux, which
+received an address at bootup time via DHCP would ever know that a
+device is also on the same LAN using another block of IP addresses.
+
+If we assume zeroconf only happens on stations when DHCP or other
+configuration isn't present, then how do we manage to communicate?
+Perhaps a router must exist, configured to route between zeroconf and
+whatever blocks the DHCP server (or manual configuration) are providing?
+Seems messy.
+
+Further, I'm concerned that you're arguing that DHCP client adds so much
+space to an IP stack as to be a problem for fitting in small devices. I
+disagree with this assessment. Small embedded systems which can
+accomodate a LAN interface can also handle the small bit of memory for
+an IP stack and DHCP.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 29 23:39:24 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA00733
+	for <zeroconf-archive@odin.ietf.org>; Wed, 29 Mar 2000 23:39:23 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EF6635DDE0; Wed, 29 Mar 2000 23:39:14 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id DE0D75DDDC; Wed, 29 Mar 2000 23:39:14 -0500 (EST)
+Received: from kitab.cisco.com (dhcp-193-220.ietf.connect.com.au [169.208.193.220])
+	by segue.merit.edu (Postfix) with ESMTP id 810115DD8D
+	for <zeroconf@merit.edu>; Wed, 29 Mar 2000 23:39:11 -0500 (EST)
+Received: (from raj@localhost)
+	by kitab.cisco.com (8.9.2/8.9.2) id UAA01554;
+	Wed, 29 Mar 2000 20:39:17 -0800 (PST)
+	(envelope-from raj)
+From: Richard Johnson <raj@cisco.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14562.55925.68882.966476@kitab.cisco.com>
+Date: Wed, 29 Mar 2000 20:39:17 -0800 (PST)
+To: Daniel Senie <dts@senie.com>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+In-Reply-To: <38E2D60E.CADB673@senie.com>
+References: <B5059816.1801%cheshire@apple.com>
+	<14562.54251.454367.384482@kitab.cisco.com>
+	<38E2D60E.CADB673@senie.com>
+X-Mailer: VM 6.74 under 20.4 "Emerald" XEmacs  Lucid
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Daniel Senie writes:
+ > On the surface, this all seems to make sense. The issue that arises is
+ > how OTHER stations will talk to this type of station which can't migrate
+ > to a real address.
+ > 
+ > In an environment where all other devices are using addresses from a
+ > DHCP server, and NEVER used zeroconf, how will this device you propose
+ > communicate? There's no reason why a PC running Windows or Linux, which
+ > received an address at bootup time via DHCP would ever know that a
+ > device is also on the same LAN using another block of IP addresses.
+
+This seems to making the assumption that the agreed upon method of
+getting an address via zeroconf is to allocate one randomly, etc., out 
+of the special link-local address space.  Maybe we have already gotten 
+to the point of deciding that's the way to go in all cases, but I
+didn't think we had.  If the local link has, for example, a router but 
+just doesn't have a DHCP server, then it would seem the host could
+discover the network number and mask from the router and then allocate 
+an address from *that* address space randomly, arp for it, etc.  If
+this becomes an accepted method of doing zeroconf in this situation,
+then the host wouldn't really need to acquire a DHCP address since it
+would already have one in that address range.
+
+I know, there are all sorts of other arguments which could be brought
+up, and have been already, why this may or may not be a good or bad
+idea.  I just didn't think the issue of what address space to use had
+been completely decided in all cases yet.
+
+/raj
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 29 23:44:45 2000
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id XAA00801
+	for <zeroconf-archive@odin.ietf.org>; Wed, 29 Mar 2000 23:44:45 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id BFBF35DDE1; Wed, 29 Mar 2000 23:44:36 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A53DB5DDDC; Wed, 29 Mar 2000 23:44:36 -0500 (EST)
+Received: from kitab.cisco.com (dhcp-193-220.ietf.connect.com.au [169.208.193.220])
+	by segue.merit.edu (Postfix) with ESMTP id 297FE5DD8D
+	for <zeroconf@merit.edu>; Wed, 29 Mar 2000 23:44:33 -0500 (EST)
+Received: (from raj@localhost)
+	by kitab.cisco.com (8.9.2/8.9.2) id UAA01560;
+	Wed, 29 Mar 2000 20:44:44 -0800 (PST)
+	(envelope-from raj)
+From: Richard Johnson <raj@cisco.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14562.56252.366572.666951@kitab.cisco.com>
+Date: Wed, 29 Mar 2000 20:44:44 -0800 (PST)
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: <zeroconf@merit.edu>
+Subject: Re: Comments on draft-ietf-zeroconf-reqts-02
+In-Reply-To: <B5059782.1800%cheshire@apple.com>
+References: <B5059782.1800%cheshire@apple.com>
+X-Mailer: VM 6.74 under 20.4 "Emerald" XEmacs  Lucid
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Stuart Cheshire writes:
+ > >For example an internet alarm clock or toaster that will never be taken to
+ > >the office must still include DHCP client?
+ > 
+ > I think we should specify that ZC hosts SHOULD be able to operate in large
+ > configured networks (e.g. using DHCP) as well as in standalone isolated
+ > networks. There may be some devices, like X10-style networked light
+ > switches, which may never need to be globally accessible, but I think the
+ > argument for putting IP on these devices is not very strong. To my mind, the
+ > benefit of ZC is that it allows the same devices (and application-layer
+ > protocols) to operate in both large and small networks. If we create devices
+ > that don't work in large networks then we don't get that benefit.
+ > 
+ > Stuart Cheshire <cheshire@apple.com>
+
+I think my recent messages are saying exactly this same thing, so I
+guess I'm just agreeing with Stuart.
+
+/raj
+
+
+

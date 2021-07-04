@@ -1,0 +1,4559 @@
+From owner-zeroconf@merit.edu  Mon Mar  5 20:24:03 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id UAA12931
+	for <zeroconf-archive@odin.ietf.org>; Mon, 5 Mar 2001 20:24:03 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 6866C5DDC5; Mon,  5 Mar 2001 20:23:15 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 554665DDBE; Mon,  5 Mar 2001 20:23:15 -0500 (EST)
+Received: from apollo.predictive.com (apollo.predictive.com [208.209.197.196])
+	by segue.merit.edu (Postfix) with ESMTP id 41E2E5DD9C
+	for <zeroconf@merit.edu>; Mon,  5 Mar 2001 20:23:14 -0500 (EST)
+To: zeroconf@merit.edu
+Subject: FYI: New ID submission- GRP
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+From: Spencer.Giacalone@predictive.com
+Message-ID: <OFBE0171C6.B742B554-ON85256A07.0007D221@predictive.com>
+Date: Mon, 5 Mar 2001 20:23:21 -0500
+X-MIMETrack: Serialize by Router on Apollo/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/05/2001 08:23:30 PM,
+	Serialize complete at 03/05/2001 08:23:30 PM
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+A New Internet-Draft is available from the on-line Internet-Drafts 
+directories.
+
+
+                 Title  : The Gateway Response Protocol (GRP) for Networks 
+Using
+                      Zero Configuration IPv4 Addresses
+                 Author(s)               : S. Giacalone
+                 Filename                : draft-giacalone-grp-00.txt
+                 Pages           : 10
+                 Date                    : 16-Feb-01
+ 
+This memo defines a simple mechanism, termed gateway response
+protocol (GRP), which permits hosts using Zero Configuration IPv4
+Addresses [1] to find and use a default gateway, thereby gaining
+access to outside networks, including the Internet. GRP is fully
+compliant with rules limiting Zero Configuration addresses to local
+networks and does not negate source/destination address assumptions.
+
+A URL for this Internet-Draft is:
+http://www.ietf.org/internet-drafts/draft-giacalone-grp-00.txt
+
+Internet-Drafts are also available by anonymous FTP. Login with the 
+username
+"anonymous" and a password of your e-mail address. After logging in,
+type "cd internet-drafts" and then
+                 "get draft-giacalone-grp-00.txt".
+
+A list of Internet-Drafts directories can be found in
+http://www.ietf.org/shadow.html 
+or ftp://ftp.ietf.org/ietf/1shadow-sites.txt
+
+
+Internet-Drafts can also be obtained by e-mail.
+
+Send a message to:
+                 mailserv@ietf.org.
+In the body type:
+                 "FILE /internet-drafts/draft-giacalone-grp-00.txt".
+ 
+
+
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural 
+as the desire to seem so" -Francois, Duc de 
+La Rochefoucauld
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar  5 21:21:26 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id VAA14060
+	for <zeroconf-archive@odin.ietf.org>; Mon, 5 Mar 2001 21:21:26 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E258B5DF24; Mon,  5 Mar 2001 21:18:46 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id CF44F5DDCC; Mon,  5 Mar 2001 21:18:46 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 6FBF75DDBE
+	for <zeroconf@merit.edu>; Mon,  5 Mar 2001 21:18:45 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f262Ids32683;
+	Mon, 5 Mar 2001 21:18:39 -0500
+Message-ID: <3AA448FC.6219D6AD@senie.com>
+Date: Mon, 05 Mar 2001 21:18:36 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: Spencer.Giacalone@predictive.com
+Cc: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+References: <OFBE0171C6.B742B554-ON85256A07.0007D221@predictive.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+It appears to me you've reinvented router discovery protocol. See RFC
+1256. Router discovery has been around for quite some time, and works
+fine. Why do you want to reinvent this mechanism? Your suggested
+approach is completely tied to the 169.254/16 address block, and doesn't
+provide any advantage over a protocol already understood by hosts and
+routers.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar  6 16:19:49 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id QAA28609
+	for <zeroconf-archive@odin.ietf.org>; Tue, 6 Mar 2001 16:19:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 27BB75DEFE; Tue,  6 Mar 2001 15:28:25 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 0EE075E406; Tue,  6 Mar 2001 14:31:25 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id 810C75E724
+	for <zeroconf@merit.edu>; Tue,  6 Mar 2001 13:59:20 -0500 (EST)
+To: Daniel Senie <dts@senie.com>
+Cc: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+From: Spencer.Giacalone@predictive.com
+Message-ID: <OF6CDA5AF9.0AC1FACC-ON85256A07.0066DEAA@predictive.com>
+Date: Tue, 6 Mar 2001 13:59:13 -0500
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/06/2001 01:59:20 PM,
+	Serialize complete at 03/06/2001 01:59:20 PM
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Why do you want to reinvent this mechanism? 
+
+GRP is more simple and automatic than ICMP Router Discovery. It is not 
+tied to any other protocol (other than ARP), does not rely on multicast, 
+does not assume support for outside "black hole" detection, does not 
+require configuration of a host based router query address, does not 
+define new packet types, does not include complex preference schemes 
+(which one can argue won't be needed in Zero Conf nets), provides 
+incorporated "black hole detection" and permits configuration-less dead 
+interval detection on hosts. For these reasons (simplicity and 
+automation), we feel that GRP is more closely aligned with the goals and 
+spirit of Zero Conf. It is not our goal to argue the religious aspects of 
+GRP, ICMP-RD or any other gateway discovery protocol. 
+
+Your suggested
+approach is completely tied to the 169.254/16 address block, 
+
+We are not tied to any address or block. The suggested use of a single, 
+well known GRP address permits configuration-less gateway router discovery 
+by hosts. The address could be changed if that was needed. Furthermore, 
+since we can assume what the subnet and prefix will be, GRP should not 
+have to wait for the host's interface address to be determined before 
+processing "protocol" packets. Note that we also assume that the only time 
+the GRP router address is directly used (not reading ARPs)is during 
+host-gateway query. 
+
+and doesn't
+provide any advantage over a protocol already understood by hosts and
+routers.
+ 
+GRP does not loose functionality to ICMP-RD, but has advantages, see above
+
+Spence
+
+
+
+
+
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural 
+as the desire to seem so" -Francois, Duc de 
+La Rochefoucauld
+
+
+
+
+
+Daniel Senie <dts@senie.com>
+Sent by: owner-zeroconf@merit.edu
+03/05/01 09:18 PM
+
+ 
+        To:     Spencer.Giacalone@predictive.com
+        cc:     zeroconf@merit.edu
+        Subject:        Re: FYI: New ID submission- GRP
+
+
+It appears to me you've reinvented router discovery protocol. See RFC
+1256. Router discovery has been around for quite some time, and works
+fine. Why do you want to reinvent this mechanism? Your suggested
+approach is completely tied to the 169.254/16 address block, and doesn't
+provide any advantage over a protocol already understood by hosts and
+routers.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar  6 20:13:02 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id UAA05816
+	for <zeroconf-archive@odin.ietf.org>; Tue, 6 Mar 2001 20:13:01 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2C7D55E284; Tue,  6 Mar 2001 19:25:31 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 53CB35E29A; Tue,  6 Mar 2001 18:32:00 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 1DF655E235
+	for <zeroconf@merit.edu>; Tue,  6 Mar 2001 17:20:45 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f26MKfs03454
+	for <zeroconf@merit.edu>; Tue, 6 Mar 2001 17:20:42 -0500
+Message-ID: <3AA562B7.C60CFC5C@senie.com>
+Date: Tue, 06 Mar 2001 17:20:39 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+References: <OF6CDA5AF9.0AC1FACC-ON85256A07.0066DEAA@predictive.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Spencer.Giacalone@predictive.com wrote:
+> 
+> Why do you want to reinvent this mechanism?
+> 
+> GRP is more simple and automatic than ICMP Router Discovery. It is not
+> tied to any other protocol (other than ARP), does not rely on multicast,
+> does not assume support for outside "black hole" detection, does not
+> require configuration of a host based router query address, does not
+> define new packet types, does not include complex preference schemes
+> (which one can argue won't be needed in Zero Conf nets), provides
+> incorporated "black hole detection" and permits configuration-less dead
+> interval detection on hosts. For these reasons (simplicity and
+> automation), we feel that GRP is more closely aligned with the goals and
+> spirit of Zero Conf. It is not our goal to argue the religious aspects of
+> GRP, ICMP-RD or any other gateway discovery protocol.
+
+Your I-D submission made no mention of ICMP Router Discovery. Further,
+it had only ONE citation of any sort. You might want to rewrite your
+draft to include your reasoning for inventing a new mechanism, and why
+you believe it is necessary in the face of similar technology which is
+(and I think you missed this in my comments) already implemented in
+hosts and routers today. In reading your draft, I came away with the
+impression you (where'd this "we" come from, with one author?) were
+unaware of ICMP Router Discovery.
+
+I will likely still disagree with you, but urge you to at least make the
+comparative arguments in your document and defend your reasons for
+implementing something new.
+
+> 
+> Your suggested
+> approach is completely tied to the 169.254/16 address block,
+> 
+> We are not tied to any address or block. The suggested use of a single,
+> well known GRP address permits configuration-less gateway router discovery
+> by hosts. The address could be changed if that was needed. Furthermore,
+> since we can assume what the subnet and prefix will be, GRP should not
+> have to wait for the host's interface address to be determined before
+> processing "protocol" packets. Note that we also assume that the only time
+> the GRP router address is directly used (not reading ARPs)is during
+> host-gateway query.
+
+That single address could just as easily have been a poke at any
+address, including a multicast address, a martian address (0.0.0.0) or
+most any other odd case. Your document specifically said you wanted to
+use 169.254.0.1 because it's presently listed as reserved. That appeared
+to be a tie to a specific block.
+
+Again, add these arguments to your I-D.
+
+> 
+> and doesn't
+> provide any advantage over a protocol already understood by hosts and
+> routers.
+> 
+> GRP does not loose functionality to ICMP-RD, but has advantages, see above
+
+"loose" or "lose" Not sure what you're arguing here. In reading your
+arguments above, I'm not convinced there are compelling reasons to
+implement GRP, rather than using the existing, deployed protocol.
+
+Overall, you've proposed we use NAT, which has been widely implemented
+in routers, but do so without DHCP, which also is present in nearly
+every NAT device on the market, and create a new router discovery
+protocol which requires every client system and stack to be altered. I
+wonder why implementers would like this approach over using an existing,
+off-the-shelf $120 NAT/DHCP box, and having existing machines just
+function? What's gained by all this extra work? You don't give enough
+arguments in your I-D to understand why your approach is compelling.
+This is just my opinion, of course. Other WG members may see it
+completely differently.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 00:16:49 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id AAA11902
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 00:16:48 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id CCADE5DFFA; Tue,  6 Mar 2001 23:42:53 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 266DD5E0E9; Tue,  6 Mar 2001 23:02:45 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id EF9415E0ED
+	for <zeroconf@merit.edu>; Tue,  6 Mar 2001 22:20:03 -0500 (EST)
+To: Daniel Senie <dts@senie.com>
+Cc: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+From: Spencer.Giacalone@predictive.com
+Message-ID: <OFCCB695C5.69297BF0-ON85256A08.0011DBCB@predictive.com>
+Date: Tue, 6 Mar 2001 22:19:53 -0500
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/06/2001 10:20:04 PM,
+	Serialize complete at 03/06/2001 10:20:04 PM
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Comments inline:
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural 
+as the desire to seem so" -Francois, Duc de 
+La Rochefoucauld
+
+
+
+
+
+Daniel Senie <dts@senie.com>
+Sent by: owner-zeroconf@merit.edu
+03/06/01 05:20 PM
+
+ 
+        To:     zeroconf@merit.edu
+        cc: 
+        Subject:        Re: FYI: New ID submission- GRP
+
+
+Spencer.Giacalone@predictive.com wrote:
+> 
+> Why do you want to reinvent this mechanism?
+> 
+> GRP is more simple and automatic than ICMP Router Discovery. It is not
+> tied to any other protocol (other than ARP), does not rely on multicast,
+> does not assume support for outside "black hole" detection, does not
+> require configuration of a host based router query address, does not
+> define new packet types, does not include complex preference schemes
+> (which one can argue won't be needed in Zero Conf nets), provides
+> incorporated "black hole detection" and permits configuration-less dead
+> interval detection on hosts. For these reasons (simplicity and
+> automation), we feel that GRP is more closely aligned with the goals and
+> spirit of Zero Conf. It is not our goal to argue the religious aspects 
+of
+> GRP, ICMP-RD or any other gateway discovery protocol.
+
+Your I-D submission made no mention of ICMP Router Discovery. Further,
+it had only ONE citation of any sort.
+
+We aren't going to site things we didn't take from, or quote. That's how 
+you do it. 
+
+ You might want to rewrite your
+draft to include your reasoning for inventing a new mechanism, and why
+you believe it is necessary in the face of similar technology which is
+
+I can do this in the next rev. That's why they are posted, and the list 
+discusses them. 
+
+(and I think you missed this in my comments) already implemented in
+hosts and routers today. 
+
+Can you restate your question then? I think I gave some direct answers. 
+
+
+
+
+> 
+> Your suggested
+> approach is completely tied to the 169.254/16 address block,
+> 
+> We are not tied to any address or block. The suggested use of a single,
+> well known GRP address permits configuration-less gateway router 
+discovery
+> by hosts. The address could be changed if that was needed. Furthermore,
+> since we can assume what the subnet and prefix will be, GRP should not
+> have to wait for the host's interface address to be determined before
+> processing "protocol" packets. Note that we also assume that the only 
+time
+> the GRP router address is directly used (not reading ARPs)is during
+> host-gateway query.
+
+
+
+
+> 
+> and doesn't
+> provide any advantage over a protocol already understood by hosts and
+> routers.
+> 
+> GRP does not loose functionality to ICMP-RD, but has advantages, see 
+above
+
+
+Overall, you've proposed we use NAT, which has been widely implemented
+in routers, but do so without DHCP, which also is present in nearly
+every NAT device on the market,
+
+Which I made a very clear case AGAINST in my draft (DHCP). NAT does not 
+equal DHCP. Where do you get that? 
+
+ and create a new router discovery
+protocol which requires every client system and stack to be altered. I
+wonder why implementers would like this approach over using an existing,
+off-the-shelf $120 NAT/DHCP box, and having existing machines just
+function? What's gained by all this extra work? You don't give enough
+arguments in your I-D to understand why your approach is compelling.
+This is just my opinion, of course. Other WG members may see it
+completely differently.
+
+Please thoroughly read the arguments I made against DHCP. 
+
+
+Spence
+
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 02:59:53 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id CAA27884
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 02:59:53 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AA0795DE73; Wed,  7 Mar 2001 02:58:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9959B5DE6E; Wed,  7 Mar 2001 02:58:35 -0500 (EST)
+Received: from gate.internaut.com (unknown [64.38.134.108])
+	by segue.merit.edu (Postfix) with ESMTP id E81A05DE69
+	for <zeroconf@merit.edu>; Wed,  7 Mar 2001 02:58:33 -0500 (EST)
+Received: from e1kj2 (e1kj2 [64.38.134.109])
+	by gate.internaut.com (8.10.2/8.10.2) with SMTP id f277o2C24022;
+	Tue, 6 Mar 2001 23:50:13 -0800
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "Daniel Senie" <dts@senie.com>, <Spencer.Giacalone@predictive.com>
+Cc: <zeroconf@merit.edu>
+Subject: RE: FYI: New ID submission- GRP
+Date: Tue, 6 Mar 2001 23:58:33 -0800
+Message-ID: <OJEJKOMOEAKLMOILFCPJGEOIECAA.aboba@internaut.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+In-Reply-To: <3AA448FC.6219D6AD@senie.com>
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+And it also begs the question of why a host with a linklocal
+address should be able to "reach the Internet". Isn't the whole
+idea of linklocal addressing to avoid forwarding off link??
+
+-----Original Message-----
+From: owner-zeroconf@merit.edu [mailto:owner-zeroconf@merit.edu]On
+Behalf Of Daniel Senie
+Sent: Monday, March 05, 2001 6:19 PM
+To: Spencer.Giacalone@predictive.com
+Cc: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+
+
+It appears to me you've reinvented router discovery protocol. See RFC
+1256. Router discovery has been around for quite some time, and works
+fine. Why do you want to reinvent this mechanism? Your suggested
+approach is completely tied to the 169.254/16 address block, and doesn't
+provide any advantage over a protocol already understood by hosts and
+routers.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 06:42:19 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id GAA29817
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 06:42:19 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 15E4E5DEBB; Wed,  7 Mar 2001 06:37:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id ED1865DE6D; Wed,  7 Mar 2001 06:37:22 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id 2DA3F5DEBB
+	for <zeroconf@merit.edu>; Wed,  7 Mar 2001 06:37:21 -0500 (EST)
+To: "Bernard Aboba" <aboba@internaut.com>
+Cc: "Daniel Senie" <dts@senie.com>, zeroconf@merit.edu
+Subject: RE: FYI: New ID submission- GRP
+X-Mailer: Lotus Notes Release 5.0.5  September 22, 2000
+From: Spencer.Giacalone@predictive.com
+Message-ID: <OF32536334.78D7C3D1-ON85256A08.004006B9@predictive.com>
+Date: Wed, 7 Mar 2001 06:36:59 -0500
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/07/2001 06:37:22 AM,
+	Serialize complete at 03/07/2001 06:37:22 AM
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural 
+as the desire to seem so" -Francois, Duc de 
+La Rochefoucauld
+
+
+
+
+
+"Bernard Aboba" <aboba@internaut.com>
+03/07/01 02:58 AM
+
+ 
+        To:     "Daniel Senie" <dts@senie.com>, <Spencer.Giacalone@predictive.com>
+        cc:     <zeroconf@merit.edu>
+        Subject:        RE: FYI: New ID submission- GRP
+
+
+And it also begs the question of why a host with a linklocal
+address should be able to "reach the Internet". Isn't the whole
+idea of linklocal addressing to avoid forwarding off link??
+
+
+I think that's covered in the draft- although it's more of a philosophical 
+question that a technical one. Is it really logical (or possible) for us 
+to assume what will or wont be connected to the Internet in the future? 
+
+Spence
+
+
+
+
+
+
+
+
+ 
+
+
+-----Original Message-----
+From: owner-zeroconf@merit.edu [mailto:owner-zeroconf@merit.edu]On
+Behalf Of Daniel Senie
+Sent: Monday, March 05, 2001 6:19 PM
+To: Spencer.Giacalone@predictive.com
+Cc: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+
+
+It appears to me you've reinvented router discovery protocol. See RFC
+1256. Router discovery has been around for quite some time, and works
+fine. Why do you want to reinvent this mechanism? Your suggested
+approach is completely tied to the 169.254/16 address block, and doesn't
+provide any advantage over a protocol already understood by hosts and
+routers.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 09:39:15 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA05714
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 09:39:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 617025DED6; Wed,  7 Mar 2001 09:38:21 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 50E405DE05; Wed,  7 Mar 2001 09:38:21 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 423B55DE00
+	for <zeroconf@merit.edu>; Wed,  7 Mar 2001 09:38:20 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f27EcJs28492
+	for <zeroconf@merit.edu>; Wed, 7 Mar 2001 09:38:19 -0500
+Message-ID: <3AA647DA.FA55AD60@senie.com>
+Date: Wed, 07 Mar 2001 09:38:18 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+References: <OJEJKOMOEAKLMOILFCPJGEOIECAA.aboba@internaut.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Bernard Aboba wrote:
+> 
+> And it also begs the question of why a host with a linklocal
+> address should be able to "reach the Internet". Isn't the whole
+> idea of linklocal addressing to avoid forwarding off link??
+
+It also raises some questions about security. If you're building a
+device that'll stay in the zeroconf address range all its life, you
+might have been able to use fewer layers of security, thinking that
+there'd be no interaction with the outside world. If a NAT box is now
+going to interact, though, you might have to contend with incoming
+connections arriving through mapping on the NAT box. While being strong
+and defensive is worthwhile anyway, it does seem this proposal changes
+some of the basic assumptions.
+
+These should be carefully considered, and are certainly items which
+would need to be covered in the required "Security Considerations"
+section of a draft such as this one.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 16:58:37 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id QAA24277
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 16:58:37 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9FFC95DEDC; Wed,  7 Mar 2001 16:53:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id E25E85DFF7; Wed,  7 Mar 2001 16:53:21 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id 339555DDAF
+	for <zeroconf@merit.edu>; Wed,  7 Mar 2001 16:52:50 -0500 (EST)
+To: Daniel Senie <dts@senie.com>
+Cc: zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: Re: FYI: New ID submission- GRP
+Date: Wed, 7 Mar 2001 16:52:53 -0500
+Message-ID: <OF3C4D7A90.745EE6DE-ON85256A08.007832AC@predictive.com>
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/07/2001 04:52:55 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Daniel-
+
+I agree that Internet access might add some security risk. But, can you
+explain how adding NAT to a Zero Conf net' is more risky than any other
+network running NAT?
+
+Although the intent of GRP is to allow hosts to get to
+gateway routers running NAT, GRP has nothing directly to do with NAT
+operation, IMHO.
+
+Dont you think that a properly secured Zero Conf net, with proper Zero Conf
+implimentations is just as secure as an RFC 1918 (private IP) network
+running NAT?
+
+Spence
+
+
+
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural
+as the desire to seem so" -Francois, Duc de
+La Rochefoucauld
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     To:  zeroconf@merit.edu
+     cc:
+     bcc:
+     Subject:  Re: FYI: New ID submission- GRP
+Daniel Senie <dts@senie.com>
+Sent by: owner-zeroconf@merit.edu
+03/07/2001 09:38 AM
+          <font size=-1></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bernard Aboba wrote:
+>
+> And it also begs the question of why a host with a linklocal
+> address should be able to "reach the Internet". Isn't the whole
+> idea of linklocal addressing to avoid forwarding off link??
+
+It also raises some questions about security. If you're building a
+device that'll stay in the zeroconf address range all its life, you
+might have been able to use fewer layers of security, thinking that
+there'd be no interaction with the outside world. If a NAT box is now
+going to interact, though, you might have to contend with incoming
+connections arriving through mapping on the NAT box. While being strong
+and defensive is worthwhile anyway, it does seem this proposal changes
+some of the basic assumptions.
+
+These should be carefully considered, and are certainly items which
+would need to be covered in the required "Security Considerations"
+section of a draft such as this one.
+
+--
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 18:14:12 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA26293
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 18:14:12 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 90C255DFD5; Wed,  7 Mar 2001 18:10:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 02BE45E1A7; Wed,  7 Mar 2001 18:06:13 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id AFD6F5DFE6
+	for <zeroconf@merit.edu>; Wed,  7 Mar 2001 18:02:00 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f27N1wf24719
+	for <zeroconf@merit.edu>; Wed, 7 Mar 2001 18:01:59 -0500
+Message-ID: <3AA6BDE3.ECBFBC6E@senie.com>
+Date: Wed, 07 Mar 2001 18:01:55 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+References: <OF3C4D7A90.745EE6DE-ON85256A08.007832AC@predictive.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Spencer.Giacalone@predictive.com wrote:
+> 
+> Daniel-
+> 
+> I agree that Internet access might add some security risk. But, can you
+> explain how adding NAT to a Zero Conf net' is more risky than any other
+> network running NAT?
+
+It's not.
+
+> 
+> Although the intent of GRP is to allow hosts to get to
+> gateway routers running NAT, GRP has nothing directly to do with NAT
+> operation, IMHO.
+
+The question is one of whether 169.254/16 will be allowed through ANY
+gateway of any sort. There was quite a bit of discussion about this on
+this mailing list in months past.
+
+Relevant items include, in draft-ietf-zeroconf-ipv4-linklocal-02,
+section 2.5:
+
+
+   An IPv4 datagram whose source and/or destination addresses is in the
+   169.254/16 range MUST NOT be sent to any router for forwarding, and
+   any network device receiving such a datagram MUST NOT forward it,
+   regardless of the TTL in the IP header.
+
+NAT is a ROUTING function. The draft cited is the one which defines the
+use of that address block, and we have a MUST NOT in the text there with
+regards forwarding. I agree with that wording.
+
+And later in that same section:
+
+   The non-forwarding rule is important because it is expected that many
+   link-local-only devices will be extremely simple devices of the kind
+   that currently use X10 [X10], USB [USB] or FireWire [IEEE 1394].
+   The designers of these devices assume that they will communicate
+   only with other local devices, and implement a degree of security
+   appropriate for that expected environment. 
+
+NAT devices are NOT simply private-address to public-address mappers,
+employing NAPT (one public IP address). There are many variants of NAT,
+and your proposal is in conflict with the sections of the linklocal
+draft.
+
+> 
+> Dont you think that a properly secured Zero Conf net, with proper Zero Conf
+> implimentations is just as secure as an RFC 1918 (private IP) network
+> running NAT?
+
+Ummm, "properly configured zeroconf net"??? We're talking about nets
+which do NOT need configuration! Yes, some things are likely to get
+configured, but the point is by the time you're going to do
+configuration, you are also in a position to define security policy, and
+may well be ready to define a more complex network than is afforded by
+the linklocal addressing.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar  7 21:16:29 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id VAA00018
+	for <zeroconf-archive@odin.ietf.org>; Wed, 7 Mar 2001 21:16:28 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5707B5DEE3; Wed,  7 Mar 2001 21:09:39 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7B86F5DF0A; Wed,  7 Mar 2001 21:09:34 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id D23EA5DDC0
+	for <zeroconf@merit.edu>; Wed,  7 Mar 2001 21:06:07 -0500 (EST)
+To: Daniel Senie <dts@senie.com>
+Cc: zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: Re: FYI: New ID submission- GRP
+Date: Wed, 7 Mar 2001 21:06:05 -0500
+Message-ID: <OFD2016CE7.B4C05803-ON85256A09.000B8A28@predictive.com>
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/07/2001 09:06:07 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> Although the intent of GRP is to allow hosts to get to
+> gateway routers running NAT, GRP has nothing directly to do with NAT
+> operation, IMHO.
+
+The question is one of whether 169.254/16 will be allowed through ANY
+gateway of any sort. There was quite a bit of discussion about this on
+this mailing list in months past.
+
+Relevant items include, in draft-ietf-zeroconf-ipv4-linklocal-02,
+section 2.5:
+
+   An IPv4 datagram whose source and/or destination addresses is in the
+   169.254/16 range MUST NOT be sent to any router for forwarding, and
+   any network device receiving such a datagram MUST NOT forward it,
+   regardless of the TTL in the IP header.
+
+NAT is a ROUTING function. The draft cited is the one which defines the
+use of that address block, and we have a MUST NOT in the text there with
+regards forwarding. I agree with that wording.
+
+At first, the wording in the quoted text seems clear. However, if you plan
+on translating an address, you dont plan to forward it, do you? Note the
+wording "for forwarding". We do not plan for routers to forward- forwarding
+means transiting a router, with the Zero Conf address intact, and as my
+draft says, we dont plan to have anyone do that....
+
+Not sure how you get that NAT is a routing function. It's a whole different
+process, and it's a addressing service, not a routing one.
+
+Using NAT, the source address that comes in on one side of the router, isnt
+in the packet on the other side..... That means the address is not
+forwarded...
+
+Let me ask you something- Can you see inherently limiting a protocol to a
+local network, never providing for the option of Internet access, being
+healthy for a protocol's proliferation in this "day and age"? Will it be in
+the future?
+
+
+And later in that same section:
+
+   The non-forwarding rule is important because it is expected that many
+   link-local-only devices will be extremely simple devices of the kind
+   that currently use X10 [X10], USB [USB] or FireWire [IEEE 1394].
+   The designers of these devices assume that they will communicate
+   only with other local devices, and implement a degree of security
+   appropriate for that expected environment.
+
+NAT devices are NOT simply private-address to public-address mappers,
+employing NAPT (one public IP address). There are many variants of NAT,
+and your proposal is in conflict with the sections of the linklocal
+draft.
+
+Okay, so what are the many variants of NAT, then? There are a few, not
+many, but what's the difference, anyway?
+
+The above quote is qualified in a number of ways, and is therefor open to
+some interpretation:
+
+1- it talks about some expectations- not all scenarios
+2- it refers to a subset of very simple devices- not all devices
+3- it refers to designers making security assumptions based on thier own
+type of device and its specific usage. Firewire may not have the same needs
+as a network of wireless attached PCs, right?
+
+If you plan to attach a network or device to the Internet, you must plan
+for security. Again, I'm not sure what you plan NOT to do in your Zero Conf
+implimentation, but I would want mine to be as secure as any common IP
+stack. Do you feel that as being reasonable?
+>
+> Dont you think that a properly secured Zero Conf net, with proper Zero
+Conf
+> implimentations is just as secure as an RFC 1918 (private IP) network
+> running NAT?
+
+Ummm, "properly configured zeroconf net"??? We're talking about nets
+which do NOT need configuration!
+
+Ummm, if you where to interconnect any network, it should like, be secure,
+right? What I mean is you'd have a firewall protecting your whole network
+wouldnt you? That has nothing to do with Zero Conf, right? Thats what I
+mean.
+
+
+Spence
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 00:07:49 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id AAA03981
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 00:07:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 14A9D5DDAD; Thu,  8 Mar 2001 00:05:00 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 00F6B5DE6A; Thu,  8 Mar 2001 00:04:59 -0500 (EST)
+Received: from uucp1.nwnexus.com (uucp1.nwnexus.com [206.63.63.110])
+	by segue.merit.edu (Postfix) with ESMTP id 454295DDAD
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 00:04:58 -0500 (EST)
+Received: from internaut.com (uucp@localhost)
+	by uucp1.nwnexus.com (8.8.8/8.8.8) with UUCP id VAA20400;
+	Wed, 7 Mar 2001 21:04:48 -0800 (PST)
+Received: by internaut.com (NX5.67e/NeXT-3.0)
+	id AA02470; Wed, 7 Mar 01 21:39:55 -0800
+Date: Wed, 7 Mar 2001 21:39:54 -0800 (GMT-0800)
+From: "Bernard D. Aboba" <aboba@internaut.com>
+To: Spencer.Giacalone@predictive.com
+Cc: Daniel Senie <dts@senie.com>, zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+In-Reply-To: <OFD2016CE7.B4C05803-ON85256A09.000B8A28@predictive.com>
+Message-Id: <Pine.NXT.3.90.1010307213701.2121C-100000@internaut.com>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> The question is one of whether 169.254/16 will be allowed through ANY
+> gateway of any sort. There was quite a bit of discussion about this on
+> this mailing list in months past.
+
+I vote "NO" on this. No forwarding. No NAT. No use in 6to4. About the 
+only thing I can live with is an application layer gateway (e.g. home web 
+portal secured by SSL). 
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 00:10:53 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id AAA04012
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 00:10:52 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D95775DF60; Thu,  8 Mar 2001 00:06:06 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C69665DF3C; Thu,  8 Mar 2001 00:06:06 -0500 (EST)
+Received: from uucp1.nwnexus.com (uucp1.nwnexus.com [206.63.63.110])
+	by segue.merit.edu (Postfix) with ESMTP id A77225DDC8
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 00:06:05 -0500 (EST)
+Received: from internaut.com (uucp@localhost)
+	by uucp1.nwnexus.com (8.8.8/8.8.8) with UUCP id VAA20100;
+	Wed, 7 Mar 2001 21:04:47 -0800 (PST)
+Received: by internaut.com (NX5.67e/NeXT-3.0)
+	id AA02450; Wed, 7 Mar 01 21:26:52 -0800
+Date: Wed, 7 Mar 2001 21:26:52 -0800 (GMT-0800)
+From: "Bernard D. Aboba" <aboba@internaut.com>
+To: Spencer.Giacalone@predictive.com
+Cc: Daniel Senie <dts@senie.com>, zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+In-Reply-To: <OF3C4D7A90.745EE6DE-ON85256A08.007832AC@predictive.com>
+Message-Id: <Pine.NXT.3.90.1010307212127.2121A-100000@internaut.com>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Adding NAT to a ZeroConf network is more risky because one of the major 
+elements of the linklocal design is to enable devices that *only* use 
+linklocal addresses. Such devices might not be able to incorporate 
+security due to cost considerations. Because such devices cannot afford 
+to incorporate other means of defense, adding NAT to such networks 
+creates a host of security problems. 
+
+Bottom line: Network devices MUST NOT forward or NAT packets from 
+169.254/16 addresses off the link. 
+
+Bernard "That's why they call it linklocal" Aboba
+
+On Wed, 7 Mar 2001 Spencer.Giacalone@predictive.com wrote:
+
+> Daniel-
+> 
+> I agree that Internet access might add some security risk. But, can you
+> explain how adding NAT to a Zero Conf net' is more risky than any other
+> network running NAT?
+> 
+> Although the intent of GRP is to allow hosts to get to
+> gateway routers running NAT, GRP has nothing directly to do with NAT
+> operation, IMHO.
+> 
+> Dont you think that a properly secured Zero Conf net, with proper Zero Conf
+> implimentations is just as secure as an RFC 1918 (private IP) network
+> running NAT?
+> 
+> Spence
+> 
+> 
+> 
+> 
+> Spencer Giacalone, Predictive Systems
+> ---------------------------------------------------------------
+> "Nothing so much prevents our being natural
+> as the desire to seem so" -Francois, Duc de
+> La Rochefoucauld
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+>      To:  zeroconf@merit.edu
+>      cc:
+>      bcc:
+>      Subject:  Re: FYI: New ID submission- GRP
+> Daniel Senie <dts@senie.com>
+> Sent by: owner-zeroconf@merit.edu
+> 03/07/2001 09:38 AM
+>           <font size=-1></font>
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> Bernard Aboba wrote:
+> >
+> > And it also begs the question of why a host with a linklocal
+> > address should be able to "reach the Internet". Isn't the whole
+> > idea of linklocal addressing to avoid forwarding off link??
+> 
+> It also raises some questions about security. If you're building a
+> device that'll stay in the zeroconf address range all its life, you
+> might have been able to use fewer layers of security, thinking that
+> there'd be no interaction with the outside world. If a NAT box is now
+> going to interact, though, you might have to contend with incoming
+> connections arriving through mapping on the NAT box. While being strong
+> and defensive is worthwhile anyway, it does seem this proposal changes
+> some of the basic assumptions.
+> 
+> These should be carefully considered, and are certainly items which
+> would need to be covered in the required "Security Considerations"
+> section of a draft such as this one.
+> 
+> --
+> -----------------------------------------------------------------
+> Daniel Senie                                        dts@senie.com
+> Amaranth Networks Inc.                    http://www.amaranth.com
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 06:07:46 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id GAA21585
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 06:07:46 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AA5E25DE73; Thu,  8 Mar 2001 06:05:00 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 95AF45DE71; Thu,  8 Mar 2001 06:05:00 -0500 (EST)
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 342215DE70
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 06:04:59 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id DAA29475;
+	Thu, 8 Mar 2001 03:04:56 -0800 (PST)
+Received: from vayne (muc-isdn-6 [129.157.164.106])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id MAA15996;
+	Thu, 8 Mar 2001 12:04:54 +0100 (MET)
+Date: Thu, 8 Mar 2001 12:15:44 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Sun.COM>
+Subject: Re: FYI: New ID submission- GRP
+To: "Bernard D. Aboba" <aboba@internaut.com>
+Cc: Spencer.Giacalone@predictive.com, Daniel Senie <dts@senie.com>,
+        zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <Pine.NXT.3.90.1010307213701.2121C-100000@internaut.com>
+Message-ID: <Roam.SIMC.2.0.6.984050144.29546.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> > The question is one of whether 169.254/16 will be allowed through ANY
+> > gateway of any sort. There was quite a bit of discussion about this on
+> > this mailing list in months past.
+> 
+> I vote "NO" on this. No forwarding. No NAT. No use in 6to4. About the 
+> only thing I can live with is an application layer gateway (e.g. home web 
+> portal secured by SSL). 
+> 
+
+I completely agree with Bernard.  If remote access to the zeroconf
+link-local network is desired, let it be through a secured gateway.
+
+This could be an application layer gateway, or a secured tunnel.
+An example of a secured tunnel would be a remote host using PPP,
+which authenticates itself to a gateway.  Then, using a not-yet-
+invented protocol, the remote host could obtain a link-local address 
+on the zeroconf link, with mediation of the gateway.  
+
+If I am not mistaken, this is similar to ideas Myron Hattig presented 
+back at the second NITS BOF in 99.  We decided at that time that we 
+would not attempt to charter work on secure remote access, though 
+there was great interest in it (especially among 'home networking' 
+vendors.)
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 06:31:21 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id GAA21754
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 06:31:21 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A78C85DE8B; Thu,  8 Mar 2001 06:26:21 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 8AE115DE89; Thu,  8 Mar 2001 06:26:21 -0500 (EST)
+Received: from smtp1.zocalo.net (smtp1.zocalo.net [157.22.1.67])
+	by segue.merit.edu (Postfix) with ESMTP id 1DB4F5DE7F
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 06:26:19 -0500 (EST)
+Received: from secure (secure [157.22.1.13])
+	by smtp1.zocalo.net (8.9.1/8.9.1) with SMTP id DAA22094
+	for <zeroconf@merit.edu>; Thu, 8 Mar 2001 03:26:16 -0800 (PST)
+Date: Thu, 8 Mar 2001 03:26:16 -0800 (PST)
+From: Bill Woodcock <woody@zocalo.net>
+X-Sender: woody@secure
+To: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+In-Reply-To: <Roam.SIMC.2.0.6.984050144.29546.erikg@ehdb03-home.germany>
+Message-ID: <Pine.SOL.3.96.1010308032337.20490R-100000@secure>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    > > I vote "NO" on this. No forwarding. No NAT.
+    > 
+    > I completely agree with Bernard.
+
+<AOL> Me too!  Me too! </AOL>
+
+    > This could be an application layer gateway, or a secured tunnel.
+    > An example of a secured tunnel would be a remote host using PPP,
+    > which authenticates itself to a gateway.  Then, using a not-yet-
+    > invented protocol, the remote host could obtain a link-local address 
+    > on the zeroconf link, with mediation of the gateway.  
+
+Uh, no magic neeeded here...  This is what all PPTP, L2F, L2TP, and IPSec
+tunnel endpoints do right now, except that they typically assign local
+addresses from a configured pool or by nabbing them from a DHCP server.
+Unless I'm misunderstanding you.
+
+                                -Bill
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 08:18:20 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id IAA25157
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 08:18:20 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E1F545DE4E; Thu,  8 Mar 2001 08:15:05 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id A8C655DE55; Thu,  8 Mar 2001 08:15:05 -0500 (EST)
+Received: from thumper.research.telcordia.com (thumper.research.telcordia.com [128.96.41.1])
+	by segue.merit.edu (Postfix) with ESMTP id D1DF75DE4E
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 08:15:02 -0500 (EST)
+Received: from tsangpc (ar20-163 [192.4.20.163])
+	by thumper.research.telcordia.com (8.10.1/8.10.1) with SMTP id f28DF1O03357;
+	Thu, 8 Mar 2001 08:15:02 -0500 (EST)
+From: "Simon Tsang (Telcordia Technologies)" <stsang@research.telcordia.com>
+To: "ZeroConf mailing list" <zeroconf@merit.edu>
+Cc: "Mauricio Arango" <Mauricio.Arango@sun.com>,
+        "Stan Moyer" <stanm@research.telcordia.com>
+Subject: FYI...   IETF 50 - BoF on Appliances (IPAC) March 20, 5-6pm
+Date: Thu, 8 Mar 2001 08:15:00 -0500
+Message-ID: <NDBBLFFGPKKEFJIANNBGEEANFBAA.stsang@research.telcordia.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Folks,
+
+FYI...  There will be a BoF at IETF 50 on networked appliances, officially
+titled Internet Personal Appliance Control (IPAC).  The agenda for the BoF
+is available from the IETF BoF/WG agenda page:
+http://ietf.org/ietf/01mar/ipac-agenda.txt
+
+The only ID which to be discussed at the BoF will be the Appliances
+Discussion ID, available from the internet drafts page:
+http://ietf.org/internet-drafts/draft-tsang-appliances-discuss-00.txt
+
+The BoF will include short talks from appliance vendors on related standards
+activities, and the need for appliance control from the internet.
+
+If you're interested in coming, please read the Discussion ID, and post
+comments to the appliances mailing list <appliances@research.telcordia.com>.
+For further details, check out the Appliances Research page:
+http://www.argreenhouse.com/iapp
+
+Thanks,
+Simon
+
+--
+Simon Tsang, Ph.D.
+ Director - Internet Services Access Research
+  Telcordia Technologies, Inc. (http://www.telcordia.com)
+    E-mail: stsang@research.telcordia.com
+     Phone: +1.973.829.4511   Fax: +1.973.829.5889
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 15:38:27 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id PAA12304
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 15:38:26 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AA51F5E082; Thu,  8 Mar 2001 15:33:41 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9B9EF5E07E; Thu,  8 Mar 2001 15:33:38 -0500 (EST)
+Received: from sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id BEE495E05B
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 15:33:31 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by sharplabs.com (8.9.3+Sun/8.9.2) with ESMTP id MAA07268;
+	Thu, 8 Mar 2001 12:24:05 -0800 (PST)
+Received: by webmail.sharplabs.com with Internet Mail Service (5.5.2448.0)
+	id <F39ZBBRX>; Thu, 8 Mar 2001 12:24:16 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA5375ED0AB@mailsrvnt02.enet.sharplabs.com>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'Erik Guttman'" <Erik.Guttman@Sun.COM>,
+        "Bernard D. Aboba" <aboba@internaut.com>
+Cc: Spencer.Giacalone@predictive.com, Daniel Senie <dts@senie.com>,
+        zeroconf@merit.edu
+Subject: RE: FYI: New ID submission- GRP
+Date: Thu, 8 Mar 2001 12:24:12 -0800 
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi,
+
+I agree completely with Bernard and Erik.
+
+NO forwarding off a 'link-local' subnet.  Secure application
+layer gateways are reasonable to consider.  'Magic' via NAT
+is NOT reasonable to consider.
+
+Cheers,
+- Ira McDonald, consulting architect at Sharp and Xerox
+  High North Inc
+
+-----Original Message-----
+From: Erik Guttman [mailto:Erik.Guttman@Sun.COM]
+Sent: Thursday, March 08, 2001 3:16 AM
+To: Bernard D. Aboba
+Cc: Spencer.Giacalone@predictive.com; Daniel Senie; zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+
+
+> > The question is one of whether 169.254/16 will be allowed through ANY
+> > gateway of any sort. There was quite a bit of discussion about this on
+> > this mailing list in months past.
+> 
+> I vote "NO" on this. No forwarding. No NAT. No use in 6to4. About the 
+> only thing I can live with is an application layer gateway (e.g. home web 
+> portal secured by SSL). 
+> 
+
+I completely agree with Bernard.  If remote access to the zeroconf
+link-local network is desired, let it be through a secured gateway.
+
+This could be an application layer gateway, or a secured tunnel.
+An example of a secured tunnel would be a remote host using PPP,
+which authenticates itself to a gateway.  Then, using a not-yet-
+invented protocol, the remote host could obtain a link-local address 
+on the zeroconf link, with mediation of the gateway.  
+
+If I am not mistaken, this is similar to ideas Myron Hattig presented 
+back at the second NITS BOF in 99.  We decided at that time that we 
+would not attempt to charter work on secure remote access, though 
+there was great interest in it (especially among 'home networking' 
+vendors.)
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 15:44:31 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id PAA12486
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 15:44:31 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 2BA0E5E0C5; Thu,  8 Mar 2001 15:34:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id F16B65E0C4; Thu,  8 Mar 2001 15:34:21 -0500 (EST)
+Received: from apollo.predictive.com (apollo.predictive.com [208.209.197.196])
+	by segue.merit.edu (Postfix) with ESMTP id A8BB15E0C0
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 15:34:16 -0500 (EST)
+To: Erik Guttman <Erik.Guttman@Sun.COM>
+Cc: "Bernard D. Aboba" <aboba@internaut.com>, Spencer.Giacalone@predictive.com,
+        Daniel Senie <dts@senie.com>, zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: Re: FYI: New ID submission- GRP
+Date: Thu, 8 Mar 2001 15:34:30 -0500
+Message-ID: <OF561B4EF4.1CDC68A8-ON85256A09.00710547@predictive.com>
+X-MIMETrack: Serialize by Router on Apollo/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/08/2001 03:34:36 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Erik,
+
+You talking about NAT, and whether you can live with it. GRP is about how
+to get to a gateway. Maybe it's running NAT, maybe it's an application
+layer gateway.
+
+Again GRP does not equal NAT, so arguing about NAT does not effect the need
+to get to a gateway. These are two differing things.
+
+It sounds like re-writting the ID so that there is a clear independance
+from NAT would go a long way, right?
+
+Spence
+
+
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural
+as the desire to seem so" -Francois, Duc de
+La Rochefoucauld
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     To:  "Bernard D. Aboba" <aboba@internaut.com>
+     cc:  Spencer.Giacalone@predictive.com, Daniel Senie <dts@senie.com>,
+zeroconf@merit.edu
+     bcc:
+     Subject:  Re: FYI: New ID submission- GRP
+Erik Guttman <Erik.Guttman@Sun.COM>
+
+03/08/2001 12:15 PM CET
+Please respond to Erik Guttman           <font size=-1></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> > The question is one of whether 169.254/16 will be allowed through ANY
+> > gateway of any sort. There was quite a bit of discussion about this on
+> > this mailing list in months past.
+>
+> I vote "NO" on this. No forwarding. No NAT. No use in 6to4. About the
+> only thing I can live with is an application layer gateway (e.g. home web
+> portal secured by SSL).
+>
+
+I completely agree with Bernard.  If remote access to the zeroconf
+link-local network is desired, let it be through a secured gateway.
+
+This could be an application layer gateway, or a secured tunnel.
+An example of a secured tunnel would be a remote host using PPP,
+which authenticates itself to a gateway.  Then, using a not-yet-
+invented protocol, the remote host could obtain a link-local address
+on the zeroconf link, with mediation of the gateway.
+
+If I am not mistaken, this is similar to ideas Myron Hattig presented
+back at the second NITS BOF in 99.  We decided at that time that we
+would not attempt to charter work on secure remote access, though
+there was great interest in it (especially among 'home networking'
+vendors.)
+
+Erik
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 15:45:42 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id PAA12509
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 15:45:41 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id ECAB15E12A; Thu,  8 Mar 2001 15:36:44 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id DA7A65E127; Thu,  8 Mar 2001 15:36:44 -0500 (EST)
+Received: from apollo.predictive.com (apollo.predictive.com [208.209.197.196])
+	by segue.merit.edu (Postfix) with ESMTP id 904E85E129
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 15:36:40 -0500 (EST)
+To: "McDonald, Ira" <imcdonald@sharplabs.com>
+Cc: "'Erik Guttman'" <Erik.Guttman@Sun.COM>,
+        "Bernard D. Aboba" <aboba@internaut.com>,
+        Spencer.Giacalone@predictive.com, Daniel Senie <dts@senie.com>,
+        zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: RE: FYI: New ID submission- GRP
+Date: Thu, 8 Mar 2001 15:36:56 -0500
+Message-ID: <OF2628F1C4.1DFB175E-ON85256A09.00713EA2@predictive.com>
+X-MIMETrack: Serialize by Router on Apollo/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/08/2001 03:37:00 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Again, GRP does not equal NAT. It's about getting to a gateway.
+
+Spence
+
+
+
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural
+as the desire to seem so" -Francois, Duc de
+La Rochefoucauld
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     To:  "'Erik Guttman'" <Erik.Guttman@Sun.COM>, "Bernard D. Aboba"
+<aboba@internaut.com>
+     cc:  Spencer.Giacalone@predictive.com, Daniel Senie <dts@senie.com>,
+zeroconf@merit.edu
+     bcc:
+     Subject:  RE: FYI: New ID submission- GRP
+"McDonald, Ira" <imcdonald@sharplabs.com>
+
+03/08/2001 12:24 PM PST
+          <font size=-1></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hi,
+
+I agree completely with Bernard and Erik.
+
+NO forwarding off a 'link-local' subnet.  Secure application
+layer gateways are reasonable to consider.  'Magic' via NAT
+is NOT reasonable to consider.
+
+Cheers,
+- Ira McDonald, consulting architect at Sharp and Xerox
+  High North Inc
+
+-----Original Message-----
+From: Erik Guttman [mailto:Erik.Guttman@Sun.COM]
+Sent: Thursday, March 08, 2001 3:16 AM
+To: Bernard D. Aboba
+Cc: Spencer.Giacalone@predictive.com; Daniel Senie; zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+
+
+> > The question is one of whether 169.254/16 will be allowed through ANY
+> > gateway of any sort. There was quite a bit of discussion about this on
+> > this mailing list in months past.
+>
+> I vote "NO" on this. No forwarding. No NAT. No use in 6to4. About the
+> only thing I can live with is an application layer gateway (e.g. home web
+> portal secured by SSL).
+>
+
+I completely agree with Bernard.  If remote access to the zeroconf
+link-local network is desired, let it be through a secured gateway.
+
+This could be an application layer gateway, or a secured tunnel.
+An example of a secured tunnel would be a remote host using PPP,
+which authenticates itself to a gateway.  Then, using a not-yet-
+invented protocol, the remote host could obtain a link-local address
+on the zeroconf link, with mediation of the gateway.
+
+If I am not mistaken, this is similar to ideas Myron Hattig presented
+back at the second NITS BOF in 99.  We decided at that time that we
+would not attempt to charter work on secure remote access, though
+there was great interest in it (especially among 'home networking'
+vendors.)
+
+Erik
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 16:08:46 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id QAA13368
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 16:08:46 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A67B65DDD6; Thu,  8 Mar 2001 16:06:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 8F9405DEBD; Thu,  8 Mar 2001 16:06:35 -0500 (EST)
+Received: from apollo.predictive.com (apollo.predictive.com [208.209.197.196])
+	by segue.merit.edu (Postfix) with ESMTP id 663405DDD6
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 16:06:34 -0500 (EST)
+To: RJ Atkinson <rja@inet.org>
+Cc: Spencer.Giacalone@predictive.com, zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: RE: FYI: New ID submission- GRP
+Date: Thu, 8 Mar 2001 16:06:49 -0500
+Message-ID: <OFD181A4BC.E9A49AF6-ON85256A09.0073FAC7@predictive.com>
+X-MIMETrack: Serialize by Router on Apollo/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/08/2001 04:06:54 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Ran,
+
+What is the trend? That we dont like NAT, or that Zero Conf will be forever
+limited to local nets (which IMHO would be a very bad thing for this
+protocol's future)? There seem to be two arguments being made, not one
+trend.
+
+If the prior, than you just dont like NAT, and the wording in the GRP draft
+can change..
+
+Spence
+
+
+
+
+Spencer Giacalone, Predictive Systems
+---------------------------------------------------------------
+"Nothing so much prevents our being natural
+as the desire to seem so" -Francois, Duc de
+La Rochefoucauld
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     To:  Spencer.Giacalone@predictive.com
+     cc:  zeroconf@merit.edu
+     bcc:
+     Subject:  RE: FYI: New ID submission- GRP
+RJ Atkinson <rja@inet.org>
+
+03/08/2001 03:59 PM
+          <font size=-1></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+At 15:36 08/03/01, Spencer.Giacalone@predictive.com wrote:
+>Again, GRP does not equal NAT. It's about getting to a gateway.
+
+Spencer,
+
+I don't care.   I still agree with Bernard and Erik.  I'm not
+the WG chair, but there IS a trend here in the list comments
+about this topic...
+
+Lets drop GRP and move on.
+
+Ran
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 16:24:23 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id QAA13835
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 16:24:22 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 03D705DE76; Thu,  8 Mar 2001 16:21:18 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id E734B5DE08; Thu,  8 Mar 2001 16:21:17 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 311505DE01
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 16:21:16 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f28LLFf04500
+	for <zeroconf@merit.edu>; Thu, 8 Mar 2001 16:21:15 -0500
+Message-ID: <3AA7F7C9.20AFC2B2@senie.com>
+Date: Thu, 08 Mar 2001 16:21:13 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: Re: FYI: New ID submission- GRP
+References: <OF561B4EF4.1CDC68A8-ON85256A09.00710547@predictive.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Spencer.Giacalone@predictive.com wrote:
+> 
+> Erik,
+> 
+> You talking about NAT, and whether you can live with it. GRP is about how
+> to get to a gateway. Maybe it's running NAT, maybe it's an application
+> layer gateway.
+
+The application layer gateway should be located via service location,
+which is discussed in the zeroconf requirements document. I believe
+that'd be the best way to find an appropriate application gateway path
+for a particular need or service.
+
+> 
+> Again GRP does not equal NAT, so arguing about NAT does not effect the need
+> to get to a gateway. These are two differing things.
+
+If there's no traffic off the zeroconf net, then there's no need to find
+a gateway at the IP layer.
+
+The reason to think in terms of service location, is there may be many
+application gateways carrying application data (hopefully secured) on
+and off the LAN. They may be providing different types of information to
+different outside players. Having a way to find the "one true gateway"
+is not necessarily a useful concept.
+
+> 
+> It sounds like re-writting the ID so that there is a clear independance
+> from NAT would go a long way, right?
+
+And from any discussion of forwarding. To answer your question from an
+earlier email to the list, yes, I consider NAT a routing function: it's
+gatewaying IP packets at layer 3 from one network to another. While it
+does mangle the header information in the process, that makes it no less
+a layer 3 forwarding function. You are carrying data from one realm to
+another. I think other respondents have also made this same position
+clear, for the same reasons.
+
+Security is a big part of the reason for this stance. At a minimum, you
+need to add the required security considerations section to your draft.
+As you talk of a special code point use (an address), an IANA
+considerations section should also be present.
+
+I still don't see the need for GRP at all. Zeroconf requirements call
+for the use of service location. Should we need to find gateways by
+other means, we do have ICMP Router Discovery which could be employed,
+though I hope we won't need to use it. It's not clear we need gateway
+location protocol to find our way around 169.254/16.
+
+The zeroconf requirements document gives the requirements for the
+service location protocol. If you want to start thinking about how such
+a protocol could be implemented, that'd be an area to explore. You'll
+note, however, that the preset goals of the working group include only a
+scoping of the problem, plus formal definition of the link-local address
+space and a similar specification for multicast.
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 18:43:05 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA17473
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 18:43:04 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id F0E125DE71; Thu,  8 Mar 2001 18:41:48 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id D318F5E2DC; Thu,  8 Mar 2001 18:36:54 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id 336475E17E
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 18:33:01 -0500 (EST)
+To: Daniel Senie <dts@senie.com>
+Cc: zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: Re: FYI: New ID submission- GRP
+Date: Thu, 8 Mar 2001 18:33:05 -0500
+Message-ID: <OFB2BAD156.87869017-ON85256A09.00815EB3@predictive.com>
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/08/2001 06:33:06 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> You talking about NAT, and whether you can live with it. GRP is about how
+> to get to a gateway. Maybe it's running NAT, maybe it's an application
+> layer gateway.
+
+>The application layer gateway should be located via service location,
+>which is discussed in the zeroconf requirements document. I believe
+>that'd be the best way to find an appropriate application gateway path
+>for a particular need or service.
+
+Many protocols for service discovory are not complete solutions becouse
+once a service is found, one still needs to know how to connect to the
+device providing the service. Where does the requirments doc say what the
+service discovory protocol will do? Where does it say that it will do more
+than say that the service is availiable? What if that device is not on the
+Zero Conf net?
+
+Do a search on the requirments doc on the word gateway. It's not even
+there.
+
+
+
+>there may be many
+>application gateways carrying application data (hopefully secured) on
+>and off the LAN.
+
+That'll make for an interesting design. I'm sure network managers will love
+that.
+
+>They may be providing different types of information to
+>different outside players.
+
+I'm not sure what type of topology you are considering, but if it's a
+secure one, than it looks like a VPN or VPNs.. People may not want to be
+limited in that way..
+
+
+>Security is a big part of the reason for this stance. At a minimum, you
+>need to add the required security considerations section to your draft.
+>As you talk of a special code point use (an address), an IANA
+>considerations section should also be present.
+
+As far as security goes, how about section 3 in the requirments draft?
+Going back to how secure Zero Conf hosts should be:
+
+"implementations should
+   strive to be "secure out of the box" and have a safe default
+   configuration.
+
+   Zeroconf protocols MUST NOT be any less secure than related
+   current IETF-Standard protocols. This consideration overrides the
+   goal of allowing systems to obtain configuration automatically. "
+
+It's not a GRP thing, it's a host thing..
+
+>Should we need to find gateways by
+>other means, we do have ICMP Router Discovery which could be employed,
+>though I hope we won't need to use it. It's not clear we need gateway
+>location protocol to find our way around 169.254/16.
+
+I think we have covered this, early in this thread.
+
+>The zeroconf requirements document gives the requirements for the
+>service location protocol.
+
+That does not mean that a gateway location protocol should be ignored. One
+could argue that a service in the context that the requirments draft talks
+about them, is not a gateway function, which lies below services, like
+printing, and "even
+     perhaps requesting delivery of a pizza." as in section 2.4 of the
+draft.
+
+
+>You'll
+>note, however, that the preset goals of the working group include only a
+>scoping of the problem, plus formal definition of the link-local address
+>space and a similar specification for multicast.
+
+About the Charter:
+
+"The ZEROCONF WG will precisely define the requirements for each of the
+following functions:
+
+* Interface Configuration (IP address, network prefix, gateway router)"
+
+So gateway functions are included..
+
+And:
+
+"That is, the same hosts must be able to function on networks with no
+configuration as well as be capable of direct IP connectivity to the global
+Internet,"
+
+So, Internet access is in, and no mention of App Layer gatewaying..
+
+And:
+
+"When ZEROCONF networks or hosts which are configured using ZEROCONF
+protocols are connected to the big 'I' internet, they should not
+automatically become vulnerable to new security threats. "
+
+So, again the "big I" is in, and the burdon of security is on the
+implimentation. No mention of App gateways, no stopping the use of NAT..
+
+
+
+
+
+
+--
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar  8 21:59:53 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id VAA21212
+	for <zeroconf-archive@odin.ietf.org>; Thu, 8 Mar 2001 21:59:52 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 0AA325DE1E; Thu,  8 Mar 2001 21:59:37 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 69F8F5DEC6; Thu,  8 Mar 2001 21:59:08 -0500 (EST)
+Received: from ares.predictive.com (ares.predictive.com [63.67.30.134])
+	by segue.merit.edu (Postfix) with ESMTP id 596975DF14
+	for <zeroconf@merit.edu>; Thu,  8 Mar 2001 21:53:34 -0500 (EST)
+To: RJ Atkinson <rja@inet.org>
+Cc: Spencer.Giacalone@predictive.com, zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: Re: FYI: New ID submission- GRP
+Date: Thu, 8 Mar 2001 21:53:32 -0500
+Message-ID: <OF1026ACCA.EBA58934-ON85256A0A.000FE2D0@predictive.com>
+X-MIMETrack: Serialize by Router on Ares/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/08/2001 09:53:33 PM
+MIME-Version: 1.0
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>It's not a GRP thing, it's a host thing..
+
+>        Wrong, security is a protocol thing as well.
+
+And router discovery isnt a protocol that directly effects security..
+Internet access does.... How do you design a router discovory protocol that
+fixes a lack of host security?
+
+
+
+>        Yes.  Router Discovery is the right answer
+>if one wants to find a router.  It is widely deployed,
+>works quite well, and is an IETF Standard.
+
+Well, I'm glad to see that you feel there is a need to
+discover routers now :-)
+
+I'd like to talk about the technical specifics of GRP, etc..
+
+
+
+
+>About the Charter:
+>
+>"The ZEROCONF WG will precisely define the requirements for each of the
+>following functions:
+>
+>* Interface Configuration (IP address, network prefix, gateway router)"
+>
+>So gateway functions are included..
+
+>        That is a reference to IP Router Discovery,
+>not some random loophole allowing arbitrary extensions
+>to the scope of the ZeroConf WG.
+
+How do you get that?
+
+Spence
+
+
+
+
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar  9 15:02:24 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id PAA02535
+	for <zeroconf-archive@odin.ietf.org>; Fri, 9 Mar 2001 15:02:23 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4D7415DE01; Fri,  9 Mar 2001 15:00:35 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 647FE5E243; Fri,  9 Mar 2001 14:48:48 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 004605E161
+	for <zeroconf@merit.edu>; Fri,  9 Mar 2001 14:36:05 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id LAA17297;
+	Fri, 9 Mar 2001 11:36:04 -0800 (PST)
+Received: from vayne (muc-isdn-13 [129.157.164.113])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id UAA25342;
+	Fri, 9 Mar 2001 20:36:01 +0100 (MET)
+Date: Fri, 9 Mar 2001 20:46:51 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Sun.COM>
+Subject: Re: FYI: New ID submission- GRP
+To: Spencer.Giacalone@predictive.com
+Cc: zeroconf@merit.edu
+In-Reply-To: "Your message with ID" <OF1026ACCA.EBA58934-ON85256A0A.000FE2D0@predictive.com>
+Message-ID: <Roam.SIMC.2.0.6.984167211.19147.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Spence,
+
+The lack of reference to gateways in our charter is not a mistake.
+When the WG was chartered we made the decision to work on protocols
+for use within an non-configured, limited scope network.  Once these
+networks grow to the point where these protocols are no longer 
+appropriate, it is time to administer the network and add 
+configuration.
+
+> I'd like to talk about the technical specifics of GRP, etc..
+
+There isn't much to say about it.
+
+draft-giacalone-grp-00.txt:
+>   By convention, Zero Configuration IP addresses are not permitted to
+>   cross routed boundaries, and GRP does not violate this rule.
+
+This is not convention - the v4LL draft states this as a protocol 
+requirement.  Further, datagrams with a v4LL source address MUST
+NOT be routed.  It isn't a question of IP addresses crossing boundaries,
+its packets.
+
+Please compare:
+
+draft-giacalone-grp-00.txt:
+>   The host portion of GRP includes:
+>        -Discovery of GRP gateway routers
+>        -Caching router response messages
+>        -Monitoring GRP router keepalive messages
+>        -Transitioning (failing over) to active gateway routers as
+>         required
+
+RFC 1256:
+>  Hosts discover the addresses of their neighboring routers simply 
+>  by listening for advertisements.  When a host attached to a multicast 
+>  link starts up, it may multicast a Router Solicitation...
+
+>  A Router Advertisement also includes a "lifetime" field, specifying
+>  the maximum length of time that the advertised addresses are to be
+>  considered as valid router addresses by hosts..
+
+>  Any routers that subsequently start up, or that were not discovered 
+>  because of packet loss or temporary link partitioning, are eventually
+>  discovered by reception of their periodic (unsolicited) advertisements.
+
+>  The Host Requirements -- Communication Layers RFC [1], Section
+>  3.3.1.6, specifies that each host implementation must support a
+>  configurable list of default router addresses.  The purpose of the
+>  ICMP router discovery messages is to eliminate the need to configure
+>  that list in hosts attached to multicast links.
+
+draft-giacalone-grp-00.txt:
+>   GRP operation on routers includes:
+>        -Responding to GRP queries sent to the Zero Configuration GRP
+>         router address.
+>        -Originating GRP keepalive messages
+>        -Properly handling the GRP keepalive messages originated by
+>         other routers.
+>        -Interoperation with NAT
+ 
+Points 1-3 are covered by RFC 1256.  Point 4 is neither a requirement nor
+desirable.
+
+>>>"The ZEROCONF WG will precisely define the requirements for each of the
+>>>following functions:
+>>>
+>>>* Interface Configuration (IP address, network prefix, gateway router)"
+>>>
+>>>So gateway functions are included..
+>>
+>>       That is a reference to IP Router Discovery,
+>>not some random loophole allowing arbitrary extensions
+>>to the scope of the ZeroConf WG.
+>
+>How do you get that?
+
+  The working group will also define how such a network may 
+  automatically transition from 'configured' to 'unconfigured' 
+  behavior, as well as from 'unconfigured' to 'configured'. 
+  That is, the same hosts must be able to function on networks 
+  with no configuration as well as be capable of direct IP 
+  connectivity to the global Internet, including DNS entries 
+  supplied through standard DNS services. It is also possible 
+  that both modes (ZEROCONF and administered) may coexist on the
+  same network; the modes may not be exclusive of each other.
+
+The same host may be using zeroconf protocols and configuration.
+A host with a global address may still need to discover the
+location of a router in order to 'be capable of direct IP
+connectivity to the global Internet.'  We may end up recommending
+implementation of RFC 1256, for example.  Currently it is an
+ELECTIVE standard.
+
+Currently the charter does *not* say that hosts with networks with
+no configuration must be capable of direct IP connectivity to
+the global Internet.  What you are hearing on the list is that
+the rough consensus is that this is a *VERY BAD IDEA.*
+
+The alternative - discussed already on the list - are ALGs and
+authenticated access from remote hosts onto the zeroconf list
+via a gateway.  Note that this is access ONTO the zeroconf network
+from a host with a global address, security configuration and a 
+notion of how to contact and authenticate with an application/
+network layer gateway.
+
+Erik
+
+ps.  Please read draft-ietf-zeroconf-ipv4-linklocal-02.txt.  I
+     quote the important paragraph below since it is so germane
+     to the discussion:
+
+>   An IPv4 datagram whose source and/or destination addresses is in the
+>   169.254/16 range MUST NOT be sent to any router for forwarding, and
+>   any network device receiving such a datagram MUST NOT forward it,
+>   regardless of the TTL in the IP header.
+
+>   This does not mean that link-local devices are forbidden from
+>   communication outside the local link. IP hosts that implement both
+>   link-local and conventional routable IP addresses may still use
+>   their routable addresses without restriction as they do today.
+>   Extremely simple IP devices that implement only link-local addresses
+>   may also communicate with hosts outside the local link, provided that
+>   such communication is mediated through a device capable of enforcing
+>   appropriate security controls. For example, a home heating system
+>   could be controlled via a Web server on the local network, where the
+>   Web server uses cryptographic methods to verify the authority of the
+>   remote user, and then uses link-local communication on the local
+>   network to communicate commands to the heating system's thermostat.
+>   Alternatively, a remote host could use a secure tunnelling protocol
+>   to establish access to a 'virtual interface' on the local link, via
+>   which it could then send and receive 'virtual' link-local packets
+>   just like any other host directly connected to that link. It should
+>   be understood that this mediated communication is not mandatory; it
+>   is an option afforded to designers of very simple devices who wish to
+>   implement only link-local addresses and thereby simplify their
+>   security assumptions. Any designer of a device desiring unmediated
+>   communication outside the local link need only implement today's
+>   conventional IP host software (e.g. a DHCP client) in order to enjoy
+>   the same degree of global addressability available to other
+>   conventional IP hosts on the same network.
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar  9 19:25:33 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id TAA11827
+	for <zeroconf-archive@odin.ietf.org>; Fri, 9 Mar 2001 19:25:32 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id CC14F5DF04; Fri,  9 Mar 2001 19:23:21 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id F3DA95DF20; Fri,  9 Mar 2001 19:03:15 -0500 (EST)
+Received: from apollo.predictive.com (apollo.predictive.com [208.209.197.196])
+	by segue.merit.edu (Postfix) with ESMTP id 504225DEF6
+	for <zeroconf@merit.edu>; Fri,  9 Mar 2001 18:49:40 -0500 (EST)
+To: Erik Guttman <Erik.Guttman@Sun.COM>
+Cc: zeroconf@merit.edu
+From: Spencer.Giacalone@predictive.com
+Subject: Re: FYI: New ID submission- GRP
+MIME-Version: 1.0
+Date: Fri, 9 Mar 2001 18:49:57 -0500
+Message-ID: <OFF810AB41.304F8C87-ON85256A0A.0082EA8F@predictive.com>
+X-MIMETrack: Serialize by Router on Apollo/Predictive(Release 5.0.6a |January 17, 2001) at
+ 03/09/2001 06:50:01 PM
+Content-type: text/plain; charset=us-ascii
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+draft-giacalone-grp-00.txt:
+>   GRP operation on routers includes:
+>        -Responding to GRP queries sent to the Zero Configuration GRP
+>         router address.
+>        -Originating GRP keepalive messages
+>        -Properly handling the GRP keepalive messages originated by
+>         other routers.
+>        -Interoperation with NAT
+
+>Points 1-3 are covered by RFC 1256.  Point 4 is neither a requirement nor
+>desirable.
+
+I think most of thing has become a debate of NAT, which is infortunate. I
+think GRP has some advantages of 1256, but that's my opinion.
+
+
+>What you are hearing on the list is that
+>the rough consensus is that this is a *VERY BAD IDEA.*
+
+I'm not sure how 4 people become a rough concensus, but okay..
+
+>Please read draft-ietf-zeroconf-ipv4-linklocal-02.txt.
+
+I did. I think your quote is open to interpretation, as I have argued.
+
+
+Spence
+
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Sat Mar 10 03:24:44 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id DAA07872
+	for <zeroconf-archive@odin.ietf.org>; Sat, 10 Mar 2001 03:24:44 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id E05455DD90; Sat, 10 Mar 2001 03:22:03 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9B18D5DDC7; Sat, 10 Mar 2001 03:22:03 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 8FC285DD90
+	for <zeroconf@merit.edu>; Sat, 10 Mar 2001 03:21:56 -0500 (EST)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id AAA23247
+	for <zeroconf@merit.edu>; Sat, 10 Mar 2001 00:21:41 -0800 (PST)
+Received: from scv2.apple.com (scv2.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52325406ad118164e1818@apple.com>;
+ Sat, 10 Mar 2001 00:21:25 -0800
+Received: from [64.171.18.124] (vpn-gh-540.apple.com [17.254.138.27])
+	by scv2.apple.com (8.9.3/8.9.3) with ESMTP id AAA20297;
+	Sat, 10 Mar 2001 00:21:25 -0800 (PST)
+User-Agent: Microsoft-Entourage/9.0.2509
+Date: Sat, 10 Mar 2001 00:18:31 -0800
+Subject: Re: FYI: New ID submission- GRP
+From: Josh Graessley <jgraessley@apple.com>
+To: <Spencer.Giacalone@predictive.com>
+Cc: <zeroconf@merit.edu>
+Message-ID: <B6CF2357.2584%jgraessley@apple.com>
+In-Reply-To: <OFF810AB41.304F8C87-ON85256A0A.0082EA8F@predictive.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+On 3/9/01 3:49 PM, "Spencer.Giacalone@predictive.com"
+<Spencer.Giacalone@predictive.com> wrote:
+
+> I think most of thing has become a debate of NAT, which is infortunate. I
+> think GRP has some advantages of 1256, but that's my opinion.
+
+I think many of us dislike NAT, but that has nothing to do with the
+arguments against GRP. It just doesn't seem to fall into the spirit/scope of
+linklocal.
+
+> I'm not sure how 4 people become a rough concensus, but okay..
+
+Just because only 4 have spoken, doesn't mean those are the only 4 who think
+this is a "*VERY BAD IDEA*". I myself, agree with the arguments against GRP
+but have nothing more to add.
+
+-Josh
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Mar 13 03:15:46 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id DAA17147
+	for <zeroconf-archive@odin.ietf.org>; Tue, 13 Mar 2001 03:15:45 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A82F25DF26; Tue, 13 Mar 2001 03:13:42 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 038FF5DF28; Tue, 13 Mar 2001 03:13:41 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id 61DCB5DF26
+	for <zeroconf@merit.edu>; Tue, 13 Mar 2001 03:13:36 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id AAA07313;
+	Tue, 13 Mar 2001 00:13:30 -0800 (PST)
+Received: from vayne (muc-isdn-8 [129.157.164.108])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with SMTP id JAA29678;
+	Tue, 13 Mar 2001 09:13:28 +0100 (MET)
+Date: Tue, 13 Mar 2001 09:24:20 +0100 (MET)
+From: Erik Guttman <Erik.Guttman@Sun.COM>
+Reply-To: Erik Guttman <Erik.Guttman@Sun.COM>
+Subject: Re: draft-ietf-zeroconf-reqts-07.txt
+To: zeroconf@merit.edu
+Cc: erik.guttman@germany.sun.com, cheshire@apple.com, myron.hattig@intel.com
+Message-ID: <Roam.SIMC.2.0.6.984471860.9930.erikg@ehdb03-home.germany>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+The latest version of the ZeroConf Requirements, 
+draft-ietf-zeroconf-reqts-07.txt, contains changes
+due to the WG last call last October. 
+
+There remain some issues from the WG last call which are 
+not yet resolved in the document.  There are ongoing 
+discussions which have not been on the WG list to resolve 
+the differences between the draft and the WG last call
+decisions.  
+
+In the next few days we will post the list of changes
+between draft 5 (which went through WG last call),
+where we are today, and where we want to be for draft
+8.  There have been a number of changes in the document,
+so we will have to decide whether this warrants another
+WG last call.
+
+I regret this process has not been speedier - but we are
+picking up the pace now.
+
+Erik 
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 14 04:41:34 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id EAA21319
+	for <zeroconf-archive@odin.ietf.org>; Wed, 14 Mar 2001 04:41:34 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D3BFF5E14B; Wed, 14 Mar 2001 04:28:12 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C67085E18B; Wed, 14 Mar 2001 03:58:27 -0500 (EST)
+Received: from mail-out1.apple.com (mail-out1.apple.com [17.254.0.52])
+	by segue.merit.edu (Postfix) with ESMTP id 2F28F5E10A
+	for <zeroconf@merit.edu>; Wed, 14 Mar 2001 03:13:59 -0500 (EST)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out1.apple.com (8.9.3/8.9.3) with ESMTP id AAA10396
+	for <zeroconf@merit.edu>; Wed, 14 Mar 2001 00:13:43 -0800 (PST)
+Received: from scv3.apple.com (scv3.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T5246e6664e118164e1738@apple.com> for <zeroconf@merit.edu>;
+ Wed, 14 Mar 2001 00:13:42 -0800
+Received: from [206.111.147.153] (vpn-gh-1085.apple.com [17.254.140.60])
+	by scv3.apple.com (8.9.3/8.9.3) with ESMTP id AAA26970
+	for <zeroconf@merit.edu>; Wed, 14 Mar 2001 00:13:42 -0800 (PST)
+User-Agent: Microsoft-Outlook-Express-Macintosh-Edition/5.02.2022
+Date: Wed, 14 Mar 2001 00:13:47 -0800
+Subject: WG Last Call for draft-ietf-zeroconf-ipv4-linklocal-02.txt
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Message-ID: <B6D4683A.853D%cheshire@apple.com>
+Mime-version: 1.0
+Content-type: text/plain; charset="US-ASCII"
+Content-transfer-encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+A working group last call period for comments on
+Dynamic Configuration of IPv4 Link-Local Addresses
+<draft-ietf-zeroconf-ipv4-linklocal-02.txt> has
+begun.
+
+This document will be submitted to the IESG for
+consideration as a Proposed Standard.
+
+Please send any comments you have on the
+quality or correctness of this document to the
+ZEROCONF mailing list by Tuesday 3rd April 2001.
+
+Stuart Cheshire <cheshire@apple.com>
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar 15 00:26:58 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id AAA12832
+	for <zeroconf-archive@odin.ietf.org>; Thu, 15 Mar 2001 00:26:57 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5D95E5DE1D; Thu, 15 Mar 2001 00:26:43 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 4591F5DE1E; Thu, 15 Mar 2001 00:26:43 -0500 (EST)
+Received: from pec.etri.re.kr (pec.etri.re.kr [129.254.164.217])
+	by segue.merit.edu (Postfix) with ESMTP id B5A8D5DE1D
+	for <zeroconf@merit.edu>; Thu, 15 Mar 2001 00:26:39 -0500 (EST)
+Received: from yukim (qkim.etri.re.kr [129.254.164.96])
+	by pec.etri.re.kr (8.10.0/8.10.0) with SMTP id f2F5QrT25516;
+	Thu, 15 Mar 2001 14:26:53 +0900 (KST)
+Message-ID: <002301c0ad10$7c7fb4c0$60a4fe81@etri.re.kr>
+From: "Yong-Woon KIM" <qkim@pec.etri.re.kr>
+To: "Stuart Cheshire" <cheshire@apple.com>, <zeroconf@merit.edu>
+References: <B6D4683A.853D%cheshire@apple.com>
+Subject: Re: WG Last Call for draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Thu, 15 Mar 2001 14:26:27 +0900
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="euc-kr"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.50.4522.1200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4522.1200
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+> A working group last call period for comments on
+> Dynamic Configuration of IPv4 Link-Local Addresses
+> <draft-ietf-zeroconf-ipv4-linklocal-02.txt> has
+> begun.
+
+Hi!
+
+I'm a newcomer in this group. 
+I apologize for reraising this question if you have already discussed 
+about it.
+
+================================
+3.1 Example Illustrating Ambiguous Addressing
+
+        [ Cut off ]
+
+   By ensuring that all of a host's link-local addresses are distinct not
+   only from each other, but also from all addresses currently active on
+   all links that the host is connected to, we remove this ambiguity.
+
+==========================
+
+The specification is good, but the solution is not clear to me.
+
+Does it mean that a host with multiple links must do each address claiming 
+and collision detection process against all the links?
+
+If yes, how about adding this description in that paragraph?
+
+--
+KIM, Yong-Woon
+
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar 15 09:28:14 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA29947
+	for <zeroconf-archive@odin.ietf.org>; Thu, 15 Mar 2001 09:28:14 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 802915DDE1; Thu, 15 Mar 2001 09:25:48 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 63C155DDFB; Thu, 15 Mar 2001 09:25:48 -0500 (EST)
+Received: from thumper.research.telcordia.com (thumper.research.telcordia.com [128.96.41.1])
+	by segue.merit.edu (Postfix) with ESMTP id B7E105DDE1
+	for <zeroconf@merit.edu>; Thu, 15 Mar 2001 09:25:46 -0500 (EST)
+Received: from tsangpc (ar20-163 [192.4.20.163])
+	by thumper.research.telcordia.com (8.10.1/8.10.1) with SMTP id f2FEP1O13938;
+	Thu, 15 Mar 2001 09:25:01 -0500 (EST)
+From: "Simon Tsang (Telcordia Technologies)" <stsang@research.telcordia.com>
+To: "Appliances (external) mailing list" <appliances@research.telcordia.com>,
+        "SIP mailing list (IETF)" <sip@lists.bell-labs.com>, <iet@ietf.org>,
+        "ZeroConf mailing list" <zeroconf@merit.edu>
+Subject: !! CHANGE OF TIME for IPAC BoF !!
+Date: Thu, 15 Mar 2001 09:25:00 -0500
+Message-ID: <NDBBLFFGPKKEFJIANNBGAEDJFBAA.stsang@research.telcordia.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Importance: Normal
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Folks,
+
+Please note that the Appliances (IPAC) BoF time has changed.  The new
+details are:
+
+Tuesday March 20th, 2001
+3.45pm - 4.45pm  Afternoon Session III
+Duluth room
+
+Hope to see you at the BoF.
+
+Thanks,
+Simon
+(Phone. +1.973.829.4511)
+
+
+
+
+From owner-zeroconf@merit.edu  Thu Mar 15 12:11:35 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id MAA03465
+	for <zeroconf-archive@odin.ietf.org>; Thu, 15 Mar 2001 12:11:34 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A03CD5DFF6; Thu, 15 Mar 2001 12:10:17 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id F21B55E008; Thu, 15 Mar 2001 12:05:50 -0500 (EST)
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 4385E5DF4C
+	for <zeroconf@merit.edu>; Thu, 15 Mar 2001 12:01:43 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id JAA28782;
+	Thu, 15 Mar 2001 09:01:40 -0800 (PST)
+Received: from ehdb03-home.Germany.Sun.COM (euroapp.Holland.Sun.COM [129.159.197.58])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with ESMTP id SAA25386;
+	Thu, 15 Mar 2001 18:01:26 +0100 (MET)
+From: Erik Guttman Sun Frankfurt Staff Engineer <Erik.Guttman@sun.com>
+Message-Id: <200103151701.SAA25386@ehdb03-home.Germany.Sun.COM>
+Date: Thu, 15 Mar 2001 17:45:12 +0-100
+To: <agenda@ietf.org>, <zeroconf@merit.edu>
+Cc: <erik.guttman@sun.com>, <cheshire@apple.com>
+Reply-To: <erik.guttman@germany.sun.com>
+Subject: agenda for zeroconf wg at IETF 50
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+
+ZEROCONF WG meeting - Thursday 9-11:30 AM
+
+Minutes  Topic
+
+ 5       Agenda Finalization
+              Stuart
+10       IPv4 Linklocal WG last call
+              Stuart
+15       Zeroconf Requirements WG last call progress report
+              Erik
+45       Zeroconf Multicast Address Allocation Protocol (ZMAAP) discussion
+              Erik
+20       Remote Access to ZC networks
+              Stuart
+
+Other topics may be discussed - depending on whether input is available
+from folks I've corresponded with off-line.  Topics of interest are
+simple secure configuration for fulfilling ZC security requirements
+and how ZMAAP fits in with the MC allocation architecture.
+
+Erik
+
+._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
+E r i k   G u t t m a n         SHORT msgs: 01728655497@d2-message.de
+Sr Staff Engineer, Sun Microsystems       Email: erik.guttman@sun.com
+Eichhoelzelstr. 7, 74915 Waibstadt Germany    Phone: +49 172 865 5497
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 16 18:06:30 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA14631
+	for <zeroconf-archive@odin.ietf.org>; Fri, 16 Mar 2001 18:06:29 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4339E5DFDE; Fri, 16 Mar 2001 17:58:45 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 773845DF3D; Fri, 16 Mar 2001 17:47:12 -0500 (EST)
+Received: from mail-out2.apple.com (mail-out2.apple.com [17.254.0.51])
+	by segue.merit.edu (Postfix) with ESMTP id 978E55DF7D
+	for <zeroconf@merit.edu>; Fri, 16 Mar 2001 17:40:10 -0500 (EST)
+Received: from apple.com (A17-129-100-225.apple.com [17.129.100.225])
+	by mail-out2.apple.com (8.9.3/8.9.3) with ESMTP id OAA03964
+	for <zeroconf@merit.edu>; Fri, 16 Mar 2001 14:39:55 -0800 (PST)
+Received: from scv1.apple.com (scv1.apple.com) by apple.com
+ (Content Technologies SMTPRS 4.2.1) with ESMTP id <T52544c2573118164e1780@apple.com> for <zeroconf@merit.edu>;
+ Fri, 16 Mar 2001 14:39:54 -0800
+Received: from [17.201.23.37] (chesh1.apple.com [17.201.23.37])
+	by scv1.apple.com (8.9.3/8.9.3) with SMTP id OAA16729
+	for <zeroconf@merit.edu>; Fri, 16 Mar 2001 14:39:54 -0800 (PST)
+Message-Id: <200103162239.OAA16729@scv1.apple.com>
+Subject: Re: WG Last Call for draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Fri, 16 Mar 2001 14:39:55 -0800
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Hi!
+>
+>I'm a newcomer in this group. 
+>I apologize for reraising this question if you have already discussed 
+>about it.
+>
+>================================
+>3.1 Example Illustrating Ambiguous Addressing
+>
+>        [ Cut off ]
+>
+>   By ensuring that all of a host's link-local addresses are distinct not
+>   only from each other, but also from all addresses currently active on
+>   all links that the host is connected to, we remove this ambiguity.
+>
+>==========================
+>
+>The specification is good, but the solution is not clear to me.
+>
+>Does it mean that a host with multiple links must do each address claiming 
+>and collision detection process against all the links?
+>
+>If yes, how about adding this description in that paragraph?
+
+If a host receives an ARP packet on an interface that's using a linklocal 
+address, and the sender IP address in the ARP packet matches *any* of the 
+host's current linklocal addresses, and the sender hardware address in 
+the ARP packet matches *none* of the host's own interfaces, then this is 
+a collision and must be handled as such.
+
+(This is not a *requirement* of the protocol, but a recommendation for 
+most implementers of multi-homed systems.)
+
+I will change the wording to make sure this is clear.
+
+Thanks for pointing this out.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer
+ * Chairman, IETF ZEROCONF
+ * www.stuartcheshire.org
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 23 09:38:27 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA15181
+	for <zeroconf-archive@odin.ietf.org>; Fri, 23 Mar 2001 09:38:27 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9AEBF5DF15; Fri, 23 Mar 2001 09:35:54 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 7F0935DF14; Fri, 23 Mar 2001 09:35:54 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id F219F5DE24
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 09:35:52 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA00674;
+	Fri, 23 Mar 2001 06:35:48 -0800 (PST)
+Received: from ehdb03-home.Germany.Sun.COM (esun1as-be.Central.Sun.COM [129.147.34.142])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with ESMTP id PAA16963;
+	Fri, 23 Mar 2001 15:35:29 +0100 (MET)
+From: Erik Guttman Sun Frankfurt Staff Engineer <Erik.Guttman@sun.com>
+Message-Id: <200103231435.PAA16963@ehdb03-home.Germany.Sun.COM>
+Date: Mon, 23 Apr 2001 14:29:06 +0-100
+To: <narten@raleigh.ibm.com>, <erik.nordmark@sun.com>
+Cc: <erik.guttman@sun.com>, <cheshire@apple.com>, <zeroconf@merit.edu>
+Reply-To: <erikg@efra05-home.Germany.Sun.COM>
+Subject: ZEROCONF WG, IETF 50, meeting report
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+  IETF 50 ZEROCONF WG meeting report
+--------------------------------------
+
+The working group discussed the status of the two documents in
+working group last call.  The IPv4 link-local specification should
+be ready to submit to the IESG within 2 weeks - we have received 
+no comments of weight so far.  The ZeroConf Requirements draft
+will be reissued as soon as possible as draft 8 (incorporating
+changes in response to *ALL* working group last call comments).
+The document will then reenter working group last call.  
+
+Other topics discussed included the new work on ZMAAP, remote
+access to link-local networks and the 'zero configuration host
+profile.'  ZMAAP work had some support and the meeting attendants
+supported suggestions for many simplifying assumptions.
+
+
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 23 09:42:47 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA15484
+	for <zeroconf-archive@odin.ietf.org>; Fri, 23 Mar 2001 09:42:47 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3675F5DDAE; Fri, 23 Mar 2001 09:42:37 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 21F595DDC0; Fri, 23 Mar 2001 09:42:37 -0500 (EST)
+Received: from mercury.Sun.COM (mercury.Sun.COM [192.9.25.1])
+	by segue.merit.edu (Postfix) with ESMTP id AB79F5DDAE
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 09:42:35 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by mercury.Sun.COM (8.9.3+Sun/8.9.3) with ESMTP id GAA03910;
+	Fri, 23 Mar 2001 06:42:26 -0800 (PST)
+Received: from ehdb03-home.Germany.Sun.COM (esun1as-be.Central.Sun.COM [129.147.34.142])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with ESMTP id PAA17128;
+	Fri, 23 Mar 2001 15:42:18 +0100 (MET)
+From: Erik Guttman Sun Frankfurt Staff Engineer <Erik.Guttman@Sun.COM>
+Message-Id: <200103231442.PAA17128@ehdb03-home.Germany.Sun.COM>
+Date: Mon, 23 Apr 2001 14:35:52 +0-100
+To: <zeroconf@merit.edu>
+Cc: <erik.guttman@germany.sun.com>, <octavian.catrina@i-u.de>
+Reply-To: <erikg@efra05-home.Germany.Sun.COM>
+Subject: IETF 50 discussion of ZMAAP -> action
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+As a sanity check we asked who would actually implement
+the protocol.  Members of ~6 different organizations 
+(including vendors) said they would, so there is indeed 
+interest.
+
+Those attending the meeting made some choices which need 
+to be verified by the working group, on the mailing list.
+These will serve to simplify the protocol, if accepted.
+
+1. Only allocate addresses in scopes which are not
+   allocated by MADCAP.  
+
+2. Compatibility with AAP does not need to be maintained.
+
+We will decide this on the list - if you have any objections
+please raise them by April 6.
+
+- - - - - - - - - - - - -  
+
+Discussion:
+   
+1. This means that transition mechanisms would not be 
+needed.  As with other zeroconf protocols (v4LL, for 
+example) transition to 'configured state' is complex, 
+has timing issues and ultimately places external servers
+in control of what should really be a local feature of
+the network.  Removing transition mechanisms simplifies
+ZMAAP and stabilizes its operating model.
+
+Addresses from the following scopes available for allocation 
+using ZMAAP:
+
+  link-local address-specific (IPv4 & IPv6)
+  global, site- & link-local unicast prefix-based addresses
+  (IPv6, IPv4???)
+
+2. We have already diverged considerably from AAP.  We
+do not want periodic messages, waiting intervals, we 
+need lease IDs, we prefer 'time to live' over absolute
+times, etc.  If this is really OK, we can drop the last
+vestiges of AAP from the header & other elements to make
+the protocol as simple as possible.
+
+Erik 
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 23 09:53:48 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id JAA16193
+	for <zeroconf-archive@odin.ietf.org>; Fri, 23 Mar 2001 09:53:47 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 3B65B5DF4B; Fri, 23 Mar 2001 09:52:19 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 1E6845DF4C; Fri, 23 Mar 2001 09:52:19 -0500 (EST)
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id C74425DF4B
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 09:52:17 -0500 (EST)
+Received: from ehdb03-home.Germany.Sun.COM ([129.157.142.202])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id GAA12607;
+	Fri, 23 Mar 2001 06:52:13 -0800 (PST)
+Received: from ehdb03-home.Germany.Sun.COM (esun1as-be.Central.Sun.COM [129.147.34.142])
+	by ehdb03-home.Germany.Sun.COM (8.8.8+Sun/8.8.8/ENSMAIL,v2.1p1) with ESMTP id PAA17336;
+	Fri, 23 Mar 2001 15:52:03 +0100 (MET)
+From: Erik Guttman Sun Frankfurt Staff Engineer <Erik.Guttman@sun.com>
+Message-Id: <200103231452.PAA17336@ehdb03-home.Germany.Sun.COM>
+Date: Mon, 23 Apr 2001 14:45:38 +0-100
+To: <zeroconf@merit.edu>
+Cc: <erik.guttman@sun.com>, <octavian.catrina@i-u.de>
+Reply-To: <erikg@efra05-home.Germany.Sun.COM>
+Subject: zmaap suggestion: eliminate lease times
+X-Mailer: Sun NetMail 2.3
+MIME-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+In draft-ietf-zeroconf-zmaap-00.txt any mini-MAAS can
+reallocate or deallocate an address just by multicasting
+an AIU with the same ID and a different time.
+
+One concern brought up at the WG meeting was that this
+could very easily cause bad interactions among mini-MAASs
+(one wants a lifetime of X, the other of Y, so they go 
+back and forth on it in a shouting match).
+
+Stuart and I were discussing this in the hallway after
+the WG meeting and he made what I think is a great
+suggestion:  Why have lease times at all?   An allocation
+could be considered to exist only as long as some mini-MAAS
+is willing to defend it (like the allocator and any mini-MAAS
+which has had an application register interest in the allocation).  
+
+Implications:
+
+ 1. No shouting matches would occur
+ 2. There would be no notion of deallocation
+ 3. Soft state caching of AIUs would be hard to do
+    without lease times, but this isn't needed for
+    correct operation.
+ 4. The protocol would be a lot simpler.
+
+Thoughts?
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 23 11:20:20 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA22084
+	for <zeroconf-archive@odin.ietf.org>; Fri, 23 Mar 2001 11:20:20 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id AAD785DEC5; Fri, 23 Mar 2001 11:18:27 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 9A1695DEBD; Fri, 23 Mar 2001 11:18:27 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 1F3B55DEAD
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 11:18:26 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f2NGIMf04366
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 11:18:22 -0500
+Message-ID: <3ABB774D.900609E@senie.com>
+Date: Fri, 23 Mar 2001 11:18:21 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: Re: zmaap suggestion: eliminate lease times
+References: <200103231452.PAA17336@ehdb03-home.Germany.Sun.COM>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Erik Guttman Sun Frankfurt Staff Engineer wrote:
+> 
+> In draft-ietf-zeroconf-zmaap-00.txt any mini-MAAS can
+> reallocate or deallocate an address just by multicasting
+> an AIU with the same ID and a different time.
+> 
+> One concern brought up at the WG meeting was that this
+> could very easily cause bad interactions among mini-MAASs
+> (one wants a lifetime of X, the other of Y, so they go
+> back and forth on it in a shouting match).
+> 
+> Stuart and I were discussing this in the hallway after
+> the WG meeting and he made what I think is a great
+> suggestion:  Why have lease times at all?   An allocation
+> could be considered to exist only as long as some mini-MAAS
+> is willing to defend it (like the allocator and any mini-MAAS
+> which has had an application register interest in the allocation).
+> 
+> Implications:
+> 
+>  1. No shouting matches would occur
+>  2. There would be no notion of deallocation
+>  3. Soft state caching of AIUs would be hard to do
+>     without lease times, but this isn't needed for
+>     correct operation.
+>  4. The protocol would be a lot simpler.
+> 
+> Thoughts?
+
+This sounds good.
+
+I was concerned also about deallocation from another perspective, that
+being a host which allocated and was using an address, and then crashed
+without deallocation. That added messiness in trying to reclaim
+addresses which had been lost into such limbo. The approach outlined
+above removes that concern.
+
+Dan
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 23 13:19:12 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id NAA29897
+	for <zeroconf-archive@odin.ietf.org>; Fri, 23 Mar 2001 13:19:11 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 5F2C35DE67; Fri, 23 Mar 2001 13:18:13 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 4D7FC5DE43; Fri, 23 Mar 2001 13:18:13 -0500 (EST)
+Received: from hypnos.cps.intel.com (hypnos.cps.intel.com [192.198.165.17])
+	by segue.merit.edu (Postfix) with ESMTP id B4B0D5DDFB
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 13:18:11 -0500 (EST)
+Received: from SMTP (fmsmsxvs03-1.fm.intel.com [132.233.42.203])
+	by hypnos.cps.intel.com (8.9.1a+p1/8.9.1/d: relay.m4,v 1.35 2001/02/12 09:03:45 smothers Exp $) with SMTP id SAA07718
+	for <zeroconf@merit.edu>; Fri, 23 Mar 2001 18:18:10 GMT
+Received: from fmsmsx19.fm.intel.com ([132.233.48.19]) by 132.233.48.203
+  (Norton AntiVirus for Internet Email Gateways 1.0) ;
+  Fri, 23 Mar 2001 18:18:10 0000 (GMT)
+Received: by fmsmsx19.fm.intel.com with Internet Mail Service (5.5.2653.19)
+	id <HLJ0BTWP>; Fri, 23 Mar 2001 10:18:09 -0800
+Message-ID: <4148FEAAD879D311AC5700A0C969E8904F33A4@orsmsx35.jf.intel.com>
+From: "Hattig, Myron" <myron.hattig@intel.com>
+To: zeroconf@merit.edu
+Subject: RE: zmaap suggestion: eliminate lease times
+Date: Fri, 23 Mar 2001 10:17:51 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2653.19)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+We did a multicast channel allocation thing for IP/1394 (RFC 2734) called
+MCAP. It is claim and defend, does not have a lease time, but does have a
+count down timer so all hosts know when the current allocation expires.
+
+-myron
+
+> -----Original Message-----
+> From: Daniel Senie [mailto:dts@senie.com]
+> Sent: Friday, March 23, 2001 8:18 AM
+> To: zeroconf@merit.edu
+> Subject: Re: zmaap suggestion: eliminate lease times
+> 
+> 
+> Erik Guttman Sun Frankfurt Staff Engineer wrote:
+> > 
+> > In draft-ietf-zeroconf-zmaap-00.txt any mini-MAAS can
+> > reallocate or deallocate an address just by multicasting
+> > an AIU with the same ID and a different time.
+> > 
+> > One concern brought up at the WG meeting was that this
+> > could very easily cause bad interactions among mini-MAASs
+> > (one wants a lifetime of X, the other of Y, so they go
+> > back and forth on it in a shouting match).
+> > 
+> > Stuart and I were discussing this in the hallway after
+> > the WG meeting and he made what I think is a great
+> > suggestion:  Why have lease times at all?   An allocation
+> > could be considered to exist only as long as some mini-MAAS
+> > is willing to defend it (like the allocator and any mini-MAAS
+> > which has had an application register interest in the allocation).
+> > 
+> > Implications:
+> > 
+> >  1. No shouting matches would occur
+> >  2. There would be no notion of deallocation
+> >  3. Soft state caching of AIUs would be hard to do
+> >     without lease times, but this isn't needed for
+> >     correct operation.
+> >  4. The protocol would be a lot simpler.
+> > 
+> > Thoughts?
+> 
+> This sounds good.
+> 
+> I was concerned also about deallocation from another perspective, that
+> being a host which allocated and was using an address, and 
+> then crashed
+> without deallocation. That added messiness in trying to reclaim
+> addresses which had been lost into such limbo. The approach outlined
+> above removes that concern.
+> 
+> Dan
+> 
+> -- 
+> -----------------------------------------------------------------
+> Daniel Senie                                        dts@senie.com
+> Amaranth Networks Inc.                    http://www.amaranth.com
+> 
+> 
+
+
+
+
+From owner-zeroconf@merit.edu  Mon Mar 26 18:34:54 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id SAA20503
+	for <zeroconf-archive@odin.ietf.org>; Mon, 26 Mar 2001 18:34:54 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 8F3B85DEA9; Mon, 26 Mar 2001 18:33:17 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 795AC5DEA8; Mon, 26 Mar 2001 18:33:17 -0500 (EST)
+Received: from internaut.internaut.COM (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id 9CFB35DEA0
+	for <zeroconf@merit.edu>; Mon, 26 Mar 2001 18:33:14 -0500 (EST)
+Received: from localhost (aboba@localhost)
+	by internaut.internaut.COM (8.9.3/8.9.3) with ESMTP id PAA29702;
+	Mon, 26 Mar 2001 15:28:41 -0800 (PST)
+	(envelope-from aboba@internaut.com)
+Date: Mon, 26 Mar 2001 15:28:41 -0800 (PST)
+From: Bernard Aboba <aboba@internaut.com>
+To: cheshire@apple.com
+Cc: aboba@internaut.com, zeroconf@merit.edu
+Subject: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Message-ID: <Pine.BSF.4.21.0103261523330.29697-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Find enclosed some comments on the IPv4 linklocal draft. Despite the
+length of the review, most of these represent minor changes in wording.
+
+http://www.drizzle.com/~aboba/zeroconf/stuart.txt
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 28 04:14:49 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id EAA15833
+	for <zeroconf-archive@odin.ietf.org>; Wed, 28 Mar 2001 04:14:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id C0F325DED9; Wed, 28 Mar 2001 04:14:32 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id AA2B65DEDE; Wed, 28 Mar 2001 04:14:32 -0500 (EST)
+Received: from iufw01.i-u.de (da72c.iufw01.i-u.de [212.126.218.114])
+	by segue.merit.edu (Postfix) with ESMTP id 5A0CB5DED9
+	for <zeroconf@merit.edu>; Wed, 28 Mar 2001 04:14:30 -0500 (EST)
+Received: from iumail01.i-u.de ([212.126.208.130])
+	by iufw01.i-u.de with esmtp (Exim 3.16 #1 (Debian))
+	id 14iC29-0006XR-00
+	for <zeroconf@merit.edu>; Wed, 28 Mar 2001 11:14:29 +0200
+Received: from wrkst029 ([172.17.0.29]) by iumail01.i-u.de
+          (Netscape Messaging Server 3.62)  with SMTP id 102
+          for <zeroconf@merit.edu>; Wed, 28 Mar 2001 11:07:37 +0200
+From: "Octavian Catrina" <octavian.catrina@i-u.de>
+To: <zeroconf@merit.edu>
+Subject: ZMAAP changes
+Date: Wed, 28 Mar 2001 11:08:44 +0200
+Message-ID: <000401c0b766$b07c3090$1d0011ac@iu.de>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook 8.5, Build 4.71.2377.0
+Importance: Normal
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2314.1300
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+The idea of removing the lifetime from the ZMAAP messages makes a lot of sense.
+I'm definitely in favor of this solution.
+
+The lifetime was an AAP vestige (to quote Erik). AAP used it for its replicated
+database of allocations (which became in ZMAAP draft 00 an optional caching of
+allocations made by others). However, maintaining the consistency of such a
+database implies a lot of overhead.
+
+I tried to sketch a modified version of ZMAAP without lease lifetime in the
+messages. I started with a really minimal protocol, sort of a reference, to
+which we can add some (possibly optional) extensions. In the text below I
+maintained this approach to facilitate the discussion (it helps understanding
+the limitations of the minimal protocol and the additional
+functionality/overhead of any extensions we might want).
+
+I've already added a simple extension allowing any multicast session participant
+to monitor the session's address (actually a feature already present in draft
+00).
+
+1. Minimal ZMAAP:
+
+- Protocol messages:
+
+ACLM means: Is this address allocated?
+AIU means: I allocated the address (defense).
+ACLM and AIU only specify addresses: no lease lifetime, no lease id
+(the id will come back in the extended version).
+
+- Allocation records:
+
+Each mini-MAAS maintains allocation records for the addresses it has allocated.
+A record is maintained for the duration of the allocation lifetime requested by
+the app and removed when the lifetime expires.
+The records allow the mini-MAAS to defend its allocations and are consulted when
+choosing a "free" address for allocation.
+A mini-MAAS does not record allocations made by other mini-MAASs (no caching in
+this minimal version, because allocation lifetime is unknown).
+
+- Address allocation:
+
+The allocator app asks its mini-MAAS to allocate an address in some scope for a
+certain lifetime. The mini-MAAS picks randomly an address in that scope and
+claims it using ACLM (no lease-lifetime and lease-id in ACLM).
+If the mini-MAAS does not receive an AIU reply, it allocates the address
+(becomes its "owner") and starts defending the address for the requested
+lifetime (no need to send an AIU, no other mini-MAAS is interested).
+Otherwise, it aborts the claiming and tries again with another address.
+
+- Allocation defense:
+
+An allocated address is only defended by its owner (no other mini-MAAS can do
+it). The defense of an allocated address consists in sending an AIU in reply to
+an ACLM that claims the address.
+
+- Lifetime change and deallocation:
+
+After obtaining an address allocation, an app can change its lifetime, to extend
+it or reduce it. In particular, it can terminate the allocation indicating
+lifetime = 0. This only requires a local dialogue between the app and the local
+mini-MAAS.
+
+- Efficiency issues
+
+When a relatively small fraction of the address space is allocated a random
+address selection will likely succeed (the protocol is optimized for this case).
+When the fraction of allocated addresses increases, claims will fail and
+allocations require a greater number of attempts.
+
+- Allocation conflicts detection and resolution:
+
+Allocation conflicts can still occur in at least 2 situations:
+- During a network partition, an address is independently allocated in each part
+and afterwards the network is reunited.
+- The mini-MAAS that owns the address crushes, so the address is no longer
+defended and another mini-MAAS allocates it. This can cause an allocation
+conflict if the multicast session continues in the absence of the participant
+that allocated the address.
+
+A mini-MAAS can only detect an allocation conflict by receiving an AIU for an
+address it currently owns. For example, mini-MAAS A tries to allocate an
+addresss already allocate by mini-MAASs B and C. Such a situation has a quite
+low probability.
+
+Therefore, we can only expect this minimal protocol to reduce the probability of
+allocation conflicts. We cannot rely on it to detect and resolve allocation
+conflicts.
+
+Also, with this minimal version, only the session participant that allocated the
+session's address can control the allocation: learn from its mini-MAAS if the
+allocation is valid or not, change its lifetime or deallocate it. The other
+session participants can just rely on the allocator. (If the session is supposed
+to continue without the allocator and the remaining participants can detect the
+absence of the allocator app, one of them can try to take over the session's
+address by reallocating it - this may not work if the mini-MAAS that allocated
+the address is still defending it).
+
+So the apps using this protocol must be able to recover from allocation
+conflicts.
+
+However, a multicast app needs anyway some mechanism for filtering received
+messages - the allocation protocol does not prevent some other app from sending
+to a multicast address without first allocating it. If the conflict is between
+sessions that use the same UDP port (same app), then the app can detect an
+allocation conflict using its filtering mechanism and can request the allocation
+of another address (I suppose this could even be done gracefully). Otherwise,
+the packets are discarded by UDP and just cause additional processing overhead
+in that host (any way to solve this problem ?).
+
+- Conclusions
+This minimal profile is based on the assumption that claiming clashes and
+allocation conflicts occur very infrequently. In such a case, mechanisms that
+avoid claiming clashes and detect allocation conflicts imply an excessive
+overhead and are not justified. Therefore:
+- A minimal claim-defense mechanism is provided for allocating addresses. An
+allocation is only recorded and defended by the allocator.
+- Allocation conflict detection and resolution is left to the apps.
+
+***
+
+The minimal protocol outlined above is some kind of baseline. We can try to
+extend it. But as long as we don't accept periodic advertisements, even at a
+lower rate, there is no way to detect conflicts.
+
+Here is a simple extension. I'll point out only the differences and some
+implications.
+
+2. Extensions of the minimal ZMAAP:
+
+The basic idea is that an address allocation must be maintained as long as the
+multicast session continues, regardless of the changes in the group membership.
+For this purpose, the address allocation should be monitored by all the
+participants in the multicast session instead of being exclusively taken care of
+by the allocator (session initiator).
+
+After the allocation of the address by the session initiator, other participants
+may ask their mini-MAAS to monitor the session's address for a specified
+lifetime. One mini-MAAS is the current owner (initially, the allocator). The
+others are "passive" monitors. The owner and the monitors maintain allocation
+records for the address during the lifetime indicated by their local app (may
+not be the same lifetime value!).
+
+The owner defends the address by sending immediately an AIU. A monitor sends a
+randomly delayed AIU if the owner fails to defend.
+
+The lease must have a unique id, and the AIUs must specify it.
+(It doesn't seem necessary to specify a lease id in ACLM, since it just tests if
+the address can be allocated.)
+
+I don't like the delayed defense but we can minimize its use by allowing a
+transfer of ownership: after a delayed defense, a monitor takes over address
+ownership and starts defending without delay. And the other way around: if an
+AIU is received, an owner becomes monitor, just to make sure we have at most one
+owner.
+
+Change of lifetime and deallocation remains a local matter, between an app and
+its local mini-MAAS, both for the allocator and the passive monitors.
+
+The only problem is to start those monitors. Let's assume that the allocator app
+distributes (session announcement) both the allocated address and the lease id
+returned by its mini-MAAS. Then another session participant can just ask its
+mini-MAAS to start monitoring the allocation of address A with lease id L. To
+make this safer, the mini-MAAS could check the lease by sending an ACLM. If it
+receives an AIU with A and L, the allocation is confirmed. However, this (and
+any other variation) causes additional traffic when a session starts. We could
+let the mini-MAAS trust its app (a malicious app can just start sending to the
+session's address at 100 Mbps without trying to allocate it and a flawed app can
+do anything).
+
+This version practically makes all session participants peers with respect to
+the control of the session's address. The protocol complexity and overhead added
+to the minimal version is negligible (except perhaps for the optional test when
+a mini-MAAS starts to monitor). It does not solve the problem of conflict
+detection in case of network partition and reunification.
+
+Any comments?
+
+Octavian.
+
+---
+Dr. Octavian CATRINA
+International University in Germany
+School of Information Technology
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 28 11:55:33 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA04738
+	for <zeroconf-archive@odin.ietf.org>; Wed, 28 Mar 2001 11:55:28 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 57F605DF70; Wed, 28 Mar 2001 11:53:13 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 33BBD5DF6E; Wed, 28 Mar 2001 11:53:13 -0500 (EST)
+Received: from ananke.eastgw.xerox.com (ananke.xerox.com [208.140.33.24])
+	by segue.merit.edu (Postfix) with ESMTP id AA4565DF67
+	for <zeroconf@merit.edu>; Wed, 28 Mar 2001 11:53:09 -0500 (EST)
+Received: from crthub1.crt.xerox.com (crthub1.crt.xerox.com [13.138.80.3])
+	by ananke.eastgw.xerox.com (8.9.3/8.9.3) with ESMTP id LAA22218;
+	Wed, 28 Mar 2001 11:53:07 -0500 (EST)
+Received: by crthub1.crt.xerox.com with Internet Mail Service (5.5.2653.19)
+	id <HYMR04YL>; Wed, 28 Mar 2001 11:53:04 -0500
+Message-ID: <FBED432D914AD3118C6C00805F1582E8C38F26@x-wb-0128-nt8.wrc.xerox.com>
+From: "Mayer, Jim" <JMayer@crt.xerox.com>
+To: "'Octavian Catrina'" <octavian.catrina@i-u.de>, zeroconf@merit.edu
+Subject: RE: ZMAAP changes
+Date: Wed, 28 Mar 2001 11:53:05 -0500
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2653.19)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi,
+
+What was the reasoning behind prohibiting periodic advertisements in the
+zmaap-00.txt spec?
+
+It seems to me that a practical protocol along the lines of the following
+could be developed:
+
+(1) AIU messages contain an address, an ID, and an "assertion time."
+
+(2) The "assertion time" is a hint indicating that some mini-MAAS believes
+that it will need the address for at least the stated time.  An system where
+all mini-MASSs advertised an assertion time of zero would be equivalent to
+Erik Guttman/Stuart Cheshire proposal.
+
+(3) If a mini-MAAS maintains an AIU cache, and if an AIU for a cached
+address/ID is received, then the only effect is to (possibly) extend the
+"assertion time" of the cache entry up to some (modest) maximum.
+
+(4) If a mini-MAAS that would normally be defending an address (e.g., "like
+the allocator and any mini-MAAS which has had an application register
+interest in the allocation") noticed that the "assertion time" was "about
+to" expire, it would issue a new AIU.  The definition of "about to" would be
+something like "reached a randomly selected percentage (say, from 60 to 90
+percent) of the AIU lifetime".
+
+I would think that a protocol such as the one I outlined above would support
+caching, avoid the "dueling mini-MASS" problems mentioned in Mr. Guttman's
+note, would support conflict detection, and would have a minimal impact on
+network traffic.  There is no need for an explicit "cache clearing" message,
+as cache entries would simply drop out as their "assertion time" expired.
+
+I have only been monitoring this list a short while, and I'm curious about
+how well my assumptions about the problem match reality!
+
+-- Jim Mayer
+
+> -----Original Message-----
+> From: Octavian Catrina [mailto:octavian.catrina@i-u.de]
+> Sent: Wednesday, March 28, 2001 4:09 AM
+> To: zeroconf@merit.edu
+> Subject: ZMAAP changes
+> 
+<snip>
+
+> The minimal protocol outlined above is some kind of baseline. 
+> We can try to
+> extend it. But as long as we don't accept periodic 
+> advertisements, even at a
+> lower rate, there is no way to detect conflicts.
+
+<snip>
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 28 12:40:22 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id MAA05911
+	for <zeroconf-archive@odin.ietf.org>; Wed, 28 Mar 2001 12:40:22 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D77465DE75; Wed, 28 Mar 2001 12:40:11 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C57E05DE29; Wed, 28 Mar 2001 12:40:11 -0500 (EST)
+Received: from mta6.snfc21.pbi.net (mta6.snfc21.pbi.net [206.13.28.240])
+	by segue.merit.edu (Postfix) with ESMTP id 637835DDB2
+	for <ZeroConf@Merit.edu>; Wed, 28 Mar 2001 12:40:10 -0500 (EST)
+Received: from SERVER.PacBell.net ([63.199.7.253])
+ by mta6.snfc21.pbi.net (Sun Internet Mail Server sims.3.5.2000.01.05.12.18.p9)
+ with ESMTP id <0GAX006434RUQZ@mta6.snfc21.pbi.net> for ZeroConf@Merit.edu;
+ Wed, 28 Mar 2001 09:33:31 -0800 (PST)
+Date: Wed, 28 Mar 2001 09:32:22 -0800
+From: Peter Johansson <PJohansson@ACM.org>
+Subject: RE: ZMAAP changes
+In-reply-to: <FBED432D914AD3118C6C00805F1582E8C38F26@x-wb-0128-nt8.wrc.x
+ erox.com>
+X-Sender: Celeborn@PacBell.net
+To: Zero Configuration <ZeroConf@merit.edu>
+Message-id: <5.0.2.1.2.20010328092651.02432ec0@PacBell.net>
+MIME-version: 1.0
+X-Mailer: QUALCOMM Windows Eudora Version 5.0.2
+Content-type: text/plain; charset="us-ascii"; format=flowed
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+At 11:53 AM 3/28/01, Mayer, Jim wrote:
+
+>It seems to me that a practical protocol along the lines of the following 
+>could be developed:
+>
+>(1) AIU messages contain an address, an ID, and an "assertion time."
+>
+>(2) The "assertion time" is a hint indicating that some mini-MAAS believes 
+>that it will need the address for at least the stated time.  An system 
+>where all mini-MASSs advertised an assertion time of zero would be 
+>equivalent to Erik Guttman/Stuart Cheshire proposal.
+>
+>(3) If a mini-MAAS maintains an AIU cache, and if an AIU for a cached 
+>address/ID is received, then the only effect is to (possibly) extend the 
+>"assertion time" of the cache entry up to some (modest) maximum.
+>
+>(4) If a mini-MAAS that would normally be defending an address (e.g., 
+>"like the allocator and any mini-MAAS which has had an application 
+>register interest in the allocation") noticed that the "assertion time" 
+>was "about to" expire, it would issue a new AIU.  The definition of "about 
+>to" would be something like "reached a randomly selected percentage (say, 
+>from 60 to 90 percent) of the AIU lifetime".
+
+This is similar to the resource allocation protocol (MCAP) described in RFC 
+2734. I think it has similar merits.
+
+The assertion time is particularly useful if there is to be an orderly 
+transition from "ownership" by one mini-MAAS to another in cases where the 
+current owner no longer intends to defend the address. Because multicast 
+set-up and tear-down times can be significant and perceivable by a user, I 
+think the protocol should permit transfer of ownership.
+
+Although RFC 2734 may not be literally applicable to your situation in Zero 
+Configuration, we had to contend with like problems of distributed 
+ownership and coordination. The MCAP protocol deserves your examination.
+
+
+Regards,
+
+Peter Johansson
+
+Congruent Software, Inc.
+98 Colorado Avenue
+Berkeley, CA  94707
+
+(510) 527-3926
+(510) 527-3856 FAX
+
+PJohansson@ACM.org
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 28 13:32:06 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id NAA06860
+	for <zeroconf-archive@odin.ietf.org>; Wed, 28 Mar 2001 13:32:06 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4123E5DDC0; Wed, 28 Mar 2001 12:20:49 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 28AC55DEBE; Wed, 28 Mar 2001 12:20:49 -0500 (EST)
+Received: from gate.internaut.com (unknown [64.38.134.101])
+	by segue.merit.edu (Postfix) with ESMTP id 283E45DDC0
+	for <zeroconf@merit.edu>; Wed, 28 Mar 2001 12:20:47 -0500 (EST)
+Received: from e1kj2 (e1kj2 [64.38.134.109])
+	by gate.internaut.com (8.10.2/8.10.2) with SMTP id f2SHB0N11018;
+	Wed, 28 Mar 2001 09:11:00 -0800
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "BELOEIL Luc FTRD/DMI/CAE" <luc.beloeil@rd.francetelecom.fr>,
+        <cheshire@apple.com>
+Cc: <zeroconf@merit.edu>
+Subject: RE: Comments on draft-ietf-zeroconf-ipv4-linklocal-02.txt
+Date: Wed, 28 Mar 2001 09:21:37 -0800
+Message-ID: <OJEJKOMOEAKLMOILFCPJKEJNEEAA.aboba@internaut.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0014_01C0B768.7E6BCE10"
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+In-reply-to: <91A311FF6A85D3118DDF0060080C3D82EDF37E@lat3721.rd.francetelecom.fr>
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Importance: Normal
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0014_01C0B768.7E6BCE10
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+
+ " As far as I understood the draft, that situation was just to enable
+remote connection to a specified link-local subnet (the remote client
+accesses it specified home network through its "gateway" between link-local
+subnet and internet, for example). Thus the purpose of this sentence is NOT
+"bridging two segments", is it ? "
+
+Since we are talking about "IPv4 linklocal", if the VPN gateway is
+forwarding packets to and from a linklocal address, then it MUST be doing so
+while acting as a bridge -- if it is decrementing TTL, then it is acting as
+a router -- and such forwarding is forbidden in the spec.
+
+ > Here the remote client MUST NOT behave as a bridge. Or did I miss
+something ?
+
+The VPN gateway is acting as a bridge... not the remote client. The point I
+was trying to make is that most VPN gateways today do not have bridging
+capability. You can't just use any VPN protocol to do this -- IEEE 802
+requires adherence to the hard invariants, which include non-duplication and
+ordered delivery. You can do this by tunneling PPP BCP over L2TP, or
+alternatively (as has been proposed) by tunneling Ethernet directly over
+L2TP while running 802.1D or w.
+
+------=_NextPart_000_0014_01C0B768.7E6BCE10
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE></TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 5.50.4522.1800" name=3DGENERATOR></HEAD>
+<BODY>
+<DIV><FONT face=3DArial><FONT color=3D#0000ff><FONT size=3D2><SPAN=20
+class=3D500061617-28032001>&nbsp;"&nbsp;</SPAN>As far as I understood =
+the draft,=20
+that situation was just to enable remote connection to a specified =
+link-local=20
+subnet (the remote client accesses&nbsp;it specified home network =
+through its=20
+"gateway" between link-local subnet and internet, for example). Thus the =
+
+purpose&nbsp;of this sentence is NOT "bridging two segments", is it =
+?<SPAN=20
+class=3D500061617-28032001>&nbsp;"</SPAN></FONT></FONT></FONT></DIV>
+<DIV><FONT face=3DArial><FONT color=3D#0000ff><FONT size=3D2><SPAN=20
+class=3D500061617-28032001></SPAN></FONT></FONT></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial><FONT color=3D#0000ff><FONT size=3D2><SPAN=20
+class=3D500061617-28032001>Since&nbsp;we are talking about&nbsp;"IPv4 =
+linklocal",=20
+if the VPN gateway is forwarding packets to and from a linklocal =
+address, then=20
+it MUST be doing so&nbsp;while acting as&nbsp;a bridge -- if it is =
+decrementing=20
+TTL, then it is acting as a router -- and such forwarding is forbidden =
+in the=20
+spec.</SPAN></FONT></FONT></FONT></DIV>
+<DIV><FONT face=3DArial color=3D#0000ff size=3D2><SPAN=20
+class=3D500061617-28032001></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial><FONT color=3D#0000ff><FONT size=3D2><SPAN=20
+class=3D500061617-28032001>&nbsp;&gt;&nbsp;</SPAN>Here the remote client =
+MUST NOT=20
+behave as a bridge. Or did I miss something ?<SPAN=20
+class=3D500061617-28032001>&nbsp;</SPAN></FONT></FONT></FONT></DIV>
+<DIV><FONT face=3DArial><FONT color=3D#0000ff><FONT size=3D2><SPAN=20
+class=3D500061617-28032001></SPAN></FONT></FONT></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial><FONT color=3D#0000ff><FONT size=3D2><SPAN=20
+class=3D500061617-28032001>The VPN gateway is acting as a bridge... not =
+the remote=20
+client. The point I was trying to make is that most VPN gateways today =
+do not=20
+have bridging capability. You can't just use any VPN protocol to do this =
+-- IEEE=20
+802 requires adherence to the hard invariants, which include =
+non-duplication and=20
+ordered delivery. You can do this&nbsp;by tunneling&nbsp;PPP BCP over =
+L2TP, or=20
+alternatively (as has been proposed) by tunneling Ethernet directly over =
+L2TP=20
+while running 802.1D or w. </SPAN></FONT></FONT></FONT><FONT=20
+size=3D2></DIV></FONT></BODY></HTML>
+
+------=_NextPart_000_0014_01C0B768.7E6BCE10--
+
+
+
+
+From owner-zeroconf@merit.edu  Wed Mar 28 19:15:04 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id TAA15356
+	for <zeroconf-archive@odin.ietf.org>; Wed, 28 Mar 2001 19:15:04 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 98A255DEFB; Wed, 28 Mar 2001 18:08:00 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6276D5DF3C; Wed, 28 Mar 2001 18:07:54 -0500 (EST)
+Received: from patan.sun.com (patan.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id D3C815DFBB
+	for <zeroconf@merit.edu>; Wed, 28 Mar 2001 18:07:43 -0500 (EST)
+Received: from engmail4.Eng.Sun.COM ([129.144.134.6])
+	by patan.sun.com (8.9.3+Sun/8.9.3) with ESMTP id PAA01801;
+	Wed, 28 Mar 2001 15:07:41 -0800 (PST)
+Received: from nasnfs.Eng.Sun.COM (nasnfs.Eng.Sun.COM [10.6.84.20])
+	by engmail4.Eng.Sun.COM (8.9.3+Sun/8.9.3/ENSMAIL,v2.1p1) with ESMTP id PAA17292;
+	Wed, 28 Mar 2001 15:07:40 -0800 (PST)
+Received: from Sun.COM (reggae.Eng.Sun.COM [129.146.86.243])
+	by nasnfs.Eng.Sun.COM (8.9.3+Sun/8.9.1) with ESMTP id PAA05171;
+	Wed, 28 Mar 2001 15:07:39 -0800 (PST)
+Message-ID: <3AC26EAB.9DE306E9@Sun.COM>
+Date: Wed, 28 Mar 2001 15:07:23 -0800
+From: erik guttman <erik.guttman@Sun.COM>
+Organization: Sun Microsystems
+X-Mailer: Mozilla 4.75 [en] (X11; U; SunOS 5.8 sun4u)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Octavian Catrina <octavian.catrina@i-u.de>
+Cc: zeroconf@merit.edu
+Subject: Re: ZMAAP changes
+References: <000401c0b766$b07c3090$1d0011ac@iu.de>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Octavian Catrina wrote:
+
+> - Conclusions
+> This minimal profile is based on the assumption that claiming clashes and
+> allocation conflicts occur very infrequently. In such a case, mechanisms that
+> avoid claiming clashes and detect allocation conflicts imply an excessive
+> overhead and are not justified. 
+
+I do not think we can make this assumption.  IPv4 link-local multicast has 
+only 217 addresses left: 
+
+  http://www.isi.edu/in-notes/iana/assignments/multicast-addresses
+
+   The range of addresses between 224.0.0.0 and 224.0.0.255, inclusive,
+   is reserved for the use of routing protocols and other low-level
+   topology discovery or maintenance protocols, such as gateway discovery
+   and group membership reporting.  Multicast routers should not forward
+   any multicast datagram with destination addresses in this range,
+   regardless of its TTL.
+
+   224.0.0.37-224.0.0.250 Unassigned                            [JBP]
+   224.0.0.252-224.0.0.255 Unassigned                           [JBP]
+
+We should eventually request a ZMAAP address from this range.
+
+We need a range of available v4 link-local addresses that can be 
+allocated by ZMAAP.  I'm not sure we can get an allocation of several 
+addresses for this purpose out of the link local v4 range. See the 
+definition above.  It would be great if we could - since multicast 
+routers already do not forward messages with destination addresses 
+from 224.0.0/24.  The most we could conceivably obtain would be 
+something like 32 addresses.
+
+We could of course attempt to get another allocation, but existing
+routers would not know they were link-local!
+
+> 2. Extensions of the minimal ZMAAP:
+> 
+> The basic idea is that an address allocation must be maintained as 
+> long as the multicast session continues, regardless of the changes 
+> in the group membership. For this purpose, the address allocation 
+> should be monitored by all the participants in the multicast session 
+> instead of being exclusively taken care of by the allocator (session
+> initiator).
+
+This is needed to fulfill the zeroconf requirements for mc address
+allocation.
+
+> After the allocation of the address by the session initiator, 
+> other participants may ask their mini-MAAS to monitor the 
+> session's address for a specified lifetime. One mini-MAAS is 
+> the current owner (initially, the allocator). The others are 
+> "passive" monitors. The owner and the monitors maintain allocation
+> records for the address during the lifetime indicated by their 
+> local app (may not be the same lifetime value!).
+> 
+> The owner defends the address by sending immediately an AIU. 
+> A monitor sends a randomly delayed AIU if the owner fails to defend.
+> 
+> The lease must have a unique id, and the AIUs must specify it.
+
+Excellent.
+
+> I don't like the delayed defense but we can minimize its use by 
+> allowing a transfer of ownership: after a delayed defense, a 
+> monitor takes over address ownership and starts defending 
+> without delay. And the other way around: if an AIU is received, 
+> an owner becomes monitor, just to make sure we have at most one
+> owner.
+
+Coordinating ownership is much more complicated than transmission 
+timers which can be cancelled.
+
+
+> The only problem is to start those monitors. Let's assume that 
+> the allocator app distributes (session announcement) both the 
+> allocated address and the lease id returned by its mini-MAAS. 
+> Then another session participant can just ask its mini-MAAS to 
+> start monitoring the allocation of address A with lease id L. To
+> make this safer, the mini-MAAS could check the lease by sending 
+> an ACLM. If it receives an AIU with A and L, the allocation 
+> is confirmed. 
+
+Agreed.  Note the coupling between the session discovery protocol
+and ZMAAP.  Perhaps AIUs should carry SDP strings of advertised
+sessions?  This would coordinate SAP and ZMAAP.
+
+Erik
+
+._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
+E r i k   G u t t m a n                   Email: erik.guttman@sun.com
+Sr Staff Engineer, Sun Microsystems               Cell # 415 420 4425
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 30 05:05:26 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id FAA01791
+	for <zeroconf-archive@odin.ietf.org>; Fri, 30 Mar 2001 05:05:26 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 4853A5E1D8; Fri, 30 Mar 2001 05:00:05 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id EAA295DF34; Fri, 30 Mar 2001 04:58:56 -0500 (EST)
+Received: from iufw01.i-u.de (da72c.iufw01.i-u.de [212.126.218.114])
+	by segue.merit.edu (Postfix) with ESMTP id E03245DEA3
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 04:57:46 -0500 (EST)
+Received: from iumail01.i-u.de ([212.126.208.130])
+	by iufw01.i-u.de with esmtp (Exim 3.16 #1 (Debian))
+	id 14ivf7-0000tN-00
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 11:57:45 +0200
+Received: from wrkst029 ([172.17.0.29]) by iumail01.i-u.de
+          (Netscape Messaging Server 3.62)  with SMTP id 252;
+          Fri, 30 Mar 2001 11:50:46 +0200
+From: "Octavian Catrina" <octavian.catrina@i-u.de>
+To: <zeroconf@merit.edu>, "Mayer, Jim" <JMayer@crt.xerox.com>
+Subject: RE: ZMAAP changes
+Date: Fri, 30 Mar 2001 11:51:51 +0200
+Message-ID: <000e01c0b8ff$0ba33330$1d0011ac@iu.de>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook 8.5, Build 4.71.2377.0
+Importance: Normal
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2314.1300
+In-reply-to: <FBED432D914AD3118C6C00805F1582E8C38F26@x-wb-0128-nt8.wrc.xerox.com>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Jim Mayer wrote (http://www.merit.edu/mail.archives/zeroconf/msg00840.html)
+>
+>What was the reasoning behind prohibiting periodic advertisements in the
+>zmaap-00.txt spec?
+>
+
+We had a preliminary version with periodic advertisments that maintained the
+consistency of the allocation records in all the mini-MAASs (AAP-like). The
+periodic advertisments were dropped because the overhead of transmitting and
+processing them was considered excessive, an overkill for a relatively low
+probability of claiming clashes and even much lower probability of allocation
+conflicts.
+
+For example, we can expect the following average numbers of attempts to find a
+free address using random selection only:
+
+Already	Average number of attempts
+allocated	for new allocation
+10%		1.1
+20%		1.2
+30%		1.4
+40%		1.6
+50%		2.0
+60%		2.5
+70%		3.3
+80%		5.0
+90%	     10.0
+
+Occasionally the number of attempts can be larger than the average, but this
+shouldn't be a problem below 20-30% utilization of the address space. For
+example, in ZMAAP draft 00 we assumed allocation of IPv4 mc addresses from the
+admin local scope, with a size of 64K. I suppose that 20% of them are more than
+enough for a zeroconf network. The proposal in my previous e-mail was based on
+these assumptions.
+
+According to Erik Guttman's e-mails we still don't have a final decision for the
+IPv4 scopes to be used by ZMAAP. It is a quite different problem to design a
+ZMAAP able to efficiently allocate 100% of a short range of addresses. We must
+clarify which are the address ranges, otherwise we can't really make much
+progress.
+
+Anyway, it would be great to find a simple way to enable (an optional) caching
+of addresses allocated by the other mini-MAASs.
+
+>It seems to me that a practical protocol along the lines of the
+> following could be developed:
+> ...
+
+As I understand, your proposal is to maintain a lifetime field in the ZMAAP
+messages, but with different semantics, just to enable address caching.
+
+Essentially, you propose:
+- to use it "as a hint indicating that some mini-MAAS believes that it will need
+the address for at least the stated time".
+- and "the only effect is to (possibly) extend the assertion time of the cache
+entry up to some (modest) maximum".
+
+This seems quite fine - and compatible with the basic framework in my previous
+e-mail. I was mainly interested in changing the meaning of allocation lifetime
+in the protocol: let any session participant control how much time an allocation
+is defended by its local mini-MAASs and avoid the overhead of maintaining a
+single and accurate value in the records/caches of all the mini-MAASs.
+
+With your proposal, the lifetime of owned/monitored addresses remains under the
+control of the local app. To further clarify the issues, let's distinguish 2
+categories of allocation records maintained by a mini-MAAS:
+
+- Records for addresses used by local apps, created in the following 2 cases
+(more details in the previous e-mail): a local app asks (and obtains) a new
+allocation from the mini-MAAS; or a local app asks the mini-MAAS to monitor an
+address it uses but was allocated elsewhere. The mini-MAAS has accurate
+information about the use of these addresses. It is responsible for defending
+them for the duration (lifetime) the apps request (unless a conflict is
+detected). The owner/monitor states and transitions apply to these records.
+
+- Records of any other addresses about which the mini-MAAS has some information
+(from received messages) that they are not available for allocation. This is the
+"cache". We can't afford to grant to all the mini-MAASs prompt and accurate
+information about the addresses in use. So we can't rely on the accuracy of
+these caches. A mini-MAAS may consult the cache when trying to make a new
+allocation, but shouldn't defend the cached addresses. The monitoring mechanism
+is simple, reliable and should be sufficient.
+
+The AIU that announces lifetime to enable caching needs not be repeated. If it
+is lost, the cache entry expires, but the address/owner monitor is there to
+defend the address.
+
+When the local app deallocates an address (before the intended end-time), the
+mini-MAAS removes its record, but does not send an AIU to cancel the allocation.
+This is OK because the session may go on with the remaining participants. When
+none are left, the address is no longer defended and can be allocated by the
+mini-MAASs of the session participants. However, the cache entries continue to
+prevent the other mini-MAASs from trying to allocate the address until they
+eventually expire.
+
+The "(modest) maximum" lifetime value can't be too modest, otherwise the AIUs
+for its extension would be sort of lower rate AAP periodic AIUs. I wonder how
+can we choose a convenient value: 30 minutes, 60 minutes?
+
+I have several reasons to dislike the delayed defense: it's much less reliable,
+more complex and increases the allocation delay (these are more annoying for
+operation without cache when the probability of claiming clashes increases).
+This is why I suggested a simple mechanism to switch from monitor state (delayed
+defense) to owner state (immediate defense), when a monitor detects that the
+owner (initially the allocator) is no longer active. It could provide immediate
+defense after the disappearance of the allocator at practically no cost.
+Reception of an AIU for the address would trigger a return to monitor state to
+avoid having more than one owner (this could occur in the unlikely case when 2
+mini-MAASs make a delayed defense at the same time).
+
+If the AIU message is also used to announce lifetime, not just to defend, the
+owner/monitor switching must also be changed. A mini-MAAS could also switch from
+monitor to owner when sending an AIU that extends the lifetime.
+
+To conclude, caching would allow ZMAAP to work better when a larger fraction of
+the address space in a scope has been allocated. I don't think it is necessary
+below 20%, so it can remain optional.
+
+Caching based on lifetime announcement requires the additional transmission of
+an AIU at the end of claiming and whenever the lifetime is extended. Its
+efficiency (without deallocation) also depends on the choice of a maximum
+lifetime value, which determines how fast the cache entry is removed when the
+address is no longer used. But I don't see how it can really improve the
+detection of allocation conflicts (we have claiming/defense to prevent them),
+unless the lifetime extensions become as frequent as AAP periodic advertisments.
+
+
+Octavian.
+
+---
+Dr. Octavian CATRINA
+International University in Germany
+School of Information Technology
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 30 11:48:55 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id LAA25276
+	for <zeroconf-archive@odin.ietf.org>; Fri, 30 Mar 2001 11:48:54 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D60E35DF1C; Fri, 30 Mar 2001 11:45:48 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C16955DF21; Fri, 30 Mar 2001 11:45:48 -0500 (EST)
+Received: from internaut.com (unknown [64.38.134.99])
+	by segue.merit.edu (Postfix) with ESMTP id 1A8645DF1C
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 11:45:47 -0500 (EST)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.9.3/8.9.3) with ESMTP id IAA36292;
+	Fri, 30 Mar 2001 08:40:57 -0800 (PST)
+	(envelope-from aboba@internaut.com)
+Date: Fri, 30 Mar 2001 08:40:57 -0800 (PST)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Cc: aboba@internaut.com, dthaler@microsoft.com
+Subject: IPv4 linklocal security
+Message-ID: <Pine.BSF.4.21.0103300827100.36279-100000@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Even though packets to or from the linklocal prefix (169.254/16) are not
+supposed to be forwarded, it is likely that it will take some time before
+this is implemented by ISPs and vendors. 
+
+Today, more than a year after IANA first allocated the linklocal prefix,
+it appears that virtually no ISPs or router vendors prohibit forwarding of
+packets to or from the linklocal prefix. 
+
+Hackers are apparently taking advantage of this; I have noted quite a few
+breakin attempts coming from hosts within the linklocal prefix within the
+last few days. 
+
+As a thought exercise, I urge each of you to do a traceroute to an address
+within the linklocal prefix, say 169.254.101.152. When I last did a
+traceroute, I discovered that routers up to 4 hops away were forwarding
+packets destined to this prefix. When the packets reached the core routers
+running BGP, a host unreachable message was returned. 
+
+The implication is that an attacker sending packets to a linklocal source
+address could reach hosts up to 4 hops away, and possibly more if the path
+did not traverse a backbone router. Since most routers route only 
+on the destination address and not the source, packets sourced
+with a linklocal prefix can go much further, probably all the way 
+to the destination. Declaring 169.254/16 a linklocal prefix
+is unlikely to have much effect on this particular attack in the short and
+possibly even medium term. 
+
+So what do we do about this? Given that routers are likely to continue
+forwarding packets with linklocal source addresses for the forseeable
+future, and packets with linklocal destinations for the short term, the
+reality is that we cannot depend on ISPs and router vendors to make sure
+that linklocal really means link local. 
+
+Given this reality, I feel that it is necessary for hosts to
+incorporate their own protection mechanisms, rather than relying on
+routers to do the right thing. One way to accomplish this is to
+require that packets sent to or from the linklocal scope contain 
+TTL=255. Since even the most dysfunctional router will decrement
+TTL, a host receiving a packet to or from the linklocal prefix with a TTL
+< 255 can know that the packet was forwarded off-segment, and thus can
+silently discard it.   
+
+I believe that adding this protection is the right thing to do, since
+otherwise, devices using only linklocal addresses will not have a
+reasonable way to protect themselves. Implementing this kind of protection
+in the TCP/IP stack will also make it easier for application developers,
+who will not have to try to implement this in individual applications
+using linklocal addressing (such as mDNS), thereby requiring the use of
+raw sockets. 
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 30 12:50:18 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id MAA29292
+	for <zeroconf-archive@odin.ietf.org>; Fri, 30 Mar 2001 12:50:18 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id DA54D5DF53; Fri, 30 Mar 2001 12:46:15 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id C83F65DF3C; Fri, 30 Mar 2001 12:46:15 -0500 (EST)
+Received: from gw-nl4.philips.com (gw-nl4.philips.com [212.153.190.6])
+	by segue.merit.edu (Postfix) with ESMTP id 1F9505DE56
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 12:46:14 -0500 (EST)
+Received: from smtprelay-nl1.philips.com (localhost.philips.com [127.0.0.1])
+          by gw-nl4.philips.com with ESMTP id TAA24172
+          for <zeroconf@merit.edu>; Fri, 30 Mar 2001 19:46:13 +0200 (MEST)
+          (envelope-from peter.van.der.stok@philips.com)
+From: peter.van.der.stok@philips.com
+Received: from smtprelay-eur1.philips.com(130.139.36.3) by gw-nl4.philips.com via mwrap (4.0a)
+	id xma024170; Fri, 30 Mar 01 19:46:13 +0200
+Received: from notessmtp-nl1.philips.com (notessmtp-nl1.philips.com [130.139.36.10]) 
+	by smtprelay-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id TAA11188
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 19:46:12 +0200 (MET DST)
+Received: from EHLMS01.DIAMOND.PHILIPS.COM (ehlms01sv1.diamond.philips.com [130.139.54.212]) 
+	by notessmtp-nl1.philips.com (8.9.3/8.8.5-1.2.2m-19990317) with ESMTP id TAA18811
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 19:46:11 +0200 (MET DST)
+Received: by EHLMS01.DIAMOND.PHILIPS.COM (Soft-Switch LMS 4.0) with snapi
+          via EMEA3 id 0056890025530454; Fri, 30 Mar 2001 19:47:45 +0200
+To: <zeroconf@merit.edu>
+Cc: <rob.udink@philips.com>
+Subject: link-local-0.2 txt
+Message-ID: <0056890025530454000002L942*@MHS>
+Date: Fri, 30 Mar 2001 19:47:45 +0200
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1; name="MEMO 03/30/01 16:16:18"
+Content-Disposition: inline
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by ietf.org id MAA29292
+
+I am rather pleased with the draft. Many of the issues of the former draft have been clarified.
+I have some small editorial comments
+
+Would it be a good idea to give a definition of on-link and off-link thus showing
+that hosts connected to different physical segments connected by bridges are all on-link.
+
+________________________________________________________
+The last paragraph of 2.4
+In the case where two hosts on the same link .... it is preferable to use the configured address...
+Those (configured) addresses are assumed to be more stable.
+
+I doubt the general applicability of the motivation. In a "stable" home network connections via a Residential
+Gateway can prove to be rather volatile with a duration of a few minutes to dowload some document or
+music. For the download of another document, a new connection can be opened with an allocation
+of a different IP address by the IP service provider.
+
+I suggest to delete the paragraph or to advice selection of the most stable address dependent
+on the configuration conditions.
+___________________________________________________________---
+
+2.5 first phrase
+  ...... addresses ARE in the ....
+_____________________________________________________________
+2.5   5th paragraph
+
+Many people may mind the term: extremely simple device. A set-top box is actually
+not simple. I suggest to remove extremely simple and replace it with cost efficient if
+an adjective is needed at all.
+
+I suggest:
+The non-forwarding rule is important because it is expected that many link-local-only devices
+, that currently use X10 [X10], USB [USB] or FireWire [IEEE 1394], have a communication scope that is limited to a
+room, appartment or house.
+
+_______________________________________________________________________________
+2.5  last paragraph
+
+Tunnelling for off-link access.
+I suggest removing this paragraph for the same reasons as cited by earlier comments by (Aboba?)
+
+_____________________________________________________________________
+
+Is it possible to make a list of items that have to be addressed by a physical medium standard
+that will be confronted with the link-local addresssing. The document already discusses
+several flavours of ethernet, but there are also flavours of for example USB and IEEE 1394
+
+Items such as:
+- ARP sending frequency,
+- Number of ARP packets
+- physical (dis)connection behavior; especially as many IHDN standards specify this in great detail
+
+___________________________________________________________________________________
+
+Peter van der Stok                Philips Research Laboratories Eindhoven
+Bldg: WL P 311                      Prof. Holstlaan 4
+Phone: +31 40 2742649       5656 AA Eindhoven
+Fax:       +31 40 274                The Netherlands
+Mailto: Peter.van.der.Stok@ philips.com
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 30 12:52:49 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id MAA29531
+	for <zeroconf-archive@odin.ietf.org>; Fri, 30 Mar 2001 12:52:49 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id A52625DDD2; Fri, 30 Mar 2001 12:47:29 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 8FE8F5DE11; Fri, 30 Mar 2001 12:47:29 -0500 (EST)
+Received: from garlic.amaranth.net (garlic.amaranth.net [216.235.243.195])
+	by segue.merit.edu (Postfix) with ESMTP id 5331B5DDD2
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 12:47:28 -0500 (EST)
+Received: from senie.com (garlic.amaranth.net [216.235.243.195])
+	(authenticated (0 bits))
+	by garlic.amaranth.net (8.11.1/8.11.1) with ESMTP id f2UHkGg31284;
+	Fri, 30 Mar 2001 12:46:16 -0500
+Message-ID: <3AC4C667.81ECB2BA@senie.com>
+Date: Fri, 30 Mar 2001 12:46:15 -0500
+From: Daniel Senie <dts@senie.com>
+Organization: Amaranth Networks Inc.
+X-Mailer: Mozilla 4.76 [en]C-CCK-MCD {Sony}  (Win98; U)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: Bernard Aboba <aboba@internaut.com>
+Cc: zeroconf@merit.edu, dthaler@microsoft.com
+Subject: Re: IPv4 linklocal security
+References: <Pine.BSF.4.21.0103300827100.36279-100000@internaut.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Bernard Aboba wrote:
+> 
+> Even though packets to or from the linklocal prefix (169.254/16) are not
+> supposed to be forwarded, it is likely that it will take some time before
+> this is implemented by ISPs and vendors.
+> 
+> Today, more than a year after IANA first allocated the linklocal prefix,
+> it appears that virtually no ISPs or router vendors prohibit forwarding of
+> packets to or from the linklocal prefix.
+
+I've had filters in my firewalls for this particular prefix for some
+time. To date I've seen very few attempts using the prefix.
+
+I see lots of Netbios/IP traffic to/from these addresses floating
+around, but generally discount that as misconfigured clients nearby
+(e.g. on the cable modem system, or on the DMZ at the colo I use).
+However, I have started seeing lots of traffic attempting to reach
+services (e.g. HTTP) coming from link local addresses.
+
+> 
+> Hackers are apparently taking advantage of this; I have noted quite a few
+> breakin attempts coming from hosts within the linklocal prefix within the
+> last few days.
+> 
+> As a thought exercise, I urge each of you to do a traceroute to an address
+> within the linklocal prefix, say 169.254.101.152. When I last did a
+> traceroute, I discovered that routers up to 4 hops away were forwarding
+> packets destined to this prefix. When the packets reached the core routers
+> running BGP, a host unreachable message was returned.
+> 
+> The implication is that an attacker sending packets to a linklocal source
+> address could reach hosts up to 4 hops away, and possibly more if the path
+> did not traverse a backbone router. Since most routers route only
+> on the destination address and not the source, packets sourced
+> with a linklocal prefix can go much further, probably all the way
+> to the destination. Declaring 169.254/16 a linklocal prefix
+> is unlikely to have much effect on this particular attack in the short and
+> possibly even medium term.
+
+RFC 1918, a BCP, does two things: it specifies a block of addresses to
+use, and recommends those addresses not be routed across the Internet.
+It doesn't mention all blocks which have special use, though.
+
+Perhaps draft-manning-dsua-06.txt, should be targetted as a BCP
+indicating which blocks should not be routed?
+
+The linklocal document should specify whatever action we'd like routers
+to take, and that should be noted for the RFC editor so they can mark
+the RFC Index to indicate the linklocal RFC updates router requirements.
+
+> 
+> So what do we do about this? Given that routers are likely to continue
+> forwarding packets with linklocal source addresses for the forseeable
+> future, and packets with linklocal destinations for the short term, the
+> reality is that we cannot depend on ISPs and router vendors to make sure
+> that linklocal really means link local.
+
+Recommend filtering for source addresses. Recommend black-holing
+169.254/16 in routers (route to null interface).
+
+> 
+> Given this reality, I feel that it is necessary for hosts to
+> incorporate their own protection mechanisms, rather than relying on
+> routers to do the right thing. One way to accomplish this is to
+> require that packets sent to or from the linklocal scope contain
+> TTL=255. Since even the most dysfunctional router will decrement
+> TTL, a host receiving a packet to or from the linklocal prefix with a TTL
+> < 255 can know that the packet was forwarded off-segment, and thus can
+> silently discard it.
+
+Why not require hosts to set TTL=1? That way, if a router does get hold
+of such a packet, it'll discard it due to TTL expiry.
+
+> 
+> I believe that adding this protection is the right thing to do, since
+> otherwise, devices using only linklocal addresses will not have a
+> reasonable way to protect themselves. Implementing this kind of protection
+> in the TCP/IP stack will also make it easier for application developers,
+> who will not have to try to implement this in individual applications
+> using linklocal addressing (such as mDNS), thereby requiring the use of
+> raw sockets.
+
+I think we should approach this on multiple levels:
+
+- recommend filtering (source or dest) at routers (Access lists or route
+to null for destination case). This covers us from an operational
+perspective. This could be a small, stand-alone BCP.
+
+- either incorporate into linklocal or write another short document that
+updates router requirements with the desired action. This will help in
+th long term, as router vendors release new code.
+
+- decide on a plan for setting TTL or other such mechanism on the hosts
+to effect somewhat shorter-term issues. Perhaps this should be an update
+to the host requirements document?
+
+I'm willing to take care of a few short documents if we decide they
+should exist and should be stand-alone items (or help write sections if
+they're going to be in other documents).
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+
+From owner-zeroconf@merit.edu  Fri Mar 30 22:00:45 2001
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by ietf.org (8.9.1a/8.9.1a) with SMTP id WAA00759
+	for <zeroconf-archive@odin.ietf.org>; Fri, 30 Mar 2001 22:00:44 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 811975DED2; Fri, 30 Mar 2001 19:17:37 -0500 (EST)
+Delivered-To: zeroconf-outgoing@merit.edu
+Received: by segue.merit.edu (Postfix, from userid 56)
+	id 6911A5DEF0; Fri, 30 Mar 2001 19:17:37 -0500 (EST)
+Received: from sharplabs.com (gatekeeper.sharplabs.com [216.65.151.101])
+	by segue.merit.edu (Postfix) with ESMTP id C51205DED2
+	for <zeroconf@merit.edu>; Fri, 30 Mar 2001 19:17:35 -0500 (EST)
+Received: from admsrvnt02.enet.sharplabs.com (admsrvnt02 [172.29.225.253])
+	by sharplabs.com (8.9.3+Sun/8.9.2) with ESMTP id QAA13812;
+	Fri, 30 Mar 2001 16:11:25 -0800 (PST)
+Received: by webmail.sharplabs.com with Internet Mail Service (5.5.2448.0)
+	id <H97V4YBC>; Fri, 30 Mar 2001 16:11:25 -0800
+Message-ID: <1115A7CFAC25D311BC4000508B2CA5375ED110@mailsrvnt02.enet.sharplabs.com>
+From: "McDonald, Ira" <imcdonald@sharplabs.com>
+To: "'Daniel Senie'" <dts@senie.com>, Bernard Aboba <aboba@internaut.com>
+Cc: zeroconf@merit.edu, dthaler@microsoft.com
+Subject: RE: IPv4 linklocal security
+Date: Fri, 30 Mar 2001 16:11:25 -0800
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2448.0)
+Content-Type: text/plain;
+	charset="windows-1252"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Hi Bernard and Daniel,
+
+I agree with Daniel.  Let's make a SHOULD of setting TTL=1
+(a MUST is impractical because it will invalidate too many
+existing implementations), so that routers will ALWAYS
+discard link-local traffic.
+
+Cheers,
+- Ira McDonald, consulting architect at Sharp and Xerox
+  High North Inc
+
+-----Original Message-----
+From: Daniel Senie [mailto:dts@senie.com]
+Sent: Friday, March 30, 2001 9:46 AM
+To: Bernard Aboba
+Cc: zeroconf@merit.edu; dthaler@microsoft.com
+Subject: Re: IPv4 linklocal security
+
+
+Bernard Aboba wrote:
+> 
+> Even though packets to or from the linklocal prefix (169.254/16) are not
+> supposed to be forwarded, it is likely that it will take some time before
+> this is implemented by ISPs and vendors.
+> 
+> Today, more than a year after IANA first allocated the linklocal prefix,
+> it appears that virtually no ISPs or router vendors prohibit forwarding of
+> packets to or from the linklocal prefix.
+
+I've had filters in my firewalls for this particular prefix for some
+time. To date I've seen very few attempts using the prefix.
+
+I see lots of Netbios/IP traffic to/from these addresses floating
+around, but generally discount that as misconfigured clients nearby
+(e.g. on the cable modem system, or on the DMZ at the colo I use).
+However, I have started seeing lots of traffic attempting to reach
+services (e.g. HTTP) coming from link local addresses.
+
+> 
+> Hackers are apparently taking advantage of this; I have noted quite a few
+> breakin attempts coming from hosts within the linklocal prefix within the
+> last few days.
+> 
+> As a thought exercise, I urge each of you to do a traceroute to an address
+> within the linklocal prefix, say 169.254.101.152. When I last did a
+> traceroute, I discovered that routers up to 4 hops away were forwarding
+> packets destined to this prefix. When the packets reached the core routers
+> running BGP, a host unreachable message was returned.
+> 
+> The implication is that an attacker sending packets to a linklocal source
+> address could reach hosts up to 4 hops away, and possibly more if the path
+> did not traverse a backbone router. Since most routers route only
+> on the destination address and not the source, packets sourced
+> with a linklocal prefix can go much further, probably all the way
+> to the destination. Declaring 169.254/16 a linklocal prefix
+> is unlikely to have much effect on this particular attack in the short and
+> possibly even medium term.
+
+RFC 1918, a BCP, does two things: it specifies a block of addresses to
+use, and recommends those addresses not be routed across the Internet.
+It doesn't mention all blocks which have special use, though.
+
+Perhaps draft-manning-dsua-06.txt, should be targetted as a BCP
+indicating which blocks should not be routed?
+
+The linklocal document should specify whatever action we'd like routers
+to take, and that should be noted for the RFC editor so they can mark
+the RFC Index to indicate the linklocal RFC updates router requirements.
+
+> 
+> So what do we do about this? Given that routers are likely to continue
+> forwarding packets with linklocal source addresses for the forseeable
+> future, and packets with linklocal destinations for the short term, the
+> reality is that we cannot depend on ISPs and router vendors to make sure
+> that linklocal really means link local.
+
+Recommend filtering for source addresses. Recommend black-holing
+169.254/16 in routers (route to null interface).
+
+> 
+> Given this reality, I feel that it is necessary for hosts to
+> incorporate their own protection mechanisms, rather than relying on
+> routers to do the right thing. One way to accomplish this is to
+> require that packets sent to or from the linklocal scope contain
+> TTL=255. Since even the most dysfunctional router will decrement
+> TTL, a host receiving a packet to or from the linklocal prefix with a TTL
+> < 255 can know that the packet was forwarded off-segment, and thus can
+> silently discard it.
+
+Why not require hosts to set TTL=1? That way, if a router does get hold
+of such a packet, it'll discard it due to TTL expiry.
+
+> 
+> I believe that adding this protection is the right thing to do, since
+> otherwise, devices using only linklocal addresses will not have a
+> reasonable way to protect themselves. Implementing this kind of protection
+> in the TCP/IP stack will also make it easier for application developers,
+> who will not have to try to implement this in individual applications
+> using linklocal addressing (such as mDNS), thereby requiring the use of
+> raw sockets.
+
+I think we should approach this on multiple levels:
+
+- recommend filtering (source or dest) at routers (Access lists or route
+to null for destination case). This covers us from an operational
+perspective. This could be a small, stand-alone BCP.
+
+- either incorporate into linklocal or write another short document that
+updates router requirements with the desired action. This will help in
+th long term, as router vendors release new code.
+
+- decide on a plan for setting TTL or other such mechanism on the hosts
+to effect somewhat shorter-term issues. Perhaps this should be an update
+to the host requirements document?
+
+I'm willing to take care of a few short documents if we decide they
+should exist and should be stand-alone items (or help write sections if
+they're going to be in other documents).
+
+-- 
+-----------------------------------------------------------------
+Daniel Senie                                        dts@senie.com
+Amaranth Networks Inc.                    http://www.amaranth.com
+
+
+

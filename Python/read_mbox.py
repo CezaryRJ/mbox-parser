@@ -10,6 +10,30 @@ settings = read_setings()
 
 out = open("C:\\Users\\Cezary\\Documents\\GitHub\\mbox-parser\\results\\p","w")
 
+iter = box.iterkeys()
+
+for x in iter:
+
+    msg = box.get_message(x)
+
+    if not msg.is_multipart():
+
+        msg = box.get_message(x)
+        #print(msg.get_payload())
+        #exit()
+        #print(str(len(msg.get_payload())) + "\n")
+        out.write(str(len(msg.get_payload().strip())) + "\n")
+
+    else:
+
+        tmp = ""
+        for part in msg.walk():
+            if part.get_content_type() == "text/plain":
+                tmp += part.get_payload()
+		#print(mime_mail["Content"])(
+    #    print(tmp)
+        out.write(str(len(tmp.strip())) + "\n")
+
 print(len(box))
 
 out.write(str(len(box)))

@@ -1,0 +1,1653 @@
+From owner-zeroconf@merit.edu  Fri Jan  9 10:30:49 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04324
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:30:49 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id AB06A9124E; Mon,  5 Jan 2004 14:55:34 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7644E91250; Mon,  5 Jan 2004 14:55:34 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9F0199124E
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 14:55:30 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 85DE35DDDE; Mon,  5 Jan 2004 14:55:30 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 41B5E5DE03
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 14:55:30 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id i05JtSj4001006
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 11:55:29 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-231.EMEA.Sun.COM [129.156.96.231])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i05JtQm21002
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 20:55:26 +0100 (MET)
+Message-ID: <3FF9BFFF.6080607@sun.com>
+Date: Mon, 05 Jan 2004 20:50:23 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG ACTION:  ACCEPT [LL38] Remove vestigial link-local only device
+ text
+References: <3FDDB40A.3000702@sun.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Change Section 2.8 from
+
+2.8.  Link-Local Packets are Local
+
+    The non-forwarding rule means that hosts may assume that all
+    169.254/16 destination addresses are "on-link" and directly
+    reachable.  The 169.254/16 address prefix MUST NOT be subnetted.
+    This specification utilizes ARP-based address collision detection,
+    which functions by broadcasting on the local subnet. Since such
+    broadcasts are not forwarded, were subnetting to be allowed then
+    address conflicts could remain undetected.
+
+    The non-forwarding rule is important because it is expected that
+    Link-Local-only devices will often be simple devices of the kind that
+    currently use X10 [X10], USB [USB] or FireWire [1394].
+
+    The designers of these devices currently assume that they will
+    communicate only with other local devices, and this allows them to
+    produce cost-effective devices by implementing a degree of security
+    appropriate for that expected environment.  Any network gateway
+    device that blindly forwards the contents of Link-Local IPv4 packets
+    off the local link (or onto the local link) exposes simple Link-
+    Local-only devices to a much greater degree of risk than their
+    designers may have planned for.
+
+    This does not mean that Link-Local devices are forbidden from any
+    communication outside the local link.  IP hosts that implement both
+    Link-Local and conventional routable IPv4 addresses may still use
+    their routable addresses without restriction as they do today.
+
+    Simple devices that implement only a Link-Local IPv4 address may also
+    communicate with hosts outside the local link, provided that such
+    communication is mediated through a device capable of enforcing
+    appropriate security controls.  For example, a home heating
+    thermostat that implements only a Link-Local IPv4 address could be
+    controlled from a remote Web browser, by having an intermediary on
+    the local network which accepts incoming HTTP connections, uses
+    appropriate cryptographic methods to verify the authority of the
+    remote user, and then uses Link-Local IPv4 packets to communicate
+    with the thermostat to get status and issue commands.
+
+    It should be understood that this mediated communication is not
+    mandatory; it is an option afforded to designers of extremely simple
+    devices.  Any designer of a device desiring unmediated communication
+    outside the local link need only implement today's conventional IP
+    host software (e.g. a DHCP client) in order to enjoy the same degree
+    of global addressability available to other conventional IPv4 hosts.
+    Such networked devices should of course implement a degree of
+    security appropriate to being connected to a global public network.
+
+To:
+
+2.8.  Link-Local Packets are Local
+
+    The non-forwarding rule means that hosts may assume that all
+    169.254/16 destination addresses are "on-link" and directly
+    reachable.  The 169.254/16 address prefix MUST NOT be subnetted.
+    This specification utilizes ARP-based address collision detection,
+    which functions by broadcasting on the local subnet. Since such
+    broadcasts are not forwarded, were subnetting to be allowed then
+    address conflicts could remain undetected.
+
+    This does not mean that Link-Local devices are forbidden from any
+    communication outside the local link.  IP hosts that implement both
+    Link-Local and conventional routable IPv4 addresses may still use
+    their routable addresses without restriction as they do today.
+
+Please see: http://www.merit.edu/mail.archives/zeroconf/msg00003.html
+And: http://www.drizzle.org/~aboba/ZEROCONF/ll38.html
+
+Regards,
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  9 10:30:56 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04361
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:30:56 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 0712891252; Mon,  5 Jan 2004 15:06:33 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id CB2EB91253; Mon,  5 Jan 2004 15:06:32 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1D12B91252
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 15:06:30 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 053915DE05; Mon,  5 Jan 2004 15:06:30 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from sj-iport-5.cisco.com (sj-iport-5.cisco.com [171.68.10.87])
+	by segue.merit.edu (Postfix) with ESMTP id B9EAD5DE02
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 15:06:29 -0500 (EST)
+Received: from rtp-core-1.cisco.com (64.102.124.12)
+  by sj-iport-5.cisco.com with ESMTP; 05 Jan 2004 20:07:09 +0000
+Received: from jschnizl-w2k.cisco.com (rtp-vpn1-121.cisco.com [10.82.224.121])
+	by rtp-core-1.cisco.com (8.12.9/8.12.6) with ESMTP id i05K6QLF018900;
+	Mon, 5 Jan 2004 15:06:26 -0500 (EST)
+Message-Id: <4.3.2.7.2.20040105150011.0211a510@wells.cisco.com>
+X-Sender: jschnizl@wells.cisco.com
+X-Mailer: QUALCOMM Windows Eudora Version 4.3.2
+Date: Mon, 05 Jan 2004 15:06:25 -0500
+To: Erik Guttman <erik.guttman@sun.com>
+From: John Schnizlein <jschnizl@cisco.com>
+Subject: Re: WG ACTION:  ACCEPT [LL38] Remove vestigial link-local only
+  device text
+Cc: zeroconf@merit.edu
+In-Reply-To: <3FF9BFFF.6080607@sun.com>
+References: <3FDDB40A.3000702@sun.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Removal of the vestigial text is welcome. Please consider removing 
+the second paragraph also because it seems to imply that a host could 
+"implement both Link-Local and conventional routable IPv4 addresses",
+although we have a rough consensus that a host with a "conventional"
+address should not use a Link-Local address.
+
+That a host could implement these different addressing modes only
+under different circumstances, which you presumably meant, is just
+a little too subtle an interpretation for a reader who has not
+been through the protracted discussion.
+
+John
+
+At 02:50 PM 1/5/2004, Erik Guttman wrote:
+>Change Section 2.8 from
+>...
+>To:
+>
+>2.8.  Link-Local Packets are Local
+>
+>   The non-forwarding rule means that hosts may assume that all
+>   169.254/16 destination addresses are "on-link" and directly
+>   reachable.  The 169.254/16 address prefix MUST NOT be subnetted.
+>   This specification utilizes ARP-based address collision detection,
+>   which functions by broadcasting on the local subnet. Since such
+>   broadcasts are not forwarded, were subnetting to be allowed then
+>   address conflicts could remain undetected.
+>
+>   This does not mean that Link-Local devices are forbidden from any
+>   communication outside the local link.  IP hosts that implement both
+>   Link-Local and conventional routable IPv4 addresses may still use
+>   their routable addresses without restriction as they do today.
+>
+>Please see: http://www.merit.edu/mail.archives/zeroconf/msg00003.html
+>And: http://www.drizzle.org/~aboba/ZEROCONF/ll38.html
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  9 10:31:31 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04442
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:31:30 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 9A8D991230; Mon,  5 Jan 2004 14:55:23 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 49EE99124E; Mon,  5 Jan 2004 14:55:23 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BCAE391230
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 14:55:20 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9DB745DDCB; Mon,  5 Jan 2004 14:55:20 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 2B57E5DDB2
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 14:55:20 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i05JtI0H006941
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 11:55:19 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-231.EMEA.Sun.COM [129.156.96.231])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i05JtFm20958
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 20:55:16 +0100 (MET)
+Message-ID: <3FF9BFF4.2090707@sun.com>
+Date: Mon, 05 Jan 2004 20:50:12 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG ACTION: ACCEPT [LL39]  Remove multiple interface discussion from
+ probe details
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Accepting this issue has the following consequences:
+
+==================
+
+1) Change 2.2.1 text
+
+
+
+If during this period, from the beginning of the probing process
+until PROBE_MAX seconds after the last probe packet is sent, the host
+receives any ARP packet (Request *or* Reply) where the packet's
+'sender IP address' is the address being probed for, then the host
+MUST treat this address as being in use by some other host, and MUST
+select a new pseudo-random address and repeat the process.
+
+to
+
+If during this period, from the beginning of the probing process
+until PROBE_MAX seconds after the last probe packet is sent, the host
+receives any ARP packet (Request *or* Reply) on the interface where
+the probe is being performed where the packet's
+'sender IP address' is the address being probed for, then the host
+MUST treat this address as being in use by some other host, and MUST
+select a new pseudo-random address and repeat the process.
+
+-----------------------
+
+2) Change 2.2.1 text from
+
+In
+addition, if during this period the host receives any ARP probe where
+the packet's 'target IP address' is the address being probed for, and
+the packet's 'sender hardware address' is not the hardware address of
+any of the host's interfaces, then the host MUST similarly treat this
+as an address collision and select a new address as above. This can
+occur if two (or more) hosts attempt to configure the same Link-Local
+IPv4 address at the same time.
+
+To:
+
+In
+addition, if during this period the host receives any ARP probe where
+the packet's 'target IP address' is the address being probed for, and
+the packet's 'sender hardware address' is not the hardware address of
+the interfaces the host is attempting to configure, then the host
+MUST similarly treat this as an address collision and select a new
+address as above. This can occur if two (or more) hosts attempt to
+configure the same Link-Local IPv4 address at the same time.
+
+
+==================
+
+And in section 2.5, from:
+
+At any time, if a host
+receives an ARP packet (request *or* reply) where the 'sender IP
+address' is the host's own IP address, but the 'sender hardware
+address' does not match any of the host's own interface addresses,
+then this is a conflicting ARP packet, indicating an address
+collision.
+
+To:
+
+At any time, if a host receives an ARP packet (request *or* reply) on an 
+interface where the 'sender IP address' is the IP address the host has 
+configured for that interface, but the 'sender hardware address' does not 
+match the hardware address of that interface, then this is a conflicting 
+ARP packet, indicating an address collision.
+
+==================
+
+Please see: http://www.merit.edu/mail.archives/zeroconf/msg00005.html
+And: http://www.drizzle.org/~aboba/ZEROCONF/ll39.html
+
+Regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  9 10:31:32 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04476
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:31:32 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id BB4CD91250; Mon,  5 Jan 2004 14:55:45 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8274A91251; Mon,  5 Jan 2004 14:55:45 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id BC95291250
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 14:55:40 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 9ED5E5DE03; Mon,  5 Jan 2004 14:55:40 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-2.sun.com (brmea-mail-2.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 1DE185DDDE
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 14:55:40 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i05JtcqV024295
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 12:55:38 -0700 (MST)
+Received: from sun.com (vpn-129-156-96-231.EMEA.Sun.COM [129.156.96.231])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i05Jtam21008
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 20:55:36 +0100 (MET)
+Message-ID: <3FF9C00A.1080905@sun.com>
+Date: Mon, 05 Jan 2004 20:50:34 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG ACTION:  ACCEPT [LL35] Improve Abstract]
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+LL35 has been accepted.  The abstract will be changed from
+
+=== 
+http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-10.txt
+===
+
+To participate in wide-area IP networking, a host needs to be
+configured, either manually by the user or automatically from a
+source on the network such as a DHCP server. Unfortunately, such
+external configuration information may not always be available. It
+is therefore beneficial for a host to be able to depend on a useful
+subset of IP networking functions even when no configuration is
+available. This document describes how a host may automatically
+configure an interface with an IPv4 address within the 169.254/16
+prefix that is valid for communication with other devices connected
+to the same physical (or logical) link.
+
+===
+to
+===
+
+To participate in wide-area IP networking, a host needs to be
+configured with IP addresses for its interfaces, either manually by
+the user or automatically from a source on the network such as a
+DHCP server. Unfortunately, such address configuration information
+may not always be available. It is therefore beneficial for a host
+to be able to depend on a useful subset of IP networking functions
+even when no address configuration is available. This document
+describes how a host may automatically configure an interface with
+an IPv4 address within the 169.254/16 prefix that is valid for
+communication with other devices connected to the same physical (or
+logical) link.
+
+===
+
+Please see: http://www.merit.edu/mail.archives/zeroconf/msg00002.html
+And: http://www.drizzle.org/~aboba/ZEROCONF/ll35.html
+
+Erik
+
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  9 10:31:33 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04485
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:31:33 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 524DB9122F; Mon,  5 Jan 2004 14:55:03 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 222C291230; Mon,  5 Jan 2004 14:55:03 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 387709122F
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 14:55:02 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1CAE85DDCB; Mon,  5 Jan 2004 14:55:02 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 802C75DDFC
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 14:55:01 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id i05Jsxj4000698
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 11:55:00 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-231.EMEA.Sun.COM [129.156.96.231])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i05JWum19709
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 20:33:12 +0100 (MET)
+Message-ID: <3FF9BAB9.4050702@sun.com>
+Date: Mon, 05 Jan 2004 20:27:53 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG ACTION: ACCEPT [LL40]  IPv4 LL does not alter the behavior of
+ the DHCPv4 state machine
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Accepting this issue has the following implications:
+----------
+
+Add this new section:
+
+2.12 Interaction between DHCPv4 client and IPv4ll state machines
+
+A device that implements both IPv4ll and a DHCPv4 client should not alter 
+the behavior of the DHCPv4 client to accommodate IPv4 Link-Local 
+configuration. In particular configuration of an IPv4 Link-Local address, 
+whether or not a DHCP server is currently responding, is not sufficient 
+reason to unconfigure a valid DHCP lease, to stop the DHCP client from 
+attempting to acquire a new IP address, to change DHCP timeouts or to 
+change the behaviour of the DHCP state machine in any other way.
+
+Several early implementations of IPv4 link-local have modified the DHCP 
+state machine in an attempt to make IPv4 link-local more reliable, and the 
+field experience we have gained from this has shown that it does not work 
+- reliability of DHCP service is significantly reduced.   If increased 
+reliability of IPv4 link-local is desired, we recommend that the IPv4 
+link-local state machine track the DHCP client state machine and, in cases 
+where it is not certain that the DHCP-assigned address is correct, the 
+IPv4ll state machine acquire an IPv4ll address without causing the DHCP 
+state machine to relinquish its address.
+
+Further discussion of this issue is provided in [DNAv4].
+
+----------
+
+Add a reference to DNAv4
+
+----------
+
+Please see: http://www.merit.edu/mail.archives/zeroconf/msg00004.html
+And: http://www.drizzle.org/~aboba/ZEROCONF/ll40.html
+
+Regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  9 10:31:35 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04546
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:31:35 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 3AEB39131E; Mon,  5 Jan 2004 14:32:12 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EA05E9131D; Mon,  5 Jan 2004 14:32:11 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 27FA791314
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 14:32:06 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EE7B75DDCB; Mon,  5 Jan 2004 14:32:05 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-2.sun.com (brmea-mail-2.Sun.COM [192.18.98.43])
+	by segue.merit.edu (Postfix) with ESMTP id 7475F5DDCD
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 14:32:05 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i05JW2qV011154
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 12:32:03 -0700 (MST)
+Received: from sun.com (vpn-129-156-96-231.EMEA.Sun.COM [129.156.96.231])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i05JVum19627
+	for <zeroconf@merit.edu>; Mon, 5 Jan 2004 20:31:56 +0100 (MET)
+Message-ID: <3FF9BA78.4030100@sun.com>
+Date: Mon, 05 Jan 2004 20:26:48 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG ACTION:  ACCEPT [LL37] Aggressive Time-outs
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Accept the changes - as modified by discussion.
+
+===
+1)
+
+section 2.3, from
+
+time values specified above result in a delay of 8-10 seconds before
+
+to
+
+time values specified above result in a delay of 5-8 seconds before
+
+=============
+
+2)
+
+section 2.2.1, from
+
+    When ready to begin probing, the host should then wait for a random
+    time interval selected uniformly in the range PROBE_MIN to PROBE_MAX
+    seconds, and should then send three probe packets, spaced randomly,
+    PROBE_MIN to PROBE_MAX seconds apart.
+
+to
+
+    When ready to begin probing, the host should then wait for a random
+    time interval selected uniformly in the range PROBE_MIN to PROBE_MAX
+    seconds, and should then send NUM_PROBES probe packets, spaced
+    randomly, PROBE_MIN to PROBE_MAX seconds apart.
+
+section 9, from
+
+9.  Constants
+
+    The following timing constants are used in this protocol.
+
+    PROBE_MIN    1 second
+    PROBE_MAX    2 seconds
+
+to
+
+9.  Constants
+
+    The following defaults are used in this protocol.  In the future,
+    a protocol specification may be issued which recommends different
+    values for these constants for use in particular contexts.
+
+    PROBE_MIN    1 second
+    PROBE_MAX    2 seconds
+    NUM_PROBES   3
+
+=============
+
+3)
+
+Replace section 2.3,
+
+2.3.  Shorter timeouts
+
+    The time values specified above are intended for use on technologies
+    such as IEEE 802, where switches that implement Spanning Tree
+    [802.1d] often silently discard all packets for several seconds. The
+    time values specified above result in a delay of 8-10 seconds before
+    a chosen IP address may be used.  For a desktop machine on an IEEE
+    802 LAN, this may not be a great problem, but for other types of
+    device, particularly portable hand-held wireless devices, a ten-
+    second delay before networking services becomes available may not be
+    acceptable.  For this reason, shorter time values may be used on
+    network technologies that allow the device to determine when the link
+    has become active and can be reasonably trusted to deliver packets
+    reliably.  On these network technologies the recommended time values
+    are: The host should first wait for a random time interval selected
+    uniformly in the range 0-200 milliseconds, and then send four probe
+    packets, waiting 200 milliseconds after each probe, making a total
+    delay of 800-1000 milliseconds before a chosen IPv4 address may be
+    used.
+
+    Should future versions of the IEEE 802 Spanning Tree Protocol be
+    enhanced to inform clients when the link is ready to begin forwarding
+    packets, then the shorter time values may be used on these networks
+    too.
+
+with
+
+2.3.  Shorter timeouts
+
+    Network technologies may emerge for which shorter delays are
+    appropriate than those required by this document. A subsequent IETF
+    publication may be produced providing guidelines for different timer
+    settings for PROBE_MIN and PROBE_MAX on those technologies.
+
+===
+
+Please see: http://www.merit.edu/mail.archives/zeroconf/msg00001.html
+And: http://www.drizzle.org/~aboba/ZEROCONF/ll37.html
+
+Regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Fri Jan  9 10:31:36 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA04566
+	for <zeroconf-archive@lists.ietf.org>; Fri, 9 Jan 2004 10:31:35 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 345BF912D9; Mon,  5 Jan 2004 14:30:56 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id EA232912D4; Mon,  5 Jan 2004 14:30:55 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 2F37E912D2
+	for <zeroconf@trapdoor.merit.edu>; Mon,  5 Jan 2004 14:30:47 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id DB3CA5DDD4; Mon,  5 Jan 2004 14:30:46 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 787EA5DDDE
+	for <zeroconf@merit.edu>; Mon,  5 Jan 2004 14:30:44 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i05JUg0H024713;
+	Mon, 5 Jan 2004 11:30:42 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-231.EMEA.Sun.COM [129.156.96.231])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i05JUZm18056;
+	Mon, 5 Jan 2004 20:30:36 +0100 (MET)
+Message-ID: <3FF9BA28.9020400@sun.com>
+Date: Mon, 05 Jan 2004 20:25:28 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: "Elder, Alex" <Alex_Elder@adaptec.com>
+Cc: Zeroconf <zeroconf@merit.edu>
+Subject: Re: Document review blast
+References: <B38A3B4F283DBA419282705B57A2425BD27594@aime2k02.adaptec.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Alex,
+
+I respond briefly.  We will pursue this in more detail.
+
+Summary of my judgment call:
+
+a) open an issue to add some constants
+b) open an issue on timing only if there is broad WG support to do so
+c) do not open an issue
+d) open issues on
+    - announcement attack prevention
+    - clarifying the 'beginning of the algorithm'
+    - algorithm restart after fail timer
+
+e) aside from constants we should add for (a) and (d), I push back
+    and ask for support from the WG before opening issues for these
+    concerns at this late stage in the game.
+
+I would ideally open issues for every point you make, but this is a lot
+of paperwork and I'm busy - sorry!  If anyone disagrees with any of my
+assessments below, please post a message to the list.
+
+Elder, Alex wrote:
+> The following are comments on the ZEROCONF Working group Internet
+> Draft document, named "draft-ietf-zeroconf-ipv4-linklocal-10.txt".
+> 
+> I recently corresponded directly with Erik Guttman, who suggested that
+> (after reviewing the latest draft and issues list and mail list archive)
+> I submit my comments and let them be hashed out by the group.  Some
+> of the following is also related to earlier correspondence I had
+> with Stuart Cheshire regarding address conflict detection.
+> 
+> I have broken my comments into three general groups:
+> 	- General. Overall impressions
+> 	- Technical. Suggestions/observations related to technical
+> details
+> 	- Editorial. More alolng the lines of rewording suggestions,
+> etc.
+> 
+> Within the technical area, I have grouped my comments into four
+> subgroups:
+> 	- Parameterization. I think the document would benefit from more
+> 	  explicitly stating some parameters to the algorithms, even if
+> 	  those parameter values are expected to never change
+> 	- Probing intervals.  Yes, I dare to suggest changes to the
+> 	  underlying protocol, despite the recent flurry of discussion
+> 	  about "Aggressive Time-outs" (my suggestion is even more
+>         aggressive).
+> 	- Multiple interfaces.
+> 	- Other clarifications.
+> 
+> I don't expect to be able to participate very fully in this group, but
+> felt that my observations based on my recent work with the Link-Local
+> and address conflict detection stuff might be worth sharing.  I will
+> be happy to answer questions about the content of this message though.
+> 
+> 							- Alex Elder
+> 	
+> alex_elder@adaptec.com
+> 
+> General
+> -------
+> - There is a huge amount of overlap between this document and the
+>   document "draft-cheshire-ipv4-acd.txt" which covers the more general
+>   problem of address conflict detection.  It would be nice if the two
+>   jobs (LL address selection and general conflict detection) could be
+>   more clearly separated, to avoid the redundancy.  The obvious problem
+>   with this redundancy is keeping both documents mutually consistent,
+>   and already details of the content of the two documents are diverging
+> in
+>   places where they should be the same.  (Example: ACD document
+> indicates
+>   specifically that the host can begin using a claimed IP address
+> *after*
+>   it sends out an announcement packet, while the LL document currently
+>   doesn't say this quite so specifically.)
+
+Revising IPv4 LL (the protocol and the document) in such a major way
+is not an option at this point unless the current protocol or document
+is terribly broken.
+
+> - (Related to issues 30, 39.)  Generally, this document talks about
+>   support for multiple interfaces, but doesn't cover it very uniformly.
+>   As an example, In section 2.2.1, 4th paragraph, it's mentioned that
+> any
+>   ARP packet received which has a sender IP address matching the probe
+>   address indicates a conflict.  In fact, I think that should state
+>   that any such ARP packet received *on any of the host's interfaces*
+>   indicates a conflict.
+
+This has been changed with LL39.  All multiple interface issues have been
+moved to section 3 which is essentially an enumeration of issues not a
+definitive prescription for their solution.
+
+> Technical Feedback
+> ------------------
+> 
+> a) Parameterization
+> 
+> - Section 2.2.1, last paragraph.  The value "10" for the number of
+>   collisions during the probe cycle is clearly arbitrary.  That's OK,
+>   but I suggest it be called out with an explicit parameter name rather
+>   than fixing it in stone in the text (even if in reality it is fixed
+>   in stone).
+ >
+> - Section 2.2.1, last paragraph.  Similarly, the "1 address probe
+>   attempt per minute" is another arbitrary selection, and there too I
+>   suggest this rate be defined as a named parameter, even if it ends
+>   up being a permanently fixed parameter.  (This one, more than the
+>   "10" value just mentioned, seems like it might worthy of scaling
+>   based on characteristics of the underlying medium someday.)
+> 
+> - Section 2.5, paragraph (b).  The value *ten seconds* for the
+>   period over which a previous ARP message should be considered "recent"
+>   is arbitrary.  As I have suggested for other things above, I think
+>   this should be defined by an explicit parameter rather than fixing it
+>   permanently in the text (even if its value is permanently fixed).
+> 
+> - All of these parameters, their values, and their meanings, should
+>   be explicitly listed in section 9, Constants.
+
+I don't think this will be controversial.  I will open a new issue to
+cover it.
+
+> b) Probing Intervals (related to issues 31, 37)
+> 
+> - Section 2.2.1, third paragraph. What is the purpose of delaying
+>   *at least* PROBE_MIN (= 1 second) *before* anything ever gets started?
+>   The initial delay should range from 0..<something>, not from
+>   <something>..<something greater>; the extra initial delay is just a
+>   waste of time.
+
+Generally the 1-2 second range is needed due to the assumption that
+there may be a 1 second latency on links we support.  For the initial
+transmission, 0-PROBE_MIN seems reasonable to me.  Let's open an issue
+to discuss this.
+
+> - Section 2.2.1, third paragraph.  What is the benefit of having
+>   the delays between probes be random?  Isn't it sufficient for the
+>   initial delay to be random, followed by a fixed, as-small-as-possible
+>   (presumably PROBE_MIN) delay between probes?  I don't know that the
+>   subsequent random delays really improve anything with respect to
+>   simultaneous probes that an initial random delay wouldn't already
+>   mitigate.  So the suggestion is use a fixed minimum inter-probe delay
+>   rather than randomizing it.
+
+We have discussed this at length.  There are advantages to taking care
+to prevent synchronized behavior and few disadvantages to using random
+delays.  I do not believe we should reopen this issue.
+
+> - If the previous two suggestions were implemented, the range of time
+>   required for a successful claim of an unused address (using
+> PROBE_MIN=1
+>   and PROBE_MAX=2) could be cut about in half, changing from 4-8 seconds
+>   (+ 2 seconds between announcements) down to 3-4 seconds (+ 1 second
+>   between announcements).  (This would need to be reflected in the text
+>   in section 2.3.)
+
+Is 1 second between announcements enough?  If the link can have a 1
+second round trip latency...
+
+> - Section 2.2.1, third paragraph.  I think the range of the random
+>   initial delay needs not to be dependent on the inter-probe delay.
+>   The purpose of the inter-probe delay (as I understand it) is to ensure
+>   at least one probe has a chance of not being lost as a result of a
+> known
+>   design constraint (which has to do with details of the 802.3 spanning
+>   tree protocol[?]).  The purpose of the initial randomness is to avoid
+>   a flood of simultaneous probes occurring in lock-step due to, e.g.,
+>   sudden power-on of a whole network link full of interfaces.  I suggest
+>   the initial delay be a parameter separate from the inter-probe delay
+>   (currently defined by PROBE_MIN and PROBE_MAX).  Whether it should be
+>   shorter or longer than PROBE_MIN or PROBE_MAX I can't answer at this
+>   point.
+
+This section has been revised with LL37.
+
+> - Section 2.2.1, fourth paragraph.  If all inter-probe delays were
+>   PROBE_MIN (rather than the range PROBE_MIN to PROBE_MAX), I think
+>   the delay following the last probe and the first announcement can be
+>   reduced to PROBE_MIN as well.
+> 
+> So I guess my proposal would be something like:
+> 	delay(random(0..INITIAL_DELAY=1 second))
+> 	send_arp_probe(addr)           \___ repeat PROBE_COUNT=3 times
+> 	delay(PROBE_DELAY=1 second)    /
+> 	send_arp_annoucement(addr)     \___ repeat ANNOUNCE_COUNT=2
+> times
+> 	delay(ANNOUNCE_DELAY=1 second) /    (but skip delay after the
+> last)
+
+Does anyone else on the list believe we should reopen the timing
+algorithm for discussion?   [Not as WG chair:  I say its too late.]
+
+> c) Multiple interfaces
+> 
+> - Section 2.2.1, fourth paragraph.  Do *all* interfaces on a host
+>   need to be monitored for ARP's indicating an address for *any/all*
+>   of the host's interfaces (and defend the other interface IP's when
+>   a conflict is seen)?  I think they do, to avoid address ambiguity.
+>   I.e., it shouldn't be acceptable for a host's eth1 to have the same
+>   LL address as a different interface reachable via that host's eth0.
+
+See section 3 and LL39.  If you support multiple interfaces and LL
+on more than one interface address ambiguity problems exist, period.
+It is up to the implementor of this protocol to decide how to handle
+these problems.  We can only give advice.
+
+> - Perhaps related, should ARP probes, announcements, and defense
+>   announcements go out over *all* of a host's interfaces?  (I think
+>   so.)  Should defense packets go out only on the interface that
+>   received an ARP packet indicating a conflict (I think so); or on
+>   the interface whose LL IP conflicts (I think not); or on both, or
+>   on all interfaces?
+
+No.  Please refer to the numerous issues related to the security
+implications of coupling one interface's configuration to another.
+This has been rejected.
+
+> - Section 2.5, first paragraph (related to issue 15). I don't understand
+>   why the probe case differs from the ongoing monitoring case with
+>   respect to the 'sender hardware address' field in a received ARP.
+>   While probing, an ARP containing a 'sender IP address' in conflict
+> with
+>   the probe address is considered a conflict irrespective of the sender
+>   hardware address.  But in the ongoing monitoring case only such ARP's
+>   for which the sender hardware address is not one of the host's own are
+>   considered indicative of conflict.  It seems to me they should both
+>   only "care" if the packet originates from a different host (i.e., the
+>   probe case should be just as specific as the ongoing monitoring case).
+>   Is this just to support of the idea of multiple interfaces on a host
+>   being handled independently (i.e., each having no knowledge of any
+>   other's address configuration state?)
+
+That was the idea, but this text has been changed by LL39.
+
+> - Section 2.5, first paragraph.  Again, I think the host probably
+>   needs to be monitoring *all* of its interfaces for conflicts indicated
+>   for *any* of its own Link-Local addresses.  So this section should
+>   state that "At any time, if a host receives an ARP packet (request
+> *or*
+>   reply) ***on any of its interfaces*** where the ..."
+
+This has been debated back and forth.  We have agreed that the most we
+can agree on is a list of caveats for multiple interface interaction
+with the IPv4 LL protocol.
+
+> d) Other clarifications
+> 
+> - A situation could arise that is not currently addressed by the
+>   specification.  It is conceivable that a pathological rogue host
+>   only answers the ARP *announcements*, not the *probes*, in which
+>   case addresses could be claimed, then immediately (after a defense
+>   announcement) given up, restarting the process indefinitely, with
+>   no throttle action such as what exists for repeated conflicts during
+>   the probing phase.  Mitigating this probably requires a separate
+>   counter or timer that tracks how recently or how frequently *claimed*
+>   (not just probed) addresses are lost.
+
+Good point.  I will initiate an issue for this.  Please propose text.
+
+> - Last paragraph of section 2.1.  When should an address be saved
+>   to persistent storage?  I believe it should occur only after an
+>   address has been successfully claimed.  The text is not so specific,
+>   allowing (for example) a newly selected but not yet probed address to
+>   be saved to persistent storage.  This difference may not matter much
+>   in the end, but my suggested approach could avoid some unnecessary
+>   saves of the information, and adds a bit of increased value to the
+>   address saved (i.e., not only is it an address that has been selected,
+>   but it's known to have been "good" at one time).
+
+Hmm.  Does anyone else feel this should be submitted as an issue?
+
+> - Section 2.2.1, fourth paragraph.  It is not clear what constitutes
+>   "the beginning of the probing process".  I believe the probing process
+>   begins at the moment the initial random delay begins.  But as worded,
+>   it could be interpreted as, for example, beginning when the first
+>   probe packet is sent out.
+
+OK.  Please propose clearer text and we can open an issue.
+
+> - Section 2.2.1, fifth paragraph.  It is not clear from the
+>   specification at what point the failed address claim attempt counter
+>   gets reset to zero.  I believe it should be reset whenever an address
+>   gets claimed (i.e., at the point at which the first address
+> announcement
+>   gets sent).  If it isn't reset, then having "trouble" acquiring an
+>   address once will penalize all future attempts to acquire a new
+> address
+>   in the face of a post-claim collision.
+
+OK.  Please propose a reasonable restart delay for the algorithm.
+
+> - Section 2.2.1, last paragraph.  This paragraph indicates that
+>   "the host has successfully claimed the desired Link-Local IPv4
+> address"
+>   after PROBE_MAX after the last probe.  A separate draft standard
+>   (on address conflict detection) says more explicitly that the host
+>   can begin using the address once the host had sent out the first
+>   ARP announcement.  The part about when the host can begin using the
+>   address should be stated explicitly.  And the discrepancy between the
+>   two documents should be resolved (one way or another).
+
+This specification (once approved as an RFC) will be authoritative.
+
+> - Section 2.4, last paragraph.  This comment is really a set of
+>   questions, I guess rhetorical.  Why is the period between
+> announcements
+>   PROBE_MAX?  Why can't it be PROBE_MIN (is it because the maximum
+>   inter-probe delay is PROBE_MAX)?  Does this delay have anything to
+>   do with spanning tree protocol?  If not, does it have to be tied to
+>   PROBE_MAX or is that just an arbitrary way of reusing an existing
+>   parameter of the specification?  Why is this value *not* scaled by the
+>   shorter timeouts?  Perhaps the document could at least attempt to give
+>   some answers to these kinds of questions, maybe in an appendix.
+
+Links with a round trip latency of 1 second are supported (see section
+1.3).
+
+As long as this is the case, and such links can be bridged to, shorter
+timeouts make it possible that the algorithm will fail.  Perhaps this
+latency value is too high?  I have asked this question many times and
+not gotten a reply.
+
+> - Section 2.5, paragraph (b).  It think it may be important to
+>   distinguish more precisely what the differences (and similarities) are
+>   between what happens when an interface using a LL address is shut down
+>   and reconfigured due to a repeated collision, and when an interface
+>   using a LL address is shut down to reconfigure it with a routable
+>   address as mentioned in section 1.7.  One difference I note is that in
+>   the LL->routable case the "host SHOULD continue to use the Link-Local
+>   IPv4 address for communications underway" while in the LL->LL case it
+>   "MUST immediately cease using this address."
+
+This text is already straying very far into the 'advice' space.  We need
+to get the standard specification completed.
+
+
+> Editorial Feedback
+> ------------------
+
+These are minor issues, so I am asking for others on the list to
+voice their support for them before generating issues.
+
+> - The abstract, and subsequent sections repeatedly use the phrase
+>   "physical (or logical) link" without really describing why it is
+> spelled
+>   out this way until later.  Section 1.2 defines the phrase "on the same
+>   link" but never says anything about the "physical (or logical)" part.
+>   Suggest using something less awkward, such as "network link" until
+>   the more precise definition is provided.
+
+We have spent a lot of time debating terminology.  1.3 makes it very
+clear that when we discuss link we mean logical link (802) technology.
+
+> - Abstract, second paragraph, as well as end of paragraph in section
+>   1.4 at the top of page 4.  The statement is made that "This document
+>   does not recommend that Link Local IPv4 addresses and routable
+>   addresses be configured simultaneously on the same interface."  Is it
+>   intentional to not go so far as "recommends not to" rather than "does
+>   not recommend?"  It's a subtle difference; maybe this phraseology is
+>   normal for this type of document.
+
+Does anyone else find this statement unclear?
+
+> - Section 1.3, last line of page 4.  Does "round-trip latency" have
+>   a well-defined meaning?  I know what I think is meant (i.e., twice the
+>   maximum time it takes for data to travel between a pair of interfaces
+>   on the medium), I just wondered whether "round-trip latency of at most
+>   one second" has the same sort of precision as "data rates of at least
+>   1 Mbps," for example.
+
+Does anyone else find this statement unclear?
+
+> - Section 1.3, top of page 5.  The sentence starting with "Link layer
+>   technologies..." is phrased in such a way that it seems to conflict
+>   the earlier statement that this specification only applies to certain
+>   technologies.  Suggest rewording something more like:
+>       "This specification could also apply to link-layer technologies
+>       that support ARP but operate at rates below 1 Mbps or latencies
+>       above one second, if different values are specified for one or
+>       more of the following parameters described in sections 2.2, 2.3,
+>       and 2.4:" ...
+
+Does anyone else see a problem here?
+
+> - Section 1.3, top of page 5.  Suggest mentioning the names of the
+>   parameters described here (e.g., PROBE_MIN and PROBE_MAX).  Also, some
+>   (most?) of these haven't been given formal names, and in those cases
+>   I recommend names get assigned.
+
+OK - let's include this with (a).
+
+> - Section 1.3, top of page 5.  Other values that could be called out
+>   as parameters of the specification (these should probably be
+> considered
+>   technical feedback as well):
+>     - number of consecutive unsuccessful addresses probed before
+>       limiting the rate of subsequent address probes (currently 10)
+>     - Rate at which probes occur after that point (currently no
+>       more than one probe per 60 seconds)
+>     - Definition of "recent" with respect to defending an address.
+>       That is, the time period between receipt of ARP packets that
+>       indicate an address conflict, such that if the second arrives
+>       less than that time after the first the interface stops using
+>       its address, but greater than that time it continues using it.
+>       (See section 2.5(b).)  (currently 10 seconds)
+
+You already suggested this above - and we'll take this up in (a) and
+(d).
+
+> - Last paragraph in section 1.3.  (Related to issue 22)  The specificity
+>   of the value "1300" here seems strange, at least in the way it gets
+>   presented.  What's seems to be happening is that an arbitrary
+>   threshold of 2% is being chosen as reasonable, in other words, getting
+>   an address the first try 98% of the time is acceptable.  Out of this
+>   comes the precise sounding number 1300 (i.e., 2% of a 65024 addresses
+>   in the IPv4 Link-Local range) as a point where network operators
+>   should consider partitioning their network. (In fact, they should have
+>   considered this long before then...) I don't have a suggested
+>   rewording for you, I'm just making note of the fact that it didn't
+>   read well.
+
+There is a lot of history in this.  We had to choose a number.  Stuart
+did a careful assessment of the statistical consequences of this number.
+This threshhold fulfills a qualitative purpose (it works well up to this
+point) as well as the need to provide a reasonable bound.
+
+> - Section 1.7, second paragraph.  It may be possible to reword
+>   this so it's more clear you're talking about configuring BOTH a
+> routable
+>   AND a Link-Local address on the same interface at the same time.  As
+> it
+>   is it could be interpreted as maybe reconfiguring an interface that
+> has
+>   a routable address with a link local one instead (i.e., in its place).
+
+Please submit text so we can compare the two options.
+
+> - Section 2.2.1, third paragraph.  PROBE_MIN and PROBE_MAX are
+>   used here without any prior introduction.  Suggest introducing them
+>   earlier in the document (such as in section 1.3, when some parameters
+>   of the specification are first mentioned), or at least earlier in
+>   this section.
+
+1.3 is the applicability section.  Does anyone else think that these
+constants need explanation?
+
+> - Section 2.2.1, fourth paragraph.  The term "address collision" is
+>   first used here.  I know it's interchangeable with "address conflict"
+>   (which was first used in section 1.3).  However, I recommend a single
+>   term be consistently throughout the document.  I would recommend using
+>   "conflict," given the historical significance of the term "collision"
+>   in the Ethernet world.  I also would try to define the term in such
+>   a way that it includes the condition of finding an address being
+>   probed already in use by another interface, as well as an when an
+>   already-claimed address is found to be in use.  This way a common term
+>   would be meaningful in both sections of the document to mean, more or
+>   less, that an address you're concerned with is in use by another host.
+
+Does anyone else feel collision needs to be changed to conflict?
+
+> - Section 2.3.  This whole section was obviously not updated
+>   at the time the PROBE_MIN and PROBE_MAX concepts were added earlier
+>   in the document.  The section should be reconsidered in its entirety
+>   so I won't really give much suggestion how to rewrite it.  But I will
+>   point out that the 8-10 seconds is now wrong given the assumed values
+>   of PROBE_MIN and PROBE_MAX and the number of probes now specified.
+
+No longer a problem: See LL37.
+
+> - Section 2.3.  It would be nice to have a more specific reference
+>   that explains (or refers to an explanation of) why 802.1d STP "often
+>   silently discard[s] all packets for several seconds."
+
+No longer a problem: See LL37.
+
+> - Section 2.5, first paragraph.  This section is only talking
+>   about a host's *link local* addresses, and should specify that.
+>   Specifically, near the middle it says "where the 'sender IP address'
+>   is the host's own IP address, but..." and it should read something
+>   more like "where the 'sender IP address' is one of the host's own IPv4
+>   Link-Local addresses, but...".
+
+Does anyone else agree?
+
+> - Section 2.5, paragraph (b), second-to-last sentence.  Replace
+>   "as described above" with "using the process described in sections
+>   2.2 and 2.4, above" to be more clear about what is being referred to.
+
+Does anyone else agree?
+
+
+
+Best regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Mon Jan 26 15:48:01 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA19822
+	for <zeroconf-archive@lists.ietf.org>; Mon, 26 Jan 2004 15:48:01 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 66ED291268; Mon, 26 Jan 2004 15:47:51 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 3495B9126A; Mon, 26 Jan 2004 15:47:51 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 4702D91268
+	for <zeroconf@trapdoor.merit.edu>; Mon, 26 Jan 2004 15:47:50 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 344BA5DDB5; Mon, 26 Jan 2004 15:47:50 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 9EDAD5DD93
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 15:47:49 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.10/8.12.9) with ESMTP id i0QKllbs022167
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 13:47:48 -0700 (MST)
+Received: from sun.com (vpn-129-156-96-132.EMEA.Sun.COM [129.156.96.132])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i0QKljm10219
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 21:47:46 +0100 (MET)
+Message-ID: <40157CAA.9090109@sun.com>
+Date: Mon, 26 Jan 2004 21:46:34 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: changes made between draft 10 and draft 11.
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+draft-ietf-zeroconf-ipv4-linklocal-11.txt is now available.
+
+The latest draft of the IPv4 Link-Local Configuration specification
+includes the following changes
+
+LL35 Improve Abstract
+LL37 Aggressive Time-outs
+LL38 Remove vestigial link-local only device text
+LL39 Remove multiple interface discussion from probe details
+LL40 IPv4 LL does not alter the behavior of the DHCPv4 state machine
+
+The following changes were also made, but without opening an issue or
+issuing a last call.  These are assumed by the document editors to be
+uncontroversial.  If you have any comments, by all means voice them.
+
+1. Alex Elder suggested that additional constants be added
+    for the following values:
+
+  Text was:
+    A host should maintain a counter of the number of address collisions
+    it has experienced in the process of trying to acquire an address,
+    and if the number of collisions exceeds ten then the host MUST limit
+    the rate at which it probes for new addresses to no more than one new
+    address per minute.
+
+  Text becomes:
+
+    A host should maintain a counter of the number of address collisions
+    it has experienced in the process of trying to acquire an address,
+    and if the number of collisions exceeds MAX_COLLISIONS then the host
+    MUST limit the rate at which it probes for new addresses to no more
+    than one new address per RATE_LIMIT_INTERVAL.
+
+  Constants now include
+
+    MAX_COLLISIONS        10
+    RATE_LIMIT_INTERVAL   60 seconds
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Mon Jan 26 15:48:32 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA19848
+	for <zeroconf-archive@lists.ietf.org>; Mon, 26 Jan 2004 15:48:31 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id 64B309126A; Mon, 26 Jan 2004 15:47:55 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 346959126B; Mon, 26 Jan 2004 15:47:55 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id E84839126A
+	for <zeroconf@trapdoor.merit.edu>; Mon, 26 Jan 2004 15:47:52 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id D118E5DDB6; Mon, 26 Jan 2004 15:47:52 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 639D75DDB5
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 15:47:52 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i0QKlo0H016418
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 12:47:51 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-132.EMEA.Sun.COM [129.156.96.132])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i0QKlkm10221
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 21:47:46 +0100 (MET)
+Message-ID: <40157CAB.7090904@sun.com>
+Date: Mon, 26 Jan 2004 21:46:35 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: WG action: 1 week discussion of [LL36]  Combine and rework section
+ 1.7 and 2.11 to be clearer
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+Please respond to the following proposal in the next week.  Comments
+should be sent to the zeroconf@merit.edu mailing list.  A determination
+regarding this issue will be determined on Feb 2, 2004.
+
+The proposal is based on the discussion on issue LL36.
+
+A changed candidate version of the document is available for preview
+at
+
+http://www.drizzle.org/~aboba/ZEROCONF/draft-ietf-zeroconf-ipv4-linklocal-12.txt
+
+Changes
+
+(1) Remove section 1.7 Multiple Addresses per Interface
+
+    Having addresses of multiple different scopes assigned to an
+    interface, with no adequate way to determine in what circumstances
+    each address should be used, leads to complexity for applications and
+    confusion for users.  A host with an address on a link can
+    communicate with all other devices on that link, whether those
+    devices use Link-Local addresses, or routable addresses.
+
+    For this reason, a host that obtains, or is configured with, a
+    routable address on an interface, SHOULD NOT attempt to configure a
+    Link-Local IPv4 address on the same interface.
+
+    Where a Link-Local IPv4 address has been configured on an interface,
+    and a routable address is later configured on the same interface, the
+    host MUST always use the routable address when initiating new
+    communications, and MUST cease advertising the availability of the
+    Link-Local IPv4 address through whatever mechanisms that address had
+    been made known to others.
+
+    A host SHOULD continue to use the Link-Local IPv4 address for
+    communications underway when the routable address was configured, and
+    MAY continue to accept new communications addressed to the Link-Local
+    IPv4 address.
+
+(2) Remove section 2.11 Transition from Link-Local to Routable Address
+
+    As discussed in Section 1.7, use of a routable address is preferred
+    to assignment of a Link-Local IPv4 address. A Link-Local IPv4 address
+    can be configured due to transient failures, such as incomplete link-
+    layer authentication, spanning tree convergence issues, or because a
+    DHCP server failed to respond to an initial query, or is inoperative
+    for some time.
+
+    Where a Link-Local IPv4 address is assigned due to a transient
+    failure, experience has shown that five minutes (see Appendix A.2)
+    may be too long an interval to wait prior to attempting to configure
+    with DHCP.  This document does not specify a strategy for quickly
+    recovering a routable address in situations where a Link-Local IPv4
+    address is assigned due to a transient failure. In situations where
+    many hosts are present on a single subnet, frequent attempts to
+    contact the DHCP server could result in a heavy traffic load. Further
+    discussion of this issue is provided in [DNAv4].
+
+(3) Add a section after "Communication with Routable  Addresses"
+
+1.x.  When to configure a Link-Local IPv4 address
+
+    Having addresses of multiple different scopes assigned to an
+    interface, with no adequate way to determine in what circumstances
+    each address should be used, leads to complexity for applications and
+    confusion for users.  A host with an address on a link can
+    communicate with all other devices on that link, whether those
+    devices use Link-Local addresses, or routable addresses.  For these
+    reasons, a host SHOULD NOT have both a valid routable address and a
+    Link-Local IPv4 address configure on the same interface.
+
+    A routable address is any address that is:
+
+    * a unicast address
+    * not a loopback address
+    * not contained within the 169.254/16 prefix reserved for Link-Local
+       IPv4 addresses
+
+    A "valid routable address" is a routable address that passes the
+    reachability test described in section 2 of "Detection of Network
+    Attachment (DNA) in IPv4" [DNAv4].
+
+    The assignment and use of a Link-Local IPv4 address on an interface
+    is based solely on the state of the interface, and is independent of
+    any other protocols such as DHCP.  A host MUST NOT alter its behavior
+    and use of other protocols such as DHCP because the host has assigned
+    a Link-Local IPv4 address to an interface.
+
+    When an interface has a valid routable address configured on an
+    interface, the host SHOULD NOT also assign a Link-Local IPv4 address
+    to that interface.
+
+    If a host finds that an interface that was previous configured with a
+    Link-Local IPv4 address is now configured with a valid routable
+    address, the host MUST always use the routable address when
+    initiating new communications, and MUST cease advertising the
+    availability of the Link-Local IPv4 address through whatever
+    mechanisms that address had been made known to others.  The host
+    SHOULD continue to use the Link-Local IPv4 address for communications
+    underway when the routable address was configured, and MAY continue
+    to accept new communications addressed to the Link-Local IPv4
+    address.  Ways in which a valid routable address might be configured
+    for the interface include:
+
+    * Manual configuration
+    * Address assignment through DHCP
+    * Roaming of the host to a network on which a routable address
+       assigned to the interface is valid
+
+    If a host finds that an interface that was previously configured with
+    a valid routable address no longer has a valid routable address, the
+    host MAY identify a usable Link-Local IPv4 address (as described in
+    section 2) and assign that address to the interface.  Ways in which a
+    valid routable address might no longer be assigned to an interface
+    include:
+
+    * Removal of the address from the interface through manual
+       configuration
+    * Expiration of the lease on the address assigned through DHCP
+    * Roaming of the host to a new network on which the address is no
+       longer valid.
+
+    Further discussion of the issues in detection of transient failures
+    and the use of DHCP in response to network attachment failure is
+    provided in "Detection of Network Attachment (DNA) in IPv4". [DNAv4]
+
+
+
+From owner-zeroconf@merit.edu  Mon Jan 26 15:50:42 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA19904
+	for <zeroconf-archive@lists.ietf.org>; Mon, 26 Jan 2004 15:50:41 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id B8F159126B; Mon, 26 Jan 2004 15:50:33 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 8CBFB9126D; Mon, 26 Jan 2004 15:50:33 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 321FA9126B
+	for <zeroconf@trapdoor.merit.edu>; Mon, 26 Jan 2004 15:50:31 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id 1470E5DDFF; Mon, 26 Jan 2004 15:50:31 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 9B4AC5DDD8
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 15:50:30 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i0QKoS0H017939
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 12:50:29 -0800 (PST)
+Received: from sun.com (vpn-129-156-96-132.EMEA.Sun.COM [129.156.96.132])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i0QKoRm10570
+	for <zeroconf@merit.edu>; Mon, 26 Jan 2004 21:50:27 +0100 (MET)
+Message-ID: <40157D4C.5010509@sun.com>
+Date: Mon, 26 Jan 2004 21:49:16 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: zeroconf@merit.edu
+Subject: let's wrap this up
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+
+The only issue that is currently open is LL36.  Let's complete
+this discussion in the next week and then hand the document over
+to the IESG before the i-d cutoff to take it to IETF last call.
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Tue Jan 27 13:26:47 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA17192
+	for <zeroconf-archive@lists.ietf.org>; Tue, 27 Jan 2004 13:26:46 -0500 (EST)
+Received: by trapdoor.merit.edu (Postfix)
+	id AFB749128F; Tue, 27 Jan 2004 13:26:38 -0500 (EST)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 793B791291; Tue, 27 Jan 2004 13:26:38 -0500 (EST)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 169069128F
+	for <zeroconf@trapdoor.merit.edu>; Tue, 27 Jan 2004 13:26:36 -0500 (EST)
+Received: by segue.merit.edu (Postfix)
+	id EC52A5DDA1; Tue, 27 Jan 2004 13:26:35 -0500 (EST)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 7DC0E5DE73
+	for <zeroconf@merit.edu>; Tue, 27 Jan 2004 13:26:35 -0500 (EST)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.10/8.12.9) with ESMTP id i0RIQUbs017085;
+	Tue, 27 Jan 2004 11:26:30 -0700 (MST)
+Received: from sun.com (vpn-129-152-200-82.East.Sun.COM [129.152.200.82])
+	by hs-ehdb03-01.Germany.Sun.COM (8.11.7p1+Sun/8.11.7/ENSMAIL,v2.2) with ESMTP id i0RIQPm28694;
+	Tue, 27 Jan 2004 19:26:26 +0100 (MET)
+Message-ID: <4016AD08.6040107@sun.com>
+Date: Tue, 27 Jan 2004 19:25:12 +0100
+From: Erik Guttman <erik.guttman@sun.com>
+User-Agent: Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0
+X-Accept-Language: en-us, de, fr
+MIME-Version: 1.0
+To: Erik Guttman <erik.guttman@sun.com>
+Cc: zeroconf@merit.edu, rdroms@cisco.com
+Subject: Re: WG action: 1 week discussion of [LL36]  Combine and rework section
+ 1.7 and 2.11 to be clearer
+References: <40157CAB.7090904@sun.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: 7bit
+
+Folks,
+
+I neglected to mention that the text of draft 12 differs from that which
+was discussed previously between Ralph Droms and Phillip Nye in that
+removes mention of Radius.
+
+Bernard Aboba wrote:
+ > I removed the mention of RADIUS, and also fixed the prefix to be
+ > "169.254/16" instead of the /32 that was there.
+
+Erik
+
+Erik Guttman wrote:
+> 
+> Please respond to the following proposal in the next week.  Comments
+> should be sent to the zeroconf@merit.edu mailing list.  A determination
+> regarding this issue will be determined on Feb 2, 2004.
+> 
+> The proposal is based on the discussion on issue LL36.
+> 
+> A changed candidate version of the document is available for preview
+> at
+> 
+> http://www.drizzle.org/~aboba/ZEROCONF/draft-ietf-zeroconf-ipv4-linklocal-12.txt 
+> 
+> 
+> Changes
+> 
+> (1) Remove section 1.7 Multiple Addresses per Interface
+> 
+>    Having addresses of multiple different scopes assigned to an
+>    interface, with no adequate way to determine in what circumstances
+>    each address should be used, leads to complexity for applications and
+>    confusion for users.  A host with an address on a link can
+>    communicate with all other devices on that link, whether those
+>    devices use Link-Local addresses, or routable addresses.
+> 
+>    For this reason, a host that obtains, or is configured with, a
+>    routable address on an interface, SHOULD NOT attempt to configure a
+>    Link-Local IPv4 address on the same interface.
+> 
+>    Where a Link-Local IPv4 address has been configured on an interface,
+>    and a routable address is later configured on the same interface, the
+>    host MUST always use the routable address when initiating new
+>    communications, and MUST cease advertising the availability of the
+>    Link-Local IPv4 address through whatever mechanisms that address had
+>    been made known to others.
+> 
+>    A host SHOULD continue to use the Link-Local IPv4 address for
+>    communications underway when the routable address was configured, and
+>    MAY continue to accept new communications addressed to the Link-Local
+>    IPv4 address.
+> 
+> (2) Remove section 2.11 Transition from Link-Local to Routable Address
+> 
+>    As discussed in Section 1.7, use of a routable address is preferred
+>    to assignment of a Link-Local IPv4 address. A Link-Local IPv4 address
+>    can be configured due to transient failures, such as incomplete link-
+>    layer authentication, spanning tree convergence issues, or because a
+>    DHCP server failed to respond to an initial query, or is inoperative
+>    for some time.
+> 
+>    Where a Link-Local IPv4 address is assigned due to a transient
+>    failure, experience has shown that five minutes (see Appendix A.2)
+>    may be too long an interval to wait prior to attempting to configure
+>    with DHCP.  This document does not specify a strategy for quickly
+>    recovering a routable address in situations where a Link-Local IPv4
+>    address is assigned due to a transient failure. In situations where
+>    many hosts are present on a single subnet, frequent attempts to
+>    contact the DHCP server could result in a heavy traffic load. Further
+>    discussion of this issue is provided in [DNAv4].
+> 
+> (3) Add a section after "Communication with Routable  Addresses"
+> 
+> 1.x.  When to configure a Link-Local IPv4 address
+> 
+>    Having addresses of multiple different scopes assigned to an
+>    interface, with no adequate way to determine in what circumstances
+>    each address should be used, leads to complexity for applications and
+>    confusion for users.  A host with an address on a link can
+>    communicate with all other devices on that link, whether those
+>    devices use Link-Local addresses, or routable addresses.  For these
+>    reasons, a host SHOULD NOT have both a valid routable address and a
+>    Link-Local IPv4 address configure on the same interface.
+> 
+>    A routable address is any address that is:
+> 
+>    * a unicast address
+>    * not a loopback address
+>    * not contained within the 169.254/16 prefix reserved for Link-Local
+>       IPv4 addresses
+> 
+>    A "valid routable address" is a routable address that passes the
+>    reachability test described in section 2 of "Detection of Network
+>    Attachment (DNA) in IPv4" [DNAv4].
+> 
+>    The assignment and use of a Link-Local IPv4 address on an interface
+>    is based solely on the state of the interface, and is independent of
+>    any other protocols such as DHCP.  A host MUST NOT alter its behavior
+>    and use of other protocols such as DHCP because the host has assigned
+>    a Link-Local IPv4 address to an interface.
+> 
+>    When an interface has a valid routable address configured on an
+>    interface, the host SHOULD NOT also assign a Link-Local IPv4 address
+>    to that interface.
+> 
+>    If a host finds that an interface that was previous configured with a
+>    Link-Local IPv4 address is now configured with a valid routable
+>    address, the host MUST always use the routable address when
+>    initiating new communications, and MUST cease advertising the
+>    availability of the Link-Local IPv4 address through whatever
+>    mechanisms that address had been made known to others.  The host
+>    SHOULD continue to use the Link-Local IPv4 address for communications
+>    underway when the routable address was configured, and MAY continue
+>    to accept new communications addressed to the Link-Local IPv4
+>    address.  Ways in which a valid routable address might be configured
+>    for the interface include:
+> 
+>    * Manual configuration
+>    * Address assignment through DHCP
+>    * Roaming of the host to a network on which a routable address
+>       assigned to the interface is valid
+> 
+>    If a host finds that an interface that was previously configured with
+>    a valid routable address no longer has a valid routable address, the
+>    host MAY identify a usable Link-Local IPv4 address (as described in
+>    section 2) and assign that address to the interface.  Ways in which a
+>    valid routable address might no longer be assigned to an interface
+>    include:
+> 
+>    * Removal of the address from the interface through manual
+>       configuration
+>    * Expiration of the lease on the address assigned through DHCP
+>    * Roaming of the host to a new network on which the address is no
+>       longer valid.
+> 
+>    Further discussion of the issues in detection of transient failures
+>    and the use of DHCP in response to network attachment failure is
+>    provided in "Detection of Network Attachment (DNA) in IPv4". [DNAv4]
+> 
+
+
+-- 
+  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    Erik Guttman   -   N1 Manageability   -   Sun Microsystems
+       cell: +49 172 865 5497   -   time zone: CET (GMT+1)
+
+
+

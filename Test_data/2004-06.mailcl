@@ -1,0 +1,3351 @@
+From owner-zeroconf@merit.edu  Tue Jun  1 05:55:37 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA11109
+	for <zeroconf-archive@lists.ietf.org>; Tue, 1 Jun 2004 05:55:36 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D059591222; Tue,  1 Jun 2004 05:55:29 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9BFB09124C; Tue,  1 Jun 2004 05:55:29 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 9202D91222
+	for <zeroconf@trapdoor.merit.edu>; Tue,  1 Jun 2004 05:55:28 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 78A13597C0; Tue,  1 Jun 2004 05:55:28 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server30.ukservers.net (server30.ukservers.net [217.10.138.207])
+	by segue.merit.edu (Postfix) with ESMTP id D87625979F
+	for <zeroconf@merit.edu>; Tue,  1 Jun 2004 05:55:27 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server30.ukservers.net (Postfix) with ESMTP
+	id 9D5431BB3B4; Tue,  1 Jun 2004 10:55:04 +0100 (BST)
+Message-ID: <012c01c447be$8359df40$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Bernard Aboba" <aboba@internaut.com>, <zeroconf@merit.edu>
+References: <Pine.LNX.4.56.0405271443100.6595@internaut.com>
+Subject: Re: WG ACTION: 1 week continued discussion [LL70] DNAv4 normative or informative?
+Date: Tue, 1 Jun 2004 10:55:04 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-Mimeole: Produced By Microsoft MimeOLE V6.00.2800.1165
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+> From: "Bernard Aboba" <aboba@internaut.com>
+>
+> >   | I think the resolution of LL 58 re-introduces a normative
+> >   | dependency on [DNAv4].
+> >
+> > Yes (that was always there), but ...
+> >
+> >   |    A "valid routable address" is a routable address which is =
+either
+> >   |    statically assigned or whose lease has not expired and that =
+passes
+> >   |    the reachability test described in section 2 of "Detection of =
+Network
+> >   |    Attachment (DNA) in IPv4" [DNAv4].
+> >
+> > does nothing to change that, it is still a normative reference.
+>=20
+> The proposal is to make this a definition in the terminology section, =
+and
+> remove all normative uses of the term "valid".   With the changes, the
+> only use of the term in the document is to describe ways in which an
+> address *might* be configured.
+
+There are two things which may occur to initiate a change to or from =
+using IPv4LL.
+
+First are events internal to the host/stack. I think of these as =
+"configuration" changes and they include manual configuration changes =
+and re-configuration by the DHCP client as a result of lease change or =
+expiry. These events are easily detected and their effects fairly easily =
+predicted or established. I find the term "configuration" strongly =
+suggests this type of change in my mind and this is why I do not like =
+applying it for changes which do not involve explicit internal events.
+
+Second are context changes which are external to the host/stack and =
+include roaming to different networks or other changes to the network =
+context such as router changes. External events are not so easy to =
+detect and their effects may not be so easily established nor clear cut =
+as discussion has shown.
+
+In the case of external context changes we have been unable to comne up =
+with a hard and fast algorithm to say when a routable address changes =
+between "useful" and "useless" - indeed they are not even distinct =
+states but fall on a continuum. The current draft (14) uses DNAv4 as a =
+test to distinguish between "useful" and "useless", but discussion has =
+shown that the DNAv4 test is not definitive (and therefore should not be =
+normative). The best solution is make this clear in the text.
+
+I find the use of "configured" to mean external context changes very =
+confusing and I also recognise though that "valid" may lead to confusion =
+(e.g. with "valid lease" in DHCP).
+
+I propose rewording your latest text as below. I hope that in editing =
+your text I have made this section clearer. I have removed most use of =
+"configured" and all use of "valid". I have added a little to make clear =
+that these are transitional cases only. I have introduced and defined =
+the term "operable" and made plain that there is no easy rule to =
+determine operability. There is no need to define "valid" or anything =
+extra in the terminology section at all.
+
+The revised section becomes:
+
+1.9.  When to configure a Link-Local IPv4 address
+
+   Having addresses of multiple different scopes assigned to an
+   interface, with no adequate way to determine in what circumstances
+   each address should be used, leads to complexity for applications and
+   confusion for users.  A host with an address on a link can =
+communicate
+   with all other devices on that link, whether those devices use Link-
+   Local addresses, or routable addresses.  For these reasons, a host
+   SHOULD NOT have both a routable address and an IPv4 Link-Local =
+address
+   configured on the same interface. When an operable routable address =
+is
+   available on an interface, the host SHOULD NOT also assign an IPv4
+   Link-Local address on that interface. However, during transition (in
+   either direction) between using routable and IPv4 Link-Local =
+addresses
+   both MAY be in use at once subject to these rules.
+
+   The assignment of an IPv4 Link-Local address on an interface is based
+   solely on the state of the interface, and is independent of any other
+   protocols such as DHCP.  A host MUST NOT alter its behavior and use =
+of
+   other protocols such as DHCP because the host has assigned an IPv4
+   Link-Local address to an interface.
+
+   The term "operable address" is used to mean an address which works
+   effectively for communication in the current network context (see =
+below).
+
+   If a host finds that an interface that was previously configured with
+   an IPv4 Link- Local address now has an operable routable address
+   available the host MUST use the routable address when initiating new
+   communications, and MUST cease advertising the availability of the
+   IPv4 Link-Local address through whatever mechanisms that address had
+   been made known to others.  The host SHOULD continue to use the IPv4
+   Link-Local address for communications already underway, and MAY
+   continue to accept new communications addressed to the IPv4 =
+Link-Local
+   address. Ways in which an operable routable address might become
+   available on an interface include:
+
+   * Manual configuration
+   * Address assignment through DHCP
+   * Roaming of the host to a network on which an existing address
+      becomes operable.
+
+   If a host finds that an interface no longer has an operable routable
+   address available, the host MAY identify a usable IPv4 Link-Local
+   address (as described in section 2) and assign that address to the
+   interface. Ways in which an operable routable address might cease to
+   be available on an interface include:
+
+   * Removal of the address from the interface through manual
+      configuration
+   * Expiration of the lease on the address assigned through DHCP
+   * Roaming of the host to a new network on which the address is no
+      longer operable.
+
+   The determination by the system of whether an address is "operable" =
+is
+   not clear cut and many changes in the system context (e.g.
+   router changes) may affect the operability of an address. In
+   particular roaming of a host from one network to another is likely - =
+but
+   not certain - to change the operability of a configured address but
+   detecting such a move is not always trivial.
+
+   A useful guide is provided by the reachability test described in
+   "Detection of Network Attachment (DNA) in IPv4" [DNAv4] which also
+   provides further discussion of address assignment.
+
+Philip
+
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun  1 09:01:14 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA25824
+	for <zeroconf-archive@lists.ietf.org>; Tue, 1 Jun 2004 09:01:14 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B3BE69125D; Tue,  1 Jun 2004 09:01:05 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7F3479125E; Tue,  1 Jun 2004 09:01:05 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 52D269125D
+	for <zeroconf@trapdoor.merit.edu>; Tue,  1 Jun 2004 09:01:04 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 40DC759709; Tue,  1 Jun 2004 09:01:04 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.sttnwaho.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id 60AFB59565
+	for <zeroconf@merit.edu>; Tue,  1 Jun 2004 09:01:03 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id i51D30a29186;
+	Tue, 1 Jun 2004 06:03:00 -0700
+Date: Tue, 1 Jun 2004 06:03:00 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: Philip Nye <philip@engarts.com>
+Cc: zeroconf@merit.edu
+Subject: Re: WG ACTION: 1 week continued discussion [LL70] DNAv4 normative
+ or informative?
+In-Reply-To: <012c01c447be$8359df40$131010ac@aldebaran>
+Message-ID: <Pine.LNX.4.56.0406010527230.26801@internaut.com>
+References: <Pine.LNX.4.56.0405271443100.6595@internaut.com>
+ <012c01c447be$8359df40$131010ac@aldebaran>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> I propose rewording your latest text as below. I hope that in editing your text I have made this
+> section clearer. I have removed most use of "configured" and all use of
+> "valid". I have added a little to make clear that these are transitional
+> cases only. I have introduced and defined the term "operable" and made
+> plain that there is no easy rule to determine operability. There is no
+> need to define "valid" or anything extra in the terminology section at
+> all.
+
+The change from "valid" to "operable" is helpful, I think.  Comments below.
+
+>    For these reasons, a host
+>    SHOULD NOT have both a routable address and an IPv4 Link-Local address
+>    configured on the same interface.
+
+This advice no longer applies if one of those addresses is not "operable",
+right?
+
+>    When an operable routable address is
+>    available on an interface, the host SHOULD NOT also assign an IPv4
+>    Link-Local address on that interface. However, during transition (in
+>    either direction) between using routable and IPv4 Link-Local addresses
+>    both MAY be in use at once subject to these rules.
+
+Should it say "these rules:"?  If so, perhaps the rules should be
+bulleted.
+
+>    The assignment of an IPv4 Link-Local address on an interface is based
+>    solely on the state of the interface, and is independent of any other
+>    protocols such as DHCP.  A host MUST NOT alter its behavior and use of
+>    other protocols such as DHCP because the host has assigned an IPv4
+>    Link-Local address to an interface.
+>
+>    The term "operable address" is used to mean an address which works
+>    effectively for communication in the current network context (see below).
+>    If a host finds that an interface that was previously configured with
+>    an IPv4 Link- Local address now has an operable routable address
+>    available the host MUST use the routable address when initiating new
+>    communications, and MUST cease advertising the availability of the
+>    IPv4 Link-Local address through whatever mechanisms that address had
+>    been made known to others.  The host SHOULD continue to use the IPv4
+>    Link-Local address for communications already underway, and MAY
+>    continue to accept new communications addressed to the IPv4 Link-Local
+>    address. Ways in which an operable routable address might become
+>    available on an interface include:
+>
+>    * Manual configuration
+>    * Address assignment through DHCP
+>    * Roaming of the host to a network on which an existing address
+>       becomes operable.
+
+Does this have the same meaning as "a previously assigned address becomes
+operable"?
+
+Here's a proposed version, with changes:
+
+1.9.  When to configure a Link-Local IPv4 address
+
+   Having addresses of multiple different scopes assigned to an
+   interface, with no adequate way to determine in what circumstances
+   each address should be used, leads to complexity for applications and
+   confusion for users.  A host with an address on a link can communicate
+   with all other devices on that link, whether those devices use Link-
+   Local addresses, or routable addresses.  For these reasons, a host
+   SHOULD NOT have both an operable routable address and an IPv4
+   Link-Local address configured on the same interface. The term
+   "operable address" is used to mean an address which works
+   effectively for communication in the current network context
+   (see below).  When a operable routable address is available
+   on an interface, the host SHOULD NOT also assign an IPv4
+   Link-Local address on that interface.  However, during the
+   transition (in either direction) between using routable and IPv4
+   Link-Local addresses both MAY be in use at once subject to these rules:
+
+   1. The assignment of an IPv4 Link-Local address on an interface is
+      based solely on the state of the interface, and is independent of
+      any other protocols such as DHCP.  A host MUST NOT alter its
+      behavior and use of other protocols such as DHCP because the host
+      has assigned an IPv4 Link-Local address to an interface.
+
+   2. If a host finds that an interface that was previously configured
+      with an IPv4 Link-Local address now has an operable routable
+      address available, the host MUST use the routable address when
+      initiating new communications, and MUST cease advertising the
+      availability of the IPv4 Link-Local address through whatever
+      mechanisms that address had been made known to others.  The host
+      SHOULD continue to use the IPv4 Link-Local address for
+      communications already underway, and MAY continue to accept new
+      communications addressed to the IPv4 Link-Local address. Ways in
+      which an operable routable address might become
+      available on an interface include:
+
+         * Manual configuration
+         * Address assignment through DHCP
+         * Roaming of the host to a network on which a previously
+           assigned address becomes operable.
+
+   3. If a host finds that an interface no longer has an operable routable
+      address available, the host MAY identify a usable IPv4 Link-Local
+      address (as described in section 2) and assign that address to the
+      interface. Ways in which an operable routable address might cease to
+      be available on an interface include:
+
+         * Removal of the address from the interface through manual
+           configuration
+         * Expiration of the lease on the address assigned through DHCP
+         * Roaming of the host to a new network on which the address is no
+           longer operable.
+
+   The determination by the system of whether an address is "operable" is
+   not clear cut and many changes in the system context (e.g.
+   router changes) may affect the operability of an address. In
+   particular roaming of a host from one network to another is likely -
+   but not certain - to change the operability of a configured address but
+   detecting such a move is not always trivial.
+
+   "Detection of Network Attachment (DNA) in IPv4" [DNAv4]
+   provides further discussion of address assignment and operability
+   determination.
+
+
+From owner-zeroconf@merit.edu  Tue Jun  1 09:27:41 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA28057
+	for <zeroconf-archive@lists.ietf.org>; Tue, 1 Jun 2004 09:27:40 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 9AE4D9125E; Tue,  1 Jun 2004 09:27:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 666359125F; Tue,  1 Jun 2004 09:27:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5E8A89125E
+	for <zeroconf@trapdoor.merit.edu>; Tue,  1 Jun 2004 09:27:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 49D5A59803; Tue,  1 Jun 2004 09:27:31 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server30.ukservers.net (server30.ukservers.net [217.10.138.207])
+	by segue.merit.edu (Postfix) with ESMTP id C9689597F9
+	for <zeroconf@merit.edu>; Tue,  1 Jun 2004 09:27:30 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server30.ukservers.net (Postfix) with ESMTP
+	id 781671BB48E; Tue,  1 Jun 2004 14:27:31 +0100 (BST)
+Message-ID: <001301c447dc$30de2aa0$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Bernard Aboba" <aboba@internaut.com>
+Cc: "Zeroconf Working Group" <zeroconf@merit.edu>
+References: <Pine.LNX.4.56.0405271443100.6595@internaut.com> <012c01c447be$8359df40$131010ac@aldebaran> <Pine.LNX.4.56.0406010527230.26801@internaut.com>
+Subject: Re: WG ACTION: 1 week continued discussion [LL70] DNAv4 normative or informative?
+Date: Tue, 1 Jun 2004 14:27:30 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-Mimeole: Produced By Microsoft MimeOLE V6.00.2800.1165
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+Bernard,
+
+The answer to your questions is that you are correct in each case.
+
+The newest text you propose below is an improvement on my last proposal =
+for the reasons you give - and the DNAv4 reference is now clearly =
+non-normative.
+
+This now looks good to me.
+
+Philip
+
+----- Original Message -----=20
+From: "Bernard Aboba" <aboba@internaut.com>
+To: "Philip Nye" <philip@engarts.com>
+Cc: <zeroconf@merit.edu>
+Sent: Tuesday, June 01, 2004 2:03 PM
+Subject: Re: WG ACTION: 1 week continued discussion [LL70] DNAv4 =
+normative or informative?
+
+
+> > I propose rewording your latest text as below. I hope that in =
+editing your text I have made this
+> > section clearer. I have removed most use of "configured" and all use =
+of
+> > "valid". I have added a little to make clear that these are =
+transitional
+> > cases only. I have introduced and defined the term "operable" and =
+made
+> > plain that there is no easy rule to determine operability. There is =
+no
+> > need to define "valid" or anything extra in the terminology section =
+at
+> > all.
+>=20
+> The change from "valid" to "operable" is helpful, I think.  Comments =
+below.
+>=20
+> >    For these reasons, a host
+> >    SHOULD NOT have both a routable address and an IPv4 Link-Local =
+address
+> >    configured on the same interface.
+>=20
+> This advice no longer applies if one of those addresses is not =
+"operable",
+> right?
+>=20
+> >    When an operable routable address is
+> >    available on an interface, the host SHOULD NOT also assign an =
+IPv4
+> >    Link-Local address on that interface. However, during transition =
+(in
+> >    either direction) between using routable and IPv4 Link-Local =
+addresses
+> >    both MAY be in use at once subject to these rules.
+>=20
+> Should it say "these rules:"?  If so, perhaps the rules should be
+> bulleted.
+>=20
+> >    The assignment of an IPv4 Link-Local address on an interface is =
+based
+> >    solely on the state of the interface, and is independent of any =
+other
+> >    protocols such as DHCP.  A host MUST NOT alter its behavior and =
+use of
+> >    other protocols such as DHCP because the host has assigned an =
+IPv4
+> >    Link-Local address to an interface.
+> >
+> >    The term "operable address" is used to mean an address which =
+works
+> >    effectively for communication in the current network context (see =
+below).
+> >    If a host finds that an interface that was previously configured =
+with
+> >    an IPv4 Link- Local address now has an operable routable address
+> >    available the host MUST use the routable address when initiating =
+new
+> >    communications, and MUST cease advertising the availability of =
+the
+> >    IPv4 Link-Local address through whatever mechanisms that address =
+had
+> >    been made known to others.  The host SHOULD continue to use the =
+IPv4
+> >    Link-Local address for communications already underway, and MAY
+> >    continue to accept new communications addressed to the IPv4 =
+Link-Local
+> >    address. Ways in which an operable routable address might become
+> >    available on an interface include:
+> >
+> >    * Manual configuration
+> >    * Address assignment through DHCP
+> >    * Roaming of the host to a network on which an existing address
+> >       becomes operable.
+>=20
+> Does this have the same meaning as "a previously assigned address =
+becomes
+> operable"?
+>=20
+> Here's a proposed version, with changes:
+>=20
+> 1.9.  When to configure a Link-Local IPv4 address
+>=20
+>    Having addresses of multiple different scopes assigned to an
+>    interface, with no adequate way to determine in what circumstances
+>    each address should be used, leads to complexity for applications =
+and
+>    confusion for users.  A host with an address on a link can =
+communicate
+>    with all other devices on that link, whether those devices use =
+Link-
+>    Local addresses, or routable addresses.  For these reasons, a host
+>    SHOULD NOT have both an operable routable address and an IPv4
+>    Link-Local address configured on the same interface. The term
+>    "operable address" is used to mean an address which works
+>    effectively for communication in the current network context
+>    (see below).  When a operable routable address is available
+>    on an interface, the host SHOULD NOT also assign an IPv4
+>    Link-Local address on that interface.  However, during the
+>    transition (in either direction) between using routable and IPv4
+>    Link-Local addresses both MAY be in use at once subject to these =
+rules:
+>=20
+>    1. The assignment of an IPv4 Link-Local address on an interface is
+>       based solely on the state of the interface, and is independent =
+of
+>       any other protocols such as DHCP.  A host MUST NOT alter its
+>       behavior and use of other protocols such as DHCP because the =
+host
+>       has assigned an IPv4 Link-Local address to an interface.
+>=20
+>    2. If a host finds that an interface that was previously configured
+>       with an IPv4 Link-Local address now has an operable routable
+>       address available, the host MUST use the routable address when
+>       initiating new communications, and MUST cease advertising the
+>       availability of the IPv4 Link-Local address through whatever
+>       mechanisms that address had been made known to others.  The host
+>       SHOULD continue to use the IPv4 Link-Local address for
+>       communications already underway, and MAY continue to accept new
+>       communications addressed to the IPv4 Link-Local address. Ways in
+>       which an operable routable address might become
+>       available on an interface include:
+>=20
+>          * Manual configuration
+>          * Address assignment through DHCP
+>          * Roaming of the host to a network on which a previously
+>            assigned address becomes operable.
+>=20
+>    3. If a host finds that an interface no longer has an operable =
+routable
+>       address available, the host MAY identify a usable IPv4 =
+Link-Local
+>       address (as described in section 2) and assign that address to =
+the
+>       interface. Ways in which an operable routable address might =
+cease to
+>       be available on an interface include:
+>=20
+>          * Removal of the address from the interface through manual
+>            configuration
+>          * Expiration of the lease on the address assigned through =
+DHCP
+>          * Roaming of the host to a new network on which the address =
+is no
+>            longer operable.
+>=20
+>    The determination by the system of whether an address is "operable" =
+is
+>    not clear cut and many changes in the system context (e.g.
+>    router changes) may affect the operability of an address. In
+>    particular roaming of a host from one network to another is likely =
+-
+>    but not certain - to change the operability of a configured address =
+but
+>    detecting such a move is not always trivial.
+>=20
+>    "Detection of Network Attachment (DNA) in IPv4" [DNAv4]
+>    provides further discussion of address assignment and operability
+>    determination.
+> 
+
+
+From owner-zeroconf@merit.edu  Tue Jun  1 09:50:18 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id JAA01178
+	for <zeroconf-archive@lists.ietf.org>; Tue, 1 Jun 2004 09:50:18 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8CAF191224; Tue,  1 Jun 2004 09:50:10 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5E6E89125F; Tue,  1 Jun 2004 09:50:10 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5E91891224
+	for <zeroconf@trapdoor.merit.edu>; Tue,  1 Jun 2004 09:50:09 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 45EDB597E8; Tue,  1 Jun 2004 09:50:09 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.sttnwaho.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id AEDFA5980E
+	for <zeroconf@merit.edu>; Tue,  1 Jun 2004 09:50:03 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id i51Dq1632054;
+	Tue, 1 Jun 2004 06:52:01 -0700
+Date: Tue, 1 Jun 2004 06:52:01 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: Philip Nye <philip@engarts.com>
+Cc: Zeroconf Working Group <zeroconf@merit.edu>
+Subject: Re: WG ACTION: 1 week continued discussion [LL70] DNAv4 normative
+ or informative?
+In-Reply-To: <001301c447dc$30de2aa0$131010ac@aldebaran>
+Message-ID: <Pine.LNX.4.56.0406010649510.31901@internaut.com>
+References: <Pine.LNX.4.56.0405271443100.6595@internaut.com>
+ <012c01c447be$8359df40$131010ac@aldebaran> <Pine.LNX.4.56.0406010527230.26801@internaut.com>
+ <001301c447dc$30de2aa0$131010ac@aldebaran>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+> This now looks good to me.
+>
+> Philip
+
+OK. A version of the document with this (and other changes) incorporated
+is available for inspection at:
+
+http://www.drizzle.com/~aboba/ZEROCONF/draft-ietf-zeroconf-ipv4-linklocal-15.txt
+
+I think it might be worthwhile to check that other uses of the term
+"configured" in the document conform to correct usage.
+
+
+
+From owner-zeroconf@merit.edu  Mon Jun  7 06:27:48 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id GAA05798
+	for <zeroconf-archive@lists.ietf.org>; Mon, 7 Jun 2004 06:27:48 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id AFAC491226; Mon,  7 Jun 2004 06:27:41 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7936791255; Mon,  7 Jun 2004 06:27:41 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1E10B91226
+	for <zeroconf@trapdoor.merit.edu>; Mon,  7 Jun 2004 06:27:40 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0B67F59FE0; Mon,  7 Jun 2004 06:27:40 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 99B0859FD0
+	for <zeroconf@merit.edu>; Mon,  7 Jun 2004 06:27:39 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.10/8.12.9) with ESMTP id i57ARbcP005611;
+	Mon, 7 Jun 2004 04:27:38 -0600 (MDT)
+Received: from [80.139.185.182] (vpn-129-150-112-80.Holland.Sun.COM [129.150.112.80])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i57ARYDm017886;
+	Mon, 7 Jun 2004 12:27:35 +0200 (MEST)
+Date: Mon, 7 Jun 2004 12:27:15 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@slap.local
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+To: zeroconf@merit.edu
+Cc: Thomas Narten <narten@us.ibm.com>
+Subject: WG ACTION: resolution of open isues LL53 LL63 LL70, changes to LL56
+ LL57
+Message-ID: <Pine.OSX.4.58.0406071225120.789@slap.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Next Steps:
+
+  Please review the propsed consensus calls below.  This is really your last
+  chance to voice a position on the issues before we declare them closed.
+
+  We will post an internet-draft including the changes.
+
+  Once it appears I will initiate a one week last call for us to review
+  the document to make sure that he decided changes have been made.  After
+  that, we will make any last fixes required to make it consistent with our
+  decisions.
+
+  Once we have a completed draft, I will request the IESG advancement it
+  to proposed standard.
+
+Outcome of the last round of last calls:
+
+  LL53  Improve constants text - fix various errors due to recent changes
+  LL56  Clarify disputed text
+  LL57  Add additional text to Section 9 clarify WATCH_WAIT applies to
+        IEEE 802
+  LL63  Accept choice 'D'
+  LL70  Accept revised text
+
+Details:
+
+---------------------------------
+LL53 Forward references requested
+
+Change 1.3 from
+
+   (a) the number of, and interval between, ARP probes,
+       see NUM_PROBES, PROBE_MIN, PROBE_MAX defined in Section 2.2.1
+           ^^^^^^^^^^
+to
+
+   (a) the number of, and interval between, ARP probes,
+       see PROBE_NUM, PROBE_MIN, PROBE_MAX defined in Section 2.2.1
+
+
+
+Section 9 must include WATCH_WAIT and omit PROBE_INTERVAL (which is not
+needed, since this is now defined using PROBE_MIN and PROBE_MAX.)  I reviewed
+the document (the text in the latest prerelease draft-ietf-zeroconf-ipv4-
+linklocal-15.txt) to ensure that the text below is consistent.
+
+   START_WAIT           1 second   (initial random delay)
+   PROBE_MIN            1 second   (minimum delay till repeated probe)
+   PROBE_MAX            2 seconds  (maximum delay till repeated probe)
+   PROBE_NUM            3          (number of probe packets)
+   ANNOUNCE_N           2          (number of announcement packets)
+   ANNOUNCE_INTERVAL    2 seconds  (time between announcement packets)
+   MAX_COLLISIONS      10          (max collisions before rate limiting)
+   RATE_LIMIT_INTERVAL 60 seconds  (delay between successive attempts)
+   DEFEND_INTERVAL     10 seconds  (after probes, wait for defense)
+   WATCH_WAIT          10 seconds  (time to continue to defend your address,
+                                    for IEEE 802 networks)
+
+If we accept the following suggestion - constants throughout the document
+must change.  Therefore, I suggest we reject:
+
+  We now have 5 parameters for the probing process and there is clearly
+  confusion over their meaning. I would like to see clearer naming:
+  NUM_PROBES, PRE_PROBE_MAX, INTER_PROBE_MIN, INTER_PROBE_MAX, POST_PROBE_WAIT.
+
+  The new text of 3.1(a) should name all 5 of the probing parameters thus:
+
+      (a) the number and timing of ARP probes
+          See NUM_PROBES, PRE_PROBE_MAX, INTER_PROBE_MIN, INTER_PROBE_MAX,
+          POST_PROBE_WAIT defined in section 2.2.1
+
+------------------------
+LL56 Contradictory text?
+
+Change:
+
+"IPv4 addresses and names which can only be resolved on the local link
+SHOULD NOT be forwarded, they SHOULD only be sent when a Link-Local
+address is used as the source address.  This strong advice should hinder
+limited scope addresses and names from leaving the context in
+which they apply."
+
+To:
+
+"IPv4 addresses and names which can only be resolved on the local link
+SHOULD NOT be forwarded beyond the local link.  IPv4 Link-Local addresses
+SHOULD only be sent when a Link-Local address is used as the source
+address.  This strong advice should hinder limited scope addresses
+and names from leaving the context in which they apply."
+
+------------------------------------
+LL57 Straightforward editorial fixes
+
+Philip was concerned with the text in LL57.  I believe his concern is
+satisfied by the fix in LL53, which modifies the definition of the
+WATCH_WAIT constant in section 9.
+
+   WATCH_WAIT          10 seconds  (time to continue to defend your address,
+                                    for IEEE 802 networks)
+
+---------------------------------
+LL63 Text should be more explicit
+
+Section 2.11, Replace
+
+   A device that implements both IPv4 Link-Local and a DHCPv4 client
+   should not alter  the behavior of the DHCPv4 client to accommodate
+   IPv4 Link-Local  configuration. In particular configuration of an
+   IPv4 Link-Local address,  whether or not a DHCP server is currently
+   responding, is not sufficient  reason to unconfigure a valid DHCP
+   lease, to stop the DHCP client from  attempting to acquire a new IP
+   address, to change DHCP timeouts or to  change the behavior of the
+   DHCP state machine in any other way.
+
+   Several early implementations of IPv4 Link-Local have modified the
+   DHCP  state machine in an attempt to make IPv4 Link-Local more
+   reliable, and the  field experience we have gained from this has
+   shown that it does not work  - reliability of DHCP service is
+   significantly reduced.   If increased reliability of IPv4 Link-Local
+   is desired, we recommend that the IPv4 Link-Local state machine track
+   the DHCP client state machine and, in cases where it is not certain
+   that the DHCP-assigned address is correct, the  IPv4 Link-Local state
+   machine acquire an IPv4 Link-Local address without causing the DHCP
+   state machine to relinquish its address.
+
+With
+
+   As documented in Appendix A, early implementations of IPv4
+   Link-Local have modified the DHCP state machine.  Field experience
+   shows that these modifications reduce the reliability of the DHCP
+   service.
+
+   A device that implements both IPv4 Link-Local and a DHCPv4 client
+   should not alter the behavior of the DHCPv4 client to accommodate
+   IPv4 Link-Local configuration. In particular configuration of an
+   IPv4 Link-Local address, whether or not a DHCP server is currently
+   responding, is not sufficient reason to unconfigure a valid DHCP
+   lease, to stop the DHCP client from attempting to acquire a new IP
+   address, to change DHCP timeouts or to change the behavior of the
+   DHCP state machine in any other way.
+
+   Further discussion of this issue is provided in [DNAv4]."
+
+------------------------------------
+LL70 DNAv4 normative or informative?
+
+Was:
+1.9.  When to configure a Link-Local IPv4 address
+
+   Having addresses of multiple different scopes assigned to an
+   interface, with no adequate way to determine in what circumstances
+   each address should be used, leads to complexity for applications and
+   confusion for users.  A host with an address on a link can
+   communicate with all other devices on that link, whether those
+   devices use Link-Local addresses, or routable addresses.  For these
+   reasons, a host SHOULD NOT have both a valid routable address and a
+   Link-Local IPv4 address configured on the same interface.
+
+
+   A routable address is any address that is:
+
+   * a unicast address (see Section 1.2)
+   * not a loopback address
+   * not contained within the 169.254/16 prefix reserved for Link-Local
+      IPv4 addresses
+
+   A "valid routable address" is a routable address that passes the
+   reachability test described in section 2 of "Detection of Network
+   Attachment (DNA) in IPv4" [DNAv4].
+
+   The assignment and use of a Link-Local IPv4 address on an interface
+   is based solely on the state of the interface, and is independent of
+   any other protocols such as DHCP.  A host MUST NOT alter its behavior
+   and use of other protocols such as DHCP because the host has assigned
+   a Link-Local IPv4 address to an interface.
+
+   When an interface has a valid routable address configured on an
+   interface, the host SHOULD NOT also assign a Link-Local IPv4 address
+   to that interface.
+
+   If a host finds that an interface that was previous configured with a
+   Link-Local IPv4 address is now configured with a valid routable
+   address, the host MUST always use the routable address when
+   initiating new communications, and MUST cease advertising the
+   availability of the Link-Local IPv4 address through whatever
+   mechanisms that address had been made known to others.  The host
+   SHOULD continue to use the Link-Local IPv4 address for communications
+   underway when the routable address was configured, and MAY continue
+   to accept new communications addressed to the Link-Local IPv4
+   address.  Ways in which a valid routable address might be configured
+   for the interface include:
+
+   * Manual configuration
+   * Address assignment through DHCP
+   * Roaming of the host to a network on which a routable address
+      assigned to the interface is valid
+
+   If a host finds that an interface that was previously configured with
+   a valid routable address no longer has a valid routable address, the
+   host MAY identify a usable Link-Local IPv4 address (as described in
+   section 2) and assign that address to the interface.  Ways in which a
+   valid routable address might no longer be assigned to an interface
+   include:
+
+   * Removal of the address from the interface through manual
+      configuration
+   * Expiration of the lease on the address assigned through DHCP
+   * Roaming of the host to a new network on which the address is no
+     longer valid.
+
+   Further discussion of the issues in detection of transient failures
+   and the use of DHCP in response to network attachment failure is
+   provided in "Detection of Network Attachment (DNA) in IPv4". [DNAv4]
+
+
+Becomes:
+
+1.9.  When to configure an IPv4 Link-Local address
+
+   Having addresses of multiple different scopes assigned to an
+   interface, with no adequate way to determine in what circumstances
+   each address should be used, leads to complexity for applications and
+   confusion for users.  A host with an address on a link can communicate
+   with all other devices on that link, whether those devices use Link-
+   Local addresses, or routable addresses.  For these reasons, a host
+   SHOULD NOT have both an operable routable address and an IPv4
+   Link-Local address configured on the same interface. The term
+   "operable address" is used to mean an address which works
+   effectively for communication in the current network context
+   (see below).  When a operable routable address is available
+   on an interface, the host SHOULD NOT also assign an IPv4
+   Link-Local address on that interface.  However, during the
+   transition (in either direction) between using routable and IPv4
+   Link-Local addresses both MAY be in use at once subject to these rules:
+
+   1. The assignment of an IPv4 Link-Local address on an interface is
+      based solely on the state of the interface, and is independent of
+      any other protocols such as DHCP.  A host MUST NOT alter its
+      behavior and use of other protocols such as DHCP because the host
+      has assigned an IPv4 Link-Local address to an interface.
+
+   2. If a host finds that an interface that was previously configured
+      with an IPv4 Link-Local address now has an operable routable
+      address available, the host MUST use the routable address when
+      initiating new communications, and MUST cease advertising the
+      availability of the IPv4 Link-Local address through whatever
+      mechanisms that address had been made known to others.  The host
+      SHOULD continue to use the IPv4 Link-Local address for
+      communications already underway, and MAY continue to accept new
+      communications addressed to the IPv4 Link-Local address. Ways in
+      which an operable routable address might become
+      available on an interface include:
+
+         * Manual configuration
+         * Address assignment through DHCP
+         * Roaming of the host to a network on which a previously
+           assigned address becomes operable.
+
+   3. If a host finds that an interface no longer has an operable routable
+      address available, the host MAY identify a usable IPv4 Link-Local
+      address (as described in section 2) and assign that address to the
+      interface. Ways in which an operable routable address might cease to
+      be available on an interface include:
+
+         * Removal of the address from the interface through manual
+           configuration
+         * Expiration of the lease on the address assigned through DHCP
+         * Roaming of the host to a new network on which the address is no
+           longer operable.
+
+   The determination by the system of whether an address is "operable" is
+   not clear cut and many changes in the system context (e.g.
+   router changes) may affect the operability of an address. In
+   particular roaming of a host from one network to another is likely -
+   but not certain - to change the operability of a configured address but
+   detecting such a move is not always trivial.
+
+   "Detection of Network Attachment (DNA) in IPv4" [DNAv4]
+   provides further discussion of address assignment and operability
+   determination.
+
+
+------------------------------
+Erik Guttman
+ZEROCONF WG Chair
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun  8 03:31:40 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id DAA07424
+	for <zeroconf-archive@lists.ietf.org>; Tue, 8 Jun 2004 03:31:40 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 191379122F; Tue,  8 Jun 2004 03:30:49 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DCE0F91280; Tue,  8 Jun 2004 03:30:48 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id AE6859122F
+	for <zeroconf@trapdoor.merit.edu>; Tue,  8 Jun 2004 03:30:47 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 916EA59739; Tue,  8 Jun 2004 03:30:47 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 3F17459736
+	for <zeroconf@merit.edu>; Tue,  8 Jun 2004 03:30:47 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.10/8.12.9) with ESMTP id i587UjcP006436;
+	Tue, 8 Jun 2004 01:30:46 -0600 (MDT)
+Received: from [10.0.1.2] (vpn-129-150-116-123.UK.Sun.COM [129.150.116.123])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i587UdDm021410;
+	Tue, 8 Jun 2004 09:30:41 +0200 (MEST)
+Date: Tue, 8 Jun 2004 09:30:34 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@skin.local
+Reply-To: erik.guttman@sun.com
+To: zeroconf@merit.edu
+Cc: narten@us.ibm.com
+Subject: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+Message-ID: <Pine.OSX.4.58.0406080922370.1267@skin.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Content-ID: <Pine.OSX.4.58.0406080922372.1267@skin.local>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Over the course of the next week, ending June 15, 2004, please review the
+latest internet draft specifying IPv4LL.  The goal is
+
+ * to verify the changes we have agreed upon
+ * to find any additional typographic or technical errors
+
+Also - if any of the suggested resolutions of any zeroconf issues are not
+acceptable to you, this is the time to express your concern.  Please
+indicate how the resolution is flawed and why the process we arrived at it
+was inadequate.
+
+Thank you,
+
+Erik Guttman
+ZEROCONF WG Chair
+
+---------- Forwarded message ----------
+Date: Mon, 07 Jun 2004 15:43:54 -0400
+From: Internet-Drafts@ietf.org
+To: i-d-announce@ietf.org
+Cc: zeroconf@merit.edu
+Subject: I-D ACTION:draft-ietf-zeroconf-ipv4-linklocal-15.txt
+
+A New Internet-Draft is available from the on-line Internet-Drafts directories.
+This draft is a work item of the Zero Configuration Networking Working Group of the IETF.
+
+	Title		: Dynamic Configuration of Link-Local IPv4 Addresses
+	Author(s)	: B. Aboba, et al.
+	Filename	: draft-ietf-zeroconf-ipv4-linklocal-15.txt
+	Pages		: 31
+	Date		: 2004-6-7
+
+To participate in wide-area IP networking, a host needs to be
+configured, either manually by the user or automatically from a
+source on the network such as a DHCP server.  Unfortunately, such
+external configuration information may not always be available.  It
+is therefore beneficial for a host to be able to depend on a useful
+subset of IP networking functions even when no configuration is
+available.  This document describes how a host may automatically
+configure an interface with an IPv4 address within the 169.254/16
+prefix that is valid for communication with other devices connected
+to the same physical (or logical) link.  Communication using Link-
+Local IPv4 addresses is not suitable for communication with devices
+not directly connected to the same physical (or logical) link.
+
+A URL for this Internet-Draft is:
+http://www.ietf.org/internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-15.txt
+
+To remove yourself from the I-D Announcement list, send a message to
+i-d-announce-request@ietf.org with the word unsubscribe in the body of the message.
+You can also visit https://www1.ietf.org/mailman/listinfo/I-D-announce
+to change your subscription settings.
+
+
+Internet-Drafts are also available by anonymous FTP. Login with the username
+"anonymous" and a password of your e-mail address. After logging in,
+type "cd internet-drafts" and then
+	"get draft-ietf-zeroconf-ipv4-linklocal-15.txt".
+
+A list of Internet-Drafts directories can be found in
+http://www.ietf.org/shadow.html
+or ftp://ftp.ietf.org/ietf/1shadow-sites.txt
+
+
+Internet-Drafts can also be obtained by e-mail.
+
+Send a message to:
+	mailserv@ietf.org.
+In the body type:
+	"FILE /internet-drafts/draft-ietf-zeroconf-ipv4-linklocal-15.txt".
+
+NOTE:	The mail server at ietf.org can return the document in
+	MIME-encoded form by using the "mpack" utility.  To use this
+	feature, insert the command "ENCODING mime" before the "FILE"
+	command.  To decode the response(s), you will need "munpack" or
+	a MIME-compliant mail reader.  Different MIME-compliant mail readers
+	exhibit different behavior, especially when dealing with
+	"multipart" MIME messages (i.e. documents which have been split
+	up into multiple messages), so check your local documentation on
+	how to manipulate these messages.
+
+
+Below is the data which will enable a MIME compliant mail reader
+implementation to automatically retrieve the ASCII version of the
+Internet-Draft.
+
+
+From owner-zeroconf@merit.edu  Fri Jun 11 21:48:06 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id VAA19267
+	for <zeroconf-archive@lists.ietf.org>; Fri, 11 Jun 2004 21:48:06 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id F34A891254; Fri, 11 Jun 2004 21:47:11 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id B8B2591318; Fri, 11 Jun 2004 21:47:10 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B2E5C91254
+	for <zeroconf@trapdoor.merit.edu>; Fri, 11 Jun 2004 21:47:09 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9A53F59AAE; Fri, 11 Jun 2004 21:47:09 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.sttnwaho.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id 614E959A8A
+	for <zeroconf@merit.edu>; Fri, 11 Jun 2004 21:47:06 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id i5C1m1B06497
+	for <zeroconf@merit.edu>; Fri, 11 Jun 2004 18:48:02 -0700
+Date: Fri, 11 Jun 2004 18:48:01 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: DHC WG Last Call on draft-ietf-dhc-dna-ipv4-07.txt
+Message-ID: <Pine.LNX.4.56.0406111847310.6204@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message announces a DHC WG last call on "Detection of Network
+Attachment (DNA) in IPv4" <draft-ietf-dhc-dna-ipv4-07.txt>.  The last
+call will conclude at 5PM EDT on 2004-06-25.
+
+Please respond to the DHC WG last call.  If you support acceptance of the
+document without change, respond with a simple acknowledgment, so that
+support for the document can be assessed.  Messages should be sent to the
+DHCP WG mailing list, dhcwg@ietf.org.
+
+draft-ietf-dhc-dna-ipv4-07.txt addresses the problem of detecting
+attachment to an IPv4 network.  The time required to detect movement
+(or lack of movement) between subnets, and to obtain (or continue to
+use) a valid IPv4 address may be significant as a fraction of the
+total delay in moving between points of attachment.  This
+specification synthesizes experience garnered over the years in the
+deployment of hosts supporting ARP, DHCP and IPv4 Link-Local
+addresses, in order to optimize detection of network attachment by
+mobile hosts.  This draft is available as
+
+http://www.ietf.org/internet-drafts/draft-ietf-dhc-dna-ipv4-07.txt
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 16 01:51:56 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id BAA02720
+	for <zeroconf-archive@lists.ietf.org>; Wed, 16 Jun 2004 01:51:55 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 528AE9121E; Wed, 16 Jun 2004 01:51:47 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 1E33B9121F; Wed, 16 Jun 2004 01:51:47 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 309EC9121E
+	for <zeroconf@trapdoor.merit.edu>; Wed, 16 Jun 2004 01:51:46 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id E972759A6B; Wed, 16 Jun 2004 01:51:45 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out4.apple.com (mail-out4.apple.com [17.254.13.23])
+	by segue.merit.edu (Postfix) with ESMTP id 88087598A3
+	for <zeroconf@merit.edu>; Wed, 16 Jun 2004 01:51:45 -0400 (EDT)
+Received: from mailgate2.apple.com (a17-128-100-204.apple.com [17.128.100.204])
+	by mail-out4.apple.com (8.12.11/8.12.11) with ESMTP id i5G5pjRG003717
+	for <zeroconf@merit.edu>; Tue, 15 Jun 2004 22:51:45 -0700 (PDT)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.3.6) with ESMTP id <T6a36eb03d2118064cc400@mailgate2.apple.com>;
+ Tue, 15 Jun 2004 22:51:44 -0700
+Received: from [17.219.196.177] ([17.219.196.177])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id i5G5pd5k015757;
+	Tue, 15 Jun 2004 22:51:41 -0700 (PDT)
+Message-Id: <200406160551.i5G5pd5k015757@relay4.apple.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+Date: Tue, 15 Jun 2004 22:51:40 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Erik Guttman" <erik.guttman@sun.com>, <zeroconf@merit.edu>
+Cc: "Thomas Narten" <narten@us.ibm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Over the course of the next week, ending June 15, 2004, please
+>review the latest internet draft specifying IPv4LL.  The goal is
+>
+> * to verify the changes we have agreed upon
+> * to find any additional typographic or technical errors
+
+We are I think, very close to having something to celebrate.
+
+I re-read the entire draft from start to end, and found only one 
+technical issue to comment on. I think it's just an accidental typo, so 
+I'm hoping there will be no resistance to fixing it.
+
+In my email of 6th May, I proposed a symbolic constant "DEFEND_INTERVAL", 
+to replace the text "recently (for IEEE 802, within the last ten 
+seconds)" in Section 2.5. My intention was that this text:
+
+   (b) If a host currently has active TCP connections or other reasons
+   to prefer to keep the same IPv4 address, and it has not seen any
+   other conflicting ARP packets recently (for IEEE 802, within the last
+   ten seconds) then it MAY elect to attempt to defend its address
+
+becomes:
+
+   (b) If a host currently has active TCP connections or other reasons
+   to prefer to keep the same IPv4 address, and it has not seen any
+   other conflicting ARP packets within the last DEFEND_INTERVAL seconds
+   then it MAY elect to attempt to defend its address
+
+The value of DEFEND_INTERVAL was ten seconds (of course) and the 
+description was "minimum time between defensive ARPs".
+
+Somehow in the process of editing, a new constant was introduced for the 
+minimum interval between defensive ARPs, called WATCH_WAIT, and 
+DEFEND_INTERVAL got re-used for something quite different -- the pause 
+between probing and announcing. The value got left at ten seconds.
+
+Both the name and the value are inappropriate.
+
+I think the name for this constant (time after last probe before 
+beginning announcing) should be "ANNOUNCE_WAIT", and the value should be 
+one second.
+
+I hope this can be fixed without long debate. I think it's clear that no 
+purpose is served by having the host sit around doing nothing for ten 
+seconds before beginning to use the address it's successfully selected. 
+One second is plenty long enough to receive a reply to the ARP Probe. 
+More is just pointless delay.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 16 01:54:04 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id BAA03253
+	for <zeroconf-archive@lists.ietf.org>; Wed, 16 Jun 2004 01:54:04 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 2BCFE9121F; Wed, 16 Jun 2004 01:53:57 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id E76EE91220; Wed, 16 Jun 2004 01:53:56 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 161609121F
+	for <zeroconf@trapdoor.merit.edu>; Wed, 16 Jun 2004 01:53:56 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id EF58959B01; Wed, 16 Jun 2004 01:53:55 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out4.apple.com (mail-out4.apple.com [17.254.13.23])
+	by segue.merit.edu (Postfix) with ESMTP id 7F40F599AB
+	for <zeroconf@merit.edu>; Wed, 16 Jun 2004 01:53:55 -0400 (EDT)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out4.apple.com (8.12.11/8.12.11) with ESMTP id i5G5rtRj004054
+	for <zeroconf@merit.edu>; Tue, 15 Jun 2004 22:53:55 -0700 (PDT)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.12) with ESMTP id <T6a36ecffe7118064e13bc@mailgate1.apple.com>;
+ Tue, 15 Jun 2004 22:53:55 -0700
+Received: from [17.219.196.177] ([17.219.196.177])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id i5G5rmnJ016376;
+	Tue, 15 Jun 2004 22:53:50 -0700 (PDT)
+Message-Id: <200406160553.i5G5rmnJ016376@relay4.apple.com>
+Subject: Draft-15.txt references
+Date: Tue, 15 Jun 2004 22:53:49 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Erik Guttman" <erik.guttman@sun.com>, <zeroconf@merit.edu>
+Cc: "Thomas Narten" <narten@us.ibm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>Over the course of the next week, ending June 15, 2004, please
+>review the latest internet draft specifying IPv4LL.  The goal is
+>
+> * to verify the changes we have agreed upon
+> * to find any additional typographic or technical errors
+
+Some final editorial comments on the references:
+
+Is RFC 792 normative? (Is ICMP a required prerequisite to implementing 
+IPv4LL?) I think not.
+
+Is RFC 2434 normative? (Is knowing how to write an IANA Considerations 
+Section a prerequisite to implementing IPv4LL?) I think not.
+
+The informative references still include 802.1d and 1394 but the text 
+that referenced them is now gone.
+
+That's it.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 16 15:05:13 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA00440
+	for <zeroconf-archive@lists.ietf.org>; Wed, 16 Jun 2004 15:05:13 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D6E0E9124C; Wed, 16 Jun 2004 15:05:00 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 76AE4912CE; Wed, 16 Jun 2004 15:05:00 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 609569124C
+	for <zeroconf@trapdoor.merit.edu>; Wed, 16 Jun 2004 15:04:59 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 206D059D85; Wed, 16 Jun 2004 15:04:59 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-4.sun.com (brmea-mail-4.Sun.COM [192.18.98.36])
+	by segue.merit.edu (Postfix) with ESMTP id 7299159D8F
+	for <zeroconf@merit.edu>; Wed, 16 Jun 2004 15:04:58 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-4.sun.com (8.12.10/8.12.9) with ESMTP id i5GJ3653026825;
+	Wed, 16 Jun 2004 13:03:07 -0600 (MDT)
+Received: from [10.0.1.3] (vpn-129-150-116-42.UK.Sun.COM [129.150.116.42])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5GJ4mDm003301;
+	Wed, 16 Jun 2004 21:04:49 +0200 (MEST)
+Date: Wed, 16 Jun 2004 21:04:42 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@skin.local
+Reply-To: erik.guttman@sun.com
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu,
+        Thomas Narten <narten@us.ibm.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+In-Reply-To: <200406160551.i5G5pd5k015757@relay4.apple.com>
+Message-ID: <Pine.OSX.4.58.0406162103080.1852@skin.local>
+References: <200406160551.i5G5pd5k015757@relay4.apple.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Stuart,
+
+Please send specific FROM/TO text change proposals and specify which
+sections would change.
+
+Thanks,
+
+Erik
+
+----------------------------------------------------------
+On Tue, 15 Jun 2004, Stuart Cheshire wrote:
+
+> >Over the course of the next week, ending June 15, 2004, please
+> >review the latest internet draft specifying IPv4LL.  The goal is
+> >
+> > * to verify the changes we have agreed upon
+> > * to find any additional typographic or technical errors
+>
+> We are I think, very close to having something to celebrate.
+>
+> I re-read the entire draft from start to end, and found only one
+> technical issue to comment on. I think it's just an accidental typo, so
+> I'm hoping there will be no resistance to fixing it.
+>
+> In my email of 6th May, I proposed a symbolic constant "DEFEND_INTERVAL",
+> to replace the text "recently (for IEEE 802, within the last ten
+> seconds)" in Section 2.5. My intention was that this text:
+>
+>    (b) If a host currently has active TCP connections or other reasons
+>    to prefer to keep the same IPv4 address, and it has not seen any
+>    other conflicting ARP packets recently (for IEEE 802, within the last
+>    ten seconds) then it MAY elect to attempt to defend its address
+>
+> becomes:
+>
+>    (b) If a host currently has active TCP connections or other reasons
+>    to prefer to keep the same IPv4 address, and it has not seen any
+>    other conflicting ARP packets within the last DEFEND_INTERVAL seconds
+>    then it MAY elect to attempt to defend its address
+>
+> The value of DEFEND_INTERVAL was ten seconds (of course) and the
+> description was "minimum time between defensive ARPs".
+>
+> Somehow in the process of editing, a new constant was introduced for the
+> minimum interval between defensive ARPs, called WATCH_WAIT, and
+> DEFEND_INTERVAL got re-used for something quite different -- the pause
+> between probing and announcing. The value got left at ten seconds.
+>
+> Both the name and the value are inappropriate.
+>
+> I think the name for this constant (time after last probe before
+> beginning announcing) should be "ANNOUNCE_WAIT", and the value should be
+> one second.
+>
+> I hope this can be fixed without long debate. I think it's clear that no
+> purpose is served by having the host sit around doing nothing for ten
+> seconds before beginning to use the address it's successfully selected.
+> One second is plenty long enough to receive a reply to the ARP Probe.
+> More is just pointless delay.
+>
+> Stuart Cheshire <cheshire@apple.com>
+>  * Wizard Without Portfolio, Apple Computer, Inc.
+>  * www.stuartcheshire.org
+>
+>
+
+
+From owner-zeroconf@merit.edu  Wed Jun 16 15:10:00 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id PAA01734
+	for <zeroconf-archive@lists.ietf.org>; Wed, 16 Jun 2004 15:10:00 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 1924C912CE; Wed, 16 Jun 2004 15:09:53 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id DE86F912CF; Wed, 16 Jun 2004 15:09:52 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id D506C912CE
+	for <zeroconf@trapdoor.merit.edu>; Wed, 16 Jun 2004 15:09:51 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id B5EE059DAF; Wed, 16 Jun 2004 15:09:51 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-4.sun.com (brmea-mail-4.Sun.COM [192.18.98.36])
+	by segue.merit.edu (Postfix) with ESMTP id 259FD59CE8
+	for <zeroconf@merit.edu>; Wed, 16 Jun 2004 15:09:51 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-4.sun.com (8.12.10/8.12.9) with ESMTP id i5GJ8053029760;
+	Wed, 16 Jun 2004 13:08:00 -0600 (MDT)
+Received: from [10.0.1.3] (vpn-129-150-116-42.UK.Sun.COM [129.150.116.42])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5GJ9gDm003474;
+	Wed, 16 Jun 2004 21:09:43 +0200 (MEST)
+Date: Wed, 16 Jun 2004 21:09:36 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@skin.local
+Reply-To: erik.guttman@sun.com
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu,
+        Thomas Narten <narten@us.ibm.com>
+Subject: Re: Draft-15.txt references
+In-Reply-To: <200406160553.i5G5rmnJ016376@relay4.apple.com>
+Message-ID: <Pine.OSX.4.58.0406162105030.1852@skin.local>
+References: <200406160553.i5G5rmnJ016376@relay4.apple.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+On Tue, 15 Jun 2004, Stuart Cheshire wrote:
+
+> >Over the course of the next week, ending June 15, 2004, please
+> >review the latest internet draft specifying IPv4LL.  The goal is
+> >
+> > * to verify the changes we have agreed upon
+> > * to find any additional typographic or technical errors
+>
+> Some final editorial comments on the references:
+>
+> Is RFC 792 normative? (Is ICMP a required prerequisite to implementing
+> IPv4LL?) I think not.
+
+It is normative because ICMP message fields are cited in section 3.3.
+
+> Is RFC 2434 normative? (Is knowing how to write an IANA Considerations
+> Section a prerequisite to implementing IPv4LL?) I think not.
+
+It is normative as we use terminology from this document in the IANA
+considerations section, Section 8.
+
+> The informative references still include 802.1d and 1394 but the text
+> that referenced them is now gone.
+
+We can drop these references in that case.  Proposal:
+
+---
+
+Section 10.1
+
+From:
+[802.1d]  ISO/IEC 15802-3 Information technology - Telecommunications
+          and information exchange between systems - Local and
+          metropolitan area networks - Common specifications - Part 3:
+          Media access Control (MAC) Bridges, (also ANSI/IEEE Std
+          802.1D-1998), 1998.
+
+To: <omit>
+
+---
+
+Section 10.1
+
+From:
+[1394]    Standard for a High Performance Serial Bus.  Institute of
+          Electrical and Electronic Engineers, IEEE Standard 1394-1995,
+
+
+To: <omit>
+
+---
+
+Best regards,
+
+Erik
+
+
+From owner-zeroconf@merit.edu  Mon Jun 21 17:46:33 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id RAA04169
+	for <zeroconf-archive@lists.ietf.org>; Mon, 21 Jun 2004 17:46:33 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D129E912CF; Mon, 21 Jun 2004 17:45:45 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 923BF912EC; Mon, 21 Jun 2004 17:45:45 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EC4E1912CF
+	for <zeroconf@trapdoor.merit.edu>; Mon, 21 Jun 2004 17:45:40 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D5D1559B99; Mon, 21 Jun 2004 17:45:40 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from internaut.com (h-66-167-171-107.sttnwaho.covad.net [66.167.171.107])
+	by segue.merit.edu (Postfix) with ESMTP id 52CD259941
+	for <zeroconf@merit.edu>; Mon, 21 Jun 2004 17:45:40 -0400 (EDT)
+Received: from localhost (aboba@localhost)
+	by internaut.com (8.10.2/8.10.2) with ESMTP id i5LLjiV11006
+	for <zeroconf@merit.edu>; Mon, 21 Jun 2004 14:45:44 -0700
+Date: Mon, 21 Jun 2004 14:45:44 -0700 (PDT)
+From: Bernard Aboba <aboba@internaut.com>
+To: zeroconf@merit.edu
+Subject: REMINDER: DHC WG Last Call on draft-ietf-dhc-dna-ipv4-07.txt
+Message-ID: <Pine.LNX.4.56.0406211445060.10689@internaut.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+This message is a reminder about a DHC WG last call on "Detection of
+Network Attachment (DNA) in IPv4" <draft-ietf-dhc-dna-ipv4-07.txt>.  The
+last call will conclude at 5PM EDT on 2004-06-25 (this Friday).
+
+Please respond to this DHC WG last call.  If you support acceptance of the
+document without change, respond with a simple acknowledgment, so that
+support for the document can be assessed.  Messages should be sent to the
+DHCP WG mailing list, dhcwg@ietf.org.
+
+draft-ietf-dhc-dna-ipv4-07.txt addresses the problem of detecting
+attachment to an IPv4 network.  The time required to detect movement
+(or lack of movement) between subnets, and to obtain (or continue to
+use) a valid IPv4 address may be significant as a fraction of the
+total delay in moving between points of attachment.  This
+specification synthesizes experience garnered over the years in the
+deployment of hosts supporting ARP, DHCP and IPv4 Link-Local
+addresses, in order to optimize detection of network attachment by
+mobile hosts.  This draft is available as
+
+http://www.ietf.org/internet-drafts/draft-ietf-dhc-dna-ipv4-07.txt
+
+The status of current open and resolved issues is available at:
+
+http://www.drizzle.com/~aboba/DNA/dnaissues.html
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 08:07:39 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA03108
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 08:07:39 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id A2245912CB; Tue, 22 Jun 2004 08:07:29 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 652C3912CC; Tue, 22 Jun 2004 08:07:29 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 2EFF5912CB
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 08:07:28 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1B50C59BCF; Tue, 22 Jun 2004 08:07:28 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id BDB1B59B86
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 08:07:27 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i5MC7M0R002109;
+	Tue, 22 Jun 2004 05:07:23 -0700 (PDT)
+Received: from [80.139.174.62] (vpn-129-150-112-85.Holland.Sun.COM [129.150.112.85])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5MC7HDm000394;
+	Tue, 22 Jun 2004 14:07:19 +0200 (MEST)
+Date: Tue, 22 Jun 2004 14:06:57 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@slap.local
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: Erik Guttman <erik.guttman@sun.com>, zeroconf@merit.edu,
+        Thomas Narten <narten@us.ibm.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+In-Reply-To: <200406212206.i5LM6dSE010657@relay2.apple.com>
+Message-ID: <Pine.OSX.4.58.0406221220420.512@slap.local>
+References: <200406212206.i5LM6dSE010657@relay2.apple.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+Let's arrive at a decision within the next week about these proposed
+changes.  If I hear nothing or there is no serious dissent, I will
+recommend we make the changes.  Please respond by June 29, 2004.
+
+I mention the section numbers where the changes are made to assist your
+evaluation.
+
+Here is my opinion about the changes amount to:
+
+START_WAIT
+
+1) change:     START_WAIT renamed to PROBE_WAIT
+   section:    1.3
+   rationale:  esthetic
+   impact      changes must be consistent
+
+2) change      START_WAIT renamed to PROBE_WAIT
+   section:    2.2.1
+   rationale   esthetic
+   impact      changes must be consistent
+
+3) change      START_WAIT renamed to PROBE_WAIT
+   section     9
+   rationale   esthetic
+   impact      changes must be consistent
+
+ANNOUNCE_N
+
+1) change:     ANNOUNCE_N renamed to ANNOUNCE_NUM
+   section:    1.3
+   rationale:  as 2)
+   impact:     all references must be consistent
+
+2) change      ANNOUNCE_N renamed to ANNOUNCE_NUM
+   section     2.4
+   rationale:  esthetic, maybe the new constant is slightly clearer
+   impact:     all references must be consistent
+
+3) change      ANNOUNCE_N renamed to ANNOUNCE_NUM
+   section     9
+   rationale   as 2)
+   impact      all references must be consistent
+
+
+WATCH_WAIT
+
+1) change:     WATCH_WAIT renamed to DEFEND_INTERVAL
+   section:    1.3
+   rationale:  as 3)
+   impact:     all references must be consistent
+
+2) change:     WATCH_WAIT renamed to DEFEND_INTERVAL
+   section:    2.5
+   rationale:  as 3)
+   impact:     all references must be consistent
+
+3) change:     WATCH_WAIT renamed to DEFEND_INTERVAL
+   section:    9
+   rationale:  the naming change is esthetic.
+               the text for WATCH_WAIT in draft 15 inappropriate, it
+               should changed from:
+
+Was:
+    DEFEND_INTERVAL     10 seconds  (after probes, wait for defense)
+    WATCH_WAIT          10 seconds  (time to continue to defend your address,
+                                     for IEEE 802 networks)
+
+Becomes:
+    DEFEND_INTERVAL     10 seconds  (min interval between defensive ARPs)
+
+   impact:     The change would remove the sense of the text in section
+               2.5.  Argument:
+
+               The text in section 2.5 says if a host is configured with
+               an address A and has this address is in use, and the host
+               detects an arp from a source address A it may elect to
+               defend.  It sends its own arp from source address A and
+               waits 10 seconds, for 802 networks.  If the host receives
+               another arp from source address A it gives up the address.
+               Otherwise it keeps the address configuration for A.
+
+               If this 10 second interval is described as "time to
+               continue to defend your address, for IEEE 802 networks"
+               this indicates we are waiting and watching for 10 seconds
+               to defend an address.  If the 10 second interval is
+               described as "min interval between defensive ARPs" there
+               is no obvious relationship to the text in section 2.5.
+
+DEFEND_INTERVAL
+
+1)  change     DEFEND_INTERVAL becomes ANNOUNCE_WAIT
+
+     from:
+
+   When ready to begin probing, the host should then wait for a random
+   time interval selected uniformly in the range zero to START_WAIT
+   seconds, and should then send PROBE_NUM probe packets, each of these
+   probe packets spaced randomly, PROBE_MIN to PROBE_MAX seconds apart.
+
+   If during this period, from the beginning of the probing process
+   until DEFEND_INTERVAL seconds after the last probe packet is sent,
+         ^^^^^^^^^^^^^^^
+   the host receives any ARP packet (Request *or* Reply) on the
+   interface where the probe is being performed where the packet's
+   'sender IP address' is the address being probed for, then the host
+   MUST treat this address as being in use by some other host, and MUST
+   select a new pseudo-random address and repeat the process.  In
+   addition, if during this period the host receives any ARP probe where
+   the packet's 'target IP address' is the address being probed for, and
+   the packet's 'sender hardware address' is not the hardware address of
+   the interfaces the host is attempting to configure, then the host
+   MUST similarly treat this as an address collision and select a new
+   address as above. This can occur if two (or more) hosts attempt to
+   configure the same IPv4 Link-Local address at the same time.
+
+
+    section    2.2.1
+    rationale  This is an error:  This adds 9 seconds of needless delay.
+    impact:
+
+      This significantly changes the protocol operation.  Given a 10
+      second constant, the protocol functions as follows.
+
+       action time span                      total time
+       delay  [0..START_WAIT=1]              0-1
+       probe  (instantaneous)
+       wait   [PROBE_MIN=1, PROBE_MAX=2]     1-3
+       probe  (instantaneous)
+       wait   [PROBE_MIN=1, PROBE_MAX=2]     -5
+       probe  (instantaneous)
+       wait   [DEFEND_INTERVAL=10]           13-15
+       announce (instantaneous)
+       wait   [ANNOUNCE_INTERVAL=2]          14-17
+
+
+      That is, a host will wait
+2)  change:    DEFEND_INTERVAL changed to ANNOUNCE WAIT
+
+   was:
+
+
+   becomes:
+     rationale:
+     impact:
+
+
+3)  change     add ANNOUNCE_WAIT   1 second (delay before announcing)
+               instead of DEFEND_INTERVAL 10 seconds (after probes wait
+                                                      for defense)
+    section    9
+    rationale  see 1)
+    impact     see 1)
+
+
+
+On Mon, 21 Jun 2004, Stuart Cheshire wrote:
+
+> >Stuart,
+> >
+> >Please send specific FROM/TO text change proposals and specify which
+> >sections would change.
+> >
+> >Thanks,
+> >
+> >Erik
+>
+> Specific diffs attached.
+>
+> It's basically just a textual cleanup so the symbolic constants make
+> sense and are internally consistent. Summary:
+>
+> START_WAIT      -> PROBE_WAIT
+> DEFEND_INTERVAL -> ANNOUNCE_WAIT
+> ANNOUNCE_N      -> ANNOUNCE_NUM (for consistency with PROBE_NUM)
+> WATCH_WAIT      -> DEFEND_INTERVAL (min interval between defensive ARPs)
+>
+> Stuart Cheshire <cheshire@apple.com>
+>  * Wizard Without Portfolio, Apple Computer, Inc.
+>  * www.stuartcheshire.org
+>
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 08:16:45 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA03674
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 08:16:44 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 16452912CC; Tue, 22 Jun 2004 08:16:30 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id D9A67912CD; Tue, 22 Jun 2004 08:16:29 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 2D32B912CC
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 08:16:26 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0A518597AE; Tue, 22 Jun 2004 08:16:26 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 7951B59994
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 08:16:25 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i5MCGG0R005690;
+	Tue, 22 Jun 2004 05:16:17 -0700 (PDT)
+Received: from [80.139.174.62] (vpn-129-150-112-85.Holland.Sun.COM [129.150.112.85])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5MCGCDm000635;
+	Tue, 22 Jun 2004 14:16:13 +0200 (MEST)
+Date: Tue, 22 Jun 2004 14:15:53 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@slap.local
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+To: Erik Guttman <Erik.Guttman@sun.com>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu,
+        Thomas Narten <narten@us.ibm.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+In-Reply-To: <Pine.OSX.4.58.0406221220420.512@slap.local>
+Message-ID: <Pine.OSX.4.58.0406221407220.512@slap.local>
+References: <200406212206.i5LM6dSE010657@relay2.apple.com>
+ <Pine.OSX.4.58.0406221220420.512@slap.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Oops - sorry, I sent the email before it was done - I wanted to add
+the following:
+
+On Tue, 22 Jun 2004, Erik Guttman wrote:
+> 1)  change     DEFEND_INTERVAL becomes ANNOUNCE_WAIT
+>
+>      from:
+>
+>    When ready to begin probing, the host should then wait for a random
+>    time interval selected uniformly in the range zero to START_WAIT
+>    seconds, and should then send PROBE_NUM probe packets, each of these
+>    probe packets spaced randomly, PROBE_MIN to PROBE_MAX seconds apart.
+>
+>    If during this period, from the beginning of the probing process
+>    until DEFEND_INTERVAL seconds after the last probe packet is sent,
+>          ^^^^^^^^^^^^^^^
+>    the host receives any ARP packet (Request *or* Reply) on the
+>    interface where the probe is being performed where the packet's
+>    'sender IP address' is the address being probed for, then the host
+>    MUST treat this address as being in use by some other host, and MUST
+>    select a new pseudo-random address and repeat the process.  In
+>    addition, if during this period the host receives any ARP probe where
+>    the packet's 'target IP address' is the address being probed for, and
+>    the packet's 'sender hardware address' is not the hardware address of
+>    the interfaces the host is attempting to configure, then the host
+>    MUST similarly treat this as an address collision and select a new
+>    address as above. This can occur if two (or more) hosts attempt to
+>    configure the same IPv4 Link-Local address at the same time.
+>
+>
+>     section    2.2.1
+>     rationale  This is an error:  This adds 9 seconds of needless delay.
+>     impact:
+>
+>       This changes the protocol operation.  Given a 10
+>       second constant, the protocol functions as follows.
+
+         action time span                      total time
+         ------ ---------------------------    ----------
+         delay  [0..START_WAIT=1]              0-1
+         probe  (instantaneous)
+         wait   [PROBE_MIN=1, PROBE_MAX=2]     1-3
+         probe  (instantaneous)
+         wait   [PROBE_MIN=1, PROBE_MAX=2]     2-5
+         probe  (instantaneous)
+         wait   [PROBE_MIN=1, PROBE_MAX=2]     3-7
+         configure address! (instantaneous)
+         wait   [DEFEND_INTERVAL=1]            13-17
+         announce (instantaneous)
+         wait   [ANNOUNCE_INTERVAL=2]          14-17
+         announce (instantaneous)
+
+
+I have gotten this table wrong before, so please check it yourself.
+The alternative Stuart presents is:
+
+         action time span                      total time
+         ------ ---------------------------    ----------
+         delay  [0..START_WAIT=1]              0-1
+         probe  (instantaneous)
+         wait   [PROBE_MIN=1, PROBE_MAX=2]     1-3
+         probe  (instantaneous)
+         wait   [PROBE_MIN=1, PROBE_MAX=2]     2-5
+         probe  (instantaneous)
+         wait   [PROBE_MIN=1, PROBE_MAX=2]     3-7
+         configure address! (instantaneous)
+  *      wait   [DEFEND_INTERVAL=1]            4-8
+         announce (instantaneous)
+         wait   [ANNOUNCE_INTERVAL=2]          5-9
+         announce (instantaneous)
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 08:46:45 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA05195
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 08:46:44 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7215891255; Tue, 22 Jun 2004 08:46:32 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 4BD0D912CD; Tue, 22 Jun 2004 08:46:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 39D7091255
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 08:46:31 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 1E89A59B71; Tue, 22 Jun 2004 08:46:31 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-3.sun.com (brmea-mail-3.Sun.COM [192.18.98.34])
+	by segue.merit.edu (Postfix) with ESMTP id 9918A59A8D
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 08:46:30 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-3.sun.com (8.12.10/8.12.9) with ESMTP id i5MCkQil024004;
+	Tue, 22 Jun 2004 06:46:26 -0600 (MDT)
+Received: from [80.139.174.62] (vpn-129-150-112-85.Holland.Sun.COM [129.150.112.85])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5MCkMDm001484;
+	Tue, 22 Jun 2004 14:46:23 +0200 (MEST)
+Date: Tue, 22 Jun 2004 14:46:03 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@slap.local
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+To: Erik Guttman <Erik.Guttman@sun.com>
+Cc: Stuart Cheshire <cheshire@apple.com>, zeroconf@merit.edu,
+        Thomas Narten <narten@us.ibm.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+In-Reply-To: <Pine.OSX.4.58.0406221220420.512@slap.local>
+Message-ID: <Pine.OSX.4.58.0406221420190.512@slap.local>
+References: <200406212206.i5LM6dSE010657@relay2.apple.com>
+ <Pine.OSX.4.58.0406221220420.512@slap.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+
+Folks,
+
+This is additional material to what I posted already, concerning
+changing DEFEND_INTERVAL to ANNOUNCE_WAIT in the last paragraph of
+section 2.2.1
+
+Suggested change:
+
+  WAS
+    If, by DEFEND_INTERVAL seconds after the transmission of the last ARP
+    probe no conflicting ARP Reply or ARP probe has been received, then
+    the host has successfully claimed the desired IPv4 Link-Local
+    address.
+
+  note: DEFEND_INTERVAL is 10 seconds
+
+  BECOMES
+    If, by ANNOUNCE_WAIT seconds after the transmission of the last ARP
+    probe no conflicting ARP Reply or ARP probe has been received, then
+    the host has successfully claimed the desired IPv4 Link-Local
+    address.
+
+  note:  ANNOUNCE_WAIT is proposed to be 1 second
+   section: 2.2.1
+   rationale: fixes a problem
+   impact:
+
+     This seriously impacts the protocol in that the host will wait either
+     10 seconds or 1 second after the final probe in order to configure
+     the address.  [I suggest that 2 seconds is the correct value here,
+     as this is consistent with earlier work and only changed due to an
+     editorial oversight.]
+
+Note that in early drafts of the protocol, this was '2 seconds':
+
+draft-ietf-zeroconf-ipv4-linklocal-07.txt
+
+   If, by two seconds after the transmission of the last ARP probe
+   no conflicting ARP reply has been received, then the host has
+   successfully claimed the desired link-local address.
+
+draft-ietf-zeroconf-ipv4-linklocal-12.txt &
+draft-ietf-zeroconf-ipv4-linklocal-13.txt &
+draft-ietf-zeroconf-ipv4-linklocal-14.txt
+
+   If, by PROBE_MAX seconds after the transmission of the last ARP probe
+   no conflicting ARP Reply or ARP probe has been received, then the
+   host has successfully claimed the desired Link-Local IPv4 address.
+
+  where:    PROBE_MAX              2 seconds
+
+draft-ietf-zeroconf-ipv4-linklocal-15.txt
+
+   If, by DEFEND_INTERVAL seconds after the transmission of the last ARP
+   probe no conflicting ARP Reply or ARP probe has been received, then
+   the host has successfully claimed the desired IPv4 Link-Local
+   address.
+
+  where:  DEFEND_INTERVAL     10 seconds  (after probes, wait for defense)
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 08:59:14 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id IAA05903
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 08:59:13 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id B0292912D0; Tue, 22 Jun 2004 08:59:04 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 7F5ED912D1; Tue, 22 Jun 2004 08:59:04 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 22ABD912D0
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 08:59:03 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 0C08259C23; Tue, 22 Jun 2004 08:59:03 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 934CF59C09
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 08:59:02 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id i5MCx0J6010514
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 05:59:01 -0700 (PDT)
+Received: from [80.139.174.62] (vpn-129-150-112-85.Holland.Sun.COM [129.150.112.85])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5MCwwDm001868
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 14:58:59 +0200 (MEST)
+Date: Tue, 22 Jun 2004 14:58:39 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@slap.local
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+To: zeroconf@merit.edu
+Subject: my response to the proposed changes
+Message-ID: <Pine.OSX.4.58.0406221457230.512@slap.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+These are my suggested changes - as a working group participant, not as WG
+chair:
+
+1)  I support the following change:
+
+    We have to fix the last paragraph of 2.2.1 since it should read
+    2 seconds instead of 10 seconds for 'DEFEND_INTERVAL'.  I agree
+    it should be called ANNOUNCE_WAIT.  The changes are:
+
+section 2.2.1
+WAS:
+   If during this period, from the beginning of the probing process
+   until DEFEND_INTERVAL seconds after the last probe packet is sent,
+   the host receives any ARP packet (Request *or* Reply) on the
+BECOMES:
+   If during this period, from the beginning of the probing process
+   until DEFEND_INTERVAL seconds after the last probe packet is sent,
+   the host receives any ARP packet (Request *or* Reply) on the
+
+Section 2.2.1
+WAS:
+   If, by DEFEND_INTERVAL seconds after the transmission of the last ARP
+   probe no conflicting ARP Reply or ARP probe has been received, then
+   the host has successfully claimed the desired IPv4 Link-Local
+   address.
+BECOMES:
+   If, by ANNOUNCE_WAIT seconds after the transmission of the last ARP
+   probe no conflicting ARP Reply or ARP probe has been received, then
+   the host has successfully claimed the desired IPv4 Link-Local
+   address.
+
+section 9
+WAS:
+   DEFEND_INTERVAL     10 seconds  (after probes, wait for defense)
+BECOMES:
+   ANNOUNCE_WAIT        2 seconds  (after probes, wait for till 'success'
+                                    and to initiate announcements.)
+
+---
+2) I do not support the changes of START_WAIT to PROBE_WAIT or
+   ANNOUNCE_N to ANNOUNCE_NUM since these are esthetic only.
+
+---
+
+3) I do not support the change below because I do not think the new text
+   improves the clarity of the document.
+
+Section 9
+Was:
+    DEFEND_INTERVAL     10 seconds  (after probes, wait for defense)
+    WATCH_WAIT          10 seconds  (time to continue to defend your address,
+                                     for IEEE 802 networks)
+
+Becomes:
+    DEFEND_INTERVAL     10 seconds  (min interval between defensive ARPs)
+
+Section 1.3 and 2.5
+Was
+    WATCH_WAIT
+Becomes
+    DEFEND_INTERVAL
+
+---
+
+Best regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 10:36:49 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA13395
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 10:36:48 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id D3269912D1; Tue, 22 Jun 2004 10:36:39 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 9C4D1912D2; Tue, 22 Jun 2004 10:36:39 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B33B6912D1
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 10:36:38 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 9FBC759AF4; Tue, 22 Jun 2004 10:36:38 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server30.ukservers.net (server30.ukservers.net [217.10.138.207])
+	by segue.merit.edu (Postfix) with ESMTP id 4199759937
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 10:36:38 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server30.ukservers.net (Postfix) with ESMTP
+	id 319961BB3B0; Tue, 22 Jun 2004 15:36:39 +0100 (BST)
+Message-ID: <010801c45866$57be8a30$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Erik Guttman" <Erik.Guttman@sun.com>,
+        "Stuart Cheshire" <cheshire@apple.com>
+Cc: "Erik Guttman" <erik.guttman@sun.com>, <zeroconf@merit.edu>,
+        "Thomas Narten" <narten@us.ibm.com>
+References: <200406212206.i5LM6dSE010657@relay2.apple.com> <Pine.OSX.4.58.0406221220420.512@slap.local>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+Date: Tue, 22 Jun 2004 15:36:44 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1165
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+This is clearly an editorial mixup rather than a technical disagreement.
+
+
+I mildly prefer changing the name START_WAIT to PROBE_WAIT in two places =
+(2.2.1 & 9) - this does not affect the standard but is an editorial =
+improvement.
+
+I mildly prefer changing the name ANNOUNCE_N to ANNOUNCE_NUM in three =
+places (1.3, 2.4 & 9) - this does not affect the standard but is an =
+editorial improvement.
+
+The time in section 2.2.1 (currently called DEFEND_INTERVAL) after the =
+last probe has been 2 seconds for a long time (many drafts). Changing it =
+to 10 seconds was almost certainly an accident and should be rectified. =
+I support making this 2 seconds (not 1 second) in section 9.
+
+ANNOUNCE_WAIT is a very reasonable name for this constant since the next =
+step in the process is to announce the address. I support changing the =
+name DEFEND_INTERVAL to ANNOUNCE_WAIT in three places (2.2.1 twice & 9).
+
+I mildly prefer changing WATCH_WAIT to DEFEND_INTERVAL since this is =
+marginally clearer (it occurs in the section on defending an address).
+
+I do not support the current text around WATCH_WAIT - separate mail to =
+follow.
+
+regards,
+Philip Nye
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 10:58:13 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id KAA14405
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 10:58:13 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 71908912D2; Tue, 22 Jun 2004 10:58:06 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 44D5B912D3; Tue, 22 Jun 2004 10:58:06 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 3B4FF912D2
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 10:58:05 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 2860959C2B; Tue, 22 Jun 2004 10:58:05 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server30.ukservers.net (server30.ukservers.net [217.10.138.207])
+	by segue.merit.edu (Postfix) with ESMTP id 9302759C1D
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 10:58:04 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server30.ukservers.net (Postfix) with ESMTP
+	id C6AB51BB3B0; Tue, 22 Jun 2004 15:58:05 +0100 (BST)
+Message-ID: <011301c45869$56937050$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Erik Guttman" <Erik.Guttman@sun.com>
+Cc: "Stuart Cheshire" <cheshire@apple.com>, <zeroconf@merit.edu>,
+        "Thomas Narten" <narten@us.ibm.com>
+References: <200406212206.i5LM6dSE010657@relay2.apple.com> <Pine.OSX.4.58.0406221220420.512@slap.local> <Pine.OSX.4.58.0406221420190.512@slap.local>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+Date: Tue, 22 Jun 2004 15:58:11 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1165
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+The use of the symbol WATCH_WAIT in draft 15 is incorrect. This issue is =
+independent of whether the symbol is called WATCH_WAIT or =
+DEFEND_INTERVAL.
+
+The purpose of a symbolic name is to allow changes to the value to =
+accommodate different situations without changes in the text of the =
+document.
+
+The symbol name must be the same for all networks but it's value may =
+change from network to network. The current text only defines the =
+*symbol name* for IEEE802 networks, rather than defining its value.
+
+Proposed change in section 2.5
+
+   (b) If a host currently has active TCP connections or other reasons
+   to prefer to keep the same IPv4 address, and it has not seen any
+   other conflicting ARP packets recently (for IEEE 802, within the last
+                                           ^^^^^^^^^^^^^^
+                                               DELETE
+   WATCH_WAIT seconds) then it MAY elect to attempt to defend its
+   address, by recording the time that the conflicting ARP packet was
+   received, and then broadcasting one single ARP announcement, giving
+   its own IP and hardware addresses as the sender addresses of the ARP.
+   Having done this, the host can then continue to use the address
+   normally without any further special action.  However, if this is not
+   the first conflicting ARP packet the host has seen, and the time
+   recorded for the previous conflicting ARP packet is recent (within
+   WATCH_WAIT seconds for IEEE 802) then the host MUST immediately cease
+                     ^^^^^^^^^^^^^
+                         DELETE
+   using this address and configure a new IPv4 Link-Local address as
+   described above...
+  =20
+Becomes
+
+   (b) If a host currently has active TCP connections or other reasons
+   to prefer to keep the same IPv4 address, and it has not seen any
+   other conflicting ARP packets recently (within the last
+   WATCH_WAIT seconds) then it MAY elect to attempt to defend its
+   address, by recording the time that the conflicting ARP packet was
+   received, and then broadcasting one single ARP announcement, giving
+   its own IP and hardware addresses as the sender addresses of the ARP.
+   Having done this, the host can then continue to use the address
+   normally without any further special action.  However, if this is not
+   the first conflicting ARP packet the host has seen, and the time
+   recorded for the previous conflicting ARP packet is recent (within
+   WATCH_WAIT seconds) then the host MUST immediately cease
+   using this address and configure a new IPv4 Link-Local address as
+   described above...
+
+and in section 9
+
+   WATCH_WAIT          10 seconds  (time to continue to defend your =
+address,
+                                    for IEEE 802 networks)
+
+Becomes
+
+   WATCH_WAIT          10 seconds for IEEE 802 networks
+                       currently unspecified for other network types
+                       (time to continue to defend your address)
+
+
+regards,
+Philip Nye
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 13:37:56 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA04360
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 13:37:55 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 880C89125B; Tue, 22 Jun 2004 13:37:48 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 538359125D; Tue, 22 Jun 2004 13:37:48 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 439559125B
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 13:37:47 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 06F2859732; Tue, 22 Jun 2004 13:37:47 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by segue.merit.edu (Postfix) with ESMTP id 600615960B
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 13:37:46 -0400 (EDT)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id i5MHcA8V004665
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 10:38:10 -0700 (PDT)
+Received: from relay1.apple.com (relay1.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.12) with ESMTP id <T6a5857773b118064e1398@mailgate1.apple.com>;
+ Tue, 22 Jun 2004 10:37:40 -0700
+Received: from [17.219.204.121] (vpn2priv-121.apple.com [17.219.204.121])
+	by relay1.apple.com (8.12.11/8.12.11) with SMTP id i5MHbcsa010768;
+	Tue, 22 Jun 2004 10:37:38 -0700 (PDT)
+Message-Id: <200406221737.i5MHbcsa010768@relay1.apple.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+Date: Tue, 22 Jun 2004 10:37:38 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Erik Guttman" <Erik.Guttman@sun.com>
+Cc: <zeroconf@merit.edu>, "Thomas Narten" <narten@us.ibm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>         action time span                      total time
+>         ------ ---------------------------    ----------
+>         delay  [0..START_WAIT=1]              0-1
+>         probe  (instantaneous)
+>         wait   [PROBE_MIN=1, PROBE_MAX=2]     1-3
+>         probe  (instantaneous)
+>         wait   [PROBE_MIN=1, PROBE_MAX=2]     2-5
+>         probe  (instantaneous)
+>         wait   [PROBE_MIN=1, PROBE_MAX=2]     3-7
+>         configure address! (instantaneous)
+>         wait   [DEFEND_INTERVAL=1]            13-17
+>         announce (instantaneous)
+>         wait   [ANNOUNCE_INTERVAL=2]          14-17
+>         announce (instantaneous)
+>
+>
+>I have gotten this table wrong before, so please check it yourself.
+
+No, the time-line as specified by draft-15 is:
+
+         action  interval                       total time
+         ------  ---------------------------    ----------
+         delay   [0-1]
+         probe 1                                 0-1
+         wait    [1-2]
+         probe 2                                 1-3
+         wait    [1-2]
+         probe 3                                 2-5
+         wait    [10]
+         configure address!                     12-15
+         announce
+         wait    [2]
+         announce                               14-17
+
+It takes 12-15 seconds before the host can start begin useful 
+communications using the address.
+
+>The alternative Stuart presents is:
+>
+>         action time span                      total time
+>         ------ ---------------------------    ----------
+>         delay  [0..START_WAIT=1]              0-1
+>         probe  (instantaneous)
+>         wait   [PROBE_MIN=1, PROBE_MAX=2]     1-3
+>         probe  (instantaneous)
+>         wait   [PROBE_MIN=1, PROBE_MAX=2]     2-5
+>         probe  (instantaneous)
+>         wait   [PROBE_MIN=1, PROBE_MAX=2]     3-7
+>         configure address! (instantaneous)
+>  *      wait   [DEFEND_INTERVAL=1]            4-8
+>         announce (instantaneous)
+>         wait   [ANNOUNCE_INTERVAL=2]          5-9
+>         announce (instantaneous)
+
+What I actually proposed was this:
+
+         action  interval                       total time
+         ------  ---------------------------    ----------
+         delay   [0-1]
+         probe 1                                 0-1
+         wait    [1-2]
+         probe 2                                 1-3
+         wait    [1-2]
+         probe 3                                 2-5
+         wait    [1]
+         configure address!                      3-6
+         announce
+         wait    [2]
+         announce                                5-8
+
+The only difference is that the wait before announcing (what I call 
+ANNOUNCE_WAIT) is one second instead of ten.
+
+It now takes 3-6 seconds before the host can start begin useful 
+communications using the address.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Tue Jun 22 13:44:53 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA05890
+	for <zeroconf-archive@lists.ietf.org>; Tue, 22 Jun 2004 13:44:52 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 739919125D; Tue, 22 Jun 2004 13:44:44 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 41276912D9; Tue, 22 Jun 2004 13:44:44 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 57BB49125D
+	for <zeroconf@trapdoor.merit.edu>; Tue, 22 Jun 2004 13:44:43 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 3941259837; Tue, 22 Jun 2004 13:44:43 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by segue.merit.edu (Postfix) with ESMTP id EAA085982E
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 13:44:42 -0400 (EDT)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id i5MHAdc3028561
+	for <zeroconf@merit.edu>; Tue, 22 Jun 2004 10:10:39 -0700 (PDT)
+Received: from relay3.apple.com (relay3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.12) with ESMTP id <T6a583cc5bc118064e1398@mailgate1.apple.com>;
+ Tue, 22 Jun 2004 10:08:31 -0700
+Received: from [17.219.204.121] (vpn2priv-121.apple.com [17.219.204.121])
+	by relay3.apple.com (8.12.11/8.12.11) with SMTP id i5MH8ReI015718;
+	Tue, 22 Jun 2004 10:08:28 -0700 (PDT)
+Message-Id: <200406221708.i5MH8ReI015718@relay3.apple.com>
+Subject: Re: Please review draft-ietf-zeroconf-ipv4-linklocal-15.txt !
+Date: Tue, 22 Jun 2004 10:08:28 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Erik Guttman" <Erik.Guttman@sun.com>
+Cc: <zeroconf@merit.edu>, "Thomas Narten" <narten@us.ibm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+Erik Guttman wrote:
+
+> The change would remove the sense of the text in section 2.5.
+> Argument:
+>
+> The text in section 2.5 says if a host is configured with
+> an address A and has this address is in use, and the host
+> detects an arp from a source address A it may elect to
+> defend.  It sends its own arp from source address A and
+> waits 10 seconds, for 802 networks.  If the host receives
+> another arp from source address A it gives up the address.
+> Otherwise it keeps the address configuration for A.
+> 
+> If this 10 second interval is described as "time to
+> continue to defend your address, for IEEE 802 networks"
+> this indicates we are waiting and watching for 10 seconds
+> to defend an address.  If the 10 second interval is
+> described as "min interval between defensive ARPs" there
+> is no obvious relationship to the text in section 2.5.
+
+I do not understand this comment AT ALL.
+
+What do you mean by "no obvious relationship to the text in section 2.5"?
+
+Section 2.5. is called "Conflict Detection and DEFENSE"
+                                               ^^^^^^^
+It says:
+
+   MAY elect to attempt to defend its address, by ...
+                           ^^^^^^
+   broadcasting one single ARP announcement
+
+The whole point of this section is about when to defend and when to give 
+up. The answer to that question is determined by seeing if the last 
+conflict was within DEFEND_INTERVAL seconds, if so, the host is not 
+allowed to defend again. DEFEND_INTERVAL is the minimum interval between 
+defensive ARPs.
+
+There is no "waiting and watching" for anything. There is just:
+
+1. Normal ARP operation, like any IPv4 host.
+2. If you see a conflicting ARP, send a single defensive ARP.
+3. To prevent a network storm where two hosts get in a loop constantly
+   sending defensive ARPs back and forth as fast as they can, a host
+   is not allowed to defend more than once per DEFEND_INTERVAL seconds.
+
+The draft even explains this:
+
+   This is necessary to ensure that two hosts do not
+   get stuck in an endless loop with both hosts trying to defend the
+   same address.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 23 11:51:34 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA09754
+	for <zeroconf-archive@lists.ietf.org>; Wed, 23 Jun 2004 11:51:34 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 7A9E5912EC; Wed, 23 Jun 2004 11:51:29 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 4BDBC912E8; Wed, 23 Jun 2004 11:51:29 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id EF7F0912EC
+	for <zeroconf@trapdoor.merit.edu>; Wed, 23 Jun 2004 11:51:27 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D40B659EA1; Wed, 23 Jun 2004 11:51:27 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-1.sun.com (nwkea-mail-1.sun.com [192.18.42.13])
+	by segue.merit.edu (Postfix) with ESMTP id 8165959E59
+	for <zeroconf@merit.edu>; Wed, 23 Jun 2004 11:51:27 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-1.sun.com (8.12.10/8.12.9) with ESMTP id i5NFpPJ6011147
+	for <zeroconf@merit.edu>; Wed, 23 Jun 2004 08:51:26 -0700 (PDT)
+Received: from [217.95.19.13] (vpn-129-150-117-9.SFBay.Sun.COM [129.150.117.9])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5NFpMDm017330
+	for <zeroconf@merit.edu>; Wed, 23 Jun 2004 17:51:24 +0200 (MEST)
+Date: Wed, 23 Jun 2004 17:51:03 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@slap.local
+Reply-To: Erik Guttman <Erik.Guttman@sun.com>
+To: zeroconf@merit.edu
+Subject: Re: my response to the proposed changes
+In-Reply-To: <Pine.OSX.4.58.0406221457230.512@slap.local>
+Message-ID: <Pine.OSX.4.58.0406231729510.784@slap.local>
+References: <Pine.OSX.4.58.0406221457230.512@slap.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+I want to support Stuart's excellent observation that we no longer need
+the [1394] or [802.1d] reference.
+
+Sorry I was a bit incoherent yesterday.  For once trying to get organized
+backfired.  Here are a few ammended remarks.
+
+On Tue, 22 Jun 2004, Erik Guttman wrote:
+> 1)  I support the following change:
+>
+>     We have to fix the last paragraph of 2.2.1 since it should read
+>     2 seconds instead of 10 seconds for 'DEFEND_INTERVAL'.  I agree
+>     it should be called ANNOUNCE_WAIT.  The changes are:
+>
+> section 2.2.1
+> WAS:
+>    If during this period, from the beginning of the probing process
+>    until DEFEND_INTERVAL seconds after the last probe packet is sent,
+>    the host receives any ARP packet (Request *or* Reply) on the
+> BECOMES:
+>    If during this period, from the beginning of the probing process
+     until ANNOUNCE_WAIT seconds after the last probe packet is sent,
+>    the host receives any ARP packet (Request *or* Reply) on the
+
+Stuart's remarks have convinced me that the below is an OK idea to change
+the text for DEFEND_INTERVAL.
+
+> Section 9
+> Was:
+>     DEFEND_INTERVAL     10 seconds  (after probes, wait for defense)
+>     WATCH_WAIT          10 seconds  (time to continue to defend your address,
+>                                      for IEEE 802 networks)
+>
+> Becomes:
+>     DEFEND_INTERVAL     10 seconds  (min interval between defensive ARPs)
+
+However I do not support the idea of merging WATCH_WAIT and
+DEFEND_INTERVAL.
+
+> Section 1.3 and 2.5
+> Was
+>     WATCH_WAIT
+> Becomes
+>     DEFEND_INTERVAL
+
+WATCH_WAIT is used in section 2.5 for holding onto one's address after
+defending it against a potential conflict. This seems OK set at 10 seconds
+for 802 links.  (I support Philip Nye's suggested modification to 2.5 and
+WATCH_WAIT's definition in section 9.)
+
+In section 2.2.1 DEFEND_INTERVAL is a period after the last probe in which
+one will relinquish a pseudo random address it is trying to configure.
+This value should be 2 seconds, since that is what we had until we messed
+things up in draft 15 with all our last minute changes.
+
+These are different tasks, right?
+
+Regards,
+
+Erik
+(not as WG chair)
+
+
+From owner-zeroconf@merit.edu  Wed Jun 23 12:24:48 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id MAA11667
+	for <zeroconf-archive@lists.ietf.org>; Wed, 23 Jun 2004 12:24:48 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 854DA9122C; Wed, 23 Jun 2004 12:24:40 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 50EA791234; Wed, 23 Jun 2004 12:24:40 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 635579122C
+	for <zeroconf@trapdoor.merit.edu>; Wed, 23 Jun 2004 12:24:39 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4ED2F59E5A; Wed, 23 Jun 2004 12:24:39 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by segue.merit.edu (Postfix) with ESMTP id F137359E11
+	for <zeroconf@merit.edu>; Wed, 23 Jun 2004 12:24:38 -0400 (EDT)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id i5NGPAsG029895
+	for <zeroconf@merit.edu>; Wed, 23 Jun 2004 09:25:10 -0700 (PDT)
+Received: from relay3.apple.com (relay3.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.12) with ESMTP id <T6a5d3af4b5118064e1398@mailgate1.apple.com>;
+ Wed, 23 Jun 2004 09:24:38 -0700
+Received: from [17.219.206.24] ([17.219.206.24])
+	by relay3.apple.com (8.12.11/8.12.11) with SMTP id i5NGOKIL001984;
+	Wed, 23 Jun 2004 09:24:21 -0700 (PDT)
+Message-Id: <200406231624.i5NGOKIL001984@relay3.apple.com>
+Subject: Re: my response to the proposed changes
+Date: Wed, 23 Jun 2004 09:24:22 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Erik Guttman" <Erik.Guttman@sun.com>, <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>WATCH_WAIT is used in section 2.5 for holding onto one's address after
+>defending it against a potential conflict. This seems OK set at 10 seconds
+>for 802 links.  (I support Philip Nye's suggested modification to 2.5 and
+>WATCH_WAIT's definition in section 9.)
+
+There is no "holding onto one's address".
+
+Section 2.5 is about sending retaliatory (defensive) ARPs to reclaim your 
+address when someone else appears to be trying to use it, with the added 
+caveat that there's a very conservative rate limit on these defensive 
+ARPs to prevent horrible network storms.
+
+Early in the days of OS 9 (before we even had link-local) I saw a bug 
+introduced by an inexperienced programmer where two machines manually 
+assigned the same address would annihilate the network fighting over the 
+address. They'd send 100,000 ARP broadcasts per second, which was a lot 
+in those days. The requirement to defend once, then give up, came out of 
+that experience.
+
+"WATCH_WAIT" was a brand new concept, just introduced in draft-15, and 
+that's exactly the brand new concept I'm opposing here. Section 2.5 
+saying NOTHING about watching and waiting.
+
+This is the time line:
+
+Wait (random amount, to decorrelate initial probes)
+Probe, wait reasonable time for response
+Probe, wait reasonable time for response
+Probe, wait reasonable time for response
+Announce (to update ARP caches)
+** Now you can start using the address **
+Wait
+Announce (again, in case the first was lost)
+...
+...
+Much later:
+See a conflicting ARP from someone else
+Fight back
+Other guy backs off
+All is well
+...
+...
+Much later (more than ten seconds):
+See a conflicting ARP from someone else
+Fight back
+Other guy won't back down, and repeats his conflicting ARP again
+Gracefully defer -- getting into a 100,000 packet-per-second fight
+   over this won't help anyone.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 23 18:51:39 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id SAA25495
+	for <zeroconf-archive@lists.ietf.org>; Wed, 23 Jun 2004 18:51:39 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 776C59127C; Wed, 23 Jun 2004 18:51:07 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 30A69912F0; Wed, 23 Jun 2004 18:51:07 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id DE02A9127C
+	for <zeroconf@trapdoor.merit.edu>; Wed, 23 Jun 2004 18:51:05 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id C609A59F9D; Wed, 23 Jun 2004 18:51:05 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from nwkea-mail-2.sun.com (nwkea-mail-2.sun.com [192.18.42.14])
+	by segue.merit.edu (Postfix) with ESMTP id 68DDF59F9B
+	for <zeroconf@merit.edu>; Wed, 23 Jun 2004 18:51:05 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by nwkea-mail-2.sun.com (8.12.10/8.12.9) with ESMTP id i5NMp10R006281;
+	Wed, 23 Jun 2004 15:51:01 -0700 (PDT)
+Received: from suncc41 (suncc41 [129.157.142.41])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with SMTP id i5NMoxDm013514;
+	Thu, 24 Jun 2004 00:51:00 +0200 (MEST)
+Date: Thu, 24 Jun 2004 00:51:39 +0200 (MEST)
+From: Erik Guttman <erikg@sun.com>
+X-Sender: erikg@suncc41
+Reply-To: Erik Guttman <erik.guttman@sun.com>
+To: Stuart Cheshire <cheshire@apple.com>
+Cc: Erik Guttman <Erik.Guttman@sun.com>, zeroconf@merit.edu
+Subject: Re: my response to the proposed changes
+In-Reply-To: <200406231624.i5NGOKIL001984@relay3.apple.com>
+Message-ID: <Pine.SOL.3.96.1040624004604.6328B-100000@suncc41>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+On Wed, 23 Jun 2004, Stuart Cheshire wrote:
+> >WATCH_WAIT is used in section 2.5 for holding onto one's address after
+> >defending it against a potential conflict. This seems OK set at 10 seconds
+> >for 802 links.  (I support Philip Nye's suggested modification to 2.5 and
+> >WATCH_WAIT's definition in section 9.)
+> 
+> There is no "holding onto one's address".
+> 
+> Section 2.5 is about sending retaliatory (defensive) ARPs to reclaim your 
+> address when someone else appears to be trying to use it, with the added 
+> caveat that there's a very conservative rate limit on these defensive 
+> ARPs to prevent horrible network storms.
+
+That is what I mean by holding onto one's address.  The only point where
+I think we disagree is that the *text* for WATCH_WAIT is the same as for
+DEFENSE_INTERVAL in section 9.  Since both are set at 10 seconds
+presently, we are really only disagreeing over which version of the text
+is clearer, right?
+
+Best regards,
+
+Erik
+
+
+
+From owner-zeroconf@merit.edu  Thu Jun 24 14:51:22 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id OAA12494
+	for <zeroconf-archive@lists.ietf.org>; Thu, 24 Jun 2004 14:51:22 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 582A1913F6; Thu, 24 Jun 2004 14:50:46 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id AF9BF913F3; Thu, 24 Jun 2004 14:49:35 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 5DBA9913DF
+	for <zeroconf@trapdoor.merit.edu>; Thu, 24 Jun 2004 14:46:59 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 4964B5A09E; Thu, 24 Jun 2004 14:46:59 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by segue.merit.edu (Postfix) with ESMTP id BC5EF5A048
+	for <zeroconf@merit.edu>; Thu, 24 Jun 2004 14:46:58 -0400 (EDT)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id i5OIlRsH015694
+	for <zeroconf@merit.edu>; Thu, 24 Jun 2004 11:47:27 -0700 (PDT)
+Received: from relay2.apple.com (relay2.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.12) with ESMTP id <T6a62e38d2c118064e1398@mailgate1.apple.com>;
+ Thu, 24 Jun 2004 11:46:53 -0700
+Received: from [17.219.205.112] ([17.219.205.112])
+	by relay2.apple.com (8.12.11/8.12.11) with SMTP id i5OIkZ5L014168;
+	Thu, 24 Jun 2004 11:46:36 -0700 (PDT)
+Message-Id: <200406241846.i5OIkZ5L014168@relay2.apple.com>
+Subject: Re: my response to the proposed changes
+Date: Thu, 24 Jun 2004 11:46:37 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Erik Guttman" <erik.guttman@sun.com>
+Cc: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>That is what I mean by holding onto one's address.  The only point where
+>I think we disagree is that the *text* for WATCH_WAIT is the same as for
+>DEFENSE_INTERVAL in section 9.  Since both are set at 10 seconds
+>presently, we are really only disagreeing over which version of the text
+>is clearer, right?
+>
+>Best regards,
+>
+>Erik
+
+I'm just puzzled by the choice of the term "WATCH_WAIT" for the 
+ten-second time constant.
+
+It implies that you're watching for ten seconds for something (you're not 
+-- you're *always* watching for conflicting ARPs) or that you're waiting 
+for ten seconds for something (you're not -- there's no waiting).
+
+To emphasize that there's no waiting or any other disruption to normal 
+operation, the draft even spells this out explicitly:
+
+   Having done this, the host can then continue to use the address
+   normally without any further special action.
+
+The whole point of this text was to explicitly state that there's *no* 
+need for the host to stop what it's doing, and wait for ten seconds 
+watching to see if there's another conflicting ARP, before it can resume 
+normal operation. Normal operation continues without interruption. 
+Calling the constant WATCH_WAIT kind-of undermines that message.
+
+The ONLY relevance of the ten-second time constant is that it imposes a 
+rate-limit on the frequency of defensive ARPs that are allowed, to 
+prevent storms. Sensible names might be:
+
+  DEFEND_INTERVAL
+  MINIMUM_DEFEND_INTERVAL
+  DEFENSIVE_ARP_RATE_LIMIT
+  RETALIATORY_ARP_RATE_LIMIT
+  MANDATORY_RECONFIGURE_WINDOW
+  ... and so on.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Fri Jun 25 05:00:46 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id FAA18634
+	for <zeroconf-archive@lists.ietf.org>; Fri, 25 Jun 2004 05:00:46 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 374C691224; Fri, 25 Jun 2004 05:00:33 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5EAC59129B; Fri, 25 Jun 2004 05:00:32 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 4C06091224
+	for <zeroconf@trapdoor.merit.edu>; Fri, 25 Jun 2004 05:00:30 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D4C0459CD0; Fri, 25 Jun 2004 05:00:28 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server30.ukservers.net (server30.ukservers.net [217.10.138.207])
+	by segue.merit.edu (Postfix) with ESMTP id EAEB859CEC
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 05:00:26 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server30.ukservers.net (Postfix) with ESMTP
+	id 306B21BB3DF; Fri, 25 Jun 2004 10:00:27 +0100 (BST)
+Message-ID: <005701c45a92$dc3f2f70$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Stuart Cheshire" <cheshire@apple.com>,
+        "Erik Guttman" <erik.guttman@sun.com>
+Cc: <zeroconf@merit.edu>
+References: <200406241846.i5OIkZ5L014168@relay2.apple.com>
+Subject: Re: my response to the proposed changes
+Date: Fri, 25 Jun 2004 10:00:27 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1165
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+I believe Stuart is arguing about names and whether they suggest the =
+right thing in the minds of the reader - not about algorithms.
+
+The name "DEFEND_INTERVAL" is used in the current draft in section =
+2.2.1. (There is a proposal to change this name to ANNOUNCE_WAIT). For =
+this reason re-using "DEFEND_INTERVAL" for what is currently WATCH_WAIT =
+is a bad idea however apt the name might be since it is obviously =
+leading to huge confusion.
+
+Stuart says of WATCH_WAIT:
+
+> The ONLY relevance of the ten-second time constant is that it imposes =
+a=20
+> rate-limit on the frequency of defensive ARPs that are allowed, to=20
+> prevent storms.
+
+Not the only relevance - this period defines a frequency of conflict =
+above which a host is obliged to stop defending and find another =
+address. This goes beyond storm prevention and defines a practical test =
+for whether an existing address is tenable.
+
+> Sensible names might be:
+>=20
+>   DEFEND_INTERVAL
+>   MINIMUM_DEFEND_INTERVAL
+>   DEFENSIVE_ARP_RATE_LIMIT
+>   RETALIATORY_ARP_RATE_LIMIT
+>   MANDATORY_RECONFIGURE_WINDOW
+
+Try "DEFENSE_WINDOW" - it's snappier.
+
+I support Stuart's assertion that WATCH_WAIT is not a good term. For the =
+reasons above, I do not support the use of DEFDEND_INTERVAL for =
+anything.
+
+Philip
+
+
+
+From owner-zeroconf@merit.edu  Fri Jun 25 07:07:50 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA23070
+	for <zeroconf-archive@lists.ietf.org>; Fri, 25 Jun 2004 07:07:49 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id E26B69129F; Fri, 25 Jun 2004 07:07:41 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id A9B04912A0; Fri, 25 Jun 2004 07:07:41 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id B64879129F
+	for <zeroconf@trapdoor.merit.edu>; Fri, 25 Jun 2004 07:07:40 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id A24C559E52; Fri, 25 Jun 2004 07:07:40 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from ratree.psu.ac.th (ratree.psu.ac.th [202.12.73.3])
+	by segue.merit.edu (Postfix) with ESMTP id 06E9959E19
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 07:07:39 -0400 (EDT)
+Received: from delta.noi.kre.to (delta.coe.psu.ac.th [172.30.0.98])
+	by ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id i5PB7Sg24347;
+	Fri, 25 Jun 2004 18:07:29 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1])
+	by delta.noi.kre.to (8.12.9/8.11.6) with ESMTP id i5PB7DrT020572;
+	Fri, 25 Jun 2004 18:07:14 +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: "Philip Nye" <philip@engarts.com>
+Cc: "Stuart Cheshire" <cheshire@apple.com>,
+        "Erik Guttman" <erik.guttman@sun.com>, zeroconf@merit.edu
+Subject: Re: my response to the proposed changes 
+In-Reply-To: <005701c45a92$dc3f2f70$131010ac@aldebaran> 
+References: <005701c45a92$dc3f2f70$131010ac@aldebaran>  <200406241846.i5OIkZ5L014168@relay2.apple.com> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 25 Jun 2004 18:07:13 +0700
+Message-ID: <13268.1088161633@munnari.OZ.AU>
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+    Date:        Fri, 25 Jun 2004 10:00:27 +0100
+    From:        "Philip Nye" <philip@engarts.com>
+    Message-ID:  <005701c45a92$dc3f2f70$131010ac@aldebaran>
+
+  | Try "DEFENSE_WINDOW" - it's snappier.
+
+If you're going to do that, at least spell it rationally
+
+	DEFENCE_WINDOW
+
+(or avoid US vs English wars, and simply use a different word).
+Using "window" is good though, that suggests the correct properties.
+
+And since I'm here (I was going to avoid this discussion), I certainly
+agree that preventing dueling ARPs at flat out net rate is a good
+thing to do), but I cannot fathom any justification for 10 minutes
+as the timeout, 1 minute would be just as good, even one second would
+be adequate for that purpose (2 ARP packets a second might not be
+wonderful, but it isn't going to kill any network, and is unlikely to
+occur very often in any case).
+
+It looks to me as if this number is a reaction to "I have seen very bad
+things happen with no limit here, and so we must prevent that" (which is
+fine) but then going to extremes to make sure nothing like the "bad things"
+can possibly happen, ever, way beyond what is actually required, or reasonable.
+
+Beyond that, I am still yet to see any justification for requiring hosts
+to give up their address after receiving 2 ARPs in the window?  (Remind me,
+must they be from the same host, or would 2 from anyone do it - if the latter,
+the window should be made a small as reasonable, not as large.)
+
+Suggesting that as a good thing to do is fine, but why require it?
+
+If we have 2 hosts, and they have this conflict, then there are
+3 possibilities
+
+both abandon the address & acquire new
+		That's the current expectation in the draft
+		(no need to say more about it here)
+
+one of the hosts abandons its address, the other continues using its
+		Everything works fine, the host that wanted to keep its
+		address continues as if the conflict had never existed,
+		the other acts just the way the draft currently expects.
+		No problem.
+
+both choose to retain the conflicting address
+		In this case, both hosts are screwed, and most likely
+		neither can talk.    But that's what they have chosen as
+		an option - better to prevent the address being used by
+		a potential interloper, than to worry about keeping its own
+		network operations functional.
+		Also fine (it's the host's choice - and no harm comes to
+			the rest of the network).
+
+So, why are we requiring hosts to abandon their address in the case
+of a conflict again?
+
+kre
+
+
+
+From owner-zeroconf@merit.edu  Fri Jun 25 07:11:45 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id HAA23173
+	for <zeroconf-archive@lists.ietf.org>; Fri, 25 Jun 2004 07:11:45 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8604F912A0; Fri, 25 Jun 2004 07:11:36 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 59776912A2; Fri, 25 Jun 2004 07:11:36 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 765F3912A0
+	for <zeroconf@trapdoor.merit.edu>; Fri, 25 Jun 2004 07:11:35 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 5CABC59EC6; Fri, 25 Jun 2004 07:11:35 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from server30.ukservers.net (server30.ukservers.net [217.10.138.207])
+	by segue.merit.edu (Postfix) with ESMTP id 0985559ED1
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 07:11:35 -0400 (EDT)
+Received: from aldebaran (213-152-45-185.dsl.eclipse.net.uk [213.152.45.185])
+	by server30.ukservers.net (Postfix) with ESMTP
+	id CA2CA1BB44B; Fri, 25 Jun 2004 12:11:35 +0100 (BST)
+Message-ID: <002501c45aa5$2e2b4d70$131010ac@aldebaran>
+From: "Philip Nye" <philip@engarts.com>
+To: "Robert Elz" <kre@munnari.OZ.AU>,
+        "Zeroconf Working Group" <zeroconf@merit.edu>
+References: <005701c45a92$dc3f2f70$131010ac@aldebaran>  <200406241846.i5OIkZ5L014168@relay2.apple.com>  <13268.1088161633@munnari.OZ.AU>
+Subject: Re: my response to the proposed changes 
+Date: Fri, 25 Jun 2004 12:11:33 +0100
+Organization: Engineering Arts
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1158
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1165
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+Content-Transfer-Encoding: quoted-printable
+
+> From: "Robert Elz" <kre@munnari.OZ.AU>
+
+>   | Try "DEFENSE_WINDOW" - it's snappier.
+>=20
+> If you're going to do that, at least spell it rationally
+>=20
+> DEFENCE_WINDOW
+
+OK by me.
+
+Philip
+
+
+From owner-zeroconf@merit.edu  Fri Jun 25 13:49:30 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA27580
+	for <zeroconf-archive@lists.ietf.org>; Fri, 25 Jun 2004 13:49:30 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 968E79132D; Fri, 25 Jun 2004 13:49:22 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 699FF91331; Fri, 25 Jun 2004 13:49:22 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 88D729132D
+	for <zeroconf@trapdoor.merit.edu>; Fri, 25 Jun 2004 13:49:21 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 6D4F759F6E; Fri, 25 Jun 2004 13:49:21 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by segue.merit.edu (Postfix) with ESMTP id 0767859EE5
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 13:49:21 -0400 (EDT)
+Received: from mailgate2.apple.com (a17-128-100-204.apple.com [17.128.100.204])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id i5PHnv2Y022414
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 10:49:57 -0700 (PDT)
+Received: from relay2.apple.com (relay2.apple.com) by mailgate2.apple.com
+ (Content Technologies SMTPRS 4.3.6) with ESMTP id <T6a67d539a5118064cc638@mailgate2.apple.com> for <zeroconf@merit.edu>;
+ Fri, 25 Jun 2004 10:49:20 -0700
+Received: from [17.219.196.111] ([17.219.196.111])
+	by relay2.apple.com (8.12.11/8.12.11) with SMTP id i5PHnH5C028634
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 10:49:19 -0700 (PDT)
+Message-Id: <200406251749.i5PHnH5C028634@relay2.apple.com>
+Subject: Re: my response to the proposed changes
+Date: Fri, 25 Jun 2004 10:49:19 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>And since I'm here (I was going to avoid this discussion), I certainly
+>agree that preventing dueling ARPs at flat out net rate is a good
+>thing to do), but I cannot fathom any justification for 10 minutes
+                                                            ^^^^^^^
+
+** SECONDS **
+
+How long have we been working on this?
+
+The time has been ten seconds since draft-01.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Fri Jun 25 13:59:03 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id NAA28496
+	for <zeroconf-archive@lists.ietf.org>; Fri, 25 Jun 2004 13:59:03 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id EF43091338; Fri, 25 Jun 2004 13:58:56 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 5B34B91339; Fri, 25 Jun 2004 13:58:55 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1063B91336
+	for <zeroconf@trapdoor.merit.edu>; Fri, 25 Jun 2004 13:58:53 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id 659A959FE7; Fri, 25 Jun 2004 13:58:52 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from mail-out3.apple.com (mail-out3.apple.com [17.254.13.22])
+	by segue.merit.edu (Postfix) with ESMTP id D954259FEE
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 13:58:51 -0400 (EDT)
+Received: from mailgate1.apple.com (a17-128-100-225.apple.com [17.128.100.225])
+	by mail-out3.apple.com (8.12.11/8.12.11) with ESMTP id i5PHxSFG025247
+	for <zeroconf@merit.edu>; Fri, 25 Jun 2004 10:59:28 -0700 (PDT)
+Received: from relay4.apple.com (relay4.apple.com) by mailgate1.apple.com
+ (Content Technologies SMTPRS 4.3.12) with ESMTP id <T6a67ddef04118064e1398@mailgate1.apple.com>;
+ Fri, 25 Jun 2004 10:58:51 -0700
+Received: from [17.219.196.111] ([17.219.196.111])
+	by relay4.apple.com (8.12.11/8.12.11) with SMTP id i5PHwmbD024059;
+	Fri, 25 Jun 2004 10:58:49 -0700 (PDT)
+Message-Id: <200406251758.i5PHwmbD024059@relay4.apple.com>
+Subject: Re: my response to the proposed changes
+Date: Fri, 25 Jun 2004 10:58:49 -0700
+x-sender: cheshire@mail.apple.com
+x-mailer: Claris Emailer 2.0v3, January 22, 1998
+From: Stuart Cheshire <cheshire@apple.com>
+To: "Philip Nye" <philip@engarts.com>, "Erik Guttman" <erik.guttman@sun.com>
+Cc: <zeroconf@merit.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+>The name "DEFEND_INTERVAL" is used in the current draft in section 2.2.1. 
+>(There is a proposal to change this name to ANNOUNCE_WAIT). For this 
+>reason re-using "DEFEND_INTERVAL" for what is currently WATCH_WAIT is a 
+>bad idea however apt the name might be since it is obviously leading to 
+>huge confusion.
+
+No. We're not re-using anything that already has established meaning. The 
+name "DEFEND_INTERVAL" in Section 2.2.1 was BRAND NEW in draft-15. It was 
+a mistake.
+
+In draft-14 I pointed out an editorial issue: That all time values had 
+been turned into symbolic constants except for one: the ten-second 
+defensive ARP interval in Section 2.5. I thought this was an oversight. I 
+suggested that for consistency the minimum defensive ARP interval should 
+also be turned into symbolic constant, called DEFEND_INTERVAL. It should 
+have been a simple and non-controversial fix.
+
+Erik misunderstood me, named the minimum defensive ARP interval 
+"WATCH_WAIT", and added DEFEND_INTERVAL somewhere completely different.
+
+All I'm saying is that we should fix this naming mistake.
+
+Stuart Cheshire <cheshire@apple.com>
+ * Wizard Without Portfolio, Apple Computer, Inc.
+ * www.stuartcheshire.org
+
+
+
+From owner-zeroconf@merit.edu  Wed Jun 30 11:32:49 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA24222
+	for <zeroconf-archive@lists.ietf.org>; Wed, 30 Jun 2004 11:32:49 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 8FF3A912A0; Wed, 30 Jun 2004 11:30:13 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 232ED912EA; Wed, 30 Jun 2004 11:30:13 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 68BBE912A0
+	for <zeroconf@trapdoor.merit.edu>; Wed, 30 Jun 2004 11:30:09 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id D05A359FB7; Wed, 30 Jun 2004 11:30:07 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-4.sun.com (brmea-mail-4.Sun.COM [192.18.98.36])
+	by segue.merit.edu (Postfix) with ESMTP id 975AB5A179
+	for <zeroconf@merit.edu>; Wed, 30 Jun 2004 11:30:05 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-4.sun.com (8.12.10/8.12.9) with ESMTP id i5UFS653015425
+	for <zeroconf@merit.edu>; Wed, 30 Jun 2004 09:28:07 -0600 (MDT)
+Received: from [10.0.1.3] (vpn-129-150-116-121.UK.Sun.COM [129.150.116.121])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5UFU0Dm027875
+	for <zeroconf@merit.edu>; Wed, 30 Jun 2004 17:30:02 +0200 (MEST)
+Date: Wed, 30 Jun 2004 17:29:55 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@skin.local
+Reply-To: erik.guttman@sun.com
+To: zeroconf@merit.edu
+Subject: Outcome of recent IPv4LL discussions
+Message-ID: <Pine.OSX.4.58.0406301728150.8803@skin.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+
+Folks,
+
+A new draft has been submitted to the internet-draft directories.
+This includes the following changes we have discussed on the mailing
+list.
+
+  1. ANNOUNCE_N -> ANNOUNCE_NUM (name change)
+  2. BEGIN_WAIT -> PROBE_WAIT (name change)
+  3. DEFEND_WAIT (10 seconds, wrong text) -> ANNOUNCE_WAIT (2 seconds, better
+       text)
+  4. 802 text moved to DEFEND_WAIT text in section 9
+  5. removed references 802.1d and 1394
+
+This draft will be passed to the IESG for advancement to PS RFC.  If
+we find any additional issues with the document, we can correct them
+as part of the editorial final check with the RFC editor.
+
+Regards,
+
+Erik Guttman
+ZEROCONF WG Chair
+
+
+From owner-zeroconf@merit.edu  Wed Jun 30 11:44:44 2004
+Received: from trapdoor.merit.edu (postfix@trapdoor.merit.edu [198.108.1.26])
+	by ietf.org (8.9.1a/8.9.1a) with ESMTP id LAA24757
+	for <zeroconf-archive@lists.ietf.org>; Wed, 30 Jun 2004 11:44:44 -0400 (EDT)
+Received: by trapdoor.merit.edu (Postfix)
+	id 4346D912A2; Wed, 30 Jun 2004 11:44:38 -0400 (EDT)
+Delivered-To: zeroconf-outgoing@trapdoor.merit.edu
+Received: by trapdoor.merit.edu (Postfix, from userid 56)
+	id 18A9B912A4; Wed, 30 Jun 2004 11:44:38 -0400 (EDT)
+Delivered-To: zeroconf@trapdoor.merit.edu
+Received: from segue.merit.edu (segue.merit.edu [198.108.1.41])
+	by trapdoor.merit.edu (Postfix) with ESMTP id 1B3E1912A2
+	for <zeroconf@trapdoor.merit.edu>; Wed, 30 Jun 2004 11:44:37 -0400 (EDT)
+Received: by segue.merit.edu (Postfix)
+	id EA90A5A1B0; Wed, 30 Jun 2004 11:44:36 -0400 (EDT)
+Delivered-To: zeroconf@merit.edu
+Received: from brmea-mail-4.sun.com (brmea-mail-4.Sun.COM [192.18.98.36])
+	by segue.merit.edu (Postfix) with ESMTP id 862FC5A191
+	for <zeroconf@merit.edu>; Wed, 30 Jun 2004 11:44:36 -0400 (EDT)
+Received: from hs-ehdb03-01.Germany.Sun.COM ([129.157.142.201])
+	by brmea-mail-4.sun.com (8.12.10/8.12.9) with ESMTP id i5UFgb53022670
+	for <zeroconf@merit.edu>; Wed, 30 Jun 2004 09:42:38 -0600 (MDT)
+Received: from [10.0.1.3] (vpn-129-150-116-121.UK.Sun.COM [129.150.116.121])
+	by hs-ehdb03-01.Germany.Sun.COM (8.12.10+Sun/8.12.10/ENSMAIL,v2.2) with ESMTP id i5UFiVDm028453
+	for <zeroconf@merit.edu>; Wed, 30 Jun 2004 17:44:33 +0200 (MEST)
+Date: Wed, 30 Jun 2004 17:44:26 +0200 (CEST)
+From: Erik Guttman <erik@sun.com>
+X-X-Sender: erik@skin.local
+Reply-To: erik.guttman@sun.com
+To: zeroconf@merit.edu
+Subject: Re: Outcome of recent IPv4LL discussions
+In-Reply-To: <Pine.OSX.4.58.0406301728150.8803@skin.local>
+Message-ID: <Pine.OSX.4.58.0406301740020.8803@skin.local>
+References: <Pine.OSX.4.58.0406301728150.8803@skin.local>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-zeroconf@merit.edu
+Precedence: bulk
+
+On Wed, 30 Jun 2004, Erik Guttman wrote:
+> This includes the following changes we have discussed on the mailing
+> list.
+>
+>   1. ANNOUNCE_N -> ANNOUNCE_NUM (name change)
+>   2. BEGIN_WAIT -> PROBE_WAIT (name change)
+>   3. DEFEND_WAIT (10 seconds, wrong text) -> ANNOUNCE_WAIT (2 seconds, better
+>        text)
+>   4. 802 text moved to DEFEND_WAIT text in section 9
+>   5. removed references 802.1d and 1394
+
+and: WAIT_WATCH is gone, DEFEND_WAIT is now DEFENCE_WINDOW.
+
+As I said before - if there are any editorial changes we find, we can work
+them out in the rfc editorial process.  I would like to stop iterating at
+this point, since we recently introduced nearly as many problems as we've
+removed :)
+
+Regards,
+
+Erik
+
+
+
