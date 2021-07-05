@@ -1,7 +1,7 @@
 package framework;
 import java.util.HashMap;
 
-public class message {
+public abstract class Message {
 
 	HashMap<String, String> headers = new HashMap<String, String>();
 	
@@ -37,6 +37,9 @@ public class message {
 		String[] tmplist = null;
 		if(tmp != null){
 			tmplist = tmp.split(";");
+		}
+		else {
+			return null;
 		}
 		for(int i = 0;i<tmplist.length;i++) {
 			tmplist[i] = tmplist[i].trim();

@@ -12,9 +12,14 @@ out = open("C:\\Users\\Cezary\\Documents\\GitHub\\mbox-parser\\results\\p","w")
 
 iter = box.iterkeys()
 
+counter = 0
+
 for x in iter:
 
     msg = box.get_message(x)
+
+#    if counter == 11:
+#        print(msg.get_payload())
 
     if not msg.is_multipart():
 
@@ -33,6 +38,8 @@ for x in iter:
 		#print(mime_mail["Content"])(
     #    print(tmp)
         out.write(str(len(tmp.strip())) + "\n")
+
+    counter = counter + 1
 
 print(len(box))
 

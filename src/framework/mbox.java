@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class mbox {
+public class Mbox {
 	
-	public ArrayList<message> msg = new ArrayList<message>();
+	public ArrayList<Message> msg = new ArrayList<Message>();
 	
 	
 	public void read_file(String filename) throws FileNotFoundException {
@@ -41,11 +41,11 @@ public class mbox {
 		  
 			while(scanner.hasNextLine()) {
 
-				  message new_msg = new message();
+				  Message new_msg = new Message();
 				  
 				  read_headers(new_msg,scanner);
 				  
-				  read_content(new_msg,scanner);
+				  new_msg.read_content(new_msg,scanner);
 				  
 				  if (new_msg.headers.size() > 1){
 					  msg.add(new_msg);
@@ -64,7 +64,7 @@ public class mbox {
 	}
 		
 		 
-	void read_headers(message msg,Scanner scanner) {
+	void read_headers(Message msg,Scanner scanner) {
 
 		
 		String[] tmp;
@@ -115,7 +115,7 @@ public class mbox {
 		
 	}
 	
-	void read_content(message msg,Scanner scanner) {
+	void read_content(Message msg,Scanner scanner) {
 		
 		String line1 = "";
 		String line2 = "";
@@ -132,7 +132,7 @@ public class mbox {
 				
 				line2 = scanner.nextLine();
 				
-				String delim = msg.get_header("Mime-delimiter") + "--";
+				String delim = msg.parse_content_type().get("boundary") + "--";
 				
 				//System.exit(0);
 				if(line2.length() > 4 && line1.equals("") && line2.substring(0,5).equals("From ")) {
@@ -183,24 +183,21 @@ public class mbox {
 		
 	}
 	
-	boolean is_multipart(message inn) {
+	boolean is_multipart(Message inn) {
 		
 		if(inn.get_header("Content-Type") == null) {
 			return false;
 		}
 		
-		while(inn.get_header("Content-Type").split("/")[0].equals("multipart")) {
-			
-			inn.get_header("Content-Type").split(";	");
-			
+		if(inn.get_header("Content-Type").split("/")[0].equals("multipart")) {
+				
 			return true;
-			
 		}
 		
 		return false;
 	}
 	
-	void get_mime_data(message msg, Scanner scanner) {
+	void get_mime_data(Message msg, Scanner scanner) {
 		String tmp;
 		while(scanner.hasNextLine()) {
 			tmp = scanner.nextLine();
@@ -213,9 +210,7 @@ public class mbox {
 			
 		}
 		
-		msg.get_header(name)
-		
-		msg.add_header("Mime-delimiter", tmp);
+	
 		
 	}
 		

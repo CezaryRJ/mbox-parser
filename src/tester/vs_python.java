@@ -8,13 +8,13 @@ import java.util.Scanner;
 import java.util.Set;
 import java.io.File;
 
-import framework.mbox;
-import framework.message;
+import framework.Mbox;
+import framework.Message;
 
 public class vs_python extends test{
 
 	public vs_python() throws IOException {
-		super("vs_python","C:\\Users\\Cezary\\Documents\\GitHub\\mbox-parser\\Python\\read_mbox.py");
+		super("vs_python","C:\\Users\\Cezary\\Documents\\GitHub\\Mbox-parser\\Python\\read_Mbox.py");
 		// TODO Auto-generated constructor stub
 	}
 
@@ -26,7 +26,7 @@ public class vs_python extends test{
 		String tmp;
 		while(it.hasNext()) {
 			
-			mbox s = new mbox();
+			Mbox s = new Mbox();
 			
 			tmp = it.next();
 			System.out.println(tmp);
@@ -41,7 +41,7 @@ public class vs_python extends test{
 			ArrayList<String> p_report = read_file(settings.get("results") + "\\p");
 			
 			
-			Iterator<message> java = s.msg.iterator();
+			Iterator<Message> java = s.msg.iterator();
 			
 			Iterator<String> python = p_report.iterator();
 			
@@ -53,7 +53,7 @@ public class vs_python extends test{
 			int error_count = 0;
 			while(java.hasNext()) {
 				
-				message tmp1 = java.next();
+				Message tmp1 = java.next();
 				
 				int ja = tmp1.get_header("Content").length();
 				
@@ -61,12 +61,15 @@ public class vs_python extends test{
 				
 				//System.out.println("\n" + tmp1.get_header("Content"));
 				
+				//System.out.println(tmp1.get_header("Content"));
 				
 				if(ja != py) {
 					error_count += 1;
 					
-					if(error_count == 2) {
+					if(error_count == 3 || index == 12) {
 					
+					System.out.println(s.msg.size());
+						
 					System.out.println(index + "  " + ja + "  " + py);
 					
 					System.out.println(tmp1.get_header("Content"));
@@ -75,7 +78,12 @@ public class vs_python extends test{
 					
 					tmp1.print_headers();
 					
-			
+					try {
+					System.out.println(tmp1.parse_content_type().get("boundary"));
+					}
+					catch(NullPointerException e) {
+						
+					}
 						System.exit(py);
 					}
 					
