@@ -1,11 +1,15 @@
 package framework;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public abstract class Message {
 
-	HashMap<String, String> headers = new HashMap<String, String>();
+	HashMap<String, String> headers;
 	
 	
+	Message(HashMap<String, String> headers){
+		this.headers = headers;
+	}
 	
 	void add_header(String name, String data) {
 		
@@ -19,7 +23,6 @@ public abstract class Message {
 	
 	
 	public void print_headers() {
-		
 		for (String name: headers.keySet()) {
 			if(name != "Content") {
 				 String key = name.toString();
@@ -70,6 +73,10 @@ public abstract class Message {
 		}
 		
 		return out;
+	}
+	
+	public void read_content(Scanner scanner){
+		
 	}
 	
 }

@@ -2,6 +2,7 @@ package framework;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -41,22 +42,11 @@ public class Mbox {
 		  
 			while(scanner.hasNextLine()) {
 
-				  Message new_msg = new Message();
-				  
-				  read_headers(new_msg,scanner);
-				  
-				  new_msg.read_content(new_msg,scanner);
-				  
-				  if (new_msg.headers.size() > 1){
-					  msg.add(new_msg);
-				  }
-				  
+				  Message new_msg =  read_headers(scanner);
 				 
+				  new_msg.read_content(scanner);
 				  
-				  //new_msg.print_headers();
-				  
-				  //System.exit(0);
-				  
+				  msg.add(new_msg);
 			}
 			
 			
@@ -64,21 +54,19 @@ public class Mbox {
 	}
 		
 		 
-	void read_headers(Message msg,Scanner scanner) {
+	public Message read_headers(Scanner scanner) {
 
+		HashMap<String,String> headers = new HashMap<String,String>();
 		
 		String[] tmp;
 		String name = "";
 		String data = "";
+		
 		while(scanner.hasNextLine()) {
 			
 			tmp = scanner.nextLine().split(": ",2);
 			
 			if(tmp[0].equals("")) {
-				
-				if(is_multipart(msg)) {
-					get_mime_data(msg,scanner);
-				}
 				
 				break;
 			}
@@ -96,20 +84,27 @@ public class Mbox {
 					data += "\n" + tmp[0];
 					//System.out.println(data);
 				}
-				msg.add_header(name, data);
+				headers.put(name, data);
 				
 				name = tmp[0];
 				data = tmp[1];
-				msg.add_header(name, data);
+				headers.put(name, data);
 
 				
 			}else{
 				name = tmp[0];
 				data = tmp[1];
-				msg.add_header(name, data);
+				headers.put(name, data);
 			}
 
 			
+		}
+		
+		if(headers.get("MIME-Version") != null) {
+			return new MimeMessage(headers);
+		}
+		else {
+			return new TextMessage(headers);
 		}
 		
 		
@@ -188,28 +183,15 @@ public class Mbox {
 		if(inn.get_header("Content-Type") == null) {
 			return false;
 		}
-		
-		if(inn.get_header("Content-Type").split("/")[0].equals("multipart")) {
-				
+		if(inn.get_header("Content-Type").split("/")[0].equals("multipart")) {	
 			return true;
 		}
-		
 		return false;
 	}
 	
-	void get_mime_data(Message msg, Scanner scanner) {
-		String tmp;
-		while(scanner.hasNextLine()) {
-			tmp = scanner.nextLine();
-			if(tmp.startsWith("-")) {
-				break;
-			}
-		}
+	boolean isMime() {
 		
-		while(scanner.hasNextLine() && scanner.nextLine() != "") {
-			
-		}
-		
+	
 	
 		
 	}
